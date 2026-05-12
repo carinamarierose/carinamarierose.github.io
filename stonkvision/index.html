@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stonkvision</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="grid-mask"></div>
+
+  <main class="page">
+    <header class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Private market overlay</p>
+        <h1>Stonkvision</h1>
+        <p class="lede">
+          One dark board for bets, wallets, and insider flow. Built from scratch as the shared overview layer
+          for market-trans, wallet-watcher, and etoro-bot, with one overlay feed that can also power a private
+          desktop/TestFlight client.
+        </p>
+      </div>
+
+      <div class="hero-rail">
+        <article class="status-card">
+          <span class="status-label">Feeds</span>
+          <strong id="feed-status">Loading</strong>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Latest update</span>
+          <strong id="latest-update">-</strong>
+        </article>
+        <article class="status-card">
+          <span class="status-label">Refresh</span>
+          <strong id="refresh-status">Every 60s</strong>
+        </article>
+      </div>
+
+      <div class="summary-grid" id="summary-grid">
+        <article class="summary-card">
+          <span class="summary-label">Loading</span>
+          <strong>...</strong>
+        </article>
+      </div>
+
+      <div class="headline-grid" id="headline-grid">
+        <article class="headline-card">
+          <span class="headline-kicker">Booting</span>
+          <strong>Loading feeds</strong>
+          <p>Reading the latest synced JSON exports.</p>
+        </article>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Now board</p>
+          <h2>Best bets right now</h2>
+        </div>
+        <p class="section-note">Curated from `market-trans` feed output, not every active market.</p>
+      </div>
+      <div class="card-grid signal-grid" id="best-bets"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Wallet command</p>
+          <h2>Rose + Haak wallet advice</h2>
+        </div>
+        <p class="section-note">Per-position advice exported from `wallet_watcher` when that bot runs.</p>
+      </div>
+      <div class="wallet-grid" id="wallet-list"></div>
+    </section>
+
+    <section class="section split-section">
+      <article class="panel split-panel">
+        <div class="section-head in-panel">
+          <div>
+            <p class="section-kicker">Radar</p>
+            <h2>New from market-trans</h2>
+          </div>
+          <p class="section-note">Additional live signals outside the main bets board.</p>
+        </div>
+        <div id="market-radar"></div>
+      </article>
+
+      <article class="panel split-panel">
+        <div class="section-head in-panel">
+          <div>
+            <p class="section-kicker">Insider tape</p>
+            <h2>Fresh from etoro-bot</h2>
+          </div>
+          <p class="section-note">OpenInsider filings ranked into a lighter equity signal feed.</p>
+        </div>
+        <div id="insider-tape"></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Graph deck</p>
+          <h2>Where the pressure is building</h2>
+        </div>
+        <p class="section-note">First proper chart layer from the shared overlay feed, built to map directly into a future app client.</p>
+      </div>
+      <div class="graph-grid" id="graph-deck"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Pulse</p>
+          <h2>Quick mix across the whole system</h2>
+        </div>
+        <p class="section-note">Starter visual layer. Easy place to expand into larger graphs later.</p>
+      </div>
+      <div class="pulse-grid" id="pulse-panels"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
