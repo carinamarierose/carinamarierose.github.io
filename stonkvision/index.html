@@ -52,75 +52,218 @@
           <p>Reading the latest synced JSON exports.</p>
         </article>
       </div>
+
+      <nav class="view-nav" aria-label="Dashboard views">
+        <button class="view-tab is-active" type="button" data-view-target="overview">Overview</button>
+        <button class="view-tab" type="button" data-view-target="xgboost">XGBoost</button>
+        <button class="view-tab" type="button" data-view-target="pinned">Pinned</button>
+        <button class="view-tab" type="button" data-view-target="history">History</button>
+      </nav>
     </header>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Now board</p>
-          <h2>Best bets right now</h2>
-        </div>
-        <p class="section-note">Curated from `market-trans` feed output, not every active market.</p>
-      </div>
-      <div class="card-grid signal-grid" id="best-bets"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Wallet command</p>
-          <h2>Rose + Haak wallet advice</h2>
-        </div>
-        <p class="section-note">Per-position advice exported from `wallet_watcher` when that bot runs.</p>
-      </div>
-      <div class="wallet-grid" id="wallet-list"></div>
-    </section>
-
-    <section class="section split-section">
-      <article class="panel split-panel">
-        <div class="section-head in-panel">
+    <div class="view-stack" data-view-panel="overview" id="view-overview">
+      <section class="section">
+        <div class="section-head">
           <div>
-            <p class="section-kicker">Radar</p>
-            <h2>New from market-trans</h2>
+            <p class="section-kicker">Now board</p>
+            <h2>Best bets right now</h2>
           </div>
-          <p class="section-note">Additional live signals outside the main bets board.</p>
+          <p class="section-note">Curated from `market-trans` feed output, not every active market.</p>
         </div>
-        <div id="market-radar"></div>
-      </article>
+        <div class="card-grid signal-grid" id="best-bets"></div>
+      </section>
 
-      <article class="panel split-panel">
-        <div class="section-head in-panel">
+      <section class="section">
+        <div class="section-head">
           <div>
-            <p class="section-kicker">Insider tape</p>
-            <h2>Fresh from etoro-bot</h2>
+            <p class="section-kicker">Wallet command</p>
+            <h2>Rose + Haak wallet advice</h2>
           </div>
-          <p class="section-note">OpenInsider filings ranked into a lighter equity signal feed.</p>
+          <p class="section-note">Live wallet commands, top actions, and sync-to-sync deltas exported from `wallet_watcher`.</p>
         </div>
-        <div id="insider-tape"></div>
-      </article>
-    </section>
+        <div class="wallet-command-grid" id="wallet-rail"></div>
+        <div class="wallet-toolbar" id="wallet-toolbar"></div>
+        <div class="wallet-grid" id="wallet-list"></div>
+      </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Graph deck</p>
-          <h2>Where the pressure is building</h2>
-        </div>
-        <p class="section-note">First proper chart layer from the shared overlay feed, built to map directly into a future app client.</p>
-      </div>
-      <div class="graph-grid" id="graph-deck"></div>
-    </section>
+      <section class="section split-section">
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Radar</p>
+              <h2>New from market-trans</h2>
+            </div>
+            <p class="section-note">Additional live signals outside the main bets board.</p>
+          </div>
+          <div id="market-radar"></div>
+        </article>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Pulse</p>
-          <h2>Quick mix across the whole system</h2>
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Insider tape</p>
+              <h2>Fresh from etoro-bot</h2>
+            </div>
+            <p class="section-note">OpenInsider filings ranked into a lighter equity signal feed.</p>
+          </div>
+          <div id="insider-tape"></div>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Graph deck</p>
+            <h2>Where the pressure is building</h2>
+          </div>
+          <p class="section-note">First proper chart layer from the shared overlay feed, built to map directly into a future app client.</p>
         </div>
-        <p class="section-note">Starter visual layer. Easy place to expand into larger graphs later.</p>
-      </div>
-      <div class="pulse-grid" id="pulse-panels"></div>
-    </section>
+        <div class="graph-grid" id="graph-deck"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Pulse</p>
+            <h2>Quick mix across the whole system</h2>
+          </div>
+          <p class="section-note">Starter visual layer. Easy place to expand into larger graphs later.</p>
+        </div>
+        <div class="pulse-grid" id="pulse-panels"></div>
+      </section>
+    </div>
+
+    <div class="view-stack" data-view-panel="xgboost" id="view-xgboost" hidden>
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Model trend</p>
+            <h2>How the model is evolving</h2>
+          </div>
+          <p class="section-note">Daily line views for activity, alignment, and resolved performance as model-tagged calls start settling.</p>
+        </div>
+        <div class="history-graph-grid" id="xgboost-trend-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Model watch</p>
+            <h2>XGBoost control room</h2>
+          </div>
+          <p class="section-note">Shadow status, model-vs-Swift rankings, recent run history, and coverage by category from the real market-trans artifacts.</p>
+        </div>
+        <div class="history-summary-grid" id="xgboost-summary-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Live model board</p>
+            <h2>What the model is doing now</h2>
+          </div>
+          <p class="section-note">Built from the latest shadow snapshot plus current market summary counts.</p>
+        </div>
+        <div class="history-graph-grid" id="xgboost-panel-grid"></div>
+      </section>
+
+      <section class="section split-section">
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Model top</p>
+              <h2>Highest-ranked by XGBoost</h2>
+            </div>
+            <p class="section-note">The model's own top board from the latest shadow export.</p>
+          </div>
+          <div id="xgboost-model-top"></div>
+        </article>
+
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Swift top</p>
+              <h2>Highest-ranked by Swift</h2>
+            </div>
+            <p class="section-note">The native Swift ranking from the same shadow export window.</p>
+          </div>
+          <div id="xgboost-swift-top"></div>
+        </article>
+      </section>
+    </div>
+
+    <div class="view-stack" data-view-panel="pinned" id="view-pinned" hidden>
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Workspace</p>
+            <h2>Your pinned board</h2>
+          </div>
+          <p class="section-note">Saved locally in this browser, built to keep the most important bets, wallet calls, history rows, and filings in one place.</p>
+        </div>
+        <div class="workspace-toolbar" id="pinned-toolbar"></div>
+        <div class="history-summary-grid" id="pinned-summary-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Pinned items</p>
+            <h2>Live working set</h2>
+          </div>
+          <p class="section-note">Pin from any major card or graph selection. The board refreshes from the same shared overlay feed.</p>
+        </div>
+        <div class="card-grid pinned-grid" id="pinned-grid"></div>
+      </section>
+    </div>
+
+    <div class="view-stack" data-view-panel="history" id="view-history" hidden>
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">History mode</p>
+            <h2>How the board has actually performed</h2>
+          </div>
+          <p class="section-note">Wins, losses, closes, and insider archive pulled from the real SQLite history stores.</p>
+        </div>
+        <div class="history-summary-grid" id="history-summary-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Performance</p>
+            <h2>History graphs and scoreboards</h2>
+          </div>
+          <p class="section-note">First proper history tab for Stonkvision. Built to grow into deeper edge tracking later.</p>
+        </div>
+        <div class="history-graph-grid" id="history-graph-grid"></div>
+      </section>
+
+      <section class="section split-section">
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Recent closes</p>
+              <h2>Latest evaluated calls</h2>
+            </div>
+            <p class="section-note">Newest scored market-trans outcomes across the tracked horizons.</p>
+          </div>
+          <div id="history-tape"></div>
+        </article>
+
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Insider archive</p>
+              <h2>Recent filing history</h2>
+            </div>
+            <p class="section-note">Fresh archive tape from `etoro-bot` history, not only the current ranked feed.</p>
+          </div>
+          <div id="history-insider-archive"></div>
+        </article>
+      </section>
+    </div>
   </main>
 
   <script src="app.js"></script>

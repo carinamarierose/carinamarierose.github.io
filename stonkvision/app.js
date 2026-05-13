@@ -5,14 +5,31 @@ const refs = {
   summaryGrid: document.getElementById("summary-grid"),
   headlineGrid: document.getElementById("headline-grid"),
   bestBets: document.getElementById("best-bets"),
+  walletRail: document.getElementById("wallet-rail"),
+  walletToolbar: document.getElementById("wallet-toolbar"),
   walletList: document.getElementById("wallet-list"),
   marketRadar: document.getElementById("market-radar"),
   insiderTape: document.getElementById("insider-tape"),
   graphDeck: document.getElementById("graph-deck"),
-  pulsePanels: document.getElementById("pulse-panels")
+  pulsePanels: document.getElementById("pulse-panels"),
+  xgboostTrendGrid: document.getElementById("xgboost-trend-grid"),
+  xgboostSummaryGrid: document.getElementById("xgboost-summary-grid"),
+  xgboostPanelGrid: document.getElementById("xgboost-panel-grid"),
+  xgboostModelTop: document.getElementById("xgboost-model-top"),
+  xgboostSwiftTop: document.getElementById("xgboost-swift-top"),
+  pinnedToolbar: document.getElementById("pinned-toolbar"),
+  pinnedSummaryGrid: document.getElementById("pinned-summary-grid"),
+  pinnedGrid: document.getElementById("pinned-grid"),
+  historySummaryGrid: document.getElementById("history-summary-grid"),
+  historyGraphGrid: document.getElementById("history-graph-grid"),
+  historyTape: document.getElementById("history-tape"),
+  historyInsiderArchive: document.getElementById("history-insider-archive")
 };
+const viewTabs = Array.from(document.querySelectorAll("[data-view-target]"));
+const viewPanels = Array.from(document.querySelectorAll("[data-view-panel]"));
 
 const OVERLAY_PATH = "data/overlay-feed.json";
+const PINNED_STORAGE_KEY = "stonkvision-pinned-items-v1";
 
 const dateTimeFormatter = new Intl.DateTimeFormat("nb-NO", {
   dateStyle: "medium",
@@ -20,6 +37,21 @@ const dateTimeFormatter = new Intl.DateTimeFormat("nb-NO", {
 });
 
 const relativeTimeFormatter = new Intl.RelativeTimeFormat("nb-NO", { numeric: "auto" });
+const appState = {
+  overlayFeed: null,
+  pinRegistry: new Map(),
+  pinnedIds: loadPinnedIds(),
+  walletWorkspace: {
+    focus: "actionable",
+    sort: "urgency"
+  },
+  graphSelections: {
+    marketFlow: null,
+    marketWindow: null,
+    walletCommand: null,
+    insiderConviction: null
+  }
+};
 
 async function fetchJSON(path, optional = false) {
   try {
@@ -48,9 +80,15 @@ async function loadDashboard() {
 
 function renderDashboard(overlayFeed) {
   if (!overlayFeed) {
+    appState.overlayFeed = null;
+    appState.pinRegistry = new Map();
     renderUnavailableState();
     return;
   }
+
+  appState.overlayFeed = overlayFeed;
+  appState.pinRegistry = buildPinRegistry(overlayFeed);
+  prunePinnedItems();
 
   renderHero(overlayFeed);
   renderBestBets(overlayFeed.market);
@@ -59,6 +97,9 @@ function renderDashboard(overlayFeed) {
   renderInsiderTape(overlayFeed.insider);
   renderGraphDeck(overlayFeed);
   renderPulse(overlayFeed);
+  renderXGBoost(overlayFeed.xgboost);
+  renderPinnedWorkspace(overlayFeed);
+  renderHistory(overlayFeed.history);
 }
 
 function renderUnavailableState() {
@@ -93,11 +134,25 @@ function renderUnavailableState() {
 
   const message = "Shared overlay feed missing. Run `./webpage/scripts/sync-data.sh` to rebuild `webpage/data/overlay-feed.json`.";
   refs.bestBets.innerHTML = renderEmpty(message);
+  refs.walletRail.innerHTML = renderEmpty(message);
+  refs.walletToolbar.innerHTML = "";
   refs.walletList.innerHTML = renderEmpty(message);
   refs.marketRadar.innerHTML = renderEmpty(message);
   refs.insiderTape.innerHTML = renderEmpty(message);
   refs.graphDeck.innerHTML = renderEmpty(message);
   refs.pulsePanels.innerHTML = renderEmpty(message);
+  refs.xgboostTrendGrid.innerHTML = renderEmpty(message);
+  refs.xgboostSummaryGrid.innerHTML = renderEmpty(message);
+  refs.xgboostPanelGrid.innerHTML = renderEmpty(message);
+  refs.xgboostModelTop.innerHTML = renderEmpty(message);
+  refs.xgboostSwiftTop.innerHTML = renderEmpty(message);
+  refs.pinnedToolbar.innerHTML = "";
+  refs.pinnedSummaryGrid.innerHTML = renderEmpty(message);
+  refs.pinnedGrid.innerHTML = renderEmpty(message);
+  refs.historySummaryGrid.innerHTML = renderEmpty(message);
+  refs.historyGraphGrid.innerHTML = renderEmpty(message);
+  refs.historyTape.innerHTML = renderEmpty(message);
+  refs.historyInsiderArchive.innerHTML = renderEmpty(message);
 }
 
 function renderHero(overlayFeed) {
@@ -117,6 +172,7 @@ function renderHero(overlayFeed) {
     summaryCard("Open positions", summary.openPositionCount ?? overlayFeed.wallets?.summary?.openPositionCount ?? 0),
     summaryCard("Actionable calls", summary.actionablePositionCount ?? overlayFeed.wallets?.summary?.actionablePositionCount ?? 0),
     summaryCard("Insider signals", summary.insiderSignalCount ?? overlayFeed.insider?.summary?.totalSignals ?? 0),
+    summaryCard("History rows", summary.evaluatedSignalCount ?? overlayFeed.history?.market?.summary?.evaluationRowCount ?? 0),
     summaryCard("Source-led", summary.sourceSignalCount ?? 0),
     summaryCard("Cross-signal", summary.crossSignalCount ?? 0),
     summaryCard("Kalshi matched", summary.kalshiMatchedCount ?? 0)
@@ -143,23 +199,277 @@ function renderBestBets(marketSection) {
 
 function renderWallets(walletSection) {
   if (!walletSection?.available) {
+    refs.walletRail.innerHTML = renderEmpty("Wallet command rail appears when `wallet_watcher` has exported a synced snapshot.");
+    refs.walletToolbar.innerHTML = "";
     refs.walletList.innerHTML = renderEmpty("`overlay-feed.json` has no wallet snapshot yet. Run wallet-watcher and sync again.");
     return;
   }
 
-  const wallets = safeArray(walletSection.wallets)
-    .slice()
-    .sort((lhs, rhs) => walletSortScore(rhs) - walletSortScore(lhs));
+  const wallets = displayedWallets(walletSection);
+
+  refs.walletRail.innerHTML = renderWalletRail(walletSection);
+  refs.walletToolbar.innerHTML = renderWalletToolbar(walletSection, wallets);
 
   const walletCards = wallets.length
     ? wallets.map(renderWalletCard).join("")
-    : renderEmpty("No watched wallets were exported into the shared feed.");
+    : renderEmpty(walletWorkspaceEmptyMessage(walletSection));
 
   const placeholderNote = walletSection.synced === false
     ? renderEmpty("Showing tracked wallets from config only. Run wallet-watcher again to fill positions and live advice.")
     : "";
 
   refs.walletList.innerHTML = `${placeholderNote}${walletCards}`;
+}
+
+function renderWalletRail(walletSection) {
+  return [
+    renderWalletFreshnessCard(walletSection),
+    renderWalletUrgentCard(walletSection.urgentAction, walletSection.synced),
+    renderWalletActionMixCard(walletSection.commandGroups, walletSection.summary),
+    renderWalletChangesCard(walletSection.diff, walletSection.synced)
+  ].join("");
+}
+
+function renderWalletToolbar(walletSection, wallets) {
+  const positionCount = wallets.reduce((sum, wallet) => sum + displayedWalletPositions(wallet).length, 0);
+  const summary = walletSection?.summary || {};
+
+  return `
+    <div class="wallet-toolbar-group">
+      <span class="wallet-toolbar-label">Focus</span>
+      <div class="wallet-filter-row">
+        ${renderWalletFilterButton("focus", "actionable", "Actionable")}
+        ${renderWalletFilterButton("focus", "all", "All")}
+        ${renderWalletFilterButton("focus", "changes", "Changes")}
+      </div>
+    </div>
+    <div class="wallet-toolbar-group">
+      <span class="wallet-toolbar-label">Sort</span>
+      <div class="wallet-filter-row">
+        ${renderWalletFilterButton("sort", "urgency", "Urgency")}
+        ${renderWalletFilterButton("sort", "value", "Value")}
+        ${renderWalletFilterButton("sort", "recent", "Recent")}
+      </div>
+    </div>
+    <p class="wallet-toolbar-note">${escapeHTML(
+      `Showing ${wallets.length}/${summary.walletCount || wallets.length} wallet${wallets.length === 1 ? "" : "s"} · ${positionCount} position${positionCount === 1 ? "" : "s"} · sorted by ${walletSortLabel(appState.walletWorkspace.sort)}`
+    )}</p>
+  `;
+}
+
+function renderWalletFilterButton(kind, value, label) {
+  const isActive = kind === "focus"
+    ? appState.walletWorkspace.focus === value
+    : appState.walletWorkspace.sort === value;
+
+  const dataAttribute = kind === "focus"
+    ? `data-wallet-focus="${escapeAttribute(value)}"`
+    : `data-wallet-sort="${escapeAttribute(value)}"`;
+
+  return `
+    <button
+      class="wallet-filter-button${isActive ? " is-active" : ""}"
+      type="button"
+      ${dataAttribute}
+      aria-pressed="${isActive ? "true" : "false"}"
+    >
+      ${escapeHTML(label)}
+    </button>
+  `;
+}
+
+function renderWalletFreshnessCard(walletSection) {
+  const summary = walletSection?.summary || {};
+  const generatedAt = walletSection?.generatedAt || null;
+  const synced = walletSection?.synced !== false;
+  const ageMs = generatedAt ? Math.max(0, Date.now() - new Date(generatedAt).getTime()) : null;
+  const isStale = synced && ageMs !== null && ageMs > (3 * 60 * 60 * 1000);
+  const statusLabel = !synced
+    ? "Placeholder"
+    : isStale
+      ? "Stale snapshot"
+      : "Fresh snapshot";
+  const statusClass = !synced
+    ? "neutral"
+    : isStale
+      ? "skeptical"
+      : "supports";
+  const subtitle = !generatedAt
+    ? "No wallet export timestamp is available yet."
+    : isStale
+      ? `Wallet snapshot is ${formatRelativeTime(generatedAt)} old. Run wallet-watcher again if this should be live.`
+      : `Wallet snapshot updated ${formatRelativeTime(generatedAt)}.`;
+
+  return `
+    <article class="compact-card wallet-focus-card">
+      <div class="wallet-focus-head">
+        <span class="section-kicker">Wallet feed</span>
+        <span class="badge ${escapeHTML(statusClass)}">${escapeHTML(statusLabel)}</span>
+      </div>
+      <h3 class="wallet-focus-title">Rose + Haak freshness</h3>
+      <p class="wallet-focus-copy">${escapeHTML(subtitle)}</p>
+      <div class="compact-footer">
+        ${miniBadge("Updated", generatedAt ? formatDateTime(generatedAt) : "n/a")}
+        ${miniBadge("Wallets", summary.walletCount || 0)}
+        ${miniBadge("Open", summary.openPositionCount || 0)}
+        ${miniBadge("Value", formatCompactUSD(summary.totalCurrentValue))}
+      </div>
+    </article>
+  `;
+}
+
+function renderWalletUrgentCard(urgentAction, isSynced) {
+  if (!urgentAction) {
+    return `
+      <article class="compact-card wallet-focus-card">
+        <span class="section-kicker">Most urgent</span>
+        <h3 class="wallet-focus-title">No urgent wallet action</h3>
+        <p class="wallet-focus-copy">${escapeHTML(
+          isSynced
+            ? "Current Rose/Haak positions are aligned with the latest wallet advice."
+            : "Live wallet advice will appear here after the next wallet-watcher export."
+        )}</p>
+      </article>
+    `;
+  }
+
+  const cardURL = urgentAction.marketURL || urgentAction.signalURL || urgentAction.walletURL;
+  const links = [
+    renderExternalAction("Open market", urgentAction.marketURL),
+    sameExternalURL(urgentAction.signalURL, urgentAction.marketURL) ? "" : renderExternalAction("Open signal", urgentAction.signalURL),
+    renderPinAction(walletCommandPinID(urgentAction))
+  ].filter(Boolean).join("");
+
+  return `
+    <article ${renderCardSurfaceAttributes("compact-card wallet-focus-card", cardURL, `Open urgent wallet action for ${urgentAction.title}`)}>
+      <div class="wallet-focus-head">
+        <span class="section-kicker">Most urgent</span>
+        <span class="badge ${escapeHTML(urgentAction.action || "neutral")}">${escapeHTML(urgentAction.actionLabel || formatAction(urgentAction.action))}</span>
+      </div>
+      ${renderLinkedText("h3", "wallet-focus-title", `${urgentAction.walletLabel} · ${urgentAction.title}`, cardURL)}
+      <p class="wallet-focus-copy">${escapeHTML(
+        `${urgentAction.relationLabel || "Live wallet command"} · ${urgentAction.signalTitle || "No live signal"}`
+      )}</p>
+      <div class="compact-footer">
+        ${miniBadge("Outcome", urgentAction.outcome || "-")}
+        ${miniBadge("Value", formatCompactUSD(urgentAction.currentValue))}
+        ${miniBadge("Gap", formatSignedNumber(urgentAction.netScoreGap))}
+        ${miniBadge("Deadline", formatDaysToEnd(urgentAction.daysToEnd))}
+        ${links}
+      </div>
+    </article>
+  `;
+}
+
+function renderWalletActionMixCard(commandGroups, summary) {
+  const groups = safeArray(commandGroups);
+  const rows = groups.length
+    ? groups.slice(0, 4).map(renderWalletActionGroup).join("")
+    : `<p class="wallet-focus-copy">No open wallet positions are available in this snapshot.</p>`;
+
+  return `
+    <article class="compact-card wallet-focus-card">
+      <span class="section-kicker">Command mix</span>
+      <h3 class="wallet-focus-title">What Rose + Haak should do now</h3>
+      <p class="wallet-focus-copy">${escapeHTML(
+        `${summary?.openPositionCount || 0} open positions · ${summary?.actionablePositionCount || 0} actionable calls`
+      )}</p>
+      <div class="wallet-action-stack">
+        ${rows}
+      </div>
+    </article>
+  `;
+}
+
+function renderWalletActionGroup(group) {
+  const topLinks = safeArray(group.positions).map((position) =>
+    renderExternalBlock(
+      "wallet-inline-link",
+      position.marketURL || position.signalURL,
+      `<span>${escapeHTML(position.walletLabel)} · ${escapeHTML(truncateText(position.title, 42))}</span>`,
+      "span"
+    )
+  ).join("");
+
+  return `
+    <div class="wallet-action-row">
+      <div class="wallet-action-head">
+        <div class="wallet-action-tag">
+          <span class="badge ${escapeHTML(group.key || "neutral")}">${escapeHTML(group.label || formatAction(group.key))}</span>
+          <strong class="wallet-action-count">${escapeHTML(String(group.count || 0))}</strong>
+        </div>
+        <span class="wallet-action-value">${escapeHTML(formatCompactUSD(group.totalCurrentValue))}</span>
+      </div>
+      <div class="wallet-action-list">
+        ${topLinks}
+        ${group.moreCount ? `<span class="wallet-inline-note">+${escapeHTML(String(group.moreCount))} more</span>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+function renderWalletChangesCard(diff, isSynced) {
+  if (!diff?.hasPrevious) {
+    return `
+      <article class="compact-card wallet-focus-card">
+        <span class="section-kicker">Since last sync</span>
+        <h3 class="wallet-focus-title">Change tracking starts next pass</h3>
+        <p class="wallet-focus-copy">${escapeHTML(
+          isSynced
+            ? "This is the first comparable wallet snapshot. The next sync will show opens, closes, flips, and value changes."
+            : "Waiting for a live wallet snapshot before change tracking can begin."
+        )}</p>
+      </article>
+    `;
+  }
+
+  const highlights = safeArray(diff.highlights);
+  const changeList = highlights.length
+    ? `<div class="wallet-change-list">${highlights.map(renderWalletChangeItem).join("")}</div>`
+    : `<p class="wallet-focus-copy">No wallet changes detected since ${escapeHTML(formatDateTime(diff.previousGeneratedAt))}.</p>`;
+
+  return `
+    <article class="compact-card wallet-focus-card">
+      <span class="section-kicker">Since last sync</span>
+      <h3 class="wallet-focus-title">What changed since ${escapeHTML(formatRelativeTime(diff.previousGeneratedAt))}</h3>
+      <div class="compact-footer">
+        ${miniBadge("Opened", diff.newPositionCount || 0)}
+        ${miniBadge("Closed", diff.closedPositionCount || 0)}
+        ${miniBadge("Advice flips", diff.actionChangeCount || 0)}
+        ${miniBadge("Value", formatSignedCompactUSD(diff.valueDeltaUSD))}
+      </div>
+      ${changeList}
+    </article>
+  `;
+}
+
+function renderWalletChangeItem(change) {
+  return renderExternalBlock(
+    "wallet-change-item",
+    change.marketURL,
+    `
+      <strong>${escapeHTML(change.walletLabel)} · ${escapeHTML(truncateText(change.title || "Wallet change", 44))}</strong>
+      <span>${escapeHTML(describeWalletChange(change))}</span>
+    `,
+    "div"
+  );
+}
+
+function describeWalletChange(change) {
+  switch (change.type) {
+    case "opened":
+      return `Opened ${change.outcome || "position"} · ${formatCompactUSD(change.currentValue)}`;
+    case "closed":
+      return `Closed ${change.outcome || "position"} · was ${formatCompactUSD(change.previousValue)}`;
+    case "action_changed":
+      return `Advice ${formatAction(change.previousAction)} -> ${formatAction(change.action)}${change.signalTitle ? ` · ${change.signalTitle}` : ""}`;
+    case "size_changed":
+      return `Size changed ${formatSignedNumber(change.sizeDelta)} · ${formatCompactUSD(change.currentValue)} now`;
+    case "value_changed":
+      return `${Number(change.valueDeltaUSD) >= 0 ? "Marked up" : "Marked down"} ${formatCompactUSD(Math.abs(Number(change.valueDeltaUSD) || 0))}`;
+    default:
+      return "Wallet snapshot updated";
+  }
 }
 
 function renderMarketRadar(marketSection) {
@@ -233,12 +543,20 @@ function renderMarketFlowPanel(chart) {
   }
 
   const maxValue = Number(chart?.maxAbsFlowUSD) || 1;
+  const selectedID = getSelectedGraphID("marketFlow", items);
+  const selectedItem = items.find((item) => String(item.id) === selectedID) || items[0];
+  const selectedPin = appState.pinRegistry.get(marketPinID(selectedItem));
   const rows = items.map((item) => {
     const fill = clampPercent((item.absFlowUSD / maxValue) * 100);
     const buyFill = isSellDirection(item.direction) ? 0 : fill;
     const sellFill = isSellDirection(item.direction) ? fill : 0;
     return `
-      <div class="flow-row">
+      <button
+        class="flow-row selection-trigger${String(item.id) === selectedID ? " is-selected" : ""}"
+        type="button"
+        data-graph-key="marketFlow"
+        data-graph-id="${escapeAttribute(item.id)}"
+      >
         <div class="flow-head">
           <div>
             <strong class="flow-label">${escapeHTML(item.shortLabel || item.title)}</strong>
@@ -254,14 +572,33 @@ function renderMarketFlowPanel(chart) {
             <div class="flow-bar buy" style="--fill:${buyFill}%"></div>
           </div>
         </div>
-      </div>
+      </button>
     `;
   }).join("");
+
+  const selectionCard = renderGraphSelectionCard(selectedPin || {
+    id: marketPinID(selectedItem),
+    kicker: "Flow selection",
+    title: selectedItem.title,
+    subtitle: `${selectedItem.outcome} · ${selectedItem.confidence || 0}/100 · ${formatDaysToEnd(selectedItem.daysToEnd)}`,
+    summary: `Net weighted flow ${formatCompactUSD(selectedItem.flowUSD)} on the live bets board.`,
+    url: getSignalMarketURL(selectedItem),
+    actionLabel: "Open market",
+    badges: [
+      { label: formatDirection(selectedItem.direction), className: isSellDirection(selectedItem.direction) ? "sell" : "buy" }
+    ],
+    metrics: [
+      { label: "Flow", value: formatCompactUSD(selectedItem.flowUSD) },
+      { label: "Price", value: formatMarketPrice(selectedItem.currentPrice) },
+      { label: "Confidence", value: `${selectedItem.confidence || 0}/100` },
+      { label: "Deadline", value: formatDaysToEnd(selectedItem.daysToEnd) }
+    ]
+  });
 
   return renderGraphPanel(
     "Market flow map",
     "Net weighted flow on the highest-priority bets.",
-    `<div class="flow-list">${rows}</div>`
+    `<div class="flow-list">${rows}</div>${selectionCard}`
   );
 }
 
@@ -287,6 +624,9 @@ function renderConvictionWindowPanel(chart) {
   const maxFlow = Number(chart?.maxAbsFlowUSD) || 1;
   const yTicks = [25, 50, 75, 100];
   const xTicks = [0, Math.round(maxDays / 2), maxDays];
+  const selectedID = getSelectedGraphID("marketWindow", items);
+  const selectedItem = items.find((item) => String(item.id) === selectedID) || items[0];
+  const selectedPin = appState.pinRegistry.get(marketPinID(selectedItem));
 
   const svg = `
     <svg class="plot-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="Confidence against days to end">
@@ -314,7 +654,14 @@ function renderConvictionWindowPanel(chart) {
         const radius = 5 + ((Number(item.absFlowUSD) || 0) / maxFlow) * 9;
         const pointClass = isSellDirection(item.direction) ? "sell" : "buy";
         return `
-          <circle class="plot-point ${pointClass}" cx="${x}" cy="${y}" r="${radius}">
+          <circle
+            class="plot-point ${pointClass}${String(item.id) === selectedID ? " is-selected" : ""}"
+            cx="${x}"
+            cy="${y}"
+            r="${radius}"
+            data-graph-key="marketWindow"
+            data-graph-id="${escapeAttribute(item.id)}"
+          >
             <title>${escapeHTML(item.title)} | ${escapeHTML(item.outcome)} | ${escapeHTML(String(item.confidence || 0))}/100 | ${escapeHTML(formatDaysToEnd(item.daysToEnd))}</title>
           </circle>
         `;
@@ -325,18 +672,43 @@ function renderConvictionWindowPanel(chart) {
   const legend = `
     <div class="plot-legend">
       ${items.slice(0, 5).map((item) => `
-        <div class="plot-legend-item">
+        <button
+          class="plot-legend-item selection-trigger${String(item.id) === selectedID ? " is-selected" : ""}"
+          type="button"
+          data-graph-key="marketWindow"
+          data-graph-id="${escapeAttribute(item.id)}"
+        >
           <span class="plot-dot ${isSellDirection(item.direction) ? "sell" : "buy"}"></span>
           <span>${escapeHTML(item.shortLabel)} · ${escapeHTML(formatTake(item.take))}</span>
-        </div>
+        </button>
       `).join("")}
     </div>
   `;
 
+  const selectionCard = renderGraphSelectionCard(selectedPin || {
+    id: marketPinID(selectedItem),
+    kicker: "Window selection",
+    title: selectedItem.title,
+    subtitle: `${selectedItem.outcome} · ${formatTake(selectedItem.take)} · ${selectedItem.confidence || 0}/100`,
+    summary: `${formatDaysToEnd(selectedItem.daysToEnd)} to resolution with ${formatCompactUSD(selectedItem.absFlowUSD)} of absolute weighted flow.`,
+    url: getSignalMarketURL(selectedItem),
+    actionLabel: "Open market",
+    badges: [
+      { label: formatDirection(selectedItem.direction), className: isSellDirection(selectedItem.direction) ? "sell" : "buy" },
+      { label: formatTake(selectedItem.horizon), className: "neutral" }
+    ],
+    metrics: [
+      { label: "Confidence", value: `${selectedItem.confidence || 0}/100` },
+      { label: "Flow", value: formatCompactUSD(selectedItem.absFlowUSD) },
+      { label: "Days", value: formatDaysToEnd(selectedItem.daysToEnd) },
+      { label: "Price", value: formatMarketPrice(selectedItem.currentPrice) }
+    ]
+  });
+
   return renderGraphPanel(
     "Conviction window",
     "Confidence against time-to-resolution across the live board.",
-    `${svg}${legend}`
+    `${svg}${legend}${selectionCard}`
   );
 }
 
@@ -351,29 +723,56 @@ function renderWalletCommandPanel(chart) {
   }
 
   const maxValue = Number(chart?.maxValueUSD) || 1;
+  const selectedID = getSelectedGraphID("walletCommand", items);
+  const selectedItem = items.find((item) => String(item.id) === selectedID) || items[0];
+  const selectedPin = appState.pinRegistry.get(walletPinID({ wallet: selectedItem.wallet }));
   const note = chart?.synced === false
     ? `<p class="graph-note">Showing tracked wallets from config. Live positions appear here after the next wallet-watcher export.</p>`
     : "";
   const rows = items.map((item) => {
     const fill = maxValue > 0 ? clampPercent((item.totalCurrentValue / maxValue) * 100) : 0;
     return `
-      <div class="wallet-graph-row">
+      <button
+        class="wallet-graph-row selection-trigger${String(item.id) === selectedID ? " is-selected" : ""}"
+        type="button"
+        data-graph-key="walletCommand"
+        data-graph-id="${escapeAttribute(item.id)}"
+      >
         <div class="wallet-graph-head">
-          <strong>${escapeHTML(item.label)}</strong>
+          <strong class="wallet-graph-title">${escapeHTML(item.label)}</strong>
           <strong>${escapeHTML(formatCompactUSD(item.totalCurrentValue))}</strong>
         </div>
         <div class="wallet-graph-track">
           <div class="wallet-graph-fill" style="--fill:${fill}%"></div>
         </div>
         <p class="graph-meta-line">${escapeHTML(String(item.openPositionCount || 0))} open · ${escapeHTML(String(item.actionablePositionCount || 0))} actionable · ${escapeHTML(String(item.recentActivityCount || 0))} recent trades</p>
-      </div>
+      </button>
     `;
   }).join("");
+
+  const selectionCard = renderGraphSelectionCard(selectedPin || {
+    id: walletPinID({ wallet: selectedItem.wallet }),
+    kicker: "Wallet selection",
+    title: selectedItem.label,
+    subtitle: `${selectedItem.openPositionCount || 0} open · ${selectedItem.actionablePositionCount || 0} actionable`,
+    summary: `${selectedItem.recentActivityCount || 0} recent trades${selectedItem.lastActivityTimestamp ? ` · last activity ${formatRelativeTimeFromUnix(selectedItem.lastActivityTimestamp)}` : ""}`,
+    url: normalizeExternalURL(selectedItem.walletURL),
+    actionLabel: "Open wallet",
+    badges: [
+      { label: `${selectedItem.actionablePositionCount || 0} actionable`, className: (selectedItem.actionablePositionCount || 0) > 0 ? "buy" : "neutral" }
+    ],
+    metrics: [
+      { label: "Value", value: formatCompactUSD(selectedItem.totalCurrentValue) },
+      { label: "Open", value: selectedItem.openPositionCount ?? 0 },
+      { label: "Recent", value: selectedItem.recentActivityCount ?? 0 },
+      { label: "Last", value: selectedItem.lastActivityTimestamp ? formatRelativeTimeFromUnix(selectedItem.lastActivityTimestamp) : "-" }
+    ]
+  });
 
   return renderGraphPanel(
     "Wallet command board",
     "Tracked wallets sized by current value with activity context.",
-    `${note}<div class="wallet-graph-list">${rows}</div>`
+    `${note}<div class="wallet-graph-list">${rows}</div>${selectionCard}`
   );
 }
 
@@ -388,27 +787,54 @@ function renderInsiderConvictionPanel(chart) {
   }
 
   const maxValue = Number(chart?.maxAbsTradeValueUSD) || 1;
+  const selectedID = getSelectedGraphID("insiderConviction", items);
+  const selectedItem = items.find((item) => String(item.id) === selectedID) || items[0];
+  const selectedPin = appState.pinRegistry.get(insiderPinID(selectedItem));
   const rows = items.map((item) => {
     const fill = clampPercent((item.absTradeValueUSD / maxValue) * 100);
     const directionClass = isSellDirection(item.direction) ? "sell" : "buy";
     return `
-      <div class="insider-graph-row">
+      <button
+        class="insider-graph-row selection-trigger${String(item.id) === selectedID ? " is-selected" : ""}"
+        type="button"
+        data-graph-key="insiderConviction"
+        data-graph-id="${escapeAttribute(item.id)}"
+      >
         <div class="insider-graph-head">
-          <strong>${escapeHTML(item.ticker)}</strong>
+          <strong class="insider-graph-title">${escapeHTML(item.ticker)}</strong>
           <strong class="${directionClass}">${escapeHTML(formatCompactUSD(item.tradeValueUSD))}</strong>
         </div>
         <div class="insider-graph-track">
           <div class="insider-graph-fill ${directionClass}" style="--fill:${fill}%"></div>
         </div>
         <p class="graph-meta-line">${escapeHTML(item.insiderName || "Unknown insider")} · ${escapeHTML(String(item.confidence || 0))}/100 · ${escapeHTML(formatRelativeTime(item.filedAt))}</p>
-      </div>
+      </button>
     `;
   }).join("");
+
+  const selectionCard = renderGraphSelectionCard(selectedPin || {
+    id: insiderPinID(selectedItem),
+    kicker: "Insider selection",
+    title: `${selectedItem.ticker} · ${selectedItem.label || selectedItem.ticker}`,
+    subtitle: `${selectedItem.insiderName || "Unknown insider"} · ${selectedItem.confidence || 0}/100`,
+    summary: `${isSellDirection(selectedItem.direction) ? "Bearish" : "Bullish"} filing worth ${formatCompactUSD(selectedItem.tradeValueUSD)}${selectedItem.filedAt ? ` · filed ${formatRelativeTime(selectedItem.filedAt)}` : ""}`,
+    url: normalizeExternalURL(selectedItem.externalURL),
+    actionLabel: "Open filing",
+    badges: [
+      { label: isSellDirection(selectedItem.direction) ? "Bearish" : "Bullish", className: isSellDirection(selectedItem.direction) ? "sell" : "buy" }
+    ],
+    metrics: [
+      { label: "Trade", value: formatCompactUSD(selectedItem.tradeValueUSD) },
+      { label: "Confidence", value: `${selectedItem.confidence || 0}/100` },
+      { label: "Filed", value: formatDateTime(selectedItem.filedAt) },
+      { label: "Ticker", value: selectedItem.ticker }
+    ]
+  });
 
   return renderGraphPanel(
     "Insider conviction",
     "Largest fresh insider values in the ranked tape.",
-    `<div class="insider-graph-list">${rows}</div>`
+    `<div class="insider-graph-list">${rows}</div>${selectionCard}`
   );
 }
 
@@ -438,6 +864,49 @@ function renderSourceFreshnessPanel(chart) {
     "Live, placeholder, or missing across the three source feeds.",
     `<div class="freshness-grid">${cards}</div>`
   );
+}
+
+function renderGraphSelectionCard(item) {
+  if (!item) {
+    return "";
+  }
+
+  const badges = safeArray(item.badges)
+    .map((badge) => renderPinBadge(badge))
+    .join("");
+  const metrics = safeArray(item.metrics)
+    .slice(0, 4)
+    .map((metric) => miniStat(metric.label, metric.value))
+    .join("");
+  const actions = [
+    renderExternalAction(item.actionLabel || "Open", item.url, "signal-link"),
+    renderPinAction(item.id)
+  ].filter(Boolean).join("");
+
+  return `
+    <article class="graph-selection-card">
+      <div class="compact-head">
+        <div>
+          <p class="section-kicker">${escapeHTML(item.kicker || "Selection")}</p>
+          <h4 class="graph-selection-title">${escapeHTML(item.title || "Selected item")}</h4>
+        </div>
+        <div class="badges">
+          ${badges}
+        </div>
+      </div>
+      <p class="graph-selection-subtitle">${escapeHTML(item.subtitle || "No detail available.")}</p>
+      ${item.summary ? `<p class="graph-meta-line">${escapeHTML(item.summary)}</p>` : ""}
+      <div class="wallet-summary pinned-metrics">
+        ${metrics}
+      </div>
+      <div class="signal-footer">
+        <span class="footer-note">${escapeHTML(item.scopeLabel || "Selected from graph")}</span>
+        <div class="card-action-row">
+          ${actions}
+        </div>
+      </div>
+    </article>
+  `;
 }
 
 function renderGraphPanel(title, description, body) {
@@ -477,6 +946,1371 @@ function renderPulse(overlayFeed) {
   ].join("");
 }
 
+function renderXGBoost(section) {
+  if (!section?.available) {
+    const message = "XGBoost view fills in when shadow snapshots or model-aware scan runs are available.";
+    refs.xgboostTrendGrid.innerHTML = renderEmpty(message);
+    refs.xgboostSummaryGrid.innerHTML = renderEmpty(message);
+    refs.xgboostPanelGrid.innerHTML = renderEmpty(message);
+    refs.xgboostModelTop.innerHTML = renderEmpty(message);
+    refs.xgboostSwiftTop.innerHTML = renderEmpty(message);
+    return;
+  }
+
+  refs.xgboostTrendGrid.innerHTML = [
+    renderXGBoostPerformanceWinRatePanel(section.performance, section.coverage),
+    renderXGBoostPerformanceEdgePanel(section.performance, section.coverage),
+    renderXGBoostActivityTrendPanel(section.daily),
+    renderXGBoostAlignmentTrendPanel(section.daily)
+  ].join("");
+  refs.xgboostSummaryGrid.innerHTML = renderXGBoostSummaryGrid(section);
+  refs.xgboostPanelGrid.innerHTML = [
+    renderXGBoostPerformanceScoreboardPanel(section.performance, section.coverage),
+    renderXGBoostCoveragePanel(section.coverage),
+    renderXGBoostPerformanceCallsPanel(
+      "Recent resolved model calls",
+      "Latest resolved XGBoost-tagged calls, scored from the model's own stance.",
+      safeArray(section.performance?.recentEvaluations),
+      xgboostCoverageEmptyMessage(section.coverage, "No resolved model-tagged calls yet in the current performance window.")
+    ),
+    renderXGBoostPerformanceCallsPanel(
+      "Best model calls",
+      "Strongest realized model edges from the recent resolved window.",
+      safeArray(section.performance?.bestCalls),
+      xgboostCoverageEmptyMessage(section.coverage, "No decisive model wins yet in the current performance window.")
+    ),
+    renderXGBoostPerformanceCallsPanel(
+      "Worst model calls",
+      "Hard misses where the model-tagged stance underperformed the market move.",
+      safeArray(section.performance?.worstCalls),
+      xgboostCoverageEmptyMessage(section.coverage, "No decisive model misses yet in the current performance window.")
+    ),
+    renderXGBoostStatusPanel(section),
+    renderXGBoostRunPanel(section),
+    renderXGBoostSignalPanel(
+      "Latest shadow candidates",
+      "Most recent rows scored by the shadow model.",
+      safeArray(section.shadow?.scoredRows),
+      "No scored shadow candidates were available on the latest snapshot.",
+      "Shadow row"
+    ),
+    renderXGBoostSignalPanel(
+      "Top disagreements",
+      "Where Swift and the model diverged inside the top-K window.",
+      safeArray(section.shadow?.disagreements),
+      "Swift and XGBoost were aligned on the latest shadow export.",
+      "Disagreement"
+    )
+  ].join("");
+  refs.xgboostModelTop.innerHTML = renderXGBoostSignalList(
+    safeArray(section.shadow?.topModel),
+    "No model-ranked rows were available in the latest shadow export.",
+    "Model top"
+  );
+  refs.xgboostSwiftTop.innerHTML = renderXGBoostSignalList(
+    safeArray(section.shadow?.topSwift),
+    "No Swift-ranked rows were available in the latest shadow export.",
+    "Swift top"
+  );
+}
+
+function renderXGBoostActivityTrendPanel(dailySection) {
+  const items = safeArray(dailySection?.items);
+  const hasSignal = items.some((item) => (item.scoredRows || 0) > 0 || (item.enabledRuns || 0) > 0);
+  if (!items.length || !hasSignal) {
+    return renderGraphPanel(
+      "Activity over time",
+      "Daily scored rows and enabled runs over the recent model window.",
+      renderEmpty("No daily XGBoost activity was recorded in the current trend window.")
+    );
+  }
+
+  const latestActiveDay = [...items].reverse().find((item) => (item.scoredRows || 0) > 0 || (item.enabledRuns || 0) > 0) || null;
+  return renderGraphPanel(
+    "Activity over time",
+    "Daily scored rows and enabled runs over the recent model window.",
+    `
+      ${renderXGBoostTrendPlot(items, [
+        { key: "scoredRows", label: "Scored rows", className: "activity" },
+        { key: "enabledRuns", label: "Enabled runs", className: "enabled" }
+      ])}
+      <p class="graph-meta-line">${
+        latestActiveDay
+          ? escapeHTML(
+              `Latest active day: ${formatHistoryDay(latestActiveDay.day)} · ${latestActiveDay.scoredRows || 0} scored row(s) · ${latestActiveDay.enabledRuns || 0} enabled run(s)`
+            )
+          : "No active XGBoost days in the current window."
+      }</p>
+    `
+  );
+}
+
+function renderXGBoostAlignmentTrendPanel(dailySection) {
+  const items = safeArray(dailySection?.items);
+  const hasSignal = items.some((item) =>
+    (item.supportCount || 0) > 0 ||
+    (item.skepticalCount || 0) > 0 ||
+    (item.topKDisagreementCount || 0) > 0
+  );
+  if (!items.length || !hasSignal) {
+    return renderGraphPanel(
+      "Agreement profile",
+      "Daily support, skeptical, and disagreement counts from model-aware runs.",
+      renderEmpty("No support/skeptical/disagreement trend was recorded in the current window.")
+    );
+  }
+
+  const totals = items.reduce((accumulator, item) => {
+    accumulator.support += item.supportCount || 0;
+    accumulator.skeptical += item.skepticalCount || 0;
+    accumulator.disagreements += item.topKDisagreementCount || 0;
+    return accumulator;
+  }, { support: 0, skeptical: 0, disagreements: 0 });
+
+  return renderGraphPanel(
+    "Agreement profile",
+    "Daily support, skeptical, and disagreement counts from model-aware runs.",
+    `
+      ${renderXGBoostTrendPlot(items, [
+        { key: "supportCount", label: "Supports", className: "support" },
+        { key: "skepticalCount", label: "Skeptical", className: "skeptical" },
+        { key: "topKDisagreementCount", label: "Top-K diff", className: "disagreement" }
+      ])}
+      <p class="graph-meta-line">${escapeHTML(
+        `Window total: ${totals.support} support · ${totals.skeptical} skeptical · ${totals.disagreements} top-K disagreement`
+      )}</p>
+    `
+  );
+}
+
+function renderXGBoostTrendPlot(items, seriesDefinitions) {
+  const width = 560;
+  const height = 240;
+  const padLeft = 42;
+  const padRight = 16;
+  const padTop = 18;
+  const padBottom = 34;
+  const usableWidth = width - padLeft - padRight;
+  const usableHeight = height - padTop - padBottom;
+  const maxValue = Math.max(
+    1,
+    ...seriesDefinitions.flatMap((series) => items.map((item) => Number(item?.[series.key]) || 0))
+  );
+  const xForIndex = (index) => {
+    if (items.length <= 1) {
+      return padLeft + usableWidth / 2;
+    }
+    return padLeft + (index / (items.length - 1)) * usableWidth;
+  };
+  const yForValue = (value) => padTop + usableHeight - ((Number(value) || 0) / maxValue) * usableHeight;
+  const xTicks = items.map((item, index) => ({
+    x: xForIndex(index),
+    label: formatHistoryDay(item.day)
+  })).filter((tick, index, all) => index === 0 || index === all.length - 1 || index === Math.floor(all.length / 2));
+  const yTicks = Array.from(new Set([0, Math.ceil(maxValue / 2), maxValue])).sort((a, b) => a - b);
+
+  const lines = seriesDefinitions.map((series) => {
+    const linePoints = items.map((item, index) => `${xForIndex(index)},${yForValue(item?.[series.key])}`).join(" ");
+    const circles = items.map((item, index) => `
+      <circle
+        class="plot-point ${escapeHTML(series.className)}"
+        cx="${xForIndex(index).toFixed(1)}"
+        cy="${yForValue(item?.[series.key]).toFixed(1)}"
+        r="3.5"
+      ></circle>
+    `).join("");
+    return `
+      <polyline class="plot-line ${escapeHTML(series.className)}" points="${linePoints}"></polyline>
+      ${circles}
+    `;
+  }).join("");
+
+  const verticals = xTicks.map((tick) => `
+    <line class="plot-grid plot-grid-vertical" x1="${tick.x.toFixed(1)}" y1="${padTop}" x2="${tick.x.toFixed(1)}" y2="${height - padBottom}"></line>
+  `).join("");
+  const horizontals = yTicks.map((tick) => {
+    const y = yForValue(tick);
+    return `<line class="plot-grid" x1="${padLeft}" y1="${y.toFixed(1)}" x2="${width - padRight}" y2="${y.toFixed(1)}"></line>`;
+  }).join("");
+
+  return `
+    <svg class="plot-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="XGBoost trend plot">
+      ${horizontals}
+      ${verticals}
+      <line class="plot-axis" x1="${padLeft}" y1="${height - padBottom}" x2="${width - padRight}" y2="${height - padBottom}"></line>
+      <line class="plot-axis" x1="${padLeft}" y1="${padTop}" x2="${padLeft}" y2="${height - padBottom}"></line>
+      ${lines}
+      ${xTicks.map((tick) => `
+        <text class="plot-tick" x="${tick.x.toFixed(1)}" y="${height - 10}" text-anchor="middle">${escapeHTML(tick.label)}</text>
+      `).join("")}
+      ${yTicks.map((tick) => `
+        <text class="plot-tick" x="${padLeft - 8}" y="${(yForValue(tick) + 4).toFixed(1)}" text-anchor="end">${escapeHTML(String(tick))}</text>
+      `).join("")}
+    </svg>
+    <div class="plot-legend">
+      ${seriesDefinitions.map((series) => `
+        <div class="plot-legend-item">
+          <span class="plot-dot ${escapeHTML(series.className)}"></span>
+          <span>${escapeHTML(series.label)}</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderSignedTrendPlot(items, valueKey, label, className, formatter) {
+  const width = 560;
+  const height = 240;
+  const padLeft = 52;
+  const padRight = 16;
+  const padTop = 18;
+  const padBottom = 34;
+  const usableWidth = width - padLeft - padRight;
+  const usableHeight = height - padTop - padBottom;
+  const values = items.map((item) => Number(item?.[valueKey]) || 0);
+  let minValue = Math.min(0, ...values);
+  let maxValue = Math.max(0, ...values);
+  if (minValue === maxValue) {
+    if (minValue === 0) {
+      maxValue = 1;
+    } else if (minValue > 0) {
+      minValue = 0;
+    } else {
+      maxValue = 0;
+    }
+  }
+  const xForIndex = (index) => {
+    if (items.length <= 1) {
+      return padLeft + usableWidth / 2;
+    }
+    return padLeft + (index / (items.length - 1)) * usableWidth;
+  };
+  const yForValue = (value) => {
+    const ratio = (Number(value || 0) - minValue) / (maxValue - minValue);
+    return padTop + usableHeight - ratio * usableHeight;
+  };
+  const xTicks = items.map((item, index) => ({
+    x: xForIndex(index),
+    label: formatHistoryDay(item.day)
+  })).filter((tick, index, all) => index === 0 || index === all.length - 1 || index === Math.floor(all.length / 2));
+  const yTicks = Array.from(new Set([minValue, 0, maxValue]))
+    .sort((a, b) => a - b);
+  const linePoints = items.map((item, index) => `${xForIndex(index)},${yForValue(item?.[valueKey])}`).join(" ");
+  const zeroY = yForValue(0);
+
+  return `
+    <svg class="plot-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeAttribute(label)} trend plot">
+      ${yTicks.map((tick) => {
+        const y = yForValue(tick);
+        const gridClass = tick === 0 ? "plot-grid plot-axis-zero" : "plot-grid";
+        return `<line class="${gridClass}" x1="${padLeft}" y1="${y.toFixed(1)}" x2="${width - padRight}" y2="${y.toFixed(1)}"></line>`;
+      }).join("")}
+      ${xTicks.map((tick) => `
+        <line class="plot-grid plot-grid-vertical" x1="${tick.x.toFixed(1)}" y1="${padTop}" x2="${tick.x.toFixed(1)}" y2="${height - padBottom}"></line>
+      `).join("")}
+      <line class="plot-axis" x1="${padLeft}" y1="${height - padBottom}" x2="${width - padRight}" y2="${height - padBottom}"></line>
+      <line class="plot-axis" x1="${padLeft}" y1="${padTop}" x2="${padLeft}" y2="${height - padBottom}"></line>
+      <polyline class="plot-line ${escapeHTML(className)}" points="${linePoints}"></polyline>
+      ${items.map((item, index) => `
+        <circle
+          class="plot-point ${escapeHTML(className)}"
+          cx="${xForIndex(index).toFixed(1)}"
+          cy="${yForValue(item?.[valueKey]).toFixed(1)}"
+          r="3.5"
+        ></circle>
+      `).join("")}
+      ${xTicks.map((tick) => `
+        <text class="plot-tick" x="${tick.x.toFixed(1)}" y="${height - 10}" text-anchor="middle">${escapeHTML(tick.label)}</text>
+      `).join("")}
+      ${yTicks.map((tick) => `
+        <text class="plot-tick" x="${padLeft - 8}" y="${(yForValue(tick) + 4).toFixed(1)}" text-anchor="end">${escapeHTML(formatter(tick))}</text>
+      `).join("")}
+    </svg>
+    <div class="plot-legend">
+      <div class="plot-legend-item">
+        <span class="plot-dot ${escapeHTML(className)}"></span>
+        <span>${escapeHTML(label)}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderXGBoostSummaryGrid(section) {
+  const status = section.status || {};
+  const trend = section.trend || {};
+  const shadow = section.shadow || {};
+  const runs = section.runs || {};
+  const coverage = section.coverage || {};
+  const performance = section.performance || {};
+  const oneHour = safeArray(performance.horizons).find((item) => item.horizonHours === 1);
+  const twentyFourHour = safeArray(performance.horizons).find((item) => item.horizonHours === 24);
+
+  return [
+    renderHistoryStatCard(
+      "Mode",
+      status.label || "Idle",
+      status.title || "No status available"
+    ),
+    renderHistoryStatCard(
+      "Latest shadow rows",
+      shadow.rowCount || 0,
+      shadow.generatedAt
+        ? `${formatDateTime(shadow.generatedAt)} · top-K ${shadow.topK || 0}`
+        : "No shadow file timestamp available"
+    ),
+    renderHistoryStatCard(
+      "Enabled runs",
+      trend.enabledRuns || runs.enabledRuns || 0,
+      runs.latestEnabledRunAt
+        ? `Latest enabled ${formatRelativeTime(runs.latestEnabledRunAt)}`
+        : "No recent enabled run"
+    ),
+    renderHistoryStatCard(
+      "Tagged history",
+      coverage.taggedHistoryRowCount || 0,
+      coverage.latestTaggedRunAt
+        ? `Latest tagged ${formatRelativeTime(coverage.latestTaggedRunAt)}`
+        : "No model-tagged history rows yet"
+    ),
+    renderHistoryStatCard(
+      "Resolved evals",
+      coverage.resolvedEvaluationCount ?? performance.totalEvaluations ?? 0,
+      performance.latestEvaluationAt
+        ? `Latest ${formatRelativeTime(performance.latestEvaluationAt)}`
+        : "No resolved model-tagged calls yet"
+    ),
+    renderHistoryStatCard(
+      "Categories touched",
+      coverage.categoryCount || 0,
+      coverage.categoryCount
+        ? `${formatCategory(coverage.categories?.[0]?.category)} leads the current tagged archive`
+        : "No category coverage yet"
+    ),
+    renderHistoryStatCard(
+      "1h model win rate",
+      oneHour?.decisiveWinRate !== null && oneHour?.decisiveWinRate !== undefined ? formatPercent(oneHour.decisiveWinRate) : "-",
+      oneHour ? `${oneHour.wins} win / ${oneHour.losses} loss / ${oneHour.neutrals} neutral` : "No 1h resolved model calls yet"
+    ),
+    renderHistoryStatCard(
+      "24h model win rate",
+      twentyFourHour?.decisiveWinRate !== null && twentyFourHour?.decisiveWinRate !== undefined ? formatPercent(twentyFourHour.decisiveWinRate) : "-",
+      twentyFourHour ? `${twentyFourHour.wins} win / ${twentyFourHour.losses} loss / ${twentyFourHour.neutrals} neutral` : "No 24h resolved model calls yet"
+    )
+  ].join("");
+}
+
+function renderXGBoostPerformanceWinRatePanel(performance, coverage) {
+  const items = safeArray(performance?.daily);
+  if (!items.length) {
+    return renderGraphPanel(
+      "Model hit rate",
+      "Daily decisive win rate for resolved model-tagged calls.",
+      renderEmpty(xgboostCoverageEmptyMessage(
+        coverage,
+        "No resolved XGBoost-tagged evaluations yet. This will start filling after model-tagged calls settle."
+      ))
+    );
+  }
+
+  const latest = items[items.length - 1];
+  return renderGraphPanel(
+    "Model hit rate",
+    "Daily decisive win rate for resolved model-tagged calls.",
+    `
+      ${renderXGBoostTrendPlot(items, [
+        { key: "decisiveWinRatePercent", label: "Win rate", className: "support" }
+      ])}
+      <p class="graph-meta-line">${escapeHTML(
+        `Latest evaluated day: ${formatHistoryDay(latest.day)} · ${latest.decisiveTotal || 0} decisive row(s) · ${latest.decisiveWinRate !== null && latest.decisiveWinRate !== undefined ? formatPercent(latest.decisiveWinRate) : "-"}`
+      )}</p>
+    `
+  );
+}
+
+function renderXGBoostPerformanceEdgePanel(performance, coverage) {
+  const items = safeArray(performance?.daily);
+  if (!items.length) {
+    return renderGraphPanel(
+      "Realized edge",
+      "Daily average model edge on resolved XGBoost-tagged calls.",
+      renderEmpty(xgboostCoverageEmptyMessage(
+        coverage,
+        "No resolved model edge yet. This fills once model-tagged rows get evaluated."
+      ))
+    );
+  }
+
+  const latest = items[items.length - 1];
+  return renderGraphPanel(
+    "Realized edge",
+    "Daily average model edge on resolved XGBoost-tagged calls.",
+    `
+      ${renderSignedTrendPlot(
+        items,
+        "averageModelEdge",
+        "Realized edge",
+        "activity",
+        formatSignedPoints
+      )}
+      <p class="graph-meta-line">${escapeHTML(
+        `Latest evaluated day: ${formatHistoryDay(latest.day)} · average edge ${formatSignedPoints(latest.averageModelEdge)}`
+      )}</p>
+    `
+  );
+}
+
+function renderXGBoostPerformanceScoreboardPanel(performance, coverage) {
+  const horizons = safeArray(performance?.horizons);
+  if (!horizons.length) {
+    return renderGraphPanel(
+      "Resolved model calls",
+      "Model-side wins and losses split by evaluation horizon.",
+      renderEmpty(xgboostCoverageEmptyMessage(
+        coverage,
+        "No resolved XGBoost-tagged calls have been recorded yet."
+      ))
+    );
+  }
+
+  const rows = horizons.map((item) => `
+    <div class="history-score-row">
+      <div class="history-score-head">
+        <div>
+          <strong>${escapeHTML(item.label)}</strong>
+          <p class="graph-meta-line">${escapeHTML(String(item.total || 0))} resolved rows · ${escapeHTML(formatPercent(item.decisiveWinRate))} decisive win rate</p>
+        </div>
+        <span class="history-edge ${Number(item.averageModelEdge) >= 0 ? "positive" : "negative"}">${escapeHTML(formatSignedEdge(item.averageModelEdge))}</span>
+      </div>
+      ${renderHistoryOutcomeBar({ total: item.total, wins: item.wins, losses: item.losses, flats: item.neutrals })}
+      <div class="compact-footer">
+        ${miniBadge("Wins", item.wins || 0)}
+        ${miniBadge("Losses", item.losses || 0)}
+        ${miniBadge("Neutral", item.neutrals || 0)}
+        ${miniBadge("Edge", formatSignedPoints(item.averageModelEdge))}
+      </div>
+    </div>
+  `).join("");
+
+  return renderGraphPanel(
+    "Resolved model calls",
+    "Model-side wins and losses split by evaluation horizon.",
+    `<div class="history-score-list">${rows}</div>`
+  );
+}
+
+function renderXGBoostCoveragePanel(coverage) {
+  const categories = safeArray(coverage?.categories);
+  if (!categories.length) {
+    return renderGraphPanel(
+      "Coverage by category",
+      "Where the model has actually touched the history archive.",
+      renderEmpty("No XGBoost-tagged history rows have been recorded yet.")
+    );
+  }
+
+  const rows = categories.slice(0, 8).map((item) => `
+    <div class="history-score-row">
+      <div class="history-score-head">
+        <div>
+          <strong>${escapeHTML(formatCategory(item.category))}</strong>
+          <p class="graph-meta-line">${escapeHTML(String(item.taggedRows || 0))} tagged row(s) · ${escapeHTML(String(item.resolvedEvaluations || 0))} resolved eval(s)</p>
+        </div>
+        <span class="history-edge ${item.resolvedEvaluations ? ((Number(item.averageModelEdge) || 0) >= 0 ? "positive" : "negative") : ""}">${escapeHTML(
+          item.resolvedEvaluations ? formatSignedEdge(item.averageModelEdge) : "No edge yet"
+        )}</span>
+      </div>
+      ${
+        item.resolvedEvaluations
+          ? renderHistoryOutcomeBar({
+              total: item.resolvedEvaluations,
+              wins: item.wins,
+              losses: item.losses,
+              flats: item.neutrals
+            })
+          : `<p class="graph-meta-line">No resolved model calls in this category yet.</p>`
+      }
+      <div class="compact-footer">
+        ${miniBadge("Tagged", item.taggedRows || 0)}
+        ${miniBadge("Resolved", item.resolvedEvaluations || 0)}
+        ${miniBadge("Win rate", item.decisiveWinRate !== null && item.decisiveWinRate !== undefined ? formatPercent(item.decisiveWinRate) : "-")}
+        ${miniBadge("Latest tagged", item.latestTaggedRunAt ? formatRelativeTime(item.latestTaggedRunAt) : "n/a")}
+      </div>
+    </div>
+  `).join("");
+
+  return renderGraphPanel(
+    "Coverage by category",
+    "How much model-tagged history exists in each category, even before rows resolve.",
+    `<div class="history-score-list">${rows}</div>`
+  );
+}
+
+function renderXGBoostPerformanceCallsPanel(title, description, items, emptyMessage) {
+  if (!items.length) {
+    return renderGraphPanel(title, description, renderEmpty(emptyMessage));
+  }
+
+  return renderGraphPanel(
+    title,
+    description,
+    `<div class="history-call-list">${items.map(renderXGBoostPerformanceCallItem).join("")}</div>`
+  );
+}
+
+function renderXGBoostPerformanceCallItem(item) {
+  const marketURL = getSignalMarketURL(item);
+  const modelLabel = normalizedModelOutcomeLabel(item.modelOutcome);
+  const modelLabelClass = evaluationLabelClass(modelLabel);
+  const stanceClass = item.xgboostStance || "neutral";
+  const edgeClass = Number(item.modelEdge) >= 0 ? "positive" : "negative";
+  const rankParts = [];
+  if (item.xgboostModelRank) {
+    rankParts.push(`Model #${item.xgboostModelRank}`);
+  }
+  if (item.xgboostSwiftRank) {
+    rankParts.push(`Swift #${item.xgboostSwiftRank}`);
+  }
+
+  return `
+    <article ${renderCardSurfaceAttributes("history-call-item", marketURL, `Open model evaluation for ${item.title}`)}>
+      <div class="history-call-head">
+        <div>
+          <strong>${escapeHTML(truncateText(item.title, 56))}</strong>
+          <p class="graph-meta-line">${escapeHTML(item.horizonLabel || "-")} · ${escapeHTML(plainOutcome(item.outcome))} · ${escapeHTML(formatRelativeTime(item.evaluatedAt))}</p>
+        </div>
+        <span class="history-move ${edgeClass}">${escapeHTML(formatSignedPoints(item.modelEdge))}</span>
+      </div>
+      <div class="compact-copy">
+        <p>${escapeHTML(formatStance(item.xgboostStance))}${rankParts.length ? ` · ${escapeHTML(rankParts.join(" · "))}` : ""}</p>
+        <p>${escapeHTML(`Signal row ended ${formatEvaluationLabel(item.label)} with raw move ${formatSignedPoints(item.favorablePriceChange)}.`)}</p>
+      </div>
+      <div class="compact-footer">
+        <span class="badge ${escapeHTML(modelLabelClass)}">${escapeHTML(`Model ${formatEvaluationLabel(modelLabel)}`)}</span>
+        <span class="badge ${escapeHTML(stanceClass)}">${escapeHTML(formatTake(item.xgboostStance))}</span>
+        ${miniBadge("Signal", formatEvaluationLabel(item.label))}
+        ${miniBadge("Score", formatModelScore(item.xgboostModelScore))}
+        ${miniBadge("Entry", formatMarketPrice(item.entryPrice))}
+        ${miniBadge("Observed", formatMarketPrice(item.observedPrice))}
+        ${renderExternalAction("Open market", marketURL)}
+        ${renderPinAction(historyEvaluationPinID(item))}
+      </div>
+    </article>
+  `;
+}
+
+function renderXGBoostStatusPanel(section) {
+  const status = section.status || {};
+  const live = section.live || {};
+  const shadow = section.shadow || {};
+  const coverage = section.coverage || {};
+
+  return renderGraphPanel(
+    "Shadow status",
+    "Current model mode plus the latest synced shadow snapshot.",
+    `
+      <div class="xgboost-status-card">
+        <div class="compact-head">
+          <div>
+            <p class="section-kicker">${escapeHTML(status.label || "XGBoost")}</p>
+            <h4 class="graph-selection-title">${escapeHTML(status.title || "No model status available")}</h4>
+          </div>
+          <div class="badges">
+            <span class="badge ${escapeHTML(status.className || "neutral")}">${escapeHTML(status.label || "Idle")}</span>
+            <span class="badge ${live.enabled ? "supports" : "neutral"}">${escapeHTML(live.enabled ? "Enabled" : "Disabled")}</span>
+          </div>
+        </div>
+        <p class="graph-selection-subtitle">${escapeHTML(status.body || "No XGBoost status body available.")}</p>
+        <p class="graph-meta-line">${escapeHTML(status.detail || shadow.modelName || "No active model artifact found.")}</p>
+        <div class="wallet-summary pinned-metrics">
+          ${miniStat("Live rows", live.rowCount ?? 0)}
+          ${miniStat("Support", live.supportCount ?? 0)}
+          ${miniStat("Skeptical", live.skepticalCount ?? 0)}
+          ${miniStat("Shadow rows", shadow.rowCount ?? 0)}
+          ${miniStat("Tagged", coverage.taggedHistoryRowCount ?? 0)}
+          ${miniStat("Resolved", coverage.resolvedEvaluationCount ?? 0)}
+        </div>
+      </div>
+    `
+  );
+}
+
+function renderXGBoostRunPanel(section) {
+  const runs = safeArray(section?.runs?.items);
+  if (!runs.length) {
+    return renderGraphPanel(
+      "Recent runs",
+      "Latest model-aware scan runs from the market-trans history store.",
+      renderEmpty("No model-aware scan runs were found in the recent history window.")
+    );
+  }
+
+  const maxRows = Number(section?.runs?.maxScoredRows) || 1;
+  const rows = runs.map((item) => `
+    <div class="xgboost-run-item">
+      <div class="history-score-head">
+        <div>
+          <strong>${escapeHTML(item.startedAt ? formatRelativeTime(item.startedAt) : "Unknown run")}</strong>
+          <p class="graph-meta-line">${escapeHTML(item.startedAt ? formatDateTime(item.startedAt) : "No timestamp")}</p>
+        </div>
+        <div class="badges">
+          <span class="badge ${item.enabled ? "supports" : "neutral"}">${escapeHTML(item.enabled ? "Enabled" : "Idle")}</span>
+          <span class="badge neutral">${escapeHTML(String(item.scoredRowCount || 0))} rows</span>
+        </div>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill xgboost-run-fill" style="--fill:${clampPercent(((item.scoredRowCount || 0) / maxRows) * 100)}%"></div>
+      </div>
+      <div class="compact-footer">
+        ${miniBadge("Support", item.supportCount || 0)}
+        ${miniBadge("Skeptical", item.skepticalCount || 0)}
+        ${miniBadge("Top-K diff", item.topKDisagreementCount || 0)}
+        ${miniBadge("Promoted", item.promotedCount || 0)}
+      </div>
+    </div>
+  `).join("");
+
+  return renderGraphPanel(
+    "Recent runs",
+    "Latest model-aware scan runs from the market-trans history store.",
+    `<div class="xgboost-run-list">${rows}</div>`
+  );
+}
+
+function renderXGBoostSignalPanel(title, description, items, emptyMessage, kicker) {
+  return renderGraphPanel(
+    title,
+    description,
+    renderXGBoostSignalList(items, emptyMessage, kicker)
+  );
+}
+
+function renderXGBoostSignalList(items, emptyMessage, kicker) {
+  if (!items.length) {
+    return renderEmpty(emptyMessage);
+  }
+
+  return `<div class="compact-list xgboost-signal-list">${items.map((item) => renderXGBoostSignalItem(item, kicker)).join("")}</div>`;
+}
+
+function renderXGBoostSignalItem(item, kicker = "XGBoost row") {
+  const marketURL = getSignalMarketURL(item);
+  const flags = safeArray(item.flags);
+
+  return `
+    <article ${renderCardSurfaceAttributes("compact-card xgboost-signal-item", marketURL, `Open XGBoost row for ${item.title}`)}>
+      <div class="compact-head">
+        <div>
+          ${renderLinkedText("p", "compact-title", item.title, marketURL)}
+        </div>
+        <span class="badge neutral">${escapeHTML(kicker)}</span>
+      </div>
+      <div class="compact-copy">
+        <p>${escapeHTML(plainOutcome(item.outcome))} · ${escapeHTML(formatCategory(item.category))} · ${escapeHTML(String(item.confidence || 0))}/100</p>
+        <p>${escapeHTML(describeXGBoostRow(item))}</p>
+      </div>
+      <div class="compact-footer">
+        ${item.modelRank ? miniBadge("Model #", item.modelRank) : ""}
+        ${item.swiftRank ? miniBadge("Swift #", item.swiftRank) : ""}
+        ${miniBadge("Score", formatModelScore(item.modelScore))}
+        ${miniBadge("Price", formatMarketPrice(item.currentPrice))}
+        ${flags.length ? miniBadge("Flags", flags.slice(0, 2).join(", ")) : ""}
+        ${renderExternalAction("Open market", marketURL)}
+        ${renderPinAction(xgboostPinID(item))}
+      </div>
+    </article>
+  `;
+}
+
+function renderPinnedWorkspace(overlayFeed) {
+  const pins = appState.pinnedIds
+    .map((id) => appState.pinRegistry.get(id))
+    .filter(Boolean);
+  const scopeCounts = pins.reduce((accumulator, pin) => {
+    accumulator[pin.scope] = (accumulator[pin.scope] || 0) + 1;
+    return accumulator;
+  }, {});
+
+  refs.pinnedToolbar.innerHTML = pins.length
+    ? `
+      <button class="workspace-button" type="button" data-clear-pins="true">Clear pinned</button>
+      <p class="workspace-note">${escapeHTML(String(pins.length))} item${pins.length === 1 ? "" : "s"} saved locally in this browser.</p>
+    `
+    : `<p class="workspace-note">Pins are saved locally in this browser. Use any \`Pin\` action to build your own working set.</p>`;
+
+  refs.pinnedSummaryGrid.innerHTML = [
+    summaryCard("Pinned", pins.length),
+    summaryCard("Market", scopeCounts.market || 0),
+    summaryCard("Wallets", scopeCounts.wallet || 0),
+    summaryCard("XGBoost", scopeCounts.xgboost || 0),
+    summaryCard("History", scopeCounts.history || 0),
+    summaryCard("Insider", scopeCounts.insider || 0),
+    summaryCard("Feeds online", overlayFeed.summary?.feedsOnline ?? availableSourceCount(overlayFeed.sources))
+  ].join("");
+
+  refs.pinnedGrid.innerHTML = pins.length
+    ? pins.map(renderPinnedCard).join("")
+    : renderEmpty("Use `Pin` from any major card or graph selection to build your live Stonkvision workspace.");
+}
+
+function renderPinnedCard(pin) {
+  const primaryAction = pin.url ? renderExternalAction(pin.actionLabel || "Open", pin.url) : "";
+  const pinAction = renderPinAction(pin.id);
+  const badges = safeArray(pin.badges)
+    .map((badge) => renderPinBadge(badge))
+    .join("");
+  const metrics = safeArray(pin.metrics)
+    .slice(0, 4)
+    .map((metric) => miniStat(metric.label, metric.value))
+    .join("");
+
+  return `
+    <article ${renderCardSurfaceAttributes("signal-card pinned-card", pin.url, `Open pinned item ${pin.title}`)}>
+      <div class="card-top">
+        <div class="badges">
+          <span class="badge neutral">${escapeHTML(pin.kicker || "Pinned")}</span>
+          ${badges}
+        </div>
+        <span class="badge neutral">Pinned</span>
+      </div>
+
+      ${renderLinkedText("h3", "signal-title", pin.title, pin.url)}
+
+      <div class="signal-copy">
+        <p>${escapeHTML(pin.subtitle || "No subtitle available.")}</p>
+        ${pin.summary ? `<p>${escapeHTML(pin.summary)}</p>` : ""}
+      </div>
+
+      <div class="wallet-summary pinned-metrics">
+        ${metrics}
+      </div>
+
+      <div class="signal-footer">
+        <span class="footer-note">${escapeHTML(pin.scopeLabel || "Pinned workspace item")}</span>
+        <div class="card-action-row">
+          ${primaryAction}
+          ${pinAction}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderPinBadge(badge) {
+  if (!badge?.label) {
+    return "";
+  }
+  return `<span class="badge ${escapeHTML(badge.className || "neutral")}">${escapeHTML(badge.label)}</span>`;
+}
+
+function buildPinRegistry(overlayFeed) {
+  const registry = new Map();
+
+  safeArray(overlayFeed.market?.bestBets).forEach((signal) => {
+    addPinToRegistry(registry, createMarketPin(signal, "Market bet"));
+  });
+  safeArray(overlayFeed.market?.radar).forEach((signal) => {
+    addPinToRegistry(registry, createMarketPin(signal, "Radar signal"));
+  });
+
+  const wallets = safeArray(overlayFeed.wallets?.wallets);
+  wallets.forEach((wallet) => {
+    addPinToRegistry(registry, createWalletPin(wallet));
+    safeArray(wallet.positions).forEach((position) => {
+      addPinToRegistry(registry, createWalletPositionPin(wallet, position));
+    });
+  });
+
+  if (overlayFeed.wallets?.urgentAction) {
+    addPinToRegistry(registry, createWalletCommandPin(overlayFeed.wallets.urgentAction, "Wallet command"));
+  }
+
+  safeArray(overlayFeed.wallets?.commandGroups).forEach((group) => {
+    safeArray(group.positions).forEach((position) => {
+      addPinToRegistry(registry, createWalletCommandPin(position, group.label || "Wallet command"));
+    });
+  });
+
+  safeArray(overlayFeed.wallets?.diff?.wallets).forEach((delta) => {
+    addPinToRegistry(registry, createWalletDeltaPin(delta));
+  });
+
+  safeArray(overlayFeed.insider?.signals).forEach((signal) => {
+    addPinToRegistry(registry, createInsiderPin(signal));
+  });
+
+  safeArray(overlayFeed.xgboost?.shadow?.scoredRows).forEach((item) => {
+    addPinToRegistry(registry, createXGBoostPin(item, "Shadow row"));
+  });
+  safeArray(overlayFeed.xgboost?.shadow?.topModel).forEach((item) => {
+    addPinToRegistry(registry, createXGBoostPin(item, "Model top"));
+  });
+  safeArray(overlayFeed.xgboost?.shadow?.topSwift).forEach((item) => {
+    addPinToRegistry(registry, createXGBoostPin(item, "Swift top"));
+  });
+  safeArray(overlayFeed.xgboost?.shadow?.disagreements).forEach((item) => {
+    addPinToRegistry(registry, createXGBoostPin(item, "Disagreement"));
+  });
+  safeArray(overlayFeed.xgboost?.performance?.recentEvaluations).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Recent model call"));
+  });
+  safeArray(overlayFeed.xgboost?.performance?.bestCalls).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Best model call"));
+  });
+  safeArray(overlayFeed.xgboost?.performance?.worstCalls).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Worst model call"));
+  });
+
+  safeArray(overlayFeed.history?.market?.recentEvaluations).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Recent eval"));
+  });
+  safeArray(overlayFeed.history?.market?.bestCalls).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Best call"));
+  });
+  safeArray(overlayFeed.history?.market?.worstCalls).forEach((item) => {
+    addPinToRegistry(registry, createHistoryEvaluationPin(item, "Tough miss"));
+  });
+  safeArray(overlayFeed.history?.insider?.archive).forEach((item) => {
+    addPinToRegistry(registry, createHistoryInsiderPin(item));
+  });
+
+  return registry;
+}
+
+function addPinToRegistry(registry, pin) {
+  if (!pin?.id || registry.has(pin.id)) {
+    return;
+  }
+  registry.set(pin.id, pin);
+}
+
+function createMarketPin(signal, kicker = "Market bet") {
+  return {
+    id: marketPinID(signal),
+    scope: "market",
+    scopeLabel: "Live market",
+    kicker,
+    title: signal.title || "Market signal",
+    subtitle: `${plainOutcome(signal.outcome)} · ${formatCategory(signal.category)} · ${signal.confidence || 0}/100`,
+    summary: signal.marketBiasSummary || "Live market signal from market-trans.",
+    url: getSignalMarketURL(signal),
+    actionLabel: "Open market",
+    badges: [
+      { label: formatDirection(signal.direction), className: isSellDirection(signal.direction) ? "sell" : "buy" },
+      { label: formatTake(signal.take), className: "neutral" }
+    ],
+    metrics: [
+      { label: "Flow", value: formatCompactUSD(signal.weightedFlowUSD) },
+      { label: "Price", value: formatMarketPrice(signal.currentMarketPrice) },
+      { label: "Traders", value: signal.uniqueTraderCount ?? 0 },
+      { label: "Deadline", value: formatDaysToEnd(signal.daysToEnd) }
+    ]
+  };
+}
+
+function createWalletPin(wallet) {
+  return {
+    id: walletPinID(wallet),
+    scope: "wallet",
+    scopeLabel: "Wallet snapshot",
+    kicker: "Tracked wallet",
+    title: wallet.label || "Watched wallet",
+    subtitle: `${wallet.openPositionCount || 0} open · ${wallet.actionablePositionCount || 0} actionable · ${wallet.recentActivityCount || 0} recent`,
+    summary: shortWallet(wallet.wallet),
+    url: getWalletURL(wallet),
+    actionLabel: "Open wallet",
+    badges: [
+      { label: `${wallet.actionablePositionCount || 0} actionable`, className: (wallet.actionablePositionCount || 0) > 0 ? "buy" : "neutral" }
+    ],
+    metrics: [
+      { label: "Value", value: formatCompactUSD(wallet.totalCurrentValue) },
+      { label: "Open", value: wallet.openPositionCount ?? 0 },
+      { label: "Recent", value: wallet.recentActivityCount ?? 0 },
+      { label: "Last", value: formatRelativeTimeFromUnix(wallet.lastActivityTimestamp) }
+    ]
+  };
+}
+
+function createWalletPositionPin(wallet, position) {
+  const advice = position.advice;
+  return {
+    id: walletPositionPinID(wallet, position),
+    scope: "wallet",
+    scopeLabel: "Wallet position",
+    kicker: wallet.label || "Wallet position",
+    title: position.title || "Tracked position",
+    subtitle: `${plainOutcome(position.outcome)} · ${formatCompactUSD(position.currentValue)} · ${formatSignedPercent(position.percentPnL)}`,
+    summary: advice
+      ? `${advice.actionLabel} · ${advice.relationLabel} · ${advice.signal.title}`
+      : "Tracked wallet position without a live linked signal.",
+    url: getWalletMarketURL(position) || getWalletSignalURL(position) || getWalletURL(wallet),
+    actionLabel: "Open market",
+    badges: [
+      { label: advice?.actionLabel || "Tracked", className: advice?.action || "neutral" },
+      { label: plainOutcome(position.outcome), className: "neutral" }
+    ],
+    metrics: [
+      { label: "Current", value: formatCompactUSD(position.currentValue) },
+      { label: "Entry", value: formatMarketPrice(position.averageEntryPrice) },
+      { label: "Now", value: formatMarketPrice(position.currentPrice) },
+      { label: "Deadline", value: formatDaysToEndFromDate(position.endDate) }
+    ]
+  };
+}
+
+function createWalletCommandPin(position, kicker = "Wallet command") {
+  return {
+    id: walletCommandPinID(position),
+    scope: "wallet",
+    scopeLabel: "Wallet command",
+    kicker,
+    title: `${position.walletLabel || "Wallet"} · ${position.title || "Position"}`,
+    subtitle: `${position.actionLabel || formatAction(position.action)} · ${plainOutcome(position.outcome)} · ${position.signalConfidence || 0}/100`,
+    summary: position.relationLabel || position.signalTitle || "Live wallet command from wallet-watcher.",
+    url: normalizeExternalURL(position.marketURL) || normalizeExternalURL(position.signalURL) || normalizeExternalURL(position.walletURL),
+    actionLabel: "Open market",
+    badges: [
+      { label: position.actionLabel || formatAction(position.action), className: position.action || "neutral" }
+    ],
+    metrics: [
+      { label: "Value", value: formatCompactUSD(position.currentValue) },
+      { label: "Gap", value: formatSignedNumber(position.netScoreGap) },
+      { label: "Support", value: position.supportingSignalCount ?? 0 },
+      { label: "Oppose", value: position.opposingSignalCount ?? 0 }
+    ]
+  };
+}
+
+function createWalletDeltaPin(delta) {
+  const topHighlight = safeArray(delta.highlights)[0];
+  return {
+    id: walletDeltaPinID(delta),
+    scope: "wallet",
+    scopeLabel: "Wallet delta",
+    kicker: "Since last sync",
+    title: delta.label || "Wallet delta",
+    subtitle: `${formatSignedCompactUSD(delta.valueDeltaUSD)} · ${formatSignedCount(delta.openPositionDelta)} open · ${delta.actionChangeCount || 0} flips`,
+    summary: topHighlight ? describeWalletChange(topHighlight) : "Wallet changed since the previous sync.",
+    url: normalizeExternalURL(delta.walletURL),
+    actionLabel: "Open wallet",
+    badges: [
+      { label: delta.hasChanges ? "Changed" : "Stable", className: delta.hasChanges ? "buy" : "neutral" }
+    ],
+    metrics: [
+      { label: "Opened", value: delta.newPositionCount ?? 0 },
+      { label: "Closed", value: delta.closedPositionCount ?? 0 },
+      { label: "Flips", value: delta.actionChangeCount ?? 0 },
+      { label: "Value", value: formatSignedCompactUSD(delta.valueDeltaUSD) }
+    ]
+  };
+}
+
+function createInsiderPin(signal) {
+  return {
+    id: insiderPinID(signal),
+    scope: "insider",
+    scopeLabel: "Live insider",
+    kicker: "Insider signal",
+    title: `${signal.ticker} · ${signal.companyName || signal.ticker}`,
+    subtitle: `${signal.insiderName || "Unknown insider"} · ${signal.insiderTitle || "-"} · ${signal.confidence || 0}/100`,
+    summary: signal.summary || "Fresh insider filing from the ranked tape.",
+    url: getInsiderSignalURL(signal),
+    actionLabel: "Open filing",
+    badges: [
+      { label: isSellDirection(signal.direction) ? "Bearish" : "Bullish", className: isSellDirection(signal.direction) ? "sell" : "buy" }
+    ],
+    metrics: [
+      { label: "Trade", value: formatCompactUSD(signal.tradeValueUSD) },
+      { label: "Filed", value: formatDateTime(signal.filedAt) },
+      { label: "Type", value: signal.transactionType || "-" },
+      { label: "Watchlist", value: signal.watchlistMatch ? "Yes" : "No" }
+    ]
+  };
+}
+
+function createXGBoostPin(item, kicker = "XGBoost row") {
+  return {
+    id: xgboostPinID(item),
+    scope: "xgboost",
+    scopeLabel: "Model shadow",
+    kicker,
+    title: item.title || "Scored candidate",
+    subtitle: `${plainOutcome(item.outcome)} · ${formatCategory(item.category)} · ${item.confidence || 0}/100`,
+    summary: describeXGBoostRow(item),
+    url: getSignalMarketURL(item),
+    actionLabel: "Open market",
+    badges: [
+      { label: item.modelRank ? `Model #${item.modelRank}` : "Model row", className: "mixed" },
+      item.swiftRank ? { label: `Swift #${item.swiftRank}`, className: "neutral" } : null
+    ].filter(Boolean),
+    metrics: [
+      { label: "Score", value: formatModelScore(item.modelScore) },
+      { label: "Price", value: formatMarketPrice(item.currentPrice) },
+      { label: "Take", value: formatTake(item.take) },
+      { label: "Flags", value: safeArray(item.flags).slice(0, 2).join(", ") || "-" }
+    ]
+  };
+}
+
+function createHistoryEvaluationPin(item, kicker = "History row") {
+  const isModelEvaluation = Boolean(item?.xgboostStance);
+  const modelLabel = normalizedModelOutcomeLabel(item?.modelOutcome);
+  return {
+    id: historyEvaluationPinID(item),
+    scope: isModelEvaluation ? "xgboost" : "history",
+    scopeLabel: isModelEvaluation ? "Model evaluation" : "Scored history",
+    kicker,
+    title: item.title || "Evaluated call",
+    subtitle: isModelEvaluation
+      ? `${item.horizonLabel || "-"} · ${plainOutcome(item.outcome)} · Model ${formatEvaluationLabel(modelLabel)}`
+      : `${item.horizonLabel || "-"} · ${plainOutcome(item.outcome)} · ${formatEvaluationLabel(item.label)}`,
+    summary: isModelEvaluation
+      ? `${formatStance(item.xgboostStance)} · ${formatRelativeTime(item.evaluatedAt)} · edge ${formatSignedPoints(item.modelEdge)}`
+      : `${formatRelativeTime(item.evaluatedAt)} · favorable ${formatSignedPoints(item.favorablePriceChange)}`,
+    url: getSignalMarketURL(item),
+    actionLabel: "Open market",
+    badges: isModelEvaluation
+      ? [
+          { label: `Model ${formatEvaluationLabel(modelLabel)}`, className: evaluationLabelClass(modelLabel) },
+          { label: formatTake(item.xgboostStance), className: item.xgboostStance || "neutral" }
+        ]
+      : [
+          { label: formatEvaluationLabel(item.label), className: evaluationLabelClass(item.label) },
+          { label: formatCategory(item.category), className: "neutral" }
+        ],
+    metrics: isModelEvaluation
+      ? [
+          { label: "Entry", value: formatMarketPrice(item.entryPrice) },
+          { label: "Observed", value: formatMarketPrice(item.observedPrice) },
+          { label: "Edge", value: formatSignedPoints(item.modelEdge) },
+          { label: "Score", value: formatModelScore(item.xgboostModelScore) }
+        ]
+      : [
+          { label: "Entry", value: formatMarketPrice(item.entryPrice) },
+          { label: "Observed", value: formatMarketPrice(item.observedPrice) },
+          { label: "Move", value: formatSignedPoints(item.favorablePriceChange) },
+          { label: "Confidence", value: `${item.confidence || 0}/100` }
+        ]
+  };
+}
+
+function createHistoryInsiderPin(item) {
+  return {
+    id: historyInsiderPinID(item),
+    scope: "insider",
+    scopeLabel: "Insider archive",
+    kicker: "Insider archive",
+    title: `${item.ticker} · ${item.companyName || item.ticker}`,
+    subtitle: `${item.insiderName || "-"} · ${item.transactionType || "-"} · ${formatDateTime(item.filedAt)}`,
+    summary: item.summary || "Archived insider filing from history.",
+    url: normalizeExternalURL(item.externalURL),
+    actionLabel: "Open filing",
+    badges: [
+      { label: isSellDirection(item.direction) ? "Bearish" : "Bullish", className: isSellDirection(item.direction) ? "sell" : "buy" }
+    ],
+    metrics: [
+      { label: "Trade", value: formatCompactUSD(item.tradeValueUSD) },
+      { label: "Own", value: formatSignedPercent(item.ownershipChangePercent) },
+      { label: "Filed", value: formatDateTime(item.filedAt) },
+      { label: "Title", value: item.insiderTitle || "-" }
+    ]
+  };
+}
+
+function renderHistory(historySection) {
+  if (!historySection?.available) {
+    const message = "History view fills in when the SQLite evaluation stores contain scored rows.";
+    refs.historySummaryGrid.innerHTML = renderEmpty(message);
+    refs.historyGraphGrid.innerHTML = renderEmpty(message);
+    refs.historyTape.innerHTML = renderEmpty(message);
+    refs.historyInsiderArchive.innerHTML = renderEmpty(message);
+    return;
+  }
+
+  const marketHistory = historySection.market || {};
+  const insiderHistory = historySection.insider || {};
+  refs.historySummaryGrid.innerHTML = renderHistorySummaryGrid(marketHistory, insiderHistory);
+  refs.historyGraphGrid.innerHTML = [
+    renderHistoryOutcomeScoreboard(marketHistory),
+    renderHistoryDailyTimeline(marketHistory),
+    renderHistoryCallsPanel(
+      "Best 24h calls",
+      "Highest favorable moves on the 24-hour evaluation horizon.",
+      safeArray(marketHistory.bestCalls),
+      "No scored 24-hour winners yet."
+    ),
+    renderHistoryCallsPanel(
+      "Toughest 24h misses",
+      "Largest fades on the 24-hour evaluation horizon.",
+      safeArray(marketHistory.worstCalls),
+      "No scored 24-hour misses yet."
+    )
+  ].join("");
+  refs.historyTape.innerHTML = renderHistoryTape(marketHistory);
+  refs.historyInsiderArchive.innerHTML = renderHistoryInsiderArchive(insiderHistory);
+}
+
+function renderHistorySummaryGrid(marketHistory, insiderHistory) {
+  const summary = marketHistory?.summary || {};
+  const oneHour = summary.oneHour;
+  const twentyFourHour = summary.twentyFourHour;
+
+  return [
+    renderHistoryStatCard(
+      "Coverage",
+      summary.coverageDays ? `${summary.coverageDays}d` : "-",
+      summary.firstEvaluatedAt && summary.lastEvaluatedAt
+        ? `${formatDateTime(summary.firstEvaluatedAt)} -> ${formatDateTime(summary.lastEvaluatedAt)}`
+        : "No evaluated range yet"
+    ),
+    renderHistoryStatCard(
+      "Signal snapshots",
+      summary.signalSnapshotCount || 0,
+      `${summary.evaluationRowCount || 0} scored eval rows`
+    ),
+    renderHistoryStatCard(
+      "1h win rate",
+      oneHour ? formatPercent(oneHour.decisiveWinRate) : "-",
+      oneHour ? `${oneHour.wins} win / ${oneHour.losses} loss / ${oneHour.flats} flat` : "No 1h rows yet"
+    ),
+    renderHistoryStatCard(
+      "24h win rate",
+      twentyFourHour ? formatPercent(twentyFourHour.decisiveWinRate) : "-",
+      twentyFourHour ? `${twentyFourHour.wins} win / ${twentyFourHour.losses} loss / ${twentyFourHour.flats} flat` : "No 24h rows yet"
+    ),
+    renderHistoryStatCard(
+      "Latest eval",
+      summary.latestEvaluationAt ? formatRelativeTime(summary.latestEvaluationAt) : "-",
+      summary.latestEvaluationAt ? formatDateTime(summary.latestEvaluationAt) : "No scored rows yet"
+    ),
+    renderHistoryStatCard(
+      "Insider archive",
+      insiderHistory?.summary?.archiveCount || 0,
+      `${insiderHistory?.summary?.bullishCount || 0} bullish · ${insiderHistory?.summary?.bearishCount || 0} bearish`
+    )
+  ].join("");
+}
+
+function renderHistoryStatCard(label, value, detail) {
+  return `
+    <article class="history-stat-card">
+      <span class="summary-label">${escapeHTML(label)}</span>
+      <strong>${escapeHTML(String(value ?? "-"))}</strong>
+      <p>${escapeHTML(detail || "-")}</p>
+    </article>
+  `;
+}
+
+function renderHistoryOutcomeScoreboard(marketHistory) {
+  const horizons = safeArray(marketHistory?.horizons);
+  if (!horizons.length) {
+    return renderGraphPanel(
+      "Outcome scoreboard",
+      "Wins, losses, and flats across evaluated horizons.",
+      renderEmpty("No scored market history rows yet.")
+    );
+  }
+
+  const rows = horizons.map((item) => `
+    <div class="history-score-row">
+      <div class="history-score-head">
+        <div>
+          <strong>${escapeHTML(item.label)}</strong>
+          <p class="graph-meta-line">${escapeHTML(String(item.total || 0))} eval rows · ${escapeHTML(formatPercent(item.decisiveWinRate))} decisive win rate</p>
+        </div>
+        <span class="history-edge ${item.averageRealizedEdge >= 0 ? "positive" : "negative"}">${escapeHTML(formatSignedEdge(item.averageRealizedEdge))}</span>
+      </div>
+      ${renderHistoryOutcomeBar(item)}
+      <div class="compact-footer">
+        ${miniBadge("Wins", item.wins || 0)}
+        ${miniBadge("Losses", item.losses || 0)}
+        ${miniBadge("Flats", item.flats || 0)}
+        ${miniBadge("Avg move", formatSignedPoints(item.averageFavorableMove))}
+      </div>
+    </div>
+  `).join("");
+
+  return renderGraphPanel(
+    "Outcome scoreboard",
+    "Wins, losses, and flats across evaluated horizons.",
+    `<div class="history-score-list">${rows}</div>`
+  );
+}
+
+function renderHistoryDailyTimeline(marketHistory) {
+  const days = safeArray(marketHistory?.daily);
+  if (!days.length) {
+    return renderGraphPanel(
+      "Daily tape",
+      "Recent days of scored outcomes split by horizon.",
+      renderEmpty("No daily history tape yet.")
+    );
+  }
+
+  const rows = days.map((day) => `
+    <div class="history-day-row">
+      <div class="history-day-head">
+        <strong>${escapeHTML(formatHistoryDay(day.day))}</strong>
+        <span>${escapeHTML(String(day.total || 0))} eval rows</span>
+      </div>
+      <div class="history-day-stack">
+        ${safeArray(day.horizons).map((item) => `
+          <div class="history-day-horizon">
+            <div class="history-day-label">
+              <span>${escapeHTML(item.label)}</span>
+              <span>${escapeHTML(formatPercent(item.decisiveWinRate))}</span>
+            </div>
+            ${renderHistoryOutcomeBar(item, true)}
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
+
+  return renderGraphPanel(
+    "Daily tape",
+    "Recent days of scored outcomes split by horizon.",
+    `<div class="history-day-list">${rows}</div>`
+  );
+}
+
+function renderHistoryCallsPanel(title, description, items, emptyMessage) {
+  if (!items.length) {
+    return renderGraphPanel(title, description, renderEmpty(emptyMessage));
+  }
+
+  return renderGraphPanel(
+    title,
+    description,
+    `<div class="history-call-list">${items.map(renderHistoryCallItem).join("")}</div>`
+  );
+}
+
+function renderHistoryCallItem(item) {
+  const marketURL = getSignalMarketURL(item);
+  const labelClass = evaluationLabelClass(item.label);
+  const moveClass = Number(item.favorablePriceChange) >= 0 ? "positive" : "negative";
+
+  return `
+    <article ${renderCardSurfaceAttributes("history-call-item", marketURL, `Open history row for ${item.title}`)}>
+      <div class="history-call-head">
+        <div>
+          <strong>${escapeHTML(truncateText(item.title, 56))}</strong>
+          <p class="graph-meta-line">${escapeHTML(item.horizonLabel || "-")} · ${escapeHTML(plainOutcome(item.outcome))} · ${escapeHTML(formatRelativeTime(item.evaluatedAt))}</p>
+        </div>
+        <span class="history-move ${moveClass}">${escapeHTML(formatSignedPoints(item.favorablePriceChange))}</span>
+      </div>
+      <div class="compact-footer">
+        <span class="badge ${escapeHTML(labelClass)}">${escapeHTML(formatEvaluationLabel(item.label))}</span>
+        ${miniBadge("Take", formatTake(item.take))}
+        ${miniBadge("Category", formatCategory(item.category))}
+        ${miniBadge("Entry", formatMarketPrice(item.entryPrice))}
+        ${miniBadge("Observed", formatMarketPrice(item.observedPrice))}
+        ${renderExternalAction("Open market", marketURL)}
+        ${renderPinAction(historyEvaluationPinID(item))}
+      </div>
+    </article>
+  `;
+}
+
+function renderHistoryTape(marketHistory) {
+  const items = safeArray(marketHistory?.recentEvaluations);
+  if (!items.length) {
+    return renderEmpty("No recent scored evaluations yet.");
+  }
+
+  return `<div class="compact-list history-tape-list">${items.map(renderHistoryTapeItem).join("")}</div>`;
+}
+
+function renderHistoryTapeItem(item) {
+  const marketURL = getSignalMarketURL(item);
+  const labelClass = evaluationLabelClass(item.label);
+
+  return `
+    <article ${renderCardSurfaceAttributes("compact-card history-tape-item", marketURL, `Open history tape item for ${item.title}`)}>
+      <div class="compact-head">
+        <div>
+          <p class="compact-title">${escapeHTML(item.title)}</p>
+        </div>
+        <span class="badge ${escapeHTML(labelClass)}">${escapeHTML(formatEvaluationLabel(item.label))}</span>
+      </div>
+      <div class="compact-copy">
+        <p>${escapeHTML(item.horizonLabel || "-")} · ${escapeHTML(plainOutcome(item.outcome))} · ${escapeHTML(formatCategory(item.category))}</p>
+        <p>${escapeHTML(formatRelativeTime(item.evaluatedAt))} · favorable ${escapeHTML(formatSignedPoints(item.favorablePriceChange))}</p>
+      </div>
+      <div class="compact-footer">
+        ${miniBadge("Entry", formatMarketPrice(item.entryPrice))}
+        ${miniBadge("Observed", formatMarketPrice(item.observedPrice))}
+        ${miniBadge("Price now", formatMarketPrice(item.currentMarketPrice))}
+        ${miniBadge("Confidence", `${item.confidence || 0}/100`)}
+        ${renderExternalAction("Open market", marketURL)}
+        ${renderPinAction(historyEvaluationPinID(item))}
+      </div>
+    </article>
+  `;
+}
+
+function renderHistoryInsiderArchive(insiderHistory) {
+  const items = safeArray(insiderHistory?.archive);
+  if (!items.length) {
+    return renderEmpty("No insider archive rows yet.");
+  }
+
+  return `<div class="compact-list history-archive-list">${items.map(renderHistoryInsiderArchiveItem).join("")}</div>`;
+}
+
+function renderHistoryInsiderArchiveItem(item) {
+  return `
+    <article ${renderCardSurfaceAttributes("compact-card history-archive-item", item.externalURL, `Open archive filing for ${item.ticker}`)}>
+      <div class="compact-head">
+        <div>
+          <p class="compact-title">${escapeHTML(item.ticker)} · ${escapeHTML(item.companyName || "-")}</p>
+        </div>
+        <span class="badge ${isSellDirection(item.direction) ? "sell" : "buy"}">${escapeHTML(isSellDirection(item.direction) ? "Bearish" : "Bullish")}</span>
+      </div>
+      <div class="compact-copy">
+        <p>${escapeHTML(item.insiderName || "-")} · ${escapeHTML(item.insiderTitle || "-")}</p>
+        <p>${escapeHTML(item.summary || "No filing summary available.")}</p>
+      </div>
+      <div class="compact-footer">
+        ${miniBadge("Filed", formatDateTime(item.filedAt))}
+        ${miniBadge("Trade", formatCompactUSD(item.tradeValueUSD))}
+        ${miniBadge("Own", formatSignedPercent(item.ownershipChangePercent))}
+        ${miniBadge("Type", item.transactionType || "-")}
+        ${renderExternalAction("Open filing", item.externalURL)}
+        ${renderPinAction(historyInsiderPinID(item))}
+      </div>
+    </article>
+  `;
+}
+
+function renderHistoryOutcomeBar(item, compact = false) {
+  const total = Number(item?.total) || 0;
+  if (!total) {
+    return `<div class="history-outcome-bar${compact ? " compact" : ""}"></div>`;
+  }
+
+  const wins = Number(item?.wins) || 0;
+  const losses = Number(item?.losses) || 0;
+  const flats = Number(item?.flats) || 0;
+  const segments = [
+    { className: "win", percent: clampPercent((wins / total) * 100), count: wins },
+    { className: "loss", percent: clampPercent((losses / total) * 100), count: losses },
+    { className: "flat", percent: clampPercent((flats / total) * 100), count: flats }
+  ].filter((segment) => segment.count > 0);
+
+  return `
+    <div class="history-outcome-bar${compact ? " compact" : ""}">
+      ${segments.map((segment) => `
+        <span
+          class="history-outcome-segment ${segment.className}"
+          style="--segment:${segment.percent}%"
+          title="${segment.count} ${segment.className}"
+        ></span>
+      `).join("")}
+    </div>
+  `;
+}
+
 function renderLeadCard(lead, fallbackKicker) {
   if (!lead) {
     return leadHeadline(
@@ -504,14 +2338,15 @@ function leadHeadline(kicker, title, body) {
 }
 
 function renderSignalCard(signal) {
-  const marketURL = signal.marketURL || buildPolymarketURL(signal.slug, signal.eventSlug);
+  const marketURL = getSignalMarketURL(signal);
   const directionClass = isSellDirection(signal.direction) ? "sell" : "buy";
   const xgboostBadge = signal.xgboostStance
     ? `<span class="badge ${escapeHTML(signal.xgboostStance)}">${escapeHTML(formatStance(signal.xgboostStance))}</span>`
     : "";
+  const openMarketLink = renderExternalAction("Open market", marketURL);
 
   return `
-    <article class="signal-card">
+    <article ${renderCardSurfaceAttributes("signal-card", marketURL, `Open market for ${signal.title}`)}>
       <div class="card-top">
         <div class="badges">
           <span class="badge ${directionClass}">${escapeHTML(formatDirection(signal.direction))}</span>
@@ -522,7 +2357,7 @@ function renderSignalCard(signal) {
         <span class="badge neutral">${escapeHTML(String(signal.confidence || 0))}/100</span>
       </div>
 
-      <h3 class="signal-title"><a href="${escapeAttribute(marketURL)}" target="_blank" rel="noreferrer">${escapeHTML(signal.title)}</a></h3>
+      ${renderLinkedText("h3", "signal-title", signal.title, marketURL)}
 
       <div class="signal-copy">
         <p>${escapeHTML(signal.marketBiasSummary || "Live market signal from market-trans.")}</p>
@@ -539,23 +2374,25 @@ function renderSignalCard(signal) {
 
       <div class="signal-footer">
         <span class="footer-note">${escapeHTML(formatRelativeTimeFromUnix(signal.latestTradeTimestamp))}</span>
-        <a class="signal-link" href="${escapeAttribute(marketURL)}" target="_blank" rel="noreferrer">Open market</a>
+        <div class="card-action-row">
+          ${openMarketLink}
+          ${renderPinAction(marketPinID(signal))}
+        </div>
       </div>
     </article>
   `;
 }
 
 function renderWalletCard(wallet) {
-  const positions = safeArray(wallet.positions)
-    .slice()
-    .sort((lhs, rhs) => walletPositionSortScore(rhs) - walletPositionSortScore(lhs));
+  const positions = displayedWalletPositions(wallet);
+  const deltaLine = renderWalletDeltaLine(wallet.delta);
 
   return `
-    <article class="wallet-card">
+    <article ${renderCardSurfaceAttributes("wallet-card", getWalletURL(wallet), `Open wallet ${wallet.label}`)}>
       <div class="wallet-head">
         <div>
           <p class="section-kicker">Watched wallet</p>
-          <h3 class="wallet-title"><a href="${escapeAttribute(wallet.walletURL)}" target="_blank" rel="noreferrer">${escapeHTML(wallet.label)}</a></h3>
+          ${renderLinkedText("h3", "wallet-title", wallet.label, getWalletURL(wallet))}
           <p class="wallet-subcopy">${escapeHTML(shortWallet(wallet.wallet))}</p>
         </div>
         <div class="wallet-meta">
@@ -568,27 +2405,71 @@ function renderWalletCard(wallet) {
         ${miniStat("Value", formatCompactUSD(wallet.totalCurrentValue))}
         ${miniStat("24h trades", wallet.recentActivityCount || 0)}
         ${miniStat("Last activity", formatRelativeTimeFromUnix(wallet.lastActivityTimestamp))}
-        ${miniStat("Positions", wallet.openPositionCount || 0)}
+        ${miniStat("Positions", positions.length || 0)}
       </div>
 
+      ${deltaLine}
+
       <div class="positions">
-        ${positions.length ? positions.map(renderWalletPosition).join("") : renderEmpty("No open positions in the latest wallet snapshot.")}
+        ${positions.length ? positions.map((position) => renderWalletPosition(wallet, position)).join("") : renderEmpty("No open positions in the latest wallet snapshot.")}
+      </div>
+
+      <div class="signal-footer">
+        <span class="footer-note">${escapeHTML(formatRelativeTimeFromUnix(wallet.lastActivityTimestamp))}</span>
+        <div class="card-action-row">
+          ${renderExternalAction("Open wallet", getWalletURL(wallet))}
+          ${renderPinAction(walletPinID(wallet))}
+        </div>
       </div>
     </article>
   `;
 }
 
-function renderWalletPosition(position) {
+function renderWalletDeltaLine(delta) {
+  if (!delta?.hasPrevious) {
+    return "";
+  }
+
+  if (!delta.hasChanges) {
+    return `
+      <div class="wallet-delta-line">
+        <span class="wallet-delta-label">Since last sync</span>
+        <strong>Stable</strong>
+        <span>${escapeHTML(formatSignedCompactUSD(delta.valueDeltaUSD))}</span>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="wallet-delta-line">
+      <span class="wallet-delta-label">Since last sync</span>
+      <strong>${escapeHTML(formatSignedCompactUSD(delta.valueDeltaUSD))}</strong>
+      <span>${escapeHTML(formatSignedCount(delta.openPositionDelta))} positions</span>
+      <span>${escapeHTML(String(delta.actionChangeCount || 0))} advice flips</span>
+    </div>
+  `;
+}
+
+function renderWalletPosition(wallet, position) {
   const advice = position.advice;
   const actionKey = advice?.action || "neutral";
   const actionLabel = advice?.actionLabel || "No live call";
+  const marketURL = getWalletMarketURL(position);
   const signalURL = getWalletSignalURL(position);
+  const cardURL = marketURL || signalURL;
+  const pinID = walletPositionPinID(wallet, position);
   const signalSummary = advice
     ? `${advice.relationLabel} · ${advice.signal.title} · ${advice.signal.confidence}/100`
     : "No direct live signal attached to this position.";
+  const links = [
+    renderExternalAction("Open market", marketURL),
+    sameExternalURL(signalURL, marketURL) ? "" : renderExternalAction("Open signal", signalURL),
+    renderPinAction(pinID)
+  ].filter(Boolean).join("");
+  const footer = links ? `<div class="compact-footer">${links}</div>` : "";
 
   return `
-    <article class="wallet-position">
+    <article ${renderCardSurfaceAttributes("wallet-position", cardURL, `Open market for ${position.title}`)}>
       <div class="card-top">
         <div class="badges">
           <span class="badge ${escapeHTML(actionKey)}">${escapeHTML(actionLabel)}</span>
@@ -599,7 +2480,7 @@ function renderWalletPosition(position) {
       </div>
 
       <div class="wallet-position-copy">
-        <h4 class="compact-title"><a href="${escapeAttribute(position.marketURL)}" target="_blank" rel="noreferrer">${escapeHTML(position.title)}</a></h4>
+        ${renderLinkedText("h4", "compact-title", position.title, marketURL)}
         <p>${escapeHTML(signalSummary)}</p>
       </div>
 
@@ -612,20 +2493,19 @@ function renderWalletPosition(position) {
         ${advice ? miniBadge("Why", `${advice.supportingSignalCount}/${advice.opposingSignalCount}`) : ""}
       </div>
 
-      <div class="compact-footer">
-        <a class="signal-link" href="${escapeAttribute(signalURL)}" target="_blank" rel="noreferrer">Open signal</a>
-      </div>
+      ${footer}
     </article>
   `;
 }
 
 function renderCompactSignalCard(signal) {
-  const marketURL = signal.marketURL || buildPolymarketURL(signal.slug, signal.eventSlug);
+  const marketURL = getSignalMarketURL(signal);
+  const openMarketLink = renderExternalAction("Open market", marketURL);
   return `
-    <article class="compact-card">
+    <article ${renderCardSurfaceAttributes("compact-card", marketURL, `Open market for ${signal.title}`)}>
       <div class="compact-head">
         <div>
-          <p class="compact-title"><a href="${escapeAttribute(marketURL)}" target="_blank" rel="noreferrer">${escapeHTML(signal.title)}</a></p>
+          ${renderLinkedText("p", "compact-title", signal.title, marketURL)}
         </div>
         <span class="badge ${isSellDirection(signal.direction) ? "sell" : "buy"}">${escapeHTML(formatDirection(signal.direction))}</span>
       </div>
@@ -637,6 +2517,8 @@ function renderCompactSignalCard(signal) {
         ${miniBadge("Flow", formatCompactUSD(signal.weightedFlowUSD))}
         ${miniBadge("Traders", signal.uniqueTraderCount || 0)}
         ${miniBadge("Seen", formatRelativeTimeFromUnix(signal.latestTradeTimestamp))}
+        ${openMarketLink}
+        ${renderPinAction(marketPinID(signal))}
       </div>
     </article>
   `;
@@ -644,13 +2526,14 @@ function renderCompactSignalCard(signal) {
 
 function renderInsiderCard(signal) {
   const directionClass = isSellDirection(signal.direction) ? "sell bearish" : "buy bullish";
-  const externalURL = signal.externalURL || signal.secFormURL || signal.sourceURL || "#";
+  const externalURL = getInsiderSignalURL(signal);
+  const openFilingLink = renderExternalAction("Open filing", externalURL);
 
   return `
-    <article class="compact-card">
+    <article ${renderCardSurfaceAttributes("compact-card", externalURL, `Open filing for ${signal.ticker}`)}>
       <div class="compact-head">
         <div>
-          <p class="compact-title"><a href="${escapeAttribute(externalURL)}" target="_blank" rel="noreferrer">${escapeHTML(signal.ticker)} · ${escapeHTML(signal.companyName)}</a></p>
+          ${renderLinkedText("p", "compact-title", `${signal.ticker} · ${signal.companyName}`, externalURL)}
         </div>
         <span class="badge ${directionClass}">${escapeHTML(isSellDirection(signal.direction) ? "Bearish" : "Bullish")}</span>
       </div>
@@ -663,6 +2546,8 @@ function renderInsiderCard(signal) {
         ${miniBadge("Trade", formatCompactUSD(signal.tradeValueUSD))}
         ${miniBadge("Type", signal.transactionType || "unknown")}
         ${miniBadge("Watchlist", signal.watchlistMatch ? "Yes" : "No")}
+        ${openFilingLink}
+        ${renderPinAction(insiderPinID(signal))}
       </div>
     </article>
   `;
@@ -774,6 +2659,190 @@ function renderEmpty(message) {
   return `<article class="empty-card"><p>${message}</p></article>`;
 }
 
+function loadPinnedIds() {
+  try {
+    const raw = window.localStorage.getItem(PINNED_STORAGE_KEY);
+    const parsed = JSON.parse(raw || "[]");
+    return Array.isArray(parsed) ? parsed.map(String) : [];
+  } catch {
+    return [];
+  }
+}
+
+function savePinnedIds() {
+  try {
+    window.localStorage.setItem(PINNED_STORAGE_KEY, JSON.stringify(appState.pinnedIds));
+  } catch {
+    // Ignore storage failures and keep the in-memory state.
+  }
+}
+
+function prunePinnedItems() {
+  const available = new Set(appState.pinRegistry.keys());
+  const nextPinnedIds = appState.pinnedIds.filter((id) => available.has(id));
+  if (nextPinnedIds.length === appState.pinnedIds.length) {
+    return;
+  }
+  appState.pinnedIds = nextPinnedIds;
+  savePinnedIds();
+}
+
+function isPinned(pinID) {
+  return appState.pinnedIds.includes(pinID);
+}
+
+function togglePinned(pinID) {
+  if (!pinID) {
+    return;
+  }
+
+  if (isPinned(pinID)) {
+    appState.pinnedIds = appState.pinnedIds.filter((value) => value !== pinID);
+  } else {
+    appState.pinnedIds = [pinID, ...appState.pinnedIds.filter((value) => value !== pinID)];
+  }
+
+  savePinnedIds();
+}
+
+function clearPinned() {
+  appState.pinnedIds = [];
+  savePinnedIds();
+}
+
+function renderPinAction(pinID) {
+  if (!pinID) {
+    return "";
+  }
+  return `
+    <button
+      class="pin-action${isPinned(pinID) ? " is-active" : ""}"
+      type="button"
+      data-pin-id="${escapeAttribute(pinID)}"
+      aria-pressed="${isPinned(pinID) ? "true" : "false"}"
+    >
+      ${escapeHTML(isPinned(pinID) ? "Unpin" : "Pin")}
+    </button>
+  `;
+}
+
+function getSelectedGraphID(key, items) {
+  const ids = safeArray(items).map((item) => String(item.id));
+  if (!ids.length) {
+    appState.graphSelections[key] = null;
+    return null;
+  }
+
+  const current = String(appState.graphSelections[key] || "");
+  if (ids.includes(current)) {
+    return current;
+  }
+
+  appState.graphSelections[key] = ids[0];
+  return ids[0];
+}
+
+function setSelectedGraphID(key, id) {
+  if (!key || !id) {
+    return;
+  }
+  appState.graphSelections[key] = String(id);
+}
+
+function marketPinID(signal) {
+  return signal?.id ? `market:${signal.id}` : null;
+}
+
+function walletPinID(wallet) {
+  return wallet?.wallet ? `wallet:${wallet.wallet}` : null;
+}
+
+function walletPositionPinID(wallet, position) {
+  if (!wallet?.wallet || !position?.slug || !position?.outcome) {
+    return null;
+  }
+  return `wallet-position:${wallet.wallet}|${position.slug}|${position.outcome}`;
+}
+
+function walletCommandPinID(position) {
+  if (!position?.wallet || !position?.title || !position?.outcome) {
+    return null;
+  }
+  return `wallet-command:${position.wallet}|${position.title}|${position.outcome}`;
+}
+
+function walletDeltaPinID(delta) {
+  return delta?.wallet ? `wallet-delta:${delta.wallet}` : null;
+}
+
+function insiderPinID(signal) {
+  return signal?.id ? `insider:${signal.id}` : null;
+}
+
+function xgboostPinID(item) {
+  const key = item?.signalID || item?.id || `${item?.slug || "xgboost"}|${item?.outcome || "unknown"}`;
+  return key ? `xgboost:${key}` : null;
+}
+
+function historyEvaluationPinID(item) {
+  const key = item?.id || item?.signalID || `${item?.slug || "history"}|${item?.horizonHours || "?"}|${item?.outcome || "?"}`;
+  return key ? `history:${key}` : null;
+}
+
+function historyInsiderPinID(item) {
+  const key = item?.id || item?.signalID || item?.filingID || item?.ticker;
+  return key ? `history-insider:${key}` : null;
+}
+
+function normalizeDashboardView(value) {
+  return ["overview", "xgboost", "pinned", "history"].includes(value) ? value : "overview";
+}
+
+function preferredDashboardView() {
+  return normalizeDashboardView(window.location.hash.replace(/^#/, "").trim().toLowerCase());
+}
+
+function applyDashboardView(view) {
+  viewTabs.forEach((tab) => {
+    const isActive = tab.dataset.viewTarget === view;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  viewPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.viewPanel !== view;
+  });
+}
+
+function setDashboardView(view, updateHash = true) {
+  const normalized = normalizeDashboardView(view);
+  applyDashboardView(normalized);
+
+  if (!updateHash) {
+    return;
+  }
+
+  try {
+    window.history.replaceState(null, "", `#${normalized}`);
+  } catch {
+    window.location.hash = normalized;
+  }
+}
+
+function installDashboardViewInteractions() {
+  viewTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      setDashboardView(tab.dataset.viewTarget || "overview");
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    setDashboardView(preferredDashboardView(), false);
+  });
+
+  setDashboardView(preferredDashboardView(), false);
+}
+
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
@@ -805,6 +2874,91 @@ function walletPositionSortScore(position) {
   );
 }
 
+function normalizeWalletFocus(value) {
+  return ["actionable", "all", "changes"].includes(value) ? value : "actionable";
+}
+
+function normalizeWalletSort(value) {
+  return ["urgency", "value", "recent"].includes(value) ? value : "urgency";
+}
+
+function walletSortLabel(value) {
+  switch (normalizeWalletSort(value)) {
+    case "value":
+      return "value";
+    case "recent":
+      return "recent activity";
+    default:
+      return "urgency";
+  }
+}
+
+function matchesWalletWorkspaceFocus(wallet) {
+  switch (normalizeWalletFocus(appState.walletWorkspace.focus)) {
+    case "all":
+      return true;
+    case "changes":
+      return Boolean(wallet?.delta?.hasChanges || wallet?.delta?.hasStructuralChanges);
+    default:
+      return (wallet?.actionablePositionCount || 0) > 0;
+  }
+}
+
+function displayedWallets(walletSection) {
+  return safeArray(walletSection?.wallets)
+    .filter(matchesWalletWorkspaceFocus)
+    .slice()
+    .sort(compareWalletsForWorkspace);
+}
+
+function compareWalletsForWorkspace(lhs, rhs) {
+  switch (normalizeWalletSort(appState.walletWorkspace.sort)) {
+    case "value":
+      return (rhs?.totalCurrentValue || 0) - (lhs?.totalCurrentValue || 0);
+    case "recent":
+      return (rhs?.lastActivityTimestamp || 0) - (lhs?.lastActivityTimestamp || 0);
+    default:
+      return walletSortScore(rhs) - walletSortScore(lhs);
+  }
+}
+
+function displayedWalletPositions(wallet) {
+  const focus = normalizeWalletFocus(appState.walletWorkspace.focus);
+  const positions = safeArray(wallet?.positions).filter((position) => {
+    switch (focus) {
+      case "all":
+      case "changes":
+        return true;
+      default:
+        return Boolean(position?.advice?.isActionable);
+    }
+  });
+
+  return positions
+    .slice()
+    .sort((lhs, rhs) => {
+      switch (normalizeWalletSort(appState.walletWorkspace.sort)) {
+        case "value":
+          return (rhs?.currentValue || 0) - (lhs?.currentValue || 0);
+        default:
+          return walletPositionSortScore(rhs) - walletPositionSortScore(lhs);
+      }
+    });
+}
+
+function walletWorkspaceEmptyMessage(walletSection) {
+  switch (normalizeWalletFocus(appState.walletWorkspace.focus)) {
+    case "changes":
+      return walletSection?.diff?.hasPrevious
+        ? "No wallet changes were detected since the last synced snapshot."
+        : "Change mode lights up after two comparable wallet snapshots have been synced.";
+    case "all":
+      return "No watched wallets were exported into the shared feed.";
+    default:
+      return "No Rose/Haak positions need action right now.";
+  }
+}
+
 function safeArray(value) {
   return Array.isArray(value) ? value : [];
 }
@@ -813,12 +2967,107 @@ function isSellDirection(value) {
   return value === "sell" || value === "bearish";
 }
 
+function getSignalMarketURL(signal) {
+  return normalizeExternalURL(signal?.marketURL) || buildPolymarketURL(signal?.slug, signal?.eventSlug);
+}
+
+function getWalletURL(wallet) {
+  return normalizeExternalURL(wallet?.walletURL);
+}
+
+function getWalletMarketURL(position) {
+  return normalizeExternalURL(position?.marketURL);
+}
+
 function getWalletSignalURL(position) {
   const signal = position.advice?.signal;
-  const fallbackSignalURL = buildPolymarketURL(signal?.slug, signal?.eventSlug);
-  return signal?.marketURL ||
-    position.marketURL ||
-    (fallbackSignalURL !== "#" ? fallbackSignalURL : "#");
+  return getSignalMarketURL(signal) || getWalletMarketURL(position);
+}
+
+function getInsiderSignalURL(signal) {
+  return (
+    normalizeExternalURL(signal?.externalURL) ||
+    normalizeExternalURL(signal?.secFormURL) ||
+    normalizeExternalURL(signal?.sourceURL)
+  );
+}
+
+function renderLinkedText(tagName, className, text, url) {
+  const safeURL = normalizeExternalURL(url);
+  const content = safeURL
+    ? `<a href="${escapeAttribute(safeURL)}" target="_blank" rel="noreferrer">${escapeHTML(text)}</a>`
+    : escapeHTML(text);
+  return `<${tagName} class="${escapeAttribute(className)}">${content}</${tagName}>`;
+}
+
+function renderExternalAction(label, url, className = "signal-link") {
+  const safeURL = normalizeExternalURL(url);
+  if (!safeURL) {
+    return "";
+  }
+  return `<a class="${escapeAttribute(className)}" href="${escapeAttribute(safeURL)}" target="_blank" rel="noreferrer">${escapeHTML(label)}</a>`;
+}
+
+function renderCardSurfaceAttributes(className, url, label) {
+  const safeURL = normalizeExternalURL(url);
+  const classes = safeURL ? `${className} clickable-card` : className;
+  const attributes = [`class="${escapeAttribute(classes)}"`];
+
+  if (!safeURL) {
+    return attributes.join(" ");
+  }
+
+  attributes.push(`data-card-url="${escapeAttribute(safeURL)}"`);
+  attributes.push(`tabindex="0"`);
+  attributes.push(`role="link"`);
+  if (label) {
+    attributes.push(`aria-label="${escapeAttribute(label)}"`);
+  }
+
+  return attributes.join(" ");
+}
+
+function renderExternalBlock(className, url, body, fallbackTag = "div") {
+  const safeURL = normalizeExternalURL(url);
+  if (safeURL) {
+    return `<a class="${escapeAttribute(className)}" href="${escapeAttribute(safeURL)}" target="_blank" rel="noreferrer">${body}</a>`;
+  }
+  return `<${fallbackTag} class="${escapeAttribute(className)}">${body}</${fallbackTag}>`;
+}
+
+function renderSVGLink(url, body) {
+  const safeURL = normalizeExternalURL(url);
+  if (!safeURL) {
+    return body;
+  }
+  return `<a href="${escapeAttribute(safeURL)}" target="_blank" rel="noreferrer">${body}</a>`;
+}
+
+function sameExternalURL(lhs, rhs) {
+  const left = normalizeExternalURL(lhs);
+  const right = normalizeExternalURL(rhs);
+  return Boolean(left) && left === right;
+}
+
+function normalizeExternalURL(value) {
+  if (!value) {
+    return null;
+  }
+
+  const raw = String(value).trim();
+  if (!raw || raw === "#") {
+    return null;
+  }
+
+  try {
+    const parsed = new URL(raw, window.location.href);
+    if (!["http:", "https:", "file:"].includes(parsed.protocol)) {
+      return null;
+    }
+    return parsed.toString();
+  } catch {
+    return null;
+  }
 }
 
 function formatCategory(value) {
@@ -828,6 +3077,19 @@ function formatCategory(value) {
   return String(value)
     .replace(/_/g, " ")
     .replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
+function formatAction(value) {
+  const map = {
+    buy_more: "Buy more",
+    hold: "Keep",
+    reduce: "Reduce",
+    sell: "Sell",
+    switch_side: "Switch side",
+    watch: "Wait",
+    no_signal: "No signal"
+  };
+  return map[value] || formatCategory(value);
 }
 
 function formatTake(value) {
@@ -856,6 +3118,22 @@ function formatStance(value) {
     mixed: "Model mixed"
   };
   return map[value] || formatTake(value);
+}
+
+function normalizedModelOutcomeLabel(value) {
+  return value === "neutral" ? "flat" : value;
+}
+
+function xgboostCoverageEmptyMessage(coverage, fallback) {
+  const taggedRows = Number(coverage?.taggedHistoryRowCount) || 0;
+  const categories = Number(coverage?.categoryCount) || 0;
+  const resolved = Number(coverage?.resolvedEvaluationCount) || 0;
+
+  if (!taggedRows || resolved > 0) {
+    return fallback;
+  }
+
+  return `There ${taggedRows === 1 ? "is" : "are"} ${taggedRows} model-tagged histor${taggedRows === 1 ? "y row" : "y rows"} across ${categories || 0} categor${categories === 1 ? "y" : "ies"}, but none have resolved yet.`;
 }
 
 function plainOutcome(value) {
@@ -928,6 +3206,20 @@ function formatCompactUSD(value) {
   }).format(Number(value));
 }
 
+function formatSignedCompactUSD(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+
+  const numeric = Number(value);
+  if (numeric === 0) {
+    return "$0";
+  }
+
+  const sign = numeric > 0 ? "+" : "-";
+  return `${sign}${formatCompactUSD(Math.abs(numeric))}`;
+}
+
 function formatMarketPrice(value) {
   if (value === null || value === undefined || Number.isNaN(Number(value))) {
     return "-";
@@ -953,6 +3245,47 @@ function formatSignedNumber(value) {
   const numeric = Number(value);
   const sign = numeric > 0 ? "+" : "";
   return `${sign}${numeric.toFixed(2)}`;
+}
+
+function formatSignedCount(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  const numeric = Number(value);
+  const sign = numeric > 0 ? "+" : "";
+  return `${sign}${numeric}`;
+}
+
+function formatPercent(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  return `${(Number(value) * 100).toFixed(0)}%`;
+}
+
+function formatDecimal(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  return Number(value).toFixed(1);
+}
+
+function formatSignedEdge(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  const numeric = Number(value);
+  const sign = numeric > 0 ? "+" : "";
+  return `${sign}${numeric.toFixed(3)} edge`;
+}
+
+function formatSignedPoints(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  const points = Number(value) * 100;
+  const sign = points > 0 ? "+" : "";
+  return `${sign}${points.toFixed(1)}pt`;
 }
 
 function formatDaysToEnd(value) {
@@ -994,6 +3327,13 @@ function formatHealthValue(value) {
   return String(value);
 }
 
+function formatModelScore(value) {
+  if (value === null || value === undefined || Number.isNaN(Number(value))) {
+    return "-";
+  }
+  return Number(value).toFixed(3);
+}
+
 function formatFreshnessStatus(value) {
   const map = {
     live: "Live source",
@@ -1010,12 +3350,78 @@ function shortWallet(value) {
   return `${value.slice(0, 6)}...${value.slice(-4)}`;
 }
 
+function truncateText(value, maxLength = 44) {
+  const normalized = String(value || "").trim();
+  if (!normalized || normalized.length <= maxLength) {
+    return normalized || "-";
+  }
+  return `${normalized.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
+}
+
+function describeXGBoostRow(item) {
+  const parts = [];
+  if (item.modelRank) {
+    parts.push(`Model #${item.modelRank}`);
+  }
+  if (item.swiftRank) {
+    parts.push(`Swift #${item.swiftRank}`);
+  }
+  if (item.rankDeltaVsSwift !== null && item.rankDeltaVsSwift !== undefined && !Number.isNaN(Number(item.rankDeltaVsSwift))) {
+    const numeric = Number(item.rankDeltaVsSwift);
+    const sign = numeric > 0 ? "+" : "";
+    parts.push(`Delta ${sign}${numeric}`);
+  }
+  if (item.swiftNotificationCandidate) {
+    parts.push("Swift candidate");
+  }
+  if (safeArray(item.flags).length) {
+    parts.push(safeArray(item.flags).slice(0, 2).join(", "));
+  }
+  return parts.join(" · ") || "Shadow-scored market candidate.";
+}
+
+function formatHistoryDay(value) {
+  if (!value) {
+    return "-";
+  }
+
+  const date = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("nb-NO", {
+    day: "numeric",
+    month: "short"
+  }).format(date);
+}
+
+function formatEvaluationLabel(value) {
+  const map = {
+    win: "Win",
+    loss: "Loss",
+    flat: "Flat"
+  };
+  return map[value] || formatTake(value);
+}
+
+function evaluationLabelClass(value) {
+  switch (value) {
+    case "win":
+      return "buy";
+    case "loss":
+      return "sell";
+    default:
+      return "neutral";
+  }
+}
+
 function buildPolymarketURL(slug, eventSlug) {
   const preferred = String(eventSlug || slug || "").trim();
   if (!preferred) {
-    return "#";
+    return null;
   }
-  return `https://polymarket.com/event/${encodeURIComponent(preferred)}`;
+  return normalizeExternalURL(`https://polymarket.com/event/${encodeURIComponent(preferred)}`);
 }
 
 function escapeHTML(value) {
@@ -1028,8 +3434,141 @@ function escapeHTML(value) {
 }
 
 function escapeAttribute(value) {
-  return escapeHTML(value || "#");
+  return escapeHTML(String(value ?? ""));
 }
 
+function openExternalURL(url) {
+  const safeURL = normalizeExternalURL(url);
+  if (!safeURL) {
+    return;
+  }
+  window.open(safeURL, "_blank", "noopener,noreferrer");
+}
+
+function getEventElementTarget(event) {
+  const target = event.target;
+  if (target instanceof Element) {
+    return target;
+  }
+  return target?.parentElement || null;
+}
+
+function handleClickableCardClick(event) {
+  const target = getEventElementTarget(event);
+  if (!target) {
+    return;
+  }
+
+  const card = target.closest("[data-card-url]");
+  if (!card) {
+    return;
+  }
+
+  if (target.closest("a, button, input, textarea, select, summary")) {
+    return;
+  }
+
+  openExternalURL(card.dataset.cardUrl);
+}
+
+function handleClickableCardKeydown(event) {
+  const target = getEventElementTarget(event);
+  if (!target) {
+    return;
+  }
+
+  const card = target.closest("[data-card-url]");
+  if (!card || target !== card) {
+    return;
+  }
+
+  if (event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+
+  event.preventDefault();
+  openExternalURL(card.dataset.cardUrl);
+}
+
+function installClickableCardInteractions() {
+  if (window.__stonkvisionCardInteractionsInstalled) {
+    return;
+  }
+
+  window.__stonkvisionCardInteractionsInstalled = true;
+  document.addEventListener("click", handleClickableCardClick);
+  document.addEventListener("keydown", handleClickableCardKeydown);
+}
+
+function handleDashboardActionClick(event) {
+  const target = getEventElementTarget(event);
+  if (!target) {
+    return;
+  }
+
+  const pinTrigger = target.closest("[data-pin-id]");
+  if (pinTrigger) {
+    event.preventDefault();
+    event.stopPropagation();
+    togglePinned(pinTrigger.dataset.pinId);
+    if (appState.overlayFeed) {
+      renderDashboard(appState.overlayFeed);
+    }
+    return;
+  }
+
+  const clearTrigger = target.closest("[data-clear-pins]");
+  if (clearTrigger) {
+    event.preventDefault();
+    clearPinned();
+    if (appState.overlayFeed) {
+      renderDashboard(appState.overlayFeed);
+    }
+    return;
+  }
+
+  const walletFocusTrigger = target.closest("[data-wallet-focus]");
+  if (walletFocusTrigger) {
+    event.preventDefault();
+    appState.walletWorkspace.focus = normalizeWalletFocus(walletFocusTrigger.dataset.walletFocus);
+    if (appState.overlayFeed) {
+      renderWallets(appState.overlayFeed.wallets);
+    }
+    return;
+  }
+
+  const walletSortTrigger = target.closest("[data-wallet-sort]");
+  if (walletSortTrigger) {
+    event.preventDefault();
+    appState.walletWorkspace.sort = normalizeWalletSort(walletSortTrigger.dataset.walletSort);
+    if (appState.overlayFeed) {
+      renderWallets(appState.overlayFeed.wallets);
+    }
+    return;
+  }
+
+  const graphTrigger = target.closest("[data-graph-key][data-graph-id]");
+  if (graphTrigger) {
+    event.preventDefault();
+    event.stopPropagation();
+    setSelectedGraphID(graphTrigger.dataset.graphKey, graphTrigger.dataset.graphId);
+    if (appState.overlayFeed) {
+      renderGraphDeck(appState.overlayFeed);
+    }
+  }
+}
+
+function installDashboardActionInteractions() {
+  if (window.__stonkvisionDashboardActionsInstalled) {
+    return;
+  }
+
+  window.__stonkvisionDashboardActionsInstalled = true;
+  document.addEventListener("click", handleDashboardActionClick);
+}
+
+installClickableCardInteractions();
+installDashboardActionInteractions();
+installDashboardViewInteractions();
 loadDashboard();
 setInterval(loadDashboard, 60_000);
