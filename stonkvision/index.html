@@ -38,6 +38,23 @@
         </article>
       </div>
 
+      <div class="ops-grid" id="ops-grid">
+        <article class="ops-card">
+          <span class="status-label">Pipeline</span>
+          <strong>Loading</strong>
+          <p>Reading the latest runtime and source diagnostics.</p>
+        </article>
+      </div>
+
+      <div class="source-strip" id="source-strip">
+        <article class="source-strip-card">
+          <div class="freshness-head">
+            <strong>Sources</strong>
+          </div>
+          <p class="graph-meta-line">Waiting for overlay-feed.json</p>
+        </article>
+      </div>
+
       <div class="summary-grid" id="summary-grid">
         <article class="summary-card">
           <span class="summary-label">Loading</span>
@@ -55,6 +72,7 @@
 
       <nav class="view-nav" aria-label="Dashboard views">
         <button class="view-tab is-active" type="button" data-view-target="overview">Overview</button>
+        <button class="view-tab" type="button" data-view-target="intel">Intel</button>
         <button class="view-tab" type="button" data-view-target="xgboost">XGBoost</button>
         <button class="view-tab" type="button" data-view-target="pinned">Pinned</button>
         <button class="view-tab" type="button" data-view-target="history">History</button>
@@ -130,6 +148,54 @@
           <p class="section-note">Starter visual layer. Easy place to expand into larger graphs later.</p>
         </div>
         <div class="pulse-grid" id="pulse-panels"></div>
+      </section>
+    </div>
+
+    <div class="view-stack" data-view-panel="intel" id="view-intel" hidden>
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Signal intake</p>
+            <h2>What the source layer is actually seeing</h2>
+          </div>
+          <p class="section-note">Curated source-led events from market-trans plus insider/watchlist tape, not the full raw firehose.</p>
+        </div>
+        <div class="history-summary-grid" id="intel-summary-grid"></div>
+      </section>
+
+      <section class="section split-section">
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Source-led</p>
+              <h2>Market-linked intel</h2>
+            </div>
+            <p class="section-note">High-priority source events that currently map into the live market board.</p>
+          </div>
+          <div id="intel-market-feed"></div>
+        </article>
+
+        <article class="panel split-panel">
+          <div class="section-head in-panel">
+            <div>
+              <p class="section-kicker">Watchlist</p>
+              <h2>Insider and filing tape</h2>
+            </div>
+            <p class="section-note">Fresh filing flow that is relevant enough to keep visible, rather than hiding everything in background sync.</p>
+          </div>
+          <div id="intel-insider-feed"></div>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Mix view</p>
+            <h2>Where the intel is concentrated</h2>
+          </div>
+          <p class="section-note">Useful for quickly seeing whether the current intake skews toward crypto, geopolitics, official macro, insider filings, or one specific provider.</p>
+        </div>
+        <div class="graph-grid" id="intel-mix-grid"></div>
       </section>
     </div>
 
@@ -218,6 +284,19 @@
     </div>
 
     <div class="view-stack" data-view-panel="history" id="view-history" hidden>
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Wallet history</p>
+            <h2>How the money is moving over time</h2>
+          </div>
+          <p class="section-note">Track total capital, wallet splits, market buckets, and category exposure from the archived wallet snapshots.</p>
+        </div>
+        <div class="wallet-toolbar" id="wallet-history-toolbar"></div>
+        <div class="history-summary-grid" id="wallet-history-summary-grid"></div>
+        <div class="history-graph-grid" id="wallet-history-graph-grid"></div>
+      </section>
+
       <section class="section">
         <div class="section-head">
           <div>

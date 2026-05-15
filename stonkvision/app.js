@@ -2,6 +2,8 @@ const refs = {
   feedStatus: document.getElementById("feed-status"),
   latestUpdate: document.getElementById("latest-update"),
   refreshStatus: document.getElementById("refresh-status"),
+  opsGrid: document.getElementById("ops-grid"),
+  sourceStrip: document.getElementById("source-strip"),
   summaryGrid: document.getElementById("summary-grid"),
   headlineGrid: document.getElementById("headline-grid"),
   bestBets: document.getElementById("best-bets"),
@@ -12,6 +14,10 @@ const refs = {
   insiderTape: document.getElementById("insider-tape"),
   graphDeck: document.getElementById("graph-deck"),
   pulsePanels: document.getElementById("pulse-panels"),
+  intelSummaryGrid: document.getElementById("intel-summary-grid"),
+  intelMarketFeed: document.getElementById("intel-market-feed"),
+  intelInsiderFeed: document.getElementById("intel-insider-feed"),
+  intelMixGrid: document.getElementById("intel-mix-grid"),
   xgboostTrendGrid: document.getElementById("xgboost-trend-grid"),
   xgboostSummaryGrid: document.getElementById("xgboost-summary-grid"),
   xgboostPanelGrid: document.getElementById("xgboost-panel-grid"),
@@ -20,6 +26,9 @@ const refs = {
   pinnedToolbar: document.getElementById("pinned-toolbar"),
   pinnedSummaryGrid: document.getElementById("pinned-summary-grid"),
   pinnedGrid: document.getElementById("pinned-grid"),
+  walletHistoryToolbar: document.getElementById("wallet-history-toolbar"),
+  walletHistorySummaryGrid: document.getElementById("wallet-history-summary-grid"),
+  walletHistoryGraphGrid: document.getElementById("wallet-history-graph-grid"),
   historySummaryGrid: document.getElementById("history-summary-grid"),
   historyGraphGrid: document.getElementById("history-graph-grid"),
   historyTape: document.getElementById("history-tape"),
@@ -37,6 +46,18 @@ const dateTimeFormatter = new Intl.DateTimeFormat("nb-NO", {
 });
 
 const relativeTimeFormatter = new Intl.RelativeTimeFormat("nb-NO", { numeric: "auto" });
+const WALLET_HISTORY_SERIES_PALETTE = [
+  "rgba(114, 215, 255, 0.96)",
+  "rgba(80, 224, 164, 0.96)",
+  "rgba(255, 191, 105, 0.95)",
+  "rgba(255, 127, 114, 0.96)",
+  "rgba(143, 183, 255, 0.95)",
+  "rgba(255, 170, 122, 0.95)",
+  "rgba(94, 234, 212, 0.95)",
+  "rgba(245, 158, 11, 0.95)",
+  "rgba(167, 243, 208, 0.95)",
+  "rgba(253, 186, 116, 0.95)"
+];
 const appState = {
   overlayFeed: null,
   pinRegistry: new Map(),
@@ -45,12 +66,17 @@ const appState = {
     focus: "actionable",
     sort: "urgency"
   },
+  walletHistory: {
+    breakdown: "total",
+    metric: "value"
+  },
   graphSelections: {
     marketFlow: null,
     marketWindow: null,
     walletCommand: null,
     insiderConviction: null
-  }
+  },
+  intelFocusID: null
 };
 
 async function fetchJSON(path, optional = false) {
@@ -97,15 +123,39 @@ function renderDashboard(overlayFeed) {
   renderInsiderTape(overlayFeed.insider);
   renderGraphDeck(overlayFeed);
   renderPulse(overlayFeed);
+  renderIntel(overlayFeed.intel);
   renderXGBoost(overlayFeed.xgboost);
   renderPinnedWorkspace(overlayFeed);
+  renderWalletHistory(overlayFeed.wallets?.history);
   renderHistory(overlayFeed.history);
+  applyIntelFocus();
 }
 
 function renderUnavailableState() {
   refs.feedStatus.textContent = "0/3 feeds online";
   refs.latestUpdate.textContent = "No sync yet";
   refs.refreshStatus.textContent = "Run sync-data.sh";
+  refs.opsGrid.innerHTML = [
+    renderOpsCard(
+      "Pipeline",
+      "Waiting for first sync",
+      "No runtime metadata yet.",
+      "Run ./webpage/scripts/sync-data.sh to build the shared feed.",
+      [{ label: "Offline", className: "sell" }]
+    )
+  ].join("");
+  refs.sourceStrip.innerHTML = `
+    <article class="source-strip-card missing">
+      <div class="compact-head">
+        <div>
+          <p class="section-kicker">Sources</p>
+          <strong class="source-strip-title">No synced source state</strong>
+        </div>
+        <span class="badge sell">Missing</span>
+      </div>
+      <p class="graph-meta-line">Waiting for overlay-feed.json.</p>
+    </article>
+  `;
 
   refs.summaryGrid.innerHTML = [
     summaryCard("Shared feed", "offline"),
@@ -141,6 +191,10 @@ function renderUnavailableState() {
   refs.insiderTape.innerHTML = renderEmpty(message);
   refs.graphDeck.innerHTML = renderEmpty(message);
   refs.pulsePanels.innerHTML = renderEmpty(message);
+  refs.intelSummaryGrid.innerHTML = renderEmpty(message);
+  refs.intelMarketFeed.innerHTML = renderEmpty(message);
+  refs.intelInsiderFeed.innerHTML = renderEmpty(message);
+  refs.intelMixGrid.innerHTML = renderEmpty(message);
   refs.xgboostTrendGrid.innerHTML = renderEmpty(message);
   refs.xgboostSummaryGrid.innerHTML = renderEmpty(message);
   refs.xgboostPanelGrid.innerHTML = renderEmpty(message);
@@ -149,6 +203,9 @@ function renderUnavailableState() {
   refs.pinnedToolbar.innerHTML = "";
   refs.pinnedSummaryGrid.innerHTML = renderEmpty(message);
   refs.pinnedGrid.innerHTML = renderEmpty(message);
+  refs.walletHistoryToolbar.innerHTML = "";
+  refs.walletHistorySummaryGrid.innerHTML = renderEmpty(message);
+  refs.walletHistoryGraphGrid.innerHTML = renderEmpty(message);
   refs.historySummaryGrid.innerHTML = renderEmpty(message);
   refs.historyGraphGrid.innerHTML = renderEmpty(message);
   refs.historyTape.innerHTML = renderEmpty(message);
@@ -165,6 +222,8 @@ function renderHero(overlayFeed) {
   refs.refreshStatus.textContent = syncAt
     ? `Synced ${formatRelativeTime(syncAt)}`
     : `Overlay v${overlayFeed.schemaVersion || "?"}`;
+  refs.opsGrid.innerHTML = renderOperationalGrid(overlayFeed);
+  refs.sourceStrip.innerHTML = renderSourceStrip(overlayFeed);
 
   refs.summaryGrid.innerHTML = [
     summaryCard("Best bets", summary.bestBetCount ?? safeArray(overlayFeed.market?.bestBets).length),
@@ -183,6 +242,311 @@ function renderHero(overlayFeed) {
     renderLeadCard(overlayFeed.leads?.wallets, "Wallet command"),
     renderLeadCard(overlayFeed.leads?.insider, "Insider tape")
   ].join("");
+}
+
+function renderOperationalGrid(overlayFeed) {
+  const pipeline = overlayFeed.sync?.pipeline || {};
+  const runtime = pipeline.runtime || {};
+  const viewSurface = detectFeedSurface(runtime);
+  const sourceOverview = summarizeSourceOverview(overlayFeed.sources);
+  const xgboostModel = overlayFeed.xgboost?.model || {};
+  const xgboostIdentity = parseXGBoostIdentity(xgboostModel);
+  const steps = safeArray(pipeline.steps);
+  const completedSteps = steps.filter((item) => item.status === "live" && !item.skipped).length;
+  const skippedSteps = steps.filter((item) => item.skipped).length;
+  const launchAgent = runtime.launchAgent || {};
+  const pipelineTitle = pipeline.scope === "partial"
+    ? `${formatPipelineStatus(pipeline.status)} · Partial`
+    : formatPipelineStatus(pipeline.status);
+  const pipelineMeta = [
+    completedSteps ? `${completedSteps}/${steps.length || completedSteps} step${completedSteps === 1 ? "" : "s"}` : null,
+    skippedSteps ? `${skippedSteps} skipped` : null,
+    pipeline.durationSeconds ? `${Math.round(pipeline.durationSeconds)}s` : null
+  ].filter(Boolean).join(" · ");
+  const surfaceMeta = [
+    runtime.mode ? `Pipeline ran in ${runtime.mode} mode` : null,
+    launchAgent.installed ? "LaunchAgent installed" : "LaunchAgent not installed",
+    launchAgent.runsFromServiceCopy ? "Service copy active" : null
+  ].filter(Boolean).join(" · ");
+  const sourceMeta = [
+    `${sourceOverview.liveCount} live`,
+    sourceOverview.partialCount ? `${sourceOverview.partialCount} partial` : null,
+    sourceOverview.cachedCount ? `${sourceOverview.cachedCount} cached` : null,
+    sourceOverview.problemCount ? `${sourceOverview.problemCount} issue${sourceOverview.problemCount === 1 ? "" : "s"}` : null
+  ].filter(Boolean).join(" · ");
+  const xgboostMeta = [
+    xgboostIdentity.trainWindowLabel !== "n/a" ? `${xgboostIdentity.trainWindowLabel} train` : null,
+    xgboostIdentity.predictionHorizonLabel !== "n/a" ? `${xgboostIdentity.predictionHorizonLabel} prediction` : null,
+    xgboostIdentity.scopeLabel
+  ].filter(Boolean).join(" · ");
+
+  return [
+    renderOpsCard(
+      "Pipeline",
+      pipelineTitle,
+      pipelineMeta || "No pipeline timing available.",
+      pipeline.scopeReason || pipeline.statusReason || "No pipeline status reason available.",
+      [{ label: formatFreshnessStatus(pipeline.status), className: sourceStatusBadgeClass(pipeline.status) }]
+    ),
+    renderOpsCard(
+      "Feed surface",
+      viewSurface.label,
+      surfaceMeta || viewSurface.detail,
+      viewSurface.detail,
+      [{ label: viewSurface.badgeLabel, className: viewSurface.badgeClassName }]
+    ),
+    renderOpsCard(
+      "Sources",
+      sourceOverview.title,
+      sourceMeta,
+      sourceOverview.detail,
+      sourceOverview.badges
+    ),
+    renderOpsCard(
+      "XGBoost",
+      compactXGBoostModelLabel(xgboostModel),
+      xgboostMeta || "No model identity exported.",
+      xgboostModel.shadowMatchLabel
+        ? `${xgboostModel.shadowMatchLabel} · ${describeXGBoostPrediction(xgboostModel, xgboostIdentity)}`
+        : describeXGBoostPrediction(xgboostModel, xgboostIdentity),
+      [
+        { label: xgboostModel.shadowMatchLabel || "No shadow state", className: xgboostModel.shadowMatchClassName || "neutral" },
+        { label: xgboostIdentity.scopeBadgeLabel, className: "neutral" }
+      ]
+    )
+  ].join("");
+}
+
+function renderSourceStrip(overlayFeed) {
+  const entries = orderedSourceEntries(overlayFeed.sources);
+  if (!entries.length) {
+    return `
+      <article class="source-strip-card missing">
+        <div class="compact-head">
+          <div>
+            <p class="section-kicker">Sources</p>
+            <strong class="source-strip-title">No source diagnostics</strong>
+          </div>
+          <span class="badge sell">Missing</span>
+        </div>
+        <p class="graph-meta-line">No source objects were exported into overlay-feed.json.</p>
+      </article>
+    `;
+  }
+
+  return entries.map(([key, source]) => {
+    const status = effectiveSourceStatus(source);
+    const reason = sourceReason(source);
+    const freshness = source.generatedAt ? formatRelativeTime(source.generatedAt) : "No live sync";
+    return `
+      <article class="source-strip-card ${escapeHTML(status)}">
+        <div class="compact-head">
+          <div>
+            <p class="section-kicker">${escapeHTML(sourceDisplayName(key))}</p>
+            <strong class="source-strip-title">${escapeHTML(freshness)}</strong>
+          </div>
+          <span class="badge ${escapeHTML(sourceStatusBadgeClass(status))}">${escapeHTML(formatFreshnessStatus(status))}</span>
+        </div>
+        <p class="graph-meta-line">${escapeHTML(reason)}</p>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderOpsCard(kicker, title, body, detail, badges = []) {
+  return `
+    <article class="ops-card">
+      <div class="compact-head">
+        <div>
+          <p class="section-kicker">${escapeHTML(kicker)}</p>
+          <strong class="ops-title">${escapeHTML(title)}</strong>
+        </div>
+        <div class="badges">
+          ${safeArray(badges).map((item) => `<span class="badge ${escapeHTML(item.className || "neutral")}">${escapeHTML(item.label)}</span>`).join("")}
+        </div>
+      </div>
+      <p class="ops-body">${escapeHTML(body || "-")}</p>
+      <p class="graph-meta-line">${escapeHTML(detail || "-")}</p>
+    </article>
+  `;
+}
+
+function sourceDisplayName(key) {
+  const labels = {
+    market: "Market",
+    wallets: "Wallets",
+    insider: "Insider",
+    history: "History",
+    pipeline: "Pipeline"
+  };
+  return labels[key] || String(key || "Source");
+}
+
+function orderedSourceEntries(sources) {
+  const sourceMap = sources || {};
+  return ["market", "wallets", "insider", "history", "pipeline"]
+    .map((key) => [key, sourceMap[key]])
+    .filter(([, value]) => value);
+}
+
+function sourceReason(source) {
+  if (!source) {
+    return "No source diagnostics available.";
+  }
+  if (source.statusReason) {
+    return truncateText(source.statusReason, 116);
+  }
+  const diagnostics = safeArray(source.upstreamDiagnostics);
+  const detail = diagnostics.find((item) => item.message)?.message;
+  return truncateText(detail || "No source reason exported.", 116);
+}
+
+function sourceHasCache(source) {
+  return safeArray(source?.upstreamDiagnostics).some((item) => item.cacheUsed || item.status === "cached");
+}
+
+function effectiveSourceStatus(source) {
+  if (!source) {
+    return "missing";
+  }
+  const status = source.status || (source.synced || source.available ? "live" : "missing");
+  const reason = source.statusReason || "";
+  if (status === "live" && sourceHasCache(source)) {
+    return "cached";
+  }
+  if (status === "live" && reason.includes("Not refreshed in the latest scoped run")) {
+    return "partial";
+  }
+  return status;
+}
+
+function sourceStatusBadgeClass(status) {
+  const map = {
+    live: "supports",
+    partial: "mixed",
+    cached: "mixed",
+    degraded: "mixed",
+    failed: "sell",
+    placeholder: "mixed",
+    missing: "sell",
+    skipped: "neutral"
+  };
+  return map[status] || "neutral";
+}
+
+function summarizeSourceOverview(sources) {
+  const entries = orderedSourceEntries(sources);
+  const counts = {
+    live: 0,
+    partial: 0,
+    cached: 0,
+    degraded: 0,
+    failed: 0,
+    missing: 0,
+    placeholder: 0
+  };
+
+  entries.forEach(([, source]) => {
+    const status = effectiveSourceStatus(source);
+    counts[status] = (counts[status] || 0) + 1;
+  });
+
+  const problemSources = entries.filter(([, source]) => {
+    const status = effectiveSourceStatus(source);
+    return ["degraded", "failed", "missing", "cached", "partial", "placeholder"].includes(status);
+  });
+  const leadProblem = problemSources[0];
+  const hardProblemCount = (counts.degraded || 0) + (counts.failed || 0) + (counts.missing || 0) + (counts.placeholder || 0);
+  const softProblemCount = (counts.partial || 0) + (counts.cached || 0);
+  const problemCount = hardProblemCount + softProblemCount;
+  const partialCount = counts.partial || 0;
+  const cachedCount = counts.cached || 0;
+  const liveCount = counts.live || 0;
+  const title = hardProblemCount
+    ? `${hardProblemCount} source issue${hardProblemCount === 1 ? "" : "s"}`
+    : softProblemCount
+      ? `${softProblemCount} source caution${softProblemCount === 1 ? "" : "s"}`
+      : "All sources live";
+  const detail = leadProblem
+    ? `${sourceDisplayName(leadProblem[0])}: ${sourceReason(leadProblem[1])}`
+    : "Market, wallets, insider, history, and pipeline all look healthy.";
+  const badges = [];
+  if (liveCount) {
+    badges.push({ label: `${liveCount} live`, className: "supports" });
+  }
+  if (partialCount) {
+    badges.push({ label: `${partialCount} partial`, className: "mixed" });
+  }
+  if (cachedCount) {
+    badges.push({ label: `${cachedCount} cached`, className: "mixed" });
+  }
+  if (problemCount && !partialCount && !cachedCount) {
+    badges.push({ label: `${problemCount} issue${problemCount === 1 ? "" : "s"}`, className: "sell" });
+  }
+  return {
+    title,
+    detail,
+    liveCount,
+    partialCount,
+    cachedCount,
+    problemCount,
+    badges
+  };
+}
+
+function detectFeedSurface(runtime) {
+  const path = window.location.pathname || "";
+  const protocol = window.location.protocol || "";
+  const host = window.location.host || "";
+
+  if (protocol === "file:") {
+    if (path.includes("/Library/Application Support/StonkvisionSupervisor/")) {
+      return {
+        label: "Service copy",
+        detail: "Rendering from the installed supervisor workspace.",
+        badgeLabel: "Service",
+        badgeClassName: "supports"
+      };
+    }
+    if (path.includes("/.stonkvision-pages/") || path.includes("/carinamarierose.github.io/")) {
+      return {
+        label: "Published mirror",
+        detail: "Rendering the local publish-target copy of Stonkvision.",
+        badgeLabel: "Mirror",
+        badgeClassName: "mixed"
+      };
+    }
+    if (path.includes("/webpage/")) {
+      return {
+        label: "Repo workspace",
+        detail: "Rendering directly from the repo's webpage folder.",
+        badgeLabel: "Repo",
+        badgeClassName: "neutral"
+      };
+    }
+    return {
+      label: "Local file",
+      detail: truncateText(path || "Local file path", 72),
+      badgeLabel: "Local",
+      badgeClassName: "neutral"
+    };
+  }
+
+  if (host.includes("github.io")) {
+    return {
+      label: "Published web",
+      detail: `Serving the public mirror from ${host}.`,
+      badgeLabel: "Web",
+      badgeClassName: "supports"
+    };
+  }
+
+  return {
+    label: "Browser host",
+    detail: host || runtime?.mode || "Unknown browser context",
+    badgeLabel: "Web",
+    badgeClassName: "neutral"
+  };
 }
 
 function renderBestBets(marketSection) {
@@ -337,6 +701,7 @@ function renderWalletUrgentCard(urgentAction, isSynced) {
   const links = [
     renderExternalAction("Open market", urgentAction.marketURL),
     sameExternalURL(urgentAction.signalURL, urgentAction.marketURL) ? "" : renderExternalAction("Open signal", urgentAction.signalURL),
+    renderIntelActionForMarketURL(urgentAction.marketURL),
     renderPinAction(walletCommandPinID(urgentAction))
   ].filter(Boolean).join("");
 
@@ -946,6 +1311,168 @@ function renderPulse(overlayFeed) {
   ].join("");
 }
 
+function renderIntel(section) {
+  if (!section?.available) {
+    const message = "Intel view fills in when source-led market events or insider/watchlist filings are exported into the shared feed.";
+    refs.intelSummaryGrid.innerHTML = renderEmpty(message);
+    refs.intelMarketFeed.innerHTML = renderEmpty(message);
+    refs.intelInsiderFeed.innerHTML = renderEmpty(message);
+    refs.intelMixGrid.innerHTML = renderEmpty(message);
+    return;
+  }
+
+  const summary = section.summary || {};
+  const sourceLed = safeArray(section.sourceLed);
+  const insiderWatch = safeArray(section.insiderWatch);
+
+  refs.intelSummaryGrid.innerHTML = [
+    summaryCard("Curated items", summary.totalItemCount ?? sourceLed.length + insiderWatch.length),
+    summaryCard("Source-led", summary.sourceLedCount ?? sourceLed.length),
+    summaryCard("Linked markets", summary.linkedMarketCount ?? 0),
+    summaryCard("Watchlist hits", summary.watchlistMatchCount ?? 0),
+    summaryCard("Providers", summary.providerCount ?? safeArray(section.providerMix).length),
+    summaryCard("Raw source events", summary.rawSourceEventCount ?? 0)
+  ].join("");
+
+  refs.intelMarketFeed.innerHTML = sourceLed.length
+    ? `<div class="compact-list intel-feed-list">${sourceLed.map(renderIntelMarketItem).join("")}</div>`
+    : renderEmpty("No source-led market events were curated into the live Intel board on this run.");
+
+  refs.intelInsiderFeed.innerHTML = insiderWatch.length
+    ? `<div class="compact-list intel-feed-list">${insiderWatch.map(renderIntelInsiderItem).join("")}</div>`
+    : renderEmpty("No filing/watchlist items were strong enough to keep visible in the Intel board.");
+
+  refs.intelMixGrid.innerHTML = [
+    renderBarPanel(
+      "Source categories",
+      "Which market categories the current source-led intake is pushing hardest into.",
+      safeArray(section.categoryMix)
+    ),
+    renderBarPanel(
+      "Providers",
+      "Which upstream providers dominate the current curated intake.",
+      safeArray(section.providerMix)
+    ),
+    renderBarPanel(
+      "Source lanes",
+      "How much of the visible intake is standard flow versus official or special lanes.",
+      safeArray(section.laneMix)
+    )
+  ].join("");
+}
+
+function renderIntelMarketItem(item) {
+  const topSignal = safeArray(item.topSignals)[0];
+  const sourceURL = normalizeExternalURL(item.sourceURL);
+  const topMarketURL = normalizeExternalURL(topSignal?.marketURL);
+  const primaryURL = sourceURL || topMarketURL;
+  const categoryBadge = item.category ? `<span class="badge neutral">${escapeHTML(formatCategory(item.category))}</span>` : "";
+  const sourceTypeBadge = item.sourceType ? `<span class="badge neutral">${escapeHTML(formatIntelSourceType(item.sourceType))}</span>` : "";
+  const laneBadge = item.sourceLane ? `<span class="badge mixed">${escapeHTML(formatIntelLane(item.sourceLane))}</span>` : "";
+  const priorityBadge = item.priority
+    ? `<span class="badge ${escapeHTML(intelPriorityClass(item.priority))}">${escapeHTML(formatIntelPriority(item.priority))}</span>`
+    : "";
+
+  return `
+    <article ${renderCardSurfaceAttributes("signal-card intel-card", primaryURL, `Open Intel event ${item.title}`)} data-intel-item-id="${escapeAttribute(item.id)}">
+      <div class="card-top">
+        <div class="badges">
+          ${categoryBadge}
+          ${sourceTypeBadge}
+          ${laneBadge}
+        </div>
+        ${priorityBadge}
+      </div>
+
+      ${renderLinkedText("h3", "signal-title", item.title || "Source-led intel", primaryURL)}
+
+      <div class="signal-copy">
+        <p>${escapeHTML(item.summary || "No source summary exported.")}</p>
+        <p>${escapeHTML(item.whyItMatters || "No linked market explanation exported.")}</p>
+      </div>
+
+      <div class="card-metrics">
+        ${metricChip("Source", truncateText(item.sourceName || item.provider || "-", 22))}
+        ${metricChip("Seen", item.publishedAt ? formatRelativeTime(item.publishedAt) : "-")}
+        ${metricChip("Markets", item.signalCount ?? 0)}
+        ${metricChip("Tags", safeArray(item.tags).length || 0)}
+      </div>
+
+      ${renderIntelMarketLinks(item)}
+
+      <div class="signal-footer">
+        <span class="footer-note">${escapeHTML(intelMarketFootnote(item))}</span>
+        <div class="card-action-row">
+          ${renderExternalAction("Open source", sourceURL)}
+          ${sameExternalURL(sourceURL, topMarketURL) ? "" : renderExternalAction("Open top market", topMarketURL)}
+          ${renderPinAction(intelPinID(item))}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderIntelMarketLinks(item) {
+  const topSignals = safeArray(item.topSignals);
+  if (!topSignals.length) {
+    return "";
+  }
+
+  return `
+    <div class="intel-market-links">
+      ${topSignals.map((signal) => {
+        const body = `
+          <strong>${escapeHTML(truncateText(signal.title || "Linked market", 56))}</strong>
+          <span>${escapeHTML(formatDirection(signal.direction))} ${escapeHTML(plainOutcome(signal.outcome))} · ${escapeHTML(String(signal.confidence || 0))}/100</span>
+        `;
+        return renderExternalBlock("intel-market-link", signal.marketURL, body);
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderIntelInsiderItem(item) {
+  const externalURL = normalizeExternalURL(item.externalURL) || normalizeExternalURL(item.sourceURL);
+  const watchlistBadge = item.watchlistMatch
+    ? `<span class="badge mixed">Watchlist</span>`
+    : `<span class="badge neutral">Intel</span>`;
+
+  return `
+    <article ${renderCardSurfaceAttributes("signal-card intel-card", externalURL, `Open filing for ${item.title}`)} data-intel-item-id="${escapeAttribute(item.id)}">
+      <div class="card-top">
+        <div class="badges">
+          <span class="badge ${isSellDirection(item.direction) ? "sell" : "buy"}">${escapeHTML(isSellDirection(item.direction) ? "Bearish" : "Bullish")}</span>
+          ${watchlistBadge}
+        </div>
+        <span class="badge neutral">${escapeHTML(String(item.confidence || 0))}/100</span>
+      </div>
+
+      ${renderLinkedText("h3", "signal-title", item.title || "Insider watch", externalURL)}
+
+      <div class="signal-copy">
+        <p>${escapeHTML(item.summary || "No filing summary available.")}</p>
+        <p>${escapeHTML(item.whyItMatters || "No watchlist rationale exported.")}</p>
+      </div>
+
+      <div class="card-metrics">
+        ${metricChip("Filed", item.filedAt ? formatRelativeTime(item.filedAt) : "-")}
+        ${metricChip("Trade", formatCompactUSD(item.tradeValueUSD))}
+        ${metricChip("Own", formatSignedPercent(item.ownershipChangePercent))}
+        ${metricChip("Type", item.transactionType || "-")}
+      </div>
+
+      <div class="signal-footer">
+        <span class="footer-note">${escapeHTML(item.watchlistMatch ? "Watchlist-linked filing" : "Curated insider tape item")}</span>
+        <div class="card-action-row">
+          ${renderExternalAction("Open filing", externalURL)}
+          ${sameExternalURL(externalURL, item.sourceURL) ? "" : renderExternalAction("Open source", item.sourceURL)}
+          ${renderPinAction(intelPinID(item))}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
 function renderXGBoost(section) {
   if (!section?.available) {
     const message = "XGBoost view fills in when shadow snapshots or model-aware scan runs are available.";
@@ -985,6 +1512,7 @@ function renderXGBoost(section) {
       safeArray(section.performance?.worstCalls),
       xgboostCoverageEmptyMessage(section.coverage, "No decisive model misses yet in the current performance window.")
     ),
+    renderXGBoostModelPanel(section),
     renderXGBoostStatusPanel(section),
     renderXGBoostRunPanel(section),
     renderXGBoostSignalPanel(
@@ -1012,6 +1540,57 @@ function renderXGBoost(section) {
     "No Swift-ranked rows were available in the latest shadow export.",
     "Swift top"
   );
+}
+
+function compactXGBoostModelLabel(model) {
+  return truncateText(model?.configuredDisplayName || model?.configuredModelName || "Unknown", 24);
+}
+
+function compactXGBoostShadowLabel(model) {
+  return truncateText(model?.shadowDisplayName || model?.shadowModelName || "None", 24);
+}
+
+function parseXGBoostIdentity(model) {
+  const haystack = [
+    model?.inputName,
+    model?.configuredModelName,
+    model?.shadowModelName,
+    model?.configuredDisplayName
+  ].filter(Boolean).join(" ");
+  const trainWindowMatch = haystack.match(/(\d+d)/i);
+  const horizonMatches = Array.from(haystack.matchAll(/(\d+h)/ig)).map((item) => item[1]);
+  const scopeLabel = /short-term/i.test(haystack)
+    ? "Short-term markets only"
+    : /long-term/i.test(haystack)
+      ? "Long-term markets"
+      : "Scope not exported";
+
+  return {
+    trainWindowLabel: trainWindowMatch?.[1] || "n/a",
+    predictionHorizonLabel: horizonMatches.length ? horizonMatches[horizonMatches.length - 1] : "n/a",
+    scopeLabel,
+    scopeBadgeLabel: scopeLabel.replace(" markets", "").replace(" only", "")
+  };
+}
+
+function describeXGBoostPrediction(model, identity = parseXGBoostIdentity(model)) {
+  const horizon = identity.predictionHorizonLabel !== "n/a" ? identity.predictionHorizonLabel : "unknown horizon";
+  const semantics = formatXGBoostSemantics(model?.scoreSemantics);
+  return `${horizon} ${semantics} on ${identity.scopeLabel.toLowerCase()}.`;
+}
+
+function formatXGBoostSemantics(value) {
+  const normalized = String(value || "").trim();
+  if (!normalized) {
+    return "n/a";
+  }
+  if (normalized === "probability_of_positive_edge") {
+    return "probability of positive edge";
+  }
+  if (normalized === "predicted_realized_edge") {
+    return "predicted realized edge";
+  }
+  return normalized.replace(/_/g, " ");
 }
 
 function renderXGBoostActivityTrendPanel(dailySection) {
@@ -1242,6 +1821,8 @@ function renderXGBoostSummaryGrid(section) {
   const runs = section.runs || {};
   const coverage = section.coverage || {};
   const performance = section.performance || {};
+  const model = section.model || {};
+  const identity = parseXGBoostIdentity(model);
   const oneHour = safeArray(performance.horizons).find((item) => item.horizonHours === 1);
   const twentyFourHour = safeArray(performance.horizons).find((item) => item.horizonHours === 24);
 
@@ -1250,6 +1831,31 @@ function renderXGBoostSummaryGrid(section) {
       "Mode",
       status.label || "Idle",
       status.title || "No status available"
+    ),
+    renderHistoryStatCard(
+      "Configured model",
+      compactXGBoostModelLabel(model),
+      model.configuredMetadataName || model.task || "No configured model metadata exported"
+    ),
+    renderHistoryStatCard(
+      "Train window",
+      identity.trainWindowLabel,
+      model.inputName || "No training input filename exported"
+    ),
+    renderHistoryStatCard(
+      "Prediction horizon",
+      identity.predictionHorizonLabel,
+      describeXGBoostPrediction(model, identity)
+    ),
+    renderHistoryStatCard(
+      "Market scope",
+      identity.scopeLabel,
+      "This is the scope the current XGBoost loop is trained against."
+    ),
+    renderHistoryStatCard(
+      "Shadow match",
+      model.shadowMatchLabel || "Unknown",
+      model.shadowDisplayName || model.shadowModelName || "No shadow export metadata found"
     ),
     renderHistoryStatCard(
       "Latest shadow rows",
@@ -1297,6 +1903,50 @@ function renderXGBoostSummaryGrid(section) {
       twentyFourHour ? `${twentyFourHour.wins} win / ${twentyFourHour.losses} loss / ${twentyFourHour.neutrals} neutral` : "No 24h resolved model calls yet"
     )
   ].join("");
+}
+
+function renderXGBoostModelPanel(section) {
+  const model = section.model || {};
+  const live = section.live || {};
+  const identity = parseXGBoostIdentity(model);
+  const configuredLabel = model.configuredDisplayName || model.configuredModelName || "No configured model exported";
+  const shadowLabel = model.shadowDisplayName || model.shadowModelName || "No shadow export found";
+  const stateCopy = model.shadowMatchState === "mismatch"
+    ? "The configured model and the latest shadow export disagree."
+    : live.enabled
+      ? "This is the configured model for the current synced run."
+      : "This is the model Stonkvision expects the next synced run to use.";
+
+  return renderGraphPanel(
+    "Active model",
+    "Configured model identity, training metadata, and whether the shadow export matches it.",
+    `
+      <div class="xgboost-status-card">
+        <div class="compact-head">
+          <div>
+            <p class="section-kicker">Configured model</p>
+            <h4 class="graph-selection-title">${escapeHTML(configuredLabel)}</h4>
+          </div>
+          <div class="badges">
+            <span class="badge ${escapeHTML(model.shadowMatchClassName || "neutral")}">${escapeHTML(model.shadowMatchLabel || "Unknown")}</span>
+            <span class="badge ${live.enabled ? "supports" : "neutral"}">${escapeHTML(live.enabled ? "Live on this run" : "Configured only")}</span>
+          </div>
+        </div>
+        <p class="graph-selection-subtitle">${escapeHTML(`${stateCopy} ${describeXGBoostPrediction(model, identity)}`.trim())}</p>
+        <p class="graph-meta-line">${escapeHTML(model.statusReason || `Shadow export: ${shadowLabel}`)}</p>
+        <div class="wallet-summary pinned-metrics">
+          ${miniStat("Train window", identity.trainWindowLabel)}
+          ${miniStat("Prediction", identity.predictionHorizonLabel)}
+          ${miniStat("Scope", identity.scopeBadgeLabel)}
+          ${miniStat("Task", model.task || "n/a")}
+          ${miniStat("Semantics", formatXGBoostSemantics(model.scoreSemantics))}
+          ${miniStat("Train rows", model.trainingRowCount ?? "n/a")}
+          ${miniStat("Input", truncateText(model.inputName || "n/a", 22))}
+          ${miniStat("Shadow export", compactXGBoostShadowLabel(model))}
+        </div>
+      </div>
+    `
+  );
 }
 
 function renderXGBoostPerformanceWinRatePanel(performance, coverage) {
@@ -1503,6 +2153,7 @@ function renderXGBoostStatusPanel(section) {
   const live = section.live || {};
   const shadow = section.shadow || {};
   const coverage = section.coverage || {};
+  const model = section.model || {};
 
   return renderGraphPanel(
     "Shadow status",
@@ -1520,7 +2171,7 @@ function renderXGBoostStatusPanel(section) {
           </div>
         </div>
         <p class="graph-selection-subtitle">${escapeHTML(status.body || "No XGBoost status body available.")}</p>
-        <p class="graph-meta-line">${escapeHTML(status.detail || shadow.modelName || "No active model artifact found.")}</p>
+        <p class="graph-meta-line">${escapeHTML(status.detail || model.configuredDisplayName || shadow.modelName || "No active model artifact found.")}</p>
         <div class="wallet-summary pinned-metrics">
           ${miniStat("Live rows", live.rowCount ?? 0)}
           ${miniStat("Support", live.supportCount ?? 0)}
@@ -1641,6 +2292,7 @@ function renderPinnedWorkspace(overlayFeed) {
     summaryCard("Pinned", pins.length),
     summaryCard("Market", scopeCounts.market || 0),
     summaryCard("Wallets", scopeCounts.wallet || 0),
+    summaryCard("Intel", scopeCounts.intel || 0),
     summaryCard("XGBoost", scopeCounts.xgboost || 0),
     summaryCard("History", scopeCounts.history || 0),
     summaryCard("Insider", scopeCounts.insider || 0),
@@ -1736,6 +2388,12 @@ function buildPinRegistry(overlayFeed) {
 
   safeArray(overlayFeed.insider?.signals).forEach((signal) => {
     addPinToRegistry(registry, createInsiderPin(signal));
+  });
+  safeArray(overlayFeed.intel?.sourceLed).forEach((item) => {
+    addPinToRegistry(registry, createIntelPin(item));
+  });
+  safeArray(overlayFeed.intel?.insiderWatch).forEach((item) => {
+    addPinToRegistry(registry, createIntelPin(item));
   });
 
   safeArray(overlayFeed.xgboost?.shadow?.scoredRows).forEach((item) => {
@@ -1927,6 +2585,47 @@ function createInsiderPin(signal) {
   };
 }
 
+function createIntelPin(item) {
+  const primarySignal = safeArray(item?.topSignals)[0];
+  const isMarketSource = item?.kind === "market_source";
+
+  return {
+    id: intelPinID(item),
+    scope: "intel",
+    scopeLabel: isMarketSource ? "Source-led intel" : "Curated filing",
+    kicker: isMarketSource ? "Source-led intel" : "Insider watch",
+    title: item.title || "Intel item",
+    subtitle: item.subtitle || item.whyItMatters || "Curated intel item",
+    summary: item.summary || item.whyItMatters || "Curated from the source intake layer.",
+    url: normalizeExternalURL(item.sourceURL) ||
+      normalizeExternalURL(item.externalURL) ||
+      normalizeExternalURL(primarySignal?.marketURL),
+    actionLabel: isMarketSource ? "Open source" : "Open filing",
+    badges: isMarketSource
+      ? [
+          item.category ? { label: formatCategory(item.category), className: "neutral" } : null,
+          item.sourceLane ? { label: formatIntelLane(item.sourceLane), className: "mixed" } : null
+        ].filter(Boolean)
+      : [
+          { label: isSellDirection(item.direction) ? "Bearish" : "Bullish", className: isSellDirection(item.direction) ? "sell" : "buy" },
+          item.watchlistMatch ? { label: "Watchlist", className: "mixed" } : null
+        ].filter(Boolean),
+    metrics: isMarketSource
+      ? [
+          { label: "Source", value: item.sourceName || item.provider || "-" },
+          { label: "Seen", value: item.publishedAt ? formatRelativeTime(item.publishedAt) : "-" },
+          { label: "Markets", value: item.signalCount ?? 0 },
+          { label: "Priority", value: item.priority ? formatIntelPriority(item.priority) : "-" }
+        ]
+      : [
+          { label: "Filed", value: item.filedAt ? formatDateTime(item.filedAt) : "-" },
+          { label: "Trade", value: formatCompactUSD(item.tradeValueUSD) },
+          { label: "Own", value: formatSignedPercent(item.ownershipChangePercent) },
+          { label: "Type", value: item.transactionType || "-" }
+        ]
+  };
+}
+
 function createXGBoostPin(item, kicker = "XGBoost row") {
   return {
     id: xgboostPinID(item),
@@ -2014,6 +2713,689 @@ function createHistoryInsiderPin(item) {
       { label: "Title", value: item.insiderTitle || "-" }
     ]
   };
+}
+
+function renderWalletHistory(historySection) {
+  if (!historySection?.available) {
+    const message = "Wallet history fills in after archived wallet snapshots have been exported into the shared overlay feed.";
+    refs.walletHistoryToolbar.innerHTML = "";
+    refs.walletHistorySummaryGrid.innerHTML = renderEmpty(message);
+    refs.walletHistoryGraphGrid.innerHTML = renderEmpty(message);
+    return;
+  }
+
+  const breakdown = normalizeWalletHistoryBreakdown(appState.walletHistory.breakdown);
+  const metric = normalizeWalletHistoryMetric(appState.walletHistory.metric);
+  const metricConfig = walletHistoryMetricConfig(metric);
+  const focusSeries = walletHistorySeriesForBreakdown(historySection, breakdown);
+  const visibleSeries = walletHistoryVisibleSeries(focusSeries, metricConfig.key, breakdown);
+  const comparisonBreakdown = breakdown === "total" ? "wallets" : breakdown;
+  const comparisonSeries = walletHistorySeriesForBreakdown(historySection, comparisonBreakdown);
+
+  refs.walletHistoryToolbar.innerHTML = renderWalletHistoryToolbar(
+    historySection,
+    breakdown,
+    metric,
+    focusSeries.length,
+    visibleSeries.length
+  );
+  refs.walletHistorySummaryGrid.innerHTML = renderWalletHistorySummaryGrid(
+    historySection,
+    breakdown,
+    metricConfig,
+    focusSeries,
+    visibleSeries,
+    comparisonBreakdown,
+    comparisonSeries
+  );
+  refs.walletHistoryGraphGrid.innerHTML = [
+    renderWalletHistoryTrendPanel(historySection, breakdown, metricConfig, focusSeries, visibleSeries),
+    renderWalletHistoryLoadPanel(historySection),
+    renderWalletHistoryBreakdownPanel(historySection, breakdown, metricConfig, comparisonBreakdown, comparisonSeries),
+    renderWalletHistoryMoversPanel(historySection, metricConfig, comparisonBreakdown, comparisonSeries)
+  ].join("");
+}
+
+function normalizeWalletHistoryBreakdown(value) {
+  switch (value) {
+    case "wallets":
+    case "markets":
+    case "categories":
+      return value;
+    default:
+      return "total";
+  }
+}
+
+function normalizeWalletHistoryMetric(value) {
+  switch (value) {
+    case "cost":
+    case "unrealized":
+    case "realized":
+      return value;
+    default:
+      return "value";
+  }
+}
+
+function walletHistoryMetricConfig(metric) {
+  switch (normalizeWalletHistoryMetric(metric)) {
+    case "cost":
+      return {
+        key: "costBasisValue",
+        label: "Cost",
+        formatter: formatCompactUSD,
+        deltaFormatter: formatSignedCompactUSD,
+        signed: false,
+        description: "capital committed into the tracked wallets"
+      };
+    case "unrealized":
+      return {
+        key: "unrealizedPnL",
+        label: "Unrealized",
+        formatter: formatSignedCompactUSD,
+        deltaFormatter: formatSignedCompactUSD,
+        signed: true,
+        description: "mark-to-market PnL across the archived snapshots"
+      };
+    case "realized":
+      return {
+        key: "realizedPnL",
+        label: "Realized",
+        formatter: formatSignedCompactUSD,
+        deltaFormatter: formatSignedCompactUSD,
+        signed: true,
+        description: "closed PnL that has already been realized"
+      };
+    default:
+      return {
+        key: "currentValue",
+        label: "Value",
+        formatter: formatCompactUSD,
+        deltaFormatter: formatSignedCompactUSD,
+        signed: false,
+        description: "current marked value across the tracked wallets"
+      };
+  }
+}
+
+function walletHistoryBreakdownLabel(value) {
+  const map = {
+    total: "Total",
+    wallets: "Wallets",
+    markets: "Markets",
+    categories: "Categories"
+  };
+  return map[normalizeWalletHistoryBreakdown(value)] || "Total";
+}
+
+function walletHistorySeriesNoun(value) {
+  switch (normalizeWalletHistoryBreakdown(value)) {
+    case "wallets":
+      return "wallets";
+    case "markets":
+      return "markets";
+    case "categories":
+      return "categories";
+    default:
+      return "series";
+  }
+}
+
+function walletHistorySeriesForBreakdown(historySection, breakdown) {
+  switch (normalizeWalletHistoryBreakdown(breakdown)) {
+    case "wallets":
+      return safeArray(historySection?.walletSeries);
+    case "markets":
+      return safeArray(historySection?.marketSeries);
+    case "categories":
+      return safeArray(historySection?.categorySeries);
+    default:
+      return [walletHistoryTotalSeries(historySection)].filter(Boolean);
+  }
+}
+
+function walletHistoryTotalSeries(historySection) {
+  const items = safeArray(historySection?.totalSeries);
+  if (!items.length) {
+    return null;
+  }
+
+  const latest = historySection?.latestSummary || items[items.length - 1] || {};
+  return {
+    key: "total",
+    label: "All wallets",
+    latestCurrentValue: latest.currentValue,
+    latestCostBasisValue: latest.costBasisValue,
+    latestUnrealizedPnL: latest.unrealizedPnL,
+    latestRealizedPnL: latest.realizedPnL,
+    latestOpenPositionCount: latest.openPositionCount,
+    latestActionablePositionCount: latest.actionablePositionCount,
+    items
+  };
+}
+
+function walletHistoryLatestMetricField(metricKey) {
+  const map = {
+    currentValue: "latestCurrentValue",
+    costBasisValue: "latestCostBasisValue",
+    unrealizedPnL: "latestUnrealizedPnL",
+    realizedPnL: "latestRealizedPnL"
+  };
+  return map[metricKey] || null;
+}
+
+function walletHistorySeriesMetricValue(series, metricKey) {
+  if (!series) {
+    return 0;
+  }
+
+  const latestField = walletHistoryLatestMetricField(metricKey);
+  if (latestField && series[latestField] !== undefined && series[latestField] !== null) {
+    return Number(series[latestField]) || 0;
+  }
+
+  const items = safeArray(series.items);
+  if (!items.length) {
+    return 0;
+  }
+
+  return Number(items[items.length - 1]?.[metricKey]) || 0;
+}
+
+function walletHistorySeriesSnapshotValue(series, metricKey, index) {
+  const items = safeArray(series?.items);
+  if (!items.length) {
+    return 0;
+  }
+
+  const safeIndex = Math.min(Math.max(index, 0), items.length - 1);
+  return Number(items[safeIndex]?.[metricKey]) || 0;
+}
+
+function rankWalletHistorySeries(series, metricKey) {
+  return safeArray(series)
+    .slice()
+    .sort((lhs, rhs) => {
+      const delta = Math.abs(walletHistorySeriesMetricValue(rhs, metricKey)) - Math.abs(walletHistorySeriesMetricValue(lhs, metricKey));
+      if (delta !== 0) {
+        return delta;
+      }
+      return String(lhs?.label || "").localeCompare(String(rhs?.label || ""), "nb");
+    });
+}
+
+function walletHistoryVisibleSeries(series, metricKey, breakdown) {
+  const ranked = rankWalletHistorySeries(series, metricKey);
+  switch (normalizeWalletHistoryBreakdown(breakdown)) {
+    case "markets":
+      return ranked.slice(0, 8);
+    case "categories":
+      return ranked.slice(0, 8);
+    default:
+      return ranked;
+  }
+}
+
+function walletHistorySeriesColor(index) {
+  return WALLET_HISTORY_SERIES_PALETTE[index % WALLET_HISTORY_SERIES_PALETTE.length];
+}
+
+function renderWalletHistoryToolbar(historySection, breakdown, metric, seriesCount, visibleCount) {
+  const breakdownOptions = [
+    { key: "total", label: "Total" },
+    { key: "wallets", label: "Wallets" },
+    { key: "markets", label: "Markets" },
+    { key: "categories", label: "Categories" }
+  ];
+  const metricOptions = [
+    { key: "value", label: "Value" },
+    { key: "cost", label: "Cost" },
+    { key: "unrealized", label: "Unrealized" },
+    { key: "realized", label: "Realized" }
+  ];
+  const hiddenCount = Math.max(0, seriesCount - visibleCount);
+  const rangeNote = historySection.earliestAt && historySection.latestAt
+    ? `${formatDateTime(historySection.earliestAt)} -> ${formatDateTime(historySection.latestAt)}`
+    : "No archived range yet";
+  const seriesNote = normalizeWalletHistoryBreakdown(breakdown) === "total"
+    ? `${historySection.snapshotCount || safeArray(historySection.totalSeries).length || 0} snapshot(s) archived`
+    : `${seriesCount} ${walletHistorySeriesNoun(breakdown)} tracked${hiddenCount ? ` · showing top ${visibleCount}` : ""}`;
+
+  return `
+    <div class="wallet-toolbar-group">
+      <span class="wallet-toolbar-label">Breakdown</span>
+      <div class="wallet-filter-row">
+        ${breakdownOptions.map((option) => renderWalletHistoryToolbarButton(
+          "wallet-history-breakdown",
+          option.key,
+          option.label,
+          normalizeWalletHistoryBreakdown(breakdown) === option.key
+        )).join("")}
+      </div>
+    </div>
+    <div class="wallet-toolbar-group">
+      <span class="wallet-toolbar-label">Metric</span>
+      <div class="wallet-filter-row">
+        ${metricOptions.map((option) => renderWalletHistoryToolbarButton(
+          "wallet-history-metric",
+          option.key,
+          option.label,
+          normalizeWalletHistoryMetric(metric) === option.key
+        )).join("")}
+      </div>
+    </div>
+    <p class="wallet-toolbar-note">${escapeHTML(`${seriesNote} · ${rangeNote}`)}</p>
+  `;
+}
+
+function renderWalletHistoryToolbarButton(dataKey, value, label, isActive) {
+  return `
+    <button
+      type="button"
+      class="wallet-filter-button${isActive ? " is-active" : ""}"
+      data-${escapeAttribute(dataKey)}="${escapeAttribute(value)}"
+    >
+      ${escapeHTML(label)}
+    </button>
+  `;
+}
+
+function renderWalletHistorySummaryGrid(
+  historySection,
+  breakdown,
+  metricConfig,
+  focusSeries,
+  visibleSeries,
+  comparisonBreakdown,
+  comparisonSeries
+) {
+  const latestSummary = historySection?.latestSummary || {};
+  const rankedComparison = rankWalletHistorySeries(comparisonSeries, metricConfig.key);
+  const leadSeries = rankedComparison[0];
+  const hiddenCount = Math.max(0, safeArray(focusSeries).length - safeArray(visibleSeries).length);
+  const snapshotCount = historySection.snapshotCount || safeArray(historySection.totalSeries).length || 0;
+
+  return [
+    renderHistoryStatCard(
+      "Snapshots",
+      snapshotCount,
+      historySection.earliestAt && historySection.latestAt
+        ? `${formatDateTime(historySection.earliestAt)} -> ${formatDateTime(historySection.latestAt)}`
+        : "No archived range yet"
+    ),
+    renderHistoryStatCard(
+      "Lens",
+      `${walletHistoryBreakdownLabel(breakdown)} · ${metricConfig.label}`,
+      normalizeWalletHistoryBreakdown(breakdown) === "total"
+        ? "All watched wallets combined"
+        : `${focusSeries.length} ${walletHistorySeriesNoun(breakdown)} tracked`
+    ),
+    renderHistoryStatCard(
+      `Latest ${metricConfig.label}`,
+      metricConfig.formatter(latestSummary?.[metricConfig.key]),
+      metricConfig.description
+    ),
+    renderHistoryStatCard(
+      "Positions",
+      `${latestSummary.openPositionCount || 0} open`,
+      `${latestSummary.actionablePositionCount || 0} actionable in the latest snapshot`
+    ),
+    renderHistoryStatCard(
+      "Lead series",
+      leadSeries ? truncateText(leadSeries.label, 22) : "-",
+      leadSeries
+        ? `${metricConfig.formatter(walletHistorySeriesMetricValue(leadSeries, metricConfig.key))} · ${walletHistoryBreakdownLabel(comparisonBreakdown)}`
+        : "No split series exported yet"
+    ),
+    renderHistoryStatCard(
+      "Chart scope",
+      `${visibleSeries.length}/${Math.max(visibleSeries.length, focusSeries.length || 1)}`,
+      hiddenCount
+        ? `${hiddenCount} lower-weight ${walletHistorySeriesNoun(breakdown)} hidden to keep the chart readable`
+        : "All visible series are on the chart"
+    )
+  ].join("");
+}
+
+function renderWalletHistoryTrendPanel(historySection, breakdown, metricConfig, focusSeries, visibleSeries) {
+  if (!visibleSeries.length) {
+    return renderGraphPanel(
+      "Wallet history",
+      "Track capital, exposure, and PnL over time from the archived wallet snapshots.",
+      renderEmpty("No wallet history rows have been archived into this lens yet.")
+    );
+  }
+
+  const plotSeries = visibleSeries.map((series, index) => ({
+    key: series.key || `${breakdown}-${index}`,
+    label: series.label || `Series ${index + 1}`,
+    color: walletHistorySeriesColor(index),
+    items: safeArray(series.items).map((item) => ({
+      timestampUnix: item.timestampUnix,
+      timestamp: item.timestamp,
+      value: Number(item?.[metricConfig.key]) || 0
+    }))
+  }));
+  const hiddenCount = Math.max(0, focusSeries.length - visibleSeries.length);
+  const description = normalizeWalletHistoryBreakdown(breakdown) === "total"
+    ? `All watched wallets combined across ${historySection.snapshotCount || safeArray(historySection.totalSeries).length || 0} archived snapshots.`
+    : `${walletHistoryBreakdownLabel(breakdown)} over time, ranked by latest ${metricConfig.label.toLowerCase()}${hiddenCount ? ` · showing top ${visibleSeries.length} of ${focusSeries.length}` : ""}.`;
+
+  return renderGraphPanel(
+    `${walletHistoryBreakdownLabel(breakdown)} · ${metricConfig.label}`,
+    description,
+    `${renderTimeSeriesPlot(plotSeries, {
+      ariaLabel: `${walletHistoryBreakdownLabel(breakdown)} ${metricConfig.label} history plot`,
+      valueFormatter: metricConfig.formatter,
+      signed: metricConfig.signed
+    })}
+    <p class="graph-meta-line">${escapeHTML(
+      hiddenCount
+        ? `${hiddenCount} lower-weight ${walletHistorySeriesNoun(breakdown)} are hidden on the plot but still included in the summary cards below.`
+        : `Latest snapshot: ${formatDateTime(historySection.latestAt || historySection.latestSummary?.timestamp)}.`
+    )}</p>`
+  );
+}
+
+function renderWalletHistoryLoadPanel(historySection) {
+  const items = safeArray(historySection?.totalSeries);
+  if (!items.length) {
+    return renderGraphPanel(
+      "Position load",
+      "Open and actionable positions across archived wallet snapshots.",
+      renderEmpty("No position-load history has been archived yet.")
+    );
+  }
+
+  const latest = items[items.length - 1] || {};
+  const plotSeries = [
+    {
+      key: "open",
+      label: "Open positions",
+      color: "rgba(114, 215, 255, 0.96)",
+      items: items.map((item) => ({
+        timestampUnix: item.timestampUnix,
+        timestamp: item.timestamp,
+        value: Number(item.openPositionCount) || 0
+      }))
+    },
+    {
+      key: "actionable",
+      label: "Actionable",
+      color: "rgba(255, 191, 105, 0.95)",
+      items: items.map((item) => ({
+        timestampUnix: item.timestampUnix,
+        timestamp: item.timestamp,
+        value: Number(item.actionablePositionCount) || 0
+      }))
+    }
+  ];
+
+  return renderGraphPanel(
+    "Position load",
+    "How many positions are open and actionable across the archived wallet snapshots.",
+    `${renderTimeSeriesPlot(plotSeries, {
+      ariaLabel: "Wallet position load plot",
+      valueFormatter: (value) => String(Math.round(Number(value) || 0)),
+      signed: false,
+      integer: true
+    })}
+    <p class="graph-meta-line">${escapeHTML(
+      `Latest snapshot: ${latest.openPositionCount || 0} open · ${latest.actionablePositionCount || 0} actionable`
+    )}</p>`
+  );
+}
+
+function renderWalletHistoryBreakdownPanel(historySection, breakdown, metricConfig, comparisonBreakdown, comparisonSeries) {
+  const rankedSeries = rankWalletHistorySeries(comparisonSeries, metricConfig.key);
+  if (!rankedSeries.length) {
+    return renderGraphPanel(
+      "Latest breakdown",
+      "Current split across the selected wallet-history lens.",
+      renderEmpty("No split series were exported for this lens.")
+    );
+  }
+
+  const visibleRows = rankedSeries.slice(0, 10);
+  const maxAbs = Math.max(
+    1,
+    ...visibleRows.map((series) => Math.abs(walletHistorySeriesMetricValue(series, metricConfig.key)))
+  );
+  const hiddenCount = Math.max(0, rankedSeries.length - visibleRows.length);
+  const description = normalizeWalletHistoryBreakdown(breakdown) === "total"
+    ? `Current ${metricConfig.label.toLowerCase()} split across Rose and Haak.`
+    : `Current ${metricConfig.label.toLowerCase()} split across ${walletHistoryBreakdownLabel(comparisonBreakdown).toLowerCase()}.`;
+
+  return renderGraphPanel(
+    "Latest breakdown",
+    description,
+    `
+      <div class="wallet-history-rank-list">
+        ${visibleRows.map((series) => renderWalletHistoryRankRow({
+          label: series.label,
+          value: walletHistorySeriesMetricValue(series, metricConfig.key),
+          displayValue: metricConfig.formatter(walletHistorySeriesMetricValue(series, metricConfig.key)),
+          meta: `${series.latestOpenPositionCount || 0} open · ${series.latestActionablePositionCount || 0} actionable`,
+          fill: Math.max(6, (Math.abs(walletHistorySeriesMetricValue(series, metricConfig.key)) / maxAbs) * 100)
+        })).join("")}
+      </div>
+      <p class="graph-meta-line">${escapeHTML(
+        hiddenCount
+          ? `${hiddenCount} smaller ${walletHistorySeriesNoun(comparisonBreakdown)} are hidden below the fold.`
+          : `Latest snapshot captured ${formatDateTime(historySection.latestAt || historySection.latestSummary?.timestamp)}.`
+      )}</p>
+    `
+  );
+}
+
+function renderWalletHistoryMoversPanel(historySection, metricConfig, comparisonBreakdown, comparisonSeries) {
+  const rankedRows = safeArray(comparisonSeries)
+    .map((series) => {
+      const items = safeArray(series.items);
+      if (items.length < 2) {
+        return null;
+      }
+
+      const latestIndex = items.length - 1;
+      const latestDelta = walletHistorySeriesSnapshotValue(series, metricConfig.key, latestIndex)
+        - walletHistorySeriesSnapshotValue(series, metricConfig.key, latestIndex - 1);
+      const totalDelta = walletHistorySeriesSnapshotValue(series, metricConfig.key, latestIndex)
+        - walletHistorySeriesSnapshotValue(series, metricConfig.key, 0);
+
+      return {
+        label: series.label,
+        value: latestDelta,
+        displayValue: metricConfig.deltaFormatter(latestDelta),
+        meta: `Since start ${metricConfig.deltaFormatter(totalDelta)} · ${series.latestOpenPositionCount || 0} open`,
+        fillValue: Math.abs(latestDelta)
+      };
+    })
+    .filter(Boolean)
+    .sort((lhs, rhs) => rhs.fillValue - lhs.fillValue || String(lhs.label || "").localeCompare(String(rhs.label || ""), "nb"));
+
+  if (!rankedRows.length || rankedRows.every((row) => row.fillValue === 0)) {
+    return renderGraphPanel(
+      "Recent movers",
+      `Latest-step changes across ${walletHistoryBreakdownLabel(comparisonBreakdown).toLowerCase()}.`,
+      renderEmpty("No measurable movement appeared between the last two archived snapshots.")
+    );
+  }
+
+  const visibleRows = rankedRows.slice(0, 10);
+  const maxAbs = Math.max(1, ...visibleRows.map((row) => row.fillValue));
+  const hiddenCount = Math.max(0, rankedRows.length - visibleRows.length);
+
+  return renderGraphPanel(
+    "Recent movers",
+    `Latest-step changes across ${walletHistoryBreakdownLabel(comparisonBreakdown).toLowerCase()}.`,
+    `
+      <div class="wallet-history-rank-list">
+        ${visibleRows.map((row) => renderWalletHistoryRankRow({
+          label: row.label,
+          value: row.value,
+          displayValue: row.displayValue,
+          meta: row.meta,
+          fill: Math.max(6, (row.fillValue / maxAbs) * 100)
+        })).join("")}
+      </div>
+      <p class="graph-meta-line">${escapeHTML(
+        hiddenCount
+          ? `${hiddenCount} lower-movement ${walletHistorySeriesNoun(comparisonBreakdown)} are omitted here.`
+          : `Compared against the previous archived snapshot.`
+      )}</p>
+    `
+  );
+}
+
+function renderWalletHistoryRankRow({ label, value, displayValue, meta, fill }) {
+  const numericValue = Number(value) || 0;
+  const directionClass = numericValue < 0 ? "is-negative" : numericValue > 0 ? "is-positive" : "is-flat";
+  const fillClass = numericValue < 0 ? "negative" : "positive";
+
+  return `
+    <div class="wallet-history-rank-row ${directionClass}">
+      <div class="wallet-history-rank-head">
+        <strong>${escapeHTML(truncateText(label, 36))}</strong>
+        <span class="wallet-history-rank-value">${escapeHTML(displayValue)}</span>
+      </div>
+      <p class="wallet-history-rank-meta">${escapeHTML(meta || "-")}</p>
+      <div class="bar-track">
+        <div class="bar-fill ${fillClass}" style="--fill:${fill}%"></div>
+      </div>
+    </div>
+  `;
+}
+
+function renderTimeSeriesPlot(seriesDefinitions, options = {}) {
+  const preparedSeries = safeArray(seriesDefinitions)
+    .map((series, index) => ({
+      key: series.key || `series-${index}`,
+      label: series.label || `Series ${index + 1}`,
+      color: series.color || walletHistorySeriesColor(index),
+      points: safeArray(series.items)
+        .map((item) => ({
+          timestampUnix: Number(item.timestampUnix) || Math.round(new Date(item.timestamp || 0).getTime() / 1000),
+          value: Number(item.value) || 0
+        }))
+        .filter((point) => Number.isFinite(point.timestampUnix) && point.timestampUnix > 0)
+        .sort((lhs, rhs) => lhs.timestampUnix - rhs.timestampUnix)
+    }))
+    .filter((series) => series.points.length);
+
+  if (!preparedSeries.length) {
+    return renderEmpty("No time-series points are available for this chart yet.");
+  }
+
+  const width = 560;
+  const height = 240;
+  const padLeft = 58;
+  const padRight = 16;
+  const padTop = 18;
+  const padBottom = 34;
+  const usableWidth = width - padLeft - padRight;
+  const usableHeight = height - padTop - padBottom;
+  const allPoints = preparedSeries.flatMap((series) => series.points);
+  const timestamps = allPoints.map((point) => point.timestampUnix);
+  const values = allPoints.map((point) => point.value);
+  const minTimestamp = Math.min(...timestamps);
+  const maxTimestamp = Math.max(...timestamps);
+  const spanSeconds = Math.max(0, maxTimestamp - minTimestamp);
+  const signed = Boolean(options.signed);
+  let minValue = signed ? Math.min(0, ...values) : 0;
+  let maxValue = Math.max(signed ? 0 : 1, ...values);
+
+  if (minValue === maxValue) {
+    if (minValue === 0) {
+      maxValue = 1;
+    } else if (minValue > 0) {
+      minValue = 0;
+    } else {
+      maxValue = 0;
+    }
+  }
+
+  const xForTimestamp = (timestampUnix) => {
+    if (minTimestamp === maxTimestamp) {
+      return padLeft + usableWidth / 2;
+    }
+    return padLeft + ((timestampUnix - minTimestamp) / (maxTimestamp - minTimestamp)) * usableWidth;
+  };
+  const yForValue = (value) => {
+    const ratio = (Number(value || 0) - minValue) / (maxValue - minValue);
+    return padTop + usableHeight - ratio * usableHeight;
+  };
+
+  const xTickCandidates = [minTimestamp, minTimestamp + spanSeconds / 2, maxTimestamp]
+    .filter((value, index, all) => all.findIndex((item) => Math.abs(item - value) < 1) === index);
+  const yTickCandidates = signed
+    ? [minValue, 0, maxValue]
+    : [minValue, minValue + (maxValue - minValue) / 2, maxValue];
+  const yTicks = yTickCandidates.filter((value, index, all) => all.findIndex((item) => Math.abs(item - value) < 1e-6) === index);
+  const valueFormatter = typeof options.valueFormatter === "function" ? options.valueFormatter : String;
+
+  return `
+    <svg class="plot-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeAttribute(options.ariaLabel || "Time series plot")}">
+      ${yTicks.map((tick) => {
+        const y = yForValue(tick);
+        const gridClass = Math.abs(tick) < 1e-6 ? "plot-grid plot-axis-zero" : "plot-grid";
+        return `<line class="${gridClass}" x1="${padLeft}" y1="${y.toFixed(1)}" x2="${width - padRight}" y2="${y.toFixed(1)}"></line>`;
+      }).join("")}
+      ${xTickCandidates.map((tick) => `
+        <line class="plot-grid plot-grid-vertical" x1="${xForTimestamp(tick).toFixed(1)}" y1="${padTop}" x2="${xForTimestamp(tick).toFixed(1)}" y2="${height - padBottom}"></line>
+      `).join("")}
+      <line class="plot-axis" x1="${padLeft}" y1="${height - padBottom}" x2="${width - padRight}" y2="${height - padBottom}"></line>
+      <line class="plot-axis" x1="${padLeft}" y1="${padTop}" x2="${padLeft}" y2="${height - padBottom}"></line>
+      ${preparedSeries.map((series) => {
+        const linePoints = series.points.map((point) => `${xForTimestamp(point.timestampUnix)},${yForValue(point.value)}`).join(" ");
+        return `
+          <polyline
+            class="plot-line series-custom"
+            style="--plot-series-color:${escapeAttribute(series.color)}"
+            points="${linePoints}"
+          ></polyline>
+          ${series.points.map((point) => `
+            <circle
+              class="plot-point series-custom"
+              style="--plot-series-color:${escapeAttribute(series.color)}"
+              cx="${xForTimestamp(point.timestampUnix).toFixed(1)}"
+              cy="${yForValue(point.value).toFixed(1)}"
+              r="3.5"
+            ></circle>
+          `).join("")}
+        `;
+      }).join("")}
+      ${xTickCandidates.map((tick) => `
+        <text class="plot-tick" x="${xForTimestamp(tick).toFixed(1)}" y="${height - 10}" text-anchor="middle">${escapeHTML(formatWalletHistoryTick(tick, spanSeconds))}</text>
+      `).join("")}
+      ${yTicks.map((tick) => `
+        <text class="plot-tick" x="${padLeft - 8}" y="${(yForValue(tick) + 4).toFixed(1)}" text-anchor="end">${escapeHTML(valueFormatter(tick))}</text>
+      `).join("")}
+    </svg>
+    <div class="plot-legend">
+      ${preparedSeries.map((series) => `
+        <div class="plot-legend-item">
+          <span class="plot-dot series-custom" style="--plot-series-color:${escapeAttribute(series.color)}"></span>
+          <span>${escapeHTML(series.label)}</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function formatWalletHistoryTick(timestampUnix, spanSeconds) {
+  const date = new Date(Number(timestampUnix) * 1000);
+  if (Number.isNaN(date.getTime())) {
+    return "-";
+  }
+
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  if (spanSeconds <= 48 * 60 * 60) {
+    const hour = String(date.getHours()).padStart(2, "0");
+    return `${day}/${month} ${hour}`;
+  }
+  return `${day}/${month}`;
 }
 
 function renderHistory(historySection) {
@@ -2344,6 +3726,7 @@ function renderSignalCard(signal) {
     ? `<span class="badge ${escapeHTML(signal.xgboostStance)}">${escapeHTML(formatStance(signal.xgboostStance))}</span>`
     : "";
   const openMarketLink = renderExternalAction("Open market", marketURL);
+  const intelAction = renderIntelActionForSignal(signal);
 
   return `
     <article ${renderCardSurfaceAttributes("signal-card", marketURL, `Open market for ${signal.title}`)}>
@@ -2376,6 +3759,7 @@ function renderSignalCard(signal) {
         <span class="footer-note">${escapeHTML(formatRelativeTimeFromUnix(signal.latestTradeTimestamp))}</span>
         <div class="card-action-row">
           ${openMarketLink}
+          ${intelAction}
           ${renderPinAction(marketPinID(signal))}
         </div>
       </div>
@@ -2464,6 +3848,7 @@ function renderWalletPosition(wallet, position) {
   const links = [
     renderExternalAction("Open market", marketURL),
     sameExternalURL(signalURL, marketURL) ? "" : renderExternalAction("Open signal", signalURL),
+    renderIntelActionForWalletPosition(position),
     renderPinAction(pinID)
   ].filter(Boolean).join("");
   const footer = links ? `<div class="compact-footer">${links}</div>` : "";
@@ -2501,6 +3886,7 @@ function renderWalletPosition(wallet, position) {
 function renderCompactSignalCard(signal) {
   const marketURL = getSignalMarketURL(signal);
   const openMarketLink = renderExternalAction("Open market", marketURL);
+  const intelAction = renderIntelActionForSignal(signal);
   return `
     <article ${renderCardSurfaceAttributes("compact-card", marketURL, `Open market for ${signal.title}`)}>
       <div class="compact-head">
@@ -2518,6 +3904,7 @@ function renderCompactSignalCard(signal) {
         ${miniBadge("Traders", signal.uniqueTraderCount || 0)}
         ${miniBadge("Seen", formatRelativeTimeFromUnix(signal.latestTradeTimestamp))}
         ${openMarketLink}
+        ${intelAction}
         ${renderPinAction(marketPinID(signal))}
       </div>
     </article>
@@ -2528,6 +3915,7 @@ function renderInsiderCard(signal) {
   const directionClass = isSellDirection(signal.direction) ? "sell bearish" : "buy bullish";
   const externalURL = getInsiderSignalURL(signal);
   const openFilingLink = renderExternalAction("Open filing", externalURL);
+  const intelAction = renderIntelActionForInsiderSignal(signal);
 
   return `
     <article ${renderCardSurfaceAttributes("compact-card", externalURL, `Open filing for ${signal.ticker}`)}>
@@ -2547,6 +3935,7 @@ function renderInsiderCard(signal) {
         ${miniBadge("Type", signal.transactionType || "unknown")}
         ${miniBadge("Watchlist", signal.watchlistMatch ? "Yes" : "No")}
         ${openFilingLink}
+        ${intelAction}
         ${renderPinAction(insiderPinID(signal))}
       </div>
     </article>
@@ -2779,6 +4168,10 @@ function insiderPinID(signal) {
   return signal?.id ? `insider:${signal.id}` : null;
 }
 
+function intelPinID(item) {
+  return item?.id ? `intel:${item.id}` : null;
+}
+
 function xgboostPinID(item) {
   const key = item?.signalID || item?.id || `${item?.slug || "xgboost"}|${item?.outcome || "unknown"}`;
   return key ? `xgboost:${key}` : null;
@@ -2794,8 +4187,137 @@ function historyInsiderPinID(item) {
   return key ? `history-insider:${key}` : null;
 }
 
+function renderIntelAction(targetID) {
+  if (!targetID) {
+    return "";
+  }
+  return `
+    <button
+      class="signal-link intel-link"
+      type="button"
+      data-intel-id="${escapeAttribute(targetID)}"
+    >
+      Intel
+    </button>
+  `;
+}
+
+function renderIntelActionForSignal(signal) {
+  return renderIntelAction(findIntelItemForSignal(signal)?.id || null);
+}
+
+function renderIntelActionForWalletPosition(position) {
+  return renderIntelAction(findIntelItemForWalletPosition(position)?.id || null);
+}
+
+function renderIntelActionForMarketURL(url) {
+  return renderIntelAction(findIntelItemForMarketURL(url)?.id || null);
+}
+
+function renderIntelActionForInsiderSignal(signal) {
+  return renderIntelAction(findIntelItemForInsiderSignal(signal)?.id || null);
+}
+
+function findIntelItemForSignal(signal) {
+  if (!signal || !appState.overlayFeed?.intel) {
+    return null;
+  }
+
+  const byEventID = signal?.sourceAttribution?.eventID
+    ? safeArray(appState.overlayFeed.intel.sourceLed).find((item) => item.sourceEventID === signal.sourceAttribution.eventID)
+    : null;
+  if (byEventID) {
+    return byEventID;
+  }
+
+  const bySignalID = signal?.id
+    ? safeArray(appState.overlayFeed.intel.sourceLed).find((item) =>
+        safeArray(item.topSignals).some((linked) => linked.id === signal.id)
+      )
+    : null;
+  if (bySignalID) {
+    return bySignalID;
+  }
+
+  return findIntelItemForMarketURL(getSignalMarketURL(signal));
+}
+
+function findIntelItemForWalletPosition(position) {
+  if (!position || !appState.overlayFeed?.intel) {
+    return null;
+  }
+
+  const adviceSignal = position?.advice?.signal;
+  if (adviceSignal) {
+    const linked = findIntelItemForSignal(adviceSignal);
+    if (linked) {
+      return linked;
+    }
+  }
+
+  return findIntelItemForMarketURL(getWalletMarketURL(position) || getWalletSignalURL(position));
+}
+
+function findIntelItemForInsiderSignal(signal) {
+  if (!signal || !appState.overlayFeed?.intel) {
+    return null;
+  }
+
+  return safeArray(appState.overlayFeed.intel.insiderWatch).find((item) =>
+    item.id === `insider-watch:${signal.id}`
+  ) || null;
+}
+
+function findIntelItemForMarketURL(url) {
+  const normalizedURL = normalizeExternalURL(url);
+  if (!normalizedURL || !appState.overlayFeed?.intel) {
+    return null;
+  }
+
+  return safeArray(appState.overlayFeed.intel.sourceLed).find((item) =>
+    safeArray(item.topSignals).some((linked) => sameExternalURL(linked.marketURL, normalizedURL))
+  ) || null;
+}
+
+function focusIntelItem(intelID) {
+  if (!intelID) {
+    return;
+  }
+
+  appState.intelFocusID = intelID;
+  setDashboardView("intel");
+  requestAnimationFrame(() => {
+    applyIntelFocus();
+  });
+}
+
+function applyIntelFocus() {
+  const intelID = appState.intelFocusID;
+  if (!intelID) {
+    return;
+  }
+
+  document.querySelectorAll(".intel-card.is-targeted").forEach((element) => {
+    element.classList.remove("is-targeted");
+  });
+
+  const target = Array.from(document.querySelectorAll("[data-intel-item-id]")).find((element) =>
+    element.dataset.intelItemId === intelID
+  );
+  appState.intelFocusID = null;
+  if (!target) {
+    return;
+  }
+
+  target.classList.add("is-targeted");
+  target.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.setTimeout(() => {
+    target.classList.remove("is-targeted");
+  }, 1800);
+}
+
 function normalizeDashboardView(value) {
-  return ["overview", "xgboost", "pinned", "history"].includes(value) ? value : "overview";
+  return ["overview", "intel", "xgboost", "pinned", "history"].includes(value) ? value : "overview";
 }
 
 function preferredDashboardView() {
@@ -3111,6 +4633,53 @@ function formatDirection(value) {
   return formatTake(value);
 }
 
+function formatIntelSourceType(value) {
+  const map = {
+    api: "API",
+    web: "Web",
+    rss: "RSS",
+    social: "Social",
+    filing: "Filing"
+  };
+  return map[value] || formatCategory(value);
+}
+
+function formatIntelLane(value) {
+  const map = {
+    official_macro: "Official macro",
+    official_post: "Official post",
+    official_posts: "Official posts",
+    company_official: "Company official",
+    standard: "Standard"
+  };
+  return map[value] || formatCategory(value);
+}
+
+function formatIntelPriority(value) {
+  const priority = Number(value) || 0;
+  return priority > 0 ? `P${priority}` : "Priority";
+}
+
+function intelPriorityClass(value) {
+  const priority = Number(value) || 0;
+  if (priority >= 9) {
+    return "supports";
+  }
+  if (priority >= 7) {
+    return "mixed";
+  }
+  return "neutral";
+}
+
+function intelMarketFootnote(item) {
+  const parts = [
+    item.sourceName || item.provider || "Source",
+    item.publishedAt ? formatDateTime(item.publishedAt) : null,
+    item.topSignals?.[0]?.sourceMatchedQuery ? `Matched "${truncateText(item.topSignals[0].sourceMatchedQuery, 20)}"` : null
+  ].filter(Boolean);
+  return parts.join(" · ") || "Curated source-led event";
+}
+
 function formatStance(value) {
   const map = {
     supports: "Model supports",
@@ -3337,10 +4906,25 @@ function formatModelScore(value) {
 function formatFreshnessStatus(value) {
   const map = {
     live: "Live source",
+    partial: "Partial run",
+    cached: "Cached upstream",
+    degraded: "Degraded source",
+    failed: "Failed source",
     placeholder: "Placeholder only",
-    missing: "Missing source"
+    missing: "Missing source",
+    skipped: "Skipped step"
   };
   return map[value] || "Unknown status";
+}
+
+function formatPipelineStatus(value) {
+  const map = {
+    live: "Live",
+    degraded: "Degraded",
+    failed: "Failed",
+    missing: "Missing"
+  };
+  return map[value] || "Unknown";
 }
 
 function shortWallet(value) {
@@ -3506,6 +5090,14 @@ function handleDashboardActionClick(event) {
     return;
   }
 
+  const intelTrigger = target.closest("[data-intel-id]");
+  if (intelTrigger) {
+    event.preventDefault();
+    event.stopPropagation();
+    focusIntelItem(intelTrigger.dataset.intelId);
+    return;
+  }
+
   const pinTrigger = target.closest("[data-pin-id]");
   if (pinTrigger) {
     event.preventDefault();
@@ -3543,6 +5135,26 @@ function handleDashboardActionClick(event) {
     appState.walletWorkspace.sort = normalizeWalletSort(walletSortTrigger.dataset.walletSort);
     if (appState.overlayFeed) {
       renderWallets(appState.overlayFeed.wallets);
+    }
+    return;
+  }
+
+  const walletHistoryBreakdownTrigger = target.closest("[data-wallet-history-breakdown]");
+  if (walletHistoryBreakdownTrigger) {
+    event.preventDefault();
+    appState.walletHistory.breakdown = normalizeWalletHistoryBreakdown(walletHistoryBreakdownTrigger.dataset.walletHistoryBreakdown);
+    if (appState.overlayFeed) {
+      renderWalletHistory(appState.overlayFeed.wallets?.history);
+    }
+    return;
+  }
+
+  const walletHistoryMetricTrigger = target.closest("[data-wallet-history-metric]");
+  if (walletHistoryMetricTrigger) {
+    event.preventDefault();
+    appState.walletHistory.metric = normalizeWalletHistoryMetric(walletHistoryMetricTrigger.dataset.walletHistoryMetric);
+    if (appState.overlayFeed) {
+      renderWalletHistory(appState.overlayFeed.wallets?.history);
     }
     return;
   }

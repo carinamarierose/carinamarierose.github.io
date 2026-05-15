@@ -166,6 +166,61 @@ body {
   gap: 14px;
 }
 
+.ops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.ops-card,
+.source-strip-card {
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ops-title,
+.source-strip-title {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.05rem;
+  line-height: 1.12;
+}
+
+.ops-body {
+  margin: 12px 0 0;
+  color: var(--muted-strong);
+  line-height: 1.45;
+}
+
+.source-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.source-strip-title {
+  font-size: 1rem;
+}
+
+.source-strip-card.live,
+.source-strip-card.supports {
+  box-shadow: inset 0 0 0 1px rgba(80, 224, 164, 0.08);
+}
+
+.source-strip-card.partial,
+.source-strip-card.cached,
+.source-strip-card.degraded,
+.source-strip-card.placeholder {
+  box-shadow: inset 0 0 0 1px rgba(255, 191, 105, 0.08);
+}
+
+.source-strip-card.failed,
+.source-strip-card.missing {
+  box-shadow: inset 0 0 0 1px rgba(255, 127, 114, 0.08);
+}
+
 .status-card,
 .summary-card,
 .headline-card,
@@ -525,12 +580,77 @@ body {
   color: var(--ink);
 }
 
+.intel-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .card-action-row {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.intel-feed-list {
+  gap: 16px;
+}
+
+.intel-card .signal-copy p + p {
+  margin-top: 10px;
+}
+
+.intel-card.is-targeted {
+  border-color: rgba(114, 215, 255, 0.5);
+  background: rgba(114, 215, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(114, 215, 255, 0.24),
+    var(--shadow);
+}
+
+.intel-card .footer-note {
+  max-width: 30ch;
+}
+
+.intel-market-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.intel-market-link {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(114, 215, 255, 0.16);
+  background: rgba(114, 215, 255, 0.05);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.intel-market-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(114, 215, 255, 0.3);
+  background: rgba(114, 215, 255, 0.08);
+}
+
+.intel-market-link strong {
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.intel-market-link span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .pin-action,
@@ -1095,6 +1215,10 @@ body {
   stroke: rgba(255, 127, 114, 0.94);
 }
 
+.plot-line.series-custom {
+  stroke: var(--plot-series-color, rgba(114, 215, 255, 0.96));
+}
+
 .plot-point.activity,
 .plot-dot.activity {
   fill: rgba(114, 215, 255, 0.95);
@@ -1123,6 +1247,12 @@ body {
 .plot-dot.disagreement {
   fill: rgba(255, 127, 114, 0.96);
   background: rgba(255, 127, 114, 0.96);
+}
+
+.plot-point.series-custom,
+.plot-dot.series-custom {
+  fill: var(--plot-series-color, rgba(114, 215, 255, 0.96));
+  background: var(--plot-series-color, rgba(114, 215, 255, 0.96));
 }
 
 .plot-legend {
@@ -1194,6 +1324,16 @@ body {
 
 .freshness-card.placeholder {
   box-shadow: inset 0 0 0 1px rgba(255, 191, 105, 0.08);
+}
+
+.freshness-card.partial,
+.freshness-card.cached,
+.freshness-card.degraded {
+  box-shadow: inset 0 0 0 1px rgba(255, 191, 105, 0.08);
+}
+
+.freshness-card.failed {
+  box-shadow: inset 0 0 0 1px rgba(255, 127, 114, 0.08);
 }
 
 .freshness-card.missing {
@@ -1410,6 +1550,14 @@ body {
   background: linear-gradient(90deg, var(--cyan), var(--buy));
 }
 
+.bar-fill.positive {
+  background: linear-gradient(90deg, var(--cyan), var(--buy));
+}
+
+.bar-fill.negative {
+  background: linear-gradient(90deg, rgba(255, 191, 105, 0.88), rgba(255, 127, 114, 0.96));
+}
+
 .health-list {
   flex-direction: column;
   gap: 10px;
@@ -1434,6 +1582,47 @@ body {
 
 .empty-card p {
   margin: 0;
+}
+
+.wallet-history-rank-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.wallet-history-rank-row {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.wallet-history-rank-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wallet-history-rank-value {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wallet-history-rank-row.is-positive .wallet-history-rank-value {
+  color: var(--buy);
+}
+
+.wallet-history-rank-row.is-negative .wallet-history-rank-value {
+  color: var(--sell);
+}
+
+.wallet-history-rank-meta {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .accent-buy {
@@ -1464,6 +1653,8 @@ body {
 }
 
 @media (max-width: 1120px) {
+  .ops-grid,
+  .source-strip,
   .headline-grid,
   .graph-grid,
   .history-graph-grid,
@@ -1488,6 +1679,7 @@ body {
   }
 
   .hero-rail,
+  .ops-grid,
   .wallet-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1517,6 +1709,7 @@ body {
   }
 
   .hero-rail,
+  .ops-grid,
   .summary-grid,
   .history-summary-grid,
   .wallet-summary {

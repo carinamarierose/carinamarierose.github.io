@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-15T17:09:58.776Z",
+  "generatedAtUnix": 1778864998,
+  "runID": "run-2026-05-15T17-06-45-306Z-24708",
+  "status": "live",
+  "statusReason": "4 step(s) completed without pipeline issues.",
+  "scope": "full",
+  "scopeReason": null,
+  "startedAt": "2026-05-15T17:06:45.306Z",
+  "finishedAt": "2026-05-15T17:09:58.776Z",
+  "lastRunAt": "2026-05-15T17:09:58.776Z",
+  "durationSeconds": 193.47,
+  "publishRequested": true,
+  "publishEnabled": true,
+  "intervalSeconds": 3600,
+  "nextRunAt": "2026-05-15T18:09:58.776Z",
+  "lastSuccessAt": "2026-05-15T17:09:58.776Z",
+  "lastSuccessfulRunAt": "2026-05-15T17:09:58.776Z",
+  "lastFailureAt": "2026-05-15T14:14:27.400Z",
+  "steps": [
+    {
+      "id": "market",
+      "title": "Refreshing market-trans from source",
+      "status": "live",
+      "required": true,
+      "skipped": false,
+      "startedAt": "2026-05-15T17:06:45.332Z",
+      "finishedAt": "2026-05-15T17:09:29.178Z",
+      "durationSeconds": 163.846,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-15T17-06-45-306Z-24708/market.log",
+      "summary": "Notification decisions: selected cs2-furia-fal2-2026-05-15|Team Falcons [global_window_open,urgent_suspicious] | blocked bitcoin-above-80k-on-may-16|No->notification_limit | us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192|No->cooldown | us-obtains-iranian-enriched-uranium-by-may-31-396|No->notification_limit",
+      "error": null,
+      "exitCode": 0,
+      "lastSuccessAt": "2026-05-15T17:09:29.178Z",
+      "lastFailureAt": "2026-05-15T14:14:02.976Z"
+    },
+    {
+      "id": "wallets",
+      "title": "Refreshing wallet_watcher from source",
+      "status": "live",
+      "required": true,
+      "skipped": false,
+      "startedAt": "2026-05-15T17:09:29.178Z",
+      "finishedAt": "2026-05-15T17:09:34.689Z",
+      "durationSeconds": 5.511,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-15T17-06-45-306Z-24708/wallets.log",
+      "summary": "Source diagnostics: 8 candidate(s) | built 2 | no-chase 6 | no-market 0",
+      "error": null,
+      "exitCode": 0,
+      "lastSuccessAt": "2026-05-15T17:09:34.689Z",
+      "lastFailureAt": null
+    },
+    {
+      "id": "insider",
+      "title": "Refreshing etoro-bot from source",
+      "status": "live",
+      "required": true,
+      "skipped": false,
+      "startedAt": "2026-05-15T17:09:34.690Z",
+      "finishedAt": "2026-05-15T17:09:57.706Z",
+      "durationSeconds": 23.016,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-15T17-06-45-306Z-24708/insider.log",
+      "summary": "Telegram preview · selected 0 of 0 new signal(s)",
+      "error": null,
+      "exitCode": 0,
+      "lastSuccessAt": "2026-05-15T17:09:57.706Z",
+      "lastFailureAt": null
+    },
+    {
+      "id": "sync",
+      "title": "Syncing webpage data",
+      "status": "live",
+      "required": true,
+      "skipped": false,
+      "startedAt": "2026-05-15T17:09:57.706Z",
+      "finishedAt": "2026-05-15T17:09:58.368Z",
+      "durationSeconds": 0.662,
+      "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-15T17-06-45-306Z-24708/sync.log",
+      "summary": "Run ./webpage/scripts/sync-data.sh --publish to refresh /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/.stonkvision-pages/stonkvision",
+      "error": null,
+      "exitCode": 0,
+      "lastSuccessAt": "2026-05-15T17:09:58.368Z",
+      "lastFailureAt": null
+    },
+    {
+      "id": "overlay-feed",
+      "title": "Embedding pipeline health into overlay feed",
+      "status": "live",
+      "required": true,
+      "skipped": false,
+      "startedAt": "2026-05-15T17:09:58.372Z",
+      "finishedAt": "2026-05-15T17:09:58.774Z",
+      "durationSeconds": 0.402,
+      "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/build-overlay-feed.mjs",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-15T17-06-45-306Z-24708/overlay-feed.log",
+      "summary": "Built overlay-feed.json",
+      "error": null,
+      "exitCode": 0,
+      "lastSuccessAt": "2026-05-15T17:09:58.774Z",
+      "lastFailureAt": null
+    }
+  ],
+  "sourceSummary": {
+    "market": {
+      "available": true,
+      "synced": true,
+      "generatedAt": "2026-05-15T17:09:29Z",
+      "status": "live",
+      "statusReason": "Snapshot 28s old · 13 active · 25 snapshots · 2 built from 8 source candidate(s) · 1 suspicious wallet(s)"
+    },
+    "wallets": {
+      "available": true,
+      "synced": true,
+      "generatedAt": "2026-05-15T17:09:34Z",
+      "status": "live",
+      "statusReason": "Snapshot 23s old · 2 wallet(s) · 38 open · 1 actionable · 2 live"
+    },
+    "insider": {
+      "available": true,
+      "synced": true,
+      "generatedAt": "2026-05-15T17:09:40Z",
+      "status": "live",
+      "statusReason": "8 live · 3 fresh cache"
+    },
+    "history": {
+      "available": true,
+      "synced": true,
+      "generatedAt": "2026-05-15T17:09:57Z",
+      "status": "live",
+      "statusReason": null
+    },
+    "pipeline": {
+      "available": true,
+      "synced": true,
+      "generatedAt": "2026-05-15T17:09:58.776Z",
+      "status": "live",
+      "statusReason": "4 step(s) completed without pipeline issues."
+    }
+  },
+  "runtime": {
+    "mode": "repo",
+    "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
+    "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
+    "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
+    "currentSourceFingerprint": "2db11d631ddae28cf1e408d12a61246309a462d54faa01791c982e3ca4a3c9d7",
+    "publishEnabled": true,
+    "launchAgent": {
+      "label": "com.carinamarierose.stonkvision.supervisor",
+      "plistPath": "/Users/carina.marie.rose@schibsted.com/Library/LaunchAgents/com.carinamarierose.stonkvision.supervisor.plist",
+      "installed": true,
+      "runsFromServiceCopy": true
+    },
+    "serviceDeployment": {
+      "manifestPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json",
+      "installedAt": null,
+      "repoRoot": null,
+      "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
+      "intervalSeconds": null,
+      "publishEnabled": null,
+      "skippedSteps": null,
+      "sourceFingerprint": null,
+      "state": "missing",
+      "stateReason": "LaunchAgent is installed and points at the service copy, but no deployment manifest was found at /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json. Reinstall with ./scripts/install-stonkvision-launchd.sh --interval-minutes 60 --publish"
+    }
+  }
+}
