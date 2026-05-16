@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-16T04:28:51.533Z",
-  "generatedAtUnix": 1778905731,
+  "generatedAt": "2026-05-16T06:32:01.092Z",
+  "generatedAtUnix": 1778913121,
   "sync": {
-    "generatedAt": "2026-05-16T04:28:50Z",
-    "generatedAtUnix": 1778905730,
+    "generatedAt": "2026-05-16T06:31:59Z",
+    "generatedAtUnix": 1778913119,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,24 +12,24 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-16T04:28:51.533Z",
-      "generatedAtUnix": 1778905731,
-      "runID": "run-2026-05-16T04-27-01-974Z-3250",
-      "status": "live",
-      "statusReason": "5 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-16T06:32:01.092Z",
+      "generatedAtUnix": 1778913121,
+      "runID": "run-2026-05-16T06-29-35-642Z-21070",
+      "status": "degraded",
+      "statusReason": "Source issue(s): insider:degraded. 10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s).",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-05-16T04:27:01.974Z",
-      "finishedAt": "2026-05-16T04:28:51.533Z",
-      "lastRunAt": "2026-05-16T04:28:51.533Z",
-      "durationSeconds": 109.559,
+      "startedAt": "2026-05-16T06:29:35.642Z",
+      "finishedAt": "2026-05-16T06:32:01.092Z",
+      "lastRunAt": "2026-05-16T06:32:01.092Z",
+      "durationSeconds": 145.45,
       "publishRequested": true,
       "publishEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-05-16T04:58:51.533Z",
-      "lastSuccessAt": "2026-05-16T04:28:51.533Z",
-      "lastSuccessfulRunAt": "2026-05-16T04:28:51.533Z",
-      "lastFailureAt": "2026-05-16T02:26:21.371Z",
+      "nextRunAt": "2026-05-16T07:02:01.092Z",
+      "lastSuccessAt": "2026-05-16T05:32:02.727Z",
+      "lastSuccessfulRunAt": "2026-05-16T05:32:02.727Z",
+      "lastFailureAt": "2026-05-16T06:32:01.092Z",
       "steps": [
         {
           "id": "market",
@@ -37,15 +37,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T04:27:02.009Z",
-          "finishedAt": "2026-05-16T04:28:24.262Z",
-          "durationSeconds": 82.253,
+          "startedAt": "2026-05-16T06:29:35.662Z",
+          "finishedAt": "2026-05-16T06:31:17.841Z",
+          "durationSeconds": 102.179,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T04-27-01-974Z-3250/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-78k-on-may-16|No [global_window_open,fresh_source_global_bypass] | blocked bitcoin-above-80k-on-may-18|No->notification_limit | us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192|No->notification_limit | strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No->notification_limit",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T06-29-35-642Z-21070/market.log",
+          "summary": "Notification decisions: selected bitcoin-above-78k-on-may-16|No [global_window_open,fresh_source_global_bypass] | blocked us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192|No->notification_limit | strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No->notification_limit | will-the-us-invade-iran-before-2027|No->category_policy",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T04:28:24.262Z",
+          "lastSuccessAt": "2026-05-16T06:31:17.841Z",
           "lastFailureAt": "2026-05-15T18:12:40.845Z"
         },
         {
@@ -54,15 +54,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T04:28:24.263Z",
-          "finishedAt": "2026-05-16T04:28:25.925Z",
-          "durationSeconds": 1.662,
+          "startedAt": "2026-05-16T06:31:17.841Z",
+          "finishedAt": "2026-05-16T06:31:19.457Z",
+          "durationSeconds": 1.616,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T04-27-01-974Z-3250/wallets.log",
-          "summary": "Source diagnostics: 4 candidate(s) | built 4 | no-chase 0 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T06-29-35-642Z-21070/wallets.log",
+          "summary": "Source diagnostics: 2 candidate(s) | built 2 | no-chase 0 | no-market 0",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T04:28:25.925Z",
+          "lastSuccessAt": "2026-05-16T06:31:19.457Z",
           "lastFailureAt": null
         },
         {
@@ -71,15 +71,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T04:28:25.925Z",
-          "finishedAt": "2026-05-16T04:28:50.488Z",
-          "durationSeconds": 24.563,
+          "startedAt": "2026-05-16T06:31:19.457Z",
+          "finishedAt": "2026-05-16T06:31:59.867Z",
+          "durationSeconds": 40.41,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T04-27-01-974Z-3250/insider.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T06-29-35-642Z-21070/insider.log",
           "summary": "Telegram preview · selected 0 of 0 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T04:28:50.488Z",
+          "lastSuccessAt": "2026-05-16T06:31:59.867Z",
           "lastFailureAt": "2026-05-15T17:15:01.403Z"
         },
         {
@@ -88,15 +88,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T04:28:50.488Z",
-          "finishedAt": "2026-05-16T04:28:51.143Z",
-          "durationSeconds": 0.655,
-          "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T04-27-01-974Z-3250/sync.log",
-          "summary": "Built overlay-feed.json",
+          "startedAt": "2026-05-16T06:31:59.867Z",
+          "finishedAt": "2026-05-16T06:32:00.684Z",
+          "durationSeconds": 0.817,
+          "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh --publish",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T06-29-35-642Z-21070/sync.log",
+          "summary": "cd \"/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/.stonkvision-pages\" && git status",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T04:28:51.143Z",
+          "lastSuccessAt": "2026-05-16T06:32:00.684Z",
           "lastFailureAt": null
         },
         {
@@ -105,15 +105,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T04:28:51.149Z",
-          "finishedAt": "2026-05-16T04:28:51.530Z",
-          "durationSeconds": 0.381,
+          "startedAt": "2026-05-16T06:32:00.691Z",
+          "finishedAt": "2026-05-16T06:32:01.089Z",
+          "durationSeconds": 0.398,
           "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/build-overlay-feed.mjs",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T04-27-01-974Z-3250/overlay-feed.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T06-29-35-642Z-21070/overlay-feed.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T04:28:51.530Z",
+          "lastSuccessAt": "2026-05-16T06:32:01.089Z",
           "lastFailureAt": null
         }
       ],
@@ -121,37 +121,37 @@
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T04:28:24Z",
+          "generatedAt": "2026-05-16T06:31:17Z",
           "status": "live",
-          "statusReason": "Snapshot 26s old · 13 active · 25 snapshots · 4 built from 4 source candidate(s)"
+          "statusReason": "Snapshot 42s old · 12 active · 25 snapshots · 2 built from 2 source candidate(s)"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T04:28:25Z",
+          "generatedAt": "2026-05-16T06:31:19Z",
           "status": "live",
-          "statusReason": "Snapshot 25s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
+          "statusReason": "Snapshot 40s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T04:28:35Z",
-          "status": "live",
-          "statusReason": "11 live"
+          "generatedAt": "2026-05-16T06:31:44Z",
+          "status": "degraded",
+          "statusReason": "10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T04:28:50Z",
+          "generatedAt": "2026-05-16T06:31:59Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T04:28:51.533Z",
-          "status": "live",
-          "statusReason": "5 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-16T06:32:01.092Z",
+          "status": "degraded",
+          "statusReason": "Source issue(s): insider:degraded. 10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s)."
         }
       },
       "runtime": {
@@ -159,7 +159,7 @@
         "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
-        "currentSourceFingerprint": "064577bd4cde2ad3446b745c809f4ad82832dffa1ad127b5fddbc5541b913fc0",
+        "currentSourceFingerprint": "2c6c1fd7828451a0c4f35246cd1fe14d4ec1c07585edf0e398b065ecfd163262",
         "publishEnabled": true,
         "launchAgent": {
           "label": "com.carinamarierose.stonkvision.supervisor",
@@ -192,9 +192,9 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T04:28:24Z",
+      "generatedAt": "2026-05-16T06:31:17Z",
       "status": "live",
-      "statusReason": "Snapshot 26s old · 13 active · 25 snapshots · 4 built from 4 source candidate(s)",
+      "statusReason": "Snapshot 42s old · 12 active · 25 snapshots · 2 built from 2 source candidate(s)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -204,11 +204,11 @@
           "sourceType": "pipeline",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 13 active signal(s).",
-          "fetchedAt": "2026-05-16T04:28:24Z",
-          "fetchedAtUnix": 1778905704,
+          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 12 active signal(s).",
+          "fetchedAt": "2026-05-16T06:31:17Z",
+          "fetchedAtUnix": 1778913077,
           "attemptCount": 1,
-          "eventCount": 13,
+          "eventCount": 12,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -221,11 +221,11 @@
           "sourceType": "pipeline",
           "adapter": "source_watch_digest",
           "status": "live",
-          "message": "4 candidate(s): 4 built, 0 no-chase, 0 no-market.",
-          "fetchedAt": "2026-05-16T04:28:24Z",
-          "fetchedAtUnix": 1778905704,
+          "message": "2 candidate(s): 2 built, 0 no-chase, 0 no-market.",
+          "fetchedAt": "2026-05-16T06:31:17Z",
+          "fetchedAtUnix": 1778913077,
           "attemptCount": 1,
-          "eventCount": 4,
+          "eventCount": 2,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -239,8 +239,8 @@
           "adapter": "suspicious_wallets",
           "status": "live",
           "message": "No suspicious wallets were flagged in the latest market snapshot.",
-          "fetchedAt": "2026-05-16T04:28:24Z",
-          "fetchedAtUnix": 1778905704,
+          "fetchedAt": "2026-05-16T06:31:17Z",
+          "fetchedAtUnix": 1778913077,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -252,9 +252,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T04:28:25Z",
+      "generatedAt": "2026-05-16T06:31:19Z",
       "status": "live",
-      "statusReason": "Snapshot 25s old · 2 wallet(s) · 17 open · 2 actionable · 2 live",
+      "statusReason": "Snapshot 40s old · 2 wallet(s) · 17 open · 2 actionable · 2 live",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -264,11 +264,11 @@
           "sourceType": "pipeline",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Loaded 13 active signal(s) from market intel.",
-          "fetchedAt": "2026-05-16T04:28:24Z",
-          "fetchedAtUnix": 1778905704,
+          "message": "Loaded 12 active signal(s) from market intel.",
+          "fetchedAt": "2026-05-16T06:31:17Z",
+          "fetchedAtUnix": 1778913077,
           "attemptCount": 1,
-          "eventCount": 13,
+          "eventCount": 12,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -282,8 +282,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 17 open position(s) and 2 actionable call(s).",
-          "fetchedAt": "2026-05-16T04:28:25Z",
-          "fetchedAtUnix": 1778905705,
+          "fetchedAt": "2026-05-16T06:31:19Z",
+          "fetchedAtUnix": 1778913079,
           "attemptCount": 2,
           "eventCount": 17,
           "cacheUsed": false,
@@ -295,10 +295,27 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T04:28:35Z",
-      "status": "live",
-      "statusReason": "11 live",
+      "generatedAt": "2026-05-16T06:31:44Z",
+      "status": "degraded",
+      "statusReason": "10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s).",
       "upstreamDiagnostics": [
+        {
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "adapter": "gdelt_doc",
+          "status": "failed",
+          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s).",
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
+          "attemptCount": 3,
+          "eventCount": 0,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null
+        },
         {
           "id": "binance-futures",
           "sourceID": "binance-futures",
@@ -308,8 +325,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -325,27 +342,10 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 3,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "adapter": "gdelt_doc",
-          "status": "live",
-          "message": "Fetched live (2 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
-          "attemptCount": 1,
-          "eventCount": 2,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -359,8 +359,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (6 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 6,
           "cacheUsed": false,
@@ -376,8 +376,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -393,8 +393,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -410,8 +410,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -426,11 +426,11 @@
           "sourceType": "reddit",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "message": "Fetched live (4 matching item(s)).",
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
-          "eventCount": 3,
+          "eventCount": 4,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -444,8 +444,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -461,8 +461,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -478,8 +478,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-05-16T04:28:27Z",
-          "fetchedAtUnix": 1778905707,
+          "fetchedAt": "2026-05-16T06:31:20Z",
+          "fetchedAtUnix": 1778913080,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -491,7 +491,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T04:28:50Z",
+      "generatedAt": "2026-05-16T06:31:59Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -499,9 +499,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T04:28:51.533Z",
-      "status": "live",
-      "statusReason": "5 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-16T06:32:01.092Z",
+      "status": "degraded",
+      "statusReason": "Source issue(s): insider:degraded. 10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s).",
       "upstreamDiagnostics": []
     }
   },
@@ -513,7 +513,7 @@
     "actionablePositionCount": 2,
     "insiderSignalCount": 15,
     "intelItemCount": 18,
-    "sourceSignalCount": 4,
+    "sourceSignalCount": 2,
     "crossSignalCount": 0,
     "kalshiMatchedCount": 2,
     "evaluatedSignalCount": 4793
@@ -522,7 +522,7 @@
     "market": {
       "kicker": "Market leader",
       "title": "Buy NO on US x Iran permanent peace deal by May 31, 2026?",
-      "body": "Geopolitics · conviction take · 9 signal(s) in current board"
+      "body": "Geopolitics · conviction take · 8 signal(s) in current board"
     },
     "wallets": {
       "kicker": "Wallet command",
@@ -537,77 +537,33 @@
   },
   "intel": {
     "available": true,
-    "generatedAt": "2026-05-16T04:28:24Z",
+    "generatedAt": "2026-05-16T06:31:17Z",
     "summary": {
       "totalItemCount": 18,
       "sourceLedCount": 10,
       "insiderWatchCount": 8,
-      "rawSourceEventCount": 38,
-      "linkedMarketCount": 4,
-      "providerCount": 6,
+      "rawSourceEventCount": 28,
+      "linkedMarketCount": 2,
+      "providerCount": 5,
       "watchlistMatchCount": 1
     },
     "sourceLed": [
       {
-        "id": "market-source:binance-BTCUSDT-1778905655",
-        "kind": "market_source",
-        "title": "BTCUSDT futures snapshot",
-        "subtitle": "Binance Futures · 1 linked market",
-        "summary": "mark 79040 | index 79081 | funding +0.0036% | OI 101.89K | OI notional 8.05B USD | long crowding | bearish funding | heavy derivatives positioning",
-        "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Bitcoin be above $80,000 on May 18? · Standard lane",
-        "sourceEventID": "binance-BTCUSDT-1778905655",
-        "sourceName": "Binance Futures",
-        "sourceHandle": "binance",
-        "provider": "binance_futures",
-        "sourceType": "api",
-        "sourceLane": "standard",
-        "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
-        "priority": 8,
-        "category": "crypto",
-        "matchedCategories": [
-          "crypto"
-        ],
-        "tags": [
-          "BTCUSDT",
-          "BTC",
-          "bitcoin",
-          "long_crowding",
-          "bearish_funding",
-          "heavy_derivatives_positioning"
-        ],
-        "signalCount": 1,
-        "topSignals": [
-          {
-            "id": "bitcoin-above-80k-on-may-18|No",
-            "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-            "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-18",
-            "outcome": "No",
-            "direction": "buy",
-            "category": "crypto",
-            "take": "conviction",
-            "confidence": 97,
-            "sourceMatchedQuery": "bitcoin above 79050"
-          }
-        ]
-      },
-      {
-        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1778905655",
+        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1778913009",
         "kind": "market_source",
         "title": "BTCUSDT derivatives snapshot",
         "subtitle": "Coinalyze Derivatives · 1 linked market",
-        "summary": "OI 8.05B USD | funding +0.3938% | predicted +0.3610% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
+        "summary": "OI 8.07B USD | funding +0.3938% | predicted +0.1175% | crowded longs | bearish funding | heavy derivatives positioning",
         "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Bitcoin be above $78,000 on May 16? · Standard lane",
-        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1778905655",
+        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1778913009",
         "sourceName": "Coinalyze Derivatives",
         "sourceHandle": "coinalyze",
         "provider": "coinalyze",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -650,8 +606,8 @@
         "sourceType": "web",
         "sourceLane": "official_macro",
         "sourceURL": "https://home.treasury.gov/news/press-releases/sb0498",
-        "publishedAt": "2026-05-11T15:30:00.000Z",
-        "publishedAtUnix": 1778513400,
+        "publishedAt": "2026-05-11T19:30:00.000Z",
+        "publishedAtUnix": 1778527800,
         "priority": 8,
         "category": "commodities",
         "matchedCategories": [
@@ -675,46 +631,6 @@
         ]
       },
       {
-        "id": "market-source:2055447983001657504",
-        "kind": "market_source",
-        "title": "YZi Labs (@yzilabs): Crypto has finally reached three things at once: regulatory clarity, enterprise adoption,...",
-        "subtitle": "Tree Of Alpha News · 1 linked market",
-        "summary": "YZi Labs (@yzilabs): Crypto has finally reached three things at once: regulatory clarity, enterprise adoption, and AI as a catalyst. At The Convergence summit, @veradittakit sat down with YZi Labs’ @odagius to unpack the macro shift: → The Genius Act gave stablecoins clarity → The new administration gave crypto companies more freedom to operate → Institution...",
-        "whyItMatters": "1 linked market on the live board · Buy YES on Clarity Act signed into law in 2026? · Standard lane",
-        "sourceEventID": "2055447983001657504",
-        "sourceName": "Tree Of Alpha News",
-        "sourceHandle": "treeofalpha",
-        "provider": "tree_news",
-        "sourceType": "api",
-        "sourceLane": "standard",
-        "sourceURL": "https://twitter.com/yzilabs/status/2055447983001657504",
-        "publishedAt": "2026-05-16T00:39:22.000Z",
-        "publishedAtUnix": 1778891962,
-        "priority": 7,
-        "category": "crypto",
-        "matchedCategories": [
-          "crypto",
-          "other"
-        ],
-        "tags": [
-          "Twitter"
-        ],
-        "signalCount": 1,
-        "topSignals": [
-          {
-            "id": "clarity-act-signed-into-law-in-2026|Yes",
-            "title": "Clarity Act signed into law in 2026?",
-            "marketURL": "https://polymarket.com/event/clarity-act-signed-into-law-in-2026",
-            "outcome": "Yes",
-            "direction": "buy",
-            "category": "other",
-            "take": "watch",
-            "confidence": 97,
-            "sourceMatchedQuery": "genius act"
-          }
-        ]
-      },
-      {
         "id": "market-source:https://home.treasury.gov/news/press-releases/sb0497",
         "kind": "market_source",
         "title": "Remarks by U.S. Secretary of the Treasury Scott Bessent at University of South Carolina Commencement",
@@ -728,8 +644,8 @@
         "sourceType": "web",
         "sourceLane": "official_macro",
         "sourceURL": "https://home.treasury.gov/news/press-releases/sb0497",
-        "publishedAt": "2026-05-09T11:10:00.000Z",
-        "publishedAtUnix": 1778325000,
+        "publishedAt": "2026-05-09T15:10:00.000Z",
+        "publishedAtUnix": 1778339400,
         "priority": 8,
         "category": "macro",
         "matchedCategories": [
@@ -740,21 +656,51 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-ETHUSDT-1778905655",
+        "id": "market-source:binance-BTCUSDT-1778913010",
         "kind": "market_source",
-        "title": "ETHUSDT futures snapshot",
+        "title": "BTCUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 2225 | index 2226 | funding +0.0070% | OI 2.28M | OI notional 5.07B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "summary": "mark 78781 | index 78821 | funding +0.0012% | OI 102.38K | OI notional 8.07B USD | heavy derivatives positioning",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-ETHUSDT-1778905655",
+        "sourceEventID": "binance-BTCUSDT-1778913010",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
+        "priority": 8,
+        "category": "crypto",
+        "matchedCategories": [
+          "crypto"
+        ],
+        "tags": [
+          "BTCUSDT",
+          "BTC",
+          "bitcoin",
+          "heavy_derivatives_positioning"
+        ],
+        "signalCount": 0,
+        "topSignals": []
+      },
+      {
+        "id": "market-source:binance-ETHUSDT-1778913010",
+        "kind": "market_source",
+        "title": "ETHUSDT futures snapshot",
+        "subtitle": "Binance Futures · Watching for market match",
+        "summary": "mark 2219 | index 2220 | funding +0.0076% | OI 2.28M | OI notional 5.07B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
+        "sourceEventID": "binance-ETHUSDT-1778913010",
+        "sourceName": "Binance Futures",
+        "sourceHandle": "binance",
+        "provider": "binance_futures",
+        "sourceType": "api",
+        "sourceLane": "standard",
+        "sourceURL": "https://fapi.binance.com/",
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -772,21 +718,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-SOLUSDT-1778905655",
+        "id": "market-source:binance-SOLUSDT-1778913010",
         "kind": "market_source",
         "title": "SOLUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 88.89 | index 88.93 | funding +0.0100% | OI 10.33M | long crowding | bearish funding | crowded longs",
+        "summary": "mark 88.22 | index 88.27 | funding +0.0082% | OI 10.35M | long crowding | bearish funding | crowded longs",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-SOLUSDT-1778905655",
+        "sourceEventID": "binance-SOLUSDT-1778913010",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -804,53 +750,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:coinalyze-ETHUSDT_PERP.A-1778905655",
-        "kind": "market_source",
-        "title": "ETHUSDT derivatives snapshot",
-        "subtitle": "Coinalyze Derivatives · Watching for market match",
-        "summary": "OI 5.07B USD | funding +0.7065% | predicted +0.6989% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
-        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "coinalyze-ETHUSDT_PERP.A-1778905655",
-        "sourceName": "Coinalyze Derivatives",
-        "sourceHandle": "coinalyze",
-        "provider": "coinalyze",
-        "sourceType": "api",
-        "sourceLane": "standard",
-        "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
-        "priority": 8,
-        "category": "crypto",
-        "matchedCategories": [
-          "crypto"
-        ],
-        "tags": [
-          "ETHUSDT_PERP.A",
-          "ETHUSDT",
-          "ETH",
-          "ethereum",
-          "crowded_longs",
-          "bearish_funding"
-        ],
-        "signalCount": 0,
-        "topSignals": []
-      },
-      {
-        "id": "market-source:coinalyze-SOLUSDT_PERP.A-1778905655",
+        "id": "market-source:coinalyze-SOLUSDT_PERP.A-1778913010",
         "kind": "market_source",
         "title": "SOLUSDT derivatives snapshot",
         "subtitle": "Coinalyze Derivatives · Watching for market match",
-        "summary": "OI 918.61M USD | funding +1.0000% | predicted +1.0000% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding",
+        "summary": "OI 913.28M USD | funding +1.0000% | predicted +0.8194% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "coinalyze-SOLUSDT_PERP.A-1778905655",
+        "sourceEventID": "coinalyze-SOLUSDT_PERP.A-1778913010",
         "sourceName": "Coinalyze Derivatives",
         "sourceHandle": "coinalyze",
         "provider": "coinalyze",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T04:27:07.000Z",
-        "publishedAtUnix": 1778905627,
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -861,6 +775,38 @@
           "SOLUSDT",
           "SOL",
           "solana",
+          "crowded_longs",
+          "bearish_funding"
+        ],
+        "signalCount": 0,
+        "topSignals": []
+      },
+      {
+        "id": "market-source:coinalyze-ETHUSDT_PERP.A-1778913009",
+        "kind": "market_source",
+        "title": "ETHUSDT derivatives snapshot",
+        "subtitle": "Coinalyze Derivatives · Watching for market match",
+        "summary": "OI 5.07B USD | funding +0.7065% | predicted +0.7630% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
+        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
+        "sourceEventID": "coinalyze-ETHUSDT_PERP.A-1778913009",
+        "sourceName": "Coinalyze Derivatives",
+        "sourceHandle": "coinalyze",
+        "provider": "coinalyze",
+        "sourceType": "api",
+        "sourceLane": "standard",
+        "sourceURL": "https://api.coinalyze.net/v1",
+        "publishedAt": "2026-05-16T06:29:41.000Z",
+        "publishedAtUnix": 1778912981,
+        "priority": 8,
+        "category": "crypto",
+        "matchedCategories": [
+          "crypto"
+        ],
+        "tags": [
+          "ETHUSDT_PERP.A",
+          "ETHUSDT",
+          "ETH",
+          "ethereum",
           "crowded_longs",
           "bearish_funding"
         ],
@@ -881,8 +827,40 @@
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526225361/mstr-20260504.htm",
-        "publishedAt": "2026-05-15T08:00:17.000Z",
-        "publishedAtUnix": 1778832017,
+        "publishedAt": "2026-05-15T12:00:17.000Z",
+        "publishedAtUnix": 1778846417,
+        "priority": 8,
+        "category": "crypto",
+        "matchedCategories": [
+          "crypto"
+        ],
+        "tags": [
+          "MSTR",
+          "Strategy Inc",
+          "8-K",
+          "sec",
+          "edgar",
+          "strategy"
+        ],
+        "signalCount": 0,
+        "topSignals": []
+      },
+      {
+        "id": "market-source:sec-edgar-mstr-0001193125-26-215754",
+        "kind": "market_source",
+        "title": "MSTR filed 8-K",
+        "subtitle": "SEC EDGAR Strategy Filings · Watching for market match",
+        "summary": "Strategy Inc | item 7.01,8.01 | report 2026-05-11 | 8-K false 0001050446 0001050446 mstr:M1000SeriesAPerpetualStridePreferredStock0001ParValuePerShareMember 2026-02-23 2026-02-23 0001050446 mstr:M800SeriesAPerpetualStrikePreferredStock0001ParValuePerShareMember 2026-02-23 2026-02-23 0001050446 mstr:Variable",
+        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
+        "sourceEventID": "sec-edgar-mstr-0001193125-26-215754",
+        "sourceName": "SEC EDGAR Strategy Filings",
+        "sourceHandle": "strategy",
+        "provider": "sec_edgar",
+        "sourceType": "api",
+        "sourceLane": "standard",
+        "sourceURL": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526215754/mstr-20260504.htm",
+        "publishedAt": "2026-05-11T12:00:18.000Z",
+        "publishedAtUnix": 1778500818,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1078,13 +1056,13 @@
         "value": 8
       },
       {
-        "key": "Binance Futures",
-        "label": "Binance Futures",
+        "key": "Coinalyze Derivatives",
+        "label": "Coinalyze Derivatives",
         "value": 3
       },
       {
-        "key": "Coinalyze Derivatives",
-        "label": "Coinalyze Derivatives",
+        "key": "Binance Futures",
+        "label": "Binance Futures",
         "value": 3
       },
       {
@@ -1093,14 +1071,9 @@
         "value": 2
       },
       {
-        "key": "Tree Of Alpha News",
-        "label": "Tree Of Alpha News",
-        "value": 1
-      },
-      {
         "key": "SEC EDGAR Strategy Filings",
         "label": "SEC EDGAR Strategy Filings",
-        "value": 1
+        "value": 2
       }
     ],
     "laneMix": [
@@ -1118,13 +1091,13 @@
   },
   "xgboost": {
     "available": true,
-    "generatedAt": "2026-05-16T04:28:23.815Z",
+    "generatedAt": "2026-05-16T06:31:17.435Z",
     "status": {
       "label": "Live shadow",
       "className": "supports",
       "title": "XGBoost is active on this synced market snapshot",
-      "body": "3 candidates scored on the current run.",
-      "detail": "2 support · 1 skeptical · short term service semantic fix"
+      "body": "2 candidates scored on the current run.",
+      "detail": "1 support · 1 skeptical · short term service semantic fix"
     },
     "model": {
       "available": true,
@@ -1146,8 +1119,8 @@
     },
     "live": {
       "enabled": true,
-      "rowCount": 3,
-      "supportCount": 2,
+      "rowCount": 2,
+      "supportCount": 1,
       "skepticalCount": 1,
       "topK": 5,
       "topKDisagreementCount": 0,
@@ -1155,50 +1128,26 @@
       "displacedCount": 0
     },
     "trend": {
-      "enabledRuns": 43,
-      "averageScoredRowsPerRun": 4.116279069767442,
-      "supportCount": 79,
-      "skepticalCount": 68,
+      "enabledRuns": 45,
+      "averageScoredRowsPerRun": 4.066666666666666,
+      "supportCount": 82,
+      "skepticalCount": 71,
       "topKDisagreementCount": 38,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "shadow": {
       "available": true,
-      "generatedAt": "2026-05-16T04:28:23.815Z",
-      "rowCount": 3,
+      "generatedAt": "2026-05-16T06:31:17.435Z",
+      "rowCount": 2,
       "topK": 5,
-      "overlapCount": 3,
+      "overlapCount": 2,
       "disagreementCount": 0,
       "modelOnlyCount": 0,
       "swiftOnlyCount": 0,
       "modelName": "xgboost-short-term-service-semantic-fix-model-directional.json",
       "metadataName": "xgboost-short-term-service-semantic-fix-metadata-directional.json",
       "scoredRows": [
-        {
-          "id": "bitcoin-above-80k-on-may-18|No",
-          "signalID": "bitcoin-above-80k-on-may-18|No",
-          "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-          "slug": "bitcoin-above-80k-on-may-18",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-80k-on-may-18",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.695,
-          "modelScore": 0.8508296608924866,
-          "modelRank": 1,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": 1,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 177.71209033,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 79050",
-          "flags": [
-            "Source-led"
-          ]
-        },
         {
           "id": "bitcoin-above-78k-on-may-16|No",
           "signalID": "bitcoin-above-78k-on-may-16|No",
@@ -1210,11 +1159,11 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.0585,
+          "currentPrice": 0.0765,
           "modelScore": 0.7507228851318359,
-          "modelRank": 2,
+          "modelRank": 1,
           "swiftRank": 1,
-          "rankDeltaVsSwift": -1,
+          "rankDeltaVsSwift": 0,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 180.80354399,
           "sourceHandle": "coinalyze",
@@ -1234,10 +1183,10 @@
           "severity": "yellow",
           "take": "strong",
           "confidence": 95,
-          "currentPrice": 0.9095,
+          "currentPrice": 0.9145,
           "modelScore": 0.06127442419528961,
-          "modelRank": 3,
-          "swiftRank": 3,
+          "modelRank": 2,
+          "swiftRank": 2,
           "rankDeltaVsSwift": 0,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 147.55926331,
@@ -1250,30 +1199,6 @@
       ],
       "topModel": [
         {
-          "id": "bitcoin-above-80k-on-may-18|No",
-          "signalID": "bitcoin-above-80k-on-may-18|No",
-          "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-          "slug": "bitcoin-above-80k-on-may-18",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-80k-on-may-18",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.695,
-          "modelScore": 0.8508296608924866,
-          "modelRank": 1,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 177.71209033,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 79050",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
           "id": "bitcoin-above-78k-on-may-16|No",
           "signalID": "bitcoin-above-78k-on-may-16|No",
           "title": "Will the price of Bitcoin be above $78,000 on May 16?",
@@ -1284,9 +1209,9 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.0585,
+          "currentPrice": 0.0765,
           "modelScore": 0.7507228851318359,
-          "modelRank": 2,
+          "modelRank": 1,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": true,
@@ -1308,9 +1233,9 @@
           "severity": "yellow",
           "take": "strong",
           "confidence": 95,
-          "currentPrice": 0.9095,
+          "currentPrice": 0.9145,
           "modelScore": 0.06127442419528961,
-          "modelRank": 3,
+          "modelRank": 2,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
@@ -1334,7 +1259,7 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.0585,
+          "currentPrice": 0.0765,
           "modelScore": 0.7507228851318359,
           "modelRank": null,
           "swiftRank": 1,
@@ -1343,30 +1268,6 @@
           "swiftPriorityScore": 180.80354399,
           "sourceHandle": "coinalyze",
           "sourceMatchedQuery": "bitcoin above",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "bitcoin-above-80k-on-may-18|No",
-          "signalID": "bitcoin-above-80k-on-may-18|No",
-          "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-          "slug": "bitcoin-above-80k-on-may-18",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-80k-on-may-18",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.695,
-          "modelScore": 0.8508296608924866,
-          "modelRank": null,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 177.71209033,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 79050",
           "flags": [
             "Source-led"
           ]
@@ -1382,10 +1283,10 @@
           "severity": "yellow",
           "take": "strong",
           "confidence": 95,
-          "currentPrice": 0.9095,
+          "currentPrice": 0.9145,
           "modelScore": 0.06127442419528961,
           "modelRank": null,
-          "swiftRank": 3,
+          "swiftRank": 2,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 147.55926331,
@@ -1400,11 +1301,33 @@
     },
     "runs": {
       "totalRuns": 18,
-      "enabledRuns": 17,
-      "latestRunAt": "2026-05-16T04:27:07.000Z",
-      "latestEnabledRunAt": "2026-05-16T04:27:07.000Z",
+      "enabledRuns": 18,
+      "latestRunAt": "2026-05-16T06:29:41.000Z",
+      "latestEnabledRunAt": "2026-05-16T06:29:41.000Z",
       "maxScoredRows": 9,
       "items": [
+        {
+          "startedAt": "2026-05-16T06:29:41.000Z",
+          "startedAtUnix": 1778912981,
+          "enabled": true,
+          "scoredRowCount": 2,
+          "supportCount": 1,
+          "skepticalCount": 1,
+          "topKDisagreementCount": 0,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
+        {
+          "startedAt": "2026-05-16T05:30:00.000Z",
+          "startedAtUnix": 1778909400,
+          "enabled": true,
+          "scoredRowCount": 4,
+          "supportCount": 2,
+          "skepticalCount": 2,
+          "topKDisagreementCount": 0,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
         {
           "startedAt": "2026-05-16T04:27:07.000Z",
           "startedAtUnix": 1778905627,
@@ -1580,28 +1503,6 @@
           "topKDisagreementCount": 4,
           "promotedCount": 0,
           "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-05-15T18:18:14.000Z",
-          "startedAtUnix": 1778869094,
-          "enabled": true,
-          "scoredRowCount": 6,
-          "supportCount": 4,
-          "skepticalCount": 1,
-          "topKDisagreementCount": 2,
-          "promotedCount": 0,
-          "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-05-15T18:17:13.000Z",
-          "startedAtUnix": 1778869033,
-          "enabled": false,
-          "scoredRowCount": 0,
-          "supportCount": 0,
-          "skepticalCount": 0,
-          "topKDisagreementCount": 0,
-          "promotedCount": 0,
-          "displacedCount": 0
         }
       ]
     },
@@ -1713,10 +1614,10 @@
         },
         {
           "day": "2026-05-16",
-          "enabledRuns": 12,
-          "scoredRows": 76,
-          "supportCount": 45,
-          "skepticalCount": 17,
+          "enabledRuns": 14,
+          "scoredRows": 82,
+          "supportCount": 48,
+          "skepticalCount": 20,
           "topKDisagreementCount": 26,
           "promotedCount": 0,
           "displacedCount": 0
@@ -1725,15 +1626,15 @@
     },
     "coverage": {
       "available": true,
-      "taggedHistoryRowCount": 306,
+      "taggedHistoryRowCount": 312,
       "resolvedEvaluationCount": 209,
       "categoryCount": 4,
-      "latestTaggedRunAt": "2026-05-16T04:27:07.000Z",
+      "latestTaggedRunAt": "2026-05-16T06:29:41.000Z",
       "latestEvaluationAt": "2026-05-14T19:21:34.000Z",
       "categories": [
         {
           "category": "sports",
-          "taggedRows": 156,
+          "taggedRows": 159,
           "resolvedEvaluations": 120,
           "wins": 19,
           "losses": 0,
@@ -1741,12 +1642,12 @@
           "decisiveTotal": 19,
           "decisiveWinRate": 1,
           "averageModelEdge": 0.16786718750000001,
-          "latestTaggedRunAt": "2026-05-16T04:27:07.000Z",
+          "latestTaggedRunAt": "2026-05-16T06:29:41.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
           "category": "crypto",
-          "taggedRows": 61,
+          "taggedRows": 64,
           "resolvedEvaluations": 0,
           "wins": 0,
           "losses": 0,
@@ -1754,7 +1655,7 @@
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": null,
-          "latestTaggedRunAt": "2026-05-16T04:27:07.000Z",
+          "latestTaggedRunAt": "2026-05-16T06:29:41.000Z",
           "latestEvaluationAt": null
         },
         {
@@ -2405,7 +2306,7 @@
   "market": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T04:28:24Z",
+    "generatedAt": "2026-05-16T06:31:17Z",
     "summary": {
       "category": "OVERALL",
       "crossSignalCount": 0,
@@ -2416,19 +2317,19 @@
       "kalshiMatchedSignalCount": 2,
       "longTermSignalCount": 7,
       "notificationMode": "telegram",
-      "officialPostWatchCount": 4,
+      "officialPostWatchCount": 2,
       "scannedLeaderboardTraders": 250,
       "shortTermMaxDays": 14,
-      "shortTermSignalCount": 2,
-      "signalCount": 9,
-      "sourceDrivenSignalCount": 4,
+      "shortTermSignalCount": 1,
+      "signalCount": 8,
+      "sourceDrivenSignalCount": 2,
       "sourceTrend": {
         "topRuleCandidateCount": 21,
         "topRuleID": "binance-btc-crowded-shorts",
         "topSourceHandle": "binance",
         "uniqueBuiltNoChaseSignals": 11,
-        "uniqueBuiltSignals": 71,
-        "uniqueCandidates": 87,
+        "uniqueBuiltSignals": 74,
+        "uniqueCandidates": 90,
         "uniqueNoMarketMatches": 5
       },
       "timePeriod": "DAY",
@@ -2437,20 +2338,20 @@
       "xgboostDisplacedSignalCount": 0,
       "xgboostPromotedSignalCount": 0,
       "xgboostTrend": {
-        "averageScoredRowsPerRun": 4.116279069767442,
+        "averageScoredRowsPerRun": 4.066666666666666,
         "displacedCount": 0,
-        "enabledRuns": 43,
+        "enabledRuns": 45,
         "promotedCount": 0,
-        "skepticalCount": 68,
-        "supportCount": 79,
+        "skepticalCount": 71,
+        "supportCount": 82,
         "topKDisagreementCount": 38
       }
     },
     "status": {
-      "activeSignalCount": 13,
-      "officialPostWatchCount": 4,
+      "activeSignalCount": 12,
+      "officialPostWatchCount": 2,
       "suspiciousWalletCount": 0,
-      "xgboostRowCount": 3
+      "xgboostRowCount": 2
     },
     "bestBets": [
       {
@@ -2477,7 +2378,7 @@
         "horizon": "long_term",
         "daysToEnd": 16,
         "marketEndDate": "2026-06-01T03:59:59Z",
-        "currentMarketPrice": 0.885,
+        "currentMarketPrice": 0.895,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -2553,92 +2454,39 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.0585,
-        "latestTradeTimestamp": 1778905627,
+        "averageTradePrice": 0.0765,
+        "latestTradeTimestamp": 1778912981,
         "horizon": "short_term",
         "daysToEnd": 1,
         "marketEndDate": "2026-05-16T16:00:00Z",
-        "currentMarketPrice": 0.0585,
+        "currentMarketPrice": 0.0765,
         "marketBiasSummary": "Fresh source signal from Coinalyze Derivatives · matched 'bitcoin above' · 0m ago · official source",
         "signalTypes": [
           "source"
         ],
         "sourceAttribution": {
-          "eventID": "coinalyze-BTCUSDT_PERP.A-1778905655",
+          "eventID": "coinalyze-BTCUSDT_PERP.A-1778913009",
           "provider": "coinalyze",
           "sourceName": "Coinalyze Derivatives",
           "sourceType": "api",
           "sourceLane": "standard",
           "sourceHandle": "coinalyze",
           "url": "https://api.coinalyze.net/v1",
-          "text": "BTCUSDT derivatives snapshot | OI 8.05B USD | funding +0.3938% | predicted +0.3610% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
+          "text": "BTCUSDT derivatives snapshot | OI 8.07B USD | funding +0.3938% | predicted +0.1175% | crowded longs | bearish funding | heavy derivatives positioning",
           "ruleID": "coinalyze-btc-crowded-longs",
           "matchedQuery": "bitcoin above",
           "priority": 8,
           "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-05-16T04:27:07.000Z",
-          "publishedAtUnix": 1778905627
+          "publishedAt": "2026-05-16T06:29:41.000Z",
+          "publishedAtUnix": 1778912981
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "supports",
         "xgboostScore": 0.7507228851318359,
-        "xgboostModelRank": 2,
-        "xgboostSwiftRank": 1
-      },
-      {
-        "id": "bitcoin-above-80k-on-may-18|No",
-        "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-        "slug": "bitcoin-above-80k-on-may-18",
-        "eventSlug": "bitcoin-above-on-may-18",
-        "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-18",
-        "outcome": "No",
-        "category": "crypto",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 97,
-        "weightedFlowUSD": 16125,
-        "weightedGrossFlowUSD": 16125,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 0,
-        "uniqueTransactionCount": 0,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.695,
-        "latestTradeTimestamp": 1778905627,
-        "horizon": "short_term",
-        "daysToEnd": 3,
-        "marketEndDate": "2026-05-18T16:00:00Z",
-        "currentMarketPrice": 0.695,
-        "marketBiasSummary": "Fresh source signal from Binance Futures · matched 'bitcoin above 79050' · 0m ago · official source",
-        "signalTypes": [
-          "source"
-        ],
-        "sourceAttribution": {
-          "eventID": "binance-BTCUSDT-1778905655",
-          "provider": "binance_futures",
-          "sourceName": "Binance Futures",
-          "sourceType": "api",
-          "sourceLane": "standard",
-          "sourceHandle": "binance",
-          "url": "https://fapi.binance.com/",
-          "text": "BTCUSDT futures snapshot | mark 79040 | index 79081 | funding +0.0036% | OI 101.89K | OI notional 8.05B USD | long crowding | bearish funding | heavy derivatives positioning",
-          "ruleID": "binance-btc-crowded-longs",
-          "matchedQuery": "bitcoin above 79050",
-          "priority": 8,
-          "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-05-16T04:27:07.000Z",
-          "publishedAtUnix": 1778905627
-        },
-        "verificationStatus": "notChecked",
-        "verifiedTransactionCount": 0,
-        "txLinks": [],
-        "xgboostStance": "supports",
-        "xgboostScore": 0.8508296608924866,
         "xgboostModelRank": 1,
-        "xgboostSwiftRank": 2
+        "xgboostSwiftRank": 1
       },
       {
         "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -2744,7 +2592,7 @@
         "horizon": "long_term",
         "daysToEnd": 32,
         "marketEndDate": "2026-06-17T00:00:00Z",
-        "currentMarketPrice": 0.9805,
+        "currentMarketPrice": 0.9795,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -2780,12 +2628,12 @@
         "bestTraderRank": 999,
         "worstTraderRank": 999,
         "averageTradePrice": 0.043,
-        "latestTradeTimestamp": 1778905627,
+        "latestTradeTimestamp": 1778912981,
         "horizon": "long_term",
         "daysToEnd": 16,
         "marketEndDate": "2026-05-31T17:00:00Z",
         "currentMarketPrice": 0.043,
-        "marketBiasSummary": "Fresh source signal from Treasury Press Releases · matched 'wti crude oil 140 may' · 6537m ago · moved -0.2pt since source · official macro source",
+        "marketBiasSummary": "Fresh source signal from Treasury Press Releases · matched 'wti crude oil 140 may' · 6419m ago · moved -0.6pt since source · official macro source",
         "signalTypes": [
           "source"
         ],
@@ -2801,13 +2649,57 @@
           "ruleID": "treasury-iran-sanctions-oil-bullish",
           "matchedQuery": "wti crude oil 140 may",
           "priority": 8,
-          "freshnessMinutesAtScan": 6537,
-          "publishedAt": "2026-05-11T15:30:00.000Z",
-          "publishedAtUnix": 1778513400
+          "freshnessMinutesAtScan": 6419,
+          "publishedAt": "2026-05-11T19:30:00.000Z",
+          "publishedAtUnix": 1778527800
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
+      },
+      {
+        "id": "will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213|Yes",
+        "title": "Will Reza Pahlavi enter Iran by June 30?",
+        "slug": "will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213",
+        "eventSlug": "will-reza-pahlavi-enter-iran-by-june-30",
+        "marketURL": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-june-30",
+        "outcome": "Yes",
+        "category": "geopolitics",
+        "severity": "green",
+        "take": "lean",
+        "direction": "buy",
+        "confidence": 77,
+        "weightedFlowUSD": 522.9078305943219,
+        "weightedGrossFlowUSD": 522.9078305943219,
+        "supportingExposureUSD": 7493.970901514814,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 5,
+        "bestTraderRank": 21,
+        "worstTraderRank": 21,
+        "averageTradePrice": 0.03221929669072682,
+        "latestTradeTimestamp": 1778910229,
+        "horizon": "long_term",
+        "daysToEnd": 45,
+        "marketEndDate": "2026-06-30T00:00:00Z",
+        "currentMarketPrice": 0.0225,
+        "marketBiasSummary": "top traders are net buyers with strong agreement",
+        "signalTypes": [
+          "leaderboard"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0xb1ba218d953821daca7d6f938627a747f8e573c803252ca48f56a8b3445047f0",
+          "https://polygonscan.com/tx/0x501d9d1eee48761d7d5ba3f8fdbc3fbc76d8a599fd5a209dcf8a13e1fef3c294",
+          "https://polygonscan.com/tx/0xcac6ecfe84d92d65bdaf95c906b69d9d5c69a4b698d27a47883c4e23b86d5a88",
+          "https://polygonscan.com/tx/0xb9056c7df5f1afb2f242a2657af4837f03deea2fccb557b1afade0db59312665",
+          "https://polygonscan.com/tx/0xcceb791fc47f0e5d6d680a31bd1f00424ff468a8fde425c74508c42470a2d440"
+        ],
         "xgboostStance": null,
         "xgboostScore": null,
         "xgboostModelRank": null,
@@ -2839,7 +2731,7 @@
         "horizon": "short_term",
         "daysToEnd": 7,
         "marketEndDate": "2026-05-22T17:00:00Z",
-        "currentMarketPrice": 0.9095,
+        "currentMarketPrice": 0.9145,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -2854,8 +2746,8 @@
         ],
         "xgboostStance": "skeptical",
         "xgboostScore": 0.06127442419528961,
-        "xgboostModelRank": 3,
-        "xgboostSwiftRank": 3
+        "xgboostModelRank": 2,
+        "xgboostSwiftRank": 2
       },
       {
         "id": "ufc-kha6-nik5-2026-05-16|Nikolay Veretennikov",
@@ -2980,29 +2872,7 @@
     "officialPostWatch": [
       {
         "category": "crypto",
-        "currentPrice": 0.695,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 0,
-        "marketCategory": "crypto",
-        "marketEventSlug": "bitcoin-above-on-may-18",
-        "marketSlug": "bitcoin-above-80k-on-may-18",
-        "marketTitle": "Will the price of Bitcoin be above $80,000 on May 18?",
-        "matchScore": 38.75,
-        "matchedQuery": "bitcoin above 79050",
-        "maxChasePrice": 0.76,
-        "priority": 8,
-        "provider": "binance_futures",
-        "publishedAtUnix": 1778905627,
-        "sourceHandle": "binance",
-        "sourceLane": "standard",
-        "sourceName": "Binance Futures",
-        "sourceType": "api",
-        "sourceURL": "https://fapi.binance.com",
-        "summaryText": "BTCUSDT futures snapshot | mark 79040 | index 79081 | funding +0.0036% | OI 101.89K | OI notional 8.05B USD | long crowding | bearish funding | heavy derivatives positioning"
-      },
-      {
-        "category": "crypto",
-        "currentPrice": 0.0585,
+        "currentPrice": 0.0765,
         "decision": "built_signal",
         "freshnessMinutesAtScan": 0,
         "marketCategory": "crypto",
@@ -3014,41 +2884,19 @@
         "maxChasePrice": 0.76,
         "priority": 8,
         "provider": "coinalyze",
-        "publishedAtUnix": 1778905627,
+        "publishedAtUnix": 1778912981,
         "sourceHandle": "coinalyze",
         "sourceLane": "standard",
         "sourceName": "Coinalyze Derivatives",
         "sourceType": "api",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "summaryText": "BTCUSDT derivatives snapshot | OI 8.05B USD | funding +0.3938% | predicted +0.3610% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning"
-      },
-      {
-        "category": "other",
-        "currentPrice": 0.675,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 227,
-        "marketCategory": "other",
-        "marketEventSlug": "clarity-act-signed-into-law-in-2026",
-        "marketSlug": "clarity-act-signed-into-law-in-2026",
-        "marketTitle": "Clarity Act signed into law in 2026?",
-        "matchScore": 18.5,
-        "matchedQuery": "genius act",
-        "maxChasePrice": 0.74,
-        "priority": 7,
-        "provider": "tree_news",
-        "publishedAtUnix": 1778891962,
-        "sourceHandle": "treeofalpha",
-        "sourceLane": "standard",
-        "sourceName": "Tree Of Alpha News",
-        "sourceType": "api",
-        "sourceURL": "https://twitter.com/yzilabs/status/2055447983001657504",
-        "summaryText": "YZi Labs (@yzilabs): Crypto has finally reached three things at once: regulatory clarity, enterprise adoption,... | YZi Labs (@yzilabs): Crypto has finally reached three things at once: regulatory clarity, enterprise adoption, and AI as a catalyst. At The Convergence summit, @veradittakit sat down with YZi Labs’ @odagius to unpack the macro shift: → The Genius Act gave stablecoins clarity → The new administration gave crypto companies more freedom to operate → Institution..."
+        "summaryText": "BTCUSDT derivatives snapshot | OI 8.07B USD | funding +0.3938% | predicted +0.1175% | crowded longs | bearish funding | heavy derivatives positioning"
       },
       {
         "category": "other",
         "currentPrice": 0.043,
         "decision": "built_signal",
-        "freshnessMinutesAtScan": 6537,
+        "freshnessMinutesAtScan": 6419,
         "marketCategory": "other",
         "marketEventSlug": "what-price-will-wti-hit-in-may-2026",
         "marketSlug": "will-wti-reach-140-in-may-2026-916",
@@ -3058,7 +2906,7 @@
         "maxChasePrice": 0.74,
         "priority": 8,
         "provider": "treasury_web",
-        "publishedAtUnix": 1778513400,
+        "publishedAtUnix": 1778527800,
         "sourceHandle": "home.treasury.gov",
         "sourceLane": "official_macro",
         "sourceName": "Treasury Press Releases",
@@ -3070,30 +2918,30 @@
     "suspiciousWallets": [],
     "categoryMix": [
       {
-        "key": "other",
-        "label": "Other",
+        "key": "geopolitics",
+        "label": "Geopolitics",
         "value": 4
       },
       {
-        "key": "geopolitics",
-        "label": "Geopolitics",
+        "key": "other",
+        "label": "Other",
         "value": 3
       },
       {
         "key": "crypto",
         "label": "Crypto",
-        "value": 2
+        "value": 1
       }
     ]
   },
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T04:28:25Z",
+    "generatedAt": "2026-05-16T06:31:19Z",
     "summary": {
       "actionablePositionCount": 2,
       "openPositionCount": 17,
-      "totalCurrentValue": 88.4932,
+      "totalCurrentValue": 89.64149999999998,
       "walletCount": 2
     },
     "urgentAction": {
@@ -3178,7 +3026,7 @@
         "label": "No signal",
         "count": 15,
         "actionableCount": 0,
-        "totalCurrentValue": 77.4932,
+        "totalCurrentValue": 78.6415,
         "positions": [
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3209,9 +3057,9 @@
             "title": "Anthropic acquired before 2027?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 8.7463,
-            "currentPrice": 0.0895,
-            "percentPnL": 24.9473,
+            "currentValue": 8.5509,
+            "currentPrice": 0.0875,
+            "percentPnL": 22.1558,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3252,25 +3100,22 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-16T03:27:22Z",
-      "previousGeneratedAtUnix": 1778902042,
+      "previousGeneratedAt": "2026-05-16T05:31:32Z",
+      "previousGeneratedAtUnix": 1778909492,
       "changedWalletCount": 1,
       "unchangedWalletCount": 1,
       "newPositionCount": 0,
       "closedPositionCount": 0,
-      "actionChangeCount": 1,
+      "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 0.5949999999999989,
+      "valueDeltaUSD": 1.46869999999997,
       "highlights": [
         {
-          "type": "action_changed",
+          "type": "value_changed",
           "walletLabel": "Haak",
-          "title": "Will China invade Taiwan by end of 2026?",
-          "outcome": "YES",
-          "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-          "action": "no_signal",
-          "previousAction": "hold",
-          "signalTitle": null
+          "title": "Haak",
+          "marketURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
+          "valueDeltaUSD": 1.46869999999997
         }
       ],
       "wallets": [
@@ -3280,29 +3125,18 @@
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "hasPrevious": true,
           "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": 0.5949999999999989,
+          "hasStructuralChanges": false,
+          "valueDeltaUSD": 1.46869999999997,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
           "closedPositionCount": 0,
-          "actionChangeCount": 1,
+          "actionChangeCount": 0,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 75.62060000000001,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Will China invade Taiwan by end of 2026?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-              "action": "no_signal",
-              "previousAction": "hold",
-              "signalTitle": null
-            }
-          ]
+          "previousTotalCurrentValue": 76.00630000000001,
+          "highlights": []
         },
         {
           "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
@@ -3320,23 +3154,23 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 12.2776,
+          "previousTotalCurrentValue": 12.166500000000001,
           "highlights": []
         }
       ]
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-16T04:28:50.768Z",
-      "snapshotCount": 44,
+      "generatedAt": "2026-05-16T06:32:00.180Z",
+      "snapshotCount": 46,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-05-16T04:28:25Z",
+      "latestAt": "2026-05-16T06:31:19Z",
       "latestSummary": {
-        "timestamp": "2026-05-16T04:28:25Z",
-        "timestampUnix": 1778905705,
-        "currentValue": 88.4932,
+        "timestamp": "2026-05-16T06:31:19Z",
+        "timestampUnix": 1778913079,
+        "currentValue": 89.64149999999998,
         "costBasisValue": 117.09578377,
-        "unrealizedPnL": -28.602583769999995,
+        "unrealizedPnL": -27.454283770000018,
         "realizedPnL": 0,
         "openPositionCount": 17,
         "actionablePositionCount": 2
@@ -3783,15 +3617,35 @@
           "realizedPnL": 0,
           "openPositionCount": 17,
           "actionablePositionCount": 2
+        },
+        {
+          "timestamp": "2026-05-16T05:31:32Z",
+          "timestampUnix": 1778909492,
+          "currentValue": 88.17280000000001,
+          "costBasisValue": 117.09578377,
+          "unrealizedPnL": -28.922983769999988,
+          "realizedPnL": 0,
+          "openPositionCount": 17,
+          "actionablePositionCount": 2
+        },
+        {
+          "timestamp": "2026-05-16T06:31:19Z",
+          "timestampUnix": 1778913079,
+          "currentValue": 89.64149999999998,
+          "costBasisValue": 117.09578377,
+          "unrealizedPnL": -27.454283770000018,
+          "realizedPnL": 0,
+          "openPositionCount": 17,
+          "actionablePositionCount": 2
         }
       ],
       "walletSeries": [
         {
           "key": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
-          "latestCurrentValue": 76.21560000000001,
+          "latestCurrentValue": 77.47499999999998,
           "latestCostBasisValue": 99.10268201999999,
-          "latestUnrealizedPnL": -22.88708201999998,
+          "latestUnrealizedPnL": -21.62768202000001,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 14,
           "latestActionablePositionCount": 1,
@@ -4235,15 +4089,35 @@
               "realizedPnL": 0,
               "openPositionCount": 14,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 76.00630000000001,
+              "costBasisValue": 99.10268201999999,
+              "unrealizedPnL": -23.09638201999998,
+              "realizedPnL": 0,
+              "openPositionCount": 14,
+              "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 77.47499999999998,
+              "costBasisValue": 99.10268201999999,
+              "unrealizedPnL": -21.62768202000001,
+              "realizedPnL": 0,
+              "openPositionCount": 14,
+              "actionablePositionCount": 1
             }
           ]
         },
         {
           "key": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
           "label": "Rose",
-          "latestCurrentValue": 12.2776,
+          "latestCurrentValue": 12.166500000000001,
           "latestCostBasisValue": 17.99310175,
-          "latestUnrealizedPnL": -5.715501750000001,
+          "latestUnrealizedPnL": -5.82660175,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 3,
           "latestActionablePositionCount": 1,
@@ -4684,6 +4558,26 @@
               "currentValue": 12.2776,
               "costBasisValue": 17.99310175,
               "unrealizedPnL": -5.715501750000001,
+              "realizedPnL": 0,
+              "openPositionCount": 3,
+              "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 12.166500000000001,
+              "costBasisValue": 17.99310175,
+              "unrealizedPnL": -5.82660175,
+              "realizedPnL": 0,
+              "openPositionCount": 3,
+              "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 12.166500000000001,
+              "costBasisValue": 17.99310175,
+              "unrealizedPnL": -5.82660175,
               "realizedPnL": 0,
               "openPositionCount": 3,
               "actionablePositionCount": 1
@@ -5135,6 +5029,26 @@
             {
               "timestamp": "2026-05-16T04:28:25Z",
               "timestampUnix": 1778905705,
+              "currentValue": 16.55,
+              "costBasisValue": 17.19,
+              "unrealizedPnL": -0.6400000000000006,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 16.55,
+              "costBasisValue": 17.19,
+              "unrealizedPnL": -0.6400000000000006,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
               "currentValue": 16.55,
               "costBasisValue": 17.19,
               "unrealizedPnL": -0.6400000000000006,
@@ -5593,6 +5507,26 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -6045,15 +5979,35 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 11,
+              "costBasisValue": 20,
+              "unrealizedPnL": -9,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 11,
+              "costBasisValue": 20,
+              "unrealizedPnL": -9,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 2
             }
           ]
         },
         {
           "key": "pga-championship-winner-2026",
           "label": "PGA Championship Winner 2026",
-          "latestCurrentValue": 10.0364,
+          "latestCurrentValue": 9.989799999999999,
           "latestCostBasisValue": 9.992852150000001,
-          "latestUnrealizedPnL": 0.0435478499999995,
+          "latestUnrealizedPnL": -0.003052149999999809,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 3,
           "latestActionablePositionCount": 0,
@@ -6497,15 +6451,35 @@
               "realizedPnL": 0,
               "openPositionCount": 3,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 10.1559,
+              "costBasisValue": 9.992852150000001,
+              "unrealizedPnL": 0.16304784999999988,
+              "realizedPnL": 0,
+              "openPositionCount": 3,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 9.989799999999999,
+              "costBasisValue": 9.992852150000001,
+              "unrealizedPnL": -0.003052149999999809,
+              "realizedPnL": 0,
+              "openPositionCount": 3,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "anthropic-acquired-before-2027",
           "label": "Anthropic acquired before 2027?",
-          "latestCurrentValue": 8.7463,
+          "latestCurrentValue": 8.5509,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": 1.7491900000000005,
+          "latestUnrealizedPnL": 1.5537900000000011,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -6949,15 +6923,35 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 9.0395,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.042390000000001,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "will-russia-capture-all-of-donetsk-oblast-by",
           "label": "Will Russia capture all of Donetsk Oblast by June 30, 2026?",
-          "latestCurrentValue": 8.077399999999999,
+          "latestCurrentValue": 7.5725,
           "latestCostBasisValue": 8.96905974,
-          "latestUnrealizedPnL": -0.8916597400000001,
+          "latestUnrealizedPnL": -1.3965597399999998,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 2,
           "latestActionablePositionCount": 0,
@@ -7398,6 +7392,26 @@
               "currentValue": 8.077399999999999,
               "costBasisValue": 8.96905974,
               "unrealizedPnL": -0.8916597400000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 7.5725,
+              "costBasisValue": 8.96905974,
+              "unrealizedPnL": -1.3965597399999998,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 7.5725,
+              "costBasisValue": 8.96905974,
+              "unrealizedPnL": -1.3965597399999998,
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
@@ -7853,15 +7867,35 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 7.3125,
+              "costBasisValue": 9,
+              "unrealizedPnL": -1.6875,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 7.3125,
+              "costBasisValue": 9,
+              "unrealizedPnL": -1.6875,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "ukraine-signs-peace-deal-with-russia-by-june",
           "label": "Ukraine signs peace deal with Russia by June 30?",
-          "latestCurrentValue": 6.1706,
+          "latestCurrentValue": 6.0678,
           "latestCostBasisValue": 11.991657039999998,
-          "latestUnrealizedPnL": -5.821057039999998,
+          "latestUnrealizedPnL": -5.923857039999998,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -8302,6 +8336,26 @@
               "currentValue": 6.1706,
               "costBasisValue": 11.991657039999998,
               "unrealizedPnL": -5.821057039999998,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 6.0678,
+              "costBasisValue": 11.991657039999998,
+              "unrealizedPnL": -5.923857039999998,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 6.0678,
+              "costBasisValue": 11.991657039999998,
+              "unrealizedPnL": -5.923857039999998,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -8757,15 +8811,35 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 3.5476,
+              "costBasisValue": 2.9952351,
+              "unrealizedPnL": 0.5523649000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 3.5476,
+              "costBasisValue": 2.9952351,
+              "unrealizedPnL": 0.5523649000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "will-the-iranian-regime-fall-by-june",
           "label": "Will the Iranian regime fall by June 30?",
-          "latestCurrentValue": 2.25,
+          "latestCurrentValue": 2.75,
           "latestCostBasisValue": 3,
-          "latestUnrealizedPnL": -0.75,
+          "latestUnrealizedPnL": -0.25,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -9209,15 +9283,507 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 2.25,
+              "costBasisValue": 3,
+              "unrealizedPnL": -0.75,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 2.75,
+              "costBasisValue": 3,
+              "unrealizedPnL": -0.25,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            }
+          ]
+        },
+        {
+          "key": "trump-endorses-chinas-claim-to-taiwan-this-week",
+          "label": "Trump endorses China's claim to Taiwan this week?",
+          "latestCurrentValue": 2.1313,
+          "latestCostBasisValue": 4.989925,
+          "latestUnrealizedPnL": -2.8586250000000004,
+          "latestRealizedPnL": 0,
+          "latestOpenPositionCount": 1,
+          "latestActionablePositionCount": 0,
+          "items": [
+            {
+              "timestamp": "2026-05-14T06:32:45Z",
+              "timestampUnix": 1778740365,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-14T20:05:12Z",
+              "timestampUnix": 1778789112,
+              "currentValue": 4.3881,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -0.6018250000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T07:59:37Z",
+              "timestampUnix": 1778831977,
+              "currentValue": 1.6298,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.3601250000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:17:43Z",
+              "timestampUnix": 1778833063,
+              "currentValue": 1.7552,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.234725,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:34:42Z",
+              "timestampUnix": 1778834082,
+              "currentValue": 2.1313,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -2.8586250000000004,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:54:07Z",
+              "timestampUnix": 1778835247,
+              "currentValue": 0.5015,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.488425,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:57:48Z",
+              "timestampUnix": 1778835468,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:11:35Z",
+              "timestampUnix": 1778836295,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:28:14Z",
+              "timestampUnix": 1778837294,
+              "currentValue": 1.003,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.9869250000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:34:54Z",
+              "timestampUnix": 1778837694,
+              "currentValue": 1.003,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.9869250000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:36:06Z",
+              "timestampUnix": 1778837766,
+              "currentValue": 1.003,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.9869250000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:45:02Z",
+              "timestampUnix": 1778838302,
+              "currentValue": 1.003,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.9869250000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:02:40Z",
+              "timestampUnix": 1778839360,
+              "currentValue": 1.003,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.9869250000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:19:58Z",
+              "timestampUnix": 1778840398,
+              "currentValue": 1.1283,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.861625,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:47:47Z",
+              "timestampUnix": 1778842067,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:49:40Z",
+              "timestampUnix": 1778842180,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T11:08:37Z",
+              "timestampUnix": 1778843317,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T11:59:42Z",
+              "timestampUnix": 1778846382,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T12:08:21Z",
+              "timestampUnix": 1778846901,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T13:58:10Z",
+              "timestampUnix": 1778853490,
+              "currentValue": 0.7522,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.237725,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:11:36Z",
+              "timestampUnix": 1778854296,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:14:04Z",
+              "timestampUnix": 1778854444,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:17:04Z",
+              "timestampUnix": 1778854624,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:05:33Z",
+              "timestampUnix": 1778864733,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:09:34Z",
+              "timestampUnix": 1778864974,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:10:16Z",
+              "timestampUnix": 1778865016,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:12:42Z",
+              "timestampUnix": 1778868762,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:19:33Z",
+              "timestampUnix": 1778869173,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:23:50Z",
+              "timestampUnix": 1778869430,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T19:15:55Z",
+              "timestampUnix": 1778872555,
+              "currentValue": 2.5075,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -2.4824250000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T20:17:27Z",
+              "timestampUnix": 1778876247,
+              "currentValue": 0.5015,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.488425,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T21:18:50Z",
+              "timestampUnix": 1778879930,
+              "currentValue": 2.2567,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -2.7332250000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T22:19:21Z",
+              "timestampUnix": 1778883561,
+              "currentValue": 1.8806,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.109325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T22:23:22Z",
+              "timestampUnix": 1778883802,
+              "currentValue": 1.8806,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.109325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T23:20:24Z",
+              "timestampUnix": 1778887224,
+              "currentValue": 1.1283,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.861625,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T00:22:00Z",
+              "timestampUnix": 1778890920,
+              "currentValue": 1.8806,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.109325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T00:26:27Z",
+              "timestampUnix": 1778891187,
+              "currentValue": 1.8806,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -3.109325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T01:24:29Z",
+              "timestampUnix": 1778894669,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T01:25:38Z",
+              "timestampUnix": 1778894738,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:25:43Z",
+              "timestampUnix": 1778898343,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:30:12Z",
+              "timestampUnix": 1778898612,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:33:24Z",
+              "timestampUnix": 1778898804,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T03:27:22Z",
+              "timestampUnix": 1778902042,
+              "currentValue": 0.8776,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.112325,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T04:28:25Z",
+              "timestampUnix": 1778905705,
+              "currentValue": 0.5015,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.488425,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0.3761,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.613825,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 2.1313,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -2.8586250000000004,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "will-the-us-confirm-that-aliens-exist-before-2027",
           "label": "Will the US confirm that aliens exist by May 31?",
-          "latestCurrentValue": 1.7138,
+          "latestCurrentValue": 1.582,
           "latestCostBasisValue": 6.987313299999999,
-          "latestUnrealizedPnL": -5.273513299999999,
+          "latestUnrealizedPnL": -5.4053132999999995,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -9661,455 +10227,23 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
-            }
-          ]
-        },
-        {
-          "key": "trump-endorses-chinas-claim-to-taiwan-this-week",
-          "label": "Trump endorses China's claim to Taiwan this week?",
-          "latestCurrentValue": 0.5015,
-          "latestCostBasisValue": 4.989925,
-          "latestUnrealizedPnL": -4.488425,
-          "latestRealizedPnL": 0,
-          "latestOpenPositionCount": 1,
-          "latestActionablePositionCount": 0,
-          "items": [
-            {
-              "timestamp": "2026-05-14T06:32:45Z",
-              "timestampUnix": 1778740365,
-              "currentValue": 0,
-              "costBasisValue": 0,
-              "unrealizedPnL": 0,
-              "realizedPnL": 0,
-              "openPositionCount": 0,
-              "actionablePositionCount": 0
             },
             {
-              "timestamp": "2026-05-14T20:05:12Z",
-              "timestampUnix": 1778789112,
-              "currentValue": 4.3881,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -0.6018250000000007,
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 1.7138,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.273513299999999,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
             },
             {
-              "timestamp": "2026-05-15T07:59:37Z",
-              "timestampUnix": 1778831977,
-              "currentValue": 1.6298,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.3601250000000005,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:17:43Z",
-              "timestampUnix": 1778833063,
-              "currentValue": 1.7552,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.234725,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:34:42Z",
-              "timestampUnix": 1778834082,
-              "currentValue": 2.1313,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -2.8586250000000004,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:54:07Z",
-              "timestampUnix": 1778835247,
-              "currentValue": 0.5015,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.488425,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:57:48Z",
-              "timestampUnix": 1778835468,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:11:35Z",
-              "timestampUnix": 1778836295,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:28:14Z",
-              "timestampUnix": 1778837294,
-              "currentValue": 1.003,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.9869250000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:34:54Z",
-              "timestampUnix": 1778837694,
-              "currentValue": 1.003,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.9869250000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:36:06Z",
-              "timestampUnix": 1778837766,
-              "currentValue": 1.003,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.9869250000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:45:02Z",
-              "timestampUnix": 1778838302,
-              "currentValue": 1.003,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.9869250000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:02:40Z",
-              "timestampUnix": 1778839360,
-              "currentValue": 1.003,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.9869250000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:19:58Z",
-              "timestampUnix": 1778840398,
-              "currentValue": 1.1283,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.861625,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:47:47Z",
-              "timestampUnix": 1778842067,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:49:40Z",
-              "timestampUnix": 1778842180,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T11:08:37Z",
-              "timestampUnix": 1778843317,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T11:59:42Z",
-              "timestampUnix": 1778846382,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T12:08:21Z",
-              "timestampUnix": 1778846901,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T13:58:10Z",
-              "timestampUnix": 1778853490,
-              "currentValue": 0.7522,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.237725,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:11:36Z",
-              "timestampUnix": 1778854296,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:14:04Z",
-              "timestampUnix": 1778854444,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:17:04Z",
-              "timestampUnix": 1778854624,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:05:33Z",
-              "timestampUnix": 1778864733,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:09:34Z",
-              "timestampUnix": 1778864974,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:10:16Z",
-              "timestampUnix": 1778865016,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:12:42Z",
-              "timestampUnix": 1778868762,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:19:33Z",
-              "timestampUnix": 1778869173,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:23:50Z",
-              "timestampUnix": 1778869430,
-              "currentValue": 0.6268,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.363125,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T19:15:55Z",
-              "timestampUnix": 1778872555,
-              "currentValue": 2.5075,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -2.4824250000000005,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T20:17:27Z",
-              "timestampUnix": 1778876247,
-              "currentValue": 0.5015,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.488425,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T21:18:50Z",
-              "timestampUnix": 1778879930,
-              "currentValue": 2.2567,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -2.7332250000000005,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T22:19:21Z",
-              "timestampUnix": 1778883561,
-              "currentValue": 1.8806,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.109325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T22:23:22Z",
-              "timestampUnix": 1778883802,
-              "currentValue": 1.8806,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.109325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T23:20:24Z",
-              "timestampUnix": 1778887224,
-              "currentValue": 1.1283,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.861625,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T00:22:00Z",
-              "timestampUnix": 1778890920,
-              "currentValue": 1.8806,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.109325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T00:26:27Z",
-              "timestampUnix": 1778891187,
-              "currentValue": 1.8806,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -3.109325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T01:24:29Z",
-              "timestampUnix": 1778894669,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T01:25:38Z",
-              "timestampUnix": 1778894738,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:25:43Z",
-              "timestampUnix": 1778898343,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:30:12Z",
-              "timestampUnix": 1778898612,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:33:24Z",
-              "timestampUnix": 1778898804,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T03:27:22Z",
-              "timestampUnix": 1778902042,
-              "currentValue": 0.8776,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.112325,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T04:28:25Z",
-              "timestampUnix": 1778905705,
-              "currentValue": 0.5015,
-              "costBasisValue": 4.989925,
-              "unrealizedPnL": -4.488425,
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 1.582,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.4053132999999995,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -10559,6 +10693,26 @@
             {
               "timestamp": "2026-05-16T04:28:25Z",
               "timestampUnix": 1778905705,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -11017,6 +11171,26 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -11463,6 +11637,26 @@
             {
               "timestamp": "2026-05-16T04:28:25Z",
               "timestampUnix": 1778905705,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -11921,6 +12115,26 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -11929,9 +12143,9 @@
         {
           "key": "geopolitics",
           "label": "Geopolitics",
-          "latestCurrentValue": 31.5471,
+          "latestCurrentValue": 33.0692,
           "latestCostBasisValue": 51.94587687999999,
-          "latestUnrealizedPnL": -20.398776879999996,
+          "latestUnrealizedPnL": -18.876676879999994,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 8,
           "latestActionablePositionCount": 2,
@@ -12359,9 +12573,9 @@
             {
               "timestamp": "2026-05-16T03:27:22Z",
               "timestampUnix": 1778902042,
-              "currentValue": 31.8718,
-              "costBasisValue": 51.94587687999999,
-              "unrealizedPnL": -20.074076879999996,
+              "currentValue": 31.871799999999997,
+              "costBasisValue": 51.94587688,
+              "unrealizedPnL": -20.07407688,
               "realizedPnL": 0,
               "openPositionCount": 8,
               "actionablePositionCount": 2
@@ -12369,9 +12583,29 @@
             {
               "timestamp": "2026-05-16T04:28:25Z",
               "timestampUnix": 1778905705,
-              "currentValue": 31.5471,
-              "costBasisValue": 51.94587687999999,
+              "currentValue": 31.547099999999997,
+              "costBasisValue": 51.94587688,
               "unrealizedPnL": -20.398776879999996,
+              "realizedPnL": 0,
+              "openPositionCount": 8,
+              "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 30.814,
+              "costBasisValue": 51.94587687999999,
+              "unrealizedPnL": -21.131876879999997,
+              "realizedPnL": 0,
+              "openPositionCount": 8,
+              "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 33.0692,
+              "costBasisValue": 51.94587687999999,
+              "unrealizedPnL": -18.876676879999994,
               "realizedPnL": 0,
               "openPositionCount": 8,
               "actionablePositionCount": 2
@@ -12381,9 +12615,9 @@
         {
           "key": "sports",
           "label": "Sports",
-          "latestCurrentValue": 26.5864,
+          "latestCurrentValue": 26.539800000000003,
           "latestCostBasisValue": 27.182852150000002,
-          "latestUnrealizedPnL": -0.5964521500000011,
+          "latestUnrealizedPnL": -0.6430521500000004,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 4,
           "latestActionablePositionCount": 0,
@@ -12824,6 +13058,26 @@
               "currentValue": 26.5864,
               "costBasisValue": 27.182852150000002,
               "unrealizedPnL": -0.5964521500000011,
+              "realizedPnL": 0,
+              "openPositionCount": 4,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 26.705900000000003,
+              "costBasisValue": 27.182852150000002,
+              "unrealizedPnL": -0.4769521500000007,
+              "realizedPnL": 0,
+              "openPositionCount": 4,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 26.539800000000003,
+              "costBasisValue": 27.182852150000002,
+              "unrealizedPnL": -0.6430521500000004,
               "realizedPnL": 0,
               "openPositionCount": 4,
               "actionablePositionCount": 0
@@ -13279,15 +13533,35 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "tech",
           "label": "Tech",
-          "latestCurrentValue": 8.7463,
+          "latestCurrentValue": 8.5509,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": 1.7491900000000005,
+          "latestUnrealizedPnL": 1.5537900000000011,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -13728,6 +14002,26 @@
               "currentValue": 8.7463,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": 1.7491900000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 9.0395,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.042390000000001,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -14183,15 +14477,35 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 7.3125,
+              "costBasisValue": 9,
+              "unrealizedPnL": -1.6875,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 7.3125,
+              "costBasisValue": 9,
+              "unrealizedPnL": -1.6875,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "other",
           "label": "Other",
-          "latestCurrentValue": 1.7138,
+          "latestCurrentValue": 1.582,
           "latestCostBasisValue": 6.987313299999999,
-          "latestUnrealizedPnL": -5.273513299999999,
+          "latestUnrealizedPnL": -5.4053132999999995,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -14632,6 +14946,26 @@
               "currentValue": 1.7138,
               "costBasisValue": 6.987313299999999,
               "unrealizedPnL": -5.273513299999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 1.7138,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.273513299999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 1.582,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.4053132999999995,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -15081,6 +15415,26 @@
             {
               "timestamp": "2026-05-16T04:28:25Z",
               "timestampUnix": 1778905705,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -15539,6 +15893,26 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -15614,14 +15988,14 @@
           },
           {
             "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0895,
-            "currentValue": 8.7463,
+            "currentPrice": 0.0875,
+            "currentValue": 8.5509,
             "endDate": "2026-12-31T00:00:00Z",
             "eventSlug": "anthropic-acquired-before-2027",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
             "outcome": "Yes",
-            "percentPnL": 24.9473,
-            "percentRealizedPnL": 24.9481,
+            "percentPnL": 22.1558,
+            "percentRealizedPnL": 22.1566,
             "realizedPnL": 0,
             "size": 97.725,
             "slug": "anthropic-acquired-before-2027",
@@ -15659,48 +16033,48 @@
           },
           {
             "averageEntryPrice": 0.0699,
-            "currentPrice": 0.092,
-            "currentValue": 6.5714,
+            "currentPrice": 0.091,
+            "currentValue": 6.4999,
             "endDate": "2026-05-18T00:00:00Z",
             "eventSlug": "pga-championship-winner-2026",
             "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
             "outcome": "Yes",
-            "percentPnL": 31.4284,
-            "percentRealizedPnL": 31.4298,
+            "percentPnL": 29.9984,
+            "percentRealizedPnL": 29.9998,
             "realizedPnL": 0,
             "size": 71.4285,
             "slug": "will-cameron-young-win-the-2026-pga-championship",
             "title": "Will Cameron Young win the 2026 PGA Championship?"
           },
           {
-            "averageEntryPrice": 0.0177,
-            "currentPrice": 0.016,
-            "currentValue": 6.2997,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "outcome": "Yes",
-            "percentPnL": -9.9951,
-            "percentRealizedPnL": -9.9962,
-            "realizedPnL": 0,
-            "size": 393.7322,
-            "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?"
-          },
-          {
             "averageEntryPrice": 0.1166,
-            "currentPrice": 0.06,
-            "currentValue": 6.1706,
+            "currentPrice": 0.059,
+            "currentValue": 6.0678,
             "endDate": "2026-06-30T00:00:00Z",
             "eventSlug": "ukraine-signs-peace-deal-with-russia-by-june-30",
             "marketURL": "https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-june-30",
             "outcome": "Yes",
-            "percentPnL": -48.5775,
-            "percentRealizedPnL": -48.5783,
+            "percentPnL": -49.4341,
+            "percentRealizedPnL": -49.4349,
             "realizedPnL": 0,
             "size": 102.8444,
             "slug": "ukraine-signs-peace-deal-with-russia-by-june-30",
             "title": "Ukraine signs peace deal with Russia by June 30?"
+          },
+          {
+            "averageEntryPrice": 0.0177,
+            "currentPrice": 0.015,
+            "currentValue": 5.9059,
+            "endDate": "2026-06-30T00:00:00Z",
+            "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
+            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
+            "outcome": "Yes",
+            "percentPnL": -15.6213,
+            "percentRealizedPnL": -15.6224,
+            "realizedPnL": 0,
+            "size": 393.7322,
+            "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
+            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?"
           },
           {
             "averageEntryPrice": 0.0629,
@@ -15734,29 +16108,44 @@
           },
           {
             "averageEntryPrice": 0.06,
-            "currentPrice": 0.045,
-            "currentValue": 2.25,
+            "currentPrice": 0.055,
+            "currentValue": 2.75,
             "endDate": "2026-06-30T00:00:00Z",
             "eventSlug": "will-the-iranian-regime-fall-by-june-30",
             "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
             "outcome": "Yes",
-            "percentPnL": -25,
-            "percentRealizedPnL": -25,
+            "percentPnL": -8.3333,
+            "percentRealizedPnL": -8.3333,
             "realizedPnL": 0,
             "size": 50,
             "slug": "will-the-iranian-regime-fall-by-june-30",
             "title": "Will the Iranian regime fall by June 30?"
           },
           {
+            "averageEntryPrice": 0.0199,
+            "currentPrice": 0.0085,
+            "currentValue": 2.1313,
+            "endDate": "2026-05-17T00:00:00Z",
+            "eventSlug": "trump-endorses-chinas-claim-to-taiwan-this-week",
+            "marketURL": "https://polymarket.com/event/trump-endorses-chinas-claim-to-taiwan-this-week",
+            "outcome": "Yes",
+            "percentPnL": -57.3725,
+            "percentRealizedPnL": -57.3736,
+            "realizedPnL": 0,
+            "size": 250.75,
+            "slug": "trump-endorses-chinas-claim-to-taiwan-this-week",
+            "title": "Trump endorses China's claim to Taiwan this week?"
+          },
+          {
             "averageEntryPrice": 0.0265,
-            "currentPrice": 0.0065,
-            "currentValue": 1.7138,
+            "currentPrice": 0.006,
+            "currentValue": 1.582,
             "endDate": "2026-06-01T03:59:59Z",
             "eventSlug": "will-the-us-confirm-that-aliens-exist-before-2027",
             "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
             "outcome": "Yes",
-            "percentPnL": -75.516,
-            "percentRealizedPnL": -75.517,
+            "percentPnL": -77.3989,
+            "percentRealizedPnL": -77.3999,
             "realizedPnL": 0,
             "size": 263.6722,
             "slug": "will-the-us-confirm-that-aliens-exist-by-may-31",
@@ -15764,37 +16153,22 @@
           },
           {
             "averageEntryPrice": 0.06,
-            "currentPrice": 0.0105,
-            "currentValue": 0.525,
+            "currentPrice": 0.011,
+            "currentValue": 0.5499,
             "endDate": "2026-05-18T00:00:00Z",
             "eventSlug": "pga-championship-winner-2026",
             "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
             "outcome": "Yes",
-            "percentPnL": -82.5,
-            "percentRealizedPnL": -82.5,
+            "percentPnL": -81.67,
+            "percentRealizedPnL": -81.67,
             "realizedPnL": 0,
             "size": 50,
             "slug": "will-xander-schauffele-win-the-2026-pga-championship",
             "title": "Will Xander Schauffele win the 2026 PGA Championship?"
-          },
-          {
-            "averageEntryPrice": 0.0199,
-            "currentPrice": 0.002,
-            "currentValue": 0.5015,
-            "endDate": "2026-05-17T00:00:00Z",
-            "eventSlug": "trump-endorses-chinas-claim-to-taiwan-this-week",
-            "marketURL": "https://polymarket.com/event/trump-endorses-chinas-claim-to-taiwan-this-week",
-            "outcome": "Yes",
-            "percentPnL": -89.9688,
-            "percentRealizedPnL": -89.9699,
-            "realizedPnL": 0,
-            "size": 250.75,
-            "slug": "trump-endorses-chinas-claim-to-taiwan-this-week",
-            "title": "Trump endorses China's claim to Taiwan this week?"
           }
         ],
         "recentActivityCount": 15,
-        "totalCurrentValue": 76.21560000000001,
+        "totalCurrentValue": 77.47499999999998,
         "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "delta": {
@@ -15803,29 +16177,18 @@
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "hasPrevious": true,
           "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": 0.5949999999999989,
+          "hasStructuralChanges": false,
+          "valueDeltaUSD": 1.46869999999997,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
           "closedPositionCount": 0,
-          "actionChangeCount": 1,
+          "actionChangeCount": 0,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 75.62060000000001,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Will China invade Taiwan by end of 2026?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-              "action": "no_signal",
-              "previousAction": "hold",
-              "signalTitle": null
-            }
-          ]
+          "previousTotalCurrentValue": 76.00630000000001,
+          "highlights": []
         }
       },
       {
@@ -15897,14 +16260,14 @@
           },
           {
             "averageEntryPrice": 0.018,
-            "currentPrice": 0.016,
-            "currentValue": 1.7777,
+            "currentPrice": 0.015,
+            "currentValue": 1.6666,
             "endDate": "2026-06-30T00:00:00Z",
             "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
             "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
             "outcome": "Yes",
-            "percentPnL": -11.11,
-            "percentRealizedPnL": -11.1149,
+            "percentPnL": -16.665,
+            "percentRealizedPnL": -16.6699,
             "realizedPnL": 0,
             "size": 111.1111,
             "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
@@ -15912,7 +16275,7 @@
           }
         ],
         "recentActivityCount": 0,
-        "totalCurrentValue": 12.2776,
+        "totalCurrentValue": 12.166500000000001,
         "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "delta": {
@@ -15931,7 +16294,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 12.2776,
+          "previousTotalCurrentValue": 12.166500000000001,
           "highlights": []
         }
       }
@@ -15952,7 +16315,7 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T04:28:35Z",
+    "generatedAt": "2026-05-16T06:31:44Z",
     "summary": {
       "totalFilingsFetched": 50,
       "totalSignals": 15,
@@ -16226,7 +16589,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-16T04:28:50Z",
+    "generatedAt": "2026-05-16T06:31:59Z",
     "market": {
       "available": true,
       "summary": {
@@ -17226,19 +17589,19 @@
   "pulse": {
     "marketMix": [
       {
-        "key": "other",
-        "label": "Other",
+        "key": "geopolitics",
+        "label": "Geopolitics",
         "value": 4
       },
       {
-        "key": "geopolitics",
-        "label": "Geopolitics",
+        "key": "other",
+        "label": "Other",
         "value": 3
       },
       {
         "key": "crypto",
         "label": "Crypto",
-        "value": 2
+        "value": 1
       }
     ],
     "walletActions": [
@@ -17256,27 +17619,27 @@
     "systemHealth": [
       {
         "label": "Market updated",
-        "value": "2026-05-16T04:28:24Z"
+        "value": "2026-05-16T06:31:17Z"
       },
       {
         "label": "Wallet updated",
-        "value": "2026-05-16T04:28:25Z"
+        "value": "2026-05-16T06:31:19Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-05-16T04:28:35Z"
+        "value": "2026-05-16T06:31:44Z"
       },
       {
         "label": "Insider upstream",
-        "value": "11 live"
+        "value": "10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s)."
       },
       {
         "label": "Official watch",
-        "value": "4"
+        "value": "2"
       },
       {
         "label": "XGBoost rows",
-        "value": "3"
+        "value": "2"
       },
       {
         "label": "Wallet actions",
@@ -17312,7 +17675,7 @@
           "flowUSD": 220000,
           "absFlowUSD": 220000,
           "confidence": 95,
-          "currentPrice": 0.885,
+          "currentPrice": 0.895,
           "daysToEnd": 16
         },
         {
@@ -17342,23 +17705,8 @@
           "flowUSD": 16125,
           "absFlowUSD": 16125,
           "confidence": 97,
-          "currentPrice": 0.0585,
+          "currentPrice": 0.0765,
           "daysToEnd": 1
-        },
-        {
-          "id": "bitcoin-above-80k-on-may-18|No",
-          "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-          "shortLabel": "Will the price of Bitco...",
-          "slug": "bitcoin-above-80k-on-may-18",
-          "eventSlug": "bitcoin-above-on-may-18",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-18",
-          "outcome": "NO",
-          "direction": "buy",
-          "flowUSD": 16125,
-          "absFlowUSD": 16125,
-          "confidence": 97,
-          "currentPrice": 0.695,
-          "daysToEnd": 3
         },
         {
           "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -17389,6 +17737,21 @@
           "confidence": 95,
           "currentPrice": 0.865,
           "daysToEnd": 229
+        },
+        {
+          "id": "will-there-be-no-change-in-fed-interest-rates-after-the-june-2026-meeting|Yes",
+          "title": "Will there be no change in Fed interest rates after the June 2026 meeting?",
+          "shortLabel": "Will there be no change...",
+          "slug": "will-there-be-no-change-in-fed-interest-rates-after-the-june-2026-meeting",
+          "eventSlug": "fed-decision-in-june-825",
+          "marketURL": "https://polymarket.com/event/fed-decision-in-june-825",
+          "outcome": "YES",
+          "direction": "buy",
+          "flowUSD": 54151.47,
+          "absFlowUSD": 54151.47,
+          "confidence": 93,
+          "currentPrice": 0.9795,
+          "daysToEnd": 32
         }
       ]
     },
@@ -17410,23 +17773,7 @@
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 16125,
-          "currentPrice": 0.0585
-        },
-        {
-          "id": "bitcoin-above-80k-on-may-18|No",
-          "title": "Will the price of Bitcoin be above $80,000 on May 18?",
-          "shortLabel": "Will the price of B...",
-          "slug": "bitcoin-above-80k-on-may-18",
-          "eventSlug": "bitcoin-above-on-may-18",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-18",
-          "outcome": "NO",
-          "direction": "buy",
-          "confidence": 97,
-          "daysToEnd": 3,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 16125,
-          "currentPrice": 0.695
+          "currentPrice": 0.0765
         },
         {
           "id": "atp-sinner-medvede-2026-05-15|Jannik Sinner",
@@ -17442,7 +17789,7 @@
           "take": "strong",
           "horizon": "short_term",
           "absFlowUSD": 437848.93,
-          "currentPrice": 0.9095
+          "currentPrice": 0.9145
         },
         {
           "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -17490,7 +17837,7 @@
           "take": "conviction",
           "horizon": "long_term",
           "absFlowUSD": 220000,
-          "currentPrice": 0.885
+          "currentPrice": 0.895
         },
         {
           "id": "will-there-be-no-change-in-fed-interest-rates-after-the-june-2026-meeting|Yes",
@@ -17506,7 +17853,7 @@
           "take": "strong",
           "horizon": "long_term",
           "absFlowUSD": 54151.47,
-          "currentPrice": 0.9805
+          "currentPrice": 0.9795
         },
         {
           "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
@@ -17523,6 +17870,22 @@
           "horizon": "long_term",
           "absFlowUSD": 156296.74,
           "currentPrice": 0.705
+        },
+        {
+          "id": "will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213|Yes",
+          "title": "Will Reza Pahlavi enter Iran by June 30?",
+          "shortLabel": "Will Reza Pahlavi e...",
+          "slug": "will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213",
+          "eventSlug": "will-reza-pahlavi-enter-iran-by-june-30",
+          "marketURL": "https://polymarket.com/event/will-reza-pahlavi-enter-iran-by-june-30",
+          "outcome": "YES",
+          "direction": "buy",
+          "confidence": 77,
+          "daysToEnd": 45,
+          "take": "lean",
+          "horizon": "long_term",
+          "absFlowUSD": 522.9078305943219,
+          "currentPrice": 0.0225
         },
         {
           "id": "will-norway-win-the-2026-fifa-world-cup-893|No",
@@ -17560,7 +17923,7 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 76.21560000000001,
+      "maxValueUSD": 77.47499999999998,
       "items": [
         {
           "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -17568,7 +17931,7 @@
           "label": "Haak",
           "shortLabel": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 76.21560000000001,
+          "totalCurrentValue": 77.47499999999998,
           "openPositionCount": 14,
           "actionablePositionCount": 1,
           "recentActivityCount": 15,
@@ -17580,7 +17943,7 @@
           "label": "Rose",
           "shortLabel": "Rose",
           "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 12.2776,
+          "totalCurrentValue": 12.166500000000001,
           "openPositionCount": 3,
           "actionablePositionCount": 1,
           "recentActivityCount": 0,
@@ -17678,36 +18041,36 @@
           "label": "Market",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T04:28:24Z",
+          "generatedAt": "2026-05-16T06:31:17Z",
           "status": "live",
-          "reason": "Snapshot 26s old · 13 active · 25 snapshots · 4 built from 4 source candidate(s)"
+          "reason": "Snapshot 42s old · 12 active · 25 snapshots · 2 built from 2 source candidate(s)"
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T04:28:25Z",
+          "generatedAt": "2026-05-16T06:31:19Z",
           "status": "live",
-          "reason": "Snapshot 25s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
+          "reason": "Snapshot 40s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T04:28:35Z",
-          "status": "live",
-          "reason": "11 live"
+          "generatedAt": "2026-05-16T06:31:44Z",
+          "status": "stale",
+          "reason": "10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s)."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T04:28:51.533Z",
-          "status": "live",
-          "reason": "5 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-16T06:32:01.092Z",
+          "status": "stale",
+          "reason": "Source issue(s): insider:degraded. 10 live · 1 failed. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. after 3 attempt(s)."
         }
       ]
     }
