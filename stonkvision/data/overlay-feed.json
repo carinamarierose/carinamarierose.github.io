@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-16T15:43:00.554Z",
-  "generatedAtUnix": 1778946180,
+  "generatedAt": "2026-05-16T16:42:56.519Z",
+  "generatedAtUnix": 1778949776,
   "sync": {
-    "generatedAt": "2026-05-16T15:42:59Z",
-    "generatedAtUnix": 1778946179,
+    "generatedAt": "2026-05-16T16:42:55Z",
+    "generatedAtUnix": 1778949775,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,24 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-16T15:43:00.554Z",
-      "generatedAtUnix": 1778946180,
-      "runID": "run-2026-05-16T15-40-41-034Z-12117",
-      "status": "live",
-      "statusReason": "5 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-16T16:42:56.519Z",
+      "generatedAtUnix": 1778949776,
+      "runID": "run-2026-05-16T16-40-01-557Z-26646",
+      "status": "degraded",
+      "statusReason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-05-16T15:40:41.034Z",
-      "finishedAt": "2026-05-16T15:43:00.554Z",
-      "lastRunAt": "2026-05-16T15:43:00.554Z",
-      "durationSeconds": 139.52,
+      "startedAt": "2026-05-16T16:40:01.557Z",
+      "finishedAt": "2026-05-16T16:42:56.519Z",
+      "lastRunAt": "2026-05-16T16:42:56.519Z",
+      "durationSeconds": 174.962,
       "publishRequested": true,
       "publishEnabled": true,
+      "pushLiveRequested": false,
+      "pushLiveEnabled": false,
       "intervalSeconds": 3600,
-      "nextRunAt": "2026-05-16T16:43:00.554Z",
+      "nextRunAt": "2026-05-16T17:42:56.519Z",
       "lastSuccessAt": "2026-05-16T15:43:00.554Z",
       "lastSuccessfulRunAt": "2026-05-16T15:43:00.554Z",
-      "lastFailureAt": "2026-05-16T14:41:16.206Z",
+      "lastFailureAt": "2026-05-16T16:42:56.519Z",
       "steps": [
         {
           "id": "market",
@@ -37,15 +39,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T15:40:41.087Z",
-          "finishedAt": "2026-05-16T15:42:24.502Z",
-          "durationSeconds": 103.415,
+          "startedAt": "2026-05-16T16:40:01.614Z",
+          "finishedAt": "2026-05-16T16:41:41.692Z",
+          "durationSeconds": 100.078,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T15-40-41-034Z-12117/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-78k-on-may-17|No [global_window_open,priority_source_bypass] | blocked wta-gauff-svitoli-2026-05-16|Coco Gauff->sports_policy | nhl-buf-mon-2026-05-16|Canadiens->sports_policy | wta-gauff-svitoli-2026-05-16|Elina Svitolina->sports_policy",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T16-40-01-557Z-26646/market.log",
+          "summary": "Notification decisions: selected bitcoin-above-78k-on-may-17|No [global_window_open,priority_source_bypass] | blocked wta-gauff-svitoli-2026-05-16|Coco Gauff->sports_policy | wta-gauff-svitoli-2026-05-16|Elina Svitolina->sports_policy | nhl-buf-mon-2026-05-16|Canadiens->sports_policy",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T15:42:24.502Z",
+          "lastSuccessAt": "2026-05-16T16:41:41.692Z",
           "lastFailureAt": "2026-05-16T07:30:52.191Z"
         },
         {
@@ -54,15 +56,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T15:42:24.502Z",
-          "finishedAt": "2026-05-16T15:42:26.689Z",
-          "durationSeconds": 2.187,
+          "startedAt": "2026-05-16T16:41:41.692Z",
+          "finishedAt": "2026-05-16T16:41:44.009Z",
+          "durationSeconds": 2.317,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T15-40-41-034Z-12117/wallets.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T16-40-01-557Z-26646/wallets.log",
           "summary": "Source diagnostics: 3 candidate(s) | built 3 | no-chase 0 | no-market 0",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T15:42:26.689Z",
+          "lastSuccessAt": "2026-05-16T16:41:44.009Z",
           "lastFailureAt": null
         },
         {
@@ -71,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T15:42:26.689Z",
-          "finishedAt": "2026-05-16T15:42:59.240Z",
-          "durationSeconds": 32.551,
+          "startedAt": "2026-05-16T16:41:44.009Z",
+          "finishedAt": "2026-05-16T16:42:55.224Z",
+          "durationSeconds": 71.215,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T15-40-41-034Z-12117/insider.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T16-40-01-557Z-26646/insider.log",
           "summary": "Telegram preview · selected 0 of 0 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T15:42:59.240Z",
+          "lastSuccessAt": "2026-05-16T16:42:55.224Z",
           "lastFailureAt": "2026-05-15T17:15:01.403Z"
         },
         {
@@ -88,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T15:42:59.241Z",
-          "finishedAt": "2026-05-16T15:43:00.066Z",
-          "durationSeconds": 0.825,
+          "startedAt": "2026-05-16T16:42:55.224Z",
+          "finishedAt": "2026-05-16T16:42:56.097Z",
+          "durationSeconds": 0.873,
           "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T15-40-41-034Z-12117/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T16-40-01-557Z-26646/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T15:43:00.066Z",
+          "lastSuccessAt": "2026-05-16T16:42:56.097Z",
           "lastFailureAt": null
         },
         {
@@ -105,15 +107,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T15:43:00.074Z",
-          "finishedAt": "2026-05-16T15:43:00.551Z",
-          "durationSeconds": 0.477,
+          "startedAt": "2026-05-16T16:42:56.104Z",
+          "finishedAt": "2026-05-16T16:42:56.516Z",
+          "durationSeconds": 0.412,
           "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/build-overlay-feed.mjs",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T15-40-41-034Z-12117/overlay-feed.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T16-40-01-557Z-26646/overlay-feed.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T15:43:00.551Z",
+          "lastSuccessAt": "2026-05-16T16:42:56.516Z",
           "lastFailureAt": null
         }
       ],
@@ -121,37 +123,37 @@
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T15:42:24Z",
+          "generatedAt": "2026-05-16T16:41:41Z",
           "status": "live",
-          "statusReason": "Snapshot 35s old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)"
+          "statusReason": "Snapshot 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T15:42:26Z",
+          "generatedAt": "2026-05-16T16:41:43Z",
           "status": "live",
-          "statusReason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
+          "statusReason": "Snapshot 1m old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T15:42:44Z",
-          "status": "live",
-          "statusReason": "11 live"
+          "generatedAt": "2026-05-16T16:42:39Z",
+          "status": "degraded",
+          "statusReason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)"
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T15:42:59Z",
+          "generatedAt": "2026-05-16T16:42:55Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T15:43:00.554Z",
-          "status": "live",
-          "statusReason": "5 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-16T16:42:56.519Z",
+          "status": "degraded",
+          "statusReason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)"
         }
       },
       "runtime": {
@@ -159,8 +161,9 @@
         "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
-        "currentSourceFingerprint": "b53f9d11000e7facf82198527a36a26ecb635bcbf68122d09cb411fd41e9376d",
+        "currentSourceFingerprint": "ff0a2f542c066497d138a4ff8ab39a172bd06d1c3b48dc82b8ff9e8d0b5f6c74",
         "publishEnabled": true,
+        "pushLiveEnabled": false,
         "launchAgent": {
           "label": "com.carinamarierose.stonkvision.supervisor",
           "plistPath": "/Users/carina.marie.rose@schibsted.com/Library/LaunchAgents/com.carinamarierose.stonkvision.supervisor.plist",
@@ -169,9 +172,10 @@
           "startIntervalSeconds": 1800,
           "configuredIntervalSeconds": 1800,
           "configuredPublishEnabled": true,
+          "configuredPushLiveEnabled": false,
           "effectiveIntervalSeconds": 1800,
-          "state": "drifted",
-          "stateReason": "Configured interval is 1800s but this run used 3600s. Reinstall with ./scripts/install-stonkvision-launchd.sh --interval-minutes 60 --publish."
+          "state": "service_copy_active",
+          "stateReason": "Configured interval is 1800s but this run used 3600s. The installed LaunchAgent still points at the service copy, so this repo run did not change launchd settings."
         },
         "serviceDeployment": {
           "manifestPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json",
@@ -180,6 +184,7 @@
           "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
           "intervalSeconds": null,
           "publishEnabled": null,
+          "pushLiveEnabled": null,
           "skippedSteps": null,
           "sourceFingerprint": "46571cbecb10cb58feddb48a3dda0b8c330da62047e73f21afda6e54ea215d8f",
           "sourceFingerprintInferred": true,
@@ -193,9 +198,9 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T15:42:24Z",
+      "generatedAt": "2026-05-16T16:41:41Z",
       "status": "live",
-      "statusReason": "Snapshot 35s old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)",
+      "statusReason": "Snapshot 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -206,8 +211,8 @@
           "adapter": "market_intel_snapshot",
           "status": "live",
           "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 9 active signal(s).",
-          "fetchedAt": "2026-05-16T15:42:24Z",
-          "fetchedAtUnix": 1778946144,
+          "fetchedAt": "2026-05-16T16:41:41Z",
+          "fetchedAtUnix": 1778949701,
           "attemptCount": 1,
           "eventCount": 9,
           "cacheUsed": false,
@@ -223,8 +228,8 @@
           "adapter": "source_watch_digest",
           "status": "live",
           "message": "3 candidate(s): 3 built, 0 no-chase, 0 no-market.",
-          "fetchedAt": "2026-05-16T15:42:24Z",
-          "fetchedAtUnix": 1778946144,
+          "fetchedAt": "2026-05-16T16:41:41Z",
+          "fetchedAtUnix": 1778949701,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -240,8 +245,8 @@
           "adapter": "suspicious_wallets",
           "status": "live",
           "message": "No suspicious wallets were flagged in the latest market snapshot.",
-          "fetchedAt": "2026-05-16T15:42:24Z",
-          "fetchedAtUnix": 1778946144,
+          "fetchedAt": "2026-05-16T16:41:41Z",
+          "fetchedAtUnix": 1778949701,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -253,9 +258,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T15:42:26Z",
+      "generatedAt": "2026-05-16T16:41:43Z",
       "status": "live",
-      "statusReason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 2 live",
+      "statusReason": "Snapshot 1m old · 2 wallet(s) · 17 open · 2 actionable · 2 live",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -266,8 +271,8 @@
           "adapter": "market_intel_snapshot",
           "status": "live",
           "message": "Loaded 9 active signal(s) from market intel.",
-          "fetchedAt": "2026-05-16T15:42:24Z",
-          "fetchedAtUnix": 1778946144,
+          "fetchedAt": "2026-05-16T16:41:41Z",
+          "fetchedAtUnix": 1778949701,
           "attemptCount": 1,
           "eventCount": 9,
           "cacheUsed": false,
@@ -283,8 +288,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 17 open position(s) and 2 actionable call(s).",
-          "fetchedAt": "2026-05-16T15:42:26Z",
-          "fetchedAtUnix": 1778946146,
+          "fetchedAt": "2026-05-16T16:41:43Z",
+          "fetchedAtUnix": 1778949703,
           "attemptCount": 2,
           "eventCount": 17,
           "cacheUsed": false,
@@ -296,10 +301,27 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T15:42:44Z",
-      "status": "live",
-      "statusReason": "11 live",
+      "generatedAt": "2026-05-16T16:42:39Z",
+      "status": "degraded",
+      "statusReason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)",
       "upstreamDiagnostics": [
+        {
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "adapter": "gdelt_doc",
+          "status": "cached",
+          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old).",
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
+          "attemptCount": 3,
+          "eventCount": 1,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 3559
+        },
         {
           "id": "binance-futures",
           "sourceID": "binance-futures",
@@ -309,8 +331,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -326,27 +348,10 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 3,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "adapter": "gdelt_doc",
-          "status": "live",
-          "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
-          "attemptCount": 1,
-          "eventCount": 1,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -360,8 +365,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (5 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 5,
           "cacheUsed": false,
@@ -377,8 +382,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -394,8 +399,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -411,8 +416,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -427,11 +432,11 @@
           "sourceType": "reddit",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (6 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "message": "Fetched live (5 matching item(s)).",
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
-          "eventCount": 6,
+          "eventCount": 5,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null
@@ -445,8 +450,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -462,8 +467,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -479,8 +484,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live, but no matching items landed.",
-          "fetchedAt": "2026-05-16T15:42:28Z",
-          "fetchedAtUnix": 1778946148,
+          "fetchedAt": "2026-05-16T16:41:47Z",
+          "fetchedAtUnix": 1778949707,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -492,7 +497,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T15:42:59Z",
+      "generatedAt": "2026-05-16T16:42:55Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -500,9 +505,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T15:43:00.554Z",
-      "status": "live",
-      "statusReason": "5 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-16T16:42:56.519Z",
+      "status": "degraded",
+      "statusReason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)",
       "upstreamDiagnostics": []
     }
   },
@@ -516,7 +521,7 @@
     "intelItemCount": 18,
     "sourceSignalCount": 2,
     "crossSignalCount": 1,
-    "kalshiMatchedCount": 1,
+    "kalshiMatchedCount": 0,
     "evaluatedSignalCount": 4809
   },
   "leads": {
@@ -538,33 +543,33 @@
   },
   "intel": {
     "available": true,
-    "generatedAt": "2026-05-16T15:42:24Z",
+    "generatedAt": "2026-05-16T16:41:41Z",
     "summary": {
       "totalItemCount": 18,
       "sourceLedCount": 10,
       "insiderWatchCount": 8,
-      "rawSourceEventCount": 40,
+      "rawSourceEventCount": 42,
       "linkedMarketCount": 2,
       "providerCount": 7,
       "watchlistMatchCount": 1
     },
     "sourceLed": [
       {
-        "id": "market-source:binance-BTCUSDT-1778946066",
+        "id": "market-source:binance-BTCUSDT-1778949628",
         "kind": "market_source",
         "title": "BTCUSDT futures snapshot",
         "subtitle": "Binance Futures · 1 linked market",
-        "summary": "mark 78174 | index 78217 | funding +0.0056% | OI 101.89K | OI notional 7.97B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "summary": "mark 78189 | index 78226 | funding +0.0040% | OI 101.93K | OI notional 7.97B USD | long crowding | bearish funding | heavy derivatives positioning",
         "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Bitcoin be above $78,000 on May 17? · Standard lane",
-        "sourceEventID": "binance-BTCUSDT-1778946066",
+        "sourceEventID": "binance-BTCUSDT-1778949628",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -576,7 +581,7 @@
           "bitcoin",
           "long_crowding",
           "bearish_funding",
-          "crowded_longs"
+          "heavy_derivatives_positioning"
         ],
         "signalCount": 1,
         "topSignals": [
@@ -589,7 +594,7 @@
             "category": "crypto",
             "take": "conviction",
             "confidence": 97,
-            "sourceMatchedQuery": "bitcoin above 78150"
+            "sourceMatchedQuery": "bitcoin above"
           }
         ]
       },
@@ -657,21 +662,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-ETHUSDT-1778946066",
+        "id": "market-source:binance-ETHUSDT-1778949628",
         "kind": "market_source",
         "title": "ETHUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 2181 | index 2182 | funding +0.0064% | OI 2.31M | OI notional 5.05B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "summary": "mark 2174 | index 2175 | funding +0.0071% | OI 2.32M | OI notional 5.05B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-ETHUSDT-1778946066",
+        "sourceEventID": "binance-ETHUSDT-1778949628",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -689,21 +694,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-SOLUSDT-1778946066",
+        "id": "market-source:binance-SOLUSDT-1778949628",
         "kind": "market_source",
         "title": "SOLUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 86.53 | index 86.59 | funding -0.0152% | OI 10.06M | short crowding | bullish funding | crowded shorts",
+        "summary": "mark 86.67 | index 86.73 | funding -0.0160% | OI 10.06M | short crowding | bullish funding | crowded shorts",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-SOLUSDT-1778946066",
+        "sourceEventID": "binance-SOLUSDT-1778949628",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -721,53 +726,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1778946066",
-        "kind": "market_source",
-        "title": "BTCUSDT derivatives snapshot",
-        "subtitle": "Coinalyze Derivatives · Watching for market match",
-        "summary": "OI 7.97B USD | funding -0.0210% | predicted +0.5633% | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
-        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1778946066",
-        "sourceName": "Coinalyze Derivatives",
-        "sourceHandle": "coinalyze",
-        "provider": "coinalyze",
-        "sourceType": "api",
-        "sourceLane": "standard",
-        "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
-        "priority": 8,
-        "category": "crypto",
-        "matchedCategories": [
-          "crypto"
-        ],
-        "tags": [
-          "BTCUSDT_PERP.A",
-          "BTCUSDT",
-          "BTC",
-          "bitcoin",
-          "predicted_crowded_longs",
-          "predicted_bearish_funding"
-        ],
-        "signalCount": 0,
-        "topSignals": []
-      },
-      {
-        "id": "market-source:coinalyze-ETHUSDT_PERP.A-1778946066",
+        "id": "market-source:coinalyze-ETHUSDT_PERP.A-1778949628",
         "kind": "market_source",
         "title": "ETHUSDT derivatives snapshot",
         "subtitle": "Coinalyze Derivatives · Watching for market match",
-        "summary": "OI 5.05B USD | funding +0.4496% | predicted +0.6413% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
+        "summary": "OI 5.05B USD | funding +0.6508% | predicted +0.7105% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "coinalyze-ETHUSDT_PERP.A-1778946066",
+        "sourceEventID": "coinalyze-ETHUSDT_PERP.A-1778949628",
         "sourceName": "Coinalyze Derivatives",
         "sourceHandle": "coinalyze",
         "provider": "coinalyze",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -785,21 +758,53 @@
         "topSignals": []
       },
       {
-        "id": "market-source:coinalyze-SOLUSDT_PERP.A-1778946066",
+        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1778949627",
         "kind": "market_source",
-        "title": "SOLUSDT derivatives snapshot",
+        "title": "BTCUSDT derivatives snapshot",
         "subtitle": "Coinalyze Derivatives · Watching for market match",
-        "summary": "OI 870.27M USD | funding +0.5209% | predicted -1.5214% | crowded longs | bearish funding | predicted funding flip risk | reversal risk",
+        "summary": "OI 7.97B USD | funding +0.4955% | predicted +0.3971% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "coinalyze-SOLUSDT_PERP.A-1778946066",
+        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1778949627",
         "sourceName": "Coinalyze Derivatives",
         "sourceHandle": "coinalyze",
         "provider": "coinalyze",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-05-16T15:40:48.000Z",
-        "publishedAtUnix": 1778946048,
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
+        "priority": 8,
+        "category": "crypto",
+        "matchedCategories": [
+          "crypto"
+        ],
+        "tags": [
+          "BTCUSDT_PERP.A",
+          "BTCUSDT",
+          "BTC",
+          "bitcoin",
+          "crowded_longs",
+          "bearish_funding"
+        ],
+        "signalCount": 0,
+        "topSignals": []
+      },
+      {
+        "id": "market-source:coinalyze-SOLUSDT_PERP.A-1778949627",
+        "kind": "market_source",
+        "title": "SOLUSDT derivatives snapshot",
+        "subtitle": "Coinalyze Derivatives · Watching for market match",
+        "summary": "OI 871.91M USD | funding -1.5361% | predicted -1.5982% | crowded shorts | bullish funding | predicted crowded shorts | predicted bullish funding",
+        "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
+        "sourceEventID": "coinalyze-SOLUSDT_PERP.A-1778949627",
+        "sourceName": "Coinalyze Derivatives",
+        "sourceHandle": "coinalyze",
+        "provider": "coinalyze",
+        "sourceType": "api",
+        "sourceLane": "standard",
+        "sourceURL": "https://api.coinalyze.net/v1",
+        "publishedAt": "2026-05-16T16:40:08.000Z",
+        "publishedAtUnix": 1778949608,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -810,8 +815,8 @@
           "SOLUSDT",
           "SOL",
           "solana",
-          "crowded_longs",
-          "bearish_funding"
+          "crowded_shorts",
+          "bullish_funding"
         ],
         "signalCount": 0,
         "topSignals": []
@@ -1104,7 +1109,7 @@
   },
   "xgboost": {
     "available": true,
-    "generatedAt": "2026-05-16T15:42:24.124Z",
+    "generatedAt": "2026-05-16T16:41:41.378Z",
     "status": {
       "label": "Live shadow",
       "className": "supports",
@@ -1141,52 +1146,27 @@
       "displacedCount": 0
     },
     "trend": {
-      "enabledRuns": 40,
-      "averageScoredRowsPerRun": 4.275,
-      "supportCount": 87,
-      "skepticalCount": 48,
+      "enabledRuns": 41,
+      "averageScoredRowsPerRun": 4.2682926829268295,
+      "supportCount": 89,
+      "skepticalCount": 49,
       "topKDisagreementCount": 36,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "shadow": {
       "available": true,
-      "generatedAt": "2026-05-16T15:42:24.124Z",
+      "generatedAt": "2026-05-16T16:41:41.378Z",
       "rowCount": 4,
       "topK": 5,
       "overlapCount": 4,
-      "disagreementCount": 1,
+      "disagreementCount": 2,
       "modelOnlyCount": 0,
       "swiftOnlyCount": 0,
       "modelName": "xgboost-short-term-service-semantic-fix-model-directional.json",
       "metadataName": "xgboost-short-term-service-semantic-fix-metadata-directional.json",
       "scoredRows": [
         {
-          "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
-          "signalID": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
-          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
-          "slug": "wta-gauff-svitoli-2026-05-16",
-          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-          "outcome": "Coco Gauff",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.585,
-          "modelScore": 0.9488272070884705,
-          "modelRank": 1,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": 1,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 167.86721063,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
           "id": "nhl-buf-mon-2026-05-16|Canadiens",
           "signalID": "nhl-buf-mon-2026-05-16|Canadiens",
           "title": "Sabres vs. Canadiens",
@@ -1199,15 +1179,40 @@
           "confidence": 95,
           "currentPrice": 0.615,
           "modelScore": 0.7279201745986938,
-          "modelRank": 2,
-          "swiftRank": 3,
-          "rankDeltaVsSwift": 1,
+          "modelRank": 1,
+          "swiftRank": 4,
+          "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 163.90933433,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
             "Whale"
+          ]
+        },
+        {
+          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "signalID": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
+          "slug": "wta-gauff-svitoli-2026-05-16",
+          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
+          "outcome": "Elina Svitolina",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 100,
+          "currentPrice": 0.275,
+          "modelScore": 0.6987105011940002,
+          "modelRank": 2,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": 1,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 254.74888707,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale",
+            "Cross-signal"
           ]
         },
         {
@@ -1221,116 +1226,69 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.399,
-          "modelScore": 0.5290431380271912,
+          "currentPrice": 0.3765,
+          "modelScore": 0.5383120775222778,
           "modelRank": 3,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": -2,
+          "swiftRank": 2,
+          "rankDeltaVsSwift": -1,
           "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 255.21209033,
+          "swiftPriorityScore": 256.80354399,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 78150",
+          "sourceMatchedQuery": "bitcoin above",
           "flags": [
             "Cross-signal",
             "Source-led"
           ]
         },
         {
-          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
-          "signalID": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
+          "signalID": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
           "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
           "slug": "wta-gauff-svitoli-2026-05-16",
           "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-          "outcome": "Elina Svitolina",
+          "outcome": "Coco Gauff",
           "category": "sports",
-          "severity": "green",
-          "take": "lean",
-          "confidence": 88,
-          "currentPrice": 0.415,
-          "modelScore": 0.13854193687438965,
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 98,
+          "currentPrice": 0.725,
+          "modelScore": 0.20390485227108002,
           "modelRank": 4,
-          "swiftRank": 4,
-          "rankDeltaVsSwift": 0,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": -3,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 161.94086103,
+          "swiftPriorityScore": 272.93819697,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
-          "flags": []
+          "flags": [
+            "Whale",
+            "Cross-signal"
+          ]
         }
       ],
       "topModel": [
         {
-          "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
-          "signalID": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
-          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
-          "slug": "wta-gauff-svitoli-2026-05-16",
-          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-          "outcome": "Coco Gauff",
+          "id": "nhl-buf-mon-2026-05-16|Canadiens",
+          "signalID": "nhl-buf-mon-2026-05-16|Canadiens",
+          "title": "Sabres vs. Canadiens",
+          "slug": "nhl-buf-mon-2026-05-16",
+          "marketURL": "https://polymarket.com/event/nhl-buf-mon-2026-05-16",
+          "outcome": "Canadiens",
           "category": "sports",
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.585,
-          "modelScore": 0.9488272070884705,
+          "currentPrice": 0.615,
+          "modelScore": 0.7279201745986938,
           "modelRank": 1,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 167.86721063,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
-          "id": "nhl-buf-mon-2026-05-16|Canadiens",
-          "signalID": "nhl-buf-mon-2026-05-16|Canadiens",
-          "title": "Sabres vs. Canadiens",
-          "slug": "nhl-buf-mon-2026-05-16",
-          "marketURL": "https://polymarket.com/event/nhl-buf-mon-2026-05-16",
-          "outcome": "Canadiens",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.615,
-          "modelScore": 0.7279201745986938,
-          "modelRank": 2,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
           "swiftPriorityScore": 163.90933433,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
             "Whale"
-          ]
-        },
-        {
-          "id": "bitcoin-above-78k-on-may-17|No",
-          "signalID": "bitcoin-above-78k-on-may-17|No",
-          "title": "Will the price of Bitcoin be above $78,000 on May 17?",
-          "slug": "bitcoin-above-78k-on-may-17",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-78k-on-may-17",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.399,
-          "modelScore": 0.5290431380271912,
-          "modelRank": 3,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 255.21209033,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 78150",
-          "flags": [
-            "Cross-signal",
-            "Source-led"
           ]
         },
         {
@@ -1341,22 +1299,23 @@
           "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
           "outcome": "Elina Svitolina",
           "category": "sports",
-          "severity": "green",
-          "take": "lean",
-          "confidence": 88,
-          "currentPrice": 0.415,
-          "modelScore": 0.13854193687438965,
-          "modelRank": 4,
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 100,
+          "currentPrice": 0.275,
+          "modelScore": 0.6987105011940002,
+          "modelRank": 2,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 161.94086103,
+          "swiftPriorityScore": 254.74888707,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
-          "flags": []
-        }
-      ],
-      "topSwift": [
+          "flags": [
+            "Whale",
+            "Cross-signal"
+          ]
+        },
         {
           "id": "bitcoin-above-78k-on-may-17|No",
           "signalID": "bitcoin-above-78k-on-may-17|No",
@@ -1368,15 +1327,15 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.399,
-          "modelScore": 0.5290431380271912,
-          "modelRank": null,
-          "swiftRank": 1,
+          "currentPrice": 0.3765,
+          "modelScore": 0.5383120775222778,
+          "modelRank": 3,
+          "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 255.21209033,
+          "swiftPriorityScore": 256.80354399,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 78150",
+          "sourceMatchedQuery": "bitcoin above",
           "flags": [
             "Cross-signal",
             "Source-led"
@@ -1392,14 +1351,91 @@
           "category": "sports",
           "severity": "red",
           "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.585,
-          "modelScore": 0.9488272070884705,
+          "confidence": 98,
+          "currentPrice": 0.725,
+          "modelScore": 0.20390485227108002,
+          "modelRank": 4,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 272.93819697,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale",
+            "Cross-signal"
+          ]
+        }
+      ],
+      "topSwift": [
+        {
+          "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
+          "signalID": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
+          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
+          "slug": "wta-gauff-svitoli-2026-05-16",
+          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
+          "outcome": "Coco Gauff",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 98,
+          "currentPrice": 0.725,
+          "modelScore": 0.20390485227108002,
+          "modelRank": null,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 272.93819697,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale",
+            "Cross-signal"
+          ]
+        },
+        {
+          "id": "bitcoin-above-78k-on-may-17|No",
+          "signalID": "bitcoin-above-78k-on-may-17|No",
+          "title": "Will the price of Bitcoin be above $78,000 on May 17?",
+          "slug": "bitcoin-above-78k-on-may-17",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-78k-on-may-17",
+          "outcome": "No",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.3765,
+          "modelScore": 0.5383120775222778,
           "modelRank": null,
           "swiftRank": 2,
           "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 256.80354399,
+          "sourceHandle": "binance",
+          "sourceMatchedQuery": "bitcoin above",
+          "flags": [
+            "Cross-signal",
+            "Source-led"
+          ]
+        },
+        {
+          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "signalID": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
+          "slug": "wta-gauff-svitoli-2026-05-16",
+          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
+          "outcome": "Elina Svitolina",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 100,
+          "currentPrice": 0.275,
+          "modelScore": 0.6987105011940002,
+          "modelRank": null,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 167.86721063,
+          "swiftPriorityScore": 254.74888707,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -1421,8 +1457,34 @@
           "currentPrice": 0.615,
           "modelScore": 0.7279201745986938,
           "modelRank": null,
-          "swiftRank": 3,
+          "swiftRank": 4,
           "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 163.90933433,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        }
+      ],
+      "disagreements": [
+        {
+          "id": "nhl-buf-mon-2026-05-16|Canadiens",
+          "signalID": "nhl-buf-mon-2026-05-16|Canadiens",
+          "title": "Sabres vs. Canadiens",
+          "slug": "nhl-buf-mon-2026-05-16",
+          "marketURL": "https://polymarket.com/event/nhl-buf-mon-2026-05-16",
+          "outcome": "Canadiens",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.615,
+          "modelScore": 0.7279201745986938,
+          "modelRank": 1,
+          "swiftRank": 4,
+          "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 163.90933433,
           "sourceHandle": null,
@@ -1432,52 +1494,28 @@
           ]
         },
         {
-          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
-          "signalID": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
+          "signalID": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
           "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
           "slug": "wta-gauff-svitoli-2026-05-16",
           "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-          "outcome": "Elina Svitolina",
+          "outcome": "Coco Gauff",
           "category": "sports",
-          "severity": "green",
-          "take": "lean",
-          "confidence": 88,
-          "currentPrice": 0.415,
-          "modelScore": 0.13854193687438965,
-          "modelRank": null,
-          "swiftRank": 4,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 161.94086103,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": []
-        }
-      ],
-      "disagreements": [
-        {
-          "id": "bitcoin-above-78k-on-may-17|No",
-          "signalID": "bitcoin-above-78k-on-may-17|No",
-          "title": "Will the price of Bitcoin be above $78,000 on May 17?",
-          "slug": "bitcoin-above-78k-on-may-17",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-78k-on-may-17",
-          "outcome": "No",
-          "category": "crypto",
           "severity": "red",
           "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.399,
-          "modelScore": 0.5290431380271912,
-          "modelRank": 3,
+          "confidence": 98,
+          "currentPrice": 0.725,
+          "modelScore": 0.20390485227108002,
+          "modelRank": 4,
           "swiftRank": 1,
-          "rankDeltaVsSwift": -2,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 255.21209033,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 78150",
+          "rankDeltaVsSwift": -3,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 272.93819697,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
           "flags": [
-            "Cross-signal",
-            "Source-led"
+            "Whale",
+            "Cross-signal"
           ]
         }
       ]
@@ -1485,10 +1523,21 @@
     "runs": {
       "totalRuns": 18,
       "enabledRuns": 17,
-      "latestRunAt": "2026-05-16T15:40:48.000Z",
-      "latestEnabledRunAt": "2026-05-16T15:40:48.000Z",
+      "latestRunAt": "2026-05-16T16:40:08.000Z",
+      "latestEnabledRunAt": "2026-05-16T16:40:08.000Z",
       "maxScoredRows": 5,
       "items": [
+        {
+          "startedAt": "2026-05-16T16:40:08.000Z",
+          "startedAtUnix": 1778949608,
+          "enabled": true,
+          "scoredRowCount": 4,
+          "supportCount": 2,
+          "skepticalCount": 1,
+          "topKDisagreementCount": 0,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
         {
           "startedAt": "2026-05-16T15:40:48.000Z",
           "startedAtUnix": 1778946048,
@@ -1675,24 +1724,13 @@
           "topKDisagreementCount": 0,
           "promotedCount": 0,
           "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-05-16T06:34:39.000Z",
-          "startedAtUnix": 1778913279,
-          "enabled": true,
-          "scoredRowCount": 3,
-          "supportCount": 1,
-          "skepticalCount": 1,
-          "topKDisagreementCount": 0,
-          "promotedCount": 0,
-          "displacedCount": 0
         }
       ]
     },
     "daily": {
       "windowDays": 14,
-      "maxScoredRows": 132,
-      "maxEnabledRuns": 31,
+      "maxScoredRows": 136,
+      "maxEnabledRuns": 32,
       "maxSupportOrSkeptical": 86,
       "items": [
         {
@@ -1797,10 +1835,10 @@
         },
         {
           "day": "2026-05-16",
-          "enabledRuns": 31,
-          "scoredRows": 132,
-          "supportCount": 63,
-          "skepticalCount": 38,
+          "enabledRuns": 32,
+          "scoredRows": 136,
+          "supportCount": 65,
+          "skepticalCount": 39,
           "topKDisagreementCount": 26,
           "promotedCount": 0,
           "displacedCount": 0
@@ -1809,15 +1847,15 @@
     },
     "coverage": {
       "available": true,
-      "taggedHistoryRowCount": 362,
+      "taggedHistoryRowCount": 366,
       "resolvedEvaluationCount": 209,
       "categoryCount": 4,
-      "latestTaggedRunAt": "2026-05-16T15:40:48.000Z",
+      "latestTaggedRunAt": "2026-05-16T16:40:08.000Z",
       "latestEvaluationAt": "2026-05-14T19:21:34.000Z",
       "categories": [
         {
           "category": "sports",
-          "taggedRows": 191,
+          "taggedRows": 194,
           "resolvedEvaluations": 120,
           "wins": 19,
           "losses": 0,
@@ -1825,20 +1863,20 @@
           "decisiveTotal": 19,
           "decisiveWinRate": 1,
           "averageModelEdge": 0.16786718750000001,
-          "latestTaggedRunAt": "2026-05-16T15:40:48.000Z",
+          "latestTaggedRunAt": "2026-05-16T16:40:08.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
           "category": "crypto",
-          "taggedRows": 76,
+          "taggedRows": 77,
           "resolvedEvaluations": 0,
           "wins": 0,
           "losses": 0,
-          "neutrals": 7,
+          "neutrals": 8,
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": null,
-          "latestTaggedRunAt": "2026-05-16T15:40:48.000Z",
+          "latestTaggedRunAt": "2026-05-16T16:40:08.000Z",
           "latestEvaluationAt": null
         },
         {
@@ -2489,15 +2527,15 @@
   "market": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T15:42:24Z",
+    "generatedAt": "2026-05-16T16:41:41Z",
     "summary": {
       "category": "OVERALL",
       "crossSignalCount": 1,
       "eliteTraderMaxRank": 25,
       "explorerVerificationEnabled": true,
       "fetchedSnapshots": 25,
-      "kalshiGapSignalCount": 1,
-      "kalshiMatchedSignalCount": 1,
+      "kalshiGapSignalCount": 0,
+      "kalshiMatchedSignalCount": 0,
       "longTermSignalCount": 2,
       "notificationMode": "telegram",
       "officialPostWatchCount": 3,
@@ -2507,12 +2545,12 @@
       "signalCount": 3,
       "sourceDrivenSignalCount": 2,
       "sourceTrend": {
-        "topRuleCandidateCount": 35,
+        "topRuleCandidateCount": 36,
         "topRuleID": "coinalyze-btc-crowded-longs",
         "topSourceHandle": "coinalyze",
         "uniqueBuiltNoChaseSignals": 13,
-        "uniqueBuiltSignals": 63,
-        "uniqueCandidates": 80,
+        "uniqueBuiltSignals": 65,
+        "uniqueCandidates": 82,
         "uniqueNoMarketMatches": 4
       },
       "timePeriod": "DAY",
@@ -2521,12 +2559,12 @@
       "xgboostDisplacedSignalCount": 0,
       "xgboostPromotedSignalCount": 0,
       "xgboostTrend": {
-        "averageScoredRowsPerRun": 4.275,
+        "averageScoredRowsPerRun": 4.2682926829268295,
         "displacedCount": 0,
-        "enabledRuns": 40,
+        "enabledRuns": 41,
         "promotedCount": 0,
-        "skepticalCount": 48,
-        "supportCount": 87,
+        "skepticalCount": 49,
+        "supportCount": 89,
         "topKDisagreementCount": 36
       }
     },
@@ -2556,40 +2594,40 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.399,
-        "latestTradeTimestamp": 1778946048,
+        "averageTradePrice": 0.3765,
+        "latestTradeTimestamp": 1778949608,
         "horizon": "short_term",
-        "daysToEnd": 2,
+        "daysToEnd": 1,
         "marketEndDate": "2026-05-17T16:00:00Z",
-        "currentMarketPrice": 0.399,
+        "currentMarketPrice": 0.3765,
         "marketBiasSummary": "Fresh source signal from Coinalyze Derivatives · matched 'bitcoin above' · 0m ago · official source",
         "signalTypes": [
           "source",
           "source_confirmation"
         ],
         "sourceAttribution": {
-          "eventID": "binance-BTCUSDT-1778946066",
+          "eventID": "binance-BTCUSDT-1778949628",
           "provider": "binance_futures",
           "sourceName": "Binance Futures",
           "sourceType": "api",
           "sourceLane": "standard",
           "sourceHandle": "binance",
           "url": "https://fapi.binance.com/",
-          "text": "BTCUSDT futures snapshot | mark 78174 | index 78217 | funding +0.0056% | OI 101.89K | OI notional 7.97B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+          "text": "BTCUSDT futures snapshot | mark 78189 | index 78226 | funding +0.0040% | OI 101.93K | OI notional 7.97B USD | long crowding | bearish funding | heavy derivatives positioning",
           "ruleID": "binance-btc-crowded-longs",
-          "matchedQuery": "bitcoin above 78150",
+          "matchedQuery": "bitcoin above",
           "priority": 8,
           "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-05-16T15:40:48.000Z",
-          "publishedAtUnix": 1778946048
+          "publishedAt": "2026-05-16T16:40:08.000Z",
+          "publishedAtUnix": 1778949608
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "mixed",
-        "xgboostScore": 0.5290431380271912,
+        "xgboostScore": 0.5383120775222778,
         "xgboostModelRank": 3,
-        "xgboostSwiftRank": 1
+        "xgboostSwiftRank": 2
       },
       {
         "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -2615,7 +2653,7 @@
         "horizon": "long_term",
         "daysToEnd": 15,
         "marketEndDate": "2026-05-31T00:00:00Z",
-        "currentMarketPrice": 0.9625,
+        "currentMarketPrice": 0.956,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -2651,12 +2689,12 @@
         "bestTraderRank": 999,
         "worstTraderRank": 999,
         "averageTradePrice": 0.0325,
-        "latestTradeTimestamp": 1778946048,
+        "latestTradeTimestamp": 1778949608,
         "horizon": "long_term",
         "daysToEnd": 16,
         "marketEndDate": "2026-05-31T17:00:00Z",
         "currentMarketPrice": 0.0325,
-        "marketBiasSummary": "Fresh source signal from Treasury Press Releases · matched 'wti crude oil 140 may' · 6970m ago · moved -1.6pt since source · official macro source",
+        "marketBiasSummary": "Fresh source signal from Treasury Press Releases · matched 'wti crude oil 140 may' · 7030m ago · moved -1.6pt since source · official macro source",
         "signalTypes": [
           "source"
         ],
@@ -2672,7 +2710,7 @@
           "ruleID": "treasury-iran-sanctions-oil-bullish",
           "matchedQuery": "wti crude oil 140 may",
           "priority": 8,
-          "freshnessMinutesAtScan": 6970,
+          "freshnessMinutesAtScan": 7030,
           "publishedAt": "2026-05-11T19:30:00.000Z",
           "publishedAtUnix": 1778527800
         },
@@ -2687,6 +2725,51 @@
     ],
     "radar": [
       {
+        "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+        "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
+        "slug": "wta-gauff-svitoli-2026-05-16",
+        "eventSlug": "wta-gauff-svitoli-2026-05-16",
+        "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
+        "outcome": "Elina Svitolina",
+        "category": "sports",
+        "severity": "red",
+        "take": "conviction",
+        "direction": "buy",
+        "confidence": 100,
+        "weightedFlowUSD": 126477.43701193019,
+        "weightedGrossFlowUSD": 126477.43701193019,
+        "supportingExposureUSD": 103504.66107914435,
+        "uniqueTraderCount": 4,
+        "uniqueTransactionCount": 20,
+        "bestTraderRank": 4,
+        "worstTraderRank": 21,
+        "averageTradePrice": 0.4110000009559841,
+        "latestTradeTimestamp": 1778946350,
+        "horizon": "short_term",
+        "daysToEnd": 7,
+        "marketEndDate": "2026-05-23T15:00:00Z",
+        "currentMarketPrice": 0.275,
+        "marketBiasSummary": "top traders are net buyers with strong agreement",
+        "signalTypes": [
+          "leaderboard",
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0x685e0abaf67c4a100ac7484c24bfb3825155d09d683c53c78b016cb639dabd6e",
+          "https://polygonscan.com/tx/0x358cd1f8a0353f5451fa07297a8411d2816a3e9a5c1959dc6b5bd91112b4858a",
+          "https://polygonscan.com/tx/0x1f6ce89966305896bcf8ac6de57eb4204d78d150d1fecbd589b525f2632bdec7",
+          "https://polygonscan.com/tx/0x828148669facff01aee3af4c67f1c5eb80c0a8b4a8fbeef5a12f7a1c1540f957",
+          "https://polygonscan.com/tx/0x39858c36ba234279a99ed9eb9cf1504a75d600b74236c0982e3025c20ddf526f"
+        ],
+        "xgboostStance": "supports",
+        "xgboostScore": 0.6987105011940002,
+        "xgboostModelRank": 2,
+        "xgboostSwiftRank": 3
+      },
+      {
         "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
         "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
         "slug": "wta-gauff-svitoli-2026-05-16",
@@ -2697,21 +2780,21 @@
         "severity": "red",
         "take": "conviction",
         "direction": "buy",
-        "confidence": 95,
-        "weightedFlowUSD": 405000,
-        "weightedGrossFlowUSD": 405000,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 1,
-        "uniqueTransactionCount": 3,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.59,
-        "latestTradeTimestamp": 1778943970,
+        "confidence": 98,
+        "weightedFlowUSD": 146068.34951730858,
+        "weightedGrossFlowUSD": 183711.1363572561,
+        "supportingExposureUSD": 794055.694,
+        "uniqueTraderCount": 4,
+        "uniqueTransactionCount": 24,
+        "bestTraderRank": 1,
+        "worstTraderRank": 15,
+        "averageTradePrice": 0.5980000011110055,
+        "latestTradeTimestamp": 1778947292,
         "horizon": "short_term",
         "daysToEnd": 7,
         "marketEndDate": "2026-05-23T15:00:00Z",
-        "currentMarketPrice": 0.585,
-        "marketBiasSummary": "whale-sized buying detected",
+        "currentMarketPrice": 0.725,
+        "marketBiasSummary": "top traders are net buyers with clear agreement",
         "signalTypes": [
           "leaderboard",
           "whale"
@@ -2720,14 +2803,15 @@
         "verificationStatus": "missing",
         "verifiedTransactionCount": 0,
         "txLinks": [
-          "https://polygonscan.com/tx/0x358cd1f8a0353f5451fa07297a8411d2816a3e9a5c1959dc6b5bd91112b4858a",
-          "https://polygonscan.com/tx/0x39858c36ba234279a99ed9eb9cf1504a75d600b74236c0982e3025c20ddf526f",
-          "https://polygonscan.com/tx/0x685e0abaf67c4a100ac7484c24bfb3825155d09d683c53c78b016cb639dabd6e"
+          "https://polygonscan.com/tx/0x377d021c17ce3d69f09d8621be39cb3715868e1b150a472fc0c51bb90b02e914",
+          "https://polygonscan.com/tx/0x828148669facff01aee3af4c67f1c5eb80c0a8b4a8fbeef5a12f7a1c1540f957",
+          "https://polygonscan.com/tx/0x0ca736cfb831289285688b6ba2d7a5e9b3147b91bee041da5b573a562107c237",
+          "https://polygonscan.com/tx/0x60106390ae73df04b44d36d7dafb3da68d96042dda50b640e962b991751d20fb"
         ],
-        "xgboostStance": "supports",
-        "xgboostScore": 0.9488272070884705,
-        "xgboostModelRank": 1,
-        "xgboostSwiftRank": 2
+        "xgboostStance": "skeptical",
+        "xgboostScore": 0.20390485227108002,
+        "xgboostModelRank": 4,
+        "xgboostSwiftRank": 1
       },
       {
         "id": "ufc-kha6-nik5-2026-05-16|Nikolay Veretennikov",
@@ -2805,8 +2889,8 @@
         ],
         "xgboostStance": "supports",
         "xgboostScore": 0.7279201745986938,
-        "xgboostModelRank": 2,
-        "xgboostSwiftRank": 3
+        "xgboostModelRank": 1,
+        "xgboostSwiftRank": 4
       },
       {
         "id": "will-the-us-invade-iran-before-2027|No",
@@ -2887,78 +2971,12 @@
         "xgboostScore": null,
         "xgboostModelRank": null,
         "xgboostSwiftRank": null
-      },
-      {
-        "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
-        "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
-        "slug": "wta-gauff-svitoli-2026-05-16",
-        "eventSlug": "wta-gauff-svitoli-2026-05-16",
-        "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-        "outcome": "Elina Svitolina",
-        "category": "sports",
-        "severity": "green",
-        "take": "lean",
-        "direction": "buy",
-        "confidence": 88,
-        "weightedFlowUSD": 24672.019690244386,
-        "weightedGrossFlowUSD": 24672.019690244386,
-        "supportingExposureUSD": 178084.66634677057,
-        "uniqueTraderCount": 2,
-        "uniqueTransactionCount": 13,
-        "bestTraderRank": 2,
-        "worstTraderRank": 10,
-        "averageTradePrice": 0.41461538526920627,
-        "latestTradeTimestamp": 1778944700,
-        "horizon": "short_term",
-        "daysToEnd": 7,
-        "marketEndDate": "2026-05-23T15:00:00Z",
-        "currentMarketPrice": 0.415,
-        "marketBiasSummary": "top traders are net buyers with strong agreement",
-        "signalTypes": [
-          "leaderboard"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0x1f6ce89966305896bcf8ac6de57eb4204d78d150d1fecbd589b525f2632bdec7",
-          "https://polygonscan.com/tx/0xc84f89537adfa309f3f3c353dd1694c9cf6aad30167e6b122fca7844e2325fac",
-          "https://polygonscan.com/tx/0xd83af8269042f72ae891360b68804ff17ed1bc7f11e12184ec9c9cff6bc57b52",
-          "https://polygonscan.com/tx/0x15c6bf44bf0545c9eaaf827396d1bd3d740c447d6e4db37c7a6cc205fe5418b9",
-          "https://polygonscan.com/tx/0xa1537f74354c1e2b8375f091b618324a91cd7ddeb9d9aefcd9eab78c83189d44"
-        ],
-        "xgboostStance": "skeptical",
-        "xgboostScore": 0.13854193687438965,
-        "xgboostModelRank": 4,
-        "xgboostSwiftRank": 4
       }
     ],
     "officialPostWatch": [
       {
         "category": "crypto",
-        "currentPrice": 0.399,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 0,
-        "marketCategory": "crypto",
-        "marketEventSlug": "bitcoin-above-on-may-17",
-        "marketSlug": "bitcoin-above-78k-on-may-17",
-        "marketTitle": "Will the price of Bitcoin be above $78,000 on May 17?",
-        "matchScore": 38.75,
-        "matchedQuery": "bitcoin above 78150",
-        "maxChasePrice": 0.76,
-        "priority": 8,
-        "provider": "binance_futures",
-        "publishedAtUnix": 1778946048,
-        "sourceHandle": "binance",
-        "sourceLane": "standard",
-        "sourceName": "Binance Futures",
-        "sourceType": "api",
-        "sourceURL": "https://fapi.binance.com",
-        "summaryText": "BTCUSDT futures snapshot | mark 78174 | index 78217 | funding +0.0056% | OI 101.89K | OI notional 7.97B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning"
-      },
-      {
-        "category": "crypto",
-        "currentPrice": 0.399,
+        "currentPrice": 0.3765,
         "decision": "built_signal",
         "freshnessMinutesAtScan": 0,
         "marketCategory": "crypto",
@@ -2970,19 +2988,41 @@
         "maxChasePrice": 0.76,
         "priority": 8,
         "provider": "coinalyze",
-        "publishedAtUnix": 1778946048,
+        "publishedAtUnix": 1778949608,
         "sourceHandle": "coinalyze",
         "sourceLane": "standard",
         "sourceName": "Coinalyze Derivatives",
         "sourceType": "api",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "summaryText": "BTCUSDT derivatives snapshot | OI 7.97B USD | funding -0.0210% | predicted +0.5633% | predicted crowded longs | predicted bearish funding | heavy derivatives positioning"
+        "summaryText": "BTCUSDT derivatives snapshot | OI 7.97B USD | funding +0.4955% | predicted +0.3971% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning"
+      },
+      {
+        "category": "crypto",
+        "currentPrice": 0.3765,
+        "decision": "built_signal",
+        "freshnessMinutesAtScan": 0,
+        "marketCategory": "crypto",
+        "marketEventSlug": "bitcoin-above-on-may-17",
+        "marketSlug": "bitcoin-above-78k-on-may-17",
+        "marketTitle": "Will the price of Bitcoin be above $78,000 on May 17?",
+        "matchScore": 38.5,
+        "matchedQuery": "bitcoin above",
+        "maxChasePrice": 0.76,
+        "priority": 8,
+        "provider": "binance_futures",
+        "publishedAtUnix": 1778949608,
+        "sourceHandle": "binance",
+        "sourceLane": "standard",
+        "sourceName": "Binance Futures",
+        "sourceType": "api",
+        "sourceURL": "https://fapi.binance.com",
+        "summaryText": "BTCUSDT futures snapshot | mark 78189 | index 78226 | funding +0.0040% | OI 101.93K | OI notional 7.97B USD | long crowding | bearish funding | heavy derivatives positioning"
       },
       {
         "category": "other",
         "currentPrice": 0.0325,
         "decision": "built_signal",
-        "freshnessMinutesAtScan": 6970,
+        "freshnessMinutesAtScan": 7030,
         "marketCategory": "other",
         "marketEventSlug": "what-price-will-wti-hit-in-may-2026",
         "marketSlug": "will-wti-reach-140-in-may-2026-916",
@@ -3023,11 +3063,11 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T15:42:26Z",
+    "generatedAt": "2026-05-16T16:41:43Z",
     "summary": {
       "actionablePositionCount": 2,
       "openPositionCount": 17,
-      "totalCurrentValue": 84.4602,
+      "totalCurrentValue": 84.8152,
       "walletCount": 2
     },
     "urgentAction": {
@@ -3037,9 +3077,9 @@
       "title": "Strait of Hormuz traffic returns to normal by end of May?",
       "outcome": "YES",
       "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-      "currentValue": 3.75,
-      "currentPrice": 0.0375,
-      "percentPnL": -62.5,
+      "currentValue": 4.29,
+      "currentPrice": 0.0429,
+      "percentPnL": -57.1,
       "action": "sell",
       "actionLabel": "Sell",
       "isActionable": true,
@@ -3058,7 +3098,7 @@
         "label": "Sell",
         "count": 2,
         "actionableCount": 2,
-        "totalCurrentValue": 7.5,
+        "totalCurrentValue": 8.58,
         "positions": [
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3067,9 +3107,9 @@
             "title": "Strait of Hormuz traffic returns to normal by end of May?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "currentValue": 3.75,
-            "currentPrice": 0.0375,
-            "percentPnL": -62.5,
+            "currentValue": 4.29,
+            "currentPrice": 0.0429,
+            "percentPnL": -57.1,
             "action": "sell",
             "actionLabel": "Sell",
             "isActionable": true,
@@ -3089,9 +3129,9 @@
             "title": "Strait of Hormuz traffic returns to normal by end of May?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "currentValue": 3.75,
-            "currentPrice": 0.0375,
-            "percentPnL": -62.5,
+            "currentValue": 4.29,
+            "currentPrice": 0.0429,
+            "percentPnL": -57.1,
             "action": "sell",
             "actionLabel": "Sell",
             "isActionable": true,
@@ -3112,7 +3152,7 @@
         "label": "No signal",
         "count": 15,
         "actionableCount": 0,
-        "totalCurrentValue": 76.9602,
+        "totalCurrentValue": 76.2352,
         "positions": [
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3143,9 +3183,9 @@
             "title": "Anthropic acquired before 2027?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 8.7463,
-            "currentPrice": 0.0895,
-            "percentPnL": 24.9473,
+            "currentValue": 8.3554,
+            "currentPrice": 0.0855,
+            "percentPnL": 19.363,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3186,22 +3226,22 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-16T14:45:59Z",
-      "previousGeneratedAtUnix": 1778942759,
+      "previousGeneratedAt": "2026-05-16T15:42:26Z",
+      "previousGeneratedAtUnix": 1778946146,
       "changedWalletCount": 1,
       "unchangedWalletCount": 1,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -0.5884000000000036,
+      "valueDeltaUSD": 0.3550000000000111,
       "highlights": [
         {
           "type": "value_changed",
           "walletLabel": "Rose",
           "title": "Rose",
           "marketURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "valueDeltaUSD": -0.5899999999999999
+          "valueDeltaUSD": 0.5399999999999991
         }
       ],
       "wallets": [
@@ -3212,7 +3252,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.001599999999996271,
+          "valueDeltaUSD": -0.18499999999998806,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3221,7 +3261,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 74.1532,
+          "previousTotalCurrentValue": 74.1548,
           "highlights": []
         },
         {
@@ -3231,7 +3271,7 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.5899999999999999,
+          "valueDeltaUSD": 0.5399999999999991,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3240,23 +3280,23 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 10.8954,
+          "previousTotalCurrentValue": 10.3054,
           "highlights": []
         }
       ]
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-16T15:42:59.587Z",
-      "snapshotCount": 63,
+      "generatedAt": "2026-05-16T16:42:55.677Z",
+      "snapshotCount": 64,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-05-16T15:42:26Z",
+      "latestAt": "2026-05-16T16:41:43Z",
       "latestSummary": {
-        "timestamp": "2026-05-16T15:42:26Z",
-        "timestampUnix": 1778946146,
-        "currentValue": 84.4602,
+        "timestamp": "2026-05-16T16:41:43Z",
+        "timestampUnix": 1778949703,
+        "currentValue": 84.8152,
         "costBasisValue": 117.09578377,
-        "unrealizedPnL": -32.63558377,
+        "unrealizedPnL": -32.28058376999999,
         "realizedPnL": 0,
         "openPositionCount": 17,
         "actionablePositionCount": 2
@@ -3893,15 +3933,25 @@
           "realizedPnL": 0,
           "openPositionCount": 17,
           "actionablePositionCount": 2
+        },
+        {
+          "timestamp": "2026-05-16T16:41:43Z",
+          "timestampUnix": 1778949703,
+          "currentValue": 84.8152,
+          "costBasisValue": 117.09578377,
+          "unrealizedPnL": -32.28058376999999,
+          "realizedPnL": 0,
+          "openPositionCount": 17,
+          "actionablePositionCount": 2
         }
       ],
       "walletSeries": [
         {
           "key": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
-          "latestCurrentValue": 74.1548,
+          "latestCurrentValue": 73.9698,
           "latestCostBasisValue": 99.10268201999999,
-          "latestUnrealizedPnL": -24.947882019999994,
+          "latestUnrealizedPnL": -25.132882019999983,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 14,
           "latestActionablePositionCount": 1,
@@ -4535,15 +4585,25 @@
               "realizedPnL": 0,
               "openPositionCount": 14,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 73.9698,
+              "costBasisValue": 99.10268201999999,
+              "unrealizedPnL": -25.132882019999983,
+              "realizedPnL": 0,
+              "openPositionCount": 14,
+              "actionablePositionCount": 1
             }
           ]
         },
         {
           "key": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
           "label": "Rose",
-          "latestCurrentValue": 10.3054,
+          "latestCurrentValue": 10.8454,
           "latestCostBasisValue": 17.99310175,
-          "latestUnrealizedPnL": -7.6877017500000004,
+          "latestUnrealizedPnL": -7.147701750000001,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 3,
           "latestActionablePositionCount": 1,
@@ -5174,6 +5234,16 @@
               "currentValue": 10.3054,
               "costBasisValue": 17.99310175,
               "unrealizedPnL": -7.6877017500000004,
+              "realizedPnL": 0,
+              "openPositionCount": 3,
+              "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 10.8454,
+              "costBasisValue": 17.99310175,
+              "unrealizedPnL": -7.147701750000001,
               "realizedPnL": 0,
               "openPositionCount": 3,
               "actionablePositionCount": 1
@@ -5815,6 +5885,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 16.55,
+              "costBasisValue": 17.19,
+              "unrealizedPnL": -0.6400000000000006,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 16.55,
               "costBasisValue": 17.19,
               "unrealizedPnL": -0.6400000000000006,
@@ -6463,15 +6543,25 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "pga-championship-winner-2026",
           "label": "PGA Championship Winner 2026",
-          "latestCurrentValue": 10.6207,
+          "latestCurrentValue": 10.8395,
           "latestCostBasisValue": 9.992852150000001,
-          "latestUnrealizedPnL": 0.6278478500000002,
+          "latestUnrealizedPnL": 0.8466478499999994,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 3,
           "latestActionablePositionCount": 0,
@@ -7105,647 +7195,15 @@
               "realizedPnL": 0,
               "openPositionCount": 3,
               "actionablePositionCount": 0
-            }
-          ]
-        },
-        {
-          "key": "anthropic-acquired-before-2027",
-          "label": "Anthropic acquired before 2027?",
-          "latestCurrentValue": 8.7463,
-          "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": 1.7491900000000005,
-          "latestRealizedPnL": 0,
-          "latestOpenPositionCount": 1,
-          "latestActionablePositionCount": 0,
-          "items": [
-            {
-              "timestamp": "2026-05-14T06:32:45Z",
-              "timestampUnix": 1778740365,
-              "currentValue": 7.6225,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 0.6253900000000003,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
             },
             {
-              "timestamp": "2026-05-14T20:05:12Z",
-              "timestampUnix": 1778789112,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 10.8395,
+              "costBasisValue": 9.992852150000001,
+              "unrealizedPnL": 0.8466478499999994,
               "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T07:59:37Z",
-              "timestampUnix": 1778831977,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:17:43Z",
-              "timestampUnix": 1778833063,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:34:42Z",
-              "timestampUnix": 1778834082,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:54:07Z",
-              "timestampUnix": 1778835247,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T08:57:48Z",
-              "timestampUnix": 1778835468,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:11:35Z",
-              "timestampUnix": 1778836295,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:28:14Z",
-              "timestampUnix": 1778837294,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:34:54Z",
-              "timestampUnix": 1778837694,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:36:06Z",
-              "timestampUnix": 1778837766,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T09:45:02Z",
-              "timestampUnix": 1778838302,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:02:40Z",
-              "timestampUnix": 1778839360,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:19:58Z",
-              "timestampUnix": 1778840398,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:47:47Z",
-              "timestampUnix": 1778842067,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T10:49:40Z",
-              "timestampUnix": 1778842180,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T11:08:37Z",
-              "timestampUnix": 1778843317,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T11:59:42Z",
-              "timestampUnix": 1778846382,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T12:08:21Z",
-              "timestampUnix": 1778846901,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T13:58:10Z",
-              "timestampUnix": 1778853490,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:11:36Z",
-              "timestampUnix": 1778854296,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:14:04Z",
-              "timestampUnix": 1778854444,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T14:17:04Z",
-              "timestampUnix": 1778854624,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:05:33Z",
-              "timestampUnix": 1778864733,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:09:34Z",
-              "timestampUnix": 1778864974,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T17:10:16Z",
-              "timestampUnix": 1778865016,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:12:42Z",
-              "timestampUnix": 1778868762,
-              "currentValue": 9.0884,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.0912900000000008,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:19:33Z",
-              "timestampUnix": 1778869173,
-              "currentValue": 9.0884,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.0912900000000008,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T18:23:50Z",
-              "timestampUnix": 1778869430,
-              "currentValue": 9.0884,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.0912900000000008,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T19:15:55Z",
-              "timestampUnix": 1778872555,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T20:17:27Z",
-              "timestampUnix": 1778876247,
-              "currentValue": 9.1372,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.1400900000000007,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T21:18:50Z",
-              "timestampUnix": 1778879930,
-              "currentValue": 8.9906,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9934900000000013,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T22:19:21Z",
-              "timestampUnix": 1778883561,
-              "currentValue": 8.3945,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3973900000000015,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T22:23:22Z",
-              "timestampUnix": 1778883802,
-              "currentValue": 8.3945,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3973900000000015,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-15T23:20:24Z",
-              "timestampUnix": 1778887224,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T00:22:00Z",
-              "timestampUnix": 1778890920,
-              "currentValue": 8.3554,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3582900000000002,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T00:26:27Z",
-              "timestampUnix": 1778891187,
-              "currentValue": 8.3554,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3582900000000002,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T01:24:29Z",
-              "timestampUnix": 1778894669,
-              "currentValue": 8.6486,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.6514900000000008,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T01:25:38Z",
-              "timestampUnix": 1778894738,
-              "currentValue": 8.6486,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.6514900000000008,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:25:43Z",
-              "timestampUnix": 1778898343,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:30:12Z",
-              "timestampUnix": 1778898612,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T02:33:24Z",
-              "timestampUnix": 1778898804,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T03:27:22Z",
-              "timestampUnix": 1778902042,
-              "currentValue": 8.3554,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3582900000000002,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T04:28:25Z",
-              "timestampUnix": 1778905705,
-              "currentValue": 8.7463,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.7491900000000005,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T05:31:32Z",
-              "timestampUnix": 1778909492,
-              "currentValue": 9.0395,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 2.042390000000001,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T06:31:19Z",
-              "timestampUnix": 1778913079,
-              "currentValue": 8.5509,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.5537900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T06:36:04Z",
-              "timestampUnix": 1778913364,
-              "currentValue": 8.4434,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.4462900000000012,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T07:30:53Z",
-              "timestampUnix": 1778916653,
-              "currentValue": 8.16,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.1628900000000009,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T07:35:15Z",
-              "timestampUnix": 1778916915,
-              "currentValue": 8.16,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.1628900000000009,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T08:33:56Z",
-              "timestampUnix": 1778920436,
-              "currentValue": 8.5509,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.5537900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T09:34:29Z",
-              "timestampUnix": 1778924069,
-              "currentValue": 8.1111,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.1139900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T10:35:49Z",
-              "timestampUnix": 1778927749,
-              "currentValue": 8.5509,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.5537900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T10:40:27Z",
-              "timestampUnix": 1778928027,
-              "currentValue": 8.5509,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.5537900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T11:36:35Z",
-              "timestampUnix": 1778931395,
-              "currentValue": 8.1111,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.1139900000000011,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T12:38:56Z",
-              "timestampUnix": 1778935136,
-              "currentValue": 8.4434,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.4462900000000012,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T12:43:07Z",
-              "timestampUnix": 1778935387,
-              "currentValue": 8.4434,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.4462900000000012,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T13:40:06Z",
-              "timestampUnix": 1778938806,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T13:44:35Z",
-              "timestampUnix": 1778939075,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T13:46:57Z",
-              "timestampUnix": 1778939217,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T13:48:18Z",
-              "timestampUnix": 1778939298,
-              "currentValue": 8.9418,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.9446900000000014,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T14:40:25Z",
-              "timestampUnix": 1778942425,
-              "currentValue": 8.3554,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3582900000000002,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T14:45:59Z",
-              "timestampUnix": 1778942759,
-              "currentValue": 8.3554,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.3582900000000002,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
-              "actionablePositionCount": 0
-            },
-            {
-              "timestamp": "2026-05-16T15:42:26Z",
-              "timestampUnix": 1778946146,
-              "currentValue": 8.7463,
-              "costBasisValue": 6.997109999999999,
-              "unrealizedPnL": 1.7491900000000005,
-              "realizedPnL": 0,
-              "openPositionCount": 1,
+              "openPositionCount": 3,
               "actionablePositionCount": 0
             }
           ]
@@ -7753,9 +7211,9 @@
         {
           "key": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "label": "Strait of Hormuz traffic returns to normal by end of May?",
-          "latestCurrentValue": 7.5,
+          "latestCurrentValue": 8.58,
           "latestCostBasisValue": 20,
-          "latestUnrealizedPnL": -12.5,
+          "latestUnrealizedPnL": -11.42,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 2,
           "latestActionablePositionCount": 2,
@@ -8389,6 +7847,668 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 8.58,
+              "costBasisValue": 20,
+              "unrealizedPnL": -11.42,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 2
+            }
+          ]
+        },
+        {
+          "key": "anthropic-acquired-before-2027",
+          "label": "Anthropic acquired before 2027?",
+          "latestCurrentValue": 8.3554,
+          "latestCostBasisValue": 6.997109999999999,
+          "latestUnrealizedPnL": 1.3582900000000002,
+          "latestRealizedPnL": 0,
+          "latestOpenPositionCount": 1,
+          "latestActionablePositionCount": 0,
+          "items": [
+            {
+              "timestamp": "2026-05-14T06:32:45Z",
+              "timestampUnix": 1778740365,
+              "currentValue": 7.6225,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 0.6253900000000003,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-14T20:05:12Z",
+              "timestampUnix": 1778789112,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T07:59:37Z",
+              "timestampUnix": 1778831977,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:17:43Z",
+              "timestampUnix": 1778833063,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:34:42Z",
+              "timestampUnix": 1778834082,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:54:07Z",
+              "timestampUnix": 1778835247,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T08:57:48Z",
+              "timestampUnix": 1778835468,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:11:35Z",
+              "timestampUnix": 1778836295,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:28:14Z",
+              "timestampUnix": 1778837294,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:34:54Z",
+              "timestampUnix": 1778837694,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:36:06Z",
+              "timestampUnix": 1778837766,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T09:45:02Z",
+              "timestampUnix": 1778838302,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:02:40Z",
+              "timestampUnix": 1778839360,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:19:58Z",
+              "timestampUnix": 1778840398,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:47:47Z",
+              "timestampUnix": 1778842067,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T10:49:40Z",
+              "timestampUnix": 1778842180,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T11:08:37Z",
+              "timestampUnix": 1778843317,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T11:59:42Z",
+              "timestampUnix": 1778846382,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T12:08:21Z",
+              "timestampUnix": 1778846901,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T13:58:10Z",
+              "timestampUnix": 1778853490,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:11:36Z",
+              "timestampUnix": 1778854296,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:14:04Z",
+              "timestampUnix": 1778854444,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T14:17:04Z",
+              "timestampUnix": 1778854624,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:05:33Z",
+              "timestampUnix": 1778864733,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:09:34Z",
+              "timestampUnix": 1778864974,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T17:10:16Z",
+              "timestampUnix": 1778865016,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:12:42Z",
+              "timestampUnix": 1778868762,
+              "currentValue": 9.0884,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.0912900000000008,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:19:33Z",
+              "timestampUnix": 1778869173,
+              "currentValue": 9.0884,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.0912900000000008,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T18:23:50Z",
+              "timestampUnix": 1778869430,
+              "currentValue": 9.0884,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.0912900000000008,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T19:15:55Z",
+              "timestampUnix": 1778872555,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T20:17:27Z",
+              "timestampUnix": 1778876247,
+              "currentValue": 9.1372,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.1400900000000007,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T21:18:50Z",
+              "timestampUnix": 1778879930,
+              "currentValue": 8.9906,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9934900000000013,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T22:19:21Z",
+              "timestampUnix": 1778883561,
+              "currentValue": 8.3945,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3973900000000015,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T22:23:22Z",
+              "timestampUnix": 1778883802,
+              "currentValue": 8.3945,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3973900000000015,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-15T23:20:24Z",
+              "timestampUnix": 1778887224,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T00:22:00Z",
+              "timestampUnix": 1778890920,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T00:26:27Z",
+              "timestampUnix": 1778891187,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T01:24:29Z",
+              "timestampUnix": 1778894669,
+              "currentValue": 8.6486,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.6514900000000008,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T01:25:38Z",
+              "timestampUnix": 1778894738,
+              "currentValue": 8.6486,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.6514900000000008,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:25:43Z",
+              "timestampUnix": 1778898343,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:30:12Z",
+              "timestampUnix": 1778898612,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T02:33:24Z",
+              "timestampUnix": 1778898804,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T03:27:22Z",
+              "timestampUnix": 1778902042,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T04:28:25Z",
+              "timestampUnix": 1778905705,
+              "currentValue": 8.7463,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.7491900000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T05:31:32Z",
+              "timestampUnix": 1778909492,
+              "currentValue": 9.0395,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 2.042390000000001,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:31:19Z",
+              "timestampUnix": 1778913079,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T06:36:04Z",
+              "timestampUnix": 1778913364,
+              "currentValue": 8.4434,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.4462900000000012,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T07:30:53Z",
+              "timestampUnix": 1778916653,
+              "currentValue": 8.16,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.1628900000000009,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T07:35:15Z",
+              "timestampUnix": 1778916915,
+              "currentValue": 8.16,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.1628900000000009,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T08:33:56Z",
+              "timestampUnix": 1778920436,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T09:34:29Z",
+              "timestampUnix": 1778924069,
+              "currentValue": 8.1111,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.1139900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T10:35:49Z",
+              "timestampUnix": 1778927749,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T10:40:27Z",
+              "timestampUnix": 1778928027,
+              "currentValue": 8.5509,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.5537900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T11:36:35Z",
+              "timestampUnix": 1778931395,
+              "currentValue": 8.1111,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.1139900000000011,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T12:38:56Z",
+              "timestampUnix": 1778935136,
+              "currentValue": 8.4434,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.4462900000000012,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T12:43:07Z",
+              "timestampUnix": 1778935387,
+              "currentValue": 8.4434,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.4462900000000012,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T13:40:06Z",
+              "timestampUnix": 1778938806,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T13:44:35Z",
+              "timestampUnix": 1778939075,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T13:46:57Z",
+              "timestampUnix": 1778939217,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T13:48:18Z",
+              "timestampUnix": 1778939298,
+              "currentValue": 8.9418,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.9446900000000014,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T14:40:25Z",
+              "timestampUnix": 1778942425,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T14:45:59Z",
+              "timestampUnix": 1778942759,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T15:42:26Z",
+              "timestampUnix": 1778946146,
+              "currentValue": 8.7463,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.7491900000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -9031,15 +9151,25 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 7.0677,
+              "costBasisValue": 8.96905974,
+              "unrealizedPnL": -1.9013597399999997,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "ukraine-signs-peace-deal-with-russia-by-june",
           "label": "Ukraine signs peace deal with Russia by June 30?",
-          "latestCurrentValue": 6.3249,
+          "latestCurrentValue": 6.2735,
           "latestCostBasisValue": 11.991657039999998,
-          "latestUnrealizedPnL": -5.666757039999998,
+          "latestUnrealizedPnL": -5.718157039999998,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -9670,6 +9800,16 @@
               "currentValue": 6.3249,
               "costBasisValue": 11.991657039999998,
               "unrealizedPnL": -5.666757039999998,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 6.2735,
+              "costBasisValue": 11.991657039999998,
+              "unrealizedPnL": -5.718157039999998,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -10309,6 +10449,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 6.1875,
+              "costBasisValue": 9,
+              "unrealizedPnL": -2.8125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 6.1875,
               "costBasisValue": 9,
               "unrealizedPnL": -2.8125,
@@ -10957,6 +11107,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 3.5476,
+              "costBasisValue": 2.9952351,
+              "unrealizedPnL": 0.5523649000000002,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -11593,6 +11753,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 2.75,
+              "costBasisValue": 3,
+              "unrealizedPnL": -0.25,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 2.75,
               "costBasisValue": 3,
               "unrealizedPnL": -0.25,
@@ -12241,15 +12411,25 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 1.4501,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.5372132999999994,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "trump-endorses-chinas-claim-to-taiwan-this-week",
           "label": "Trump endorses China's claim to Taiwan this week?",
-          "latestCurrentValue": 1.1283,
+          "latestCurrentValue": 0.6268,
           "latestCostBasisValue": 4.989925,
-          "latestUnrealizedPnL": -3.861625,
+          "latestUnrealizedPnL": -4.363125,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -12880,6 +13060,16 @@
               "currentValue": 1.1283,
               "costBasisValue": 4.989925,
               "unrealizedPnL": -3.861625,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 0.6268,
+              "costBasisValue": 4.989925,
+              "unrealizedPnL": -4.363125,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -13519,6 +13709,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -14167,6 +14367,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -14803,6 +15013,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -15451,6 +15671,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -15459,9 +15689,9 @@
         {
           "key": "geopolitics",
           "label": "Geopolitics",
-          "latestCurrentValue": 28.318499999999997,
+          "latestCurrentValue": 28.845599999999997,
           "latestCostBasisValue": 51.94587687999999,
-          "latestUnrealizedPnL": -23.627376879999996,
+          "latestUnrealizedPnL": -23.10027688,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 8,
           "latestActionablePositionCount": 2,
@@ -16079,8 +16309,8 @@
             {
               "timestamp": "2026-05-16T14:45:59Z",
               "timestampUnix": 1778942759,
-              "currentValue": 29.247799999999998,
-              "costBasisValue": 51.94587687999999,
+              "currentValue": 29.2478,
+              "costBasisValue": 51.94587688,
               "unrealizedPnL": -22.698076879999995,
               "realizedPnL": 0,
               "openPositionCount": 8,
@@ -16095,15 +16325,25 @@
               "realizedPnL": 0,
               "openPositionCount": 8,
               "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 28.845599999999997,
+              "costBasisValue": 51.94587687999999,
+              "unrealizedPnL": -23.10027688,
+              "realizedPnL": 0,
+              "openPositionCount": 8,
+              "actionablePositionCount": 2
             }
           ]
         },
         {
           "key": "sports",
           "label": "Sports",
-          "latestCurrentValue": 27.170700000000004,
+          "latestCurrentValue": 27.389499999999998,
           "latestCostBasisValue": 27.182852150000002,
-          "latestUnrealizedPnL": -0.012152150000000361,
+          "latestUnrealizedPnL": 0.20664784999999886,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 4,
           "latestActionablePositionCount": 0,
@@ -16721,7 +16961,7 @@
             {
               "timestamp": "2026-05-16T14:45:59Z",
               "timestampUnix": 1778942759,
-              "currentValue": 27.220700000000004,
+              "currentValue": 27.2207,
               "costBasisValue": 27.182852150000002,
               "unrealizedPnL": 0.03784784999999946,
               "realizedPnL": 0,
@@ -16734,6 +16974,16 @@
               "currentValue": 27.170700000000004,
               "costBasisValue": 27.182852150000002,
               "unrealizedPnL": -0.012152150000000361,
+              "realizedPnL": 0,
+              "openPositionCount": 4,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 27.389499999999998,
+              "costBasisValue": 27.182852150000002,
+              "unrealizedPnL": 0.20664784999999886,
               "realizedPnL": 0,
               "openPositionCount": 4,
               "actionablePositionCount": 0
@@ -17379,15 +17629,25 @@
               "realizedPnL": 0,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 12.5871,
+              "costBasisValue": 14.982631440000002,
+              "unrealizedPnL": -2.395531440000001,
+              "realizedPnL": 0,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "tech",
           "label": "Tech",
-          "latestCurrentValue": 8.7463,
+          "latestCurrentValue": 8.3554,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": 1.7491900000000005,
+          "latestUnrealizedPnL": 1.3582900000000002,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -18018,6 +18278,16 @@
               "currentValue": 8.7463,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": 1.7491900000000005,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 8.3554,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": 1.3582900000000002,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -18657,6 +18927,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 6.1875,
+              "costBasisValue": 9,
+              "unrealizedPnL": -2.8125,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 6.1875,
               "costBasisValue": 9,
               "unrealizedPnL": -2.8125,
@@ -19305,6 +19585,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 1.4501,
+              "costBasisValue": 6.987313299999999,
+              "unrealizedPnL": -5.5372132999999994,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -19941,6 +20231,16 @@
             {
               "timestamp": "2026-05-16T15:42:26Z",
               "timestampUnix": 1778946146,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -20589,6 +20889,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-05-16T16:41:43Z",
+              "timestampUnix": 1778949703,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -20614,7 +20924,7 @@
               "signal": {
                 "category": "geopolitics",
                 "confidence": 95,
-                "currentMarketPrice": 0.9625,
+                "currentMarketPrice": 0.956,
                 "daysToEnd": 15,
                 "direction": "buy",
                 "horizon": "long_term",
@@ -20634,14 +20944,14 @@
               "supportingSignalCount": 0
             },
             "averageEntryPrice": 0.1,
-            "currentPrice": 0.0375,
-            "currentValue": 3.75,
+            "currentPrice": 0.0429,
+            "currentValue": 4.29,
             "endDate": "2026-05-31T00:00:00Z",
             "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
             "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
             "outcome": "Yes",
-            "percentPnL": -62.5,
-            "percentRealizedPnL": -62.5,
+            "percentPnL": -57.1,
+            "percentRealizedPnL": -57.1,
             "realizedPnL": 0,
             "size": 100,
             "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
@@ -20664,14 +20974,14 @@
           },
           {
             "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0895,
-            "currentValue": 8.7463,
+            "currentPrice": 0.0855,
+            "currentValue": 8.3554,
             "endDate": "2026-12-31T00:00:00Z",
             "eventSlug": "anthropic-acquired-before-2027",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
             "outcome": "Yes",
-            "percentPnL": 24.9473,
-            "percentRealizedPnL": 24.9481,
+            "percentPnL": 19.363,
+            "percentRealizedPnL": 19.3638,
             "realizedPnL": 0,
             "size": 97.725,
             "slug": "anthropic-acquired-before-2027",
@@ -20694,14 +21004,14 @@
           },
           {
             "averageEntryPrice": 0.0699,
-            "currentPrice": 0.0985,
-            "currentValue": 7.0357,
+            "currentPrice": 0.09,
+            "currentValue": 6.4285,
             "endDate": "2026-05-18T00:00:00Z",
             "eventSlug": "pga-championship-winner-2026",
             "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
             "outcome": "Yes",
-            "percentPnL": 40.7145,
-            "percentRealizedPnL": 40.716,
+            "percentPnL": 28.5704,
+            "percentRealizedPnL": 28.5718,
             "realizedPnL": 0,
             "size": 71.4285,
             "slug": "will-cameron-young-win-the-2026-pga-championship",
@@ -20709,14 +21019,14 @@
           },
           {
             "averageEntryPrice": 0.1166,
-            "currentPrice": 0.0615,
-            "currentValue": 6.3249,
+            "currentPrice": 0.061,
+            "currentValue": 6.2735,
             "endDate": "2026-06-30T00:00:00Z",
             "eventSlug": "ukraine-signs-peace-deal-with-russia-by-june-30",
             "marketURL": "https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-june-30",
             "outcome": "Yes",
-            "percentPnL": -47.2916,
-            "percentRealizedPnL": -47.2924,
+            "percentPnL": -47.72,
+            "percentRealizedPnL": -47.7208,
             "realizedPnL": 0,
             "size": 102.8444,
             "slug": "ukraine-signs-peace-deal-with-russia-by-june-30",
@@ -20769,14 +21079,14 @@
           },
           {
             "averageEntryPrice": 0.05,
-            "currentPrice": 0.074,
-            "currentValue": 2.96,
+            "currentPrice": 0.0709,
+            "currentValue": 2.836,
             "endDate": "2026-05-18T00:00:00Z",
             "eventSlug": "pga-championship-winner-2026",
             "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
             "outcome": "Yes",
-            "percentPnL": 48,
-            "percentRealizedPnL": 48,
+            "percentPnL": 41.795,
+            "percentRealizedPnL": 41.7999,
             "realizedPnL": 0,
             "size": 40,
             "slug": "will-ludvig-aberg-win-the-2026-pga-championship",
@@ -20798,6 +21108,21 @@
             "title": "Will the Iranian regime fall by June 30?"
           },
           {
+            "averageEntryPrice": 0.06,
+            "currentPrice": 0.0315,
+            "currentValue": 1.575,
+            "endDate": "2026-05-18T00:00:00Z",
+            "eventSlug": "pga-championship-winner-2026",
+            "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
+            "outcome": "Yes",
+            "percentPnL": -47.5,
+            "percentRealizedPnL": -47.5,
+            "realizedPnL": 0,
+            "size": 50,
+            "slug": "will-xander-schauffele-win-the-2026-pga-championship",
+            "title": "Will Xander Schauffele win the 2026 PGA Championship?"
+          },
+          {
             "averageEntryPrice": 0.0265,
             "currentPrice": 0.0055,
             "currentValue": 1.4501,
@@ -20814,37 +21139,22 @@
           },
           {
             "averageEntryPrice": 0.0199,
-            "currentPrice": 0.0045,
-            "currentValue": 1.1283,
+            "currentPrice": 0.0025,
+            "currentValue": 0.6268,
             "endDate": "2026-05-17T00:00:00Z",
             "eventSlug": "trump-endorses-chinas-claim-to-taiwan-this-week",
             "marketURL": "https://polymarket.com/event/trump-endorses-chinas-claim-to-taiwan-this-week",
             "outcome": "Yes",
-            "percentPnL": -77.4326,
-            "percentRealizedPnL": -77.4337,
+            "percentPnL": -87.4627,
+            "percentRealizedPnL": -87.4638,
             "realizedPnL": 0,
             "size": 250.75,
             "slug": "trump-endorses-chinas-claim-to-taiwan-this-week",
             "title": "Trump endorses China's claim to Taiwan this week?"
-          },
-          {
-            "averageEntryPrice": 0.06,
-            "currentPrice": 0.0125,
-            "currentValue": 0.625,
-            "endDate": "2026-05-18T00:00:00Z",
-            "eventSlug": "pga-championship-winner-2026",
-            "marketURL": "https://polymarket.com/event/pga-championship-winner-2026",
-            "outcome": "Yes",
-            "percentPnL": -79.1666,
-            "percentRealizedPnL": -79.1666,
-            "realizedPnL": 0,
-            "size": 50,
-            "slug": "will-xander-schauffele-win-the-2026-pga-championship",
-            "title": "Will Xander Schauffele win the 2026 PGA Championship?"
           }
         ],
         "recentActivityCount": 2,
-        "totalCurrentValue": 74.1548,
+        "totalCurrentValue": 73.9698,
         "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "delta": {
@@ -20854,7 +21164,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.001599999999996271,
+          "valueDeltaUSD": -0.18499999999998806,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -20863,7 +21173,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 74.1532,
+          "previousTotalCurrentValue": 74.1548,
           "highlights": []
         }
       },
@@ -20886,7 +21196,7 @@
               "signal": {
                 "category": "geopolitics",
                 "confidence": 95,
-                "currentMarketPrice": 0.9625,
+                "currentMarketPrice": 0.956,
                 "daysToEnd": 15,
                 "direction": "buy",
                 "horizon": "long_term",
@@ -20906,14 +21216,14 @@
               "supportingSignalCount": 0
             },
             "averageEntryPrice": 0.1,
-            "currentPrice": 0.0375,
-            "currentValue": 3.75,
+            "currentPrice": 0.0429,
+            "currentValue": 4.29,
             "endDate": "2026-05-31T00:00:00Z",
             "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
             "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
             "outcome": "Yes",
-            "percentPnL": -62.5,
-            "percentRealizedPnL": -62.5,
+            "percentPnL": -57.1,
+            "percentRealizedPnL": -57.1,
             "realizedPnL": 0,
             "size": 100,
             "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
@@ -20951,7 +21261,7 @@
           }
         ],
         "recentActivityCount": 0,
-        "totalCurrentValue": 10.3054,
+        "totalCurrentValue": 10.8454,
         "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "delta": {
@@ -20961,7 +21271,7 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.5899999999999999,
+          "valueDeltaUSD": 0.5399999999999991,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -20970,7 +21280,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 10.8954,
+          "previousTotalCurrentValue": 10.3054,
           "highlights": []
         }
       }
@@ -20991,7 +21301,7 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-16T15:42:44Z",
+    "generatedAt": "2026-05-16T16:42:39Z",
     "summary": {
       "totalFilingsFetched": 50,
       "totalSignals": 13,
@@ -21265,7 +21575,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-16T15:42:59Z",
+    "generatedAt": "2026-05-16T16:42:55Z",
     "market": {
       "available": true,
       "summary": {
@@ -22333,19 +22643,19 @@
     "systemHealth": [
       {
         "label": "Market updated",
-        "value": "2026-05-16T15:42:24Z"
+        "value": "2026-05-16T16:41:41Z"
       },
       {
         "label": "Wallet updated",
-        "value": "2026-05-16T15:42:26Z"
+        "value": "2026-05-16T16:41:43Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-05-16T15:42:44Z"
+        "value": "2026-05-16T16:42:39Z"
       },
       {
         "label": "Insider upstream",
-        "value": "11 live"
+        "value": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)"
       },
       {
         "label": "Official watch",
@@ -22389,8 +22699,8 @@
           "flowUSD": 16125,
           "absFlowUSD": 16125,
           "confidence": 97,
-          "currentPrice": 0.399,
-          "daysToEnd": 2
+          "currentPrice": 0.3765,
+          "daysToEnd": 1
         },
         {
           "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -22404,7 +22714,7 @@
           "flowUSD": 66356.52,
           "absFlowUSD": 66356.52,
           "confidence": 95,
-          "currentPrice": 0.9625,
+          "currentPrice": 0.956,
           "daysToEnd": 15
         },
         {
@@ -22426,8 +22736,24 @@
     },
     "marketWindow": {
       "maxDaysToEnd": 229,
-      "maxAbsFlowUSD": 405000,
+      "maxAbsFlowUSD": 146068.34951730858,
       "items": [
+        {
+          "id": "bitcoin-above-78k-on-may-17|No",
+          "title": "Will the price of Bitcoin be above $78,000 on May 17?",
+          "shortLabel": "Will the price of B...",
+          "slug": "bitcoin-above-78k-on-may-17",
+          "eventSlug": "bitcoin-above-on-may-17",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-17",
+          "outcome": "NO",
+          "direction": "buy",
+          "confidence": 97,
+          "daysToEnd": 1,
+          "take": "conviction",
+          "horizon": "short_term",
+          "absFlowUSD": 16125,
+          "currentPrice": 0.3765
+        },
         {
           "id": "nhl-buf-mon-2026-05-16|Canadiens",
           "title": "Sabres vs. Canadiens",
@@ -22445,20 +22771,20 @@
           "currentPrice": 0.615
         },
         {
-          "id": "bitcoin-above-78k-on-may-17|No",
-          "title": "Will the price of Bitcoin be above $78,000 on May 17?",
-          "shortLabel": "Will the price of B...",
-          "slug": "bitcoin-above-78k-on-may-17",
-          "eventSlug": "bitcoin-above-on-may-17",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-may-17",
-          "outcome": "NO",
+          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
+          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
+          "shortLabel": "Internazionali BNL...",
+          "slug": "wta-gauff-svitoli-2026-05-16",
+          "eventSlug": "wta-gauff-svitoli-2026-05-16",
+          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
+          "outcome": "Elina Svitolina",
           "direction": "buy",
-          "confidence": 97,
-          "daysToEnd": 2,
+          "confidence": 100,
+          "daysToEnd": 7,
           "take": "conviction",
           "horizon": "short_term",
-          "absFlowUSD": 16125,
-          "currentPrice": 0.399
+          "absFlowUSD": 126477.43701193019,
+          "currentPrice": 0.275
         },
         {
           "id": "wta-gauff-svitoli-2026-05-16|Coco Gauff",
@@ -22469,28 +22795,12 @@
           "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
           "outcome": "Coco Gauff",
           "direction": "buy",
-          "confidence": 95,
+          "confidence": 98,
           "daysToEnd": 7,
           "take": "conviction",
           "horizon": "short_term",
-          "absFlowUSD": 405000,
-          "currentPrice": 0.585
-        },
-        {
-          "id": "wta-gauff-svitoli-2026-05-16|Elina Svitolina",
-          "title": "Internazionali BNL d'Italia: Coco Gauff vs Elina Svitolina",
-          "shortLabel": "Internazionali BNL...",
-          "slug": "wta-gauff-svitoli-2026-05-16",
-          "eventSlug": "wta-gauff-svitoli-2026-05-16",
-          "marketURL": "https://polymarket.com/event/wta-gauff-svitoli-2026-05-16",
-          "outcome": "Elina Svitolina",
-          "direction": "buy",
-          "confidence": 88,
-          "daysToEnd": 7,
-          "take": "lean",
-          "horizon": "short_term",
-          "absFlowUSD": 24672.019690244386,
-          "currentPrice": 0.415
+          "absFlowUSD": 146068.34951730858,
+          "currentPrice": 0.725
         },
         {
           "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
@@ -22506,7 +22816,7 @@
           "take": "strong",
           "horizon": "long_term",
           "absFlowUSD": 66356.52,
-          "currentPrice": 0.9625
+          "currentPrice": 0.956
         },
         {
           "id": "will-wti-reach-140-in-may-2026-916|Yes",
@@ -22576,7 +22886,7 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 74.1548,
+      "maxValueUSD": 73.9698,
       "items": [
         {
           "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -22584,7 +22894,7 @@
           "label": "Haak",
           "shortLabel": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 74.1548,
+          "totalCurrentValue": 73.9698,
           "openPositionCount": 14,
           "actionablePositionCount": 1,
           "recentActivityCount": 2,
@@ -22596,7 +22906,7 @@
           "label": "Rose",
           "shortLabel": "Rose",
           "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 10.3054,
+          "totalCurrentValue": 10.8454,
           "openPositionCount": 3,
           "actionablePositionCount": 1,
           "recentActivityCount": 0,
@@ -22694,36 +23004,36 @@
           "label": "Market",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T15:42:24Z",
+          "generatedAt": "2026-05-16T16:41:41Z",
           "status": "live",
-          "reason": "Snapshot 35s old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)"
+          "reason": "Snapshot 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s)"
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T15:42:26Z",
+          "generatedAt": "2026-05-16T16:41:43Z",
           "status": "live",
-          "reason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
+          "reason": "Snapshot 1m old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T15:42:44Z",
-          "status": "live",
-          "reason": "11 live"
+          "generatedAt": "2026-05-16T16:42:39Z",
+          "status": "stale",
+          "reason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)"
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T15:43:00.554Z",
-          "status": "live",
-          "reason": "5 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-16T16:42:56.519Z",
+          "status": "stale",
+          "reason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (1 matching item(s), 59m old). (59m old)"
         }
       ]
     }
