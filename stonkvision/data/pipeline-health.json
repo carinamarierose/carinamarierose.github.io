@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-16T21:16:56.426Z",
-  "generatedAtUnix": 1778966216,
-  "runID": "run-2026-05-16T21-12-15-694Z-77740",
+  "generatedAt": "2026-05-16T21:47:53.699Z",
+  "generatedAtUnix": 1778968073,
+  "runID": "run-2026-05-16T21-45-46-742Z-80107",
   "status": "degraded",
-  "statusReason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1001 \"The request timed out.\" UserInfo={_kCFStreamErrorCodeKey=-2103, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>\"\n), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=4} | using stale cache (2 matching item(s), 1h 40m old). (1h 40m old)",
+  "statusReason": "Source issue(s): market:degraded, insider:degraded. Snapshot 1m old · 14 active · 25 snapshots · 2 built from 3 source candidate(s) · 8 live · 1 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
   "scope": "full",
   "scopeReason": null,
-  "startedAt": "2026-05-16T21:12:15.694Z",
-  "finishedAt": "2026-05-16T21:16:56.426Z",
-  "lastRunAt": "2026-05-16T21:16:56.426Z",
-  "durationSeconds": 280.732,
+  "startedAt": "2026-05-16T21:45:46.742Z",
+  "finishedAt": "2026-05-16T21:47:53.699Z",
+  "lastRunAt": "2026-05-16T21:47:53.699Z",
+  "durationSeconds": 126.957,
   "publishRequested": true,
   "publishEnabled": true,
   "pushLiveRequested": true,
   "pushLiveEnabled": true,
-  "intervalSeconds": 1800,
-  "nextRunAt": "2026-05-16T21:46:56.426Z",
-  "lastSuccessAt": "2026-05-16T19:35:44.357Z",
-  "lastSuccessfulRunAt": "2026-05-16T19:35:44.357Z",
-  "lastFailureAt": "2026-05-16T21:16:56.426Z",
+  "intervalSeconds": 3600,
+  "nextRunAt": "2026-05-16T22:47:53.699Z",
+  "lastSuccessAt": "2026-05-16T18:49:49.575Z",
+  "lastSuccessfulRunAt": "2026-05-16T18:49:49.575Z",
+  "lastFailureAt": "2026-05-16T21:47:53.699Z",
   "steps": [
     {
       "id": "market",
@@ -27,16 +27,16 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-16T21:12:15.796Z",
-      "finishedAt": "2026-05-16T21:14:44.992Z",
-      "durationSeconds": 149.196,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-16T21-12-15-694Z-77740/market.log",
-      "summary": "Notification decisions: selected bitcoin-above-78k-on-may-17|No [global_window_open,priority_source_bypass] | blocked mlb-kc-stl-2026-05-16|St. Louis Cardinals->sports_policy | nhl-buf-mon-2026-05-16|Canadiens->sports_policy | will-the-us-invade-iran-before-2027|No->category_policy",
+      "startedAt": "2026-05-16T21:45:46.777Z",
+      "finishedAt": "2026-05-16T21:46:50.921Z",
+      "durationSeconds": 64.144,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T21-45-46-742Z-80107/market.log",
+      "summary": "Notification decisions: selected bitcoin-above-78k-on-may-17|No [global_window_open,fresh_source_global_bypass] | blocked bitcoin-above-80k-on-may-19|No->notification_limit | nhl-buf-mon-2026-05-16|Canadiens->sports_policy | will-the-us-invade-iran-before-2027|No->category_policy",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-16T21:14:44.992Z",
-      "lastFailureAt": null
+      "lastSuccessAt": "2026-05-16T21:46:50.921Z",
+      "lastFailureAt": "2026-05-16T18:44:20.015Z"
     },
     {
       "id": "wallets",
@@ -44,15 +44,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-16T21:14:45.001Z",
-      "finishedAt": "2026-05-16T21:15:12.576Z",
-      "durationSeconds": 27.575,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-16T21-12-15-694Z-77740/wallets.log",
-      "summary": "Source diagnostics: 3 candidate(s) | built 3 | no-chase 0 | no-market 0",
+      "startedAt": "2026-05-16T21:46:50.922Z",
+      "finishedAt": "2026-05-16T21:46:56.248Z",
+      "durationSeconds": 5.326,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T21-45-46-742Z-80107/wallets.log",
+      "summary": "Source diagnostics: 3 candidate(s) | built 2 | no-chase 1 | no-market 0",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-16T21:15:12.576Z",
+      "lastSuccessAt": "2026-05-16T21:46:56.248Z",
       "lastFailureAt": null
     },
     {
@@ -61,16 +61,16 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-16T21:15:12.581Z",
-      "finishedAt": "2026-05-16T21:16:53.582Z",
-      "durationSeconds": 101.001,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-16T21-12-15-694Z-77740/insider.log",
+      "startedAt": "2026-05-16T21:46:56.248Z",
+      "finishedAt": "2026-05-16T21:47:53.036Z",
+      "durationSeconds": 56.788,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T21-45-46-742Z-80107/insider.log",
       "summary": "Telegram preview · selected 0 of 0 new signal(s)",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-16T21:16:53.582Z",
-      "lastFailureAt": null
+      "lastSuccessAt": "2026-05-16T21:47:53.036Z",
+      "lastFailureAt": "2026-05-15T17:15:01.403Z"
     },
     {
       "id": "sync",
@@ -78,32 +78,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-16T21:16:53.582Z",
-      "finishedAt": "2026-05-16T21:16:55.319Z",
-      "durationSeconds": 1.737,
-      "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-16T21-12-15-694Z-77740/sync.log",
+      "startedAt": "2026-05-16T21:47:53.036Z",
+      "finishedAt": "2026-05-16T21:47:53.696Z",
+      "durationSeconds": 0.66,
+      "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T21-45-46-742Z-80107/sync.log",
       "summary": "Built overlay-feed.json",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-16T21:16:55.319Z",
-      "lastFailureAt": null
-    },
-    {
-      "id": "overlay-feed",
-      "title": "Embedding pipeline health into overlay feed",
-      "status": "live",
-      "required": true,
-      "skipped": false,
-      "startedAt": "2026-05-16T21:16:55.492Z",
-      "finishedAt": "2026-05-16T21:16:56.420Z",
-      "durationSeconds": 0.928,
-      "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/build-overlay-feed.mjs",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-16T21-12-15-694Z-77740/overlay-feed.log",
-      "summary": "Built overlay-feed.json",
-      "error": null,
-      "exitCode": 0,
-      "lastSuccessAt": "2026-05-16T21:16:56.420Z",
+      "lastSuccessAt": "2026-05-16T21:47:53.696Z",
       "lastFailureAt": null
     }
   ],
@@ -111,45 +94,45 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T21:14:44Z",
-      "status": "live",
-      "statusReason": "Snapshot 2m old · 11 active · 25 snapshots · 3 built from 3 source candidate(s)"
+      "generatedAt": "2026-05-16T21:46:50Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 1m old · 14 active · 25 snapshots · 2 built from 3 source candidate(s) · 8 live · 1 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T21:15:12Z",
+      "generatedAt": "2026-05-16T21:46:56Z",
       "status": "live",
-      "statusReason": "Snapshot 1m old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
+      "statusReason": "Snapshot 57s old · 2 wallet(s) · 17 open · 2 actionable · 2 live"
     },
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T21:16:38Z",
+      "generatedAt": "2026-05-16T21:47:37Z",
       "status": "degraded",
-      "statusReason": "10 live · 1 stale cache. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1001 \"The request timed out.\" UserInfo={_kCFStreamErrorCodeKey=-2103, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>\"\n), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=4} | using stale cache (2 matching item(s), 1h 40m old). (1h 40m old)"
+      "statusReason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (2 matching item(s), 2h 1m old). (2h 1m old)"
     },
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T21:16:53Z",
+      "generatedAt": "2026-05-16T21:47:53Z",
       "status": "live",
       "statusReason": null
     },
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T21:16:56.426Z",
+      "generatedAt": "2026-05-16T21:47:53.699Z",
       "status": "degraded",
-      "statusReason": "Source issue(s): insider:degraded. 10 live · 1 stale cache. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1001 \"The request timed out.\" UserInfo={_kCFStreamErrorCodeKey=-2103, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <84E8F5D6-F59F-4ECB-8250-9146F068593A>.<21>\"\n), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=4} | using stale cache (2 matching item(s), 1h 40m old). (1h 40m old)"
+      "statusReason": "Source issue(s): market:degraded, insider:degraded. Snapshot 1m old · 14 active · 25 snapshots · 2 built from 3 source candidate(s) · 8 live · 1 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
     }
   },
   "runtime": {
-    "mode": "service",
-    "rootDir": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
+    "mode": "repo",
+    "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
     "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
     "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
-    "currentSourceFingerprint": "d1e068e005da48a096acf4ce57eba9f893aba814eaf26d9d2c784145aa861329",
+    "currentSourceFingerprint": "75c5b266ad78f141f65363871a865267ec2b3d26f6605afc6afc433a58207bff",
     "publishEnabled": true,
     "pushLiveEnabled": true,
     "launchAgent": {
@@ -162,8 +145,8 @@
       "configuredPublishEnabled": true,
       "configuredPushLiveEnabled": true,
       "effectiveIntervalSeconds": 1800,
-      "state": "matches",
-      "stateReason": "LaunchAgent configuration matches this run's schedule, publish, and live-push settings."
+      "state": "service_copy_active",
+      "stateReason": "Configured interval is 1800s but this run used 3600s. The installed LaunchAgent still points at the service copy, so this repo run did not change launchd settings. Reinstall with ./scripts/install-stonkvision-launchd.sh --interval-minutes 60 --publish --push-live."
     },
     "serviceDeployment": {
       "manifestPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json",
@@ -181,8 +164,8 @@
       },
       "sourceFingerprint": "d1e068e005da48a096acf4ce57eba9f893aba814eaf26d9d2c784145aa861329",
       "sourceFingerprintInferred": false,
-      "state": "matches_deployed_source",
-      "stateReason": "The current service runtime matches the deployed source fingerprint."
+      "state": "differs_from_service",
+      "stateReason": "The current repo runtime differs from the installed service copy."
     }
   }
 }
