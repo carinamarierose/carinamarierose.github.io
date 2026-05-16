@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-16T18:45:00.635Z",
-  "generatedAtUnix": 1778957100,
+  "generatedAt": "2026-05-16T18:47:23.075Z",
+  "generatedAtUnix": 1778957243,
   "sync": {
-    "generatedAt": "2026-05-16T18:44:59Z",
-    "generatedAtUnix": 1778957099,
+    "generatedAt": "2026-05-16T18:47:22Z",
+    "generatedAtUnix": 1778957242,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,56 +12,56 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-16T18:45:00.635Z",
-      "generatedAtUnix": 1778957100,
-      "runID": "run-2026-05-16T18-44-15-201Z-54078",
-      "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source.",
-      "scope": "full",
-      "scopeReason": null,
-      "startedAt": "2026-05-16T18:44:15.201Z",
-      "finishedAt": "2026-05-16T18:45:00.635Z",
-      "lastRunAt": "2026-05-16T18:45:00.635Z",
-      "durationSeconds": 45.434,
+      "generatedAt": "2026-05-16T18:47:23.075Z",
+      "generatedAtUnix": 1778957243,
+      "runID": "run-2026-05-16T18-47-22-284Z-56705",
+      "status": "degraded",
+      "statusReason": "Source issue(s): wallets:degraded. Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old)",
+      "scope": "partial",
+      "scopeReason": "Scoped run skipped: Refreshing market-trans from source, Refreshing wallet_watcher from source, Refreshing etoro-bot from source.",
+      "startedAt": "2026-05-16T18:47:22.284Z",
+      "finishedAt": "2026-05-16T18:47:23.075Z",
+      "lastRunAt": "2026-05-16T18:47:23.075Z",
+      "durationSeconds": 0.791,
       "publishRequested": true,
       "publishEnabled": true,
-      "pushLiveRequested": false,
-      "pushLiveEnabled": false,
-      "intervalSeconds": 3600,
-      "nextRunAt": "2026-05-16T19:45:00.635Z",
+      "pushLiveRequested": true,
+      "pushLiveEnabled": true,
+      "intervalSeconds": 1800,
+      "nextRunAt": "2026-05-16T19:17:23.075Z",
       "lastSuccessAt": "2026-05-16T17:46:42.525Z",
       "lastSuccessfulRunAt": "2026-05-16T17:46:42.525Z",
-      "lastFailureAt": "2026-05-16T18:45:00.635Z",
+      "lastFailureAt": "2026-05-16T18:47:23.075Z",
       "steps": [
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "failed",
+          "status": "skipped",
           "required": true,
-          "skipped": false,
-          "startedAt": "2026-05-16T18:44:15.257Z",
-          "finishedAt": "2026-05-16T18:44:20.015Z",
-          "durationSeconds": 4.758,
+          "skipped": true,
+          "startedAt": "2026-05-16T18:47:22.326Z",
+          "finishedAt": "2026-05-16T18:47:22.326Z",
+          "durationSeconds": 0,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-44-15-201Z-54078/market.log",
-          "summary": "error: input file '/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans/Sources/MarketTransBot/HistoryStore.swift' was modified during the build",
-          "error": "error: input file '/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans/Sources/MarketTransBot/HistoryStore.swift' was modified during the build",
-          "exitCode": 1,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-47-22-284Z-56705/market.log",
+          "summary": "Refreshing market-trans from source was skipped.",
+          "error": null,
+          "exitCode": 0,
           "lastSuccessAt": "2026-05-16T17:46:20.171Z",
           "lastFailureAt": "2026-05-16T18:44:20.015Z"
         },
         {
           "id": "wallets",
           "title": "Refreshing wallet_watcher from source",
-          "status": "live",
+          "status": "skipped",
           "required": true,
-          "skipped": false,
-          "startedAt": "2026-05-16T18:44:20.015Z",
-          "finishedAt": "2026-05-16T18:44:26.388Z",
-          "durationSeconds": 6.373,
+          "skipped": true,
+          "startedAt": "2026-05-16T18:47:22.327Z",
+          "finishedAt": "2026-05-16T18:47:22.327Z",
+          "durationSeconds": 0,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-44-15-201Z-54078/wallets.log",
-          "summary": "Loaded 3 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-47-22-284Z-56705/wallets.log",
+          "summary": "Refreshing wallet_watcher from source was skipped.",
           "error": null,
           "exitCode": 0,
           "lastSuccessAt": "2026-05-16T18:44:26.388Z",
@@ -70,15 +70,15 @@
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "skipped",
           "required": true,
-          "skipped": false,
-          "startedAt": "2026-05-16T18:44:26.388Z",
-          "finishedAt": "2026-05-16T18:44:59.442Z",
-          "durationSeconds": 33.054,
+          "skipped": true,
+          "startedAt": "2026-05-16T18:47:22.328Z",
+          "finishedAt": "2026-05-16T18:47:22.328Z",
+          "durationSeconds": 0,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-44-15-201Z-54078/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-47-22-284Z-56705/insider.log",
+          "summary": "Refreshing etoro-bot from source was skipped.",
           "error": null,
           "exitCode": 0,
           "lastSuccessAt": "2026-05-16T18:44:59.442Z",
@@ -90,32 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-16T18:44:59.442Z",
-          "finishedAt": "2026-05-16T18:45:00.201Z",
-          "durationSeconds": 0.759,
+          "startedAt": "2026-05-16T18:47:22.329Z",
+          "finishedAt": "2026-05-16T18:47:23.072Z",
+          "durationSeconds": 0.743,
           "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-44-15-201Z-54078/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-47-22-284Z-56705/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T18:45:00.201Z",
-          "lastFailureAt": null
-        },
-        {
-          "id": "overlay-feed",
-          "title": "Embedding pipeline health into overlay feed",
-          "status": "live",
-          "required": true,
-          "skipped": false,
-          "startedAt": "2026-05-16T18:45:00.209Z",
-          "finishedAt": "2026-05-16T18:45:00.631Z",
-          "durationSeconds": 0.422,
-          "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/build-overlay-feed.mjs",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-16T18-44-15-201Z-54078/overlay-feed.log",
-          "summary": "Built overlay-feed.json",
-          "error": null,
-          "exitCode": 0,
-          "lastSuccessAt": "2026-05-16T18:45:00.631Z",
+          "lastSuccessAt": "2026-05-16T18:47:23.072Z",
           "lastFailureAt": null
         }
       ],
@@ -125,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-05-16T17:46:20Z",
           "status": "live",
-          "statusReason": "Snapshot 58m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "Snapshot 1h 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         "wallets": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-05-16T18:44:26Z",
           "status": "degraded",
-          "statusReason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old)"
+          "statusReason": "Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old)"
         },
         "insider": {
           "available": true,
@@ -144,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T18:44:59Z",
+          "generatedAt": "2026-05-16T18:47:22Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-16T18:45:00.635Z",
-          "status": "failed",
-          "statusReason": "Failed step(s): Refreshing market-trans from source."
+          "generatedAt": "2026-05-16T18:47:23.075Z",
+          "status": "degraded",
+          "statusReason": "Source issue(s): wallets:degraded. Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old) · Scoped run skipped: Refreshing market-trans from source, Refreshing wallet_watcher from source, Refreshing etoro-bot from source."
         }
       },
       "runtime": {
@@ -161,9 +144,9 @@
         "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
         "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
-        "currentSourceFingerprint": "01d7798b24ec664da066d1de3df1cd465b6d0ca9aeb2d21083d99ca5c5ec0cb5",
+        "currentSourceFingerprint": "e8fee170d4e844a6bb238452ee051de2c1585814bf00de0dd78f4a34e2be8136",
         "publishEnabled": true,
-        "pushLiveEnabled": false,
+        "pushLiveEnabled": true,
         "launchAgent": {
           "label": "com.carinamarierose.stonkvision.supervisor",
           "plistPath": "/Users/carina.marie.rose@schibsted.com/Library/LaunchAgents/com.carinamarierose.stonkvision.supervisor.plist",
@@ -174,8 +157,8 @@
           "configuredPublishEnabled": true,
           "configuredPushLiveEnabled": true,
           "effectiveIntervalSeconds": 1800,
-          "state": "service_copy_active",
-          "stateReason": "Configured interval is 1800s but this run used 3600s. Configured live push is enabled but this run used disabled. The installed LaunchAgent still points at the service copy, so this repo run did not change launchd settings. Reinstall with ./scripts/install-stonkvision-launchd.sh --interval-minutes 60 --publish."
+          "state": "matches",
+          "stateReason": "LaunchAgent configuration matches this run's schedule, publish, and live-push settings."
         },
         "serviceDeployment": {
           "manifestPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json",
@@ -205,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-05-16T17:46:20Z",
       "status": "live",
-      "statusReason": "Snapshot 58m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "statusReason": "Snapshot 1h 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Not refreshed in the latest scoped run.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -265,7 +248,7 @@
       "synced": true,
       "generatedAt": "2026-05-16T18:44:26Z",
       "status": "degraded",
-      "statusReason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old)",
+      "statusReason": "Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old) · Not refreshed in the latest scoped run.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -325,7 +308,7 @@
       "synced": true,
       "generatedAt": "2026-05-16T18:44:44Z",
       "status": "live",
-      "statusReason": "11 live",
+      "statusReason": "11 live · Not refreshed in the latest scoped run.",
       "upstreamDiagnostics": [
         {
           "id": "binance-futures",
@@ -519,7 +502,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T18:44:59Z",
+      "generatedAt": "2026-05-16T18:47:22Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -527,9 +510,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-16T18:45:00.635Z",
-      "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
+      "generatedAt": "2026-05-16T18:47:23.075Z",
+      "status": "degraded",
+      "statusReason": "Source issue(s): wallets:degraded. Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old) · Scoped run skipped: Refreshing market-trans from source, Refreshing wallet_watcher from source, Refreshing etoro-bot from source. · 3 skipped step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -3214,33 +3197,25 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-16T17:46:22Z",
-      "previousGeneratedAtUnix": 1778953582,
-      "changedWalletCount": 1,
-      "unchangedWalletCount": 1,
+      "previousGeneratedAt": "2026-05-16T18:44:26Z",
+      "previousGeneratedAtUnix": 1778957066,
+      "changedWalletCount": 0,
+      "unchangedWalletCount": 2,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -3.3818000000000144,
-      "highlights": [
-        {
-          "type": "value_changed",
-          "walletLabel": "Haak",
-          "title": "Haak",
-          "marketURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "valueDeltaUSD": -3.0818000000000154
-        }
-      ],
+      "valueDeltaUSD": 0,
+      "highlights": [],
       "wallets": [
         {
           "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "hasPrevious": true,
-          "hasChanges": true,
+          "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -3.0818000000000154,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3249,7 +3224,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 74.30750000000002,
+          "previousTotalCurrentValue": 71.2257,
           "highlights": []
         },
         {
@@ -3259,7 +3234,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.29999999999999893,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3268,14 +3243,14 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 10.5054,
+          "previousTotalCurrentValue": 10.205400000000001,
           "highlights": []
         }
       ]
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-16T18:44:59.772Z",
+      "generatedAt": "2026-05-16T18:47:22.600Z",
       "snapshotCount": 69,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-05-16T18:44:26Z",
@@ -17308,7 +17283,7 @@
               "timestamp": "2026-05-16T17:46:22Z",
               "timestampUnix": 1778953582,
               "currentValue": 27.9164,
-              "costBasisValue": 51.94587687999999,
+              "costBasisValue": 51.94587688,
               "unrealizedPnL": -24.029476879999997,
               "realizedPnL": 0,
               "openPositionCount": 8,
@@ -22500,9 +22475,9 @@
           "label": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "hasPrevious": true,
-          "hasChanges": true,
+          "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -3.0818000000000154,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -22511,7 +22486,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 14,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 74.30750000000002,
+          "previousTotalCurrentValue": 71.2257,
           "highlights": []
         }
       },
@@ -22609,7 +22584,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.29999999999999893,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -22618,7 +22593,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 10.5054,
+          "previousTotalCurrentValue": 10.205400000000001,
           "highlights": []
         }
       }
@@ -22913,7 +22888,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-16T18:44:59Z",
+    "generatedAt": "2026-05-16T18:47:22Z",
     "market": {
       "available": true,
       "summary": {
@@ -24344,7 +24319,7 @@
           "available": true,
           "generatedAt": "2026-05-16T17:46:20Z",
           "status": "live",
-          "reason": "Snapshot 58m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Latest pipeline run failed this step and the last successful data is still being shown."
+          "reason": "Snapshot 1h 1m old · 9 active · 25 snapshots · 3 built from 3 source candidate(s) · Not refreshed in the latest scoped run."
         },
         {
           "id": "wallets",
@@ -24353,7 +24328,7 @@
           "available": true,
           "generatedAt": "2026-05-16T18:44:26Z",
           "status": "stale",
-          "reason": "Snapshot 33s old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old)"
+          "reason": "Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old) · Not refreshed in the latest scoped run."
         },
         {
           "id": "insider",
@@ -24362,16 +24337,16 @@
           "available": true,
           "generatedAt": "2026-05-16T18:44:44Z",
           "status": "live",
-          "reason": "11 live"
+          "reason": "11 live · Not refreshed in the latest scoped run."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-16T18:45:00.635Z",
+          "generatedAt": "2026-05-16T18:47:23.075Z",
           "status": "stale",
-          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
+          "reason": "Source issue(s): wallets:degraded. Snapshot 2m old · 2 wallet(s) · 17 open · 2 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (58m old, max 15m). (58m old) · Scoped run skipped: Refreshing market-trans from source, Refreshing wallet_watcher from source, Refreshing etoro-bot from source. · 3 skipped step(s)"
         }
       ]
     }
