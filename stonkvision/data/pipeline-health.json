@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-17T05:31:15.515Z",
-  "generatedAtUnix": 1778995875,
-  "runID": "run-2026-05-17T05-28-41-192Z-18592",
-  "status": "live",
-  "statusReason": "5 step(s) completed without pipeline issues.",
+  "generatedAt": "2026-05-17T05:56:40.710Z",
+  "generatedAtUnix": 1778997400,
+  "runID": "run-2026-05-17T05-54-55-525Z-20411",
+  "status": "degraded",
+  "statusReason": "Source issue(s): market:degraded. Snapshot 44s old · 5 active · 25 snapshots · 4 built from 5 source candidate(s) · 7 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
   "scope": "full",
   "scopeReason": null,
-  "startedAt": "2026-05-17T05:28:41.192Z",
-  "finishedAt": "2026-05-17T05:31:15.515Z",
-  "lastRunAt": "2026-05-17T05:31:15.515Z",
-  "durationSeconds": 154.323,
+  "startedAt": "2026-05-17T05:54:55.525Z",
+  "finishedAt": "2026-05-17T05:56:40.710Z",
+  "lastRunAt": "2026-05-17T05:56:40.710Z",
+  "durationSeconds": 105.185,
   "publishRequested": true,
   "publishEnabled": true,
-  "pushLiveRequested": true,
-  "pushLiveEnabled": true,
-  "intervalSeconds": 1800,
-  "nextRunAt": "2026-05-17T06:01:15.515Z",
-  "lastSuccessAt": "2026-05-17T05:31:15.515Z",
-  "lastSuccessfulRunAt": "2026-05-17T05:31:15.515Z",
-  "lastFailureAt": "2026-05-16T23:27:41.589Z",
+  "pushLiveRequested": false,
+  "pushLiveEnabled": false,
+  "intervalSeconds": 3600,
+  "nextRunAt": "2026-05-17T06:56:40.710Z",
+  "lastSuccessAt": "2026-05-16T18:49:49.575Z",
+  "lastSuccessfulRunAt": "2026-05-16T18:49:49.575Z",
+  "lastFailureAt": "2026-05-17T05:56:40.710Z",
   "steps": [
     {
       "id": "market",
@@ -27,16 +27,16 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-17T05:28:41.268Z",
-      "finishedAt": "2026-05-17T05:30:25.002Z",
-      "durationSeconds": 103.734,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-17T05-28-41-192Z-18592/market.log",
+      "startedAt": "2026-05-17T05:54:55.557Z",
+      "finishedAt": "2026-05-17T05:55:56.256Z",
+      "durationSeconds": 60.699,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/market-trans market-trans-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-17T05-54-55-525Z-20411/market.log",
       "summary": "Notification decisions: selected bitcoin-above-78k-on-may-17|No [global_window_open,priority_source_bypass] | blocked will-china-invade-taiwan-before-2027|No->notification_limit | putin-out-before-2027|No->category_policy | will-wti-reach-140-in-may-2026-916|Yes->notification_limit",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-17T05:30:25.002Z",
-      "lastFailureAt": null
+      "lastSuccessAt": "2026-05-17T05:55:56.256Z",
+      "lastFailureAt": "2026-05-16T18:44:20.015Z"
     },
     {
       "id": "wallets",
@@ -44,15 +44,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-17T05:30:25.003Z",
-      "finishedAt": "2026-05-17T05:30:29.579Z",
-      "durationSeconds": 4.576,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-17T05-28-41-192Z-18592/wallets.log",
+      "startedAt": "2026-05-17T05:55:56.256Z",
+      "finishedAt": "2026-05-17T05:56:01.099Z",
+      "durationSeconds": 4.843,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/wallet_watcher wallet-watcher-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-17T05-54-55-525Z-20411/wallets.log",
       "summary": "Source diagnostics: 5 candidate(s) | built 4 | no-chase 0 | no-market 0",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-17T05:30:29.579Z",
+      "lastSuccessAt": "2026-05-17T05:56:01.099Z",
       "lastFailureAt": null
     },
     {
@@ -61,16 +61,16 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-17T05:30:29.580Z",
-      "finishedAt": "2026-05-17T05:31:12.398Z",
-      "durationSeconds": 42.818,
-      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-17T05-28-41-192Z-18592/insider.log",
+      "startedAt": "2026-05-17T05:56:01.099Z",
+      "finishedAt": "2026-05-17T05:56:40.147Z",
+      "durationSeconds": 39.048,
+      "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/etoro-bot etoro-bot --dry-run",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-17T05-54-55-525Z-20411/insider.log",
       "summary": "Telegram preview · selected 0 of 0 new signal(s)",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-17T05:31:12.398Z",
-      "lastFailureAt": null
+      "lastSuccessAt": "2026-05-17T05:56:40.147Z",
+      "lastFailureAt": "2026-05-15T17:15:01.403Z"
     },
     {
       "id": "sync",
@@ -78,32 +78,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-05-17T05:31:12.398Z",
-      "finishedAt": "2026-05-17T05:31:14.394Z",
-      "durationSeconds": 1.996,
-      "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-17T05-28-41-192Z-18592/sync.log",
+      "startedAt": "2026-05-17T05:56:40.147Z",
+      "finishedAt": "2026-05-17T05:56:40.707Z",
+      "durationSeconds": 0.56,
+      "command": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/webpage/scripts/sync-data.sh",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz/artifacts/pipeline-runs/run-2026-05-17T05-54-55-525Z-20411/sync.log",
       "summary": "Built overlay-feed.json",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-05-17T05:31:14.394Z",
-      "lastFailureAt": null
-    },
-    {
-      "id": "overlay-feed",
-      "title": "Embedding pipeline health into overlay feed",
-      "status": "live",
-      "required": true,
-      "skipped": false,
-      "startedAt": "2026-05-17T05:31:14.423Z",
-      "finishedAt": "2026-05-17T05:31:15.503Z",
-      "durationSeconds": 1.08,
-      "command": "/Applications/Codex.app/Contents/Resources/node /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/build-overlay-feed.mjs",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-17T05-28-41-192Z-18592/overlay-feed.log",
-      "summary": "Built overlay-feed.json",
-      "error": null,
-      "exitCode": 0,
-      "lastSuccessAt": "2026-05-17T05:31:15.503Z",
+      "lastSuccessAt": "2026-05-17T05:56:40.707Z",
       "lastFailureAt": null
     }
   ],
@@ -111,47 +94,47 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-17T05:30:24Z",
-      "status": "live",
-      "statusReason": "Snapshot 48s old · 5 active · 25 snapshots · 4 built from 5 source candidate(s)"
+      "generatedAt": "2026-05-17T05:55:56Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 44s old · 5 active · 25 snapshots · 4 built from 5 source candidate(s) · 7 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-17T05:30:29Z",
+      "generatedAt": "2026-05-17T05:56:01Z",
       "status": "live",
-      "statusReason": "Snapshot 43s old · 2 wallet(s) · 16 open · 1 actionable · 2 live"
+      "statusReason": "Snapshot 39s old · 2 wallet(s) · 16 open · 1 actionable · 2 live"
     },
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-17T05:30:57Z",
+      "generatedAt": "2026-05-17T05:56:24Z",
       "status": "live",
       "statusReason": "11 live"
     },
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-17T05:31:12Z",
+      "generatedAt": "2026-05-17T05:56:40Z",
       "status": "live",
       "statusReason": null
     },
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-17T05:31:15.515Z",
-      "status": "live",
-      "statusReason": "5 step(s) completed without pipeline issues."
+      "generatedAt": "2026-05-17T05:56:40.710Z",
+      "status": "degraded",
+      "statusReason": "Source issue(s): market:degraded. Snapshot 44s old · 5 active · 25 snapshots · 4 built from 5 source candidate(s) · 7 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
     }
   },
   "runtime": {
-    "mode": "service",
-    "rootDir": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
+    "mode": "repo",
+    "rootDir": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
     "repoRoot": "/Users/carina.marie.rose@schibsted.com/Documents/github/privat/Total_control_moneyz",
     "serviceRoot": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor",
-    "currentSourceFingerprint": "d1e068e005da48a096acf4ce57eba9f893aba814eaf26d9d2c784145aa861329",
+    "currentSourceFingerprint": "85f0e9277b0e8f010800551c88af6e27c6c23da6a1c39501e4bee7a7ff83d9a2",
     "publishEnabled": true,
-    "pushLiveEnabled": true,
+    "pushLiveEnabled": false,
     "launchAgent": {
       "label": "com.carinamarierose.stonkvision.supervisor",
       "plistPath": "/Users/carina.marie.rose@schibsted.com/Library/LaunchAgents/com.carinamarierose.stonkvision.supervisor.plist",
@@ -162,8 +145,8 @@
       "configuredPublishEnabled": true,
       "configuredPushLiveEnabled": true,
       "effectiveIntervalSeconds": 1800,
-      "state": "matches",
-      "stateReason": "LaunchAgent configuration matches this run's schedule, publish, and live-push settings."
+      "state": "service_copy_active",
+      "stateReason": "Configured interval is 1800s but this run used 3600s. Configured live push is enabled but this run used disabled. The installed LaunchAgent still points at the service copy, so this repo run did not change launchd settings. Reinstall with ./scripts/install-stonkvision-launchd.sh --interval-minutes 60 --publish."
     },
     "serviceDeployment": {
       "manifestPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/supervisor-deployment.json",
@@ -181,8 +164,8 @@
       },
       "sourceFingerprint": "d1e068e005da48a096acf4ce57eba9f893aba814eaf26d9d2c784145aa861329",
       "sourceFingerprintInferred": false,
-      "state": "matches_deployed_source",
-      "stateReason": "The current service runtime matches the deployed source fingerprint."
+      "state": "differs_from_service",
+      "stateReason": "The current repo runtime differs from the installed service copy."
     }
   }
 }
