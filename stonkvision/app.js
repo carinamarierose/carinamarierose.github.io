@@ -644,6 +644,7 @@ function renderWalletFilterButton(kind, value, label) {
 
 function renderWalletFreshnessCard(walletSection) {
   const summary = walletSection?.summary || {};
+  const activityCash = summary?.activityCash || null;
   const generatedAt = walletSection?.generatedAt || null;
   const synced = walletSection?.synced !== false;
   const ageMs = generatedAt ? Math.max(0, Date.now() - new Date(generatedAt).getTime()) : null;
@@ -676,10 +677,32 @@ function renderWalletFreshnessCard(walletSection) {
         ${miniBadge("Updated", generatedAt ? formatDateTime(generatedAt) : "n/a")}
         ${miniBadge("Wallets", summary.walletCount || 0)}
         ${miniBadge("Open", summary.openPositionCount || 0)}
-        ${miniBadge("Value", formatCompactUSD(summary.totalCurrentValue))}
+        ${miniBadge("Open value", formatCompactUSD(summary.totalCurrentValue))}
+        ${activityCash ? miniBadge("Returned", formatCompactUSD(activityCash.returnedUSD)) : ""}
+        ${activityCash ? miniBadge("Net flow", formatSignedCompactUSD(activityCash.netFlowUSD)) : ""}
       </div>
+      <p class="wallet-focus-copy">Open positions only. Closed wins and idle cash are not included yet.</p>
+      ${activityCash ? `<p class="wallet-focus-copy">${escapeHTML(walletActivityCashCopy(activityCash))}</p>` : ""}
     </article>
   `;
+}
+
+function walletActivityCashCopy(activityCash) {
+  if (!activityCash || !activityCash.sampleCount) {
+    return "No tracked wallet activity sample is available yet for returned cash.";
+  }
+
+  const oldestCopy = activityCash.oldestTimestamp
+    ? formatRelativeTimeFromUnix(activityCash.oldestTimestamp)
+    : null;
+
+  const coverage = oldestCopy
+    ? (activityCash.mayBeTruncated
+      ? `Based on the latest ${activityCash.sampleCount} fetched wallet events, currently reaching back to ${oldestCopy}. Older closed wins may still sit outside the sample.`
+      : `Based on ${activityCash.sampleCount} fetched wallet events, currently reaching back to ${oldestCopy}.`)
+    : "Based on the fetched wallet activity sample.";
+
+  return `${coverage} Returned cash includes sells, redeems, and yield. Net flow = returned cash minus tracked buys.`;
 }
 
 function renderWalletUrgentCard(urgentAction, isSynced) {
@@ -717,7 +740,7 @@ function renderWalletUrgentCard(urgentAction, isSynced) {
       )}</p>
       <div class="compact-footer">
         ${miniBadge("Outcome", urgentAction.outcome || "-")}
-        ${miniBadge("Value", formatCompactUSD(urgentAction.currentValue))}
+        ${miniBadge("Open value", formatCompactUSD(urgentAction.currentValue))}
         ${miniBadge("Gap", formatSignedNumber(urgentAction.netScoreGap))}
         ${miniBadge("Deadline", formatDaysToEnd(urgentAction.daysToEnd))}
         ${links}
@@ -1127,7 +1150,7 @@ function renderWalletCommandPanel(chart) {
       { label: `${selectedItem.actionablePositionCount || 0} actionable`, className: (selectedItem.actionablePositionCount || 0) > 0 ? "buy" : "neutral" }
     ],
     metrics: [
-      { label: "Value", value: formatCompactUSD(selectedItem.totalCurrentValue) },
+      { label: "Open value", value: formatCompactUSD(selectedItem.totalCurrentValue) },
       { label: "Open", value: selectedItem.openPositionCount ?? 0 },
       { label: "Recent", value: selectedItem.recentActivityCount ?? 0 },
       { label: "Last", value: selectedItem.lastActivityTimestamp ? formatRelativeTimeFromUnix(selectedItem.lastActivityTimestamp) : "-" }
@@ -1136,7 +1159,7 @@ function renderWalletCommandPanel(chart) {
 
   return renderGraphPanel(
     "Wallet command board",
-    "Tracked wallets sized by current value with activity context.",
+    "Tracked wallets sized by current open position value with activity context.",
     `${note}<div class="wallet-graph-list">${rows}</div>${selectionCard}`
   );
 }
@@ -2480,7 +2503,7 @@ function createWalletPin(wallet) {
       { label: `${wallet.actionablePositionCount || 0} actionable`, className: (wallet.actionablePositionCount || 0) > 0 ? "buy" : "neutral" }
     ],
     metrics: [
-      { label: "Value", value: formatCompactUSD(wallet.totalCurrentValue) },
+      { label: "Open value", value: formatCompactUSD(wallet.totalCurrentValue) },
       { label: "Open", value: wallet.openPositionCount ?? 0 },
       { label: "Recent", value: wallet.recentActivityCount ?? 0 },
       { label: "Last", value: formatRelativeTimeFromUnix(wallet.lastActivityTimestamp) }
@@ -2507,7 +2530,7 @@ function createWalletPositionPin(wallet, position) {
       { label: plainOutcome(position.outcome), className: "neutral" }
     ],
     metrics: [
-      { label: "Current", value: formatCompactUSD(position.currentValue) },
+      { label: "Open value", value: formatCompactUSD(position.currentValue) },
       { label: "Entry", value: formatMarketPrice(position.averageEntryPrice) },
       { label: "Now", value: formatMarketPrice(position.currentPrice) },
       { label: "Deadline", value: formatDaysToEndFromDate(position.endDate) }
@@ -2530,7 +2553,7 @@ function createWalletCommandPin(position, kicker = "Wallet command") {
       { label: position.actionLabel || formatAction(position.action), className: position.action || "neutral" }
     ],
     metrics: [
-      { label: "Value", value: formatCompactUSD(position.currentValue) },
+      { label: "Open value", value: formatCompactUSD(position.currentValue) },
       { label: "Gap", value: formatSignedNumber(position.netScoreGap) },
       { label: "Support", value: position.supportingSignalCount ?? 0 },
       { label: "Oppose", value: position.opposingSignalCount ?? 0 }
@@ -2810,11 +2833,11 @@ function walletHistoryMetricConfig(metric) {
     default:
       return {
         key: "currentValue",
-        label: "Value",
+        label: "Open value",
         formatter: formatCompactUSD,
         deltaFormatter: formatSignedCompactUSD,
         signed: false,
-        description: "current marked value across the tracked wallets"
+        description: "current mark-to-market value across open positions only"
       };
   }
 }
@@ -3770,6 +3793,7 @@ function renderSignalCard(signal) {
 function renderWalletCard(wallet) {
   const positions = displayedWalletPositions(wallet);
   const deltaLine = renderWalletDeltaLine(wallet.delta);
+  const activityCash = wallet.activityCash || null;
 
   return `
     <article ${renderCardSurfaceAttributes("wallet-card", getWalletURL(wallet), `Open wallet ${wallet.label}`)}>
@@ -3786,11 +3810,15 @@ function renderWalletCard(wallet) {
       </div>
 
       <div class="wallet-summary">
-        ${miniStat("Value", formatCompactUSD(wallet.totalCurrentValue))}
+        ${miniStat("Open value", formatCompactUSD(wallet.totalCurrentValue))}
+        ${activityCash ? miniStat("Returned", formatCompactUSD(activityCash.returnedUSD)) : ""}
+        ${activityCash ? miniStat("Net flow", formatSignedCompactUSD(activityCash.netFlowUSD)) : ""}
         ${miniStat("24h trades", wallet.recentActivityCount || 0)}
         ${miniStat("Last activity", formatRelativeTimeFromUnix(wallet.lastActivityTimestamp))}
         ${miniStat("Positions", positions.length || 0)}
       </div>
+
+      ${activityCash ? `<p class="wallet-focus-copy">${escapeHTML(walletActivityCashCopy(activityCash))}</p>` : ""}
 
       ${deltaLine}
 
