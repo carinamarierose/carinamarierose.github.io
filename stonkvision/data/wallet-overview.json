@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 11090,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 12,
       "fetchedAt" : "2026-05-18T12:48:02Z",
       "fetchedAtUnix" : 1779108482,
-      "message" : "Loaded 12 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (3h 4m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 11087,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 9,
+      "fetchedAt" : "2026-05-18T12:48:05Z",
+      "fetchedAtUnix" : 1779108485,
+      "message" : "Using cached wallet watcher feed with 9 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 14,
-      "fetchedAt" : "2026-05-18T12:48:05Z",
-      "fetchedAtUnix" : 1779108485,
+      "fetchedAt" : "2026-05-18T15:52:52Z",
+      "fetchedAtUnix" : 1779119572,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 14 open position(s) and 4 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-05-18T12:48:05Z",
-  "generatedAtUnix" : 1779108485,
+  "generatedAt" : "2026-05-18T15:52:52Z",
+  "generatedAtUnix" : 1779119572,
   "summary" : {
     "actionablePositionCount" : 4,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.0428
     },
     "openPositionCount" : 14,
-    "totalCurrentValue" : 95.2099,
+    "totalCurrentValue" : 94.0409,
     "walletCount" : 2
   },
   "wallets" : [
@@ -119,14 +136,14 @@
         },
         {
           "averageEntryPrice" : 0.1166,
-          "currentPrice" : 0.0685,
-          "currentValue" : 7.0448,
+          "currentPrice" : 0.065,
+          "currentValue" : 6.6848,
           "endDate" : "2026-06-30T00:00:00Z",
           "eventSlug" : "ukraine-signs-peace-deal-with-russia-by-june-30",
           "marketURL" : "https:\/\/polymarket.com\/event\/ukraine-signs-peace-deal-with-russia-by-june-30",
           "outcome" : "Yes",
-          "percentPnL" : -41.2925,
-          "percentRealizedPnL" : -41.2933,
+          "percentPnL" : -44.2925,
+          "percentRealizedPnL" : -44.2933,
           "realizedPnL" : 0,
           "size" : 102.8444,
           "slug" : "ukraine-signs-peace-deal-with-russia-by-june-30",
@@ -149,11 +166,11 @@
         },
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 140.269806898,
-            "opposingScore" : 140.269806898,
+            "netScoreGap" : 145.269806898,
+            "opposingScore" : 145.269806898,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -177,22 +194,67 @@
               "weightedFlowUSD" : 55872.586225
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.1,
-          "currentPrice" : 0.0505,
-          "currentValue" : 5.05,
+          "currentPrice" : 0.0425,
+          "currentValue" : 4.25,
           "endDate" : "2026-05-31T00:00:00Z",
           "eventSlug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "marketURL" : "https:\/\/polymarket.com\/event\/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "outcome" : "Yes",
-          "percentPnL" : -49.5,
-          "percentRealizedPnL" : -49.5,
+          "percentPnL" : -57.4999,
+          "percentRealizedPnL" : -57.4999,
           "realizedPnL" : 0,
           "size" : 100,
           "slug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "title" : "Strait of Hormuz traffic returns to normal by end of May?"
+        },
+        {
+          "advice" : {
+            "action" : "sell",
+            "actionLabel" : "Sell",
+            "isActionable" : true,
+            "netScoreGap" : 147.9149792,
+            "opposingScore" : 147.9149792,
+            "opposingSignalCount" : 1,
+            "relation" : "opposes_held_position",
+            "relationLabel" : "Opposes current position",
+            "signal" : {
+              "category" : "other",
+              "confidence" : 95,
+              "currentMarketPrice" : 0.9875,
+              "daysToEnd" : 14,
+              "direction" : "buy",
+              "horizon" : "short_term",
+              "id" : "will-the-us-confirm-that-aliens-exist-by-may-31|No",
+              "marketURL" : "https:\/\/polymarket.com\/event\/will-the-us-confirm-that-aliens-exist-by-may-31",
+              "outcome" : "No",
+              "severity" : "yellow",
+              "slug" : "will-the-us-confirm-that-aliens-exist-by-may-31",
+              "supportingExposureUSD" : 0,
+              "take" : "strong",
+              "title" : "Will the US confirm that aliens exist by May 31?",
+              "uniqueTraderCount" : 1,
+              "uniqueTransactionCount" : 1,
+              "weightedFlowUSD" : 76437.24
+            },
+            "supportingScore" : 0,
+            "supportingSignalCount" : 0
+          },
+          "averageEntryPrice" : 0.0265,
+          "currentPrice" : 0.0155,
+          "currentValue" : 4.0869,
+          "endDate" : "2026-06-01T03:59:59Z",
+          "eventSlug" : "will-the-us-confirm-that-aliens-exist-before-2027",
+          "marketURL" : "https:\/\/polymarket.com\/event\/will-the-us-confirm-that-aliens-exist-before-2027",
+          "outcome" : "Yes",
+          "percentPnL" : -41.6144,
+          "percentRealizedPnL" : -41.6154,
+          "realizedPnL" : 0,
+          "size" : 263.6722,
+          "slug" : "will-the-us-confirm-that-aliens-exist-by-may-31",
+          "title" : "Will the US confirm that aliens exist by May 31?"
         },
         {
           "averageEntryPrice" : 0.0716,
@@ -256,53 +318,6 @@
           "title" : "Will China invade Taiwan by end of 2026?"
         },
         {
-          "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
-            "isActionable" : true,
-            "netScoreGap" : 142.9149792,
-            "opposingScore" : 142.9149792,
-            "opposingSignalCount" : 1,
-            "relation" : "opposes_held_position",
-            "relationLabel" : "Opposes current position",
-            "signal" : {
-              "category" : "other",
-              "confidence" : 95,
-              "currentMarketPrice" : 0.9875,
-              "daysToEnd" : 14,
-              "direction" : "buy",
-              "horizon" : "short_term",
-              "id" : "will-the-us-confirm-that-aliens-exist-by-may-31|No",
-              "marketURL" : "https:\/\/polymarket.com\/event\/will-the-us-confirm-that-aliens-exist-by-may-31",
-              "outcome" : "No",
-              "severity" : "yellow",
-              "slug" : "will-the-us-confirm-that-aliens-exist-by-may-31",
-              "supportingExposureUSD" : 0,
-              "take" : "strong",
-              "title" : "Will the US confirm that aliens exist by May 31?",
-              "uniqueTraderCount" : 1,
-              "uniqueTransactionCount" : 1,
-              "weightedFlowUSD" : 76437.24
-            },
-            "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
-          },
-          "averageEntryPrice" : 0.0265,
-          "currentPrice" : 0.0125,
-          "currentValue" : 3.2959,
-          "endDate" : "2026-06-01T03:59:59Z",
-          "eventSlug" : "will-the-us-confirm-that-aliens-exist-before-2027",
-          "marketURL" : "https:\/\/polymarket.com\/event\/will-the-us-confirm-that-aliens-exist-before-2027",
-          "outcome" : "Yes",
-          "percentPnL" : -52.9145,
-          "percentRealizedPnL" : -52.9155,
-          "realizedPnL" : 0,
-          "size" : 263.6722,
-          "slug" : "will-the-us-confirm-that-aliens-exist-by-may-31",
-          "title" : "Will the US confirm that aliens exist by May 31?"
-        },
-        {
           "averageEntryPrice" : 0.06,
           "currentPrice" : 0.045,
           "currentValue" : 2.25,
@@ -318,8 +333,8 @@
           "title" : "Will the Iranian regime fall by June 30?"
         }
       ],
-      "recentActivityCount" : 2,
-      "totalCurrentValue" : 63.2271,
+      "recentActivityCount" : 1,
+      "totalCurrentValue" : 62.8581,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
@@ -347,7 +362,7 @@
             "action" : "hold",
             "actionLabel" : "Keep",
             "isActionable" : false,
-            "netScoreGap" : 181.0365456,
+            "netScoreGap" : 177.0365456,
             "opposingScore" : 0,
             "opposingSignalCount" : 0,
             "relation" : "supports_held_position",
@@ -371,9 +386,8 @@
               "uniqueTransactionCount" : 1,
               "weightedFlowUSD" : 127956.82
             },
-            "supportingScore" : 181.0365456,
-            "supportingSignalCount" : 1,
-            "xgboostStance" : "supports"
+            "supportingScore" : 177.0365456,
+            "supportingSignalCount" : 1
           },
           "averageEntryPrice" : 0.5,
           "currentPrice" : 0.495,
@@ -390,12 +404,27 @@
           "title" : "Canadiens vs. Sabres"
         },
         {
+          "averageEntryPrice" : 0.0869,
+          "currentPrice" : 0.0704,
+          "currentValue" : 4.8551,
+          "endDate" : "2026-12-31T00:00:00Z",
+          "eventSlug" : "hantavirus-pandemic-in-2026",
+          "marketURL" : "https:\/\/polymarket.com\/event\/hantavirus-pandemic-in-2026",
+          "outcome" : "Yes",
+          "percentPnL" : -19.0802,
+          "percentRealizedPnL" : -19.0807,
+          "realizedPnL" : 0,
+          "size" : 68.9655,
+          "slug" : "hantavirus-pandemic-in-2026",
+          "title" : "Hantavirus pandemic in 2026?"
+        },
+        {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 140.269806898,
-            "opposingScore" : 140.269806898,
+            "netScoreGap" : 145.269806898,
+            "opposingScore" : 145.269806898,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -419,37 +448,21 @@
               "weightedFlowUSD" : 55872.586225
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.1,
-          "currentPrice" : 0.0505,
-          "currentValue" : 5.05,
+          "currentPrice" : 0.0425,
+          "currentValue" : 4.25,
           "endDate" : "2026-05-31T00:00:00Z",
           "eventSlug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "marketURL" : "https:\/\/polymarket.com\/event\/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "outcome" : "Yes",
-          "percentPnL" : -49.5,
-          "percentRealizedPnL" : -49.5,
+          "percentPnL" : -57.4999,
+          "percentRealizedPnL" : -57.4999,
           "realizedPnL" : 0,
           "size" : 100,
           "slug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "title" : "Strait of Hormuz traffic returns to normal by end of May?"
-        },
-        {
-          "averageEntryPrice" : 0.0869,
-          "currentPrice" : 0.0704,
-          "currentValue" : 4.8551,
-          "endDate" : "2026-12-31T00:00:00Z",
-          "eventSlug" : "hantavirus-pandemic-in-2026",
-          "marketURL" : "https:\/\/polymarket.com\/event\/hantavirus-pandemic-in-2026",
-          "outcome" : "Yes",
-          "percentPnL" : -19.0802,
-          "percentRealizedPnL" : -19.0807,
-          "realizedPnL" : 0,
-          "size" : 68.9655,
-          "slug" : "hantavirus-pandemic-in-2026",
-          "title" : "Hantavirus pandemic in 2026?"
         },
         {
           "averageEntryPrice" : 0.018,
@@ -468,7 +481,7 @@
         }
       ],
       "recentActivityCount" : 2,
-      "totalCurrentValue" : 31.9828,
+      "totalCurrentValue" : 31.1828,
       "wallet" : "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x30da9f12d8961e80e11f9575e316f5da5799ca57"
     }
