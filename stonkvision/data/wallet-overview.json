@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 1911,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 13,
       "fetchedAt" : "2026-05-19T11:25:48Z",
       "fetchedAtUnix" : 1779189948,
-      "message" : "Loaded 13 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (31m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 1907,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 10,
+      "fetchedAt" : "2026-05-19T11:25:52Z",
+      "fetchedAtUnix" : 1779189952,
+      "message" : "Using cached wallet watcher feed with 10 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 15,
-      "fetchedAt" : "2026-05-19T11:25:52Z",
-      "fetchedAtUnix" : 1779189952,
+      "fetchedAt" : "2026-05-19T11:57:39Z",
+      "fetchedAtUnix" : 1779191859,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 15 open position(s) and 4 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-05-19T11:25:52Z",
-  "generatedAtUnix" : 1779189952,
+  "generatedAt" : "2026-05-19T11:57:39Z",
+  "generatedAtUnix" : 1779191859,
   "summary" : {
     "actionablePositionCount" : 4,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.045
     },
     "openPositionCount" : 15,
-    "totalCurrentValue" : 86.8817,
+    "totalCurrentValue" : 86.5655,
     "walletCount" : 2
   },
   "wallets" : [
@@ -92,7 +109,7 @@
             "action" : "hold",
             "actionLabel" : "Keep",
             "isActionable" : false,
-            "netScoreGap" : 188.8,
+            "netScoreGap" : 184.8,
             "opposingScore" : 0,
             "opposingSignalCount" : 0,
             "relation" : "supports_held_position",
@@ -116,9 +133,8 @@
               "uniqueTransactionCount" : 1,
               "weightedFlowUSD" : 463111
             },
-            "supportingScore" : 188.8,
-            "supportingSignalCount" : 1,
-            "xgboostStance" : "supports"
+            "supportingScore" : 184.8,
+            "supportingSignalCount" : 1
           },
           "averageEntryPrice" : 0.3099,
           "currentPrice" : 0.305,
@@ -181,11 +197,11 @@
         },
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 140.269806898,
-            "opposingScore" : 140.269806898,
+            "netScoreGap" : 145.269806898,
+            "opposingScore" : 145.269806898,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -209,18 +225,17 @@
               "weightedFlowUSD" : 55872.586225
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.1,
-          "currentPrice" : 0.053,
-          "currentValue" : 5.3,
+          "currentPrice" : 0.0525,
+          "currentValue" : 5.25,
           "endDate" : "2026-05-31T00:00:00Z",
           "eventSlug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "marketURL" : "https:\/\/polymarket.com\/event\/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "outcome" : "Yes",
-          "percentPnL" : -47,
-          "percentRealizedPnL" : -47,
+          "percentPnL" : -47.5,
+          "percentRealizedPnL" : -47.5,
           "realizedPnL" : 0,
           "size" : 100,
           "slug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
@@ -258,11 +273,11 @@
         },
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 142.9149792,
-            "opposingScore" : 142.9149792,
+            "netScoreGap" : 147.9149792,
+            "opposingScore" : 147.9149792,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -286,8 +301,7 @@
               "weightedFlowUSD" : 76437.24
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.0265,
           "currentPrice" : 0.0135,
@@ -366,7 +380,7 @@
         }
       ],
       "recentActivityCount" : 3,
-      "totalCurrentValue" : 71.0992,
+      "totalCurrentValue" : 71.0492,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
@@ -391,11 +405,11 @@
       "positions" : [
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 140.269806898,
-            "opposingScore" : 140.269806898,
+            "netScoreGap" : 145.269806898,
+            "opposingScore" : 145.269806898,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -419,18 +433,17 @@
               "weightedFlowUSD" : 55872.586225
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.1,
-          "currentPrice" : 0.053,
-          "currentValue" : 5.3,
+          "currentPrice" : 0.0525,
+          "currentValue" : 5.25,
           "endDate" : "2026-05-31T00:00:00Z",
           "eventSlug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "marketURL" : "https:\/\/polymarket.com\/event\/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
           "outcome" : "Yes",
-          "percentPnL" : -47,
-          "percentRealizedPnL" : -47,
+          "percentPnL" : -47.5,
+          "percentRealizedPnL" : -47.5,
           "realizedPnL" : 0,
           "size" : 100,
           "slug" : "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
@@ -456,7 +469,7 @@
             "action" : "hold",
             "actionLabel" : "Keep",
             "isActionable" : false,
-            "netScoreGap" : 145.25,
+            "netScoreGap" : 141.25,
             "opposingScore" : 0,
             "opposingSignalCount" : 0,
             "relation" : "supports_held_position",
@@ -480,19 +493,18 @@
               "uniqueTransactionCount" : 0,
               "weightedFlowUSD" : 15625
             },
-            "supportingScore" : 145.25,
-            "supportingSignalCount" : 1,
-            "xgboostStance" : "supports"
+            "supportingScore" : 141.25,
+            "supportingSignalCount" : 1
           },
           "averageEntryPrice" : 0.037,
-          "currentPrice" : 0.0345,
-          "currentValue" : 3.7297,
+          "currentPrice" : 0.0325,
+          "currentValue" : 3.5135,
           "endDate" : "2026-05-31T17:00:00Z",
           "eventSlug" : "what-price-will-wti-hit-in-may-2026",
           "marketURL" : "https:\/\/polymarket.com\/event\/what-price-will-wti-hit-in-may-2026",
           "outcome" : "Yes",
-          "percentPnL" : -6.755,
-          "percentRealizedPnL" : -6.7574,
+          "percentPnL" : -12.16,
+          "percentRealizedPnL" : -12.1624,
           "realizedPnL" : 0,
           "size" : 108.1081,
           "slug" : "will-wti-reach-140-in-may-2026-916",
@@ -515,7 +527,7 @@
         }
       ],
       "recentActivityCount" : 5,
-      "totalCurrentValue" : 15.782499999999999,
+      "totalCurrentValue" : 15.516300000000001,
       "wallet" : "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x30da9f12d8961e80e11f9575e316f5da5799ca57"
     }
