@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-19T12:31:18.572Z",
-  "generatedAtUnix": 1779193878,
+  "generatedAt": "2026-05-19T13:06:48.843Z",
+  "generatedAtUnix": 1779196008,
   "sync": {
-    "generatedAt": "2026-05-19T12:31:16Z",
-    "generatedAtUnix": 1779193877,
+    "generatedAt": "2026-05-19T13:06:46Z",
+    "generatedAtUnix": 1779196006,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-19T12:31:18.572Z",
-      "generatedAtUnix": 1779193878,
-      "runID": "run-2026-05-19T12-28-29-872Z-50295",
-      "status": "live",
-      "statusReason": "4 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-19T13:06:48.843Z",
+      "generatedAtUnix": 1779196008,
+      "runID": "run-2026-05-19T13-06-18-135Z-60675",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-05-19T12:28:29.872Z",
-      "finishedAt": "2026-05-19T12:31:18.572Z",
-      "lastRunAt": "2026-05-19T12:31:18.572Z",
-      "durationSeconds": 168.7,
+      "startedAt": "2026-05-19T13:06:18.135Z",
+      "finishedAt": "2026-05-19T13:06:48.843Z",
+      "lastRunAt": "2026-05-19T13:06:48.843Z",
+      "durationSeconds": 30.708,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-05-19T13:01:18.572Z",
-      "lastSuccessAt": "2026-05-19T12:31:18.572Z",
-      "lastSuccessfulRunAt": "2026-05-19T12:31:18.572Z",
-      "lastFailureAt": "2026-05-19T11:58:27.802Z",
+      "nextRunAt": "2026-05-19T13:36:48.843Z",
+      "lastSuccessAt": "2026-05-19T12:32:04.224Z",
+      "lastSuccessfulRunAt": "2026-05-19T12:32:04.224Z",
+      "lastFailureAt": "2026-05-19T13:06:48.843Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-19T12:28:29.955Z",
-          "finishedAt": "2026-05-19T12:29:12.497Z",
-          "durationSeconds": 42.542,
+          "startedAt": "2026-05-19T13:06:18.251Z",
+          "finishedAt": "2026-05-19T13:06:37.999Z",
+          "durationSeconds": 19.748,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T12-28-29-872Z-50295/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T13-06-18-135Z-60675/insider.log",
+          "summary": "curl: (6) Could not resolve host: openinsider.com",
+          "error": "curl: (6) Could not resolve host: openinsider.com",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-19T12:29:12.497Z",
-          "lastFailureAt": "2026-05-19T11:57:24.422Z"
+          "lastFailureAt": "2026-05-19T13:06:37.999Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-19T12:29:12.498Z",
-          "finishedAt": "2026-05-19T12:31:14.164Z",
-          "durationSeconds": 121.666,
+          "startedAt": "2026-05-19T13:06:37.999Z",
+          "finishedAt": "2026-05-19T13:06:41.631Z",
+          "durationSeconds": 3.632,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T12-28-29-872Z-50295/market.log",
-          "summary": "Notification decisions: selected nba-cle-nyk-2026-05-19|Cavaliers [global_window_open,urgent_suspicious] | blocked us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192-799-449|No->notification_limit | dota2-flc-tundra-2026-05-19-game2|Team Falcons->sports_policy | will-trump-announce-a-tariff-reduction-on-china|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T13-06-18-135Z-60675/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-19T12:31:14.164Z",
-          "lastFailureAt": "2026-05-19T11:57:30.500Z"
+          "lastFailureAt": "2026-05-19T13:06:41.631Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-19T12:31:14.164Z",
-          "finishedAt": "2026-05-19T12:31:16.925Z",
-          "durationSeconds": 2.761,
+          "startedAt": "2026-05-19T13:06:41.631Z",
+          "finishedAt": "2026-05-19T13:06:46.093Z",
+          "durationSeconds": 4.462,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T12-28-29-872Z-50295/wallets.log",
-          "summary": "Source diagnostics: 5 candidate(s) | built 5 | no-chase 0 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T13-06-18-135Z-60675/wallets.log",
+          "summary": "Loaded 11 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-19T12:31:16.925Z",
+          "lastSuccessAt": "2026-05-19T13:06:46.093Z",
           "lastFailureAt": null
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-19T12:31:16.926Z",
-          "finishedAt": "2026-05-19T12:31:18.557Z",
-          "durationSeconds": 1.631,
+          "startedAt": "2026-05-19T13:06:46.093Z",
+          "finishedAt": "2026-05-19T13:06:48.824Z",
+          "durationSeconds": 2.731,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T12-28-29-872Z-50295/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-19T13-06-18-135Z-60675/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-19T12:31:18.557Z",
+          "lastSuccessAt": "2026-05-19T13:06:48.824Z",
           "lastFailureAt": null
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-05-19T12:31:14Z",
           "status": "live",
-          "statusReason": "Snapshot 3s old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "Snapshot 35m old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-19T12:31:16Z",
-          "status": "live",
-          "statusReason": "Snapshot 1s old · 2 wallet(s) · 15 open · 4 actionable · 2 live"
+          "generatedAt": "2026-05-19T13:06:46Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         "insider": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-05-19T12:28:57Z",
           "status": "live",
-          "statusReason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "11 live"
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-19T12:31:16Z",
+          "generatedAt": "2026-05-19T13:06:46Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-19T12:31:18.572Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-19T13:06:48.843Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-05-19T12:31:14Z",
       "status": "live",
-      "statusReason": "Snapshot 3s old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live",
+      "statusReason": "Snapshot 35m old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-19T12:31:16Z",
-      "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 15 open · 4 actionable · 2 live",
+      "generatedAt": "2026-05-19T13:06:46Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 14 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (35m old, max 15m).",
           "fetchedAt": "2026-05-19T12:31:14Z",
           "fetchedAtUnix": 1779193874,
           "attemptCount": 1,
           "eventCount": 14,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 2132,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 11 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-05-19T12:31:16Z",
+          "fetchedAtUnix": 1779193876,
+          "attemptCount": 1,
+          "eventCount": 11,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 2130,
           "retryAfterUnix": null
         },
         {
@@ -728,12 +748,12 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
-          "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 15 open position(s) and 4 actionable call(s).",
-          "fetchedAt": "2026-05-19T12:31:16Z",
-          "fetchedAtUnix": 1779193876,
-          "attemptCount": 2,
-          "eventCount": 15,
+          "status": "failed",
+          "message": "No watched wallet snapshots were loaded from the configured wallet list.",
+          "fetchedAt": "2026-05-19T13:06:46Z",
+          "fetchedAtUnix": 1779196006,
+          "attemptCount": 1,
+          "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-05-19T12:28:57Z",
       "status": "live",
-      "statusReason": "11 live",
+      "statusReason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "binance-futures",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-19T12:31:16Z",
+      "generatedAt": "2026-05-19T13:06:46Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,18 +1001,18 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-19T12:31:18.572Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed without pipeline issues.",
+      "generatedAt": "2026-05-19T13:06:48.843Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
     "bestBetCount": 8,
-    "trackedWalletCount": 2,
-    "openPositionCount": 15,
-    "actionablePositionCount": 4,
+    "trackedWalletCount": 0,
+    "openPositionCount": 0,
+    "actionablePositionCount": 0,
     "insiderSignalCount": 16,
     "intelItemCount": 18,
     "sourceSignalCount": 4,
@@ -1008,8 +1028,8 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "Reduce YES on Will the US confirm that aliens exist by May 31?",
-      "body": "Will the US confirm that aliens exist by May 31? · opposes current position"
+      "title": "Waiting for wallet sync",
+      "body": "Rose and Haak will appear here when wallet-watcher exports portfolio data."
     },
     "insider": {
       "kicker": "Insider tape",
@@ -4112,407 +4132,32 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-19T12:31:16Z",
+    "generatedAt": "2026-05-19T13:06:46Z",
     "summary": {
-      "actionablePositionCount": 4,
-      "activityCash": {
-        "mayBeTruncated": false,
-        "netFlowUSD": 190.8537969999997,
-        "newestTimestamp": 1779183439,
-        "oldestTimestamp": 1774900241,
-        "redeemedUSD": 531.516994,
-        "returnedUSD": 1108.0981339999998,
-        "sampleCount": 236,
-        "sampleLimit": 400,
-        "soldUSD": 576.5361399999999,
-        "spentUSD": 917.2443370000001,
-        "yieldUSD": 0.045
-      },
-      "openPositionCount": 15,
-      "totalCurrentValue": 87.5825,
-      "walletCount": 2
+      "actionablePositionCount": 0,
+      "openPositionCount": 0,
+      "totalCurrentValue": 0,
+      "walletCount": 0
     },
-    "urgentAction": {
-      "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "walletLabel": "Haak",
-      "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "title": "Will China invade Taiwan by end of 2026?",
-      "outcome": "YES",
-      "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-      "currentValue": 3.5476,
-      "currentPrice": 0.0745,
-      "percentPnL": 18.2536,
-      "action": "sell",
-      "actionLabel": "Sell",
-      "isActionable": true,
-      "relationLabel": "Opposes current position",
-      "signalTitle": "Will China invade Taiwan by end of 2026?",
-      "signalURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-      "signalConfidence": 95,
-      "supportingSignalCount": 0,
-      "opposingSignalCount": 1,
-      "netScoreGap": 143.46890720000002,
-      "daysToEnd": 226
-    },
-    "commandGroups": [
-      {
-        "key": "sell",
-        "label": "Sell",
-        "count": 1,
-        "actionableCount": 1,
-        "totalCurrentValue": 3.5476,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will China invade Taiwan by end of 2026?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-            "currentValue": 3.5476,
-            "currentPrice": 0.0745,
-            "percentPnL": 18.2536,
-            "action": "sell",
-            "actionLabel": "Sell",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will China invade Taiwan by end of 2026?",
-            "signalURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-            "signalConfidence": 95,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 143.46890720000002,
-            "daysToEnd": 226
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "count": 3,
-        "actionableCount": 3,
-        "totalCurrentValue": 13.7395,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will the US confirm that aliens exist by May 31?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-            "currentValue": 3.5595,
-            "currentPrice": 0.0135,
-            "percentPnL": -49.1487,
-            "action": "reduce",
-            "actionLabel": "Reduce",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will the US confirm that aliens exist by May 31?",
-            "signalURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-by-may-31",
-            "signalConfidence": 95,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 142.9149792,
-            "daysToEnd": 13
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "currentValue": 5.09,
-            "currentPrice": 0.0509,
-            "percentPnL": -49.1,
-            "action": "reduce",
-            "actionLabel": "Reduce",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?",
-            "signalURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "signalConfidence": 94,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 140.269806898,
-            "daysToEnd": 12
-          },
-          {
-            "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "walletLabel": "Rose",
-            "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "currentValue": 5.09,
-            "currentPrice": 0.0509,
-            "percentPnL": -49.1,
-            "action": "reduce",
-            "actionLabel": "Reduce",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?",
-            "signalURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "signalConfidence": 94,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 140.269806898,
-            "daysToEnd": 12
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "hold",
-        "label": "Keep",
-        "count": 2,
-        "actionableCount": 0,
-        "totalCurrentValue": 13.3522,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Cavaliers vs. Knicks",
-            "outcome": "Cavaliers",
-            "marketURL": "https://polymarket.com/event/nba-cle-nyk-2026-05-19",
-            "currentValue": 9.8387,
-            "currentPrice": 0.305,
-            "percentPnL": -1.612,
-            "action": "hold",
-            "actionLabel": "Keep",
-            "isActionable": false,
-            "relationLabel": "Supports current position",
-            "signalTitle": "Cavaliers vs. Knicks",
-            "signalURL": "https://polymarket.com/event/nba-cle-nyk-2026-05-19",
-            "signalConfidence": 95,
-            "supportingSignalCount": 1,
-            "opposingSignalCount": 0,
-            "netScoreGap": 188.8,
-            "daysToEnd": 1
-          },
-          {
-            "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "walletLabel": "Rose",
-            "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "title": "Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/what-price-will-wti-hit-in-may-2026",
-            "currentValue": 3.5135,
-            "currentPrice": 0.0325,
-            "percentPnL": -12.16,
-            "action": "hold",
-            "actionLabel": "Keep",
-            "isActionable": false,
-            "relationLabel": "Supports current position",
-            "signalTitle": "Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?",
-            "signalURL": "https://polymarket.com/event/will-wti-reach-140-in-may-2026-916",
-            "signalConfidence": 97,
-            "supportingSignalCount": 1,
-            "opposingSignalCount": 0,
-            "netScoreGap": 145.25,
-            "daysToEnd": 13
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 9,
-        "actionableCount": 0,
-        "totalCurrentValue": 56.9432,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Spain win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/2026-fifa-world-cup-winner-595",
-            "currentValue": 16.65,
-            "currentPrice": 0.1665,
-            "percentPnL": -3.1976,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "currentValue": 7.6777,
-            "currentPrice": 0.0195,
-            "percentPnL": 9.6908,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Hantavirus pandemic in 2026?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "currentValue": 6.9593,
-            "currentPrice": 0.0665,
-            "percentPnL": -22.6724,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          }
-        ],
-        "moreCount": 6
-      }
-    ],
+    "urgentAction": null,
+    "commandGroups": [],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-19T11:57:39Z",
-      "previousGeneratedAtUnix": 1779191859,
-      "changedWalletCount": 2,
+      "previousGeneratedAt": "2026-05-19T12:31:16Z",
+      "previousGeneratedAtUnix": 1779193876,
+      "changedWalletCount": 0,
       "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
-      "actionChangeCount": 3,
+      "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 1.0169999999999924,
-      "highlights": [
-        {
-          "type": "action_changed",
-          "walletLabel": "Haak",
-          "title": "Will the US confirm that aliens exist by May 31?",
-          "outcome": "YES",
-          "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-          "action": "reduce",
-          "previousAction": "sell",
-          "signalTitle": "Will the US confirm that aliens exist by May 31?"
-        },
-        {
-          "type": "action_changed",
-          "walletLabel": "Haak",
-          "title": "Strait of Hormuz traffic returns to normal by end of May?",
-          "outcome": "YES",
-          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-          "action": "reduce",
-          "previousAction": "sell",
-          "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-        },
-        {
-          "type": "action_changed",
-          "walletLabel": "Rose",
-          "title": "Strait of Hormuz traffic returns to normal by end of May?",
-          "outcome": "YES",
-          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-          "action": "reduce",
-          "previousAction": "sell",
-          "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-        }
-      ],
-      "wallets": [
-        {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": 1.1769999999999925,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 2,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 11,
-          "previousActionablePositionCount": 3,
-          "previousTotalCurrentValue": 71.0492,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Will the US confirm that aliens exist by May 31?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Will the US confirm that aliens exist by May 31?"
-            },
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Strait of Hormuz traffic returns to normal by end of May?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-            }
-          ]
-        },
-        {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": -0.16000000000000014,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 1,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 4,
-          "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 15.516300000000001,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Rose",
-              "title": "Strait of Hormuz traffic returns to normal by end of May?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-            }
-          ]
-        }
-      ]
+      "valueDeltaUSD": 0,
+      "highlights": [],
+      "wallets": []
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-19T12:31:17.764Z",
+      "generatedAt": "2026-05-19T13:06:47.381Z",
       "snapshotCount": 106,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-05-19T12:31:16Z",
@@ -13078,11 +12723,11 @@
             {
               "timestamp": "2026-05-19T11:57:39Z",
               "timestampUnix": 1779191859,
-              "currentValue": 9.8387,
-              "costBasisValue": 9.996754200000002,
-              "unrealizedPnL": -0.15805420000000225,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
               "realizedPnL": 0,
-              "openPositionCount": 1,
+              "openPositionCount": 0,
               "actionablePositionCount": 0
             },
             {
@@ -22726,11 +22371,11 @@
             {
               "timestamp": "2026-05-19T11:57:39Z",
               "timestampUnix": 1779191859,
-              "currentValue": 0,
-              "costBasisValue": 0,
-              "unrealizedPnL": 0,
+              "currentValue": 9.8387,
+              "costBasisValue": 9.996754200000002,
+              "unrealizedPnL": -0.15805420000000225,
               "realizedPnL": 0,
-              "openPositionCount": 0,
+              "openPositionCount": 1,
               "actionablePositionCount": 0
             },
             {
@@ -30234,7 +29879,7 @@
               "timestampUnix": 1779191859,
               "currentValue": 31.0784,
               "costBasisValue": 46.95595188,
-              "unrealizedPnL": -15.877551879999997,
+              "unrealizedPnL": -15.877551879999999,
               "realizedPnL": 0,
               "openPositionCount": 7,
               "actionablePositionCount": 3
@@ -37757,566 +37402,8 @@
         }
       ]
     },
-    "wallets": [
-      {
-        "actionablePositionCount": 3,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": 100.8074419999997,
-          "newestTimestamp": 1779183439,
-          "oldestTimestamp": 1774900241,
-          "redeemedUSD": 309.69881399999997,
-          "returnedUSD": 886.2799539999999,
-          "sampleCount": 196,
-          "sampleLimit": 200,
-          "soldUSD": 576.5361399999999,
-          "spentUSD": 785.4725120000002,
-          "yieldUSD": 0.045
-        },
-        "label": "Haak",
-        "lastActivityTimestamp": 1779183439,
-        "openPositionCount": 11,
-        "positions": [
-          {
-            "advice": {
-              "action": "reduce",
-              "actionLabel": "Reduce",
-              "isActionable": true,
-              "netScoreGap": 142.9149792,
-              "opposingScore": 142.9149792,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "other",
-                "confidence": 95,
-                "currentMarketPrice": 0.9865,
-                "daysToEnd": 13,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "will-the-us-confirm-that-aliens-exist-by-may-31|No",
-                "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-by-may-31",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "will-the-us-confirm-that-aliens-exist-by-may-31",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Will the US confirm that aliens exist by May 31?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 76437.24
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
-            "averageEntryPrice": 0.0265,
-            "currentPrice": 0.0135,
-            "currentValue": 3.5595,
-            "endDate": "2026-06-01T03:59:59Z",
-            "eventSlug": "will-the-us-confirm-that-aliens-exist-before-2027",
-            "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -49.1487,
-            "percentRealizedPnL": -49.1497,
-            "realizedPnL": 0,
-            "size": 263.6722,
-            "slug": "will-the-us-confirm-that-aliens-exist-by-may-31",
-            "title": "Will the US confirm that aliens exist by May 31?"
-          },
-          {
-            "advice": {
-              "action": "sell",
-              "actionLabel": "Sell",
-              "isActionable": true,
-              "netScoreGap": 143.46890720000002,
-              "opposingScore": 143.46890720000002,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "other",
-                "confidence": 95,
-                "currentMarketPrice": 0.9255,
-                "daysToEnd": 226,
-                "direction": "buy",
-                "horizon": "long_term",
-                "id": "will-china-invade-taiwan-before-2027|No",
-                "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "will-china-invade-taiwan-before-2027",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Will China invade Taiwan by end of 2026?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 58361.34
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0
-            },
-            "averageEntryPrice": 0.0629,
-            "currentPrice": 0.0745,
-            "currentValue": 3.5476,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "will-china-invade-taiwan-before-2027",
-            "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-            "outcome": "Yes",
-            "percentPnL": 18.2536,
-            "percentRealizedPnL": 18.2552,
-            "realizedPnL": 0,
-            "size": 47.619,
-            "slug": "will-china-invade-taiwan-before-2027",
-            "title": "Will China invade Taiwan by end of 2026?"
-          },
-          {
-            "advice": {
-              "action": "reduce",
-              "actionLabel": "Reduce",
-              "isActionable": true,
-              "netScoreGap": 140.269806898,
-              "opposingScore": 140.269806898,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "geopolitics",
-                "confidence": 94,
-                "currentMarketPrice": 0.949,
-                "daysToEnd": 12,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
-                "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Strait of Hormuz traffic returns to normal by end of May?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 55872.586225
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
-            "averageEntryPrice": 0.1,
-            "currentPrice": 0.0509,
-            "currentValue": 5.09,
-            "endDate": "2026-05-31T00:00:00Z",
-            "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "outcome": "Yes",
-            "percentPnL": -49.1,
-            "percentRealizedPnL": -49.1,
-            "realizedPnL": 0,
-            "size": 100,
-            "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?"
-          },
-          {
-            "advice": {
-              "action": "hold",
-              "actionLabel": "Keep",
-              "isActionable": false,
-              "netScoreGap": 188.8,
-              "opposingScore": 0,
-              "opposingSignalCount": 0,
-              "relation": "supports_held_position",
-              "relationLabel": "Supports current position",
-              "signal": {
-                "category": "sports",
-                "confidence": 95,
-                "currentMarketPrice": 0.305,
-                "daysToEnd": 1,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "nba-cle-nyk-2026-05-19|Cavaliers",
-                "marketURL": "https://polymarket.com/event/nba-cle-nyk-2026-05-19",
-                "outcome": "Cavaliers",
-                "severity": "red",
-                "slug": "nba-cle-nyk-2026-05-19",
-                "supportingExposureUSD": 0,
-                "take": "conviction",
-                "title": "Cavaliers vs. Knicks",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 463111
-              },
-              "supportingScore": 188.8,
-              "supportingSignalCount": 1,
-              "xgboostStance": "supports"
-            },
-            "averageEntryPrice": 0.3099,
-            "currentPrice": 0.305,
-            "currentValue": 9.8387,
-            "endDate": "2026-05-20T00:00:00Z",
-            "eventSlug": "nba-cle-nyk-2026-05-19",
-            "marketURL": "https://polymarket.com/event/nba-cle-nyk-2026-05-19",
-            "outcome": "Cavaliers",
-            "percentPnL": -1.612,
-            "percentRealizedPnL": -1.6126,
-            "realizedPnL": 0,
-            "size": 32.258,
-            "slug": "nba-cle-nyk-2026-05-19",
-            "title": "Cavaliers vs. Knicks"
-          },
-          {
-            "averageEntryPrice": 0.1719,
-            "currentPrice": 0.1665,
-            "currentValue": 16.65,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "2026-fifa-world-cup-winner-595",
-            "marketURL": "https://polymarket.com/event/2026-fifa-world-cup-winner-595",
-            "outcome": "Yes",
-            "percentPnL": -3.1976,
-            "percentRealizedPnL": -3.1976,
-            "realizedPnL": 0,
-            "size": 100,
-            "slug": "will-spain-win-the-2026-fifa-world-cup-963",
-            "title": "Will Spain win the 2026 FIFA World Cup?"
-          },
-          {
-            "averageEntryPrice": 0.0177,
-            "currentPrice": 0.0195,
-            "currentValue": 7.6777,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "outcome": "Yes",
-            "percentPnL": 9.6908,
-            "percentRealizedPnL": 9.6911,
-            "realizedPnL": 0,
-            "size": 393.7322,
-            "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?"
-          },
-          {
-            "averageEntryPrice": 0.0859,
-            "currentPrice": 0.0665,
-            "currentValue": 6.9593,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "hantavirus-pandemic-in-2026",
-            "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "outcome": "Yes",
-            "percentPnL": -22.6724,
-            "percentRealizedPnL": -22.6735,
-            "realizedPnL": 0,
-            "size": 104.6511,
-            "slug": "hantavirus-pandemic-in-2026",
-            "title": "Hantavirus pandemic in 2026?"
-          },
-          {
-            "averageEntryPrice": 0.1166,
-            "currentPrice": 0.061,
-            "currentValue": 6.2735,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "ukraine-signs-peace-deal-with-russia-by-june-30",
-            "marketURL": "https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-june-30",
-            "outcome": "Yes",
-            "percentPnL": -47.72,
-            "percentRealizedPnL": -47.7208,
-            "realizedPnL": 0,
-            "size": 102.8444,
-            "slug": "ukraine-signs-peace-deal-with-russia-by-june-30",
-            "title": "Ukraine signs peace deal with Russia by June 30?"
-          },
-          {
-            "averageEntryPrice": 0.08,
-            "currentPrice": 0.055,
-            "currentValue": 6.1875,
-            "endDate": "2026-06-30T18:30:00Z",
-            "eventSlug": "cl-hit-jun-2026",
-            "marketURL": "https://polymarket.com/event/cl-hit-jun-2026",
-            "outcome": "Yes",
-            "percentPnL": -31.25,
-            "percentRealizedPnL": -31.25,
-            "realizedPnL": 0,
-            "size": 112.5,
-            "slug": "will-crude-oil-cl-hit-high-175-by-end-of-june-456-295",
-            "title": "Will Crude Oil (CL) hit (HIGH) $175 by end of June?"
-          },
-          {
-            "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0429,
-            "currentValue": 4.1924,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "anthropic-acquired-before-2027",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -40.1074,
-            "percentRealizedPnL": -40.108,
-            "realizedPnL": 0,
-            "size": 97.725,
-            "slug": "anthropic-acquired-before-2027",
-            "title": "Anthropic acquired before 2027?"
-          },
-          {
-            "averageEntryPrice": 0.06,
-            "currentPrice": 0.045,
-            "currentValue": 2.25,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-the-iranian-regime-fall-by-june-30",
-            "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-            "outcome": "Yes",
-            "percentPnL": -25,
-            "percentRealizedPnL": -25,
-            "realizedPnL": 0,
-            "size": 50,
-            "slug": "will-the-iranian-regime-fall-by-june-30",
-            "title": "Will the Iranian regime fall by June 30?"
-          }
-        ],
-        "recentActivityCount": 3,
-        "totalCurrentValue": 72.22619999999999,
-        "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "delta": {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": 1.1769999999999925,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 2,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 11,
-          "previousActionablePositionCount": 3,
-          "previousTotalCurrentValue": 71.0492,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Will the US confirm that aliens exist by May 31?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Will the US confirm that aliens exist by May 31?"
-            },
-            {
-              "type": "action_changed",
-              "walletLabel": "Haak",
-              "title": "Strait of Hormuz traffic returns to normal by end of May?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-            }
-          ]
-        }
-      },
-      {
-        "actionablePositionCount": 1,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": 90.046355,
-          "newestTimestamp": 1779182863,
-          "oldestTimestamp": 1778509463,
-          "redeemedUSD": 221.81817999999998,
-          "returnedUSD": 221.81817999999998,
-          "sampleCount": 40,
-          "sampleLimit": 200,
-          "soldUSD": 0,
-          "spentUSD": 131.77182499999998,
-          "yieldUSD": 0
-        },
-        "label": "Rose",
-        "lastActivityTimestamp": 1779182863,
-        "openPositionCount": 4,
-        "positions": [
-          {
-            "advice": {
-              "action": "reduce",
-              "actionLabel": "Reduce",
-              "isActionable": true,
-              "netScoreGap": 140.269806898,
-              "opposingScore": 140.269806898,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "geopolitics",
-                "confidence": 94,
-                "currentMarketPrice": 0.949,
-                "daysToEnd": 12,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
-                "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Strait of Hormuz traffic returns to normal by end of May?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 55872.586225
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
-            "averageEntryPrice": 0.1,
-            "currentPrice": 0.0509,
-            "currentValue": 5.09,
-            "endDate": "2026-05-31T00:00:00Z",
-            "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "outcome": "Yes",
-            "percentPnL": -49.1,
-            "percentRealizedPnL": -49.1,
-            "realizedPnL": 0,
-            "size": 100,
-            "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?"
-          },
-          {
-            "advice": {
-              "action": "hold",
-              "actionLabel": "Keep",
-              "isActionable": false,
-              "netScoreGap": 145.25,
-              "opposingScore": 0,
-              "opposingSignalCount": 0,
-              "relation": "supports_held_position",
-              "relationLabel": "Supports current position",
-              "signal": {
-                "category": "other",
-                "confidence": 97,
-                "currentMarketPrice": 0.0325,
-                "daysToEnd": 13,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "will-wti-reach-140-in-may-2026-916|Yes",
-                "marketURL": "https://polymarket.com/event/will-wti-reach-140-in-may-2026-916",
-                "outcome": "Yes",
-                "severity": "yellow",
-                "slug": "will-wti-reach-140-in-may-2026-916",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?",
-                "uniqueTraderCount": 0,
-                "uniqueTransactionCount": 0,
-                "weightedFlowUSD": 15625
-              },
-              "supportingScore": 145.25,
-              "supportingSignalCount": 1,
-              "xgboostStance": "supports"
-            },
-            "averageEntryPrice": 0.037,
-            "currentPrice": 0.0325,
-            "currentValue": 3.5135,
-            "endDate": "2026-05-31T17:00:00Z",
-            "eventSlug": "what-price-will-wti-hit-in-may-2026",
-            "marketURL": "https://polymarket.com/event/what-price-will-wti-hit-in-may-2026",
-            "outcome": "Yes",
-            "percentPnL": -12.16,
-            "percentRealizedPnL": -12.1624,
-            "realizedPnL": 0,
-            "size": 108.1081,
-            "slug": "will-wti-reach-140-in-may-2026-916",
-            "title": "Will WTI Crude Oil (WTI) hit (HIGH) $140 in May?"
-          },
-          {
-            "averageEntryPrice": 0.0869,
-            "currentPrice": 0.0665,
-            "currentValue": 4.5862,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "hantavirus-pandemic-in-2026",
-            "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "outcome": "Yes",
-            "percentPnL": -23.5619,
-            "percentRealizedPnL": -23.5624,
-            "realizedPnL": 0,
-            "size": 68.9655,
-            "slug": "hantavirus-pandemic-in-2026",
-            "title": "Hantavirus pandemic in 2026?"
-          },
-          {
-            "averageEntryPrice": 0.018,
-            "currentPrice": 0.0195,
-            "currentValue": 2.1666,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "outcome": "Yes",
-            "percentPnL": 8.33,
-            "percentRealizedPnL": 8.33,
-            "realizedPnL": 0,
-            "size": 111.1111,
-            "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?"
-          }
-        ],
-        "recentActivityCount": 4,
-        "totalCurrentValue": 15.356300000000001,
-        "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "delta": {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": true,
-          "valueDeltaUSD": -0.16000000000000014,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 1,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 4,
-          "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 15.516300000000001,
-          "highlights": [
-            {
-              "type": "action_changed",
-              "walletLabel": "Rose",
-              "title": "Strait of Hormuz traffic returns to normal by end of May?",
-              "outcome": "YES",
-              "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-              "action": "reduce",
-              "previousAction": "sell",
-              "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?"
-            }
-          ]
-        }
-      }
-    ],
-    "actionMix": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 9
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 3
-      },
-      {
-        "key": "hold",
-        "label": "Keep",
-        "value": 2
-      },
-      {
-        "key": "sell",
-        "label": "Sell",
-        "value": 1
-      }
-    ]
+    "wallets": [],
+    "actionMix": []
   },
   "insider": {
     "available": true,
@@ -38541,7 +37628,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-19T12:31:16Z",
+    "generatedAt": "2026-05-19T13:06:46Z",
     "market": {
       "available": true,
       "summary": {
@@ -39604,28 +38691,7 @@
         "value": 1
       }
     ],
-    "walletActions": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 9
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 3
-      },
-      {
-        "key": "hold",
-        "label": "Keep",
-        "value": 2
-      },
-      {
-        "key": "sell",
-        "label": "Sell",
-        "value": 1
-      }
-    ],
+    "walletActions": [],
     "systemHealth": [
       {
         "label": "Market updated",
@@ -39633,7 +38699,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-05-19T12:31:16Z"
+        "value": "2026-05-19T13:06:46Z"
       },
       {
         "label": "Insider updated",
@@ -39653,7 +38719,7 @@
       },
       {
         "label": "Wallet actions",
-        "value": "4"
+        "value": "0"
       },
       {
         "label": "Bullish insider",
@@ -39933,33 +38999,8 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 72.22619999999999,
-      "items": [
-        {
-          "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "shortLabel": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 72.22619999999999,
-          "openPositionCount": 11,
-          "actionablePositionCount": 3,
-          "recentActivityCount": 3,
-          "lastActivityTimestamp": 1779183439
-        },
-        {
-          "id": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "shortLabel": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 15.356300000000001,
-          "openPositionCount": 4,
-          "actionablePositionCount": 1,
-          "recentActivityCount": 4,
-          "lastActivityTimestamp": 1779182863
-        }
-      ]
+      "maxValueUSD": 1,
+      "items": []
     },
     "insiderConviction": {
       "maxAbsTradeValueUSD": 13966000,
@@ -40053,16 +39094,16 @@
           "available": true,
           "generatedAt": "2026-05-19T12:31:14Z",
           "status": "live",
-          "reason": "Snapshot 3s old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live"
+          "reason": "Snapshot 35m old · 14 active · 25 snapshots · 5 built from 5 source candidate(s) · 1 suspicious wallet(s) · 22 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-19T12:31:16Z",
-          "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 15 open · 4 actionable · 2 live"
+          "generatedAt": "2026-05-19T13:06:46Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         {
           "id": "insider",
@@ -40071,16 +39112,16 @@
           "available": true,
           "generatedAt": "2026-05-19T12:28:57Z",
           "status": "live",
-          "reason": "11 live"
+          "reason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-19T12:31:18.572Z",
-          "status": "live",
-          "reason": "4 step(s) completed without pipeline issues."
+          "generatedAt": "2026-05-19T13:06:48.843Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
