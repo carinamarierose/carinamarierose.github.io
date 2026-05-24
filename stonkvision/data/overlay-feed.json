@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-24T13:06:39.526Z",
-  "generatedAtUnix": 1779627999,
+  "generatedAt": "2026-05-24T18:37:31.433Z",
+  "generatedAtUnix": 1779647851,
   "sync": {
-    "generatedAt": "2026-05-24T13:06:37Z",
-    "generatedAtUnix": 1779627997,
+    "generatedAt": "2026-05-24T18:37:28Z",
+    "generatedAtUnix": 1779647848,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-24T13:06:39.526Z",
-      "generatedAtUnix": 1779627999,
-      "runID": "run-2026-05-24T13-02-38-981Z-52713",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "generatedAt": "2026-05-24T18:37:31.433Z",
+      "generatedAtUnix": 1779647851,
+      "runID": "run-2026-05-24T18-37-14-940Z-55396",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-05-24T13:02:38.981Z",
-      "finishedAt": "2026-05-24T13:06:39.526Z",
-      "lastRunAt": "2026-05-24T13:06:39.526Z",
-      "durationSeconds": 240.545,
+      "startedAt": "2026-05-24T18:37:14.940Z",
+      "finishedAt": "2026-05-24T18:37:31.433Z",
+      "lastRunAt": "2026-05-24T18:37:31.433Z",
+      "durationSeconds": 16.493,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-05-24T13:36:39.526Z",
-      "lastSuccessAt": "2026-05-24T13:06:39.526Z",
-      "lastSuccessfulRunAt": "2026-05-24T13:06:39.526Z",
-      "lastFailureAt": "2026-05-22T23:15:10.530Z",
+      "nextRunAt": "2026-05-24T19:07:31.433Z",
+      "lastSuccessAt": "2026-05-24T13:07:22.858Z",
+      "lastSuccessfulRunAt": "2026-05-24T13:07:22.858Z",
+      "lastFailureAt": "2026-05-24T18:37:31.433Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-24T13:02:39.077Z",
-          "finishedAt": "2026-05-24T13:03:34.333Z",
-          "durationSeconds": 55.256,
+          "startedAt": "2026-05-24T18:37:15.091Z",
+          "finishedAt": "2026-05-24T18:37:21.440Z",
+          "durationSeconds": 6.349,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T13-02-38-981Z-52713/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T18-37-14-940Z-55396/insider.log",
+          "summary": "curl: (6) Could not resolve host: openinsider.com",
+          "error": "curl: (6) Could not resolve host: openinsider.com",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-24T13:03:34.333Z",
-          "lastFailureAt": "2026-05-22T14:39:47.320Z"
+          "lastFailureAt": "2026-05-24T18:37:21.440Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-24T13:03:34.334Z",
-          "finishedAt": "2026-05-24T13:06:33.746Z",
-          "durationSeconds": 179.412,
+          "startedAt": "2026-05-24T18:37:21.441Z",
+          "finishedAt": "2026-05-24T18:37:24.352Z",
+          "durationSeconds": 2.911,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T13-02-38-981Z-52713/market.log",
-          "summary": "Notification decisions: selected epl-wes-lee-2026-05-24-wes|Yes [global_window_open,urgent_suspicious] | blocked atp-etcheve-borges-2026-05-24|Tomas Etcheverry->notification_limit | nba-okc-sas-2026-05-24|Spurs->notification_limit | nba-okc-sas-2026-05-24-total-218pt5|Over->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T18-37-14-940Z-55396/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-24T13:06:33.746Z",
-          "lastFailureAt": "2026-05-22T22:44:09.365Z"
+          "lastFailureAt": "2026-05-24T18:37:24.352Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-24T13:06:33.747Z",
-          "finishedAt": "2026-05-24T13:06:37.019Z",
-          "durationSeconds": 3.272,
+          "startedAt": "2026-05-24T18:37:24.352Z",
+          "finishedAt": "2026-05-24T18:37:28.279Z",
+          "durationSeconds": 3.927,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T13-02-38-981Z-52713/wallets.log",
-          "summary": "Source diagnostics: 4 candidate(s) | built 4 | no-chase 0 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T18-37-14-940Z-55396/wallets.log",
+          "summary": "Loaded 12 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-24T13:06:37.019Z",
+          "lastSuccessAt": "2026-05-24T18:37:28.279Z",
           "lastFailureAt": "2026-05-22T23:14:33.181Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-24T13:06:37.019Z",
-          "finishedAt": "2026-05-24T13:06:39.500Z",
-          "durationSeconds": 2.481,
+          "startedAt": "2026-05-24T18:37:28.279Z",
+          "finishedAt": "2026-05-24T18:37:31.406Z",
+          "durationSeconds": 3.127,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T13-02-38-981Z-52713/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-24T18-37-14-940Z-55396/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-24T13:06:39.500Z",
+          "lastSuccessAt": "2026-05-24T18:37:31.406Z",
           "lastFailureAt": null
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-05-24T13:06:33Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "statusReason": "Snapshot 5h 30m old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-24T13:06:36Z",
-          "status": "live",
-          "statusReason": "Snapshot 1s old · 2 wallet(s) · 12 open · 3 actionable · 2 live"
+          "generatedAt": "2026-05-24T18:37:28Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-24T13:06:37Z",
+          "generatedAt": "2026-05-24T18:37:28Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-24T13:06:39.526Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "generatedAt": "2026-05-24T18:37:31.433Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-05-24T13:06:33Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "statusReason": "Snapshot 5h 30m old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-24T13:06:36Z",
-      "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 12 open · 3 actionable · 2 live",
+      "generatedAt": "2026-05-24T18:37:28Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 15 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (5h 30m old, max 15m).",
           "fetchedAt": "2026-05-24T13:06:33Z",
           "fetchedAtUnix": 1779627993,
           "attemptCount": 1,
           "eventCount": 15,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 19855,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 12 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-05-24T13:06:36Z",
+          "fetchedAtUnix": 1779627996,
+          "attemptCount": 1,
+          "eventCount": 12,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 19852,
           "retryAfterUnix": null
         },
         {
@@ -728,12 +748,12 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
-          "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 12 open position(s) and 3 actionable call(s).",
-          "fetchedAt": "2026-05-24T13:06:36Z",
-          "fetchedAtUnix": 1779627996,
-          "attemptCount": 2,
-          "eventCount": 12,
+          "status": "failed",
+          "message": "No watched wallet snapshots were loaded from the configured wallet list.",
+          "fetchedAt": "2026-05-24T18:37:28Z",
+          "fetchedAtUnix": 1779647848,
+          "attemptCount": 1,
+          "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-05-24T13:03:19Z",
       "status": "live",
-      "statusReason": "11 live",
+      "statusReason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "binance-futures",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-24T13:06:37Z",
+      "generatedAt": "2026-05-24T18:37:28Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,18 +1001,18 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-24T13:06:39.526Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "generatedAt": "2026-05-24T18:37:31.433Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
     "bestBetCount": 8,
-    "trackedWalletCount": 2,
-    "openPositionCount": 12,
-    "actionablePositionCount": 3,
+    "trackedWalletCount": 0,
+    "openPositionCount": 0,
+    "actionablePositionCount": 0,
     "insiderSignalCount": 14,
     "intelItemCount": 18,
     "sourceSignalCount": 1,
@@ -1008,8 +1028,8 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "Reduce YES on Strait of Hormuz traffic returns to normal by end of May?",
-      "body": "Strait of Hormuz traffic returns to normal by end of May? · opposes current position"
+      "title": "Waiting for wallet sync",
+      "body": "Rose and Haak will appear here when wallet-watcher exports portfolio data."
     },
     "insider": {
       "kicker": "Insider tape",
@@ -3972,286 +3992,32 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-05-24T13:06:36Z",
+    "generatedAt": "2026-05-24T18:37:28Z",
     "summary": {
-      "actionablePositionCount": 3,
-      "activityCash": {
-        "mayBeTruncated": true,
-        "netFlowUSD": -198.62708400000014,
-        "newestTimestamp": 1779581604,
-        "oldestTimestamp": 1775648535,
-        "redeemedUSD": 541.933659,
-        "returnedUSD": 886.614259,
-        "sampleCount": 263,
-        "sampleLimit": 400,
-        "soldUSD": 344.6231,
-        "spentUSD": 1085.2413430000001,
-        "yieldUSD": 0.057499999999999975
-      },
-      "openPositionCount": 12,
-      "totalCurrentValue": 59.720600000000005,
-      "walletCount": 2
+      "actionablePositionCount": 0,
+      "openPositionCount": 0,
+      "totalCurrentValue": 0,
+      "walletCount": 0
     },
-    "urgentAction": {
-      "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "walletLabel": "Haak",
-      "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "title": "Will the Iranian regime fall by June 30?",
-      "outcome": "YES",
-      "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-      "currentValue": 1.175,
-      "currentPrice": 0.0235,
-      "percentPnL": -60.8333,
-      "action": "sell",
-      "actionLabel": "Sell",
-      "isActionable": true,
-      "relationLabel": "Opposes current position",
-      "signalTitle": "Will the Iranian regime fall by June 30?",
-      "signalURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-      "signalConfidence": 95,
-      "supportingSignalCount": 0,
-      "opposingSignalCount": 1,
-      "netScoreGap": 156.4,
-      "daysToEnd": 37
-    },
-    "commandGroups": [
-      {
-        "key": "sell",
-        "label": "Sell",
-        "count": 1,
-        "actionableCount": 1,
-        "totalCurrentValue": 1.175,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will the Iranian regime fall by June 30?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-            "currentValue": 1.175,
-            "currentPrice": 0.0235,
-            "percentPnL": -60.8333,
-            "action": "sell",
-            "actionLabel": "Sell",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will the Iranian regime fall by June 30?",
-            "signalURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-            "signalConfidence": 95,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 156.4,
-            "daysToEnd": 37
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "count": 1,
-        "actionableCount": 1,
-        "totalCurrentValue": 9.15,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "currentValue": 9.15,
-            "currentPrice": 0.0915,
-            "percentPnL": -8.4989,
-            "action": "reduce",
-            "actionLabel": "Reduce",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Strait of Hormuz traffic returns to normal by end of May?",
-            "signalURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "signalConfidence": 95,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 151.6,
-            "daysToEnd": 7
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "buy_more",
-        "label": "Buy more",
-        "count": 1,
-        "actionableCount": 1,
-        "totalCurrentValue": 5.4941,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Hantavirus pandemic in 2026?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "currentValue": 5.4941,
-            "currentPrice": 0.0525,
-            "percentPnL": -38.9526,
-            "action": "buy_more",
-            "actionLabel": "Buy more",
-            "isActionable": true,
-            "relationLabel": "Supports current position",
-            "signalTitle": "Hantavirus pandemic in 2026?",
-            "signalURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "signalConfidence": 95,
-            "supportingSignalCount": 1,
-            "opposingSignalCount": 0,
-            "netScoreGap": 167.85029680000002,
-            "daysToEnd": 221
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 9,
-        "actionableCount": 0,
-        "totalCurrentValue": 43.9015,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Spain win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/2026-fifa-world-cup-winner-595",
-            "currentValue": 17.44,
-            "currentPrice": 0.1744,
-            "percentPnL": 1.3953,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "currentValue": 7.284,
-            "currentPrice": 0.0185,
-            "percentPnL": 4.066,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Ukraine signs peace deal with Russia by June 30?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-june-30",
-            "currentValue": 5.1422,
-            "currentPrice": 0.05,
-            "percentPnL": -57.1475,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          }
-        ],
-        "moreCount": 6
-      }
-    ],
+    "urgentAction": null,
+    "commandGroups": [],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-24T12:31:57Z",
-      "previousGeneratedAtUnix": 1779625917,
-      "changedWalletCount": 1,
-      "unchangedWalletCount": 1,
+      "previousGeneratedAt": "2026-05-24T13:06:36Z",
+      "previousGeneratedAtUnix": 1779627996,
+      "changedWalletCount": 0,
+      "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -2.8969000000000023,
-      "highlights": [
-        {
-          "type": "value_changed",
-          "walletLabel": "Haak",
-          "title": "Haak",
-          "marketURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "valueDeltaUSD": -2.8969000000000023
-        }
-      ],
-      "wallets": [
-        {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -2.8969000000000023,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 10,
-          "previousActionablePositionCount": 3,
-          "previousTotalCurrentValue": 60.76050000000001,
-          "highlights": []
-        },
-        {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 1.857,
-          "highlights": []
-        }
-      ]
+      "valueDeltaUSD": 0,
+      "highlights": [],
+      "wallets": []
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-24T13:06:38.370Z",
+      "generatedAt": "2026-05-24T18:37:30.160Z",
       "snapshotCount": 177,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-05-24T13:06:36Z",
@@ -66634,392 +66400,8 @@
         }
       ]
     },
-    "wallets": [
-      {
-        "actionablePositionCount": 3,
-        "activityCash": {
-          "mayBeTruncated": true,
-          "netFlowUSD": -138.9018370000001,
-          "newestTimestamp": 1779581467,
-          "oldestTimestamp": 1775648535,
-          "redeemedUSD": 309.69881399999997,
-          "returnedUSD": 645.239034,
-          "sampleCount": 200,
-          "sampleLimit": 200,
-          "soldUSD": 335.48422,
-          "spentUSD": 784.1408710000001,
-          "yieldUSD": 0.05599999999999997
-        },
-        "label": "Haak",
-        "lastActivityTimestamp": 1779581467,
-        "openPositionCount": 10,
-        "positions": [
-          {
-            "advice": {
-              "action": "reduce",
-              "actionLabel": "Reduce",
-              "isActionable": true,
-              "netScoreGap": 151.6,
-              "opposingScore": 151.6,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "geopolitics",
-                "confidence": 95,
-                "currentMarketPrice": 0.9085,
-                "daysToEnd": 7,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may|No",
-                "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Strait of Hormuz traffic returns to normal by end of May?",
-                "uniqueTraderCount": 2,
-                "uniqueTransactionCount": 2,
-                "weightedFlowUSD": 155519.32021099998
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
-            "averageEntryPrice": 0.1,
-            "currentPrice": 0.0915,
-            "currentValue": 9.15,
-            "endDate": "2026-05-31T00:00:00Z",
-            "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "outcome": "Yes",
-            "percentPnL": -8.4989,
-            "percentRealizedPnL": -8.4999,
-            "realizedPnL": 0,
-            "size": 100,
-            "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
-            "title": "Strait of Hormuz traffic returns to normal by end of May?"
-          },
-          {
-            "advice": {
-              "action": "buy_more",
-              "actionLabel": "Buy more",
-              "isActionable": true,
-              "netScoreGap": 167.85029680000002,
-              "opposingScore": 0,
-              "opposingSignalCount": 0,
-              "relation": "supports_held_position",
-              "relationLabel": "Supports current position",
-              "signal": {
-                "category": "other",
-                "confidence": 95,
-                "currentMarketPrice": 0.9475,
-                "daysToEnd": 221,
-                "direction": "sell",
-                "horizon": "long_term",
-                "id": "hantavirus-pandemic-in-2026|No",
-                "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-                "outcome": "No",
-                "severity": "red",
-                "slug": "hantavirus-pandemic-in-2026",
-                "supportingExposureUSD": 0,
-                "take": "conviction",
-                "title": "Hantavirus pandemic in 2026?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": -113128.71
-              },
-              "supportingScore": 167.85029680000002,
-              "supportingSignalCount": 1
-            },
-            "averageEntryPrice": 0.0859,
-            "currentPrice": 0.0525,
-            "currentValue": 5.4941,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "hantavirus-pandemic-in-2026",
-            "marketURL": "https://polymarket.com/event/hantavirus-pandemic-in-2026",
-            "outcome": "Yes",
-            "percentPnL": -38.9526,
-            "percentRealizedPnL": -38.9537,
-            "realizedPnL": 0,
-            "size": 104.6511,
-            "slug": "hantavirus-pandemic-in-2026",
-            "title": "Hantavirus pandemic in 2026?"
-          },
-          {
-            "advice": {
-              "action": "sell",
-              "actionLabel": "Sell",
-              "isActionable": true,
-              "netScoreGap": 156.4,
-              "opposingScore": 156.4,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "other",
-                "confidence": 95,
-                "currentMarketPrice": 0.9765,
-                "daysToEnd": 37,
-                "direction": "buy",
-                "horizon": "long_term",
-                "id": "will-the-iranian-regime-fall-by-june-30|No",
-                "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "will-the-iranian-regime-fall-by-june-30",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Will the Iranian regime fall by June 30?",
-                "uniqueTraderCount": 3,
-                "uniqueTransactionCount": 3,
-                "weightedFlowUSD": 194535.71
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0
-            },
-            "averageEntryPrice": 0.06,
-            "currentPrice": 0.0235,
-            "currentValue": 1.175,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-the-iranian-regime-fall-by-june-30",
-            "marketURL": "https://polymarket.com/event/will-the-iranian-regime-fall-by-june-30",
-            "outcome": "Yes",
-            "percentPnL": -60.8333,
-            "percentRealizedPnL": -60.8333,
-            "realizedPnL": 0,
-            "size": 50,
-            "slug": "will-the-iranian-regime-fall-by-june-30",
-            "title": "Will the Iranian regime fall by June 30?"
-          },
-          {
-            "averageEntryPrice": 0.1719,
-            "currentPrice": 0.1744,
-            "currentValue": 17.44,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "2026-fifa-world-cup-winner-595",
-            "marketURL": "https://polymarket.com/event/2026-fifa-world-cup-winner-595",
-            "outcome": "Yes",
-            "percentPnL": 1.3953,
-            "percentRealizedPnL": 1.3953,
-            "realizedPnL": 0,
-            "size": 100,
-            "slug": "will-spain-win-the-2026-fifa-world-cup-963",
-            "title": "Will Spain win the 2026 FIFA World Cup?"
-          },
-          {
-            "averageEntryPrice": 0.0177,
-            "currentPrice": 0.0185,
-            "currentValue": 7.284,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "will-russia-capture-all-of-donetsk-oblast-by",
-            "marketURL": "https://polymarket.com/event/will-russia-capture-all-of-donetsk-oblast-by",
-            "outcome": "Yes",
-            "percentPnL": 4.066,
-            "percentRealizedPnL": 4.0663,
-            "realizedPnL": 0,
-            "size": 393.7322,
-            "slug": "will-russia-capture-all-of-donetsk-oblast-by-june-30-2026",
-            "title": "Will Russia capture all of Donetsk Oblast by June 30, 2026?"
-          },
-          {
-            "averageEntryPrice": 0.1166,
-            "currentPrice": 0.05,
-            "currentValue": 5.1422,
-            "endDate": "2026-06-30T00:00:00Z",
-            "eventSlug": "ukraine-signs-peace-deal-with-russia-by-june-30",
-            "marketURL": "https://polymarket.com/event/ukraine-signs-peace-deal-with-russia-by-june-30",
-            "outcome": "Yes",
-            "percentPnL": -57.1475,
-            "percentRealizedPnL": -57.1483,
-            "realizedPnL": 0,
-            "size": 102.8444,
-            "slug": "ukraine-signs-peace-deal-with-russia-by-june-30",
-            "title": "Ukraine signs peace deal with Russia by June 30?"
-          },
-          {
-            "averageEntryPrice": 0.0716,
-            "currentPrice": 0.042,
-            "currentValue": 4.1044,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "anthropic-acquired-before-2027",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -41.3646,
-            "percentRealizedPnL": -41.3652,
-            "realizedPnL": 0,
-            "size": 97.725,
-            "slug": "anthropic-acquired-before-2027",
-            "title": "Anthropic acquired before 2027?"
-          },
-          {
-            "averageEntryPrice": 0.0629,
-            "currentPrice": 0.0745,
-            "currentValue": 3.5476,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "will-china-invade-taiwan-before-2027",
-            "marketURL": "https://polymarket.com/event/will-china-invade-taiwan-before-2027",
-            "outcome": "Yes",
-            "percentPnL": 18.2536,
-            "percentRealizedPnL": 18.2552,
-            "realizedPnL": 0,
-            "size": 47.619,
-            "slug": "will-china-invade-taiwan-before-2027",
-            "title": "Will China invade Taiwan by end of 2026?"
-          },
-          {
-            "averageEntryPrice": 0.08,
-            "currentPrice": 0.025,
-            "currentValue": 2.8125,
-            "endDate": "2026-06-30T18:30:00Z",
-            "eventSlug": "cl-hit-jun-2026",
-            "marketURL": "https://polymarket.com/event/cl-hit-jun-2026",
-            "outcome": "Yes",
-            "percentPnL": -68.75,
-            "percentRealizedPnL": -68.75,
-            "realizedPnL": 0,
-            "size": 112.5,
-            "slug": "will-crude-oil-cl-hit-high-175-by-end-of-june-456-295",
-            "title": "Will Crude Oil (CL) hit (HIGH) $175 by end of June?"
-          },
-          {
-            "averageEntryPrice": 0.0265,
-            "currentPrice": 0.0065,
-            "currentValue": 1.7138,
-            "endDate": "2026-06-01T03:59:59Z",
-            "eventSlug": "will-the-us-confirm-that-aliens-exist-before-2027",
-            "marketURL": "https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -75.516,
-            "percentRealizedPnL": -75.517,
-            "realizedPnL": 0,
-            "size": 263.6722,
-            "slug": "will-the-us-confirm-that-aliens-exist-by-may-31",
-            "title": "Will the US confirm that aliens exist by May 31?"
-          }
-        ],
-        "recentActivityCount": 1,
-        "totalCurrentValue": 57.863600000000005,
-        "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "delta": {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -2.8969000000000023,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 10,
-          "previousActionablePositionCount": 3,
-          "previousTotalCurrentValue": 60.76050000000001,
-          "highlights": []
-        }
-      },
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": -59.725247000000024,
-          "newestTimestamp": 1779581604,
-          "oldestTimestamp": 1778509463,
-          "redeemedUSD": 232.234845,
-          "returnedUSD": 241.375225,
-          "sampleCount": 63,
-          "sampleLimit": 200,
-          "soldUSD": 9.13888,
-          "spentUSD": 301.100472,
-          "yieldUSD": 0.0015
-        },
-        "label": "Rose",
-        "lastActivityTimestamp": 1779581604,
-        "openPositionCount": 2,
-        "positions": [
-          {
-            "averageEntryPrice": 0.0069,
-            "currentPrice": 0.0065,
-            "currentValue": 0.9285,
-            "endDate": "2028-11-07T00:00:00Z",
-            "eventSlug": "democratic-presidential-nominee-2028",
-            "marketURL": "https://polymarket.com/event/democratic-presidential-nominee-2028",
-            "outcome": "Yes",
-            "percentPnL": -7.131,
-            "percentRealizedPnL": -7.1367,
-            "realizedPnL": 0,
-            "size": 142.8571,
-            "slug": "will-person-a-win-the-2028-democratic-presidential-nomination",
-            "title": "Will Hunter Biden win the 2028 Democratic presidential nomination?"
-          },
-          {
-            "averageEntryPrice": 0.0069,
-            "currentPrice": 0.0065,
-            "currentValue": 0.9285,
-            "endDate": "2028-11-07T00:00:00Z",
-            "eventSlug": "democratic-presidential-nominee-2028",
-            "marketURL": "https://polymarket.com/event/democratic-presidential-nominee-2028",
-            "outcome": "Yes",
-            "percentPnL": -7.131,
-            "percentRealizedPnL": -7.1367,
-            "realizedPnL": 0,
-            "size": 142.8571,
-            "slug": "will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-            "title": "Will Jasmine Crockett win the 2028 Democratic presidential nomination?"
-          }
-        ],
-        "recentActivityCount": 1,
-        "totalCurrentValue": 1.857,
-        "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "delta": {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 1.857,
-          "highlights": []
-        }
-      }
-    ],
-    "actionMix": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 9
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 1
-      },
-      {
-        "key": "buy_more",
-        "label": "Buy more",
-        "value": 1
-      },
-      {
-        "key": "sell",
-        "label": "Sell",
-        "value": 1
-      }
-    ]
+    "wallets": [],
+    "actionMix": []
   },
   "insider": {
     "available": true,
@@ -67242,7 +66624,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-24T13:06:37Z",
+    "generatedAt": "2026-05-24T18:37:28Z",
     "market": {
       "available": true,
       "summary": {
@@ -68300,28 +67682,7 @@
         "value": 1
       }
     ],
-    "walletActions": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 9
-      },
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 1
-      },
-      {
-        "key": "buy_more",
-        "label": "Buy more",
-        "value": 1
-      },
-      {
-        "key": "sell",
-        "label": "Sell",
-        "value": 1
-      }
-    ],
+    "walletActions": [],
     "systemHealth": [
       {
         "label": "Market updated",
@@ -68329,7 +67690,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-05-24T13:06:36Z"
+        "value": "2026-05-24T18:37:28Z"
       },
       {
         "label": "Insider updated",
@@ -68349,7 +67710,7 @@
       },
       {
         "label": "Wallet actions",
-        "value": "3"
+        "value": "0"
       },
       {
         "label": "Bullish insider",
@@ -68629,33 +67990,8 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 57.863600000000005,
-      "items": [
-        {
-          "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "shortLabel": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 57.863600000000005,
-          "openPositionCount": 10,
-          "actionablePositionCount": 3,
-          "recentActivityCount": 1,
-          "lastActivityTimestamp": 1779581467
-        },
-        {
-          "id": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "shortLabel": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 1.857,
-          "openPositionCount": 2,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 1,
-          "lastActivityTimestamp": 1779581604
-        }
-      ]
+      "maxValueUSD": 1,
+      "items": []
     },
     "insiderConviction": {
       "maxAbsTradeValueUSD": 23076690,
@@ -68749,16 +68085,16 @@
           "available": true,
           "generatedAt": "2026-05-24T13:06:33Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "reason": "Snapshot 5h 30m old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-24T13:06:36Z",
-          "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 12 open · 3 actionable · 2 live"
+          "generatedAt": "2026-05-24T18:37:28Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         {
           "id": "insider",
@@ -68767,16 +68103,16 @@
           "available": true,
           "generatedAt": "2026-05-24T13:03:19Z",
           "status": "live",
-          "reason": "11 live"
+          "reason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-24T13:06:39.526Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 4s old · 15 active · 25 snapshots · 4 built from 4 source candidate(s) · 2 suspicious wallet(s) · 7 live · 1 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1779629438 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "generatedAt": "2026-05-24T18:37:31.433Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
