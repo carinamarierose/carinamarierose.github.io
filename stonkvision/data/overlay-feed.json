@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-28T10:51:07.537Z",
-  "generatedAtUnix": 1779965467,
+  "generatedAt": "2026-05-28T15:44:22.707Z",
+  "generatedAtUnix": 1779983062,
   "sync": {
-    "generatedAt": "2026-05-28T10:51:05Z",
-    "generatedAtUnix": 1779965465,
+    "generatedAt": "2026-05-28T15:44:19Z",
+    "generatedAtUnix": 1779983059,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,77 +12,77 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-05-28T10:51:07.537Z",
-      "generatedAtUnix": 1779965467,
-      "runID": "run-2026-05-28T10-48-08-715Z-72998",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)",
+      "generatedAt": "2026-05-28T15:44:22.707Z",
+      "generatedAtUnix": 1779983062,
+      "runID": "run-2026-05-28T15-11-48-213Z-79074",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-05-28T10:48:08.715Z",
-      "finishedAt": "2026-05-28T10:51:07.537Z",
-      "lastRunAt": "2026-05-28T10:51:07.537Z",
-      "durationSeconds": 178.822,
+      "startedAt": "2026-05-28T15:11:48.213Z",
+      "finishedAt": "2026-05-28T15:44:22.707Z",
+      "lastRunAt": "2026-05-28T15:44:22.707Z",
+      "durationSeconds": 1954.494,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-05-28T11:21:07.537Z",
-      "lastSuccessAt": "2026-05-28T10:51:07.537Z",
-      "lastSuccessfulRunAt": "2026-05-28T10:51:07.537Z",
-      "lastFailureAt": "2026-05-27T23:10:42.334Z",
+      "nextRunAt": "2026-05-28T16:14:22.707Z",
+      "lastSuccessAt": "2026-05-28T10:51:49.542Z",
+      "lastSuccessfulRunAt": "2026-05-28T10:51:49.542Z",
+      "lastFailureAt": "2026-05-28T15:44:22.707Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-28T10:48:08.789Z",
-          "finishedAt": "2026-05-28T10:48:39.720Z",
-          "durationSeconds": 30.931,
+          "startedAt": "2026-05-28T15:11:48.311Z",
+          "finishedAt": "2026-05-28T15:28:49.301Z",
+          "durationSeconds": 1020.99,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T10-48-08-715Z-72998/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T15-11-48-213Z-79074/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-28T10:48:39.720Z",
-          "lastFailureAt": "2026-05-27T15:01:23.870Z"
+          "lastFailureAt": "2026-05-28T15:28:49.301Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-28T10:48:39.721Z",
-          "finishedAt": "2026-05-28T10:51:00.527Z",
-          "durationSeconds": 140.806,
+          "startedAt": "2026-05-28T15:28:49.303Z",
+          "finishedAt": "2026-05-28T15:28:51.701Z",
+          "durationSeconds": 2.398,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T10-48-08-715Z-72998/market.log",
-          "summary": "Notification decisions: selected nba-okc-sas-2026-05-28|Spurs [global_window_open,urgent_suspicious] | blocked bitcoin-above-74k-on-may-29-2026|No->notification_limit | us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192-799-449-125|No->notification_limit | will-the-ecb-announce-no-change-at-the-june-2026-meeting|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T15-11-48-213Z-79074/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-05-28T10:51:00.527Z",
-          "lastFailureAt": "2026-05-27T22:22:46.358Z"
+          "lastFailureAt": "2026-05-28T15:28:51.701Z"
         },
         {
           "id": "wallets",
           "title": "Refreshing wallet_watcher from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-28T10:51:00.528Z",
-          "finishedAt": "2026-05-28T10:51:04.989Z",
-          "durationSeconds": 4.461,
+          "startedAt": "2026-05-28T15:28:51.702Z",
+          "finishedAt": "2026-05-28T15:44:19.620Z",
+          "durationSeconds": 927.918,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T10-48-08-715Z-72998/wallets.log",
-          "summary": "Source diagnostics: 11 candidate(s) | built 8 | no-chase 3 | no-market 0",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T15-11-48-213Z-79074/wallets.log",
+          "summary": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-05-28T10:51:04.989Z",
-          "lastFailureAt": "2026-05-27T22:38:24.784Z"
+          "lastFailureAt": "2026-05-28T15:44:19.620Z"
         },
         {
           "id": "sync",
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-05-28T10:51:04.989Z",
-          "finishedAt": "2026-05-28T10:51:07.508Z",
-          "durationSeconds": 2.519,
+          "startedAt": "2026-05-28T15:44:19.620Z",
+          "finishedAt": "2026-05-28T15:44:22.680Z",
+          "durationSeconds": 3.06,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T10-48-08-715Z-72998/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-05-28T15-11-48-213Z-79074/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-05-28T10:51:07.508Z",
+          "lastSuccessAt": "2026-05-28T15:44:22.680Z",
           "lastFailureAt": "2026-05-27T22:54:05.623Z"
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-05-28T10:51:00Z",
           "status": "degraded",
-          "statusReason": "Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)"
+          "statusReason": "Snapshot 4h 53m old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)"
         },
         "wallets": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-05-28T10:51:04Z",
           "status": "live",
-          "statusReason": "Snapshot 1s old · 2 wallet(s) · 12 open · 2 actionable · 2 live"
+          "statusReason": "Snapshot 4h 53m old · 2 wallet(s) · 12 open · 2 actionable · 2 live"
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-28T10:51:05Z",
+          "generatedAt": "2026-05-28T15:44:19Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-05-28T10:51:07.537Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)"
+          "generatedAt": "2026-05-28T15:44:22.707Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-05-28T10:51:00Z",
       "status": "degraded",
-      "statusReason": "Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)",
+      "statusReason": "Snapshot 4h 53m old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -697,7 +697,7 @@
       "synced": true,
       "generatedAt": "2026-05-28T10:51:04Z",
       "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 12 open · 2 actionable · 2 live",
+      "statusReason": "Snapshot 4h 53m old · 2 wallet(s) · 12 open · 2 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -746,7 +746,7 @@
       "synced": true,
       "generatedAt": "2026-05-28T10:48:24Z",
       "status": "live",
-      "statusReason": "11 live",
+      "statusReason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "binance-futures",
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-28T10:51:05Z",
+      "generatedAt": "2026-05-28T15:44:19Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +981,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-05-28T10:51:07.537Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)",
+      "generatedAt": "2026-05-28T15:44:22.707Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -2523,10 +2523,10 @@
       "items": [
         {
           "day": "2026-05-14",
-          "enabledRuns": 7,
-          "scoredRows": 20,
+          "enabledRuns": 4,
+          "scoredRows": 13,
           "supportCount": 2,
-          "skepticalCount": 12,
+          "skepticalCount": 8,
           "topKDisagreementCount": 0,
           "promotedCount": 0,
           "displacedCount": 0
@@ -4331,15 +4331,15 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-28T10:17:16Z",
-      "previousGeneratedAtUnix": 1779963436,
+      "previousGeneratedAt": "2026-05-28T10:51:04Z",
+      "previousGeneratedAtUnix": 1779965464,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -0.048799999999999955,
+      "valueDeltaUSD": 0,
       "highlights": [],
       "wallets": [
         {
@@ -4349,7 +4349,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.048799999999999955,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -4358,7 +4358,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 10,
           "previousActionablePositionCount": 2,
-          "previousTotalCurrentValue": 47.07260000000001,
+          "previousTotalCurrentValue": 47.02380000000001,
           "highlights": []
         },
         {
@@ -4384,7 +4384,7 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-05-28T10:51:06.346Z",
+      "generatedAt": "2026-05-28T15:44:21.513Z",
       "snapshotCount": 210,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-05-28T10:51:04Z",
@@ -78561,7 +78561,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.048799999999999955,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -78570,7 +78570,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 10,
           "previousActionablePositionCount": 2,
-          "previousTotalCurrentValue": 47.07260000000001,
+          "previousTotalCurrentValue": 47.02380000000001,
           "highlights": []
         }
       },
@@ -78888,7 +78888,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-05-28T10:51:05Z",
+    "generatedAt": "2026-05-28T15:44:19Z",
     "market": {
       "available": true,
       "summary": {
@@ -80390,7 +80390,7 @@
           "available": true,
           "generatedAt": "2026-05-28T10:51:00Z",
           "status": "stale",
-          "reason": "Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)"
+          "reason": "Snapshot 4h 53m old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
@@ -80399,7 +80399,7 @@
           "available": true,
           "generatedAt": "2026-05-28T10:51:04Z",
           "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 12 open · 2 actionable · 2 live"
+          "reason": "Snapshot 4h 53m old · 2 wallet(s) · 12 open · 2 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "insider",
@@ -80408,16 +80408,16 @@
           "available": true,
           "generatedAt": "2026-05-28T10:48:24Z",
           "status": "live",
-          "reason": "11 live"
+          "reason": "11 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-05-28T10:51:07.537Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded. Snapshot 5s old · 18 active · 25 snapshots · 8 built from 11 source candidate(s) · 20 live · 2 stale cache. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (1 item(s)) (34m old)"
+          "generatedAt": "2026-05-28T15:44:22.707Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)"
         }
       ]
     }
