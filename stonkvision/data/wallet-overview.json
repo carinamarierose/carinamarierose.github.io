@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 8600,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 11,
       "fetchedAt" : "2026-05-31T14:19:24Z",
       "fetchedAtUnix" : 1780237164,
-      "message" : "Loaded 11 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (2h 23m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 8596,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 5,
+      "fetchedAt" : "2026-05-31T14:19:28Z",
+      "fetchedAtUnix" : 1780237168,
+      "message" : "Using cached wallet watcher feed with 5 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 14,
-      "fetchedAt" : "2026-05-31T14:19:28Z",
-      "fetchedAtUnix" : 1780237168,
+      "fetchedAt" : "2026-05-31T16:42:45Z",
+      "fetchedAtUnix" : 1780245765,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 14 open position(s) and 2 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-05-31T14:19:28Z",
-  "generatedAtUnix" : 1780237168,
+  "generatedAt" : "2026-05-31T16:42:45Z",
+  "generatedAtUnix" : 1780245765,
   "summary" : {
     "actionablePositionCount" : 2,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.0839
     },
     "openPositionCount" : 14,
-    "totalCurrentValue" : 67.1033,
+    "totalCurrentValue" : 67.715,
     "walletCount" : 2
   },
   "wallets" : [
@@ -89,14 +106,14 @@
         },
         {
           "averageEntryPrice" : 0.1049,
-          "currentPrice" : 0.1405,
-          "currentValue" : 16.0571,
+          "currentPrice" : 0.1285,
+          "currentValue" : 14.6857,
           "endDate" : "2026-06-07T00:00:00Z",
           "eventSlug" : "2026-mens-french-open-winner",
           "marketURL" : "https:\/\/polymarket.com\/event\/2026-mens-french-open-winner",
           "outcome" : "Yes",
-          "percentPnL" : 33.8103,
-          "percentRealizedPnL" : 33.8104,
+          "percentPnL" : 22.3818,
+          "percentRealizedPnL" : 22.382,
           "realizedPnL" : 0,
           "size" : 114.2857,
           "slug" : "will-casper-ruud-win-the-2026-mens-french-open",
@@ -119,11 +136,11 @@
         },
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 143.20000000000002,
-            "opposingScore" : 143.20000000000002,
+            "netScoreGap" : 148.20000000000002,
+            "opposingScore" : 148.20000000000002,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -147,8 +164,7 @@
               "weightedFlowUSD" : 80000
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.12,
           "currentPrice" : 0.115,
@@ -163,6 +179,21 @@
           "size" : 50,
           "slug" : "us-x-iran-permanent-peace-deal-by-june-7-2026",
           "title" : "US x Iran permanent peace deal by June 7, 2026?"
+        },
+        {
+          "averageEntryPrice" : 0.0716,
+          "currentPrice" : 0.0585,
+          "currentValue" : 5.7169,
+          "endDate" : "2026-12-31T00:00:00Z",
+          "eventSlug" : "anthropic-acquired-before-2027",
+          "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
+          "outcome" : "Yes",
+          "percentPnL" : -18.3287,
+          "percentRealizedPnL" : -18.3293,
+          "realizedPnL" : 0,
+          "size" : 97.725,
+          "slug" : "anthropic-acquired-before-2027",
+          "title" : "Anthropic acquired before 2027?"
         },
         {
           "averageEntryPrice" : 0.0177,
@@ -181,33 +212,18 @@
         },
         {
           "averageEntryPrice" : 0.1166,
-          "currentPrice" : 0.035,
-          "currentValue" : 3.5995,
+          "currentPrice" : 0.0335,
+          "currentValue" : 3.4452,
           "endDate" : "2026-06-30T00:00:00Z",
           "eventSlug" : "ukraine-signs-peace-deal-with-russia-by-june-30",
           "marketURL" : "https:\/\/polymarket.com\/event\/ukraine-signs-peace-deal-with-russia-by-june-30",
           "outcome" : "Yes",
-          "percentPnL" : -70.0033,
-          "percentRealizedPnL" : -70.0041,
+          "percentPnL" : -71.2891,
+          "percentRealizedPnL" : -71.2899,
           "realizedPnL" : 0,
           "size" : 102.8444,
           "slug" : "ukraine-signs-peace-deal-with-russia-by-june-30",
           "title" : "Ukraine signs peace deal with Russia by June 30?"
-        },
-        {
-          "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.035,
-          "currentValue" : 3.4203,
-          "endDate" : "2026-12-31T00:00:00Z",
-          "eventSlug" : "anthropic-acquired-before-2027",
-          "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
-          "outcome" : "Yes",
-          "percentPnL" : -51.1375,
-          "percentRealizedPnL" : -51.1381,
-          "realizedPnL" : 0,
-          "size" : 97.725,
-          "slug" : "anthropic-acquired-before-2027",
-          "title" : "Anthropic acquired before 2027?"
         },
         {
           "averageEntryPrice" : 0.0629,
@@ -226,11 +242,11 @@
         },
         {
           "advice" : {
-            "action" : "reduce",
-            "actionLabel" : "Reduce",
+            "action" : "sell",
+            "actionLabel" : "Sell",
             "isActionable" : true,
-            "netScoreGap" : 148.6789496,
-            "opposingScore" : 148.6789496,
+            "netScoreGap" : 153.6789496,
+            "opposingScore" : 153.6789496,
             "opposingSignalCount" : 1,
             "relation" : "opposes_held_position",
             "relationLabel" : "Opposes current position",
@@ -254,18 +270,17 @@
               "weightedFlowUSD" : 85986.87
             },
             "supportingScore" : 0,
-            "supportingSignalCount" : 0,
-            "xgboostStance" : "skeptical"
+            "supportingSignalCount" : 0
           },
           "averageEntryPrice" : 0.1399,
-          "currentPrice" : 0.0125,
-          "currentValue" : 2.6785,
+          "currentPrice" : 0.0115,
+          "currentValue" : 2.4642,
           "endDate" : "2026-06-01T03:59:59Z",
           "eventSlug" : "us-x-iran-permanent-peace-deal-by",
           "marketURL" : "https:\/\/polymarket.com\/event\/us-x-iran-permanent-peace-deal-by",
           "outcome" : "Yes",
-          "percentPnL" : -91.0713,
-          "percentRealizedPnL" : -91.0716,
+          "percentPnL" : -91.7856,
+          "percentRealizedPnL" : -91.7859,
           "realizedPnL" : 0,
           "size" : 214.2857,
           "slug" : "us-x-iran-permanent-peace-deal-by-may-31-2026-333-871-241-192-799-449-125",
@@ -288,14 +303,14 @@
         },
         {
           "averageEntryPrice" : 0.06,
-          "currentPrice" : 0.0214,
-          "currentValue" : 1.0699,
+          "currentPrice" : 0.0225,
+          "currentValue" : 1.125,
           "endDate" : "2026-06-30T00:00:00Z",
           "eventSlug" : "will-the-iranian-regime-fall-by-june-30",
           "marketURL" : "https:\/\/polymarket.com\/event\/will-the-iranian-regime-fall-by-june-30",
           "outcome" : "Yes",
-          "percentPnL" : -64.3366,
-          "percentRealizedPnL" : -64.3366,
+          "percentPnL" : -62.5,
+          "percentRealizedPnL" : -62.5,
           "realizedPnL" : 0,
           "size" : 50,
           "slug" : "will-the-iranian-regime-fall-by-june-30",
@@ -317,8 +332,8 @@
           "title" : "Will the US confirm that aliens exist by May 31?"
         }
       ],
-      "recentActivityCount" : 3,
-      "totalCurrentValue" : 65.2463,
+      "recentActivityCount" : 2,
+      "totalCurrentValue" : 65.858,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
