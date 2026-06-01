@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-01T05:47:20.463Z",
-  "generatedAtUnix": 1780292840,
+  "generatedAt": "2026-06-01T06:22:23.568Z",
+  "generatedAtUnix": 1780294943,
   "sync": {
-    "generatedAt": "2026-06-01T05:47:16Z",
-    "generatedAtUnix": 1780292836,
+    "generatedAt": "2026-06-01T06:22:20Z",
+    "generatedAtUnix": 1780294940,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,43 +12,43 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-06-01T05:47:20.463Z",
-      "generatedAtUnix": 1780292840,
-      "runID": "run-2026-06-01T05-45-58-497Z-61622",
+      "generatedAt": "2026-06-01T06:22:23.568Z",
+      "generatedAtUnix": 1780294943,
+      "runID": "run-2026-06-01T06-22-07-667Z-63574",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source.",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-06-01T05:45:58.497Z",
-      "finishedAt": "2026-06-01T05:47:20.463Z",
-      "lastRunAt": "2026-06-01T05:47:20.463Z",
-      "durationSeconds": 81.966,
+      "startedAt": "2026-06-01T06:22:07.667Z",
+      "finishedAt": "2026-06-01T06:22:23.568Z",
+      "lastRunAt": "2026-06-01T06:22:23.568Z",
+      "durationSeconds": 15.901,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-06-01T06:17:20.463Z",
+      "nextRunAt": "2026-06-01T06:52:23.568Z",
       "lastSuccessAt": "2026-05-31T18:02:31.109Z",
       "lastSuccessfulRunAt": "2026-05-31T18:02:31.109Z",
-      "lastFailureAt": "2026-06-01T05:47:20.463Z",
+      "lastFailureAt": "2026-06-01T06:22:23.568Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-01T05:45:58.858Z",
-          "finishedAt": "2026-06-01T05:47:09.828Z",
-          "durationSeconds": 70.97,
+          "startedAt": "2026-06-01T06:22:07.729Z",
+          "finishedAt": "2026-06-01T06:22:13.643Z",
+          "durationSeconds": 5.914,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T05-45-58-497Z-61622/insider.log",
-          "summary": "Telegram query polling failed: The Internet connection appears to be offline.",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T06-22-07-667Z-63574/insider.log",
+          "summary": "curl: (6) Could not resolve host: openinsider.com",
+          "error": "curl: (6) Could not resolve host: openinsider.com",
+          "exitCode": 1,
           "lastSuccessAt": "2026-06-01T05:47:09.828Z",
-          "lastFailureAt": "2026-05-31T06:08:56.782Z"
+          "lastFailureAt": "2026-06-01T06:22:13.643Z"
         },
         {
           "id": "market",
@@ -56,16 +56,16 @@
           "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-01T05:47:09.829Z",
-          "finishedAt": "2026-06-01T05:47:12.792Z",
-          "durationSeconds": 2.963,
+          "startedAt": "2026-06-01T06:22:13.643Z",
+          "finishedAt": "2026-06-01T06:22:16.190Z",
+          "durationSeconds": 2.547,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T05-45-58-497Z-61622/market.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T06-22-07-667Z-63574/market.log",
           "summary": "Error: The Internet connection appears to be offline.",
           "error": "Error: The Internet connection appears to be offline.",
           "exitCode": 1,
           "lastSuccessAt": "2026-05-31T18:01:41.405Z",
-          "lastFailureAt": "2026-06-01T05:47:12.792Z"
+          "lastFailureAt": "2026-06-01T06:22:16.190Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-01T05:47:12.792Z",
-          "finishedAt": "2026-06-01T05:47:16.872Z",
-          "durationSeconds": 4.08,
+          "startedAt": "2026-06-01T06:22:16.190Z",
+          "finishedAt": "2026-06-01T06:22:20.117Z",
+          "durationSeconds": 3.927,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T05-45-58-497Z-61622/wallets.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T06-22-07-667Z-63574/wallets.log",
           "summary": "Loaded 7 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-01T05:47:16.872Z",
+          "lastSuccessAt": "2026-06-01T06:22:20.117Z",
           "lastFailureAt": "2026-05-28T15:44:19.620Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-01T05:47:16.872Z",
-          "finishedAt": "2026-06-01T05:47:20.427Z",
-          "durationSeconds": 3.555,
+          "startedAt": "2026-06-01T06:22:20.117Z",
+          "finishedAt": "2026-06-01T06:22:23.533Z",
+          "durationSeconds": 3.416,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T05-45-58-497Z-61622/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-01T06-22-07-667Z-63574/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-01T05:47:20.427Z",
+          "lastSuccessAt": "2026-06-01T06:22:23.533Z",
           "lastFailureAt": "2026-05-27T22:54:05.623Z"
         }
       ],
@@ -108,12 +108,12 @@
           "synced": true,
           "generatedAt": "2026-05-31T18:01:41Z",
           "status": "degraded",
-          "statusReason": "Snapshot 11h 45m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 12h 20m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-01T05:47:16Z",
+          "generatedAt": "2026-06-01T06:22:20Z",
           "status": "degraded",
           "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-01T05:47:16Z",
+          "generatedAt": "2026-06-01T06:22:20Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-01T05:47:20.463Z",
+          "generatedAt": "2026-06-01T06:22:23.568Z",
           "status": "failed",
-          "statusReason": "Failed step(s): Refreshing market-trans from source."
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-05-31T18:01:41Z",
       "status": "degraded",
-      "statusReason": "Snapshot 11h 45m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "statusReason": "Snapshot 12h 20m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,7 +695,7 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-01T05:47:16Z",
+      "generatedAt": "2026-06-01T06:22:20Z",
       "status": "degraded",
       "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
@@ -709,14 +709,14 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "cached",
-          "message": "Market intel snapshot is stale (11h 45m old, max 15m).",
+          "message": "Market intel snapshot is stale (12h 20m old, max 15m).",
           "fetchedAt": "2026-05-31T18:01:41Z",
           "fetchedAtUnix": 1780250501,
           "attemptCount": 1,
           "eventCount": 17,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 42335,
+          "cacheAgeSeconds": 44439,
           "retryAfterUnix": null
         },
         {
@@ -730,13 +730,13 @@
           "adapter": "signal_feed_cache",
           "status": "cached",
           "message": "Using cached wallet watcher feed with 7 signal(s) while market intel recovers.",
-          "fetchedAt": "2026-05-31T18:01:45Z",
-          "fetchedAtUnix": 1780250505,
+          "fetchedAt": "2026-06-01T05:47:16Z",
+          "fetchedAtUnix": 1780292836,
           "attemptCount": 1,
           "eventCount": 7,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 42331,
+          "cacheAgeSeconds": 2104,
           "retryAfterUnix": null
         },
         {
@@ -750,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "failed",
           "message": "No watched wallet snapshots were loaded from the configured wallet list.",
-          "fetchedAt": "2026-06-01T05:47:16Z",
-          "fetchedAtUnix": 1780292836,
+          "fetchedAt": "2026-06-01T06:22:20Z",
+          "fetchedAtUnix": 1780294940,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -766,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-06-01T05:47:09Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x88d323d20 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x88d323d20 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "gdelt-market-news",
@@ -993,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-01T05:47:16Z",
+      "generatedAt": "2026-06-01T06:22:20Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -1001,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-01T05:47:20.463Z",
+      "generatedAt": "2026-06-01T06:22:23.568Z",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -4184,7 +4184,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-06-01T05:47:16Z",
+    "generatedAt": "2026-06-01T06:22:20Z",
     "summary": {
       "actionablePositionCount": 0,
       "openPositionCount": 0,
@@ -4194,9 +4194,9 @@
     "urgentAction": null,
     "commandGroups": [],
     "diff": {
-      "hasPrevious": true,
-      "previousGeneratedAt": "2026-05-31T18:01:45Z",
-      "previousGeneratedAtUnix": 1780250505,
+      "hasPrevious": false,
+      "previousGeneratedAt": null,
+      "previousGeneratedAtUnix": null,
       "changedWalletCount": 0,
       "unchangedWalletCount": 0,
       "newPositionCount": 0,
@@ -4209,7 +4209,7 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-06-01T05:47:19.182Z",
+      "generatedAt": "2026-06-01T06:22:22.146Z",
       "snapshotCount": 248,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-05-31T18:01:45Z",
@@ -78985,7 +78985,7 @@
           "label": "Geopolitics",
           "latestCurrentValue": 20.1996,
           "latestCostBasisValue": 60.934521509999996,
-          "latestUnrealizedPnL": -40.73492150999999,
+          "latestUnrealizedPnL": -40.73492151,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 6,
           "latestActionablePositionCount": 1,
@@ -81465,7 +81465,7 @@
               "timestampUnix": 1780250505,
               "currentValue": 20.1996,
               "costBasisValue": 60.934521509999996,
-              "unrealizedPnL": -40.73492150999999,
+              "unrealizedPnL": -40.73492151,
               "realizedPnL": 0,
               "openPositionCount": 6,
               "actionablePositionCount": 1
@@ -101613,7 +101613,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-06-01T05:47:16Z",
+    "generatedAt": "2026-06-01T06:22:20Z",
     "market": {
       "available": true,
       "summary": {
@@ -102674,7 +102674,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-06-01T05:47:16Z"
+        "value": "2026-06-01T06:22:20Z"
       },
       {
         "label": "Insider updated",
@@ -103069,14 +103069,14 @@
           "available": true,
           "generatedAt": "2026-05-31T18:01:41Z",
           "status": "stale",
-          "reason": "Snapshot 11h 45m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "reason": "Snapshot 12h 20m old · 17 active · 25 snapshots · 5 built from 10 source candidate(s) · 1 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-01T05:47:16Z",
+          "generatedAt": "2026-06-01T06:22:20Z",
           "status": "stale",
           "reason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
@@ -103087,16 +103087,16 @@
           "available": true,
           "generatedAt": "2026-06-01T05:47:09Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x88d323d20 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s)."
+          "reason": "6 live · 5 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x88d323d20 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <CB360F0D-AAFA-4944-80D0-37A2545C98FB>.<29>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-01T05:47:20.463Z",
+          "generatedAt": "2026-06-01T06:22:23.568Z",
           "status": "stale",
-          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
