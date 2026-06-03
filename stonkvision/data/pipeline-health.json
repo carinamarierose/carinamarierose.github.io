@@ -1,25 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-02T16:18:47.496Z",
-  "generatedAtUnix": 1780417127,
-  "runID": "run-2026-06-02T15-35-21-286Z-25233",
+  "generatedAt": "2026-06-03T01:48:47.493Z",
+  "generatedAtUnix": 1780451327,
+  "runID": "run-2026-06-03T01-18-00-428Z-35905",
   "status": "failed",
   "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
   "scope": "full",
   "scopeReason": null,
-  "startedAt": "2026-06-02T15:35:21.286Z",
-  "finishedAt": "2026-06-02T16:18:47.496Z",
-  "lastRunAt": "2026-06-02T16:18:47.496Z",
-  "durationSeconds": 2606.21,
+  "startedAt": "2026-06-03T01:18:00.428Z",
+  "finishedAt": "2026-06-03T01:48:47.493Z",
+  "lastRunAt": "2026-06-03T01:48:47.493Z",
+  "durationSeconds": 1847.065,
   "publishRequested": true,
   "publishEnabled": true,
   "pushLiveRequested": true,
   "pushLiveEnabled": true,
   "intervalSeconds": 1800,
-  "nextRunAt": "2026-06-02T16:48:47.496Z",
+  "nextRunAt": "2026-06-03T02:18:47.493Z",
   "lastSuccessAt": "2026-06-01T12:29:11.010Z",
   "lastSuccessfulRunAt": "2026-06-01T12:29:11.010Z",
-  "lastFailureAt": "2026-06-02T16:18:47.496Z",
+  "lastFailureAt": "2026-06-03T01:48:47.493Z",
   "steps": [
     {
       "id": "insider",
@@ -27,16 +27,16 @@
       "status": "failed",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-06-02T15:35:21.386Z",
-      "finishedAt": "2026-06-02T15:52:29.718Z",
-      "durationSeconds": 1028.332,
+      "startedAt": "2026-06-03T01:18:00.523Z",
+      "finishedAt": "2026-06-03T01:35:42.764Z",
+      "durationSeconds": 1062.241,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-02T15-35-21-286Z-25233/insider.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-03T01-18-00-428Z-35905/insider.log",
       "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
       "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
       "exitCode": 124,
       "lastSuccessAt": "2026-06-02T10:30:50.954Z",
-      "lastFailureAt": "2026-06-02T15:52:29.718Z"
+      "lastFailureAt": "2026-06-03T01:35:42.764Z"
     },
     {
       "id": "market",
@@ -44,16 +44,16 @@
       "status": "failed",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-06-02T15:52:29.728Z",
-      "finishedAt": "2026-06-02T16:18:39.879Z",
-      "durationSeconds": 1570.151,
+      "startedAt": "2026-06-03T01:35:42.770Z",
+      "finishedAt": "2026-06-03T01:48:40.353Z",
+      "durationSeconds": 777.583,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-02T15-35-21-286Z-25233/market.log",
-      "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
-      "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
-      "exitCode": 124,
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-03T01-18-00-428Z-35905/market.log",
+      "summary": "Error: The request timed out.",
+      "error": "Error: The request timed out.",
+      "exitCode": 1,
       "lastSuccessAt": "2026-06-01T12:28:01.786Z",
-      "lastFailureAt": "2026-06-02T16:18:39.879Z"
+      "lastFailureAt": "2026-06-03T01:48:40.353Z"
     },
     {
       "id": "wallets",
@@ -61,15 +61,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-06-02T16:18:39.879Z",
-      "finishedAt": "2026-06-02T16:18:43.485Z",
-      "durationSeconds": 3.606,
+      "startedAt": "2026-06-03T01:48:40.353Z",
+      "finishedAt": "2026-06-03T01:48:43.829Z",
+      "durationSeconds": 3.476,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-02T15-35-21-286Z-25233/wallets.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-03T01-18-00-428Z-35905/wallets.log",
       "summary": "Loaded 9 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-06-02T16:18:43.485Z",
+      "lastSuccessAt": "2026-06-03T01:48:43.829Z",
       "lastFailureAt": "2026-06-02T03:42:10.823Z"
     },
     {
@@ -78,15 +78,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-06-02T16:18:43.485Z",
-      "finishedAt": "2026-06-02T16:18:47.452Z",
-      "durationSeconds": 3.967,
+      "startedAt": "2026-06-03T01:48:43.830Z",
+      "finishedAt": "2026-06-03T01:48:47.452Z",
+      "durationSeconds": 3.622,
       "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-02T15-35-21-286Z-25233/sync.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-03T01-18-00-428Z-35905/sync.log",
       "summary": "Built overlay-feed.json",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-06-02T16:18:47.452Z",
+      "lastSuccessAt": "2026-06-03T01:48:47.452Z",
       "lastFailureAt": "2026-05-27T22:54:05.623Z"
     }
   ],
@@ -96,33 +96,33 @@
       "synced": true,
       "generatedAt": "2026-06-01T12:28:01Z",
       "status": "degraded",
-      "statusReason": "Snapshot 27h 50m old · 14 active · 25 snapshots · 5 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1780317192 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (2d 9h old), skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown."
+      "statusReason": "Snapshot 37h 20m old · 14 active · 25 snapshots · 5 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1780317192 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (2d 9h old), skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown."
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-02T16:18:43Z",
+      "generatedAt": "2026-06-03T01:48:43Z",
       "status": "degraded",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 10 open · 1 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (27h 50m old, max 15m). (27h 50m old)"
+      "statusReason": "Snapshot 0s old · 2 wallet(s) · 10 open · 1 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (37h 20m old, max 15m). (37h 20m old)"
     },
     "insider": {
       "available": true,
       "synced": true,
       "generatedAt": "2026-06-02T10:27:44Z",
       "status": "degraded",
-      "statusReason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (0 matching item(s), 22h 1m old). (22h 1m old)"
+      "statusReason": "10 live · 1 stale cache. GDELT Market News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (0 matching item(s), 22h 1m old). (22h 1m old) · Latest pipeline run failed this step and the last successful data is still being shown."
     },
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-02T16:18:43Z",
+      "generatedAt": "2026-06-03T01:48:43Z",
       "status": "live",
       "statusReason": null
     },
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-02T16:18:47.496Z",
+      "generatedAt": "2026-06-03T01:48:47.493Z",
       "status": "failed",
       "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
     }
