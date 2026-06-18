@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-17T13:09:08.192Z",
-  "generatedAtUnix": 1781701748,
+  "generatedAt": "2026-06-18T01:10:12.526Z",
+  "generatedAtUnix": 1781745012,
   "sync": {
-    "generatedAt": "2026-06-17T13:09:05Z",
-    "generatedAtUnix": 1781701745,
+    "generatedAt": "2026-06-18T01:10:07Z",
+    "generatedAtUnix": 1781745007,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,26 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-06-17T13:09:08.192Z",
-      "generatedAtUnix": 1781701748,
-      "runID": "run-2026-06-17T13-05-34-245Z-22694",
+      "generatedAt": "2026-06-18T01:10:12.526Z",
+      "generatedAtUnix": 1781745012,
+      "runID": "run-2026-06-18T00-19-25-191Z-27877",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing etoro-bot from source.",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-06-17T13:05:34.245Z",
-      "finishedAt": "2026-06-17T13:09:08.192Z",
-      "lastRunAt": "2026-06-17T13:09:08.192Z",
-      "durationSeconds": 213.947,
+      "startedAt": "2026-06-18T00:19:25.191Z",
+      "finishedAt": "2026-06-18T01:10:12.526Z",
+      "lastRunAt": "2026-06-18T01:10:12.526Z",
+      "durationSeconds": 3047.335,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-06-17T13:39:08.192Z",
+      "nextRunAt": "2026-06-18T01:40:12.526Z",
       "lastSuccessAt": "2026-06-17T12:32:17.530Z",
       "lastSuccessfulRunAt": "2026-06-17T12:32:17.530Z",
-      "lastFailureAt": "2026-06-17T13:09:08.192Z",
+      "lastFailureAt": "2026-06-18T01:10:12.526Z",
       "steps": [
         {
           "id": "insider",
@@ -39,50 +39,50 @@
           "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-17T13:05:34.334Z",
-          "finishedAt": "2026-06-17T13:06:35.911Z",
-          "durationSeconds": 61.577,
+          "startedAt": "2026-06-18T00:19:25.283Z",
+          "finishedAt": "2026-06-18T00:36:01.112Z",
+          "durationSeconds": 995.829,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-17T13-05-34-245Z-22694/insider.log",
-          "summary": "), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=http://openinsider.com/latest-insider-trading, NSErrorFailingURLKey=http://openinsider.com/latest-insider-trading, _kCFStreamErrorDomainKey=4}",
-          "error": "), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=http://openinsider.com/latest-insider-trading, NSErrorFailingURLKey=http://openinsider.com/latest-insider-trading, _kCFStreamErrorDomainKey=4}",
-          "exitCode": 1,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-18T00-19-25-191Z-27877/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-17T12:26:24.431Z",
-          "lastFailureAt": "2026-06-17T13:06:35.911Z"
+          "lastFailureAt": "2026-06-18T00:36:01.112Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-17T13:06:35.912Z",
-          "finishedAt": "2026-06-17T13:09:01.850Z",
-          "durationSeconds": 145.938,
+          "startedAt": "2026-06-18T00:36:01.113Z",
+          "finishedAt": "2026-06-18T00:52:18.002Z",
+          "durationSeconds": 976.889,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-17T13-05-34-245Z-22694/market.log",
-          "summary": "Notification decisions: selected fifwc-prt-cdr-2026-06-17-spread-home-1pt5|Portugal [global_window_open,urgent_suspicious] | blocked fifwc-uzb-col-2026-06-17-total-2pt5|Under->notification_limit | fifwc-gha-pan-2026-06-17-gha|No->notification_limit | bitcoin-above-66k-on-june-17-2026|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-18T00-19-25-191Z-27877/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-17T13:09:01.850Z",
-          "lastFailureAt": "2026-06-05T21:47:40.917Z"
+          "lastFailureAt": "2026-06-18T00:52:18.002Z"
         },
         {
           "id": "wallets",
           "title": "Refreshing wallet_watcher from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-17T13:09:01.850Z",
-          "finishedAt": "2026-06-17T13:09:05.082Z",
-          "durationSeconds": 3.232,
+          "startedAt": "2026-06-18T00:52:18.003Z",
+          "finishedAt": "2026-06-18T01:10:07.661Z",
+          "durationSeconds": 1069.658,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-17T13-05-34-245Z-22694/wallets.log",
-          "summary": "Source diagnostics: 8 candidate(s) | built 4 | no-chase 4 | no-market 0",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-18T00-19-25-191Z-27877/wallets.log",
+          "summary": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-17T13:09:05.082Z",
-          "lastFailureAt": "2026-06-02T03:42:10.823Z"
+          "lastFailureAt": "2026-06-18T01:10:07.661Z"
         },
         {
           "id": "sync",
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-17T13:09:05.083Z",
-          "finishedAt": "2026-06-17T13:09:08.148Z",
-          "durationSeconds": 3.065,
+          "startedAt": "2026-06-18T01:10:07.661Z",
+          "finishedAt": "2026-06-18T01:10:12.426Z",
+          "durationSeconds": 4.765,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-17T13-05-34-245Z-22694/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-18T00-19-25-191Z-27877/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-17T13:09:08.148Z",
+          "lastSuccessAt": "2026-06-18T01:10:12.426Z",
           "lastFailureAt": "2026-05-27T22:54:05.623Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-06-17T13:09:01Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old)"
+          "statusReason": "Snapshot 12h 1m old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old)"
         },
         "wallets": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-06-17T13:09:05Z",
           "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 4 open · 0 actionable · 2 live"
+          "statusReason": "Snapshot 12h 1m old · 2 wallet(s) · 4 open · 0 actionable · 2 live"
         },
         "insider": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-06-17T12:26:09Z",
           "status": "degraded",
-          "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+          "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-17T13:09:05Z",
+          "generatedAt": "2026-06-18T01:10:07Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-17T13:09:08.192Z",
+          "generatedAt": "2026-06-18T01:10:12.526Z",
           "status": "failed",
-          "statusReason": "Failed step(s): Refreshing etoro-bot from source."
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-06-17T13:09:01Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old)",
+      "statusReason": "Snapshot 12h 1m old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old) · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -697,7 +697,7 @@
       "synced": true,
       "generatedAt": "2026-06-17T13:09:05Z",
       "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 4 open · 0 actionable · 2 live",
+      "statusReason": "Snapshot 12h 1m old · 2 wallet(s) · 4 open · 0 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-17T13:09:05Z",
+      "generatedAt": "2026-06-18T01:10:07Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +981,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-17T13:09:08.192Z",
+      "generatedAt": "2026-06-18T01:10:12.526Z",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -2365,16 +2365,6 @@
       "maxSupportOrSkeptical": 76,
       "items": [
         {
-          "day": "2026-06-03",
-          "enabledRuns": 5,
-          "scoredRows": 49,
-          "supportCount": 15,
-          "skepticalCount": 20,
-          "topKDisagreementCount": 34,
-          "promotedCount": 0,
-          "displacedCount": 0
-        },
-        {
           "day": "2026-06-04",
           "enabledRuns": 13,
           "scoredRows": 121,
@@ -3364,8 +3354,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-06-17T12:31:13Z",
-      "previousGeneratedAtUnix": 1781699473,
+      "previousGeneratedAt": "2026-06-17T13:09:05Z",
+      "previousGeneratedAtUnix": 1781701745,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3417,7 +3407,7 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-06-17T13:09:07.042Z",
+      "generatedAt": "2026-06-18T01:10:11.111Z",
       "snapshotCount": 295,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-06-17T13:09:05Z",
@@ -137098,7 +137088,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-06-17T13:09:05Z",
+    "generatedAt": "2026-06-18T01:10:07Z",
     "market": {
       "available": true,
       "summary": {
@@ -138585,7 +138575,7 @@
           "available": true,
           "generatedAt": "2026-06-17T13:09:01Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old)"
+          "reason": "Snapshot 12h 1m old · 14 active · 25 snapshots · 4 built from 8 source candidate(s) · 20 live · 2 failed. GDELT Crypto News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (12d old) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
@@ -138594,7 +138584,7 @@
           "available": true,
           "generatedAt": "2026-06-17T13:09:05Z",
           "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 4 open · 0 actionable · 2 live"
+          "reason": "Snapshot 12h 1m old · 2 wallet(s) · 4 open · 0 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "insider",
@@ -138610,9 +138600,9 @@
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-17T13:09:08.192Z",
+          "generatedAt": "2026-06-18T01:10:12.526Z",
           "status": "stale",
-          "reason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)"
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)"
         }
       ]
     }
