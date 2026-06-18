@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 19080,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 14,
       "fetchedAt" : "2026-06-18T12:20:30Z",
       "fetchedAtUnix" : 1781785230,
-      "message" : "Loaded 14 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (5h 18m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 19077,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 9,
+      "fetchedAt" : "2026-06-18T12:20:33Z",
+      "fetchedAtUnix" : 1781785233,
+      "message" : "Using cached wallet watcher feed with 9 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 3,
-      "fetchedAt" : "2026-06-18T12:20:33Z",
-      "fetchedAtUnix" : 1781785233,
+      "fetchedAt" : "2026-06-18T17:38:30Z",
+      "fetchedAtUnix" : 1781804310,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-06-18T12:20:33Z",
-  "generatedAtUnix" : 1781785233,
+  "generatedAt" : "2026-06-18T17:38:30Z",
+  "generatedAtUnix" : 1781804310,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.11100000000000002
     },
     "openPositionCount" : 3,
-    "totalCurrentValue" : 9.584399999999999,
+    "totalCurrentValue" : 9.486699999999999,
     "walletCount" : 2
   },
   "wallets" : [
@@ -74,14 +91,14 @@
       "positions" : [
         {
           "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.0475,
-          "currentValue" : 4.6419,
+          "currentPrice" : 0.0465,
+          "currentValue" : 4.5442,
           "endDate" : "2026-12-31T00:00:00Z",
           "eventSlug" : "anthropic-acquired-before-2027",
           "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
           "outcome" : "Yes",
-          "percentPnL" : -33.6859,
-          "percentRealizedPnL" : -33.6866,
+          "percentPnL" : -35.0817,
+          "percentRealizedPnL" : -35.0823,
           "realizedPnL" : 0,
           "size" : 97.725,
           "slug" : "anthropic-acquired-before-2027",
@@ -118,8 +135,8 @@
           "title" : "Will Netherlands win the 2026 FIFA World Cup?"
         }
       ],
-      "recentActivityCount" : 3,
-      "totalCurrentValue" : 9.584399999999999,
+      "recentActivityCount" : 2,
+      "totalCurrentValue" : 9.486699999999999,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
