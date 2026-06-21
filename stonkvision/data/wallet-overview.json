@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 82397,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 17,
       "fetchedAt" : "2026-06-20T09:58:26Z",
       "fetchedAtUnix" : 1781949506,
-      "message" : "Loaded 17 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (22h 53m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 82393,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 10,
+      "fetchedAt" : "2026-06-20T09:58:30Z",
+      "fetchedAtUnix" : 1781949510,
+      "message" : "Using cached wallet watcher feed with 10 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 3,
-      "fetchedAt" : "2026-06-20T09:58:30Z",
-      "fetchedAtUnix" : 1781949510,
+      "fetchedAt" : "2026-06-21T08:51:44Z",
+      "fetchedAtUnix" : 1782031904,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,25 +48,25 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-06-20T09:58:30Z",
-  "generatedAtUnix" : 1781949510,
+  "generatedAt" : "2026-06-21T08:51:44Z",
+  "generatedAtUnix" : 1782031904,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
       "mayBeTruncated" : true,
-      "netFlowUSD" : -108.66528900000006,
-      "newestTimestamp" : 1781914709,
+      "netFlowUSD" : -108.66398900000007,
+      "newestTimestamp" : 1782001033,
       "oldestTimestamp" : 1778005974,
       "redeemedUSD" : 519.089614,
-      "returnedUSD" : 846.799334,
-      "sampleCount" : 295,
+      "returnedUSD" : 846.8006340000001,
+      "sampleCount" : 296,
       "sampleLimit" : 400,
       "soldUSD" : 327.59612000000004,
       "spentUSD" : 955.4646230000001,
-      "yieldUSD" : 0.1136
+      "yieldUSD" : 0.1149
     },
     "openPositionCount" : 3,
-    "totalCurrentValue" : 10.6474,
+    "totalCurrentValue" : 9.6441,
     "walletCount" : 2
   },
   "wallets" : [
@@ -74,18 +91,33 @@
       "positions" : [
         {
           "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.0605,
-          "currentValue" : 5.9123,
+          "currentPrice" : 0.04,
+          "currentValue" : 3.909,
           "endDate" : "2026-12-31T00:00:00Z",
           "eventSlug" : "anthropic-acquired-before-2027",
           "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
           "outcome" : "Yes",
-          "percentPnL" : -15.5372,
-          "percentRealizedPnL" : -15.5378,
+          "percentPnL" : -44.156,
+          "percentRealizedPnL" : -44.1566,
           "realizedPnL" : 0,
           "size" : 97.725,
           "slug" : "anthropic-acquired-before-2027",
           "title" : "Anthropic acquired before 2027?"
+        },
+        {
+          "averageEntryPrice" : 0.0449,
+          "currentPrice" : 0.0575,
+          "currentValue" : 3.1944,
+          "endDate" : "2026-07-20T00:00:00Z",
+          "eventSlug" : "world-cup-winner",
+          "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
+          "outcome" : "Yes",
+          "percentPnL" : 27.7766,
+          "percentRealizedPnL" : 27.7788,
+          "realizedPnL" : 0,
+          "size" : 55.5555,
+          "slug" : "will-netherlands-win-the-2026-fifa-world-cup-739",
+          "title" : "Will Netherlands win the 2026 FIFA World Cup?"
         },
         {
           "averageEntryPrice" : 0.0269,
@@ -101,25 +133,10 @@
           "size" : 103.7037,
           "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
           "title" : "Will Norway win the 2026 FIFA World Cup?"
-        },
-        {
-          "averageEntryPrice" : 0.0449,
-          "currentPrice" : 0.0395,
-          "currentValue" : 2.1944,
-          "endDate" : "2026-07-20T00:00:00Z",
-          "eventSlug" : "world-cup-winner",
-          "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
-          "outcome" : "Yes",
-          "percentPnL" : -12.2202,
-          "percentRealizedPnL" : -12.222,
-          "realizedPnL" : 0,
-          "size" : 55.5555,
-          "slug" : "will-netherlands-win-the-2026-fifa-world-cup-739",
-          "title" : "Will Netherlands win the 2026 FIFA World Cup?"
         }
       ],
       "recentActivityCount" : 0,
-      "totalCurrentValue" : 10.6474,
+      "totalCurrentValue" : 9.6441,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
@@ -127,19 +144,19 @@
       "actionablePositionCount" : 0,
       "activityCash" : {
         "mayBeTruncated" : false,
-        "netFlowUSD" : -64.88515299999997,
-        "newestTimestamp" : 1781914709,
+        "netFlowUSD" : -64.88385299999999,
+        "newestTimestamp" : 1782001033,
         "oldestTimestamp" : 1778509463,
         "redeemedUSD" : 232.234845,
-        "returnedUSD" : 241.41332500000001,
-        "sampleCount" : 95,
+        "returnedUSD" : 241.414625,
+        "sampleCount" : 96,
         "sampleLimit" : 200,
         "soldUSD" : 9.13888,
         "spentUSD" : 306.298478,
-        "yieldUSD" : 0.039599999999999996
+        "yieldUSD" : 0.04089999999999999
       },
       "label" : "Rose",
-      "lastActivityTimestamp" : 1781914709,
+      "lastActivityTimestamp" : 1782001033,
       "openPositionCount" : 0,
       "positions" : [
 
