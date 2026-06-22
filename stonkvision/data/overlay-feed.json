@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-21T16:28:57.209Z",
-  "generatedAtUnix": 1782059337,
+  "generatedAt": "2026-06-22T05:58:18.438Z",
+  "generatedAtUnix": 1782107898,
   "sync": {
-    "generatedAt": "2026-06-21T16:28:53Z",
-    "generatedAtUnix": 1782059333,
+    "generatedAt": "2026-06-22T05:58:15Z",
+    "generatedAtUnix": 1782107895,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,77 +12,77 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-06-21T16:28:57.209Z",
-      "generatedAtUnix": 1782059337,
-      "runID": "run-2026-06-21T16-24-42-561Z-48340",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-22T05:58:18.438Z",
+      "generatedAtUnix": 1782107898,
+      "runID": "run-2026-06-22T05-00-53-792Z-53874",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-06-21T16:24:42.561Z",
-      "finishedAt": "2026-06-21T16:28:57.209Z",
-      "lastRunAt": "2026-06-21T16:28:57.209Z",
-      "durationSeconds": 254.648,
+      "startedAt": "2026-06-22T05:00:53.792Z",
+      "finishedAt": "2026-06-22T05:58:18.438Z",
+      "lastRunAt": "2026-06-22T05:58:18.438Z",
+      "durationSeconds": 3444.646,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-06-21T16:58:57.209Z",
-      "lastSuccessAt": "2026-06-21T16:28:57.209Z",
-      "lastSuccessfulRunAt": "2026-06-21T16:28:57.209Z",
-      "lastFailureAt": "2026-06-21T12:29:21.309Z",
+      "nextRunAt": "2026-06-22T06:28:18.438Z",
+      "lastSuccessAt": "2026-06-21T16:29:41.316Z",
+      "lastSuccessfulRunAt": "2026-06-21T16:29:41.316Z",
+      "lastFailureAt": "2026-06-22T05:58:18.438Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-21T16:24:42.658Z",
-          "finishedAt": "2026-06-21T16:25:47.644Z",
-          "durationSeconds": 64.986,
+          "startedAt": "2026-06-22T05:00:53.879Z",
+          "finishedAt": "2026-06-22T05:27:36.846Z",
+          "durationSeconds": 1602.967,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-21T16-24-42-561Z-48340/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-22T05-00-53-792Z-53874/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
           "exitCode": 0,
           "lastSuccessAt": "2026-06-21T16:25:47.644Z",
-          "lastFailureAt": "2026-06-21T12:29:01.591Z"
+          "lastFailureAt": "2026-06-22T05:27:36.846Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-21T16:25:47.645Z",
-          "finishedAt": "2026-06-21T16:28:48.944Z",
-          "durationSeconds": 181.299,
+          "startedAt": "2026-06-22T05:27:36.847Z",
+          "finishedAt": "2026-06-22T05:43:14.879Z",
+          "durationSeconds": 938.032,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-21T16-24-42-561Z-48340/market.log",
-          "summary": "Notification decisions: selected fifwc-bel-irn-2026-06-21-spread-home-1pt5|IR Iran [global_window_open,urgent_suspicious] | blocked fifwc-ury-cvi-2026-06-21-spread-home-1pt5|Cabo Verde->notification_limit | fifwc-nor-sen-2026-06-22-nor|No->notification_limit | cs2-furia-fal2-2026-06-21|FURIA->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-22T05-00-53-792Z-53874/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-21T16:28:48.944Z",
-          "lastFailureAt": "2026-06-21T12:29:04.283Z"
+          "lastFailureAt": "2026-06-22T05:43:14.879Z"
         },
         {
           "id": "wallets",
           "title": "Refreshing wallet_watcher from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-21T16:28:48.945Z",
-          "finishedAt": "2026-06-21T16:28:53.655Z",
-          "durationSeconds": 4.71,
+          "startedAt": "2026-06-22T05:43:14.879Z",
+          "finishedAt": "2026-06-22T05:58:15.021Z",
+          "durationSeconds": 900.142,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-21T16-24-42-561Z-48340/wallets.log",
-          "summary": "Source diagnostics: 7 candidate(s) | built 3 | no-chase 4 | no-market 0",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-22T05-00-53-792Z-53874/wallets.log",
+          "summary": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-21T16:28:53.655Z",
-          "lastFailureAt": "2026-06-18T01:10:07.661Z"
+          "lastFailureAt": "2026-06-22T05:58:15.021Z"
         },
         {
           "id": "sync",
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-21T16:28:53.655Z",
-          "finishedAt": "2026-06-21T16:28:57.165Z",
-          "durationSeconds": 3.51,
+          "startedAt": "2026-06-22T05:58:15.022Z",
+          "finishedAt": "2026-06-22T05:58:18.397Z",
+          "durationSeconds": 3.375,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-21T16-24-42-561Z-48340/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-22T05-00-53-792Z-53874/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-21T16:28:57.165Z",
+          "lastSuccessAt": "2026-06-22T05:58:18.397Z",
           "lastFailureAt": "2026-05-27T22:54:05.623Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-06-21T16:28:48Z",
           "status": "degraded",
-          "statusReason": "Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 13h 29m old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
           "generatedAt": "2026-06-21T16:28:53Z",
           "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "statusReason": "Snapshot 13h 29m old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-21T16:25:32Z",
+          "generatedAt": "2026-06-22T05:11:36Z",
           "status": "degraded",
-          "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-21T16:28:53Z",
+          "generatedAt": "2026-06-22T05:58:15Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-21T16:28:57.209Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-22T05:58:18.438Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-06-21T16:28:48Z",
       "status": "degraded",
-      "statusReason": "Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 13h 29m old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -697,7 +697,7 @@
       "synced": true,
       "generatedAt": "2026-06-21T16:28:53Z",
       "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live",
+      "statusReason": "Snapshot 13h 29m old · 2 wallet(s) · 3 open · 0 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -744,9 +744,9 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-21T16:25:32Z",
+      "generatedAt": "2026-06-22T05:11:36Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -759,8 +759,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -779,8 +779,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -789,9 +789,9 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-options",
-          "sourceID": "reddit-options",
-          "sourceName": "r/options",
+          "id": "reddit-cryptocurrency",
+          "sourceID": "reddit-cryptocurrency",
+          "sourceName": "r/CryptoCurrency",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
@@ -799,8 +799,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -819,8 +819,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -839,33 +839,13 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "gdelt_doc",
-          "status": "cached",
-          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. | using stale cache (0 matching item(s), 30h 29m old).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
-          "attemptCount": 3,
-          "eventCount": 0,
-          "cacheUsed": true,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": 109755,
           "retryAfterUnix": null
         },
         {
@@ -879,8 +859,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -899,8 +879,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -909,20 +889,40 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-cryptocurrency",
-          "sourceID": "reddit-cryptocurrency",
-          "sourceName": "r/CryptoCurrency",
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "gdelt_doc",
+          "status": "live",
+          "message": "Fetched live (3 matching item(s)).",
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
+          "attemptCount": 1,
+          "eventCount": 3,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "reddit-options",
+          "sourceID": "reddit-options",
+          "sourceName": "r/options",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "message": "Fetched live (1 matching item(s)).",
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 1,
-          "eventCount": 8,
+          "eventCount": 1,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -939,8 +939,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -959,8 +959,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live, but no matching items landed.",
-          "fetchedAt": "2026-06-21T16:24:45Z",
-          "fetchedAtUnix": 1782059085,
+          "fetchedAt": "2026-06-22T05:11:23Z",
+          "fetchedAtUnix": 1782105083,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-21T16:28:53Z",
+      "generatedAt": "2026-06-22T05:58:15Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +981,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-21T16:28:57.209Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-22T05:58:18.438Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -3668,8 +3668,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-06-21T15:53:52Z",
-      "previousGeneratedAtUnix": 1782057232,
+      "previousGeneratedAt": "2026-06-21T16:28:53Z",
+      "previousGeneratedAtUnix": 1782059333,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3721,7 +3721,7 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-06-21T16:28:56.023Z",
+      "generatedAt": "2026-06-22T05:58:17.275Z",
       "snapshotCount": 320,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-06-21T16:28:53Z",
@@ -148419,7 +148419,7 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-06-21T16:25:32Z",
+    "generatedAt": "2026-06-22T05:11:36Z",
     "summary": {
       "totalFilingsFetched": 62,
       "totalSignals": 14,
@@ -148616,7 +148616,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-06-21T16:28:53Z",
+    "generatedAt": "2026-06-22T05:58:15Z",
     "market": {
       "available": true,
       "summary": {
@@ -149697,11 +149697,11 @@
       },
       {
         "label": "Insider updated",
-        "value": "2026-06-21T16:25:32Z"
+        "value": "2026-06-22T05:11:36Z"
       },
       {
         "label": "Insider upstream",
-        "value": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+        "value": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
       },
       {
         "label": "Official watch",
@@ -150113,7 +150113,7 @@
           "available": true,
           "generatedAt": "2026-06-21T16:28:48Z",
           "status": "stale",
-          "reason": "Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 13h 29m old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
@@ -150122,25 +150122,25 @@
           "available": true,
           "generatedAt": "2026-06-21T16:28:53Z",
           "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "reason": "Snapshot 13h 29m old · 2 wallet(s) · 3 open · 0 actionable · 2 live · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-21T16:25:32Z",
+          "generatedAt": "2026-06-22T05:11:36Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-21T16:28:57.209Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 5s old · 21 active · 25 snapshots · 3 built from 7 source candidate(s) · 1 suspicious wallet(s) · 7 live · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-22T05:58:18.438Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source, Refreshing wallet_watcher from source. · 3 failing step(s)"
         }
       ]
     }
