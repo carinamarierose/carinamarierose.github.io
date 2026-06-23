@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-23T08:20:45.277Z",
-  "generatedAtUnix": 1782202845,
+  "generatedAt": "2026-06-23T17:18:35.442Z",
+  "generatedAtUnix": 1782235115,
   "sync": {
-    "generatedAt": "2026-06-23T08:20:42Z",
-    "generatedAtUnix": 1782202842,
+    "generatedAt": "2026-06-23T17:18:32Z",
+    "generatedAtUnix": 1782235112,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,43 +12,43 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-06-23T08:20:45.277Z",
-      "generatedAtUnix": 1782202845,
-      "runID": "run-2026-06-23T08-17-38-491Z-67133",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-23T17:18:35.442Z",
+      "generatedAtUnix": 1782235115,
+      "runID": "run-2026-06-23T17-01-02-783Z-74895",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-06-23T08:17:38.491Z",
-      "finishedAt": "2026-06-23T08:20:45.277Z",
-      "lastRunAt": "2026-06-23T08:20:45.277Z",
-      "durationSeconds": 186.786,
+      "startedAt": "2026-06-23T17:01:02.783Z",
+      "finishedAt": "2026-06-23T17:18:35.442Z",
+      "lastRunAt": "2026-06-23T17:18:35.442Z",
+      "durationSeconds": 1052.659,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-06-23T08:50:45.277Z",
-      "lastSuccessAt": "2026-06-23T08:20:45.277Z",
-      "lastSuccessfulRunAt": "2026-06-23T08:20:45.277Z",
-      "lastFailureAt": "2026-06-22T21:36:05.663Z",
+      "nextRunAt": "2026-06-23T17:48:35.442Z",
+      "lastSuccessAt": "2026-06-23T08:21:39.640Z",
+      "lastSuccessfulRunAt": "2026-06-23T08:21:39.640Z",
+      "lastFailureAt": "2026-06-23T17:18:35.442Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-23T08:17:38.608Z",
-          "finishedAt": "2026-06-23T08:18:46.178Z",
-          "durationSeconds": 67.57,
+          "startedAt": "2026-06-23T17:01:02.895Z",
+          "finishedAt": "2026-06-23T17:16:02.927Z",
+          "durationSeconds": 900.032,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T08-17-38-491Z-67133/insider.log",
-          "summary": "Telegram preview · selected 0 of 5 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T17-01-02-783Z-74895/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-23T08:18:46.178Z",
-          "lastFailureAt": "2026-06-22T20:53:24.731Z"
+          "lastFailureAt": "2026-06-23T17:16:02.927Z"
         },
         {
           "id": "market",
@@ -56,15 +56,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-23T08:18:46.179Z",
-          "finishedAt": "2026-06-23T08:20:38.873Z",
-          "durationSeconds": 112.694,
+          "startedAt": "2026-06-23T17:16:02.928Z",
+          "finishedAt": "2026-06-23T17:18:28.662Z",
+          "durationSeconds": 145.734,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T08-17-38-491Z-67133/market.log",
-          "summary": "Notification decisions: selected fifwc-pan-hrv-2026-06-23-total-2pt5|Over [global_window_open,urgent_suspicious] | blocked fifwc-prt-uzb-2026-06-23-prt|Yes->sports_policy | bitcoin-above-62k-on-june-23-2026|No->notification_limit | solana-above-50-on-june-26-2026|No->notification_limit",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T17-01-02-783Z-74895/market.log",
+          "summary": "Notification decisions: selected fifwc-rsa-kr-2026-06-24-kr|Yes [global_window_open,urgent_suspicious] | blocked fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar->notification_limit | bitcoin-above-62k-on-june-24-2026|Yes->notification_limit | strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No->notification_limit",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-23T08:20:38.873Z",
+          "lastSuccessAt": "2026-06-23T17:18:28.662Z",
           "lastFailureAt": "2026-06-22T21:10:38.778Z"
         },
         {
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-23T08:20:38.873Z",
-          "finishedAt": "2026-06-23T08:20:42.156Z",
-          "durationSeconds": 3.283,
+          "startedAt": "2026-06-23T17:18:28.662Z",
+          "finishedAt": "2026-06-23T17:18:31.983Z",
+          "durationSeconds": 3.321,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T08-17-38-491Z-67133/wallets.log",
-          "summary": "Source diagnostics: 5 candidate(s) | built 3 | no-chase 2 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T17-01-02-783Z-74895/wallets.log",
+          "summary": "Source diagnostics: 4 candidate(s) | built 2 | no-chase 2 | no-market 0",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-23T08:20:42.156Z",
+          "lastSuccessAt": "2026-06-23T17:18:31.983Z",
           "lastFailureAt": "2026-06-22T05:58:15.021Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-23T08:20:42.156Z",
-          "finishedAt": "2026-06-23T08:20:45.239Z",
-          "durationSeconds": 3.083,
+          "startedAt": "2026-06-23T17:18:31.983Z",
+          "finishedAt": "2026-06-23T17:18:35.392Z",
+          "durationSeconds": 3.409,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T08-17-38-491Z-67133/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-23T17-01-02-783Z-74895/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-23T08:20:45.239Z",
+          "lastSuccessAt": "2026-06-23T17:18:35.392Z",
           "lastFailureAt": "2026-05-27T22:54:05.623Z"
         }
       ],
@@ -106,16 +106,16 @@
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-23T08:20:38Z",
+          "generatedAt": "2026-06-23T17:18:28Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-23T08:20:42Z",
+          "generatedAt": "2026-06-23T17:18:31Z",
           "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "statusReason": "Snapshot 1s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-23T08:20:42Z",
+          "generatedAt": "2026-06-23T17:18:32Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-23T08:20:45.277Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-23T17:18:35.442Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source."
         }
       },
       "runtime": {
@@ -186,9 +186,9 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-23T08:20:38Z",
+      "generatedAt": "2026-06-23T17:18:28Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -200,11 +200,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 11 active signal(s).",
-          "fetchedAt": "2026-06-23T08:20:38Z",
-          "fetchedAtUnix": 1782202838,
+          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 15 active signal(s).",
+          "fetchedAt": "2026-06-23T17:18:28Z",
+          "fetchedAtUnix": 1782235108,
           "attemptCount": 1,
-          "eventCount": 11,
+          "eventCount": 15,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -220,11 +220,11 @@
           "sourceHandle": "-",
           "adapter": "source_watch_digest",
           "status": "live",
-          "message": "5 candidate(s): 3 built, 2 no-chase, 0 no-market.",
-          "fetchedAt": "2026-06-23T08:20:38Z",
-          "fetchedAtUnix": 1782202838,
+          "message": "4 candidate(s): 2 built, 2 no-chase, 0 no-market.",
+          "fetchedAt": "2026-06-23T17:18:28Z",
+          "fetchedAtUnix": 1782235108,
           "attemptCount": 1,
-          "eventCount": 5,
+          "eventCount": 4,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -241,8 +241,8 @@
           "adapter": "suspicious_wallets",
           "status": "live",
           "message": "No suspicious wallets were flagged in the latest market snapshot.",
-          "fetchedAt": "2026-06-23T08:20:38Z",
-          "fetchedAtUnix": 1782202838,
+          "fetchedAt": "2026-06-23T17:18:28Z",
+          "fetchedAtUnix": 1782235108,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -261,8 +261,8 @@
           "adapter": "tradingview_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -281,8 +281,8 @@
           "adapter": "discord_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -301,8 +301,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -321,8 +321,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -340,11 +340,11 @@
           "sourceHandle": "treeofalpha",
           "adapter": "tree_news_history",
           "status": "live",
-          "message": "remote fetch succeeded (23 item(s))",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "message": "remote fetch succeeded (24 item(s))",
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
-          "eventCount": 23,
+          "eventCount": 24,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -361,8 +361,8 @@
           "adapter": "sec_edgar_submissions",
           "status": "live",
           "message": "remote fetch succeeded (1 item(s))",
-          "fetchedAt": "2026-06-23T08:19:33Z",
-          "fetchedAtUnix": 1782202773,
+          "fetchedAt": "2026-06-23T17:16:55Z",
+          "fetchedAtUnix": 1782235015,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -388,7 +388,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-whitehouse-e90ed580c35fbe8f",
@@ -400,7 +400,7 @@
           "sourceHandle": "WhiteHouse",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -408,7 +408,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-presssec-05e7a81ea1a0d52e",
@@ -420,7 +420,7 @@
           "sourceHandle": "PressSec",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -428,7 +428,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-secrubio-1c051c9bdd512f24",
@@ -440,7 +440,7 @@
           "sourceHandle": "SecRubio",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -448,7 +448,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-jdvance1-e2e38359c471e460",
@@ -460,7 +460,7 @@
           "sourceHandle": "JDVance1",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -468,7 +468,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-danscavino-52420ffb6b57c1a0",
@@ -480,7 +480,7 @@
           "sourceHandle": "DanScavino",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -488,7 +488,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-rapidresponse47-3104c86e7b5b047e",
@@ -500,7 +500,7 @@
           "sourceHandle": "RapidResponse47",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -508,7 +508,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-donaldjtrumpjr-7c2531cb970a2630",
@@ -520,7 +520,7 @@
           "sourceHandle": "donaldjtrumpjr",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -528,7 +528,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-erictrump-5be12fca20c721ed",
@@ -540,7 +540,7 @@
           "sourceHandle": "EricTrump",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -548,7 +548,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-laratrump-87208b7de6921708",
@@ -560,7 +560,7 @@
           "sourceHandle": "LaraTrump",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -568,7 +568,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-charliekirk-05b10af7494d0b45",
@@ -580,7 +580,7 @@
           "sourceHandle": "Charliekirk",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -588,7 +588,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-dbongino-71063babd843ab6e",
@@ -600,7 +600,7 @@
           "sourceHandle": "dbongino",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -608,7 +608,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-karilake-1094eff0a9a4994c",
@@ -620,7 +620,7 @@
           "sourceHandle": "KariLake",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -628,7 +628,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-truthsocial-truthsocial-timeline-mariabartiromo-65863fefb21f0d0f",
@@ -640,7 +640,7 @@
           "sourceHandle": "mariabartiromo",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "globally throttled until 1782206384 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+          "message": "globally throttled until 1782238658 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -648,7 +648,7 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782206384
+          "retryAfterUnix": 1782238658
         },
         {
           "id": "source-upstream-gdelt-doc-gdelt-doc-search-gdelt-53654c5e94198cab",
@@ -659,16 +659,16 @@
           "sourceLane": "standard",
           "sourceHandle": "gdelt",
           "adapter": "gdelt_doc_search",
-          "status": "cached",
-          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | using stale cache (0 item(s))",
-          "fetchedAt": "2026-06-23T07:18:17Z",
-          "fetchedAtUnix": 1782199097,
+          "status": "failed",
+          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.\n\n | stale cache exceeded freshness guardrail (9h 59m old)",
+          "fetchedAt": null,
+          "fetchedAtUnix": null,
           "attemptCount": 1,
           "eventCount": 0,
-          "cacheUsed": true,
+          "cacheUsed": false,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 3687,
-          "retryAfterUnix": 1782203144
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": 1782235418
         },
         {
           "id": "source-upstream-gdelt-doc-gdelt-doc-search-gdelt-geopolitics-74a0c7353e5ac5cf",
@@ -679,25 +679,25 @@
           "sourceLane": "standard",
           "sourceHandle": "gdelt-geopolitics",
           "adapter": "gdelt_doc_search",
-          "status": "cached",
-          "message": "globally throttled until 1782203144 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | using stale cache (1 item(s))",
-          "fetchedAt": "2026-06-23T07:18:34Z",
-          "fetchedAtUnix": 1782199114,
+          "status": "failed",
+          "message": "globally throttled until 1782235418 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (9h 59m old), skipping remote fetch",
+          "fetchedAt": null,
+          "fetchedAtUnix": null,
           "attemptCount": 1,
-          "eventCount": 1,
-          "cacheUsed": true,
+          "eventCount": 0,
+          "cacheUsed": false,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 3682,
-          "retryAfterUnix": 1782203144
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": 1782235418
         }
       ]
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-23T08:20:42Z",
+      "generatedAt": "2026-06-23T17:18:31Z",
       "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live",
+      "statusReason": "Snapshot 1s old · 2 wallet(s) · 3 open · 0 actionable · 2 live",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -709,11 +709,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Loaded 11 active signal(s) from market intel.",
-          "fetchedAt": "2026-06-23T08:20:38Z",
-          "fetchedAtUnix": 1782202838,
+          "message": "Loaded 15 active signal(s) from market intel.",
+          "fetchedAt": "2026-06-23T17:18:28Z",
+          "fetchedAtUnix": 1782235108,
           "attemptCount": 1,
-          "eventCount": 11,
+          "eventCount": 15,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -730,8 +730,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-06-23T08:20:42Z",
-          "fetchedAtUnix": 1782202842,
+          "fetchedAt": "2026-06-23T17:18:31Z",
+          "fetchedAtUnix": 1782235111,
           "attemptCount": 2,
           "eventCount": 3,
           "cacheUsed": false,
@@ -746,7 +746,7 @@
       "synced": true,
       "generatedAt": "2026-06-23T08:18:31Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-23T08:20:42Z",
+      "generatedAt": "2026-06-23T17:18:32Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,30 +981,30 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-23T08:20:45.277Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-23T17:18:35.442Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
-    "bestBetCount": 5,
+    "bestBetCount": 8,
     "trackedWalletCount": 2,
     "openPositionCount": 3,
     "actionablePositionCount": 0,
     "insiderSignalCount": 10,
     "intelItemCount": 18,
     "sourceSignalCount": 3,
-    "crossSignalCount": 1,
-    "kalshiMatchedCount": 0,
+    "crossSignalCount": 0,
+    "kalshiMatchedCount": 1,
     "evaluatedSignalCount": 4809
   },
   "leads": {
     "market": {
       "kicker": "Market leader",
-      "title": "Buy YES on Will Portugal win on 2026-06-23?",
-      "body": "Sports · conviction take · 5 signal(s) in current board"
+      "title": "Buy YES on Will Korea Republic win on 2026-06-24?",
+      "body": "Sports · conviction take · 8 signal(s) in current board"
     },
     "wallets": {
       "kicker": "Wallet command",
@@ -1019,33 +1019,33 @@
   },
   "intel": {
     "available": true,
-    "generatedAt": "2026-06-23T08:20:38Z",
+    "generatedAt": "2026-06-23T17:18:28Z",
     "summary": {
       "totalItemCount": 18,
       "sourceLedCount": 10,
       "insiderWatchCount": 8,
-      "rawSourceEventCount": 57,
+      "rawSourceEventCount": 61,
       "linkedMarketCount": 4,
       "providerCount": 7,
       "watchlistMatchCount": 0
     },
     "sourceLed": [
       {
-        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1782202772",
+        "id": "market-source:coinalyze-BTCUSDT_PERP.A-1782235014",
         "kind": "market_source",
         "title": "BTCUSDT derivatives snapshot",
         "subtitle": "Coinalyze Derivatives · 1 linked market",
-        "summary": "OI 6.10B USD | funding +0.1655% | predicted +0.1221% | long crowding | heavy derivatives positioning",
-        "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Bitcoin be above $62,000 on June 23? · Standard lane",
-        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1782202772",
+        "summary": "OI 6.20B USD | funding -0.1889% | predicted +0.0635% | short crowding | heavy derivatives positioning",
+        "whyItMatters": "1 linked market on the live board · Buy YES on Will the price of Bitcoin be above $62,000 on June 24? · Standard lane",
+        "sourceEventID": "coinalyze-BTCUSDT_PERP.A-1782235014",
         "sourceName": "Coinalyze Derivatives",
         "sourceHandle": "coinalyze",
         "provider": "coinalyze",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "publishedAt": "2026-06-23T08:18:48.000Z",
-        "publishedAtUnix": 1782202728,
+        "publishedAt": "2026-06-23T17:16:05.000Z",
+        "publishedAtUnix": 1782234965,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1056,16 +1056,16 @@
           "BTCUSDT",
           "BTC",
           "bitcoin",
-          "long_crowding",
+          "short_crowding",
           "heavy_derivatives_positioning"
         ],
         "signalCount": 1,
         "topSignals": [
           {
-            "id": "bitcoin-above-62k-on-june-23-2026|No",
-            "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-            "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-23-2026",
-            "outcome": "No",
+            "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+            "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+            "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-24-2026",
+            "outcome": "Yes",
             "direction": "buy",
             "category": "crypto",
             "take": "conviction",
@@ -1075,52 +1075,11 @@
         ]
       },
       {
-        "id": "market-source:1782201456510FRSOTNSMLOIPTDWTAoDaPRCTLaTSotVJEUNR5CTS",
-        "kind": "market_source",
-        "title": "FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To...",
-        "subtitle": "Tree Of Alpha News · 1 linked market",
-        "summary": "FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To Determine Whether To Approve or Disapprove a Proposed Rule Change To List and Trade Shares of the VanEck JitoSOL ETF Under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares)",
-        "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Solana be above $50 on June 26? · Standard lane",
-        "sourceEventID": "1782201456510FRSOTNSMLOIPTDWTAoDaPRCTLaTSotVJEUNR5CTS",
-        "sourceName": "Tree Of Alpha News",
-        "sourceHandle": "treeofalpha",
-        "provider": "tree_news",
-        "sourceType": "api",
-        "sourceLane": "standard",
-        "sourceURL": "https://www.federalregister.gov/documents/2026/06/23/2026-12519/self-regulatory-organizations-the-nasdaq-stock-market-llc-order-instituting-proceedings-to-determine",
-        "publishedAt": "2026-06-23T07:57:36.000Z",
-        "publishedAtUnix": 1782201456,
-        "priority": 7,
-        "category": "crypto",
-        "matchedCategories": [
-          "crypto"
-        ],
-        "tags": [
-          "SOL_USDT",
-          "SOL_BTC",
-          "Blogs"
-        ],
-        "signalCount": 1,
-        "topSignals": [
-          {
-            "id": "solana-above-50-on-june-26-2026|No",
-            "title": "Will the price of Solana be above $50 on June 26?",
-            "marketURL": "https://polymarket.com/event/solana-above-on-june-26-2026",
-            "outcome": "No",
-            "direction": "buy",
-            "category": "crypto",
-            "take": "conviction",
-            "confidence": 97,
-            "sourceMatchedQuery": "solana etf approval"
-          }
-        ]
-      },
-      {
         "id": "market-source:https://www.whitehouse.gov/releases/2026/06/president-trumps-iran-agreement-is-america-first-in-action/",
         "kind": "market_source",
         "title": "President Trump’s Iran Agreement Is America First in Action",
         "subtitle": "The White House Iran Search · 1 linked market",
-        "summary": "Fresh source signal from The White House Iran Search · matched 'will trump agree to iranian transit fees in the strait of hormuz by may 31' · 5201m ago · moved +7.4pt since source · no-chase zone · official source",
+        "summary": "Fresh source signal from The White House Iran Search · matched 'will trump agree to iranian transit fees in the strait of hormuz by may 31' · 5738m ago · moved +7.6pt since source · no-chase zone · official source",
         "whyItMatters": "1 linked market on the live board · Buy NO on Will Trump agree to Iranian transit fees in the Strait of Hormuz by June 30? · Standard lane",
         "sourceEventID": "https://www.whitehouse.gov/releases/2026/06/president-trumps-iran-agreement-is-america-first-in-action/",
         "sourceName": "The White House Iran Search",
@@ -1149,6 +1108,43 @@
             "take": "lean",
             "confidence": 84,
             "sourceMatchedQuery": "will trump agree to iranian transit fees in the strait of hormuz by may 31"
+          }
+        ]
+      },
+      {
+        "id": "market-source:https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+        "kind": "market_source",
+        "title": "European Union signs aviation agreement with Kazakhstan",
+        "subtitle": "European Commission · 1 linked market",
+        "summary": "Fresh source signal from European Commission · matched 'ukraine ceasefire' · 316m ago · moved +0.0pt since source · official source",
+        "whyItMatters": "1 linked market on the live board · Buy YES on Russia x Ukraine ceasefire agreement by December 31, 2026? · Standard lane",
+        "sourceEventID": "https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+        "sourceName": "European Commission",
+        "sourceHandle": "commission.europa.eu",
+        "provider": "eu_commission_web",
+        "sourceType": "web",
+        "sourceLane": "standard",
+        "sourceURL": "https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+        "publishedAt": "2026-06-23T12:00:00.000Z",
+        "publishedAtUnix": 1782216000,
+        "priority": 8,
+        "category": "geopolitics",
+        "matchedCategories": [
+          "geopolitics"
+        ],
+        "tags": [],
+        "signalCount": 1,
+        "topSignals": [
+          {
+            "id": "russia-x-ukraine-ceasefire-agreement-by-december-31-2026|Yes",
+            "title": "Russia x Ukraine ceasefire agreement by December 31, 2026?",
+            "marketURL": "https://polymarket.com/event/russia-x-ukraine-ceasefire-agreement-by",
+            "outcome": "Yes",
+            "direction": "buy",
+            "category": "geopolitics",
+            "take": "watch",
+            "confidence": 92,
+            "sourceMatchedQuery": "ukraine ceasefire"
           }
         ]
       },
@@ -1188,6 +1184,31 @@
             "sourceMatchedQuery": "us china trade deal"
           }
         ]
+      },
+      {
+        "id": "market-source:https://home.treasury.gov/news/press-releases/sb0538",
+        "kind": "market_source",
+        "title": "Treasury Further Dismantles Overseas Scam Operations Targeting Americans",
+        "subtitle": "Treasury Press Releases · Watching for market match",
+        "summary": "WASHINGTON—Today, the U.S. Department of the Treasury took coordinated action to further disrupt the Prince Group Transnational Criminal Organization (Prince Group TCO). The Department of the Treasury’s Office of Foreign Assets Control (OFAC) sanctioned nine individuals and 26 entities linked to Prince Group TCO, in...",
+        "whyItMatters": "High-priority source event with no active linked market exported yet · Official Macro lane",
+        "sourceEventID": "https://home.treasury.gov/news/press-releases/sb0538",
+        "sourceName": "Treasury Press Releases",
+        "sourceHandle": "home.treasury.gov",
+        "provider": "treasury_web",
+        "sourceType": "web",
+        "sourceLane": "official_macro",
+        "sourceURL": "https://home.treasury.gov/news/press-releases/sb0538",
+        "publishedAt": "2026-06-23T14:30:00.000Z",
+        "publishedAtUnix": 1782225000,
+        "priority": 8,
+        "category": "macro",
+        "matchedCategories": [
+          "macro"
+        ],
+        "tags": [],
+        "signalCount": 0,
+        "topSignals": []
       },
       {
         "id": "market-source:https://home.treasury.gov/news/press-releases/sb0537",
@@ -1230,31 +1251,6 @@
         "sourceURL": "https://home.treasury.gov/news/press-releases/sb0536",
         "publishedAt": "2026-06-18T16:00:00.000Z",
         "publishedAtUnix": 1781798400,
-        "priority": 8,
-        "category": "macro",
-        "matchedCategories": [
-          "macro"
-        ],
-        "tags": [],
-        "signalCount": 0,
-        "topSignals": []
-      },
-      {
-        "id": "market-source:https://home.treasury.gov/news/press-releases/sb0535",
-        "kind": "market_source",
-        "title": "Treasury Targets Hizballah-Aligned Officials and Intensifies Pressure on Global Financial Network",
-        "subtitle": "Treasury Press Releases · Watching for market match",
-        "summary": "WASHINGTON—Today, the U.S. Department of the Treasury’s Office of Foreign Assets Control (OFAC) is designating Hizballah-aligned Lebanese officials, as well as members of a Hizballah-associated business network overseen by Alaa Hassan Hamieh, also known as Alaa Hamieh. The Lebanese officials designated today have us...",
-        "whyItMatters": "High-priority source event with no active linked market exported yet · Official Macro lane",
-        "sourceEventID": "https://home.treasury.gov/news/press-releases/sb0535",
-        "sourceName": "Treasury Press Releases",
-        "sourceHandle": "home.treasury.gov",
-        "provider": "treasury_web",
-        "sourceType": "web",
-        "sourceLane": "official_macro",
-        "sourceURL": "https://home.treasury.gov/news/press-releases/sb0535",
-        "publishedAt": "2026-06-18T13:00:00.000Z",
-        "publishedAtUnix": 1781787600,
         "priority": 8,
         "category": "macro",
         "matchedCategories": [
@@ -1315,21 +1311,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-BTCUSDT-1782202773",
+        "id": "market-source:binance-BTCUSDT-1782235015",
         "kind": "market_source",
         "title": "BTCUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 62421 | index 62456 | funding +0.0012% | OI 97.77K | OI notional 6.10B USD | heavy derivatives positioning",
+        "summary": "mark 62501 | index 62525 | funding +0.0006% | OI 99.16K | OI notional 6.20B USD | heavy derivatives positioning",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-BTCUSDT-1782202773",
+        "sourceEventID": "binance-BTCUSDT-1782235015",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-06-23T08:18:48.000Z",
-        "publishedAtUnix": 1782202728,
+        "publishedAt": "2026-06-23T17:16:05.000Z",
+        "publishedAtUnix": 1782234965,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1501,19 +1497,19 @@
     ],
     "categoryMix": [
       {
-        "key": "crypto",
-        "label": "Crypto",
-        "value": 4
-      },
-      {
         "key": "macro",
         "label": "Macro",
         "value": 4
       },
       {
+        "key": "crypto",
+        "label": "Crypto",
+        "value": 3
+      },
+      {
         "key": "geopolitics",
         "label": "Geopolitics",
-        "value": 2
+        "value": 3
       }
     ],
     "providerMix": [
@@ -1538,13 +1534,13 @@
         "value": 1
       },
       {
-        "key": "Tree Of Alpha News",
-        "label": "Tree Of Alpha News",
+        "key": "The White House Iran Search",
+        "label": "The White House Iran Search",
         "value": 1
       },
       {
-        "key": "The White House Iran Search",
-        "label": "The White House Iran Search",
+        "key": "European Commission",
+        "label": "European Commission",
         "value": 1
       },
       {
@@ -1568,13 +1564,13 @@
   },
   "xgboost": {
     "available": true,
-    "generatedAt": "2026-06-23T08:20:37.897Z",
+    "generatedAt": "2026-06-23T17:18:27.049Z",
     "status": {
       "label": "Live shadow",
       "className": "supports",
       "title": "XGBoost is active on this synced market snapshot",
       "body": "11 candidates scored on the current run.",
-      "detail": "4 support · 4 skeptical · short term service semantic fix"
+      "detail": "5 support · 2 skeptical · short term service semantic fix"
     },
     "model": {
       "available": true,
@@ -1597,25 +1593,25 @@
     "live": {
       "enabled": true,
       "rowCount": 11,
-      "supportCount": 4,
-      "skepticalCount": 4,
+      "supportCount": 5,
+      "skepticalCount": 2,
       "topK": 5,
       "topKDisagreementCount": 2,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "trend": {
-      "enabledRuns": 9,
-      "averageScoredRowsPerRun": 9.666666666666666,
-      "supportCount": 34,
-      "skepticalCount": 31,
-      "topKDisagreementCount": 24,
+      "enabledRuns": 3,
+      "averageScoredRowsPerRun": 10.666666666666666,
+      "supportCount": 14,
+      "skepticalCount": 9,
+      "topKDisagreementCount": 8,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "shadow": {
       "available": true,
-      "generatedAt": "2026-06-23T08:20:37.897Z",
+      "generatedAt": "2026-06-23T17:18:27.049Z",
       "rowCount": 11,
       "topK": 5,
       "overlapCount": 4,
@@ -1626,23 +1622,23 @@
       "metadataName": "xgboost-short-term-service-semantic-fix-metadata-directional.json",
       "scoredRows": [
         {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "signalID": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "outcome": "Over",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "signalID": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "yellow",
+          "take": "strong",
           "confidence": 95,
-          "currentPrice": 0.555,
-          "modelScore": 0.9250925779342651,
+          "currentPrice": 0.9685,
+          "modelScore": 0.9082514643669128,
           "modelRank": 1,
           "swiftRank": 4,
           "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 171.89955142,
+          "swiftPriorityScore": 152.77120686,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -1687,10 +1683,10 @@
           "currentPrice": 0.615,
           "modelScore": 0.8159660696983337,
           "modelRank": 3,
-          "swiftRank": 5,
-          "rankDeltaVsSwift": 2,
+          "swiftRank": 2,
+          "rankDeltaVsSwift": -1,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 155.89810514,
+          "swiftPriorityScore": 155.68933798,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -1698,44 +1694,20 @@
           ]
         },
         {
-          "id": "solana-above-50-on-june-26-2026|No",
-          "signalID": "solana-above-50-on-june-26-2026|No",
-          "title": "Will the price of Solana be above $50 on June 26?",
-          "slug": "solana-above-50-on-june-26-2026",
-          "marketURL": "https://polymarket.com/event/solana-above-50-on-june-26-2026",
-          "outcome": "No",
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "signalID": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-24-2026",
+          "outcome": "Yes",
           "category": "crypto",
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.017,
-          "modelScore": 0.7663479447364807,
+          "currentPrice": 0.6605,
+          "modelScore": 0.7937439680099487,
           "modelRank": 4,
-          "swiftRank": 3,
-          "rankDeltaVsSwift": -1,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 173.1385092,
-          "sourceHandle": "treeofalpha",
-          "sourceMatchedQuery": "solana etf approval",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "bitcoin-above-62k-on-june-23-2026|No",
-          "signalID": "bitcoin-above-62k-on-june-23-2026|No",
-          "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-          "slug": "bitcoin-above-62k-on-june-23-2026",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-23-2026",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.1865,
-          "modelScore": 0.5788858532905579,
-          "modelRank": 5,
-          "swiftRank": 2,
+          "swiftRank": 1,
           "rankDeltaVsSwift": -3,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 177.71841715,
@@ -1743,6 +1715,30 @@
           "sourceMatchedQuery": "bitcoin above",
           "flags": [
             "Source-led"
+          ]
+        },
+        {
+          "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "signalID": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "title": "Will Korea Republic win on 2026-06-24?",
+          "slug": "fifwc-rsa-kr-2026-06-24-kr",
+          "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24-kr",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.585,
+          "modelScore": 0.7715725898742676,
+          "modelRank": 5,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": -2,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 154.43831287,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
           ]
         },
         {
@@ -1756,8 +1752,420 @@
           "severity": "green",
           "take": "watch",
           "confidence": 75,
-          "currentPrice": 0.9495,
-          "modelScore": 0.4953322410583496,
+          "currentPrice": 0.954,
+          "modelScore": 0.46654844284057617,
+          "modelRank": 6,
+          "swiftRank": 10,
+          "rankDeltaVsSwift": 4,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 136.02895685,
+          "sourceHandle": "ustr.gov",
+          "sourceMatchedQuery": "us china trade deal",
+          "flags": [
+            "Source-led"
+          ]
+        },
+        {
+          "id": "fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar",
+          "signalID": "fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar",
+          "title": "Spread: Bosnia and Herzegovina (-1.5)",
+          "slug": "fifwc-bih-qat-2026-06-24-spread-home-1pt5",
+          "marketURL": "https://polymarket.com/event/fifwc-bih-qat-2026-06-24-spread-home-1pt5",
+          "outcome": "Qatar",
+          "category": "sports",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.535,
+          "modelScore": 0.46275225281715393,
+          "modelRank": 7,
+          "swiftRank": 8,
+          "rankDeltaVsSwift": 1,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 146.78636829,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "fifwc-pan-hrv-2026-06-23-hrv|Yes",
+          "signalID": "fifwc-pan-hrv-2026-06-23-hrv|Yes",
+          "title": "Will Croatia win on 2026-06-23?",
+          "slug": "fifwc-pan-hrv-2026-06-23-hrv",
+          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-hrv",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.665,
+          "modelScore": 0.39360931515693665,
+          "modelRank": 8,
+          "swiftRank": 6,
+          "rankDeltaVsSwift": -2,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 148.0613423,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
+          "signalID": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
+          "title": "Will Trump agree to Iranian transit fees in the Strait of Hormuz by June 30?",
+          "slug": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30",
+          "marketURL": "https://polymarket.com/event/will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "yellow",
+          "take": "lean",
+          "confidence": 84,
+          "currentPrice": 0.98,
+          "modelScore": 0.33510494232177734,
+          "modelRank": 9,
+          "swiftRank": 5,
+          "rankDeltaVsSwift": -4,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 151.78933187,
+          "sourceHandle": "whitehouse.gov/search-iran",
+          "sourceMatchedQuery": "will trump agree to iranian transit fees in the strait of hormuz by may 31",
+          "flags": [
+            "Source-led"
+          ]
+        },
+        {
+          "id": "fifwc-eng-gha-2026-06-23-eng|Yes",
+          "signalID": "fifwc-eng-gha-2026-06-23-eng|Yes",
+          "title": "Will England win on 2026-06-23?",
+          "slug": "fifwc-eng-gha-2026-06-23-eng",
+          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-eng",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.825,
+          "modelScore": 0.21919123828411102,
+          "modelRank": 10,
+          "swiftRank": 7,
+          "rankDeltaVsSwift": -3,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 148.0613423,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
+          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
+          "title": "Will Japan win on 2026-06-25?",
+          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
+          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "yellow",
+          "take": "lean",
+          "confidence": 57,
+          "currentPrice": 0.515,
+          "modelScore": 0.20955204963684082,
+          "modelRank": 11,
+          "swiftRank": 11,
+          "rankDeltaVsSwift": 0,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 98.15914885,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": []
+        }
+      ],
+      "topModel": [
+        {
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "signalID": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.9685,
+          "modelScore": 0.9082514643669128,
+          "modelRank": 1,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 152.77120686,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
+          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|No",
+          "title": "Will Japan win on 2026-06-25?",
+          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
+          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
+          "outcome": "No",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.485,
+          "modelScore": 0.8750585317611694,
+          "modelRank": 2,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 136.93831287,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
+          "signalID": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
+          "title": "Spread: England (-1.5)",
+          "slug": "fifwc-eng-gha-2026-06-23-spread-home-1pt5",
+          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-spread-home-1pt5",
+          "outcome": "England",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.615,
+          "modelScore": 0.8159660696983337,
+          "modelRank": 3,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 155.68933798,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "signalID": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-24-2026",
+          "outcome": "Yes",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.6605,
+          "modelScore": 0.7937439680099487,
+          "modelRank": 4,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 177.71841715,
+          "sourceHandle": "coinalyze",
+          "sourceMatchedQuery": "bitcoin above",
+          "flags": [
+            "Source-led"
+          ]
+        },
+        {
+          "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "signalID": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "title": "Will Korea Republic win on 2026-06-24?",
+          "slug": "fifwc-rsa-kr-2026-06-24-kr",
+          "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24-kr",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.585,
+          "modelScore": 0.7715725898742676,
+          "modelRank": 5,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 154.43831287,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        }
+      ],
+      "topSwift": [
+        {
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "signalID": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-24-2026",
+          "outcome": "Yes",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.6605,
+          "modelScore": 0.7937439680099487,
+          "modelRank": null,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 177.71841715,
+          "sourceHandle": "coinalyze",
+          "sourceMatchedQuery": "bitcoin above",
+          "flags": [
+            "Source-led"
+          ]
+        },
+        {
+          "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
+          "signalID": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
+          "title": "Spread: England (-1.5)",
+          "slug": "fifwc-eng-gha-2026-06-23-spread-home-1pt5",
+          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-spread-home-1pt5",
+          "outcome": "England",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.615,
+          "modelScore": 0.8159660696983337,
+          "modelRank": null,
+          "swiftRank": 2,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 155.68933798,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "signalID": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "title": "Will Korea Republic win on 2026-06-24?",
+          "slug": "fifwc-rsa-kr-2026-06-24-kr",
+          "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24-kr",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.585,
+          "modelScore": 0.7715725898742676,
+          "modelRank": null,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 154.43831287,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "signalID": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.9685,
+          "modelScore": 0.9082514643669128,
+          "modelRank": null,
+          "swiftRank": 4,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 152.77120686,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
+          "signalID": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
+          "title": "Will Trump agree to Iranian transit fees in the Strait of Hormuz by June 30?",
+          "slug": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30",
+          "marketURL": "https://polymarket.com/event/will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "yellow",
+          "take": "lean",
+          "confidence": 84,
+          "currentPrice": 0.98,
+          "modelScore": 0.33510494232177734,
+          "modelRank": null,
+          "swiftRank": 5,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 151.78933187,
+          "sourceHandle": "whitehouse.gov/search-iran",
+          "sourceMatchedQuery": "will trump agree to iranian transit fees in the strait of hormuz by may 31",
+          "flags": [
+            "Source-led"
+          ]
+        }
+      ],
+      "disagreements": [
+        {
+          "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
+          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|No",
+          "title": "Will Japan win on 2026-06-25?",
+          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
+          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
+          "outcome": "No",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.485,
+          "modelScore": 0.8750585317611694,
+          "modelRank": 2,
+          "swiftRank": 9,
+          "rankDeltaVsSwift": 7,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 136.93831287,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "us-x-china-tariff-agreement-by-june-30|No",
+          "signalID": "us-x-china-tariff-agreement-by-june-30|No",
+          "title": "US x China tariff agreement by June 30?",
+          "slug": "us-x-china-tariff-agreement-by-june-30",
+          "marketURL": "https://polymarket.com/event/us-x-china-tariff-agreement-by-june-30",
+          "outcome": "No",
+          "category": "geopolitics",
+          "severity": "green",
+          "take": "watch",
+          "confidence": 75,
+          "currentPrice": 0.954,
+          "modelScore": 0.46654844284057617,
           "modelRank": 6,
           "swiftRank": 10,
           "rankDeltaVsSwift": 4,
@@ -1780,11 +2188,11 @@
           "severity": "yellow",
           "take": "lean",
           "confidence": 84,
-          "currentPrice": 0.9785,
+          "currentPrice": 0.98,
           "modelScore": 0.33510494232177734,
-          "modelRank": 7,
-          "swiftRank": 6,
-          "rankDeltaVsSwift": -1,
+          "modelRank": 9,
+          "swiftRank": 5,
+          "rankDeltaVsSwift": -4,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 151.78933187,
           "sourceHandle": "whitehouse.gov/search-iran",
@@ -1794,466 +2202,51 @@
           ]
         },
         {
-          "id": "fifwc-eng-gha-2026-06-23-eng|Yes",
-          "signalID": "fifwc-eng-gha-2026-06-23-eng|Yes",
-          "title": "Will England win on 2026-06-23?",
-          "slug": "fifwc-eng-gha-2026-06-23-eng",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-eng",
-          "outcome": "Yes",
-          "category": "sports",
-          "severity": "yellow",
-          "take": "strong",
-          "confidence": 95,
-          "currentPrice": 0.825,
-          "modelScore": 0.22348828613758087,
-          "modelRank": 8,
-          "swiftRank": 8,
-          "rankDeltaVsSwift": 0,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 148.0613423,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "signalID": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "title": "Will Portugal win on 2026-06-23?",
-          "slug": "fifwc-prt-uzb-2026-06-23-prt",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23-prt",
-          "outcome": "Yes",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.845,
-          "modelScore": 0.1953328400850296,
-          "modelRank": 9,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": -8,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 185.736726,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
-          "id": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
-          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
-          "title": "Will Japan win on 2026-06-25?",
-          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
-          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
-          "outcome": "Yes",
-          "category": "sports",
-          "severity": "yellow",
-          "take": "lean",
-          "confidence": 57,
-          "currentPrice": 0.515,
-          "modelScore": 0.1666988730430603,
-          "modelRank": 10,
-          "swiftRank": 11,
-          "rankDeltaVsSwift": 1,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 98.15914885,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": []
-        },
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-uzb|No",
-          "signalID": "fifwc-prt-uzb-2026-06-23-uzb|No",
-          "title": "Will Uzbekistan win on 2026-06-23?",
-          "slug": "fifwc-prt-uzb-2026-06-23-uzb",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23-uzb",
-          "outcome": "No",
-          "category": "sports",
-          "severity": "yellow",
-          "take": "strong",
-          "confidence": 95,
-          "currentPrice": 0.955,
-          "modelScore": 0.07433078438043594,
-          "modelRank": 11,
-          "swiftRank": 7,
-          "rankDeltaVsSwift": -4,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 148.0613423,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        }
-      ],
-      "topModel": [
-        {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "signalID": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "outcome": "Over",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.555,
-          "modelScore": 0.9250925779342651,
-          "modelRank": 1,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 171.89955142,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
-          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|No",
-          "title": "Will Japan win on 2026-06-25?",
-          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
-          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
-          "outcome": "No",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.485,
-          "modelScore": 0.8750585317611694,
-          "modelRank": 2,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 136.93831287,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
-          "signalID": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
-          "title": "Spread: England (-1.5)",
-          "slug": "fifwc-eng-gha-2026-06-23-spread-home-1pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-spread-home-1pt5",
-          "outcome": "England",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.615,
-          "modelScore": 0.8159660696983337,
-          "modelRank": 3,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 155.89810514,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "solana-above-50-on-june-26-2026|No",
-          "signalID": "solana-above-50-on-june-26-2026|No",
-          "title": "Will the price of Solana be above $50 on June 26?",
-          "slug": "solana-above-50-on-june-26-2026",
-          "marketURL": "https://polymarket.com/event/solana-above-50-on-june-26-2026",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.017,
-          "modelScore": 0.7663479447364807,
-          "modelRank": 4,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 173.1385092,
-          "sourceHandle": "treeofalpha",
-          "sourceMatchedQuery": "solana etf approval",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "bitcoin-above-62k-on-june-23-2026|No",
-          "signalID": "bitcoin-above-62k-on-june-23-2026|No",
-          "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-          "slug": "bitcoin-above-62k-on-june-23-2026",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-23-2026",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.1865,
-          "modelScore": 0.5788858532905579,
-          "modelRank": 5,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 177.71841715,
-          "sourceHandle": "coinalyze",
-          "sourceMatchedQuery": "bitcoin above",
-          "flags": [
-            "Source-led"
-          ]
-        }
-      ],
-      "topSwift": [
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "signalID": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "title": "Will Portugal win on 2026-06-23?",
-          "slug": "fifwc-prt-uzb-2026-06-23-prt",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23-prt",
-          "outcome": "Yes",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.845,
-          "modelScore": 0.1953328400850296,
-          "modelRank": null,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 185.736726,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
-          "id": "bitcoin-above-62k-on-june-23-2026|No",
-          "signalID": "bitcoin-above-62k-on-june-23-2026|No",
-          "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-          "slug": "bitcoin-above-62k-on-june-23-2026",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-23-2026",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.1865,
-          "modelScore": 0.5788858532905579,
-          "modelRank": null,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 177.71841715,
-          "sourceHandle": "coinalyze",
-          "sourceMatchedQuery": "bitcoin above",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "solana-above-50-on-june-26-2026|No",
-          "signalID": "solana-above-50-on-june-26-2026|No",
-          "title": "Will the price of Solana be above $50 on June 26?",
-          "slug": "solana-above-50-on-june-26-2026",
-          "marketURL": "https://polymarket.com/event/solana-above-50-on-june-26-2026",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.017,
-          "modelScore": 0.7663479447364807,
-          "modelRank": null,
-          "swiftRank": 3,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 173.1385092,
-          "sourceHandle": "treeofalpha",
-          "sourceMatchedQuery": "solana etf approval",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "signalID": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "outcome": "Over",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.555,
-          "modelScore": 0.9250925779342651,
-          "modelRank": null,
-          "swiftRank": 4,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 171.89955142,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
-          "signalID": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
-          "title": "Spread: England (-1.5)",
-          "slug": "fifwc-eng-gha-2026-06-23-spread-home-1pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-gha-2026-06-23-spread-home-1pt5",
-          "outcome": "England",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.615,
-          "modelScore": 0.8159660696983337,
-          "modelRank": null,
-          "swiftRank": 5,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 155.89810514,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        }
-      ],
-      "disagreements": [
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "signalID": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "title": "Will Portugal win on 2026-06-23?",
-          "slug": "fifwc-prt-uzb-2026-06-23-prt",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23-prt",
-          "outcome": "Yes",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.845,
-          "modelScore": 0.1953328400850296,
-          "modelRank": 9,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": -8,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 185.736726,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
-          "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
-          "signalID": "fifwc-jpn-swe-2026-06-25-jpn|No",
-          "title": "Will Japan win on 2026-06-25?",
-          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
-          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25-jpn",
-          "outcome": "No",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.485,
-          "modelScore": 0.8750585317611694,
-          "modelRank": 2,
-          "swiftRank": 9,
-          "rankDeltaVsSwift": 7,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 136.93831287,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "us-x-china-tariff-agreement-by-june-30|No",
-          "signalID": "us-x-china-tariff-agreement-by-june-30|No",
-          "title": "US x China tariff agreement by June 30?",
-          "slug": "us-x-china-tariff-agreement-by-june-30",
-          "marketURL": "https://polymarket.com/event/us-x-china-tariff-agreement-by-june-30",
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "signalID": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
           "outcome": "No",
           "category": "geopolitics",
-          "severity": "green",
-          "take": "watch",
-          "confidence": 75,
-          "currentPrice": 0.9495,
-          "modelScore": 0.4953322410583496,
-          "modelRank": 6,
-          "swiftRank": 10,
-          "rankDeltaVsSwift": 4,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 136.02895685,
-          "sourceHandle": "ustr.gov",
-          "sourceMatchedQuery": "us china trade deal",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-uzb|No",
-          "signalID": "fifwc-prt-uzb-2026-06-23-uzb|No",
-          "title": "Will Uzbekistan win on 2026-06-23?",
-          "slug": "fifwc-prt-uzb-2026-06-23-uzb",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23-uzb",
-          "outcome": "No",
-          "category": "sports",
           "severity": "yellow",
           "take": "strong",
           "confidence": 95,
-          "currentPrice": 0.955,
-          "modelScore": 0.07433078438043594,
-          "modelRank": 11,
-          "swiftRank": 7,
-          "rankDeltaVsSwift": -4,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 148.0613423,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "signalID": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "outcome": "Over",
-          "category": "sports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.555,
-          "modelScore": 0.9250925779342651,
+          "currentPrice": 0.9685,
+          "modelScore": 0.9082514643669128,
           "modelRank": 1,
           "swiftRank": 4,
           "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 171.89955142,
+          "swiftPriorityScore": 152.77120686,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
             "Whale"
+          ]
+        },
+        {
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "signalID": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-62k-on-june-24-2026",
+          "outcome": "Yes",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.6605,
+          "modelScore": 0.7937439680099487,
+          "modelRank": 4,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": -3,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 177.71841715,
+          "sourceHandle": "coinalyze",
+          "sourceMatchedQuery": "bitcoin above",
+          "flags": [
+            "Source-led"
           ]
         }
       ]
@@ -2261,10 +2254,21 @@
     "runs": {
       "totalRuns": 18,
       "enabledRuns": 18,
-      "latestRunAt": "2026-06-23T08:18:48.000Z",
-      "latestEnabledRunAt": "2026-06-23T08:18:48.000Z",
+      "latestRunAt": "2026-06-23T17:16:05.000Z",
+      "latestEnabledRunAt": "2026-06-23T17:16:05.000Z",
       "maxScoredRows": 20,
       "items": [
+        {
+          "startedAt": "2026-06-23T17:16:05.000Z",
+          "startedAtUnix": 1782234965,
+          "enabled": true,
+          "scoredRowCount": 11,
+          "supportCount": 5,
+          "skepticalCount": 2,
+          "topKDisagreementCount": 2,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
         {
           "startedAt": "2026-06-23T08:18:48.000Z",
           "startedAtUnix": 1782202728,
@@ -2451,17 +2455,6 @@
           "topKDisagreementCount": 2,
           "promotedCount": 0,
           "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-06-20T05:07:36.000Z",
-          "startedAtUnix": 1781932056,
-          "enabled": true,
-          "scoredRowCount": 7,
-          "supportCount": 5,
-          "skepticalCount": 1,
-          "topKDisagreementCount": 2,
-          "promotedCount": 0,
-          "displacedCount": 0
         }
       ]
     },
@@ -2533,11 +2526,11 @@
         },
         {
           "day": "2026-06-23",
-          "enabledRuns": 2,
-          "scoredRows": 21,
-          "supportCount": 9,
-          "skepticalCount": 7,
-          "topKDisagreementCount": 6,
+          "enabledRuns": 3,
+          "scoredRows": 32,
+          "supportCount": 14,
+          "skepticalCount": 9,
+          "topKDisagreementCount": 8,
           "promotedCount": 0,
           "displacedCount": 0
         }
@@ -2545,41 +2538,41 @@
     },
     "coverage": {
       "available": true,
-      "taggedHistoryRowCount": 2757,
+      "taggedHistoryRowCount": 2768,
       "resolvedEvaluationCount": 209,
       "categoryCount": 6,
-      "latestTaggedRunAt": "2026-06-23T08:18:48.000Z",
+      "latestTaggedRunAt": "2026-06-23T17:16:05.000Z",
       "latestEvaluationAt": "2026-05-14T19:21:34.000Z",
       "categories": [
         {
           "category": "sports",
-          "taggedRows": 1154,
+          "taggedRows": 1161,
           "resolvedEvaluations": 120,
           "wins": 19,
           "losses": 0,
-          "neutrals": 371,
+          "neutrals": 373,
           "decisiveTotal": 19,
           "decisiveWinRate": 1,
           "averageModelEdge": 0.16786718750000001,
-          "latestTaggedRunAt": "2026-06-23T08:18:48.000Z",
+          "latestTaggedRunAt": "2026-06-23T17:16:05.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
           "category": "geopolitics",
-          "taggedRows": 763,
+          "taggedRows": 766,
           "resolvedEvaluations": 58,
           "wins": 0,
           "losses": 0,
-          "neutrals": 193,
+          "neutrals": 195,
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": 0.0005689655172413702,
-          "latestTaggedRunAt": "2026-06-23T08:18:48.000Z",
+          "latestTaggedRunAt": "2026-06-23T17:16:05.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
           "category": "crypto",
-          "taggedRows": 346,
+          "taggedRows": 347,
           "resolvedEvaluations": 0,
           "wins": 0,
           "losses": 0,
@@ -2587,7 +2580,7 @@
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": null,
-          "latestTaggedRunAt": "2026-06-23T08:18:48.000Z",
+          "latestTaggedRunAt": "2026-06-23T17:16:05.000Z",
           "latestEvaluationAt": null
         },
         {
@@ -2650,30 +2643,30 @@
   "market": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-06-23T08:20:38Z",
+    "generatedAt": "2026-06-23T17:18:28Z",
     "summary": {
       "category": "OVERALL",
-      "crossSignalCount": 1,
+      "crossSignalCount": 0,
       "eliteTraderMaxRank": 25,
       "explorerVerificationEnabled": true,
       "fetchedSnapshots": 25,
-      "kalshiGapSignalCount": 0,
-      "kalshiMatchedSignalCount": 0,
-      "longTermSignalCount": 0,
+      "kalshiGapSignalCount": 1,
+      "kalshiMatchedSignalCount": 1,
+      "longTermSignalCount": 3,
       "notificationMode": "telegram",
-      "officialPostWatchCount": 5,
+      "officialPostWatchCount": 4,
       "scannedLeaderboardTraders": 250,
       "shortTermMaxDays": 14,
       "shortTermSignalCount": 5,
-      "signalCount": 5,
+      "signalCount": 8,
       "sourceDrivenSignalCount": 3,
       "sourceTrend": {
-        "topRuleCandidateCount": 9,
+        "topRuleCandidateCount": 2,
         "topRuleID": "coinalyze-btc-crowded-longs",
         "topSourceHandle": "coinalyze",
         "uniqueBuiltNoChaseSignals": 3,
-        "uniqueBuiltSignals": 23,
-        "uniqueCandidates": 26,
+        "uniqueBuiltSignals": 7,
+        "uniqueCandidates": 10,
         "uniqueNoMarketMatches": 0
       },
       "timePeriod": "DAY",
@@ -2682,89 +2675,47 @@
       "xgboostDisplacedSignalCount": 0,
       "xgboostPromotedSignalCount": 0,
       "xgboostTrend": {
-        "averageScoredRowsPerRun": 9.666666666666666,
+        "averageScoredRowsPerRun": 10.666666666666666,
         "displacedCount": 0,
-        "enabledRuns": 9,
+        "enabledRuns": 3,
         "promotedCount": 0,
-        "skepticalCount": 31,
-        "supportCount": 34,
-        "topKDisagreementCount": 24
+        "skepticalCount": 9,
+        "supportCount": 14,
+        "topKDisagreementCount": 8
       }
     },
     "status": {
-      "activeSignalCount": 11,
-      "officialPostWatchCount": 5,
+      "activeSignalCount": 15,
+      "officialPostWatchCount": 4,
       "suspiciousWalletCount": 0,
       "xgboostRowCount": 11
     },
     "bestBets": [
       {
-        "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-        "title": "Will Portugal win on 2026-06-23?",
-        "slug": "fifwc-prt-uzb-2026-06-23-prt",
-        "eventSlug": "fifwc-prt-uzb-2026-06-23",
-        "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23",
+        "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+        "title": "Will Korea Republic win on 2026-06-24?",
+        "slug": "fifwc-rsa-kr-2026-06-24-kr",
+        "eventSlug": "fifwc-rsa-kr-2026-06-24",
+        "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24",
         "outcome": "Yes",
         "category": "sports",
         "severity": "red",
         "take": "conviction",
         "direction": "buy",
         "confidence": 95,
-        "weightedFlowUSD": 630962.1799999999,
-        "weightedGrossFlowUSD": 630962.1799999999,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 1,
-        "uniqueTransactionCount": 2,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.84,
-        "latestTradeTimestamp": 1782192472,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-06-23T17:00:00Z",
-        "currentMarketPrice": 0.845,
-        "marketBiasSummary": "whale-sized buying detected",
-        "signalTypes": [
-          "leaderboard",
-          "whale"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0xd6bf0c58502b1550b1f11af51f8da23334c2c148f8e65ec52424d82094230959",
-          "https://polygonscan.com/tx/0x994441a74a4975555b5c4744a2aaba928eabf61707463f88512212aec290eecd"
-        ],
-        "xgboostStance": "skeptical",
-        "xgboostScore": 0.1953328400850296,
-        "xgboostModelRank": 9,
-        "xgboostSwiftRank": 1
-      },
-      {
-        "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-        "title": "Panama vs. Croatia: O/U 2.5",
-        "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-        "eventSlug": "fifwc-pan-hrv-2026-06-23-more-markets",
-        "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-more-markets",
-        "outcome": "Over",
-        "category": "sports",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 95,
-        "weightedFlowUSD": 177992.59,
-        "weightedGrossFlowUSD": 177992.59,
+        "weightedFlowUSD": 180150.48,
+        "weightedGrossFlowUSD": 180150.48,
         "supportingExposureUSD": 0,
         "uniqueTraderCount": 1,
         "uniqueTransactionCount": 1,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.54,
-        "latestTradeTimestamp": 1782171952,
+        "averageTradePrice": 0.58,
+        "latestTradeTimestamp": 1782231221,
         "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-06-23T23:00:00Z",
-        "currentMarketPrice": 0.555,
+        "daysToEnd": 2,
+        "marketEndDate": "2026-06-25T01:00:00Z",
+        "currentMarketPrice": 0.585,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -2773,20 +2724,60 @@
         "verificationStatus": "missing",
         "verifiedTransactionCount": 0,
         "txLinks": [
-          "https://polygonscan.com/tx/0x566528de2110b8c984106f655547be3a3d0fa186e6fbfde65ac9484b3b4aa202"
+          "https://polygonscan.com/tx/0x72422193c74bd73b9a6964e1af5d4ee659951fc0f91257bf37190fc330ab884b"
         ],
         "xgboostStance": "supports",
-        "xgboostScore": 0.9250925779342651,
-        "xgboostModelRank": 1,
-        "xgboostSwiftRank": 4
+        "xgboostScore": 0.7715725898742676,
+        "xgboostModelRank": 5,
+        "xgboostSwiftRank": 3
       },
       {
-        "id": "bitcoin-above-62k-on-june-23-2026|No",
-        "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-        "slug": "bitcoin-above-62k-on-june-23-2026",
-        "eventSlug": "bitcoin-above-on-june-23-2026",
-        "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-23-2026",
+        "id": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-july-2026-meeting|No",
+        "title": "Will the Fed decrease interest rates by 25 bps after the July 2026 meeting?",
+        "slug": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-july-2026-meeting",
+        "eventSlug": "fed-decision-in-july-181",
+        "marketURL": "https://polymarket.com/event/fed-decision-in-july-181",
         "outcome": "No",
+        "category": "other",
+        "severity": "red",
+        "take": "conviction",
+        "direction": "buy",
+        "confidence": 95,
+        "weightedFlowUSD": 100000,
+        "weightedGrossFlowUSD": 100000,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 1,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.9858695702,
+        "latestTradeTimestamp": 1782228623,
+        "horizon": "long_term",
+        "daysToEnd": 36,
+        "marketEndDate": "2026-07-29T00:00:00Z",
+        "currentMarketPrice": 0.9855,
+        "marketBiasSummary": "whale-sized buying detected",
+        "signalTypes": [
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0xa9cf28bd92da1fb2e13adde5c0219c5a9f9160c0d10059b23589a124d49bf6b2"
+        ],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
+      },
+      {
+        "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+        "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+        "slug": "bitcoin-above-62k-on-june-24-2026",
+        "eventSlug": "bitcoin-above-on-june-24-2026",
+        "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-24-2026",
+        "outcome": "Yes",
         "category": "crypto",
         "severity": "red",
         "take": "conviction",
@@ -2799,92 +2790,212 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.1865,
-        "latestTradeTimestamp": 1782202728,
+        "averageTradePrice": 0.6605,
+        "latestTradeTimestamp": 1782234965,
         "horizon": "short_term",
         "daysToEnd": 1,
-        "marketEndDate": "2026-06-23T16:00:00Z",
-        "currentMarketPrice": 0.1865,
+        "marketEndDate": "2026-06-24T16:00:00Z",
+        "currentMarketPrice": 0.6605,
         "marketBiasSummary": "Fresh source signal from Coinalyze Derivatives · matched 'bitcoin above' · 0m ago · official source",
         "signalTypes": [
           "source"
         ],
         "sourceAttribution": {
-          "eventID": "coinalyze-BTCUSDT_PERP.A-1782202772",
+          "eventID": "coinalyze-BTCUSDT_PERP.A-1782235014",
           "provider": "coinalyze",
           "sourceName": "Coinalyze Derivatives",
           "sourceType": "api",
           "sourceLane": "standard",
           "sourceHandle": "coinalyze",
           "url": "https://api.coinalyze.net/v1",
-          "text": "BTCUSDT derivatives snapshot | OI 6.10B USD | funding +0.1655% | predicted +0.1221% | long crowding | heavy derivatives positioning",
-          "ruleID": "coinalyze-btc-crowded-longs",
+          "text": "BTCUSDT derivatives snapshot | OI 6.20B USD | funding -0.1889% | predicted +0.0635% | short crowding | heavy derivatives positioning",
+          "ruleID": "coinalyze-btc-crowded-shorts",
           "matchedQuery": "bitcoin above",
           "priority": 8,
           "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-06-23T08:18:48.000Z",
-          "publishedAtUnix": 1782202728
-        },
-        "verificationStatus": "notChecked",
-        "verifiedTransactionCount": 0,
-        "txLinks": [],
-        "xgboostStance": "mixed",
-        "xgboostScore": 0.5788858532905579,
-        "xgboostModelRank": 5,
-        "xgboostSwiftRank": 2
-      },
-      {
-        "id": "solana-above-50-on-june-26-2026|No",
-        "title": "Will the price of Solana be above $50 on June 26?",
-        "slug": "solana-above-50-on-june-26-2026",
-        "eventSlug": "solana-above-on-june-26-2026",
-        "marketURL": "https://polymarket.com/event/solana-above-on-june-26-2026",
-        "outcome": "No",
-        "category": "crypto",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 97,
-        "weightedFlowUSD": 15625,
-        "weightedGrossFlowUSD": 15625,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 0,
-        "uniqueTransactionCount": 0,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.017,
-        "latestTradeTimestamp": 1782202728,
-        "horizon": "short_term",
-        "daysToEnd": 4,
-        "marketEndDate": "2026-06-26T16:00:00Z",
-        "currentMarketPrice": 0.017,
-        "marketBiasSummary": "Fresh source signal from Tree Of Alpha News · matched 'solana etf approval' · 21m ago · moved +0.0pt since source",
-        "signalTypes": [
-          "source"
-        ],
-        "sourceAttribution": {
-          "eventID": "1782201456510FRSOTNSMLOIPTDWTAoDaPRCTLaTSotVJEUNR5CTS",
-          "provider": "tree_news",
-          "sourceName": "Tree Of Alpha News",
-          "sourceType": "api",
-          "sourceLane": "standard",
-          "sourceHandle": "treeofalpha",
-          "url": "https://www.federalregister.gov/documents/2026/06/23/2026-12519/self-regulatory-organizations-the-nasdaq-stock-market-llc-order-instituting-proceedings-to-determine",
-          "text": "FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To... | FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To Determine Whether To Approve or Disapprove a Proposed Rule Change To List and Trade Shares of the VanEck JitoSOL ETF Under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares)",
-          "ruleID": "tree-api-crypto-etf-delay",
-          "matchedQuery": "solana etf approval",
-          "priority": 7,
-          "freshnessMinutesAtScan": 21,
-          "publishedAt": "2026-06-23T07:57:36.000Z",
-          "publishedAtUnix": 1782201456
+          "publishedAt": "2026-06-23T17:16:05.000Z",
+          "publishedAtUnix": 1782234965
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "supports",
-        "xgboostScore": 0.7663479447364807,
+        "xgboostScore": 0.7937439680099487,
         "xgboostModelRank": 4,
-        "xgboostSwiftRank": 3
+        "xgboostSwiftRank": 1
+      },
+      {
+        "id": "fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar",
+        "title": "Spread: Bosnia and Herzegovina (-1.5)",
+        "slug": "fifwc-bih-qat-2026-06-24-spread-home-1pt5",
+        "eventSlug": "fifwc-bih-qat-2026-06-24-more-markets",
+        "marketURL": "https://polymarket.com/event/fifwc-bih-qat-2026-06-24-more-markets",
+        "outcome": "Qatar",
+        "category": "sports",
+        "severity": "yellow",
+        "take": "strong",
+        "direction": "buy",
+        "confidence": 95,
+        "weightedFlowUSD": 99970.51,
+        "weightedGrossFlowUSD": 99970.51,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 1,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.54,
+        "latestTradeTimestamp": 1782214201,
+        "horizon": "short_term",
+        "daysToEnd": 2,
+        "marketEndDate": "2026-06-24T19:00:00Z",
+        "currentMarketPrice": 0.535,
+        "marketBiasSummary": "whale-sized buying detected",
+        "signalTypes": [
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0xdd64540f3a1d288928d8405c0061c1fe8656b339dc073a602a4b00c6b95c4af4"
+        ],
+        "xgboostStance": "mixed",
+        "xgboostScore": 0.46275225281715393,
+        "xgboostModelRank": 7,
+        "xgboostSwiftRank": 8
+      },
+      {
+        "id": "will-giannis-antetokounmpo-play-for-the-miami-heat-in-2026-27|Yes",
+        "title": "Will Giannis Antetokounmpo play for the Miami Heat in 2026-27?",
+        "slug": "will-giannis-antetokounmpo-play-for-the-miami-heat-in-2026-27",
+        "eventSlug": "nba-giannis-antetokounmpo-next-team-422",
+        "marketURL": "https://polymarket.com/event/nba-giannis-antetokounmpo-next-team-422",
+        "outcome": "Yes",
+        "category": "other",
+        "severity": "yellow",
+        "take": "strong",
+        "direction": "buy",
+        "confidence": 95,
+        "weightedFlowUSD": 99323.43,
+        "weightedGrossFlowUSD": 99323.43,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 1,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.9760117607698405,
+        "latestTradeTimestamp": 1782232682,
+        "horizon": "long_term",
+        "daysToEnd": 133,
+        "marketEndDate": "2026-11-03T00:00:00Z",
+        "currentMarketPrice": 0.9825,
+        "marketBiasSummary": "whale-sized buying detected",
+        "signalTypes": [
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0xc6657a4c78addeaf54254f31473ecd07853fde05386a922afbfebe2cf55c94c5"
+        ],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
+      },
+      {
+        "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+        "title": "Strait of Hormuz traffic returns to normal by end of June?",
+        "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+        "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+        "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+        "outcome": "No",
+        "category": "geopolitics",
+        "severity": "yellow",
+        "take": "strong",
+        "direction": "sell",
+        "confidence": 95,
+        "weightedFlowUSD": -73713.67,
+        "weightedGrossFlowUSD": 73713.67,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 1,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.9639817850610342,
+        "latestTradeTimestamp": 1782228832,
+        "horizon": "short_term",
+        "daysToEnd": 7,
+        "marketEndDate": "2026-06-30T00:00:00Z",
+        "currentMarketPrice": 0.9685,
+        "marketBiasSummary": "whale-sized selling detected",
+        "signalTypes": [
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0x604874fa9d36f19300d70d04bcd259295931a37435020703188e4d72be7a49d3"
+        ],
+        "xgboostStance": "supports",
+        "xgboostScore": 0.9082514643669128,
+        "xgboostModelRank": 1,
+        "xgboostSwiftRank": 4
+      },
+      {
+        "id": "russia-x-ukraine-ceasefire-agreement-by-december-31-2026|Yes",
+        "title": "Russia x Ukraine ceasefire agreement by December 31, 2026?",
+        "slug": "russia-x-ukraine-ceasefire-agreement-by-december-31-2026",
+        "eventSlug": "russia-x-ukraine-ceasefire-agreement-by",
+        "marketURL": "https://polymarket.com/event/russia-x-ukraine-ceasefire-agreement-by",
+        "outcome": "Yes",
+        "category": "geopolitics",
+        "severity": "green",
+        "take": "watch",
+        "direction": "buy",
+        "confidence": 92,
+        "weightedFlowUSD": 15500,
+        "weightedGrossFlowUSD": 15500,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 0,
+        "uniqueTransactionCount": 0,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.465,
+        "latestTradeTimestamp": 1782234965,
+        "horizon": "long_term",
+        "daysToEnd": 191,
+        "marketEndDate": "2026-12-31T00:00:00Z",
+        "currentMarketPrice": 0.465,
+        "marketBiasSummary": "Fresh source signal from European Commission · matched 'ukraine ceasefire' · 316m ago · moved +0.0pt since source · official source",
+        "signalTypes": [
+          "source"
+        ],
+        "sourceAttribution": {
+          "eventID": "https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+          "provider": "eu_commission_web",
+          "sourceName": "European Commission",
+          "sourceType": "web",
+          "sourceLane": "standard",
+          "sourceHandle": "commission.europa.eu",
+          "url": "https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+          "text": "European Union signs aviation agreement with Kazakhstan",
+          "ruleID": "eu-web-geopolitics",
+          "matchedQuery": "ukraine ceasefire",
+          "priority": 8,
+          "freshnessMinutesAtScan": 316,
+          "publishedAt": "2026-06-23T12:00:00.000Z",
+          "publishedAtUnix": 1782216000
+        },
+        "verificationStatus": "notChecked",
+        "verifiedTransactionCount": 0,
+        "txLinks": [],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
       },
       {
         "id": "us-x-china-tariff-agreement-by-june-30|No",
@@ -2898,20 +3009,20 @@
         "take": "watch",
         "direction": "buy",
         "confidence": 75,
-        "weightedFlowUSD": 29550,
-        "weightedGrossFlowUSD": 29550,
+        "weightedFlowUSD": 29999.999999999993,
+        "weightedGrossFlowUSD": 29999.999999999993,
         "supportingExposureUSD": 0,
         "uniqueTraderCount": 0,
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.9495,
-        "latestTradeTimestamp": 1782202728,
+        "averageTradePrice": 0.954,
+        "latestTradeTimestamp": 1782234965,
         "horizon": "short_term",
         "daysToEnd": 7,
         "marketEndDate": "2026-06-30T00:00:00Z",
-        "currentMarketPrice": 0.9495,
-        "marketBiasSummary": "Fresh source signal from USTR Press Releases · matched 'us china trade deal' · 6978m ago · moved +29.5pt since source · no-chase zone · official macro source",
+        "currentMarketPrice": 0.954,
+        "marketBiasSummary": "Fresh source signal from USTR Press Releases · matched 'us china trade deal' · 7516m ago · moved +30.0pt since source · no-chase zone · official macro source",
         "signalTypes": [
           "source"
         ],
@@ -2927,7 +3038,7 @@
           "ruleID": "ustr-china-tariff-escalation",
           "matchedQuery": "us china trade deal",
           "priority": 8,
-          "freshnessMinutesAtScan": 6978,
+          "freshnessMinutesAtScan": 7516,
           "publishedAt": "2026-06-18T12:00:00.000Z",
           "publishedAtUnix": 1781784000
         },
@@ -2935,12 +3046,52 @@
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "mixed",
-        "xgboostScore": 0.4953322410583496,
+        "xgboostScore": 0.46654844284057617,
         "xgboostModelRank": 6,
         "xgboostSwiftRank": 10
       }
     ],
     "radar": [
+      {
+        "id": "will-usa-win-the-2026-fifa-world-cup-467|No",
+        "title": "Will USA win the 2026 FIFA World Cup?",
+        "slug": "will-usa-win-the-2026-fifa-world-cup-467",
+        "eventSlug": "world-cup-winner",
+        "marketURL": "https://polymarket.com/event/world-cup-winner",
+        "outcome": "No",
+        "category": "sports",
+        "severity": "red",
+        "take": "conviction",
+        "direction": "buy",
+        "confidence": 95,
+        "weightedFlowUSD": 150000,
+        "weightedGrossFlowUSD": 150000,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 1,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.965,
+        "latestTradeTimestamp": 1782203465,
+        "horizon": "long_term",
+        "daysToEnd": 27,
+        "marketEndDate": "2026-07-20T00:00:00Z",
+        "currentMarketPrice": 0.9655,
+        "marketBiasSummary": "whale-sized buying detected",
+        "signalTypes": [
+          "whale"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0xccb7802e9d89de133f995e502f572378105c317e68e86ac4d138da57bbf6d257"
+        ],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
+      },
       {
         "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
         "title": "Spread: England (-1.5)",
@@ -2979,7 +3130,7 @@
         "xgboostStance": "supports",
         "xgboostScore": 0.8159660696983337,
         "xgboostModelRank": 3,
-        "xgboostSwiftRank": 5
+        "xgboostSwiftRank": 2
       },
       {
         "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
@@ -3022,30 +3173,30 @@
         "xgboostSwiftRank": 9
       },
       {
-        "id": "fifwc-prt-uzb-2026-06-23-uzb|No",
-        "title": "Will Uzbekistan win on 2026-06-23?",
-        "slug": "fifwc-prt-uzb-2026-06-23-uzb",
-        "eventSlug": "fifwc-prt-uzb-2026-06-23",
-        "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23",
-        "outcome": "No",
+        "id": "fifwc-pan-hrv-2026-06-23-hrv|Yes",
+        "title": "Will Croatia win on 2026-06-23?",
+        "slug": "fifwc-pan-hrv-2026-06-23-hrv",
+        "eventSlug": "fifwc-pan-hrv-2026-06-23",
+        "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23",
+        "outcome": "Yes",
         "category": "sports",
         "severity": "yellow",
         "take": "strong",
         "direction": "buy",
         "confidence": 95,
-        "weightedFlowUSD": 85625,
-        "weightedGrossFlowUSD": 85625,
+        "weightedFlowUSD": 95341.88,
+        "weightedGrossFlowUSD": 95341.88,
         "supportingExposureUSD": 0,
         "uniqueTraderCount": 1,
         "uniqueTransactionCount": 1,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.96,
-        "latestTradeTimestamp": 1782194782,
+        "averageTradePrice": 0.66,
+        "latestTradeTimestamp": 1782211369,
         "horizon": "short_term",
         "daysToEnd": 1,
-        "marketEndDate": "2026-06-23T17:00:00Z",
-        "currentMarketPrice": 0.955,
+        "marketEndDate": "2026-06-23T23:00:00Z",
+        "currentMarketPrice": 0.665,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -3054,12 +3205,12 @@
         "verificationStatus": "missing",
         "verifiedTransactionCount": 0,
         "txLinks": [
-          "https://polygonscan.com/tx/0xea78b7dca4313423682e32116bc94effc4803fc3ff1dea1f62872f5399e98bce"
+          "https://polygonscan.com/tx/0xcdbc956c73ff44ee8bb7eaf6dbc1df9f047731b718a2ef8f09d8d41aa7bc99fb"
         ],
-        "xgboostStance": "skeptical",
-        "xgboostScore": 0.07433078438043594,
-        "xgboostModelRank": 11,
-        "xgboostSwiftRank": 7
+        "xgboostStance": "mixed",
+        "xgboostScore": 0.39360931515693665,
+        "xgboostModelRank": 8,
+        "xgboostSwiftRank": 6
       },
       {
         "id": "fifwc-eng-gha-2026-06-23-eng|Yes",
@@ -3097,9 +3248,9 @@
           "https://polygonscan.com/tx/0xe4673942a849e9d8ce962b81a3da0f8b8cdc6ce4d2bcb0f85072844259b09c51"
         ],
         "xgboostStance": "skeptical",
-        "xgboostScore": 0.22348828613758087,
-        "xgboostModelRank": 8,
-        "xgboostSwiftRank": 8
+        "xgboostScore": 0.21919123828411102,
+        "xgboostModelRank": 10,
+        "xgboostSwiftRank": 7
       },
       {
         "id": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
@@ -3120,13 +3271,13 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.9785,
-        "latestTradeTimestamp": 1782202728,
+        "averageTradePrice": 0.98,
+        "latestTradeTimestamp": 1782234965,
         "horizon": "short_term",
         "daysToEnd": 7,
         "marketEndDate": "2026-06-30T00:00:00Z",
-        "currentMarketPrice": 0.9785,
-        "marketBiasSummary": "Fresh source signal from The White House Iran Search · matched 'will trump agree to iranian transit fees in the strait of hormuz by may 31' · 5201m ago · moved +7.4pt since source · no-chase zone · official source",
+        "currentMarketPrice": 0.98,
+        "marketBiasSummary": "Fresh source signal from The White House Iran Search · matched 'will trump agree to iranian transit fees in the strait of hormuz by may 31' · 5738m ago · moved +7.6pt since source · no-chase zone · official source",
         "signalTypes": [
           "source"
         ],
@@ -3142,7 +3293,7 @@
           "ruleID": "whitehouse-search-iran-pressure",
           "matchedQuery": "will trump agree to iranian transit fees in the strait of hormuz by may 31",
           "priority": 9,
-          "freshnessMinutesAtScan": 5201,
+          "freshnessMinutesAtScan": 5738,
           "publishedAt": "2026-06-19T17:37:43.000Z",
           "publishedAtUnix": 1781890663
         },
@@ -3151,126 +3302,60 @@
         "txLinks": [],
         "xgboostStance": "mixed",
         "xgboostScore": 0.33510494232177734,
-        "xgboostModelRank": 7,
-        "xgboostSwiftRank": 6
-      },
-      {
-        "id": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
-        "title": "Will Japan win on 2026-06-25?",
-        "slug": "fifwc-jpn-swe-2026-06-25-jpn",
-        "eventSlug": "fifwc-jpn-swe-2026-06-25",
-        "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25",
-        "outcome": "Yes",
-        "category": "sports",
-        "severity": "yellow",
-        "take": "lean",
-        "direction": "buy",
-        "confidence": 57,
-        "weightedFlowUSD": 35204.57204236587,
-        "weightedGrossFlowUSD": 35204.57204236587,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 1,
-        "uniqueTransactionCount": 6,
-        "bestTraderRank": 22,
-        "worstTraderRank": 22,
-        "averageTradePrice": 0.5100000002707484,
-        "latestTradeTimestamp": 1782195731,
-        "horizon": "short_term",
-        "daysToEnd": 3,
-        "marketEndDate": "2026-06-25T23:00:00Z",
-        "currentMarketPrice": 0.515,
-        "marketBiasSummary": "top traders are net buyers with strong agreement",
-        "signalTypes": [
-          "leaderboard"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0x42e610ba7f5d0f7d2be0ae3f5b5fe8468d94c83ad55a8cbb18989665c9a9a264",
-          "https://polygonscan.com/tx/0x3f157edd0b0de73f2ca4acccf72dae01fead77bc0163c84b2ddd32c4e2504159",
-          "https://polygonscan.com/tx/0x628ce8545ec87c1017287593fe878705d876481cebd128aedb7122be6e490e1e",
-          "https://polygonscan.com/tx/0x9179ffa5c67e10b29005b3bdf1326d2c10880b05e3c26171f6f018e11ac00f9a",
-          "https://polygonscan.com/tx/0x84127e54084682c143fd4915e6aade22e5de6dca32e5b9c8621a8e2f08643ec7"
-        ],
-        "xgboostStance": "skeptical",
-        "xgboostScore": 0.1666988730430603,
-        "xgboostModelRank": 10,
-        "xgboostSwiftRank": 11
+        "xgboostModelRank": 9,
+        "xgboostSwiftRank": 5
       }
     ],
     "officialPostWatch": [
       {
         "category": "crypto",
-        "currentPrice": 0.1865,
+        "currentPrice": 0.6605,
         "decision": "built_signal",
         "freshnessMinutesAtScan": 0,
         "marketCategory": "crypto",
-        "marketEventSlug": "bitcoin-above-on-june-23-2026",
-        "marketSlug": "bitcoin-above-62k-on-june-23-2026",
-        "marketTitle": "Will the price of Bitcoin be above $62,000 on June 23?",
+        "marketEventSlug": "bitcoin-above-on-june-24-2026",
+        "marketSlug": "bitcoin-above-62k-on-june-24-2026",
+        "marketTitle": "Will the price of Bitcoin be above $62,000 on June 24?",
         "matchScore": 27.5,
         "matchedQuery": "bitcoin above",
-        "maxChasePrice": 0.76,
+        "maxChasePrice": 0.7,
         "priority": 8,
         "provider": "coinalyze",
-        "publishedAtUnix": 1782202728,
+        "publishedAtUnix": 1782234965,
         "sourceHandle": "coinalyze",
         "sourceLane": "standard",
         "sourceName": "Coinalyze Derivatives",
         "sourceType": "api",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "summaryText": "BTCUSDT derivatives snapshot | OI 6.10B USD | funding +0.1655% | predicted +0.1221% | long crowding | heavy derivatives positioning"
-      },
-      {
-        "category": "crypto",
-        "currentPrice": 0.017,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 21,
-        "marketCategory": "crypto",
-        "marketEventSlug": "solana-above-on-june-26-2026",
-        "marketSlug": "solana-above-50-on-june-26-2026",
-        "marketTitle": "Will the price of Solana be above $50 on June 26?",
-        "matchScore": 25.5,
-        "matchedQuery": "solana etf approval",
-        "maxChasePrice": 0.78,
-        "priority": 7,
-        "provider": "tree_news",
-        "publishedAtUnix": 1782201456,
-        "sourceHandle": "treeofalpha",
-        "sourceLane": "standard",
-        "sourceName": "Tree Of Alpha News",
-        "sourceType": "api",
-        "sourceURL": "https://www.federalregister.gov/documents/2026/06/23/2026-12519/self-regulatory-organizations-the-nasdaq-stock-market-llc-order-instituting-proceedings-to-determine",
-        "summaryText": "FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To... | FEDERAL REGISTER: Self-Regulatory Organizations; The Nasdaq Stock Market LLC; Order Instituting Proceedings To Determine Whether To Approve or Disapprove a Proposed Rule Change To List and Trade Shares of the VanEck JitoSOL ETF Under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares)"
-      },
-      {
-        "category": "crypto",
-        "currentPrice": 0.017,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 144,
-        "marketCategory": "crypto",
-        "marketEventSlug": "solana-above-on-june-26-2026",
-        "marketSlug": "solana-above-50-on-june-26-2026",
-        "marketTitle": "Will the price of Solana be above $50 on June 26?",
-        "matchScore": 13,
-        "matchedQuery": "solana etf approval",
-        "maxChasePrice": 0.78,
-        "priority": 7,
-        "provider": "tree_news",
-        "publishedAtUnix": 1782194040,
-        "sourceHandle": "treeofalpha",
-        "sourceLane": "standard",
-        "sourceName": "Tree Of Alpha News",
-        "sourceType": "api",
-        "sourceURL": "https://twitter.com/GoKiteAI/status/2069297900627296447",
-        "summaryText": "KITE AI (@GoKiteAI): Kite is strengthening the trust layer for autonomous agents, shipping security upgrades, ... | KITE AI (@GoKiteAI): Kite is strengthening the trust layer for autonomous agents, shipping security upgrades, deepening enterprise compliance, and expanding market access. Here's what we delivered this week: 1️⃣ We shipped a security layer for the Kite Agent Passport: action-bound passkey step-ups, delayed account recovery you can cancel, protocol-agnostic ses..."
+        "summaryText": "BTCUSDT derivatives snapshot | OI 6.20B USD | funding -0.1889% | predicted +0.0635% | short crowding | heavy derivatives positioning"
       },
       {
         "category": "geopolitics",
-        "currentPrice": 0.9495,
+        "currentPrice": 0.465,
+        "decision": "built_signal",
+        "freshnessMinutesAtScan": 316,
+        "marketCategory": "geopolitics",
+        "marketEventSlug": "russia-x-ukraine-ceasefire-agreement-by",
+        "marketSlug": "russia-x-ukraine-ceasefire-agreement-by-december-31-2026",
+        "marketTitle": "Russia x Ukraine ceasefire agreement by December 31, 2026?",
+        "matchScore": 11.5,
+        "matchedQuery": "ukraine ceasefire",
+        "maxChasePrice": 0.8,
+        "priority": 8,
+        "provider": "eu_commission_web",
+        "publishedAtUnix": 1782216000,
+        "sourceHandle": "commission.europa.eu",
+        "sourceLane": "standard",
+        "sourceName": "European Commission",
+        "sourceType": "web",
+        "sourceURL": "https://transport.ec.europa.eu/news-events/news/european-union-signs-aviation-agreement-kazakhstan-2026-06-23_en",
+        "summaryText": "European Union signs aviation agreement with Kazakhstan"
+      },
+      {
+        "category": "geopolitics",
+        "currentPrice": 0.954,
         "decision": "built_no_chase_signal",
-        "freshnessMinutesAtScan": 6978,
+        "freshnessMinutesAtScan": 7516,
         "marketCategory": "geopolitics",
         "marketEventSlug": "us-x-china-tariff-agreement-by-june-30",
         "marketSlug": "us-x-china-tariff-agreement-by-june-30",
@@ -3290,9 +3375,9 @@
       },
       {
         "category": "geopolitics",
-        "currentPrice": 0.9785,
+        "currentPrice": 0.98,
         "decision": "built_no_chase_signal",
-        "freshnessMinutesAtScan": 5201,
+        "freshnessMinutesAtScan": 5738,
         "marketCategory": "geopolitics",
         "marketEventSlug": "what-iranian-demands-will-trump-agree-to-by-june-30",
         "marketSlug": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30",
@@ -3314,18 +3399,23 @@
     "suspiciousWallets": [],
     "categoryMix": [
       {
+        "key": "geopolitics",
+        "label": "Geopolitics",
+        "value": 3
+      },
+      {
         "key": "sports",
         "label": "Sports",
         "value": 2
       },
       {
-        "key": "crypto",
-        "label": "Crypto",
+        "key": "other",
+        "label": "Other",
         "value": 2
       },
       {
-        "key": "geopolitics",
-        "label": "Geopolitics",
+        "key": "crypto",
+        "label": "Crypto",
         "value": 1
       }
     ]
@@ -3333,7 +3423,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-06-23T08:20:42Z",
+    "generatedAt": "2026-06-23T17:18:31Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3350,7 +3440,7 @@
         "yieldUSD": 0.1175
       },
       "openPositionCount": 3,
-      "totalCurrentValue": 10.2362,
+      "totalCurrentValue": 10.0985,
       "walletCount": 2
     },
     "urgentAction": null,
@@ -3360,7 +3450,7 @@
         "label": "No signal",
         "count": 3,
         "actionableCount": 0,
-        "totalCurrentValue": 10.2362,
+        "totalCurrentValue": 10.0985,
         "positions": [
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3369,9 +3459,9 @@
             "title": "Anthropic acquired before 2027?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 4.6419,
-            "currentPrice": 0.0475,
-            "percentPnL": -33.6859,
+            "currentValue": 4.2412,
+            "currentPrice": 0.0434,
+            "percentPnL": -39.4103,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3391,9 +3481,9 @@
             "title": "Will Norway win the 2026 FIFA World Cup?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 2.9555,
-            "currentPrice": 0.0285,
-            "percentPnL": 5.5573,
+            "currentValue": 3.1629,
+            "currentPrice": 0.0305,
+            "percentPnL": 12.9647,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3413,9 +3503,9 @@
             "title": "Will Netherlands win the 2026 FIFA World Cup?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 2.6388,
-            "currentPrice": 0.0475,
-            "percentPnL": 5.5521,
+            "currentValue": 2.6944,
+            "currentPrice": 0.0485,
+            "percentPnL": 7.7761,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3434,15 +3524,15 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-06-23T07:19:31Z",
-      "previousGeneratedAtUnix": 1782199171,
+      "previousGeneratedAt": "2026-06-23T08:20:42Z",
+      "previousGeneratedAtUnix": 1782202842,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 0.1518000000000015,
+      "valueDeltaUSD": -0.1377000000000006,
       "highlights": [],
       "wallets": [
         {
@@ -3452,7 +3542,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.1518000000000015,
+          "valueDeltaUSD": -0.1377000000000006,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3461,7 +3551,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 10.084399999999999,
+          "previousTotalCurrentValue": 10.2362,
           "highlights": []
         },
         {
@@ -3487,16 +3577,16 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-06-23T08:20:44.184Z",
-      "snapshotCount": 331,
+      "generatedAt": "2026-06-23T17:18:34.300Z",
+      "snapshotCount": 332,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-06-23T08:20:42Z",
+      "latestAt": "2026-06-23T17:18:31Z",
       "latestSummary": {
-        "timestamp": "2026-06-23T08:20:42Z",
-        "timestampUnix": 1782202842,
-        "currentValue": 10.2362,
+        "timestamp": "2026-06-23T17:18:31Z",
+        "timestampUnix": 1782235111,
+        "currentValue": 10.0985,
         "costBasisValue": 12.281181479999999,
-        "unrealizedPnL": -2.044981479999999,
+        "unrealizedPnL": -2.1826814799999994,
         "realizedPnL": -0.6188,
         "openPositionCount": 3,
         "actionablePositionCount": 0
@@ -6813,15 +6903,25 @@
           "realizedPnL": -0.6188,
           "openPositionCount": 3,
           "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-06-23T17:18:31Z",
+          "timestampUnix": 1782235111,
+          "currentValue": 10.0985,
+          "costBasisValue": 12.281181479999999,
+          "unrealizedPnL": -2.1826814799999994,
+          "realizedPnL": -0.6188,
+          "openPositionCount": 3,
+          "actionablePositionCount": 0
         }
       ],
       "walletSeries": [
         {
           "key": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
-          "latestCurrentValue": 10.2362,
+          "latestCurrentValue": 10.0985,
           "latestCostBasisValue": 12.281181479999999,
-          "latestUnrealizedPnL": -2.044981479999999,
+          "latestUnrealizedPnL": -2.1826814799999994,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 3,
           "latestActionablePositionCount": 0,
@@ -10132,6 +10232,16 @@
               "currentValue": 10.2362,
               "costBasisValue": 12.281181479999999,
               "unrealizedPnL": -2.044981479999999,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 3,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 10.0985,
+              "costBasisValue": 12.281181479999999,
+              "unrealizedPnL": -2.1826814799999994,
               "realizedPnL": -0.6188,
               "openPositionCount": 3,
               "actionablePositionCount": 0
@@ -13457,6 +13567,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -13465,9 +13585,9 @@
         {
           "key": "world-cup-winner",
           "label": "Will Spain win the 2026 FIFA World Cup?",
-          "latestCurrentValue": 5.5943,
+          "latestCurrentValue": 5.8573,
           "latestCostBasisValue": 5.28407148,
-          "latestUnrealizedPnL": 0.31022851999999945,
+          "latestUnrealizedPnL": 0.5732285199999998,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 2,
           "latestActionablePositionCount": 0,
@@ -16781,15 +16901,25 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 5.8573,
+              "costBasisValue": 5.28407148,
+              "unrealizedPnL": 0.5732285199999998,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "anthropic-acquired-before-2027",
           "label": "Anthropic acquired before 2027?",
-          "latestCurrentValue": 4.6419,
+          "latestCurrentValue": 4.2412,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.3552099999999996,
+          "latestUnrealizedPnL": -2.755909999999999,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -20100,6 +20230,16 @@
               "currentValue": 4.6419,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.3552099999999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 4.2412,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.755909999999999,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -23419,6 +23559,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -26747,6 +26897,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -30063,6 +30223,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -33391,6 +33561,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -36707,6 +36887,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -40035,6 +40225,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -43351,6 +43551,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -46679,6 +46889,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -49995,6 +50215,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -53323,6 +53553,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -56639,6 +56879,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -59967,6 +60217,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -63283,6 +63543,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -66611,6 +66881,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -69927,6 +70207,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -73255,6 +73545,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -76571,6 +76871,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -79899,6 +80209,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -83215,6 +83535,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -86543,6 +86873,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -89859,6 +90199,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -93187,6 +93537,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -96503,6 +96863,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -99831,6 +100201,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -103147,6 +103527,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -106475,6 +106865,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -109791,6 +110191,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -113119,6 +113529,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -116435,6 +116855,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -119763,6 +120193,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -123085,6 +123525,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -123093,9 +123543,9 @@
         {
           "key": "sports",
           "label": "Sports",
-          "latestCurrentValue": 5.5943,
+          "latestCurrentValue": 5.8573,
           "latestCostBasisValue": 5.28407148,
-          "latestUnrealizedPnL": 0.31022851999999945,
+          "latestUnrealizedPnL": 0.5732285199999998,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 2,
           "latestActionablePositionCount": 0,
@@ -126409,15 +126859,25 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 5.8573,
+              "costBasisValue": 5.28407148,
+              "unrealizedPnL": 0.5732285199999998,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "tech",
           "label": "Tech",
-          "latestCurrentValue": 4.6419,
+          "latestCurrentValue": 4.2412,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.3552099999999996,
+          "latestUnrealizedPnL": -2.755909999999999,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -129728,6 +130188,16 @@
               "currentValue": 4.6419,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.3552099999999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 4.2412,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.755909999999999,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -133047,6 +133517,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -136375,6 +136855,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -139691,6 +140181,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -143019,6 +143519,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -146335,6 +146845,16 @@
             {
               "timestamp": "2026-06-23T08:20:42Z",
               "timestampUnix": 1782202842,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -149663,6 +150183,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -152985,6 +153515,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-06-23T17:18:31Z",
+              "timestampUnix": 1782235111,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -153012,14 +153552,14 @@
         "positions": [
           {
             "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0475,
-            "currentValue": 4.6419,
+            "currentPrice": 0.0434,
+            "currentValue": 4.2412,
             "endDate": "2026-12-31T00:00:00Z",
             "eventSlug": "anthropic-acquired-before-2027",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
             "outcome": "Yes",
-            "percentPnL": -33.6859,
-            "percentRealizedPnL": -33.6866,
+            "percentPnL": -39.4103,
+            "percentRealizedPnL": -39.4109,
             "realizedPnL": 0,
             "size": 97.725,
             "slug": "anthropic-acquired-before-2027",
@@ -153027,14 +153567,14 @@
           },
           {
             "averageEntryPrice": 0.0269,
-            "currentPrice": 0.0285,
-            "currentValue": 2.9555,
+            "currentPrice": 0.0305,
+            "currentValue": 3.1629,
             "endDate": "2026-07-20T00:00:00Z",
             "eventSlug": "world-cup-winner",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
             "outcome": "Yes",
-            "percentPnL": 5.5573,
-            "percentRealizedPnL": -84.8489,
+            "percentPnL": 12.9647,
+            "percentRealizedPnL": -83.7857,
             "realizedPnL": -0.6188,
             "size": 103.7037,
             "slug": "will-norway-win-the-2026-fifa-world-cup-893",
@@ -153042,14 +153582,14 @@
           },
           {
             "averageEntryPrice": 0.0449,
-            "currentPrice": 0.0475,
-            "currentValue": 2.6388,
+            "currentPrice": 0.0485,
+            "currentValue": 2.6944,
             "endDate": "2026-07-20T00:00:00Z",
             "eventSlug": "world-cup-winner",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
             "outcome": "Yes",
-            "percentPnL": 5.5521,
-            "percentRealizedPnL": 5.5543,
+            "percentPnL": 7.7761,
+            "percentRealizedPnL": 7.7783,
             "realizedPnL": 0,
             "size": 55.5555,
             "slug": "will-netherlands-win-the-2026-fifa-world-cup-739",
@@ -153057,7 +153597,7 @@
           }
         ],
         "recentActivityCount": 0,
-        "totalCurrentValue": 10.2362,
+        "totalCurrentValue": 10.0985,
         "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "delta": {
@@ -153067,7 +153607,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.1518000000000015,
+          "valueDeltaUSD": -0.1377000000000006,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -153076,7 +153616,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 10.084399999999999,
+          "previousTotalCurrentValue": 10.2362,
           "highlights": []
         }
       },
@@ -153390,7 +153930,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-06-23T08:20:42Z",
+    "generatedAt": "2026-06-23T17:18:32Z",
     "market": {
       "available": true,
       "summary": {
@@ -154428,18 +154968,23 @@
   "pulse": {
     "marketMix": [
       {
+        "key": "geopolitics",
+        "label": "Geopolitics",
+        "value": 3
+      },
+      {
         "key": "sports",
         "label": "Sports",
         "value": 2
       },
       {
-        "key": "crypto",
-        "label": "Crypto",
+        "key": "other",
+        "label": "Other",
         "value": 2
       },
       {
-        "key": "geopolitics",
-        "label": "Geopolitics",
+        "key": "crypto",
+        "label": "Crypto",
         "value": 1
       }
     ],
@@ -154453,11 +154998,11 @@
     "systemHealth": [
       {
         "label": "Market updated",
-        "value": "2026-06-23T08:20:38Z"
+        "value": "2026-06-23T17:18:28Z"
       },
       {
         "label": "Wallet updated",
-        "value": "2026-06-23T08:20:42Z"
+        "value": "2026-06-23T17:18:31Z"
       },
       {
         "label": "Insider updated",
@@ -154469,7 +155014,7 @@
       },
       {
         "label": "Official watch",
-        "value": "5"
+        "value": "4"
       },
       {
         "label": "XGBoost rows",
@@ -154495,136 +155040,119 @@
   },
   "charts": {
     "marketFlow": {
-      "maxAbsFlowUSD": 630962.1799999999,
+      "maxAbsFlowUSD": 180150.48,
       "items": [
         {
-          "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "title": "Will Portugal win on 2026-06-23?",
-          "shortLabel": "Will Portugal win on 20...",
-          "slug": "fifwc-prt-uzb-2026-06-23-prt",
-          "eventSlug": "fifwc-prt-uzb-2026-06-23",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23",
+          "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "title": "Will Korea Republic win on 2026-06-24?",
+          "shortLabel": "Will Korea Republic win...",
+          "slug": "fifwc-rsa-kr-2026-06-24-kr",
+          "eventSlug": "fifwc-rsa-kr-2026-06-24",
+          "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24",
           "outcome": "YES",
           "direction": "buy",
-          "flowUSD": 630962.1799999999,
-          "absFlowUSD": 630962.1799999999,
+          "flowUSD": 180150.48,
+          "absFlowUSD": 180150.48,
           "confidence": 95,
-          "currentPrice": 0.845,
-          "daysToEnd": 1
+          "currentPrice": 0.585,
+          "daysToEnd": 2
         },
         {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "shortLabel": "Panama vs. Croatia: O/U...",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "eventSlug": "fifwc-pan-hrv-2026-06-23-more-markets",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-more-markets",
-          "outcome": "Over",
-          "direction": "buy",
-          "flowUSD": 177992.59,
-          "absFlowUSD": 177992.59,
-          "confidence": 95,
-          "currentPrice": 0.555,
-          "daysToEnd": 1
-        },
-        {
-          "id": "bitcoin-above-62k-on-june-23-2026|No",
-          "title": "Will the price of Bitcoin be above $62,000 on June 23?",
-          "shortLabel": "Will the price of Bitco...",
-          "slug": "bitcoin-above-62k-on-june-23-2026",
-          "eventSlug": "bitcoin-above-on-june-23-2026",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-23-2026",
+          "id": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-july-2026-meeting|No",
+          "title": "Will the Fed decrease interest rates by 25 bps after the July 2026 meeting?",
+          "shortLabel": "Will the Fed decrease i...",
+          "slug": "will-the-fed-decrease-interest-rates-by-25-bps-after-the-july-2026-meeting",
+          "eventSlug": "fed-decision-in-july-181",
+          "marketURL": "https://polymarket.com/event/fed-decision-in-july-181",
           "outcome": "NO",
+          "direction": "buy",
+          "flowUSD": 100000,
+          "absFlowUSD": 100000,
+          "confidence": 95,
+          "currentPrice": 0.9855,
+          "daysToEnd": 36
+        },
+        {
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
+          "shortLabel": "Will the price of Bitco...",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "eventSlug": "bitcoin-above-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-24-2026",
+          "outcome": "YES",
           "direction": "buy",
           "flowUSD": 16125,
           "absFlowUSD": 16125,
           "confidence": 97,
-          "currentPrice": 0.1865,
+          "currentPrice": 0.6605,
           "daysToEnd": 1
         },
         {
-          "id": "solana-above-50-on-june-26-2026|No",
-          "title": "Will the price of Solana be above $50 on June 26?",
-          "shortLabel": "Will the price of Solan...",
-          "slug": "solana-above-50-on-june-26-2026",
-          "eventSlug": "solana-above-on-june-26-2026",
-          "marketURL": "https://polymarket.com/event/solana-above-on-june-26-2026",
-          "outcome": "NO",
+          "id": "fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar",
+          "title": "Spread: Bosnia and Herzegovina (-1.5)",
+          "shortLabel": "Spread: Bosnia and Herz...",
+          "slug": "fifwc-bih-qat-2026-06-24-spread-home-1pt5",
+          "eventSlug": "fifwc-bih-qat-2026-06-24-more-markets",
+          "marketURL": "https://polymarket.com/event/fifwc-bih-qat-2026-06-24-more-markets",
+          "outcome": "Qatar",
           "direction": "buy",
-          "flowUSD": 15625,
-          "absFlowUSD": 15625,
-          "confidence": 97,
-          "currentPrice": 0.017,
-          "daysToEnd": 4
+          "flowUSD": 99970.51,
+          "absFlowUSD": 99970.51,
+          "confidence": 95,
+          "currentPrice": 0.535,
+          "daysToEnd": 2
         },
         {
-          "id": "us-x-china-tariff-agreement-by-june-30|No",
-          "title": "US x China tariff agreement by June 30?",
-          "shortLabel": "US x China tariff agree...",
-          "slug": "us-x-china-tariff-agreement-by-june-30",
-          "eventSlug": "us-x-china-tariff-agreement-by-june-30",
-          "marketURL": "https://polymarket.com/event/us-x-china-tariff-agreement-by-june-30",
-          "outcome": "NO",
+          "id": "will-giannis-antetokounmpo-play-for-the-miami-heat-in-2026-27|Yes",
+          "title": "Will Giannis Antetokounmpo play for the Miami Heat in 2026-27?",
+          "shortLabel": "Will Giannis Antetokoun...",
+          "slug": "will-giannis-antetokounmpo-play-for-the-miami-heat-in-2026-27",
+          "eventSlug": "nba-giannis-antetokounmpo-next-team-422",
+          "marketURL": "https://polymarket.com/event/nba-giannis-antetokounmpo-next-team-422",
+          "outcome": "YES",
           "direction": "buy",
-          "flowUSD": 29550,
-          "absFlowUSD": 29550,
-          "confidence": 75,
-          "currentPrice": 0.9495,
+          "flowUSD": 99323.43,
+          "absFlowUSD": 99323.43,
+          "confidence": 95,
+          "currentPrice": 0.9825,
+          "daysToEnd": 133
+        },
+        {
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "shortLabel": "Strait of Hormuz traffi...",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "outcome": "NO",
+          "direction": "sell",
+          "flowUSD": -73713.67,
+          "absFlowUSD": 73713.67,
+          "confidence": 95,
+          "currentPrice": 0.9685,
           "daysToEnd": 7
         }
       ]
     },
     "marketWindow": {
       "maxDaysToEnd": 7,
-      "maxAbsFlowUSD": 630962.1799999999,
+      "maxAbsFlowUSD": 180150.48,
       "items": [
         {
-          "id": "bitcoin-above-62k-on-june-23-2026|No",
-          "title": "Will the price of Bitcoin be above $62,000 on June 23?",
+          "id": "bitcoin-above-62k-on-june-24-2026|Yes",
+          "title": "Will the price of Bitcoin be above $62,000 on June 24?",
           "shortLabel": "Will the price of B...",
-          "slug": "bitcoin-above-62k-on-june-23-2026",
-          "eventSlug": "bitcoin-above-on-june-23-2026",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-23-2026",
-          "outcome": "NO",
+          "slug": "bitcoin-above-62k-on-june-24-2026",
+          "eventSlug": "bitcoin-above-on-june-24-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-on-june-24-2026",
+          "outcome": "YES",
           "direction": "buy",
           "confidence": 97,
           "daysToEnd": 1,
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 16125,
-          "currentPrice": 0.1865
-        },
-        {
-          "id": "fifwc-prt-uzb-2026-06-23-prt|Yes",
-          "title": "Will Portugal win on 2026-06-23?",
-          "shortLabel": "Will Portugal win o...",
-          "slug": "fifwc-prt-uzb-2026-06-23-prt",
-          "eventSlug": "fifwc-prt-uzb-2026-06-23",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23",
-          "outcome": "YES",
-          "direction": "buy",
-          "confidence": 95,
-          "daysToEnd": 1,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 630962.1799999999,
-          "currentPrice": 0.845
-        },
-        {
-          "id": "fifwc-pan-hrv-2026-06-23-total-2pt5|Over",
-          "title": "Panama vs. Croatia: O/U 2.5",
-          "shortLabel": "Panama vs. Croatia:...",
-          "slug": "fifwc-pan-hrv-2026-06-23-total-2pt5",
-          "eventSlug": "fifwc-pan-hrv-2026-06-23-more-markets",
-          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23-more-markets",
-          "outcome": "Over",
-          "direction": "buy",
-          "confidence": 95,
-          "daysToEnd": 1,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 177992.59,
-          "currentPrice": 0.555
+          "currentPrice": 0.6605
         },
         {
           "id": "fifwc-eng-gha-2026-06-23-spread-home-1pt5|England",
@@ -154643,20 +155171,20 @@
           "currentPrice": 0.615
         },
         {
-          "id": "fifwc-prt-uzb-2026-06-23-uzb|No",
-          "title": "Will Uzbekistan win on 2026-06-23?",
-          "shortLabel": "Will Uzbekistan win...",
-          "slug": "fifwc-prt-uzb-2026-06-23-uzb",
-          "eventSlug": "fifwc-prt-uzb-2026-06-23",
-          "marketURL": "https://polymarket.com/event/fifwc-prt-uzb-2026-06-23",
-          "outcome": "NO",
+          "id": "fifwc-pan-hrv-2026-06-23-hrv|Yes",
+          "title": "Will Croatia win on 2026-06-23?",
+          "shortLabel": "Will Croatia win on...",
+          "slug": "fifwc-pan-hrv-2026-06-23-hrv",
+          "eventSlug": "fifwc-pan-hrv-2026-06-23",
+          "marketURL": "https://polymarket.com/event/fifwc-pan-hrv-2026-06-23",
+          "outcome": "YES",
           "direction": "buy",
           "confidence": 95,
           "daysToEnd": 1,
           "take": "strong",
           "horizon": "short_term",
-          "absFlowUSD": 85625,
-          "currentPrice": 0.955
+          "absFlowUSD": 95341.88,
+          "currentPrice": 0.665
         },
         {
           "id": "fifwc-eng-gha-2026-06-23-eng|Yes",
@@ -154675,6 +155203,38 @@
           "currentPrice": 0.825
         },
         {
+          "id": "fifwc-rsa-kr-2026-06-24-kr|Yes",
+          "title": "Will Korea Republic win on 2026-06-24?",
+          "shortLabel": "Will Korea Republic...",
+          "slug": "fifwc-rsa-kr-2026-06-24-kr",
+          "eventSlug": "fifwc-rsa-kr-2026-06-24",
+          "marketURL": "https://polymarket.com/event/fifwc-rsa-kr-2026-06-24",
+          "outcome": "YES",
+          "direction": "buy",
+          "confidence": 95,
+          "daysToEnd": 2,
+          "take": "conviction",
+          "horizon": "short_term",
+          "absFlowUSD": 180150.48,
+          "currentPrice": 0.585
+        },
+        {
+          "id": "fifwc-bih-qat-2026-06-24-spread-home-1pt5|Qatar",
+          "title": "Spread: Bosnia and Herzegovina (-1.5)",
+          "shortLabel": "Spread: Bosnia and...",
+          "slug": "fifwc-bih-qat-2026-06-24-spread-home-1pt5",
+          "eventSlug": "fifwc-bih-qat-2026-06-24-more-markets",
+          "marketURL": "https://polymarket.com/event/fifwc-bih-qat-2026-06-24-more-markets",
+          "outcome": "Qatar",
+          "direction": "buy",
+          "confidence": 95,
+          "daysToEnd": 2,
+          "take": "strong",
+          "horizon": "short_term",
+          "absFlowUSD": 99970.51,
+          "currentPrice": 0.535
+        },
+        {
           "id": "fifwc-jpn-swe-2026-06-25-jpn|No",
           "title": "Will Japan win on 2026-06-25?",
           "shortLabel": "Will Japan win on 2...",
@@ -154691,36 +155251,20 @@
           "currentPrice": 0.485
         },
         {
-          "id": "fifwc-jpn-swe-2026-06-25-jpn|Yes",
-          "title": "Will Japan win on 2026-06-25?",
-          "shortLabel": "Will Japan win on 2...",
-          "slug": "fifwc-jpn-swe-2026-06-25-jpn",
-          "eventSlug": "fifwc-jpn-swe-2026-06-25",
-          "marketURL": "https://polymarket.com/event/fifwc-jpn-swe-2026-06-25",
-          "outcome": "YES",
-          "direction": "buy",
-          "confidence": 57,
-          "daysToEnd": 3,
-          "take": "lean",
-          "horizon": "short_term",
-          "absFlowUSD": 35204.57204236587,
-          "currentPrice": 0.515
-        },
-        {
-          "id": "solana-above-50-on-june-26-2026|No",
-          "title": "Will the price of Solana be above $50 on June 26?",
-          "shortLabel": "Will the price of S...",
-          "slug": "solana-above-50-on-june-26-2026",
-          "eventSlug": "solana-above-on-june-26-2026",
-          "marketURL": "https://polymarket.com/event/solana-above-on-june-26-2026",
+          "id": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june|No",
+          "title": "Strait of Hormuz traffic returns to normal by end of June?",
+          "shortLabel": "Strait of Hormuz tr...",
+          "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "eventSlug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+          "marketURL": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
           "outcome": "NO",
-          "direction": "buy",
-          "confidence": 97,
-          "daysToEnd": 4,
-          "take": "conviction",
+          "direction": "sell",
+          "confidence": 95,
+          "daysToEnd": 7,
+          "take": "strong",
           "horizon": "short_term",
-          "absFlowUSD": 15625,
-          "currentPrice": 0.017
+          "absFlowUSD": 73713.67,
+          "currentPrice": 0.9685
         },
         {
           "id": "will-trump-agree-to-iranian-transit-fees-in-the-strait-of-hormuz-by-june-30|No",
@@ -154736,13 +155280,29 @@
           "take": "lean",
           "horizon": "short_term",
           "absFlowUSD": 15000,
-          "currentPrice": 0.9785
+          "currentPrice": 0.98
+        },
+        {
+          "id": "us-x-china-tariff-agreement-by-june-30|No",
+          "title": "US x China tariff agreement by June 30?",
+          "shortLabel": "US x China tariff a...",
+          "slug": "us-x-china-tariff-agreement-by-june-30",
+          "eventSlug": "us-x-china-tariff-agreement-by-june-30",
+          "marketURL": "https://polymarket.com/event/us-x-china-tariff-agreement-by-june-30",
+          "outcome": "NO",
+          "direction": "buy",
+          "confidence": 75,
+          "daysToEnd": 7,
+          "take": "watch",
+          "horizon": "short_term",
+          "absFlowUSD": 29999.999999999993,
+          "currentPrice": 0.954
         }
       ]
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 10.2362,
+      "maxValueUSD": 10.0985,
       "items": [
         {
           "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -154750,7 +155310,7 @@
           "label": "Haak",
           "shortLabel": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 10.2362,
+          "totalCurrentValue": 10.0985,
           "openPositionCount": 3,
           "actionablePositionCount": 0,
           "recentActivityCount": 0,
@@ -154860,18 +155420,18 @@
           "label": "Market",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-23T08:20:38Z",
+          "generatedAt": "2026-06-23T17:18:28Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-23T08:20:42Z",
+          "generatedAt": "2026-06-23T17:18:31Z",
           "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "reason": "Snapshot 1s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
         },
         {
           "id": "insider",
@@ -154880,16 +155440,16 @@
           "available": true,
           "generatedAt": "2026-06-23T08:18:31Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-23T08:20:45.277Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 11 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-23T17:18:35.442Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)"
         }
       ]
     }
