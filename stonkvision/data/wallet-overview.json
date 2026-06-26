@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 37773,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 14,
       "fetchedAt" : "2026-06-26T13:22:35Z",
       "fetchedAtUnix" : 1782480155,
-      "message" : "Loaded 14 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (10h 29m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 37770,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 11,
+      "fetchedAt" : "2026-06-26T13:22:38Z",
+      "fetchedAtUnix" : 1782480158,
+      "message" : "Using cached wallet watcher feed with 11 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 3,
-      "fetchedAt" : "2026-06-26T13:22:38Z",
-      "fetchedAtUnix" : 1782480158,
+      "fetchedAt" : "2026-06-26T23:52:08Z",
+      "fetchedAtUnix" : 1782517928,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-06-26T13:22:38Z",
-  "generatedAtUnix" : 1782480158,
+  "generatedAt" : "2026-06-26T23:52:08Z",
+  "generatedAtUnix" : 1782517928,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.12119999999999999
     },
     "openPositionCount" : 3,
-    "totalCurrentValue" : 10.418800000000001,
+    "totalCurrentValue" : 9.6885,
     "walletCount" : 2
   },
   "wallets" : [
@@ -74,33 +91,18 @@
       "positions" : [
         {
           "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.0405,
-          "currentValue" : 3.9578,
+          "currentPrice" : 0.0395,
+          "currentValue" : 3.8601,
           "endDate" : "2026-12-31T00:00:00Z",
           "eventSlug" : "anthropic-acquired-before-2027",
           "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
           "outcome" : "Yes",
-          "percentPnL" : -43.4589,
-          "percentRealizedPnL" : -43.4595,
+          "percentPnL" : -44.8546,
+          "percentRealizedPnL" : -44.8552,
           "realizedPnL" : 0,
           "size" : 97.725,
           "slug" : "anthropic-acquired-before-2027",
           "title" : "Anthropic acquired before 2027?"
-        },
-        {
-          "averageEntryPrice" : 0.0269,
-          "currentPrice" : 0.0315,
-          "currentValue" : 3.2666,
-          "endDate" : "2026-07-20T00:00:00Z",
-          "eventSlug" : "world-cup-winner",
-          "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
-          "outcome" : "Yes",
-          "percentPnL" : 16.6684,
-          "percentRealizedPnL" : -83.2541,
-          "realizedPnL" : -0.6188,
-          "size" : 103.7037,
-          "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
-          "title" : "Will Norway win the 2026 FIFA World Cup?"
         },
         {
           "averageEntryPrice" : 0.0449,
@@ -116,10 +118,25 @@
           "size" : 55.5555,
           "slug" : "will-netherlands-win-the-2026-fifa-world-cup-739",
           "title" : "Will Netherlands win the 2026 FIFA World Cup?"
+        },
+        {
+          "averageEntryPrice" : 0.0269,
+          "currentPrice" : 0.0254,
+          "currentValue" : 2.634,
+          "endDate" : "2026-07-20T00:00:00Z",
+          "eventSlug" : "world-cup-winner",
+          "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
+          "outcome" : "Yes",
+          "percentPnL" : -5.9216,
+          "percentRealizedPnL" : -86.497,
+          "realizedPnL" : -0.6188,
+          "size" : 103.7037,
+          "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
+          "title" : "Will Norway win the 2026 FIFA World Cup?"
         }
       ],
       "recentActivityCount" : 0,
-      "totalCurrentValue" : 10.418800000000001,
+      "totalCurrentValue" : 9.6885,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
