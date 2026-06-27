@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-06-27T14:01:29.917Z",
-  "generatedAtUnix": 1782568889,
+  "generatedAt": "2026-06-27T18:22:27.483Z",
+  "generatedAtUnix": 1782584547,
   "sync": {
     "generatedAt": "2026-06-27T14:01:27Z",
     "generatedAtUnix": 1782568887,
@@ -12,26 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-06-27T14:01:29.917Z",
-      "generatedAtUnix": 1782568889,
-      "runID": "run-2026-06-27T13-57-29-171Z-96076",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-27T18:22:27.483Z",
+      "generatedAtUnix": 1782584547,
+      "runID": "run-2026-06-27T17-22-40-788Z-99121",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source, Syncing webpage data.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-06-27T13:57:29.171Z",
-      "finishedAt": "2026-06-27T14:01:29.917Z",
-      "lastRunAt": "2026-06-27T14:01:29.917Z",
-      "durationSeconds": 240.746,
+      "startedAt": "2026-06-27T17:22:40.788Z",
+      "finishedAt": "2026-06-27T18:22:27.483Z",
+      "lastRunAt": "2026-06-27T18:22:27.483Z",
+      "durationSeconds": 3586.695,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-06-27T14:31:29.917Z",
-      "lastSuccessAt": "2026-06-27T14:01:29.917Z",
-      "lastSuccessfulRunAt": "2026-06-27T14:01:29.917Z",
-      "lastFailureAt": "2026-06-26T23:52:57.304Z",
+      "nextRunAt": "2026-06-27T18:52:27.483Z",
+      "lastSuccessAt": "2026-06-27T14:02:16.727Z",
+      "lastSuccessfulRunAt": "2026-06-27T14:02:16.727Z",
+      "lastFailureAt": "2026-06-27T18:22:27.483Z",
       "steps": [
         {
           "id": "insider",
@@ -39,33 +39,33 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-27T13:57:29.230Z",
-          "finishedAt": "2026-06-27T13:58:23.235Z",
-          "durationSeconds": 54.005,
+          "startedAt": "2026-06-27T17:22:40.869Z",
+          "finishedAt": "2026-06-27T17:28:48.084Z",
+          "durationSeconds": 367.215,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T13-57-29-171Z-96076/insider.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T17-22-40-788Z-99121/insider.log",
           "summary": "Telegram preview · selected 0 of 0 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-27T13:58:23.235Z",
+          "lastSuccessAt": "2026-06-27T17:28:48.084Z",
           "lastFailureAt": "2026-06-26T01:22:40.161Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-27T13:58:23.236Z",
-          "finishedAt": "2026-06-27T14:01:24.824Z",
-          "durationSeconds": 181.588,
+          "startedAt": "2026-06-27T17:28:48.085Z",
+          "finishedAt": "2026-06-27T18:06:12.453Z",
+          "durationSeconds": 2244.368,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T13-57-29-171Z-96076/market.log",
-          "summary": "Notification decisions: selected fifwc-hrv-gha-2026-06-27-hrv|Yes [global_window_open,urgent_suspicious] | blocked will-japan-win-the-2026-fifa-world-cup-112|No->notification_limit | will-germany-win-the-2026-fifa-world-cup-467|No->notification_limit | will-england-win-the-2026-fifa-world-cup-937|No->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T17-22-40-788Z-99121/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-27T14:01:24.824Z",
-          "lastFailureAt": "2026-06-26T23:52:03.612Z"
+          "lastFailureAt": "2026-06-27T18:06:12.453Z"
         },
         {
           "id": "wallets",
@@ -73,33 +73,33 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-27T14:01:24.825Z",
-          "finishedAt": "2026-06-27T14:01:27.290Z",
-          "durationSeconds": 2.465,
+          "startedAt": "2026-06-27T18:06:12.453Z",
+          "finishedAt": "2026-06-27T18:06:16.003Z",
+          "durationSeconds": 3.55,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T13-57-29-171Z-96076/wallets.log",
-          "summary": "Source diagnostics: 9 candidate(s) | built 3 | no-chase 6 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T17-22-40-788Z-99121/wallets.log",
+          "summary": "Loaded 18 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-06-27T14:01:27.290Z",
+          "lastSuccessAt": "2026-06-27T18:06:16.003Z",
           "lastFailureAt": "2026-06-26T01:54:23.040Z"
         },
         {
           "id": "sync",
           "title": "Syncing webpage data",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-06-27T14:01:27.290Z",
-          "finishedAt": "2026-06-27T14:01:29.881Z",
-          "durationSeconds": 2.591,
+          "startedAt": "2026-06-27T18:06:16.003Z",
+          "finishedAt": "2026-06-27T18:22:27.408Z",
+          "durationSeconds": 971.405,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T13-57-29-171Z-96076/sync.log",
-          "summary": "Built overlay-feed.json",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-06-27T17-22-40-788Z-99121/sync.log",
+          "summary": "[stonkvision] Step \"sync\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"sync\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-06-27T14:01:29.881Z",
-          "lastFailureAt": "2026-06-25T11:22:57.481Z"
+          "lastFailureAt": "2026-06-27T18:22:27.408Z"
         }
       ],
       "sourceSummary": {
@@ -134,9 +134,9 @@
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-06-27T14:01:29.917Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-27T18:22:27.483Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing market-trans from source, Syncing webpage data."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-06-27T14:01:24Z",
       "status": "degraded",
-      "statusReason": "Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -981,9 +981,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-06-27T14:01:29.917Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-06-27T18:22:27.483Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source, Syncing webpage data. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -3488,15 +3488,15 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-06-27T13:26:48Z",
-      "previousGeneratedAtUnix": 1782566808,
+      "previousGeneratedAt": "2026-06-27T14:01:27Z",
+      "previousGeneratedAtUnix": 1782568887,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -0.22220000000000084,
+      "valueDeltaUSD": 0,
       "highlights": [],
       "wallets": [
         {
@@ -3506,7 +3506,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.22220000000000084,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3515,7 +3515,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 9.2284,
+          "previousTotalCurrentValue": 9.0062,
           "highlights": []
         },
         {
@@ -169771,7 +169771,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.22220000000000084,
+          "valueDeltaUSD": 0,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -169780,7 +169780,7 @@
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 3,
           "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 9.2284,
+          "previousTotalCurrentValue": 9.0062,
           "highlights": []
         }
       },
@@ -171523,7 +171523,7 @@
           "available": true,
           "generatedAt": "2026-06-27T14:01:24Z",
           "status": "stale",
-          "reason": "Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
@@ -171548,9 +171548,9 @@
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-06-27T14:01:29.917Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 21 active · 25 snapshots · 3 built from 9 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-06-27T18:22:27.483Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing market-trans from source, Syncing webpage data. · 2 failing step(s)"
         }
       ]
     }
