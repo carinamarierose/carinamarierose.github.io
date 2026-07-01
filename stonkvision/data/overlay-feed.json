@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-01T12:33:15.478Z",
-  "generatedAtUnix": 1782909195,
+  "generatedAt": "2026-07-01T13:08:56.355Z",
+  "generatedAtUnix": 1782911336,
   "sync": {
-    "generatedAt": "2026-07-01T12:33:12Z",
-    "generatedAtUnix": 1782909192,
+    "generatedAt": "2026-07-01T13:08:53Z",
+    "generatedAtUnix": 1782911333,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,43 +12,43 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-01T12:33:15.478Z",
-      "generatedAtUnix": 1782909195,
-      "runID": "run-2026-07-01T12-29-43-060Z-48473",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch",
+      "generatedAt": "2026-07-01T13:08:56.355Z",
+      "generatedAtUnix": 1782911336,
+      "runID": "run-2026-07-01T13-04-20-688Z-57810",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-01T12:29:43.060Z",
-      "finishedAt": "2026-07-01T12:33:15.478Z",
-      "lastRunAt": "2026-07-01T12:33:15.478Z",
-      "durationSeconds": 212.418,
+      "startedAt": "2026-07-01T13:04:20.688Z",
+      "finishedAt": "2026-07-01T13:08:56.355Z",
+      "lastRunAt": "2026-07-01T13:08:56.355Z",
+      "durationSeconds": 275.667,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-01T13:03:15.478Z",
-      "lastSuccessAt": "2026-07-01T12:33:15.478Z",
-      "lastSuccessfulRunAt": "2026-07-01T12:33:15.478Z",
-      "lastFailureAt": "2026-07-01T11:59:41.604Z",
+      "nextRunAt": "2026-07-01T13:38:56.355Z",
+      "lastSuccessAt": "2026-07-01T11:24:16.128Z",
+      "lastSuccessfulRunAt": "2026-07-01T11:24:16.128Z",
+      "lastFailureAt": "2026-07-01T13:08:56.355Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-01T12:29:43.155Z",
-          "finishedAt": "2026-07-01T12:31:03.442Z",
-          "durationSeconds": 80.287,
+          "startedAt": "2026-07-01T13:04:20.810Z",
+          "finishedAt": "2026-07-01T13:05:47.685Z",
+          "durationSeconds": 86.875,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T12-29-43-060Z-48473/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T13-04-20-688Z-57810/insider.log",
+          "summary": "curl: (28) Connection timed out after 20091 milliseconds",
+          "error": "curl: (28) Connection timed out after 20091 milliseconds",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-01T12:31:03.442Z",
-          "lastFailureAt": "2026-06-29T07:38:33.499Z"
+          "lastFailureAt": "2026-07-01T13:05:47.685Z"
         },
         {
           "id": "market",
@@ -56,15 +56,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-01T12:31:03.443Z",
-          "finishedAt": "2026-07-01T12:33:10.063Z",
-          "durationSeconds": 126.62,
+          "startedAt": "2026-07-01T13:05:47.685Z",
+          "finishedAt": "2026-07-01T13:08:50.341Z",
+          "durationSeconds": 182.656,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T12-29-43-060Z-48473/market.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T13-04-20-688Z-57810/market.log",
           "summary": "Notification decisions: selected will-usa-win-the-2026-fifa-world-cup-467|No [global_window_open,urgent_suspicious] | blocked will-norway-win-the-2026-fifa-world-cup-893|No->notification_limit | will-belgium-win-the-2026-fifa-world-cup-358|No->notification_limit | fifwc-usa-bih-2026-07-01-spread-home-1pt5|Bosnia and Herzegovina->notification_limit",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-01T12:33:10.063Z",
+          "lastSuccessAt": "2026-07-01T13:08:50.341Z",
           "lastFailureAt": "2026-06-29T07:38:35.755Z"
         },
         {
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-01T12:33:10.063Z",
-          "finishedAt": "2026-07-01T12:33:12.686Z",
-          "durationSeconds": 2.623,
+          "startedAt": "2026-07-01T13:08:50.341Z",
+          "finishedAt": "2026-07-01T13:08:53.331Z",
+          "durationSeconds": 2.99,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T12-29-43-060Z-48473/wallets.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T13-04-20-688Z-57810/wallets.log",
           "summary": "Source diagnostics: 9 candidate(s) | built 4 | no-chase 5 | no-market 0",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-01T12:33:12.686Z",
+          "lastSuccessAt": "2026-07-01T13:08:53.331Z",
           "lastFailureAt": "2026-06-26T01:54:23.040Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-01T12:33:12.686Z",
-          "finishedAt": "2026-07-01T12:33:15.440Z",
-          "durationSeconds": 2.754,
+          "startedAt": "2026-07-01T13:08:53.331Z",
+          "finishedAt": "2026-07-01T13:08:56.306Z",
+          "durationSeconds": 2.975,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T12-29-43-060Z-48473/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-01T13-04-20-688Z-57810/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-01T12:33:15.440Z",
+          "lastSuccessAt": "2026-07-01T13:08:56.306Z",
           "lastFailureAt": "2026-06-27T18:22:27.408Z"
         }
       ],
@@ -106,14 +106,14 @@
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-01T12:33:10Z",
+          "generatedAt": "2026-07-01T13:08:50Z",
           "status": "degraded",
-          "statusReason": "Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch"
+          "statusReason": "Snapshot 3s old · 16 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782911590 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (20h 32m old), skipping remote fetch"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-01T12:33:12Z",
+          "generatedAt": "2026-07-01T13:08:53Z",
           "status": "live",
           "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live"
         },
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-01T12:33:12Z",
+          "generatedAt": "2026-07-01T13:08:53Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-01T12:33:15.478Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch"
+          "generatedAt": "2026-07-01T13:08:56.355Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source."
         }
       },
       "runtime": {
@@ -186,9 +186,9 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-01T12:33:10Z",
+      "generatedAt": "2026-07-01T13:08:50Z",
       "status": "degraded",
-      "statusReason": "Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch",
+      "statusReason": "Snapshot 3s old · 16 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782911590 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (20h 32m old), skipping remote fetch",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -200,11 +200,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 17 active signal(s).",
-          "fetchedAt": "2026-07-01T12:33:10Z",
-          "fetchedAtUnix": 1782909190,
+          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 16 active signal(s).",
+          "fetchedAt": "2026-07-01T13:08:50Z",
+          "fetchedAtUnix": 1782911330,
           "attemptCount": 1,
-          "eventCount": 17,
+          "eventCount": 16,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -221,8 +221,8 @@
           "adapter": "source_watch_digest",
           "status": "live",
           "message": "9 candidate(s): 4 built, 5 no-chase, 0 no-market.",
-          "fetchedAt": "2026-07-01T12:33:10Z",
-          "fetchedAtUnix": 1782909190,
+          "fetchedAt": "2026-07-01T13:08:50Z",
+          "fetchedAtUnix": 1782911330,
           "attemptCount": 1,
           "eventCount": 9,
           "cacheUsed": false,
@@ -241,8 +241,8 @@
           "adapter": "suspicious_wallets",
           "status": "live",
           "message": "2 suspicious wallet(s) were flagged in the latest market snapshot.",
-          "fetchedAt": "2026-07-01T12:33:10Z",
-          "fetchedAtUnix": 1782909190,
+          "fetchedAt": "2026-07-01T13:08:50Z",
+          "fetchedAtUnix": 1782911330,
           "attemptCount": 1,
           "eventCount": 2,
           "cacheUsed": false,
@@ -261,8 +261,8 @@
           "adapter": "tradingview_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -281,8 +281,8 @@
           "adapter": "discord_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -301,28 +301,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
-          "attemptCount": 1,
-          "eventCount": 3,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "source-upstream-binance-futures-binance-futures-snapshot-binance-76c64ebc07a3b4c3",
-          "sourceID": "source-upstream-binance-futures-binance-futures-snapshot-binance-76c64ebc07a3b4c3",
-          "sourceName": "Binance Futures",
-          "provider": "binance_futures",
-          "sourceType": "api",
-          "sourceLane": "standard",
-          "sourceHandle": "binance",
-          "adapter": "binance_futures_snapshot",
-          "status": "live",
-          "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -341,10 +321,30 @@
           "adapter": "tree_news_history",
           "status": "live",
           "message": "remote fetch succeeded (24 item(s))",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
           "attemptCount": 1,
           "eventCount": 24,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "source-upstream-binance-futures-binance-futures-snapshot-binance-76c64ebc07a3b4c3",
+          "sourceID": "source-upstream-binance-futures-binance-futures-snapshot-binance-76c64ebc07a3b4c3",
+          "sourceName": "Binance Futures",
+          "provider": "binance_futures",
+          "sourceType": "api",
+          "sourceLane": "standard",
+          "sourceHandle": "binance",
+          "adapter": "binance_futures_snapshot",
+          "status": "live",
+          "message": "remote fetch succeeded (3 item(s))",
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
+          "attemptCount": 1,
+          "eventCount": 3,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -361,8 +361,8 @@
           "adapter": "sec_edgar_submissions",
           "status": "live",
           "message": "remote fetch succeeded (1 item(s))",
-          "fetchedAt": "2026-07-01T12:31:53Z",
-          "fetchedAtUnix": 1782909113,
+          "fetchedAt": "2026-07-01T13:06:38Z",
+          "fetchedAtUnix": 1782911198,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -381,8 +381,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (1 item(s))",
-          "fetchedAt": "2026-07-01T12:32:04Z",
-          "fetchedAtUnix": 1782909124,
+          "fetchedAt": "2026-07-01T13:07:06Z",
+          "fetchedAtUnix": 1782911226,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -401,8 +401,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:05Z",
-          "fetchedAtUnix": 1782909125,
+          "fetchedAt": "2026-07-01T13:07:06Z",
+          "fetchedAtUnix": 1782911226,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -421,8 +421,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:05Z",
-          "fetchedAtUnix": 1782909125,
+          "fetchedAt": "2026-07-01T13:07:06Z",
+          "fetchedAtUnix": 1782911226,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -441,8 +441,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:05Z",
-          "fetchedAtUnix": 1782909125,
+          "fetchedAt": "2026-07-01T13:07:07Z",
+          "fetchedAtUnix": 1782911227,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -461,8 +461,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:06Z",
-          "fetchedAtUnix": 1782909126,
+          "fetchedAt": "2026-07-01T13:07:07Z",
+          "fetchedAtUnix": 1782911227,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -481,8 +481,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:06Z",
-          "fetchedAtUnix": 1782909126,
+          "fetchedAt": "2026-07-01T13:07:07Z",
+          "fetchedAtUnix": 1782911227,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -500,11 +500,11 @@
           "sourceHandle": "RapidResponse47",
           "adapter": "truthsocial_timeline",
           "status": "live",
-          "message": "remote fetch succeeded (2 item(s))",
-          "fetchedAt": "2026-07-01T12:32:06Z",
-          "fetchedAtUnix": 1782909126,
+          "message": "remote fetch succeeded (3 item(s))",
+          "fetchedAt": "2026-07-01T13:07:08Z",
+          "fetchedAtUnix": 1782911228,
           "attemptCount": 1,
-          "eventCount": 2,
+          "eventCount": 3,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -521,8 +521,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:07Z",
-          "fetchedAtUnix": 1782909127,
+          "fetchedAt": "2026-07-01T13:07:08Z",
+          "fetchedAtUnix": 1782911228,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -541,8 +541,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:07Z",
-          "fetchedAtUnix": 1782909127,
+          "fetchedAt": "2026-07-01T13:07:08Z",
+          "fetchedAtUnix": 1782911228,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -561,8 +561,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:07Z",
-          "fetchedAtUnix": 1782909127,
+          "fetchedAt": "2026-07-01T13:07:09Z",
+          "fetchedAtUnix": 1782911229,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -581,8 +581,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:08Z",
-          "fetchedAtUnix": 1782909128,
+          "fetchedAt": "2026-07-01T13:07:09Z",
+          "fetchedAtUnix": 1782911229,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -601,8 +601,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (1 item(s))",
-          "fetchedAt": "2026-07-01T12:32:08Z",
-          "fetchedAtUnix": 1782909128,
+          "fetchedAt": "2026-07-01T13:07:09Z",
+          "fetchedAtUnix": 1782911229,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -621,8 +621,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (0 item(s))",
-          "fetchedAt": "2026-07-01T12:32:08Z",
-          "fetchedAtUnix": 1782909128,
+          "fetchedAt": "2026-07-01T13:07:10Z",
+          "fetchedAtUnix": 1782911230,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -641,8 +641,8 @@
           "adapter": "truthsocial_timeline",
           "status": "live",
           "message": "remote fetch succeeded (2 item(s))",
-          "fetchedAt": "2026-07-01T12:32:09Z",
-          "fetchedAtUnix": 1782909129,
+          "fetchedAt": "2026-07-01T13:07:10Z",
+          "fetchedAtUnix": 1782911230,
           "attemptCount": 1,
           "eventCount": 2,
           "cacheUsed": false,
@@ -667,8 +667,8 @@
           "eventCount": 0,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 4205,
-          "retryAfterUnix": 1782909489
+          "cacheAgeSeconds": 6306,
+          "retryAfterUnix": 1782911590
         },
         {
           "id": "source-upstream-gdelt-doc-gdelt-doc-search-gdelt-geopolitics-74a0c7353e5ac5cf",
@@ -680,7 +680,7 @@
           "sourceHandle": "gdelt-geopolitics",
           "adapter": "gdelt_doc_search",
           "status": "failed",
-          "message": "globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch",
+          "message": "globally throttled until 1782911590 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (20h 32m old), skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -688,14 +688,14 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1782909489
+          "retryAfterUnix": 1782911590
         }
       ]
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-01T12:33:12Z",
+      "generatedAt": "2026-07-01T13:08:53Z",
       "status": "live",
       "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live",
       "upstreamDiagnostics": [
@@ -709,11 +709,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Loaded 17 active signal(s) from market intel.",
-          "fetchedAt": "2026-07-01T12:33:10Z",
-          "fetchedAtUnix": 1782909190,
+          "message": "Loaded 16 active signal(s) from market intel.",
+          "fetchedAt": "2026-07-01T13:08:50Z",
+          "fetchedAtUnix": 1782911330,
           "attemptCount": 1,
-          "eventCount": 17,
+          "eventCount": 16,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -730,8 +730,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 1 actionable call(s).",
-          "fetchedAt": "2026-07-01T12:33:12Z",
-          "fetchedAtUnix": 1782909192,
+          "fetchedAt": "2026-07-01T13:08:53Z",
+          "fetchedAtUnix": 1782911333,
           "attemptCount": 2,
           "eventCount": 2,
           "cacheUsed": false,
@@ -746,7 +746,7 @@
       "synced": true,
       "generatedAt": "2026-07-01T12:30:48Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-bitcoinmarkets",
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-01T12:33:12Z",
+      "generatedAt": "2026-07-01T13:08:53Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +981,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-01T12:33:15.478Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch",
+      "generatedAt": "2026-07-01T13:08:56.355Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -1019,7 +1019,7 @@
   },
   "intel": {
     "available": true,
-    "generatedAt": "2026-07-01T12:33:10Z",
+    "generatedAt": "2026-07-01T13:08:50Z",
     "summary": {
       "totalItemCount": 18,
       "sourceLedCount": 10,
@@ -1031,21 +1031,21 @@
     },
     "sourceLed": [
       {
-        "id": "market-source:binance-BTCUSDT-1782909113",
+        "id": "market-source:binance-BTCUSDT-1782911198",
         "kind": "market_source",
         "title": "BTCUSDT futures snapshot",
         "subtitle": "Binance Futures · 1 linked market",
-        "summary": "mark 58524 | index 58545 | funding +0.0046% | OI 105.23K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
-        "whyItMatters": "1 linked market on the live board · Buy NO on Bitcoin above 58,400 on July 1, 9AM ET? · Standard lane",
-        "sourceEventID": "binance-BTCUSDT-1782909113",
+        "summary": "mark 58664 | index 58672 | funding +0.0044% | OI 105.03K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "whyItMatters": "1 linked market on the live board · Buy NO on Bitcoin above 58,600 on July 1, 10AM ET? · Standard lane",
+        "sourceEventID": "binance-BTCUSDT-1782911198",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-07-01T12:31:05.000Z",
-        "publishedAtUnix": 1782909065,
+        "publishedAt": "2026-07-01T13:05:50.000Z",
+        "publishedAtUnix": 1782911150,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1062,15 +1062,15 @@
         "signalCount": 1,
         "topSignals": [
           {
-            "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-            "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-            "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-9am-et",
+            "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+            "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+            "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-10am-et",
             "outcome": "No",
             "direction": "buy",
             "category": "crypto",
             "take": "conviction",
             "confidence": 97,
-            "sourceMatchedQuery": "bitcoin above 58500"
+            "sourceMatchedQuery": "bitcoin above 58700"
           }
         ]
       },
@@ -1326,21 +1326,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-ETHUSDT-1782909113",
+        "id": "market-source:binance-ETHUSDT-1782911198",
         "kind": "market_source",
         "title": "ETHUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 1569 | index 1570 | funding +0.0028% | OI 2.28M | OI notional 3.58B USD | long crowding | bearish funding",
+        "summary": "mark 1572 | index 1573 | funding +0.0030% | OI 2.28M | OI notional 3.59B USD | long crowding | bearish funding",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-ETHUSDT-1782909113",
+        "sourceEventID": "binance-ETHUSDT-1782911198",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-07-01T12:31:05.000Z",
-        "publishedAtUnix": 1782909065,
+        "publishedAt": "2026-07-01T13:05:50.000Z",
+        "publishedAtUnix": 1782911150,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1580,12 +1580,12 @@
   },
   "xgboost": {
     "available": true,
-    "generatedAt": "2026-07-01T12:33:08.658Z",
+    "generatedAt": "2026-07-01T13:08:48.967Z",
     "status": {
       "label": "Live shadow",
       "className": "supports",
       "title": "XGBoost is active on this synced market snapshot",
-      "body": "8 candidates scored on the current run.",
+      "body": "7 candidates scored on the current run.",
       "detail": "3 support · 2 skeptical · short term service semantic fix"
     },
     "model": {
@@ -1608,7 +1608,7 @@
     },
     "live": {
       "enabled": true,
-      "rowCount": 8,
+      "rowCount": 7,
       "supportCount": 3,
       "skepticalCount": 2,
       "topK": 5,
@@ -1618,17 +1618,17 @@
     },
     "trend": {
       "enabledRuns": 14,
-      "averageScoredRowsPerRun": 9.714285714285714,
-      "supportCount": 66,
-      "skepticalCount": 23,
-      "topKDisagreementCount": 46,
+      "averageScoredRowsPerRun": 9.428571428571429,
+      "supportCount": 65,
+      "skepticalCount": 24,
+      "topKDisagreementCount": 42,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "shadow": {
       "available": true,
-      "generatedAt": "2026-07-01T12:33:08.658Z",
-      "rowCount": 8,
+      "generatedAt": "2026-07-01T13:08:48.967Z",
+      "rowCount": 7,
       "topK": 5,
       "overlapCount": 4,
       "disagreementCount": 4,
@@ -1710,31 +1710,6 @@
           ]
         },
         {
-          "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "signalID": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-          "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-58400-on-july-1-2026-9am-et",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.24,
-          "modelScore": 0.5866491198539734,
-          "modelRank": 4,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": -3,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 256.125,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 58500",
-          "flags": [
-            "Cross-signal",
-            "Source-led"
-          ]
-        },
-        {
           "id": "fifwc-esp-aut-2026-07-02-esp|Yes",
           "signalID": "fifwc-esp-aut-2026-07-02-esp|Yes",
           "title": "Will Spain win on 2026-07-02?",
@@ -1747,9 +1722,9 @@
           "confidence": 95,
           "currentPrice": 0.745,
           "modelScore": 0.5433818101882935,
-          "modelRank": 5,
+          "modelRank": 4,
           "swiftRank": 4,
-          "rankDeltaVsSwift": -1,
+          "rankDeltaVsSwift": 0,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 173.5,
           "sourceHandle": null,
@@ -1760,26 +1735,29 @@
           ]
         },
         {
-          "id": "fifwc-eng-cdr-2026-07-01-team-to-advance|DR Congo",
-          "signalID": "fifwc-eng-cdr-2026-07-01-team-to-advance|DR Congo",
-          "title": "England vs. DR Congo: Team to Advance",
-          "slug": "fifwc-eng-cdr-2026-07-01-team-to-advance",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-cdr-2026-07-01-team-to-advance",
-          "outcome": "DR Congo",
-          "category": "other",
-          "severity": "green",
-          "take": "lean",
-          "confidence": 86,
-          "currentPrice": 0.125,
-          "modelScore": 0.5103769302368164,
-          "modelRank": 6,
-          "swiftRank": 7,
-          "rankDeltaVsSwift": 1,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 135.82065866,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": []
+          "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "signalID": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+          "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-58600-on-july-1-2026-10am-et",
+          "outcome": "No",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.41,
+          "modelScore": 0.5418727993965149,
+          "modelRank": 5,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": -4,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 256.125,
+          "sourceHandle": "binance",
+          "sourceMatchedQuery": "bitcoin above 58700",
+          "flags": [
+            "Cross-signal",
+            "Source-led"
+          ]
         },
         {
           "id": "atp-mejia-zheng-2026-07-01|Michael Zheng",
@@ -1792,10 +1770,10 @@
           "severity": "green",
           "take": "lean",
           "confidence": 77,
-          "currentPrice": 0.675,
-          "modelScore": 0.22050374746322632,
-          "modelRank": 7,
-          "swiftRank": 8,
+          "currentPrice": 0.605,
+          "modelScore": 0.2240220606327057,
+          "modelRank": 6,
+          "swiftRank": 7,
           "rankDeltaVsSwift": 1,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 135,
@@ -1816,9 +1794,9 @@
           "confidence": 95,
           "currentPrice": 0.945,
           "modelScore": 0.13312871754169464,
-          "modelRank": 8,
+          "modelRank": 7,
           "swiftRank": 5,
-          "rankDeltaVsSwift": -3,
+          "rankDeltaVsSwift": -2,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 149,
           "sourceHandle": null,
@@ -1902,31 +1880,6 @@
           ]
         },
         {
-          "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "signalID": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-          "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-58400-on-july-1-2026-9am-et",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.24,
-          "modelScore": 0.5866491198539734,
-          "modelRank": 4,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 256.125,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 58500",
-          "flags": [
-            "Cross-signal",
-            "Source-led"
-          ]
-        },
-        {
           "id": "fifwc-esp-aut-2026-07-02-esp|Yes",
           "signalID": "fifwc-esp-aut-2026-07-02-esp|Yes",
           "title": "Will Spain win on 2026-07-02?",
@@ -1939,7 +1892,7 @@
           "confidence": 95,
           "currentPrice": 0.745,
           "modelScore": 0.5433818101882935,
-          "modelRank": 5,
+          "modelRank": 4,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
@@ -1950,29 +1903,54 @@
             "Whale",
             "Cross-signal"
           ]
-        }
-      ],
-      "topSwift": [
+        },
         {
-          "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "signalID": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-          "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-58400-on-july-1-2026-9am-et",
+          "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "signalID": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+          "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-58600-on-july-1-2026-10am-et",
           "outcome": "No",
           "category": "crypto",
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.24,
-          "modelScore": 0.5866491198539734,
+          "currentPrice": 0.41,
+          "modelScore": 0.5418727993965149,
+          "modelRank": 5,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 256.125,
+          "sourceHandle": "binance",
+          "sourceMatchedQuery": "bitcoin above 58700",
+          "flags": [
+            "Cross-signal",
+            "Source-led"
+          ]
+        }
+      ],
+      "topSwift": [
+        {
+          "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "signalID": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+          "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-58600-on-july-1-2026-10am-et",
+          "outcome": "No",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.41,
+          "modelScore": 0.5418727993965149,
           "modelRank": null,
           "swiftRank": 1,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 256.125,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 58500",
+          "sourceMatchedQuery": "bitcoin above 58700",
           "flags": [
             "Cross-signal",
             "Source-led"
@@ -2078,6 +2056,31 @@
       ],
       "disagreements": [
         {
+          "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "signalID": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+          "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-58600-on-july-1-2026-10am-et",
+          "outcome": "No",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.41,
+          "modelScore": 0.5418727993965149,
+          "modelRank": 5,
+          "swiftRank": 1,
+          "rankDeltaVsSwift": -4,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 256.125,
+          "sourceHandle": "binance",
+          "sourceMatchedQuery": "bitcoin above 58700",
+          "flags": [
+            "Cross-signal",
+            "Source-led"
+          ]
+        },
+        {
           "id": "fifwc-arg-cvi-2026-07-03-spread-home-1pt5|Argentina",
           "signalID": "fifwc-arg-cvi-2026-07-03-spread-home-1pt5|Argentina",
           "title": "Spread: Argentina (-1.5)",
@@ -2095,55 +2098,6 @@
           "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 142,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "signalID": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-          "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-58400-on-july-1-2026-9am-et",
-          "outcome": "No",
-          "category": "crypto",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 97,
-          "currentPrice": 0.24,
-          "modelScore": 0.5866491198539734,
-          "modelRank": 4,
-          "swiftRank": 1,
-          "rankDeltaVsSwift": -3,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 256.125,
-          "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above 58500",
-          "flags": [
-            "Cross-signal",
-            "Source-led"
-          ]
-        },
-        {
-          "id": "fifwc-eng-cdr-2026-07-01-cdr|No",
-          "signalID": "fifwc-eng-cdr-2026-07-01-cdr|No",
-          "title": "Will DR Congo win on 2026-07-01?",
-          "slug": "fifwc-eng-cdr-2026-07-01-cdr",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-cdr-2026-07-01-cdr",
-          "outcome": "No",
-          "category": "sports",
-          "severity": "yellow",
-          "take": "strong",
-          "confidence": 95,
-          "currentPrice": 0.945,
-          "modelScore": 0.13312871754169464,
-          "modelRank": 8,
-          "swiftRank": 5,
-          "rankDeltaVsSwift": -3,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 149,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -2173,16 +2127,51 @@
           "flags": [
             "Whale"
           ]
+        },
+        {
+          "id": "fifwc-eng-cdr-2026-07-01-cdr|No",
+          "signalID": "fifwc-eng-cdr-2026-07-01-cdr|No",
+          "title": "Will DR Congo win on 2026-07-01?",
+          "slug": "fifwc-eng-cdr-2026-07-01-cdr",
+          "marketURL": "https://polymarket.com/event/fifwc-eng-cdr-2026-07-01-cdr",
+          "outcome": "No",
+          "category": "sports",
+          "severity": "yellow",
+          "take": "strong",
+          "confidence": 95,
+          "currentPrice": 0.945,
+          "modelScore": 0.13312871754169464,
+          "modelRank": 7,
+          "swiftRank": 5,
+          "rankDeltaVsSwift": -2,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 149,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
         }
       ]
     },
     "runs": {
       "totalRuns": 18,
       "enabledRuns": 18,
-      "latestRunAt": "2026-07-01T12:31:05.000Z",
-      "latestEnabledRunAt": "2026-07-01T12:31:05.000Z",
+      "latestRunAt": "2026-07-01T13:05:50.000Z",
+      "latestEnabledRunAt": "2026-07-01T13:05:50.000Z",
       "maxScoredRows": 16,
       "items": [
+        {
+          "startedAt": "2026-07-01T13:05:50.000Z",
+          "startedAtUnix": 1782911150,
+          "enabled": true,
+          "scoredRowCount": 7,
+          "supportCount": 3,
+          "skepticalCount": 2,
+          "topKDisagreementCount": 2,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
         {
           "startedAt": "2026-07-01T12:31:05.000Z",
           "startedAtUnix": 1782909065,
@@ -2369,17 +2358,6 @@
           "topKDisagreementCount": 4,
           "promotedCount": 0,
           "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-06-30T09:54:51.000Z",
-          "startedAtUnix": 1782813291,
-          "enabled": true,
-          "scoredRowCount": 8,
-          "supportCount": 3,
-          "skepticalCount": 0,
-          "topKDisagreementCount": 2,
-          "promotedCount": 0,
-          "displacedCount": 0
         }
       ]
     },
@@ -2389,16 +2367,6 @@
       "maxEnabledRuns": 13,
       "maxSupportOrSkeptical": 108,
       "items": [
-        {
-          "day": "2026-06-17",
-          "enabledRuns": 1,
-          "scoredRows": 8,
-          "supportCount": 4,
-          "skepticalCount": 1,
-          "topKDisagreementCount": 4,
-          "promotedCount": 0,
-          "displacedCount": 0
-        },
         {
           "day": "2026-06-18",
           "enabledRuns": 7,
@@ -2531,11 +2499,11 @@
         },
         {
           "day": "2026-07-01",
-          "enabledRuns": 9,
-          "scoredRows": 73,
-          "supportCount": 32,
-          "skepticalCount": 18,
-          "topKDisagreementCount": 18,
+          "enabledRuns": 10,
+          "scoredRows": 80,
+          "supportCount": 35,
+          "skepticalCount": 20,
+          "topKDisagreementCount": 20,
           "promotedCount": 0,
           "displacedCount": 0
         }
@@ -2543,23 +2511,23 @@
     },
     "coverage": {
       "available": true,
-      "taggedHistoryRowCount": 3568,
+      "taggedHistoryRowCount": 3575,
       "resolvedEvaluationCount": 209,
       "categoryCount": 6,
-      "latestTaggedRunAt": "2026-07-01T12:31:05.000Z",
+      "latestTaggedRunAt": "2026-07-01T13:05:50.000Z",
       "latestEvaluationAt": "2026-05-14T19:21:34.000Z",
       "categories": [
         {
           "category": "sports",
-          "taggedRows": 1721,
+          "taggedRows": 1727,
           "resolvedEvaluations": 120,
           "wins": 19,
           "losses": 0,
-          "neutrals": 548,
+          "neutrals": 549,
           "decisiveTotal": 19,
           "decisiveWinRate": 1,
           "averageModelEdge": 0.16786718750000001,
-          "latestTaggedRunAt": "2026-07-01T12:31:05.000Z",
+          "latestTaggedRunAt": "2026-07-01T13:05:50.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
@@ -2577,15 +2545,15 @@
         },
         {
           "category": "crypto",
-          "taggedRows": 428,
+          "taggedRows": 429,
           "resolvedEvaluations": 0,
           "wins": 0,
           "losses": 0,
-          "neutrals": 98,
+          "neutrals": 99,
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": null,
-          "latestTaggedRunAt": "2026-07-01T12:31:05.000Z",
+          "latestTaggedRunAt": "2026-07-01T13:05:50.000Z",
           "latestEvaluationAt": null
         },
         {
@@ -2648,7 +2616,7 @@
   "market": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-01T12:33:10Z",
+    "generatedAt": "2026-07-01T13:08:50Z",
     "summary": {
       "category": "OVERALL",
       "crossSignalCount": 4,
@@ -2670,8 +2638,8 @@
         "topRuleID": "coinalyze-btc-crowded-longs",
         "topSourceHandle": "coinalyze",
         "uniqueBuiltNoChaseSignals": 7,
-        "uniqueBuiltSignals": 28,
-        "uniqueCandidates": 36,
+        "uniqueBuiltSignals": 27,
+        "uniqueCandidates": 35,
         "uniqueNoMarketMatches": 0
       },
       "timePeriod": "DAY",
@@ -2680,20 +2648,20 @@
       "xgboostDisplacedSignalCount": 0,
       "xgboostPromotedSignalCount": 0,
       "xgboostTrend": {
-        "averageScoredRowsPerRun": 9.714285714285714,
+        "averageScoredRowsPerRun": 9.428571428571429,
         "displacedCount": 0,
         "enabledRuns": 14,
         "promotedCount": 0,
-        "skepticalCount": 23,
-        "supportCount": 66,
-        "topKDisagreementCount": 46
+        "skepticalCount": 24,
+        "supportCount": 65,
+        "topKDisagreementCount": 42
       }
     },
     "status": {
-      "activeSignalCount": 17,
+      "activeSignalCount": 16,
       "officialPostWatchCount": 5,
       "suspiciousWalletCount": 2,
-      "xgboostRowCount": 8
+      "xgboostRowCount": 7
     },
     "bestBets": [
       {
@@ -2942,11 +2910,11 @@
         "xgboostSwiftRank": null
       },
       {
-        "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-        "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-        "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-        "eventSlug": "bitcoin-above-on-july-1-2026-9am-et",
-        "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-9am-et",
+        "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+        "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+        "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+        "eventSlug": "bitcoin-above-on-july-1-2026-10am-et",
+        "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-10am-et",
         "outcome": "No",
         "category": "crypto",
         "severity": "red",
@@ -2960,39 +2928,39 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.24,
-        "latestTradeTimestamp": 1782909065,
+        "averageTradePrice": 0.41,
+        "latestTradeTimestamp": 1782911150,
         "horizon": "short_term",
         "daysToEnd": 1,
-        "marketEndDate": "2026-07-01T13:00:00Z",
-        "currentMarketPrice": 0.24,
-        "marketBiasSummary": "Fresh source signal from Binance Futures · matched 'bitcoin above 58500' · 0m ago · official source",
+        "marketEndDate": "2026-07-01T14:00:00Z",
+        "currentMarketPrice": 0.41,
+        "marketBiasSummary": "Fresh source signal from Binance Futures · matched 'bitcoin above 58700' · 0m ago · official source",
         "signalTypes": [
           "source",
           "source_confirmation"
         ],
         "sourceAttribution": {
-          "eventID": "binance-BTCUSDT-1782909113",
+          "eventID": "binance-BTCUSDT-1782911198",
           "provider": "binance_futures",
           "sourceName": "Binance Futures",
           "sourceType": "api",
           "sourceLane": "standard",
           "sourceHandle": "binance",
           "url": "https://fapi.binance.com/",
-          "text": "BTCUSDT futures snapshot | mark 58524 | index 58545 | funding +0.0046% | OI 105.23K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+          "text": "BTCUSDT futures snapshot | mark 58664 | index 58672 | funding +0.0044% | OI 105.03K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
           "ruleID": "binance-btc-crowded-longs",
-          "matchedQuery": "bitcoin above 58500",
+          "matchedQuery": "bitcoin above 58700",
           "priority": 8,
           "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-07-01T12:31:05.000Z",
-          "publishedAtUnix": 1782909065
+          "publishedAt": "2026-07-01T13:05:50.000Z",
+          "publishedAtUnix": 1782911150
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "mixed",
-        "xgboostScore": 0.5866491198539734,
-        "xgboostModelRank": 4,
+        "xgboostScore": 0.5418727993965149,
+        "xgboostModelRank": 5,
         "xgboostSwiftRank": 1
       },
       {
@@ -3015,12 +2983,12 @@
         "bestTraderRank": 999,
         "worstTraderRank": 999,
         "averageTradePrice": 0.0125,
-        "latestTradeTimestamp": 1782909065,
+        "latestTradeTimestamp": 1782911150,
         "horizon": "long_term",
         "daysToEnd": 22,
         "marketEndDate": "2026-07-23T00:00:00Z",
         "currentMarketPrice": 0.0125,
-        "marketBiasSummary": "Fresh source signal from European Central Bank Monetary Policy · matched 'no change ecb interest rates june 2026' · 1711m ago · moved -2.3pt since source · official macro source",
+        "marketBiasSummary": "Fresh source signal from European Central Bank Monetary Policy · matched 'no change ecb interest rates june 2026' · 1745m ago · moved -2.3pt since source · official macro source",
         "signalTypes": [
           "source"
         ],
@@ -3036,7 +3004,7 @@
           "ruleID": "ecb-monetary-hike",
           "matchedQuery": "no change ecb interest rates june 2026",
           "priority": 8,
-          "freshnessMinutesAtScan": 1711,
+          "freshnessMinutesAtScan": 1745,
           "publishedAt": "2026-06-30T08:00:00.000Z",
           "publishedAtUnix": 1782806400
         },
@@ -3128,7 +3096,7 @@
         ],
         "xgboostStance": "mixed",
         "xgboostScore": 0.5433818101882935,
-        "xgboostModelRank": 5,
+        "xgboostModelRank": 4,
         "xgboostSwiftRank": 4
       },
       {
@@ -3209,52 +3177,8 @@
         ],
         "xgboostStance": "skeptical",
         "xgboostScore": 0.13312871754169464,
-        "xgboostModelRank": 8,
+        "xgboostModelRank": 7,
         "xgboostSwiftRank": 5
-      },
-      {
-        "id": "fifwc-eng-cdr-2026-07-01-team-to-advance|DR Congo",
-        "title": "England vs. DR Congo: Team to Advance",
-        "slug": "fifwc-eng-cdr-2026-07-01-team-to-advance",
-        "eventSlug": "fifwc-eng-cdr-2026-07-01-more-markets",
-        "marketURL": "https://polymarket.com/event/fifwc-eng-cdr-2026-07-01-more-markets",
-        "outcome": "DR Congo",
-        "category": "other",
-        "severity": "green",
-        "take": "lean",
-        "direction": "buy",
-        "confidence": 86,
-        "weightedFlowUSD": 371.89197690314563,
-        "weightedGrossFlowUSD": 371.89197690314563,
-        "supportingExposureUSD": 11121.916710714286,
-        "uniqueTraderCount": 2,
-        "uniqueTransactionCount": 9,
-        "bestTraderRank": 3,
-        "worstTraderRank": 15,
-        "averageTradePrice": 0.12000000009999999,
-        "latestTradeTimestamp": 1782908924,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-07-01T16:00:00Z",
-        "currentMarketPrice": 0.125,
-        "marketBiasSummary": "top traders are net buyers with strong agreement",
-        "signalTypes": [
-          "leaderboard"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0x60b9bb5983403313454586d9d52f52ae22f6425d19b5634cee2bb2b185bbcc65",
-          "https://polygonscan.com/tx/0x1709725963a8d6cc37f7bcae14ce175b7840238d6f7b2e1433862df46ccb3bd6",
-          "https://polygonscan.com/tx/0x90ff90ae0b1deabbad91ef4403ad6b531464701864c1d87573abdea83cbd23dd",
-          "https://polygonscan.com/tx/0xe6daeed2889c368ae487a258b1ee0836fd17468a155a4534814a39291cf8512c",
-          "https://polygonscan.com/tx/0xd0072435a1a957653fb422c688868127412c364574ad098d7b0e48f47325d3ef"
-        ],
-        "xgboostStance": "mixed",
-        "xgboostScore": 0.5103769302368164,
-        "xgboostModelRank": 6,
-        "xgboostSwiftRank": 7
       },
       {
         "id": "atp-mejia-zheng-2026-07-01|Michael Zheng",
@@ -3268,9 +3192,9 @@
         "take": "lean",
         "direction": "buy",
         "confidence": 77,
-        "weightedFlowUSD": 27378.57572172692,
-        "weightedGrossFlowUSD": 27378.57572172692,
-        "supportingExposureUSD": 182293.31966995954,
+        "weightedFlowUSD": 26683.412514480584,
+        "weightedGrossFlowUSD": 26683.412514480584,
+        "supportingExposureUSD": 187667.59681096755,
         "uniqueTraderCount": 1,
         "uniqueTransactionCount": 9,
         "bestTraderRank": 10,
@@ -3280,7 +3204,7 @@
         "horizon": "short_term",
         "daysToEnd": 7,
         "marketEndDate": "2026-07-08T10:00:00Z",
-        "currentMarketPrice": 0.675,
+        "currentMarketPrice": 0.605,
         "marketBiasSummary": "top traders are net buyers with strong agreement",
         "signalTypes": [
           "leaderboard"
@@ -3296,33 +3220,33 @@
           "https://polygonscan.com/tx/0x4806b2529b6e50db157234794fbbd7326601addaf52dd2d2af220ef4b802235c"
         ],
         "xgboostStance": "skeptical",
-        "xgboostScore": 0.22050374746322632,
-        "xgboostModelRank": 7,
-        "xgboostSwiftRank": 8
+        "xgboostScore": 0.2240220606327057,
+        "xgboostModelRank": 6,
+        "xgboostSwiftRank": 7
       }
     ],
     "officialPostWatch": [
       {
         "category": "crypto",
-        "currentPrice": 0.24,
+        "currentPrice": 0.41,
         "decision": "built_signal",
         "freshnessMinutesAtScan": 0,
         "marketCategory": "crypto",
-        "marketEventSlug": "bitcoin-above-on-july-1-2026-9am-et",
-        "marketSlug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-        "marketTitle": "Bitcoin above 58,400 on July 1, 9AM ET?",
+        "marketEventSlug": "bitcoin-above-on-july-1-2026-10am-et",
+        "marketSlug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+        "marketTitle": "Bitcoin above 58,600 on July 1, 10AM ET?",
         "matchScore": 38.75,
-        "matchedQuery": "bitcoin above 58500",
+        "matchedQuery": "bitcoin above 58700",
         "maxChasePrice": 0.76,
         "priority": 8,
         "provider": "binance_futures",
-        "publishedAtUnix": 1782909065,
+        "publishedAtUnix": 1782911150,
         "sourceHandle": "binance",
         "sourceLane": "standard",
         "sourceName": "Binance Futures",
         "sourceType": "api",
         "sourceURL": "https://fapi.binance.com",
-        "summaryText": "BTCUSDT futures snapshot | mark 58524 | index 58545 | funding +0.0046% | OI 105.23K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning"
+        "summaryText": "BTCUSDT futures snapshot | mark 58664 | index 58672 | funding +0.0044% | OI 105.03K | OI notional 6.16B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning"
       },
       {
         "category": "crypto",
@@ -3338,19 +3262,19 @@
         "maxChasePrice": 0.76,
         "priority": 8,
         "provider": "coinalyze",
-        "publishedAtUnix": 1782909065,
+        "publishedAtUnix": 1782911150,
         "sourceHandle": "coinalyze",
         "sourceLane": "standard",
         "sourceName": "Coinalyze Derivatives",
         "sourceType": "api",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "summaryText": "BTCUSDT derivatives snapshot | OI 6.16B USD | funding +0.1853% | predicted +0.4579% | long crowding | predicted funding flip risk | reversal risk | heavy derivatives positioning"
+        "summaryText": "BTCUSDT derivatives snapshot | OI 6.16B USD | funding +0.1853% | predicted +0.4400% | long crowding | predicted funding flip risk | reversal risk | heavy derivatives positioning"
       },
       {
         "category": "other",
         "currentPrice": 0.0125,
         "decision": "built_signal",
-        "freshnessMinutesAtScan": 1711,
+        "freshnessMinutesAtScan": 1745,
         "marketCategory": "other",
         "marketEventSlug": "ecb-interest-rates-july-2026",
         "marketSlug": "will-the-ecb-announce-no-change-at-the-july-2026-meeting",
@@ -3372,7 +3296,7 @@
         "category": "geopolitics",
         "currentPrice": 0.865,
         "decision": "built_no_chase_signal",
-        "freshnessMinutesAtScan": 8671,
+        "freshnessMinutesAtScan": 8705,
         "marketCategory": "geopolitics",
         "marketEventSlug": "us-x-china-tariff-agreement-by-december-31",
         "marketSlug": "us-x-china-tariff-agreement-by-december-31",
@@ -3394,7 +3318,7 @@
         "category": "other",
         "currentPrice": 0.9875,
         "decision": "built_no_chase_signal",
-        "freshnessMinutesAtScan": 1711,
+        "freshnessMinutesAtScan": 1745,
         "marketCategory": "other",
         "marketEventSlug": "ecb-interest-rates-july-2026",
         "marketSlug": "will-the-ecb-announce-no-change-at-the-july-2026-meeting",
@@ -3420,8 +3344,8 @@
         "confidence": 78,
         "displayName": "pilimili",
         "firstSeenAtUnix": 1782904958,
-        "lastSeenAtUnix": 1782909154,
-        "observationCount": 3,
+        "lastSeenAtUnix": 1782911292,
+        "observationCount": 4,
         "observedThisRun": true,
         "reasons": [
           {
@@ -3466,8 +3390,8 @@
         "confidence": 68,
         "displayName": "hot2trot",
         "firstSeenAtUnix": 1782892432,
-        "lastSeenAtUnix": 1782909154,
-        "observationCount": 9,
+        "lastSeenAtUnix": 1782911292,
+        "observationCount": 10,
         "observedThisRun": true,
         "reasons": [
           {
@@ -3496,7 +3420,7 @@
             "summary": "Accounted for a concentrated share of flow in 1 signal(s)."
           }
         ],
-        "score": 56,
+        "score": 55.7,
         "supportingSignalIDs": [
           "fifwc-eng-cdr-2026-07-01-spread-home-1pt5|DR Congo",
           "fifwc-usa-bih-2026-07-01-spread-home-1pt5|Bosnia and Herzegovina"
@@ -3532,7 +3456,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-01T12:33:12Z",
+    "generatedAt": "2026-07-01T13:08:53Z",
     "summary": {
       "actionablePositionCount": 1,
       "activityCash": {
@@ -3642,8 +3566,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-01T11:58:32Z",
-      "previousGeneratedAtUnix": 1782907112,
+      "previousGeneratedAt": "2026-07-01T12:33:12Z",
+      "previousGeneratedAtUnix": 1782909192,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3695,13 +3619,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-01T12:33:14.494Z",
-      "snapshotCount": 408,
+      "generatedAt": "2026-07-01T13:08:55.041Z",
+      "snapshotCount": 409,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-01T12:33:12Z",
+      "latestAt": "2026-07-01T13:08:53Z",
       "latestSummary": {
-        "timestamp": "2026-07-01T12:33:12Z",
-        "timestampUnix": 1782909192,
+        "timestamp": "2026-07-01T13:08:53Z",
+        "timestampUnix": 1782911333,
         "currentValue": 3.4272,
         "costBasisValue": 9.786739529999998,
         "unrealizedPnL": -6.359539529999998,
@@ -7785,6 +7709,16 @@
         {
           "timestamp": "2026-07-01T12:33:12Z",
           "timestampUnix": 1782909192,
+          "currentValue": 3.4272,
+          "costBasisValue": 9.786739529999998,
+          "unrealizedPnL": -6.359539529999998,
+          "realizedPnL": -0.6188,
+          "openPositionCount": 2,
+          "actionablePositionCount": 1
+        },
+        {
+          "timestamp": "2026-07-01T13:08:53Z",
+          "timestampUnix": 1782911333,
           "currentValue": 3.4272,
           "costBasisValue": 9.786739529999998,
           "unrealizedPnL": -6.359539529999998,
@@ -11883,6 +11817,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 3.4272,
+              "costBasisValue": 9.786739529999998,
+              "unrealizedPnL": -6.359539529999998,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 1
             }
           ]
         },
@@ -15969,6 +15913,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -20069,6 +20023,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 1,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 1.8148,
+              "costBasisValue": 2.78962953,
+              "unrealizedPnL": -0.97482953,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 1,
+              "actionablePositionCount": 1
             }
           ]
         },
@@ -24155,6 +24119,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 1.6124,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -5.384709999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 1.6124,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -5.384709999999999,
@@ -28253,6 +28227,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -32339,6 +32323,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -36437,6 +36431,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -40523,6 +40527,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -44621,6 +44635,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -48707,6 +48731,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -52805,6 +52839,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -56891,6 +56935,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -60989,6 +61043,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -65075,6 +65139,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -69173,6 +69247,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -73259,6 +73343,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -77357,6 +77451,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -81443,6 +81547,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -85541,6 +85655,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -89627,6 +89751,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -93725,6 +93859,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -97811,6 +97955,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -101909,6 +102063,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -105995,6 +106159,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -110093,6 +110267,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -114179,6 +114363,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -118277,6 +118471,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -122363,6 +122567,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -126461,6 +126675,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -130547,6 +130771,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -134645,6 +134879,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -138731,6 +138975,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -142829,6 +143083,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -146921,6 +147185,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -151007,6 +151281,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -155107,6 +155391,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 1,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 1.8148,
+              "costBasisValue": 2.78962953,
+              "unrealizedPnL": -0.97482953,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 1,
+              "actionablePositionCount": 1
             }
           ]
         },
@@ -159193,6 +159487,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 1.6124,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -5.384709999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 1.6124,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -5.384709999999999,
@@ -163291,6 +163595,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -167377,6 +167691,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -171475,6 +171799,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -175561,6 +175895,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -179659,6 +180003,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -183745,6 +184099,16 @@
             {
               "timestamp": "2026-07-01T12:33:12Z",
               "timestampUnix": 1782909192,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -187843,6 +188207,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-01T13:08:53Z",
+              "timestampUnix": 1782911333,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -188251,7 +188625,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-01T12:33:12Z",
+    "generatedAt": "2026-07-01T13:08:53Z",
     "market": {
       "available": true,
       "summary": {
@@ -189324,11 +189698,11 @@
     "systemHealth": [
       {
         "label": "Market updated",
-        "value": "2026-07-01T12:33:10Z"
+        "value": "2026-07-01T13:08:50Z"
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-01T12:33:12Z"
+        "value": "2026-07-01T13:08:53Z"
       },
       {
         "label": "Insider updated",
@@ -189344,7 +189718,7 @@
       },
       {
         "label": "XGBoost rows",
-        "value": "8"
+        "value": "7"
       },
       {
         "label": "Wallet actions",
@@ -189465,12 +189839,12 @@
       "maxAbsFlowUSD": 499999.99,
       "items": [
         {
-          "id": "bitcoin-above-58400-on-july-1-2026-9am-et|No",
-          "title": "Bitcoin above 58,400 on July 1, 9AM ET?",
-          "shortLabel": "Bitcoin above 58,40...",
-          "slug": "bitcoin-above-58400-on-july-1-2026-9am-et",
-          "eventSlug": "bitcoin-above-on-july-1-2026-9am-et",
-          "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-9am-et",
+          "id": "bitcoin-above-58600-on-july-1-2026-10am-et|No",
+          "title": "Bitcoin above 58,600 on July 1, 10AM ET?",
+          "shortLabel": "Bitcoin above 58,60...",
+          "slug": "bitcoin-above-58600-on-july-1-2026-10am-et",
+          "eventSlug": "bitcoin-above-on-july-1-2026-10am-et",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-on-july-1-2026-10am-et",
           "outcome": "NO",
           "direction": "buy",
           "confidence": 97,
@@ -189478,7 +189852,7 @@
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 16125,
-          "currentPrice": 0.24
+          "currentPrice": 0.41
         },
         {
           "id": "fifwc-eng-cdr-2026-07-01-spread-home-1pt5|DR Congo",
@@ -189529,22 +189903,6 @@
           "currentPrice": 0.945
         },
         {
-          "id": "fifwc-eng-cdr-2026-07-01-team-to-advance|DR Congo",
-          "title": "England vs. DR Congo: Team to Advance",
-          "shortLabel": "England vs. DR Cong...",
-          "slug": "fifwc-eng-cdr-2026-07-01-team-to-advance",
-          "eventSlug": "fifwc-eng-cdr-2026-07-01-more-markets",
-          "marketURL": "https://polymarket.com/event/fifwc-eng-cdr-2026-07-01-more-markets",
-          "outcome": "DR Congo",
-          "direction": "buy",
-          "confidence": 86,
-          "daysToEnd": 1,
-          "take": "lean",
-          "horizon": "short_term",
-          "absFlowUSD": 371.89197690314563,
-          "currentPrice": 0.125
-        },
-        {
           "id": "fifwc-esp-aut-2026-07-02-esp|Yes",
           "title": "Will Spain win on 2026-07-02?",
           "shortLabel": "Will Spain win on 2...",
@@ -189589,8 +189947,8 @@
           "daysToEnd": 7,
           "take": "lean",
           "horizon": "short_term",
-          "absFlowUSD": 27378.57572172692,
-          "currentPrice": 0.675
+          "absFlowUSD": 26683.412514480584,
+          "currentPrice": 0.605
         },
         {
           "id": "will-usa-win-the-2026-fifa-world-cup-467|No",
@@ -189623,6 +189981,22 @@
           "horizon": "long_term",
           "absFlowUSD": 173784.71,
           "currentPrice": 0.9825
+        },
+        {
+          "id": "will-belgium-win-the-2026-fifa-world-cup-358|No",
+          "title": "Will Belgium win the 2026 FIFA World Cup?",
+          "shortLabel": "Will Belgium win th...",
+          "slug": "will-belgium-win-the-2026-fifa-world-cup-358",
+          "eventSlug": "world-cup-winner",
+          "marketURL": "https://polymarket.com/event/world-cup-winner",
+          "outcome": "NO",
+          "direction": "buy",
+          "confidence": 95,
+          "daysToEnd": 19,
+          "take": "conviction",
+          "horizon": "long_term",
+          "absFlowUSD": 100000,
+          "currentPrice": 0.9885
         }
       ]
     },
@@ -189746,16 +190120,16 @@
           "label": "Market",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-01T12:33:10Z",
+          "generatedAt": "2026-07-01T13:08:50Z",
           "status": "stale",
-          "reason": "Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch"
+          "reason": "Snapshot 3s old · 16 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782911590 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (20h 32m old), skipping remote fetch"
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-01T12:33:12Z",
+          "generatedAt": "2026-07-01T13:08:53Z",
           "status": "live",
           "reason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live"
         },
@@ -189766,16 +190140,16 @@
           "available": true,
           "generatedAt": "2026-07-01T12:30:48Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+          "reason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-01T12:33:15.478Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 17 active · 25 snapshots · 4 built from 9 source candidate(s) · 2 suspicious wallet(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1782909489 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries.) | stale cache exceeded freshness guardrail (19h 57m old), skipping remote fetch"
+          "generatedAt": "2026-07-01T13:08:56.355Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)"
         }
       ]
     }
