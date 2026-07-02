@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-02T11:40:49.460Z",
-  "generatedAtUnix": 1782992449,
+  "generatedAt": "2026-07-02T13:35:39.920Z",
+  "generatedAtUnix": 1782999339,
   "sync": {
-    "generatedAt": "2026-07-02T11:40:46Z",
-    "generatedAtUnix": 1782992446,
+    "generatedAt": "2026-07-02T13:35:36Z",
+    "generatedAtUnix": 1782999336,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-02T11:40:49.460Z",
-      "generatedAtUnix": 1782992449,
-      "runID": "run-2026-07-02T11-33-40-724Z-26178",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)",
+      "generatedAt": "2026-07-02T13:35:39.920Z",
+      "generatedAtUnix": 1782999339,
+      "runID": "run-2026-07-02T13-35-16-724Z-60585",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-02T11:33:40.724Z",
-      "finishedAt": "2026-07-02T11:40:49.460Z",
-      "lastRunAt": "2026-07-02T11:40:49.460Z",
-      "durationSeconds": 428.736,
+      "startedAt": "2026-07-02T13:35:16.724Z",
+      "finishedAt": "2026-07-02T13:35:39.920Z",
+      "lastRunAt": "2026-07-02T13:35:39.920Z",
+      "durationSeconds": 23.196,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-02T12:10:49.460Z",
-      "lastSuccessAt": "2026-07-02T11:40:49.460Z",
-      "lastSuccessfulRunAt": "2026-07-02T11:40:49.460Z",
-      "lastFailureAt": "2026-07-02T08:19:18.315Z",
+      "nextRunAt": "2026-07-02T14:05:39.920Z",
+      "lastSuccessAt": "2026-07-02T11:41:35.140Z",
+      "lastSuccessfulRunAt": "2026-07-02T11:41:35.140Z",
+      "lastFailureAt": "2026-07-02T13:35:39.920Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-02T11:33:40.825Z",
-          "finishedAt": "2026-07-02T11:34:55.777Z",
-          "durationSeconds": 74.952,
+          "startedAt": "2026-07-02T13:35:16.829Z",
+          "finishedAt": "2026-07-02T13:35:22.793Z",
+          "durationSeconds": 5.964,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T11-33-40-724Z-26178/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T13-35-16-724Z-60585/insider.log",
+          "summary": "curl: (6) Could not resolve host: openinsider.com",
+          "error": "curl: (6) Could not resolve host: openinsider.com",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-02T11:34:55.777Z",
-          "lastFailureAt": "2026-07-01T21:13:12.911Z"
+          "lastFailureAt": "2026-07-02T13:35:22.793Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-02T11:34:55.779Z",
-          "finishedAt": "2026-07-02T11:40:42.327Z",
-          "durationSeconds": 346.548,
+          "startedAt": "2026-07-02T13:35:22.794Z",
+          "finishedAt": "2026-07-02T13:35:25.672Z",
+          "durationSeconds": 2.878,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T11-33-40-724Z-26178/market.log",
-          "summary": "Notification decisions: selected fifwc-prt-hrv-2026-07-02-total-2pt5|Over [global_window_open,urgent_suspicious] | blocked fifwc-prt-hrv-2026-07-02-prt|Yes->notification_limit | fifwc-esp-aut-2026-07-02-spread-home-1pt5|Spain->notification_limit | fifwc-che-alg-2026-07-02-che|No->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T13-35-16-724Z-60585/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-02T11:40:42.327Z",
-          "lastFailureAt": "2026-07-01T21:29:06.904Z"
+          "lastFailureAt": "2026-07-02T13:35:25.672Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-02T11:40:42.327Z",
-          "finishedAt": "2026-07-02T11:40:46.292Z",
-          "durationSeconds": 3.965,
+          "startedAt": "2026-07-02T13:35:25.673Z",
+          "finishedAt": "2026-07-02T13:35:35.960Z",
+          "durationSeconds": 10.287,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T11-33-40-724Z-26178/wallets.log",
-          "summary": "Source diagnostics: 9 candidate(s) | built 5 | no-chase 4 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T13-35-16-724Z-60585/wallets.log",
+          "summary": "Loaded 15 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-02T11:40:46.292Z",
+          "lastSuccessAt": "2026-07-02T13:35:35.960Z",
           "lastFailureAt": "2026-07-01T21:46:49.306Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-02T11:40:46.292Z",
-          "finishedAt": "2026-07-02T11:40:49.374Z",
-          "durationSeconds": 3.082,
+          "startedAt": "2026-07-02T13:35:35.960Z",
+          "finishedAt": "2026-07-02T13:35:39.857Z",
+          "durationSeconds": 3.897,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T11-33-40-724Z-26178/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-02T13-35-16-724Z-60585/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-02T11:40:49.374Z",
+          "lastSuccessAt": "2026-07-02T13:35:39.857Z",
           "lastFailureAt": "2026-06-27T18:22:27.408Z"
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-07-02T11:40:42Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)"
+          "statusReason": "Snapshot 1h 54m old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-02T11:40:46Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-02T13:35:35Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 1s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-02T11:40:46Z",
+          "generatedAt": "2026-07-02T13:35:36Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-02T11:40:49.460Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)"
+          "generatedAt": "2026-07-02T13:35:39.920Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-02T11:40:42Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)",
+      "statusReason": "Snapshot 1h 54m old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-02T11:40:46Z",
-      "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 0 actionable · 2 live",
+      "generatedAt": "2026-07-02T13:35:35Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 1s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 25 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (1h 54m old, max 15m).",
           "fetchedAt": "2026-07-02T11:40:42Z",
           "fetchedAtUnix": 1782992442,
           "attemptCount": 1,
           "eventCount": 25,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 6893,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 15 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-02T11:40:46Z",
+          "fetchedAtUnix": 1782992446,
+          "attemptCount": 1,
+          "eventCount": 15,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 6889,
           "retryAfterUnix": null
         },
         {
@@ -728,12 +748,12 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
-          "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-02T11:40:46Z",
-          "fetchedAtUnix": 1782992446,
-          "attemptCount": 2,
-          "eventCount": 2,
+          "status": "failed",
+          "message": "No watched wallet snapshots were loaded from the configured wallet list.",
+          "fetchedAt": "2026-07-02T13:35:35Z",
+          "fetchedAtUnix": 1782999335,
+          "attemptCount": 1,
+          "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-07-02T11:34:40Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-02T11:40:46Z",
+      "generatedAt": "2026-07-02T13:35:36Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,17 +1001,17 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-02T11:40:49.460Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)",
+      "generatedAt": "2026-07-02T13:35:39.920Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
     "bestBetCount": 8,
-    "trackedWalletCount": 2,
-    "openPositionCount": 2,
+    "trackedWalletCount": 0,
+    "openPositionCount": 0,
     "actionablePositionCount": 0,
     "insiderSignalCount": 13,
     "intelItemCount": 18,
@@ -1008,8 +1028,8 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "2 wallets tracked",
-      "body": "No actionable wallet calls yet on the latest synced snapshot."
+      "title": "Waiting for wallet sync",
+      "body": "Rose and Haak will appear here when wallet-watcher exports portfolio data."
     },
     "insider": {
       "kicker": "Insider tape",
@@ -2568,16 +2588,6 @@
       "maxSupportOrSkeptical": 108,
       "items": [
         {
-          "day": "2026-06-18",
-          "enabledRuns": 1,
-          "scoredRows": 8,
-          "supportCount": 2,
-          "skepticalCount": 4,
-          "topKDisagreementCount": 2,
-          "promotedCount": 0,
-          "displacedCount": 0
-        },
-        {
           "day": "2026-06-19",
           "enabledRuns": 2,
           "scoredRows": 12,
@@ -3642,139 +3652,32 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-02T11:40:46Z",
+    "generatedAt": "2026-07-02T13:35:35Z",
     "summary": {
       "actionablePositionCount": 0,
-      "activityCash": {
-        "mayBeTruncated": true,
-        "netFlowUSD": -108.65028899999996,
-        "newestTimestamp": 1782951419,
-        "oldestTimestamp": 1778005974,
-        "redeemedUSD": 519.089614,
-        "returnedUSD": 846.814334,
-        "sampleCount": 307,
-        "sampleLimit": 400,
-        "soldUSD": 327.59612000000004,
-        "spentUSD": 955.4646230000001,
-        "yieldUSD": 0.1286
-      },
-      "openPositionCount": 2,
-      "totalCurrentValue": 3.5309,
-      "walletCount": 2
+      "openPositionCount": 0,
+      "totalCurrentValue": 0,
+      "walletCount": 0
     },
     "urgentAction": null,
-    "commandGroups": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 2,
-        "actionableCount": 0,
-        "totalCurrentValue": 3.5309,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Norway win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 1.9185,
-            "currentPrice": 0.0185,
-            "percentPnL": -31.4761,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Anthropic acquired before 2027?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 1.6124,
-            "currentPrice": 0.0165,
-            "percentPnL": -76.9649,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          }
-        ],
-        "moreCount": 0
-      }
-    ],
+    "commandGroups": [],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-02T11:02:35Z",
-      "previousGeneratedAtUnix": 1782990155,
+      "previousGeneratedAt": "2026-07-02T11:40:46Z",
+      "previousGeneratedAtUnix": 1782992446,
       "changedWalletCount": 0,
-      "unchangedWalletCount": 2,
+      "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -0.10370000000000035,
+      "valueDeltaUSD": 0,
       "highlights": [],
-      "wallets": [
-        {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.10370000000000035,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 3.6346000000000003,
-          "highlights": []
-        },
-        {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 0,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 0,
-          "highlights": []
-        }
-      ]
+      "wallets": []
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-02T11:40:48.504Z",
+      "generatedAt": "2026-07-02T13:35:38.644Z",
       "snapshotCount": 421,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-07-02T11:40:46Z",
@@ -193777,132 +193680,8 @@
         }
       ]
     },
-    "wallets": [
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": true,
-          "netFlowUSD": -43.78013599999997,
-          "newestTimestamp": 1781771819,
-          "oldestTimestamp": 1778005974,
-          "redeemedUSD": 286.85476900000003,
-          "returnedUSD": 605.3860090000001,
-          "sampleCount": 200,
-          "sampleLimit": 200,
-          "soldUSD": 318.45724000000007,
-          "spentUSD": 649.166145,
-          "yieldUSD": 0.07400000000000001
-        },
-        "label": "Haak",
-        "lastActivityTimestamp": 1781771819,
-        "openPositionCount": 2,
-        "positions": [
-          {
-            "averageEntryPrice": 0.0269,
-            "currentPrice": 0.0185,
-            "currentValue": 1.9185,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "world-cup-winner",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "outcome": "Yes",
-            "percentPnL": -31.4761,
-            "percentRealizedPnL": -90.165,
-            "realizedPnL": -0.6188,
-            "size": 103.7037,
-            "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-            "title": "Will Norway win the 2026 FIFA World Cup?"
-          },
-          {
-            "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0165,
-            "currentValue": 1.6124,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "anthropic-acquired-before-2027",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -76.9649,
-            "percentRealizedPnL": -76.9655,
-            "realizedPnL": 0,
-            "size": 97.725,
-            "slug": "anthropic-acquired-before-2027",
-            "title": "Anthropic acquired before 2027?"
-          }
-        ],
-        "recentActivityCount": 0,
-        "totalCurrentValue": 3.5309,
-        "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "delta": {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.10370000000000035,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 3.6346000000000003,
-          "highlights": []
-        }
-      },
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": -64.87015299999999,
-          "newestTimestamp": 1782951419,
-          "oldestTimestamp": 1778509463,
-          "redeemedUSD": 232.234845,
-          "returnedUSD": 241.428325,
-          "sampleCount": 107,
-          "sampleLimit": 200,
-          "soldUSD": 9.13888,
-          "spentUSD": 306.298478,
-          "yieldUSD": 0.05459999999999998
-        },
-        "label": "Rose",
-        "lastActivityTimestamp": 1782951419,
-        "openPositionCount": 0,
-        "positions": [],
-        "recentActivityCount": 1,
-        "totalCurrentValue": 0,
-        "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "delta": {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 0,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 0,
-          "highlights": []
-        }
-      }
-    ],
-    "actionMix": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 2
-      }
-    ]
+    "wallets": [],
+    "actionMix": []
   },
   "insider": {
     "available": true,
@@ -194104,7 +193883,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-02T11:40:46Z",
+    "generatedAt": "2026-07-02T13:35:36Z",
     "market": {
       "available": true,
       "summary": {
@@ -195162,13 +194941,7 @@
         "value": 1
       }
     ],
-    "walletActions": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 2
-      }
-    ],
+    "walletActions": [],
     "systemHealth": [
       {
         "label": "Market updated",
@@ -195176,7 +194949,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-02T11:40:46Z"
+        "value": "2026-07-02T13:35:35Z"
       },
       {
         "label": "Insider updated",
@@ -195476,33 +195249,8 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 3.5309,
-      "items": [
-        {
-          "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "shortLabel": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 3.5309,
-          "openPositionCount": 2,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 0,
-          "lastActivityTimestamp": 1781771819
-        },
-        {
-          "id": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "shortLabel": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 0,
-          "openPositionCount": 0,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 1,
-          "lastActivityTimestamp": 1782951419
-        }
-      ]
+      "maxValueUSD": 1,
+      "items": []
     },
     "insiderConviction": {
       "maxAbsTradeValueUSD": 4050000,
@@ -195596,16 +195344,16 @@
           "available": true,
           "generatedAt": "2026-07-02T11:40:42Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)"
+          "reason": "Snapshot 1h 54m old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-02T11:40:46Z",
-          "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 2 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-02T13:35:35Z",
+          "status": "stale",
+          "reason": "Snapshot 1s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         {
           "id": "insider",
@@ -195614,16 +195362,16 @@
           "available": true,
           "generatedAt": "2026-07-02T11:34:40Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-02T11:40:49.460Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 25 active · 25 snapshots · 5 built from 9 source candidate(s) · 1 suspicious wallet(s) · 21 live · 1 stale cache. GDELT Geopolitics News: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n | using stale cache (0 item(s)) (2h 4m old)"
+          "generatedAt": "2026-07-02T13:35:39.920Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
