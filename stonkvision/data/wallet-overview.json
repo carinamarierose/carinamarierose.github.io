@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 50576,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 30,
       "fetchedAt" : "2026-07-03T17:22:05Z",
       "fetchedAtUnix" : 1783099325,
-      "message" : "Loaded 30 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (14h 2m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 50572,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 13,
+      "fetchedAt" : "2026-07-03T17:22:09Z",
+      "fetchedAtUnix" : 1783099329,
+      "message" : "Using cached wallet watcher feed with 13 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 2,
-      "fetchedAt" : "2026-07-03T17:22:09Z",
-      "fetchedAtUnix" : 1783099329,
+      "fetchedAt" : "2026-07-04T07:25:01Z",
+      "fetchedAtUnix" : 1783149901,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,25 +48,25 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-07-03T17:22:09Z",
-  "generatedAtUnix" : 1783099329,
+  "generatedAt" : "2026-07-04T07:25:01Z",
+  "generatedAtUnix" : 1783149901,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
       "mayBeTruncated" : true,
-      "netFlowUSD" : -108.64898900000006,
-      "newestTimestamp" : 1783037792,
+      "netFlowUSD" : -108.64768900000007,
+      "newestTimestamp" : 1783124219,
       "oldestTimestamp" : 1778005974,
       "redeemedUSD" : 519.089614,
-      "returnedUSD" : 846.815634,
-      "sampleCount" : 308,
+      "returnedUSD" : 846.8169340000001,
+      "sampleCount" : 309,
       "sampleLimit" : 400,
       "soldUSD" : 327.59612000000004,
       "spentUSD" : 955.4646230000001,
-      "yieldUSD" : 0.1299
+      "yieldUSD" : 0.13119999999999998
     },
     "openPositionCount" : 2,
-    "totalCurrentValue" : 3.4272,
+    "totalCurrentValue" : 3.3235,
     "walletCount" : 2
   },
   "wallets" : [
@@ -74,14 +91,14 @@
       "positions" : [
         {
           "averageEntryPrice" : 0.0269,
-          "currentPrice" : 0.0175,
-          "currentValue" : 1.8148,
+          "currentPrice" : 0.0165,
+          "currentValue" : 1.7111,
           "endDate" : "2026-07-20T00:00:00Z",
           "eventSlug" : "world-cup-winner",
           "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
           "outcome" : "Yes",
-          "percentPnL" : -35.1798,
-          "percentRealizedPnL" : -90.6966,
+          "percentPnL" : -38.8835,
+          "percentRealizedPnL" : -91.2282,
           "realizedPnL" : -0.6188,
           "size" : 103.7037,
           "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
@@ -104,7 +121,7 @@
         }
       ],
       "recentActivityCount" : 0,
-      "totalCurrentValue" : 3.4272,
+      "totalCurrentValue" : 3.3235,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
@@ -112,19 +129,19 @@
       "actionablePositionCount" : 0,
       "activityCash" : {
         "mayBeTruncated" : false,
-        "netFlowUSD" : -64.86885299999997,
-        "newestTimestamp" : 1783037792,
+        "netFlowUSD" : -64.86755299999999,
+        "newestTimestamp" : 1783124219,
         "oldestTimestamp" : 1778509463,
         "redeemedUSD" : 232.234845,
-        "returnedUSD" : 241.42962500000002,
-        "sampleCount" : 108,
+        "returnedUSD" : 241.430925,
+        "sampleCount" : 109,
         "sampleLimit" : 200,
         "soldUSD" : 9.13888,
         "spentUSD" : 306.298478,
-        "yieldUSD" : 0.05589999999999998
+        "yieldUSD" : 0.05719999999999998
       },
       "label" : "Rose",
-      "lastActivityTimestamp" : 1783037792,
+      "lastActivityTimestamp" : 1783124219,
       "openPositionCount" : 0,
       "positions" : [
 
