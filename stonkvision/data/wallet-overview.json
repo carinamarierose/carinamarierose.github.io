@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 13498,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 15,
       "fetchedAt" : "2026-07-04T11:38:52Z",
       "fetchedAtUnix" : 1783165132,
-      "message" : "Loaded 15 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (3h 44m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 13495,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 9,
+      "fetchedAt" : "2026-07-04T11:38:55Z",
+      "fetchedAtUnix" : 1783165135,
+      "message" : "Using cached wallet watcher feed with 9 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 2,
-      "fetchedAt" : "2026-07-04T11:38:55Z",
-      "fetchedAtUnix" : 1783165135,
+      "fetchedAt" : "2026-07-04T15:23:51Z",
+      "fetchedAtUnix" : 1783178631,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-07-04T11:38:55Z",
-  "generatedAtUnix" : 1783165135,
+  "generatedAt" : "2026-07-04T15:23:51Z",
+  "generatedAtUnix" : 1783178631,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
@@ -49,7 +66,7 @@
       "yieldUSD" : 0.13119999999999998
     },
     "openPositionCount" : 2,
-    "totalCurrentValue" : 3.3235,
+    "totalCurrentValue" : 8.5518,
     "walletCount" : 2
   },
   "wallets" : [
@@ -73,6 +90,21 @@
       "openPositionCount" : 2,
       "positions" : [
         {
+          "averageEntryPrice" : 0.0716,
+          "currentPrice" : 0.07,
+          "currentValue" : 6.8407,
+          "endDate" : "2026-12-31T00:00:00Z",
+          "eventSlug" : "anthropic-acquired-before-2027",
+          "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
+          "outcome" : "Yes",
+          "percentPnL" : -2.2743,
+          "percentRealizedPnL" : -2.2749,
+          "realizedPnL" : 0,
+          "size" : 97.725,
+          "slug" : "anthropic-acquired-before-2027",
+          "title" : "Anthropic acquired before 2027?"
+        },
+        {
           "averageEntryPrice" : 0.0269,
           "currentPrice" : 0.0165,
           "currentValue" : 1.7111,
@@ -86,25 +118,10 @@
           "size" : 103.7037,
           "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
           "title" : "Will Norway win the 2026 FIFA World Cup?"
-        },
-        {
-          "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.0165,
-          "currentValue" : 1.6124,
-          "endDate" : "2026-12-31T00:00:00Z",
-          "eventSlug" : "anthropic-acquired-before-2027",
-          "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
-          "outcome" : "Yes",
-          "percentPnL" : -76.9649,
-          "percentRealizedPnL" : -76.9655,
-          "realizedPnL" : 0,
-          "size" : 97.725,
-          "slug" : "anthropic-acquired-before-2027",
-          "title" : "Anthropic acquired before 2027?"
         }
       ],
       "recentActivityCount" : 0,
-      "totalCurrentValue" : 3.3235,
+      "totalCurrentValue" : 8.5518,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
