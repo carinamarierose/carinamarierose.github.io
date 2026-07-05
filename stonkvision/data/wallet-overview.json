@@ -3,60 +3,136 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheAgeSeconds" : 61961,
-      "cacheUsed" : true,
+      "cacheUsed" : false,
       "cacheWasFresh" : false,
-      "eventCount" : 12,
-      "fetchedAt" : "2026-07-04T19:04:00Z",
-      "fetchedAtUnix" : 1783191840,
-      "message" : "Market intel snapshot is stale (17h 12m old, max 15m).",
+      "eventCount" : 28,
+      "fetchedAt" : "2026-07-05T17:23:22Z",
+      "fetchedAtUnix" : 1783272202,
+      "message" : "Loaded 28 active signal(s) from market intel.",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "cached"
-    },
-    {
-      "adapter" : "signal_feed_cache",
-      "attemptCount" : 1,
-      "cacheAgeSeconds" : 50681,
-      "cacheUsed" : true,
-      "cacheWasFresh" : false,
-      "eventCount" : 6,
-      "fetchedAt" : "2026-07-04T22:12:00Z",
-      "fetchedAtUnix" : 1783203120,
-      "message" : "Using cached wallet watcher feed with 6 signal(s) while market intel recovers.",
-      "provider" : "wallet_watcher",
-      "sourceID" : "wallet-feed-cache",
-      "sourceName" : "Wallet feed cache",
-      "sourceType" : "pipeline",
-      "status" : "cached"
+      "status" : "live"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
-      "attemptCount" : 1,
+      "attemptCount" : 2,
       "cacheUsed" : false,
       "cacheWasFresh" : false,
-      "eventCount" : 0,
-      "fetchedAt" : "2026-07-05T12:16:41Z",
-      "fetchedAtUnix" : 1783253801,
-      "message" : "No watched wallet snapshots were loaded from the configured wallet list.",
+      "eventCount" : 2,
+      "fetchedAt" : "2026-07-05T17:23:26Z",
+      "fetchedAtUnix" : 1783272206,
+      "message" : "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
       "sourceName" : "Watched wallets",
       "sourceType" : "wallet",
-      "status" : "failed"
+      "status" : "live"
     }
   ],
-  "generatedAt" : "2026-07-05T12:16:41Z",
-  "generatedAtUnix" : 1783253801,
+  "generatedAt" : "2026-07-05T17:23:26Z",
+  "generatedAtUnix" : 1783272206,
   "summary" : {
     "actionablePositionCount" : 0,
-    "openPositionCount" : 0,
-    "totalCurrentValue" : 0,
-    "walletCount" : 0
+    "activityCash" : {
+      "mayBeTruncated" : true,
+      "netFlowUSD" : -108.64638900000006,
+      "newestTimestamp" : 1783210637,
+      "oldestTimestamp" : 1778005974,
+      "redeemedUSD" : 519.089614,
+      "returnedUSD" : 846.8182340000001,
+      "sampleCount" : 310,
+      "sampleLimit" : 400,
+      "soldUSD" : 327.59612000000004,
+      "spentUSD" : 955.4646230000001,
+      "yieldUSD" : 0.1325
+    },
+    "openPositionCount" : 2,
+    "totalCurrentValue" : 3.9099,
+    "walletCount" : 2
   },
   "wallets" : [
+    {
+      "actionablePositionCount" : 0,
+      "activityCash" : {
+        "mayBeTruncated" : true,
+        "netFlowUSD" : -43.780136000000084,
+        "newestTimestamp" : 1781771819,
+        "oldestTimestamp" : 1778005974,
+        "redeemedUSD" : 286.85476900000003,
+        "returnedUSD" : 605.3860090000001,
+        "sampleCount" : 200,
+        "sampleLimit" : 200,
+        "soldUSD" : 318.45724000000007,
+        "spentUSD" : 649.1661450000001,
+        "yieldUSD" : 0.07400000000000001
+      },
+      "label" : "Haak",
+      "lastActivityTimestamp" : 1781771819,
+      "openPositionCount" : 2,
+      "positions" : [
+        {
+          "averageEntryPrice" : 0.0716,
+          "currentPrice" : 0.0225,
+          "currentValue" : 2.1988,
+          "endDate" : "2026-12-31T00:00:00Z",
+          "eventSlug" : "anthropic-acquired-before-2027",
+          "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
+          "outcome" : "Yes",
+          "percentPnL" : -68.5876,
+          "percentRealizedPnL" : -68.5883,
+          "realizedPnL" : 0,
+          "size" : 97.725,
+          "slug" : "anthropic-acquired-before-2027",
+          "title" : "Anthropic acquired before 2027?"
+        },
+        {
+          "averageEntryPrice" : 0.0269,
+          "currentPrice" : 0.0165,
+          "currentValue" : 1.7111,
+          "endDate" : "2026-07-20T00:00:00Z",
+          "eventSlug" : "world-cup-winner",
+          "marketURL" : "https:\/\/polymarket.com\/event\/world-cup-winner",
+          "outcome" : "Yes",
+          "percentPnL" : -38.8835,
+          "percentRealizedPnL" : -91.2282,
+          "realizedPnL" : -0.6188,
+          "size" : 103.7037,
+          "slug" : "will-norway-win-the-2026-fifa-world-cup-893",
+          "title" : "Will Norway win the 2026 FIFA World Cup?"
+        }
+      ],
+      "recentActivityCount" : 0,
+      "totalCurrentValue" : 3.9099,
+      "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
+      "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
+    },
+    {
+      "actionablePositionCount" : 0,
+      "activityCash" : {
+        "mayBeTruncated" : false,
+        "netFlowUSD" : -64.86625299999997,
+        "newestTimestamp" : 1783210637,
+        "oldestTimestamp" : 1778509463,
+        "redeemedUSD" : 232.234845,
+        "returnedUSD" : 241.43222500000002,
+        "sampleCount" : 110,
+        "sampleLimit" : 200,
+        "soldUSD" : 9.13888,
+        "spentUSD" : 306.298478,
+        "yieldUSD" : 0.05849999999999998
+      },
+      "label" : "Rose",
+      "lastActivityTimestamp" : 1783210637,
+      "openPositionCount" : 0,
+      "positions" : [
 
+      ],
+      "recentActivityCount" : 1,
+      "totalCurrentValue" : 0,
+      "wallet" : "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
+      "walletURL" : "https:\/\/polygonscan.com\/address\/0x30da9f12d8961e80e11f9575e316f5da5799ca57"
+    }
   ]
 }
