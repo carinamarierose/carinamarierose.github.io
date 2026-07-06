@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-06T11:15:58.159Z",
-  "generatedAtUnix": 1783336558,
+  "generatedAt": "2026-07-06T12:06:59.236Z",
+  "generatedAtUnix": 1783339619,
   "sync": {
-    "generatedAt": "2026-07-06T11:15:54Z",
-    "generatedAtUnix": 1783336554,
+    "generatedAt": "2026-07-06T12:06:55Z",
+    "generatedAtUnix": 1783339615,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-06T11:15:58.159Z",
-      "generatedAtUnix": 1783336558,
-      "runID": "run-2026-07-06T11-11-27-763Z-55806",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-07-06T12:06:59.236Z",
+      "generatedAtUnix": 1783339619,
+      "runID": "run-2026-07-06T12-06-43-200Z-60217",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-06T11:11:27.763Z",
-      "finishedAt": "2026-07-06T11:15:58.159Z",
-      "lastRunAt": "2026-07-06T11:15:58.159Z",
-      "durationSeconds": 270.396,
+      "startedAt": "2026-07-06T12:06:43.200Z",
+      "finishedAt": "2026-07-06T12:06:59.236Z",
+      "lastRunAt": "2026-07-06T12:06:59.236Z",
+      "durationSeconds": 16.036,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-06T11:45:58.159Z",
-      "lastSuccessAt": "2026-07-06T11:15:58.159Z",
-      "lastSuccessfulRunAt": "2026-07-06T11:15:58.159Z",
-      "lastFailureAt": "2026-07-06T07:31:25.981Z",
+      "nextRunAt": "2026-07-06T12:36:59.236Z",
+      "lastSuccessAt": "2026-07-06T11:16:39.550Z",
+      "lastSuccessfulRunAt": "2026-07-06T11:16:39.550Z",
+      "lastFailureAt": "2026-07-06T12:06:59.236Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-06T11:11:27.903Z",
-          "finishedAt": "2026-07-06T11:12:56.814Z",
-          "durationSeconds": 88.911,
+          "startedAt": "2026-07-06T12:06:43.322Z",
+          "finishedAt": "2026-07-06T12:06:50.096Z",
+          "durationSeconds": 6.774,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T11-11-27-763Z-55806/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T12-06-43-200Z-60217/insider.log",
+          "summary": "curl: (6) Could not resolve host: openinsider.com",
+          "error": "curl: (6) Could not resolve host: openinsider.com",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-06T11:12:56.814Z",
-          "lastFailureAt": "2026-07-06T05:54:24.910Z"
+          "lastFailureAt": "2026-07-06T12:06:50.096Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-06T11:12:56.823Z",
-          "finishedAt": "2026-07-06T11:15:50.408Z",
-          "durationSeconds": 173.585,
+          "startedAt": "2026-07-06T12:06:50.097Z",
+          "finishedAt": "2026-07-06T12:06:52.463Z",
+          "durationSeconds": 2.366,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T11-11-27-763Z-55806/market.log",
-          "summary": "Notification decisions: selected fifwc-prt-esp-2026-07-06-total-2pt5|Over [global_window_open,urgent_suspicious] | blocked fifwc-usa-bel-2026-07-06-total-2pt5|Under->notification_limit | fifwc-usa-bel-2026-07-06-total-2pt5|Over->notification_limit | fifwc-prt-esp-2026-07-06-esp|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T12-06-43-200Z-60217/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-06T11:15:50.408Z",
-          "lastFailureAt": "2026-07-06T05:54:27.839Z"
+          "lastFailureAt": "2026-07-06T12:06:52.463Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-06T11:15:50.410Z",
-          "finishedAt": "2026-07-06T11:15:54.133Z",
-          "durationSeconds": 3.723,
+          "startedAt": "2026-07-06T12:06:52.463Z",
+          "finishedAt": "2026-07-06T12:06:55.623Z",
+          "durationSeconds": 3.16,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T11-11-27-763Z-55806/wallets.log",
-          "summary": "Source diagnostics: 4 candidate(s) | built 2 | no-chase 2 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T12-06-43-200Z-60217/wallets.log",
+          "summary": "Loaded 12 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-06T11:15:54.133Z",
+          "lastSuccessAt": "2026-07-06T12:06:55.623Z",
           "lastFailureAt": "2026-07-06T06:10:17.823Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-06T11:15:54.133Z",
-          "finishedAt": "2026-07-06T11:15:58.087Z",
-          "durationSeconds": 3.954,
+          "startedAt": "2026-07-06T12:06:55.624Z",
+          "finishedAt": "2026-07-06T12:06:59.167Z",
+          "durationSeconds": 3.543,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T11-11-27-763Z-55806/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-06T12-06-43-200Z-60217/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-06T11:15:58.087Z",
+          "lastSuccessAt": "2026-07-06T12:06:59.167Z",
           "lastFailureAt": "2026-06-27T18:22:27.408Z"
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-07-06T11:15:50Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 51m old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-06T11:15:54Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live"
+          "generatedAt": "2026-07-06T12:06:55Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-06T11:15:54Z",
+          "generatedAt": "2026-07-06T12:06:55Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-06T11:15:58.159Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-07-06T12:06:59.236Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-06T11:15:50Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 51m old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-06T11:15:54Z",
-      "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live",
+      "generatedAt": "2026-07-06T12:06:55Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 18 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (51m old, max 15m).",
           "fetchedAt": "2026-07-06T11:15:50Z",
           "fetchedAtUnix": 1783336550,
           "attemptCount": 1,
           "eventCount": 18,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 3065,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 12 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-06T11:15:54Z",
+          "fetchedAtUnix": 1783336554,
+          "attemptCount": 1,
+          "eventCount": 12,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 3061,
           "retryAfterUnix": null
         },
         {
@@ -728,12 +748,12 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
-          "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 2 open position(s) and 1 actionable call(s).",
-          "fetchedAt": "2026-07-06T11:15:54Z",
-          "fetchedAtUnix": 1783336554,
-          "attemptCount": 2,
-          "eventCount": 2,
+          "status": "failed",
+          "message": "No watched wallet snapshots were loaded from the configured wallet list.",
+          "fetchedAt": "2026-07-06T12:06:55Z",
+          "fetchedAtUnix": 1783339615,
+          "attemptCount": 1,
+          "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-07-06T11:12:41Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-06T11:15:54Z",
+      "generatedAt": "2026-07-06T12:06:55Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,18 +1001,18 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-06T11:15:58.159Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-07-06T12:06:59.236Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
     "bestBetCount": 8,
-    "trackedWalletCount": 2,
-    "openPositionCount": 2,
-    "actionablePositionCount": 1,
+    "trackedWalletCount": 0,
+    "openPositionCount": 0,
+    "actionablePositionCount": 0,
     "insiderSignalCount": 10,
     "intelItemCount": 18,
     "sourceSignalCount": 3,
@@ -1008,8 +1028,8 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "Reduce YES on Will Norway win the 2026 FIFA World Cup?",
-      "body": "Will Norway win the 2026 FIFA World Cup? · opposes current position"
+      "title": "Waiting for wallet sync",
+      "body": "Rose and Haak will appear here when wallet-watcher exports portfolio data."
     },
     "insider": {
       "kicker": "Insider tape",
@@ -2591,11 +2611,11 @@
       "items": [
         {
           "day": "2026-06-22",
-          "enabledRuns": 2,
-          "scoredRows": 23,
-          "supportCount": 10,
-          "skepticalCount": 10,
-          "topKDisagreementCount": 6,
+          "enabledRuns": 1,
+          "scoredRows": 13,
+          "supportCount": 6,
+          "skepticalCount": 6,
+          "topKDisagreementCount": 4,
           "promotedCount": 0,
           "displacedCount": 0
         },
@@ -3582,170 +3602,32 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-06T11:15:54Z",
+    "generatedAt": "2026-07-06T12:06:55Z",
     "summary": {
-      "actionablePositionCount": 1,
-      "activityCash": {
-        "mayBeTruncated": true,
-        "netFlowUSD": -108.64508900000007,
-        "newestTimestamp": 1783296671,
-        "oldestTimestamp": 1778005974,
-        "redeemedUSD": 519.089614,
-        "returnedUSD": 846.8195340000001,
-        "sampleCount": 311,
-        "sampleLimit": 400,
-        "soldUSD": 327.59612000000004,
-        "spentUSD": 955.4646230000001,
-        "yieldUSD": 0.1338
-      },
-      "openPositionCount": 2,
-      "totalCurrentValue": 7.900499999999999,
-      "walletCount": 2
+      "actionablePositionCount": 0,
+      "openPositionCount": 0,
+      "totalCurrentValue": 0,
+      "walletCount": 0
     },
-    "urgentAction": {
-      "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "walletLabel": "Haak",
-      "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-      "title": "Will Norway win the 2026 FIFA World Cup?",
-      "outcome": "YES",
-      "marketURL": "https://polymarket.com/event/world-cup-winner",
-      "currentValue": 4.8222,
-      "currentPrice": 0.0465,
-      "percentPnL": 72.2276,
-      "action": "reduce",
-      "actionLabel": "Reduce",
-      "isActionable": true,
-      "relationLabel": "Opposes current position",
-      "signalTitle": "Will Norway win the 2026 FIFA World Cup?",
-      "signalURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-      "signalConfidence": 95,
-      "supportingSignalCount": 0,
-      "opposingSignalCount": 1,
-      "netScoreGap": 144.64836400000002,
-      "daysToEnd": 14
-    },
-    "commandGroups": [
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "count": 1,
-        "actionableCount": 1,
-        "totalCurrentValue": 4.8222,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Norway win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 4.8222,
-            "currentPrice": 0.0465,
-            "percentPnL": 72.2276,
-            "action": "reduce",
-            "actionLabel": "Reduce",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will Norway win the 2026 FIFA World Cup?",
-            "signalURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-            "signalConfidence": 95,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 144.64836400000002,
-            "daysToEnd": 14
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 1,
-        "actionableCount": 0,
-        "totalCurrentValue": 3.0783,
-        "positions": [
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Anthropic acquired before 2027?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 3.0783,
-            "currentPrice": 0.0315,
-            "percentPnL": -56.0233,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          }
-        ],
-        "moreCount": 0
-      }
-    ],
+    "urgentAction": null,
+    "commandGroups": [],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-06T10:40:37Z",
-      "previousGeneratedAtUnix": 1783334437,
+      "previousGeneratedAt": "2026-07-06T11:15:54Z",
+      "previousGeneratedAtUnix": 1783336554,
       "changedWalletCount": 0,
-      "unchangedWalletCount": 2,
+      "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": -0.10370000000000168,
+      "valueDeltaUSD": 0,
       "highlights": [],
-      "wallets": [
-        {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.10370000000000168,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 8.0042,
-          "highlights": []
-        },
-        {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 0,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 0,
-          "highlights": []
-        }
-      ]
+      "wallets": []
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-06T11:15:56.877Z",
+      "generatedAt": "2026-07-06T12:06:58.080Z",
       "snapshotCount": 451,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-07-06T11:15:54Z",
@@ -207248,169 +207130,8 @@
         }
       ]
     },
-    "wallets": [
-      {
-        "actionablePositionCount": 1,
-        "activityCash": {
-          "mayBeTruncated": true,
-          "netFlowUSD": -43.780136000000084,
-          "newestTimestamp": 1781771819,
-          "oldestTimestamp": 1778005974,
-          "redeemedUSD": 286.85476900000003,
-          "returnedUSD": 605.3860090000001,
-          "sampleCount": 200,
-          "sampleLimit": 200,
-          "soldUSD": 318.45724000000007,
-          "spentUSD": 649.1661450000001,
-          "yieldUSD": 0.07400000000000001
-        },
-        "label": "Haak",
-        "lastActivityTimestamp": 1781771819,
-        "openPositionCount": 2,
-        "positions": [
-          {
-            "advice": {
-              "action": "reduce",
-              "actionLabel": "Reduce",
-              "isActionable": true,
-              "netScoreGap": 144.64836400000002,
-              "opposingScore": 144.64836400000002,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "sports",
-                "confidence": 95,
-                "currentMarketPrice": 0.9535,
-                "daysToEnd": 14,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "will-norway-win-the-2026-fifa-world-cup-893|No",
-                "marketURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-                "outcome": "No",
-                "severity": "yellow",
-                "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-                "supportingExposureUSD": 0,
-                "take": "strong",
-                "title": "Will Norway win the 2026 FIFA World Cup?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 98104.55
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
-            "averageEntryPrice": 0.0269,
-            "currentPrice": 0.0465,
-            "currentValue": 4.8222,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "world-cup-winner",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "outcome": "Yes",
-            "percentPnL": 72.2276,
-            "percentRealizedPnL": -75.2794,
-            "realizedPnL": -0.6188,
-            "size": 103.7037,
-            "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-            "title": "Will Norway win the 2026 FIFA World Cup?"
-          },
-          {
-            "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0315,
-            "currentValue": 3.0783,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "anthropic-acquired-before-2027",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -56.0233,
-            "percentRealizedPnL": -56.0239,
-            "realizedPnL": 0,
-            "size": 97.725,
-            "slug": "anthropic-acquired-before-2027",
-            "title": "Anthropic acquired before 2027?"
-          }
-        ],
-        "recentActivityCount": 0,
-        "totalCurrentValue": 7.900499999999999,
-        "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "delta": {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": -0.10370000000000168,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 1,
-          "previousTotalCurrentValue": 8.0042,
-          "highlights": []
-        }
-      },
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": -64.86495299999999,
-          "newestTimestamp": 1783296671,
-          "oldestTimestamp": 1778509463,
-          "redeemedUSD": 232.234845,
-          "returnedUSD": 241.433525,
-          "sampleCount": 111,
-          "sampleLimit": 200,
-          "soldUSD": 9.13888,
-          "spentUSD": 306.298478,
-          "yieldUSD": 0.059799999999999985
-        },
-        "label": "Rose",
-        "lastActivityTimestamp": 1783296671,
-        "openPositionCount": 0,
-        "positions": [],
-        "recentActivityCount": 1,
-        "totalCurrentValue": 0,
-        "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "delta": {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 0,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 0,
-          "highlights": []
-        }
-      }
-    ],
-    "actionMix": [
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 1
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 1
-      }
-    ]
+    "wallets": [],
+    "actionMix": []
   },
   "insider": {
     "available": true,
@@ -207633,7 +207354,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-06T11:15:54Z",
+    "generatedAt": "2026-07-06T12:06:55Z",
     "market": {
       "available": true,
       "summary": {
@@ -208691,18 +208412,7 @@
         "value": 2
       }
     ],
-    "walletActions": [
-      {
-        "key": "reduce",
-        "label": "Reduce",
-        "value": 1
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 1
-      }
-    ],
+    "walletActions": [],
     "systemHealth": [
       {
         "label": "Market updated",
@@ -208710,7 +208420,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-06T11:15:54Z"
+        "value": "2026-07-06T12:06:55Z"
       },
       {
         "label": "Insider updated",
@@ -208730,7 +208440,7 @@
       },
       {
         "label": "Wallet actions",
-        "value": "1"
+        "value": "0"
       },
       {
         "label": "Bullish insider",
@@ -209010,33 +208720,8 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 7.900499999999999,
-      "items": [
-        {
-          "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "shortLabel": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 7.900499999999999,
-          "openPositionCount": 2,
-          "actionablePositionCount": 1,
-          "recentActivityCount": 0,
-          "lastActivityTimestamp": 1781771819
-        },
-        {
-          "id": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "shortLabel": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 0,
-          "openPositionCount": 0,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 1,
-          "lastActivityTimestamp": 1783296671
-        }
-      ]
+      "maxValueUSD": 1,
+      "items": []
     },
     "insiderConviction": {
       "maxAbsTradeValueUSD": 1135938816,
@@ -209130,16 +208815,16 @@
           "available": true,
           "generatedAt": "2026-07-06T11:15:50Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 51m old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-06T11:15:54Z",
-          "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 2 open · 1 actionable · 2 live"
+          "generatedAt": "2026-07-06T12:06:55Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         {
           "id": "insider",
@@ -209148,16 +208833,16 @@
           "available": true,
           "generatedAt": "2026-07-06T11:12:41Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-06T11:15:58.159Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 18 active · 25 snapshots · 2 built from 4 source candidate(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-07-06T12:06:59.236Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
