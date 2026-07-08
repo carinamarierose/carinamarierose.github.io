@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-07T22:31:00.000Z",
-  "generatedAtUnix": 1783463460,
+  "generatedAt": "2026-07-08T12:04:08.429Z",
+  "generatedAtUnix": 1783512248,
   "sync": {
-    "generatedAt": "2026-07-07T22:31:00Z",
-    "generatedAtUnix": 1783463460,
+    "generatedAt": "2026-07-08T12:04:04Z",
+    "generatedAtUnix": 1783512244,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-07T21:56:19.735Z",
-      "generatedAtUnix": 1783461379,
-      "runID": "run-2026-07-07T21-35-20-289Z-96499",
+      "generatedAt": "2026-07-08T12:04:08.429Z",
+      "generatedAtUnix": 1783512248,
+      "runID": "run-2026-07-08T11-55-36-653Z-8990",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing etoro-bot from source.",
+      "statusReason": "Failed step(s): Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-07T21:35:20.289Z",
-      "finishedAt": "2026-07-07T21:56:19.735Z",
-      "lastRunAt": "2026-07-07T21:56:19.735Z",
-      "durationSeconds": 1259.446,
+      "startedAt": "2026-07-08T11:55:36.653Z",
+      "finishedAt": "2026-07-08T12:04:08.429Z",
+      "lastRunAt": "2026-07-08T12:04:08.429Z",
+      "durationSeconds": 511.776,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-07T22:26:19.735Z",
+      "nextRunAt": "2026-07-08T12:34:08.429Z",
       "lastSuccessAt": "2026-07-07T21:05:17.980Z",
       "lastSuccessfulRunAt": "2026-07-07T21:05:17.980Z",
-      "lastFailureAt": "2026-07-07T21:56:19.735Z",
+      "lastFailureAt": "2026-07-08T12:04:08.429Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "failed",
+          "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-07T21:35:20.409Z",
-          "finishedAt": "2026-07-07T21:50:20.442Z",
-          "durationSeconds": 900.033,
+          "startedAt": "2026-07-08T11:55:36.748Z",
+          "finishedAt": "2026-07-08T12:03:57.563Z",
+          "durationSeconds": 500.815,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/insider.log",
-          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
-          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
-          "exitCode": 124,
-          "lastSuccessAt": "2026-07-07T21:01:58.255Z",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-08T11-55-36-653Z-8990/insider.log",
+          "summary": "Telegram query polling failed: The Internet connection appears to be offline.",
+          "error": null,
+          "exitCode": 0,
+          "lastSuccessAt": "2026-07-08T12:03:57.563Z",
           "lastFailureAt": "2026-07-07T21:50:20.442Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-07T21:50:20.443Z",
-          "finishedAt": "2026-07-07T21:55:27.475Z",
-          "durationSeconds": 307.032,
+          "startedAt": "2026-07-08T12:03:57.564Z",
+          "finishedAt": "2026-07-08T12:04:00.515Z",
+          "durationSeconds": 2.951,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-64k-on-july-8-2026|No [global_window_open,priority_source_bypass] | blocked will-argentina-win-the-2026-fifa-world-cup-245|Yes->sports_policy | strait-of-hormuz-traffic-returns-to-normal-by-july-15|No->notification_limit | will-solana-reach-110-in-july-2026|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:55:27.475Z",
-          "lastFailureAt": "2026-07-06T20:50:19.010Z"
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-08T11-55-36-653Z-8990/market.log",
+          "summary": "Error: The Internet connection appears to be offline.",
+          "error": "Error: The Internet connection appears to be offline.",
+          "exitCode": 1,
+          "lastSuccessAt": "2026-07-07T22:30:52.391Z",
+          "lastFailureAt": "2026-07-08T12:04:00.515Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-07T21:55:27.483Z",
-          "finishedAt": "2026-07-07T21:55:31.224Z",
-          "durationSeconds": 3.741,
+          "startedAt": "2026-07-08T12:04:00.516Z",
+          "finishedAt": "2026-07-08T12:04:04.446Z",
+          "durationSeconds": 3.93,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/wallets.log",
-          "summary": "Source diagnostics: 5 candidate(s) | built 3 | no-chase 2 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-08T11-55-36-653Z-8990/wallets.log",
+          "summary": "Loaded 5 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 0 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:55:31.224Z",
+          "lastSuccessAt": "2026-07-08T12:04:04.446Z",
           "lastFailureAt": "2026-07-06T21:06:41.730Z"
         },
         {
@@ -90,104 +90,53 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-07T21:55:31.224Z",
-          "finishedAt": "2026-07-07T21:55:34.927Z",
-          "durationSeconds": 3.703,
+          "startedAt": "2026-07-08T12:04:04.446Z",
+          "finishedAt": "2026-07-08T12:04:08.346Z",
+          "durationSeconds": 3.9,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-08T11-55-36-653Z-8990/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:55:34.927Z",
+          "lastSuccessAt": "2026-07-08T12:04:08.346Z",
           "lastFailureAt": "2026-07-06T21:24:39.330Z"
-        },
-        {
-          "id": "overlay-feed",
-          "title": "Embedding pipeline health into overlay feed",
-          "status": "live",
-          "required": true,
-          "skipped": false,
-          "startedAt": "2026-07-07T21:55:35.066Z",
-          "finishedAt": "2026-07-07T21:55:36.168Z",
-          "durationSeconds": 1.102,
-          "command": "/Users/carina.marie.rose@schibsted.com/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/build-overlay-feed.mjs",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/overlay-feed.log",
-          "summary": "Built overlay-feed.json",
-          "error": null,
-          "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:55:36.168Z",
-          "lastFailureAt": "2026-07-02T08:19:18.027Z"
-        },
-        {
-          "id": "publish",
-          "title": "Publishing Stonkvision mirror",
-          "status": "live",
-          "required": true,
-          "skipped": false,
-          "startedAt": "2026-07-07T21:55:36.168Z",
-          "finishedAt": "2026-07-07T21:55:42.543Z",
-          "durationSeconds": 6.375,
-          "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/publish-to-user-site.sh --push-live",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/publish.log",
-          "summary": "Refresh https://carinamarierose.github.io/stonkvision/ after the push settles.",
-          "error": null,
-          "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:55:42.543Z",
-          "lastFailureAt": "2026-07-06T21:24:43.072Z"
-        },
-        {
-          "id": "verify-hosted",
-          "title": "Verifying hosted release feed",
-          "status": "live",
-          "required": true,
-          "skipped": false,
-          "startedAt": "2026-07-07T21:55:42.615Z",
-          "finishedAt": "2026-07-07T21:56:19.661Z",
-          "durationSeconds": 37.046,
-          "command": "fetch https://carinamarierose.github.io/stonkvision/data/overlay-feed.json",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-07T21-35-20-289Z-96499/verify-hosted.log",
-          "summary": "Hosted feed matched release projection on attempt 5/12.",
-          "error": null,
-          "exitCode": 0,
-          "lastSuccessAt": "2026-07-07T21:56:19.661Z",
-          "lastFailureAt": "2026-07-06T14:23:11.058Z"
         }
       ],
       "sourceSummary": {
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-07T21:55:27Z",
+          "generatedAt": "2026-07-07T22:30:52Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 14 active · 25 snapshots · 3 built from 5 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783461825 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "statusReason": "Snapshot 13h 33m old · 13 active · 25 snapshots · 3 built from 7 source candidate(s) · 8 live · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-07T21:55:31Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-08T12:04:04Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-07T21:01:42Z",
+          "generatedAt": "2026-07-08T12:03:57Z",
           "status": "degraded",
-          "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "5 live · 6 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x844c5a7f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-07T21:55:31Z",
+          "generatedAt": "2026-07-08T12:04:04Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-07T21:56:19.735Z",
+          "generatedAt": "2026-07-08T12:04:08.429Z",
           "status": "failed",
-          "statusReason": "Failed step(s): Refreshing etoro-bot from source."
+          "statusReason": "Failed step(s): Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -239,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-07T22:30:52Z",
       "status": "degraded",
-      "statusReason": "Snapshot 8s old · 13 active · 25 snapshots · 3 built from 7 source candidate(s) · 8 live · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 13h 33m old · 13 active · 25 snapshots · 3 built from 7 source candidate(s) · 8 live · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -746,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-07T22:30:59Z",
-      "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 3 open · 0 actionable · 2 live",
+      "generatedAt": "2026-07-08T12:04:04Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -759,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 13 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (13h 33m old, max 15m).",
           "fetchedAt": "2026-07-07T22:30:52Z",
           "fetchedAtUnix": 1783463452,
           "attemptCount": 1,
           "eventCount": 13,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 48792,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 5 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-07T22:30:59Z",
+          "fetchedAtUnix": 1783463459,
+          "attemptCount": 1,
+          "eventCount": 5,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 48785,
           "retryAfterUnix": null
         },
         {
@@ -779,12 +748,12 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
-          "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-07T22:30:59Z",
-          "fetchedAtUnix": 1783463459,
-          "attemptCount": 2,
-          "eventCount": 3,
+          "status": "failed",
+          "message": "No watched wallet snapshots were loaded from the configured wallet list.",
+          "fetchedAt": "2026-07-08T12:04:04Z",
+          "fetchedAtUnix": 1783512244,
+          "attemptCount": 1,
+          "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -795,10 +764,30 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-07T22:27:19Z",
+      "generatedAt": "2026-07-08T12:03:57Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "statusReason": "5 live · 6 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x844c5a7f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s).",
       "upstreamDiagnostics": [
+        {
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "gdelt_doc",
+          "status": "failed",
+          "message": "Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x844c5a7f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s).",
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
+          "attemptCount": 3,
+          "eventCount": 0,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
         {
           "id": "reddit-algotrading",
           "sourceID": "reddit-algotrading",
@@ -810,8 +799,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -830,8 +819,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -840,9 +829,9 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-cryptocurrency",
-          "sourceID": "reddit-cryptocurrency",
-          "sourceName": "r/CryptoCurrency",
+          "id": "reddit-options",
+          "sourceID": "reddit-options",
+          "sourceName": "r/options",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
@@ -850,8 +839,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -870,8 +859,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -890,33 +879,13 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "gdelt_doc",
-          "status": "cached",
-          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset:... | using stale cache (1 matching item(s), 2h old).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
-          "attemptCount": 3,
-          "eventCount": 1,
-          "cacheUsed": true,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": 7202,
           "retryAfterUnix": null
         },
         {
@@ -930,8 +899,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -950,8 +919,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -960,20 +929,20 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-options",
-          "sourceID": "reddit-options",
-          "sourceName": "r/options",
+          "id": "reddit-cryptocurrency",
+          "sourceID": "reddit-cryptocurrency",
+          "sourceName": "r/CryptoCurrency",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (5 matching item(s)).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "message": "Fetched live (8 matching item(s)).",
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 1,
-          "eventCount": 5,
+          "eventCount": 8,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -990,8 +959,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -1010,8 +979,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live, but no matching items landed.",
-          "fetchedAt": "2026-07-07T22:26:24Z",
-          "fetchedAtUnix": 1783463184,
+          "fetchedAt": "2026-07-08T11:55:39Z",
+          "fetchedAtUnix": 1783511739,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -1024,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-07T22:31:00Z",
+      "generatedAt": "2026-07-08T12:04:04Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -1032,19 +1001,19 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-07T21:56:19.735Z",
+      "generatedAt": "2026-07-08T12:04:08.429Z",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)",
+      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
     "bestBetCount": 5,
-    "trackedWalletCount": 2,
-    "openPositionCount": 3,
+    "trackedWalletCount": 0,
+    "openPositionCount": 0,
     "actionablePositionCount": 0,
-    "insiderSignalCount": 13,
+    "insiderSignalCount": 12,
     "intelItemCount": 18,
     "sourceSignalCount": 5,
     "crossSignalCount": 1,
@@ -1059,13 +1028,13 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "2 wallets tracked",
-      "body": "No actionable wallet calls yet on the latest synced snapshot."
+      "title": "Waiting for wallet sync",
+      "body": "Rose and Haak will appear here when wallet-watcher exports portfolio data."
     },
     "insider": {
       "kicker": "Insider tape",
-      "title": "HOOD leaning bearish",
-      "body": "Quirk Steven M. · Chief Brokerage Officer · 89/100 confidence"
+      "title": "FTECX leaning bullish",
+      "body": "Chad Eisenberg · Treasurer · 100/100 confidence"
     }
   },
   "intel": {
@@ -1428,6 +1397,25 @@
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
+        "id": "insider-watch:FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462|bullish",
+        "kind": "insider_watch",
+        "title": "FTECX · First Trust Enhanced Private Credit Fund",
+        "subtitle": "Chad Eisenberg · Treasurer · 100/100",
+        "summary": "Insider buy · $400.0K disclosed · ownership +746% · eToro FTECX · market-trans macro context · 15 recent source events · 2 breaking · api",
+        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
+        "ticker": "FTECX",
+        "companyName": "First Trust Enhanced Private Credit Fund",
+        "direction": "bullish",
+        "confidence": 100,
+        "filedAt": "2026-07-08T01:40:15Z",
+        "transactionType": "P - Purchase",
+        "tradeValueUSD": 399990,
+        "ownershipChangePercent": 746,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/2021979/000173280226000013/xslF345X03/primary_doc.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:HOOD|2026-07-07 17:03:08|2026-07-02|quirk steven m.|s - sale|$119.96|-19,377|bearish",
         "kind": "insider_watch",
         "title": "HOOD · Robinhood Markets, Inc.",
@@ -1466,6 +1454,25 @@
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
+        "id": "insider-watch:ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750|bearish",
+        "kind": "insider_watch",
+        "title": "ABNB · Airbnb, Inc.",
+        "subtitle": "Mertz Elinor · CFO · 65/100",
+        "summary": "Insider sale · -$555.0K disclosed · ownership -1% · 2 filings for ABNB in current scan · eToro ABNB",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "ABNB",
+        "companyName": "Airbnb, Inc.",
+        "direction": "bearish",
+        "confidence": 65,
+        "filedAt": "2026-07-08T01:33:45Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -555038,
+        "ownershipChangePercent": -1,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1559720/000119312526297867/xslF345X03/ownership.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:CACC|2026-07-07 16:20:24|2026-07-02|watson jill foss|s - sale|$653.24|-11,000|bearish",
         "kind": "insider_watch",
         "title": "CACC · Credit Acceptance Corp",
@@ -1485,6 +1492,25 @@
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
+        "id": "insider-watch:CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783|bearish",
+        "kind": "insider_watch",
+        "title": "CIRC · Circle8 Group Inc",
+        "subtitle": "Franke Guus Paul Wilhelm · COB, CEO · 66/100",
+        "summary": "Insider sale · -$308.8K disclosed · ownership -2% · eToro CIRC",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "CIRC",
+        "companyName": "Circle8 Group Inc",
+        "direction": "bearish",
+        "confidence": 66,
+        "filedAt": "2026-07-08T00:00:57Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -308783,
+        "ownershipChangePercent": -2,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1605888/000121390026076123/xslF345X03/ownership.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:NOVT|2026-07-07 16:05:35|2026-07-02|glastra matthijs|s - sale|$161.13|-6,500|bearish",
         "kind": "insider_watch",
         "title": "NOVT · Novanta Inc",
@@ -1501,63 +1527,6 @@
         "ownershipChangePercent": -7,
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1076930/000107693026000084/xslF345X03/form4.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:HOOD|2026-07-07 17:02:27|2026-07-02|treseder oluwadara johnson|s - sale|$117.50|-3,750|bearish",
-        "kind": "insider_watch",
-        "title": "HOOD · Robinhood Markets, Inc.",
-        "subtitle": "Treseder Oluwadara Johnson · Dir · 75/100",
-        "summary": "Insider sale · -$440.6K disclosed · ownership -5% · 3 filings for HOOD in current scan · eToro HOOD · market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "HOOD",
-        "companyName": "Robinhood Markets, Inc.",
-        "direction": "bearish",
-        "confidence": 75,
-        "filedAt": "2026-07-07T21:02:27Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -440625,
-        "ownershipChangePercent": -5,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1783879/000181742526000009/xslF345X03/wk-form4_1783458145.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:SONY|2026-07-07 11:22:43|2026-07-03|totoki hiroki|s - sale|$21.02|-225,000|bearish",
-        "kind": "insider_watch",
-        "title": "SONY · Sony Group Corp",
-        "subtitle": "Totoki Hiroki · Pres, CEO · 90/100",
-        "summary": "Insider sale · -$4.73M disclosed · ownership -56% · 2 filings for SONY in current scan · eToro SONY",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "SONY",
-        "companyName": "Sony Group Corp",
-        "direction": "bearish",
-        "confidence": 90,
-        "filedAt": "2026-07-07T15:22:43Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -4729500,
-        "ownershipChangePercent": -56,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/313838/000119312526297130/xslF345X03/ownership.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:TWLO|2026-07-07 16:20:47|2026-07-02|viggiano aidan|s - sale|$205.43|-8,528|bearish",
-        "kind": "insider_watch",
-        "title": "TWLO · Twilio Inc",
-        "subtitle": "Viggiano Aidan · CFO · 73/100",
-        "summary": "Insider sale · -$1.75M disclosed · ownership -7% · eToro TWLO",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "TWLO",
-        "companyName": "Twilio Inc",
-        "direction": "bearish",
-        "confidence": 73,
-        "filedAt": "2026-07-07T20:20:47Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -1751907,
-        "ownershipChangePercent": -7,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1447669/000144766926000075/xslF345X03/wk-form4_1783455644.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       }
     ],
@@ -2494,11 +2463,11 @@
       "items": [
         {
           "day": "2026-06-24",
-          "enabledRuns": 9,
-          "scoredRows": 114,
-          "supportCount": 44,
-          "skepticalCount": 15,
-          "topKDisagreementCount": 12,
+          "enabledRuns": 5,
+          "scoredRows": 64,
+          "supportCount": 25,
+          "skepticalCount": 10,
+          "topKDisagreementCount": 6,
           "promotedCount": 0,
           "displacedCount": 0
         },
@@ -3460,169 +3429,32 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-07T22:30:59Z",
+    "generatedAt": "2026-07-08T12:04:04Z",
     "summary": {
       "actionablePositionCount": 0,
-      "activityCash": {
-        "mayBeTruncated": true,
-        "netFlowUSD": -136.35287599999992,
-        "newestTimestamp": 1783383514,
-        "oldestTimestamp": 1778005974,
-        "redeemedUSD": 519.089614,
-        "returnedUSD": 846.821934,
-        "sampleCount": 315,
-        "sampleLimit": 400,
-        "soldUSD": 327.59612000000004,
-        "spentUSD": 983.17481,
-        "yieldUSD": 0.1362
-      },
-      "openPositionCount": 3,
-      "totalCurrentValue": 43.3818,
-      "walletCount": 2
+      "openPositionCount": 0,
+      "totalCurrentValue": 0,
+      "walletCount": 0
     },
     "urgentAction": null,
-    "commandGroups": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 3,
-        "actionableCount": 0,
-        "totalCurrentValue": 43.3818,
-        "positions": [
-          {
-            "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "walletLabel": "Rose",
-            "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-            "title": "Will Norway win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 34.9646,
-            "currentPrice": 0.061,
-            "percentPnL": 29.7894,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Will Norway win the 2026 FIFA World Cup?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 6.3259,
-            "currentPrice": 0.061,
-            "percentPnL": 125.9332,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          },
-          {
-            "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "walletLabel": "Haak",
-            "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-            "title": "Anthropic acquired before 2027?",
-            "outcome": "YES",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 2.0913,
-            "currentPrice": 0.0214,
-            "percentPnL": -70.1234,
-            "action": "no_signal",
-            "actionLabel": "No signal",
-            "isActionable": false,
-            "relationLabel": null,
-            "signalTitle": null,
-            "signalURL": null,
-            "signalConfidence": null,
-            "supportingSignalCount": 0,
-            "opposingSignalCount": 0,
-            "netScoreGap": null,
-            "daysToEnd": null
-          }
-        ],
-        "moreCount": 0
-      }
-    ],
+    "commandGroups": [],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-07T21:55:31Z",
-      "previousGeneratedAtUnix": 1783461331,
-      "changedWalletCount": 1,
-      "unchangedWalletCount": 1,
+      "previousGeneratedAt": "2026-07-07T22:30:59Z",
+      "previousGeneratedAtUnix": 1783463459,
+      "changedWalletCount": 0,
+      "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 2.707499999999996,
-      "highlights": [
-        {
-          "type": "value_changed",
-          "walletLabel": "Rose",
-          "title": "Rose",
-          "marketURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "valueDeltaUSD": 2.2926999999999964
-        }
-      ],
-      "wallets": [
-        {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.4147999999999996,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 8.0024,
-          "highlights": []
-        },
-        {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 2.2926999999999964,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 1,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 32.6719,
-          "highlights": []
-        }
-      ]
+      "valueDeltaUSD": 0,
+      "highlights": [],
+      "wallets": []
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-07T22:31:02.736Z",
+      "generatedAt": "2026-07-08T12:04:07.177Z",
       "snapshotCount": 468,
       "earliestAt": "2026-05-14T06:32:45Z",
       "latestAt": "2026-07-07T22:30:59Z",
@@ -214775,159 +214607,67 @@
         }
       ]
     },
-    "wallets": [
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": true,
-          "netFlowUSD": -43.78013599999997,
-          "newestTimestamp": 1781771819,
-          "oldestTimestamp": 1778005974,
-          "redeemedUSD": 286.85476900000003,
-          "returnedUSD": 605.3860090000001,
-          "sampleCount": 200,
-          "sampleLimit": 200,
-          "soldUSD": 318.45724000000007,
-          "spentUSD": 649.166145,
-          "yieldUSD": 0.07400000000000001
-        },
-        "label": "Haak",
-        "lastActivityTimestamp": 1781771819,
-        "openPositionCount": 2,
-        "positions": [
-          {
-            "averageEntryPrice": 0.0269,
-            "currentPrice": 0.061,
-            "currentValue": 6.3259,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "world-cup-winner",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "outcome": "Yes",
-            "percentPnL": 125.9332,
-            "percentRealizedPnL": -67.5709,
-            "realizedPnL": -0.6188,
-            "size": 103.7037,
-            "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-            "title": "Will Norway win the 2026 FIFA World Cup?"
-          },
-          {
-            "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0214,
-            "currentValue": 2.0913,
-            "endDate": "2026-12-31T00:00:00Z",
-            "eventSlug": "anthropic-acquired-before-2027",
-            "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "outcome": "Yes",
-            "percentPnL": -70.1234,
-            "percentRealizedPnL": -70.124,
-            "realizedPnL": 0,
-            "size": 97.725,
-            "slug": "anthropic-acquired-before-2027",
-            "title": "Anthropic acquired before 2027?"
-          }
-        ],
-        "recentActivityCount": 0,
-        "totalCurrentValue": 8.4172,
-        "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-        "delta": {
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "hasPrevious": true,
-          "hasChanges": false,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 0.4147999999999996,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 8.0024,
-          "highlights": []
-        }
-      },
-      {
-        "actionablePositionCount": 0,
-        "activityCash": {
-          "mayBeTruncated": false,
-          "netFlowUSD": -92.57273999999995,
-          "newestTimestamp": 1783383514,
-          "oldestTimestamp": 1778509463,
-          "redeemedUSD": 232.234845,
-          "returnedUSD": 241.435925,
-          "sampleCount": 115,
-          "sampleLimit": 200,
-          "soldUSD": 9.13888,
-          "spentUSD": 334.00866499999995,
-          "yieldUSD": 0.06219999999999998
-        },
-        "label": "Rose",
-        "lastActivityTimestamp": 1783383514,
-        "openPositionCount": 1,
-        "positions": [
-          {
-            "averageEntryPrice": 0.0469,
-            "currentPrice": 0.061,
-            "currentValue": 34.9646,
-            "endDate": "2026-07-20T00:00:00Z",
-            "eventSlug": "world-cup-winner",
-            "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "outcome": "Yes",
-            "percentPnL": 29.7894,
-            "percentRealizedPnL": 29.7896,
-            "realizedPnL": 0,
-            "size": 573.1914,
-            "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-            "title": "Will Norway win the 2026 FIFA World Cup?"
-          }
-        ],
-        "recentActivityCount": 1,
-        "totalCurrentValue": 34.9646,
-        "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-        "delta": {
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "hasPrevious": true,
-          "hasChanges": true,
-          "hasStructuralChanges": false,
-          "valueDeltaUSD": 2.2926999999999964,
-          "openPositionDelta": 0,
-          "actionableDelta": 0,
-          "newPositionCount": 0,
-          "closedPositionCount": 0,
-          "actionChangeCount": 0,
-          "sizeChangeCount": 0,
-          "previousOpenPositionCount": 1,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 32.6719,
-          "highlights": []
-        }
-      }
-    ],
-    "actionMix": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 3
-      }
-    ]
+    "wallets": [],
+    "actionMix": []
   },
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-07T22:27:19Z",
+    "generatedAt": "2026-07-08T12:03:57Z",
     "summary": {
-      "totalFilingsFetched": 62,
-      "totalSignals": 13,
+      "totalFilingsFetched": 57,
+      "totalSignals": 12,
       "listedSignals": 6
     },
     "signals": [
+      {
+        "companyName": "First Trust Enhanced Private Credit Fund",
+        "confidence": 100,
+        "direction": "bullish",
+        "etoroInstrument": {
+          "displayName": "FTECX",
+          "marketURL": "https://www.etoro.com/markets/ftecx",
+          "symbol": "FTECX"
+        },
+        "filedAt": "2026-07-08T01:40:15Z",
+        "filingID": "FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462",
+        "filingRationale": "Open-market purchase · fresh macro source context.",
+        "groupedTickerMentions": 1,
+        "id": "FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462|bullish",
+        "insiderName": "Chad Eisenberg",
+        "insiderTitle": "Treasurer",
+        "marketContext": {
+          "activeSignalCount": 0,
+          "freshSourceEventCount": 9,
+          "highPrioritySourceEventCount": 4,
+          "matchedThemes": [
+            "macro"
+          ],
+          "prioritySourceSignalCount": 0,
+          "relevantSourceEventCount": 15,
+          "scoreBoost": 10.8,
+          "selectedSignalCount": 0,
+          "skepticalSignalCount": 0,
+          "sourceConfirmedSignalCount": 0,
+          "sourceTypes": [
+            "api"
+          ],
+          "summary": "market-trans macro context · 15 recent source events · 2 breaking · api",
+          "supportiveSignalCount": 0
+        },
+        "ownershipChangePercent": 746,
+        "score": 100,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/2021979/000173280226000013/xslF345X03/primary_doc.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider buy · $400.0K disclosed · ownership +746% · eToro FTECX · market-trans macro context · 15 recent source events · 2 breaking · api",
+        "ticker": "FTECX",
+        "tradeValueUSD": 399990,
+        "tradedAt": "2026-07-02T04:00:00Z",
+        "transactionPriceUSD": 9.42,
+        "transactionType": "P - Purchase",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/2021979/000173280226000013/xslF345X03/primary_doc.xml"
+      },
       {
         "companyName": "Robinhood Markets, Inc.",
         "confidence": 89,
@@ -215025,6 +214765,35 @@
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1783879/000187052926000008/xslF345X03/wk-form4_1783458110.xml"
       },
       {
+        "companyName": "Airbnb, Inc.",
+        "confidence": 65,
+        "direction": "bearish",
+        "etoroInstrument": {
+          "displayName": "ABNB",
+          "marketURL": "https://www.etoro.com/markets/abnb",
+          "symbol": "ABNB"
+        },
+        "filedAt": "2026-07-08T01:33:45Z",
+        "filingID": "ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750",
+        "filingRationale": "Open-market sale · 2 same-ticker filings in this scan.",
+        "groupedTickerMentions": 2,
+        "id": "ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750|bearish",
+        "insiderName": "Mertz Elinor",
+        "insiderTitle": "CFO",
+        "ownershipChangePercent": -1,
+        "score": 65,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1559720/000119312526297867/xslF345X03/ownership.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider sale · -$555.0K disclosed · ownership -1% · 2 filings for ABNB in current scan · eToro ABNB",
+        "ticker": "ABNB",
+        "tradeValueUSD": -555038,
+        "tradedAt": "2026-07-02T04:00:00Z",
+        "transactionPriceUSD": 148.01,
+        "transactionType": "S - Sale",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1559720/000119312526297867/xslF345X03/ownership.xml"
+      },
+      {
         "companyName": "Credit Acceptance Corp",
         "confidence": 74,
         "direction": "bearish",
@@ -215073,123 +214842,51 @@
         "externalURL": "http://www.sec.gov/Archives/edgar/data/885550/000119312526297504/xslF345X03/ownership.xml"
       },
       {
-        "companyName": "Novanta Inc",
-        "confidence": 79,
+        "companyName": "Circle8 Group Inc",
+        "confidence": 66,
         "direction": "bearish",
         "etoroInstrument": {
-          "displayName": "NOVT",
-          "marketURL": "https://www.etoro.com/markets/novt",
-          "symbol": "NOVT"
+          "displayName": "CIRC",
+          "marketURL": "https://www.etoro.com/markets/circ",
+          "symbol": "CIRC"
         },
-        "filedAt": "2026-07-07T20:05:35Z",
-        "filingID": "NOVT|2026-07-07 16:05:35|2026-07-02|glastra matthijs|s - sale|$161.13|-6,500",
+        "filedAt": "2026-07-08T00:00:57Z",
+        "filingID": "CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783",
         "filingRationale": "Open-market sale.",
         "groupedTickerMentions": 1,
-        "id": "NOVT|2026-07-07 16:05:35|2026-07-02|glastra matthijs|s - sale|$161.13|-6,500|bearish",
-        "insiderName": "Glastra Matthijs",
-        "insiderTitle": "CEO",
-        "ownershipChangePercent": -7,
-        "score": 79,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1076930/000107693026000084/xslF345X03/form4.xml",
+        "id": "CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783|bearish",
+        "insiderName": "Franke Guus Paul Wilhelm",
+        "insiderTitle": "COB, CEO",
+        "ownershipChangePercent": -2,
+        "score": 66,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1605888/000121390026076123/xslF345X03/ownership.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$1.05M disclosed · ownership -7% · eToro NOVT",
-        "ticker": "NOVT",
-        "tradeValueUSD": -1047340,
-        "tradedAt": "2026-07-02T04:00:00Z",
-        "transactionPriceUSD": 161.13,
+        "summary": "Insider sale · -$308.8K disclosed · ownership -2% · eToro CIRC",
+        "ticker": "CIRC",
+        "tradeValueUSD": -308783,
+        "tradedAt": "2026-07-01T04:00:00Z",
+        "transactionPriceUSD": 1,
         "transactionType": "S - Sale",
         "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1076930/000107693026000084/xslF345X03/form4.xml"
-      },
-      {
-        "companyName": "Robinhood Markets, Inc.",
-        "confidence": 75,
-        "direction": "bearish",
-        "etoroInstrument": {
-          "displayName": "HOOD",
-          "marketURL": "https://www.etoro.com/markets/hood",
-          "symbol": "HOOD"
-        },
-        "filedAt": "2026-07-07T21:02:27Z",
-        "filingID": "HOOD|2026-07-07 17:02:27|2026-07-02|treseder oluwadara johnson|s - sale|$117.50|-3,750",
-        "filingRationale": "Open-market sale · 3 same-ticker filings in this scan · priority-source crypto context.",
-        "groupedTickerMentions": 3,
-        "id": "HOOD|2026-07-07 17:02:27|2026-07-02|treseder oluwadara johnson|s - sale|$117.50|-3,750|bearish",
-        "insiderName": "Treseder Oluwadara Johnson",
-        "insiderTitle": "Dir",
-        "marketContext": {
-          "activeSignalCount": 2,
-          "freshSourceEventCount": 25,
-          "highPrioritySourceEventCount": 3,
-          "matchedThemes": [
-            "crypto"
-          ],
-          "prioritySourceSignalCount": 1,
-          "relevantSourceEventCount": 27,
-          "scoreBoost": 18,
-          "selectedSignalCount": 1,
-          "skepticalSignalCount": 0,
-          "sourceConfirmedSignalCount": 1,
-          "sourceTypes": [
-            "api"
-          ],
-          "summary": "market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
-          "supportiveSignalCount": 1
-        },
-        "ownershipChangePercent": -5,
-        "score": 75,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1783879/000181742526000009/xslF345X03/wk-form4_1783458145.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$440.6K disclosed · ownership -5% · 3 filings for HOOD in current scan · eToro HOOD · market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
-        "ticker": "HOOD",
-        "tradeValueUSD": -440625,
-        "tradedAt": "2026-07-02T04:00:00Z",
-        "transactionPriceUSD": 117.5,
-        "transactionType": "S - Sale",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1783879/000181742526000009/xslF345X03/wk-form4_1783458145.xml"
-      },
-      {
-        "companyName": "Sony Group Corp",
-        "confidence": 90,
-        "direction": "bearish",
-        "etoroInstrument": {
-          "displayName": "SONY",
-          "marketURL": "https://www.etoro.com/markets/sony",
-          "symbol": "SONY"
-        },
-        "filedAt": "2026-07-07T15:22:43Z",
-        "filingID": "SONY|2026-07-07 11:22:43|2026-07-03|totoki hiroki|s - sale|$21.02|-225,000",
-        "filingRationale": "Open-market sale · 2 same-ticker filings in this scan.",
-        "groupedTickerMentions": 2,
-        "id": "SONY|2026-07-07 11:22:43|2026-07-03|totoki hiroki|s - sale|$21.02|-225,000|bearish",
-        "insiderName": "Totoki Hiroki",
-        "insiderTitle": "Pres, CEO",
-        "ownershipChangePercent": -56,
-        "score": 90,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/313838/000119312526297130/xslF345X03/ownership.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$4.73M disclosed · ownership -56% · 2 filings for SONY in current scan · eToro SONY",
-        "ticker": "SONY",
-        "tradeValueUSD": -4729500,
-        "tradedAt": "2026-07-03T04:00:00Z",
-        "transactionPriceUSD": 21.02,
-        "transactionType": "S - Sale",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/313838/000119312526297130/xslF345X03/ownership.xml"
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1605888/000121390026076123/xslF345X03/ownership.xml"
       }
     ],
     "directionMix": [
       {
         "key": "bearish",
         "label": "Sell",
-        "value": 25
+        "value": 24
+      },
+      {
+        "key": "bullish",
+        "label": "Buy",
+        "value": 1
       }
     ]
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-07T22:31:00Z",
+    "generatedAt": "2026-07-08T12:04:04Z",
     "market": {
       "available": true,
       "summary": {
@@ -215233,8 +214930,8 @@
           "averagePriceChange": 0.00254448012271683
         },
         "insiderArchiveCount": 8,
-        "bullishInsiderCount": 0,
-        "bearishInsiderCount": 8
+        "bullishInsiderCount": 1,
+        "bearishInsiderCount": 7
       },
       "horizons": [
         {
@@ -216057,10 +215754,110 @@
       "available": true,
       "summary": {
         "archiveCount": 8,
-        "bullishCount": 0,
-        "bearishCount": 8
+        "bullishCount": 1,
+        "bearishCount": 7
       },
       "archive": [
+        {
+          "signalID": "ADPT|2026-07-07 18:52:49|2026-07-02|robins harlan s|s - sale|$22.01|-386,240|bearish",
+          "filingID": "ADPT|2026-07-07 18:52:49|2026-07-02|robins harlan s|s - sale|$22.01|-386,240",
+          "ticker": "ADPT",
+          "companyName": "Adaptive Biotechnologies Corp",
+          "insiderName": "Robins Harlan S",
+          "insiderTitle": "Chief Scientific Officer",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 57,
+          "score": 57,
+          "tradeValueUSD": -8501149,
+          "ownershipChangePercent": -27,
+          "filedAt": "2026-07-07T22:52:49.000Z",
+          "filedAtUnix": 1783464769,
+          "tradedAt": "2026-07-02T04:00:00.000Z",
+          "tradedAtUnix": 1782964800,
+          "summary": "Insider sale · -$8.50M disclosed · ownership -27% · eToro ADPT",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750|bearish",
+          "filingID": "ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750",
+          "ticker": "ABNB",
+          "companyName": "Airbnb, Inc.",
+          "insiderName": "Mertz Elinor",
+          "insiderTitle": "CFO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 65,
+          "score": 65,
+          "tradeValueUSD": -555038,
+          "ownershipChangePercent": -1,
+          "filedAt": "2026-07-08T01:33:45.000Z",
+          "filedAtUnix": 1783474425,
+          "tradedAt": "2026-07-02T04:00:00.000Z",
+          "tradedAtUnix": 1782964800,
+          "summary": "Insider sale · -$555.0K disclosed · ownership -1% · 2 filings for ABNB in current scan · eToro ABNB",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "WDAY|2026-07-07 18:48:52|2026-07-07|rowe zane|s - sale|$143.70|-6,000|bearish",
+          "filingID": "WDAY|2026-07-07 18:48:52|2026-07-07|rowe zane|s - sale|$143.70|-6,000",
+          "ticker": "WDAY",
+          "companyName": "Workday, Inc.",
+          "insiderName": "Rowe Zane",
+          "insiderTitle": "CFO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 66,
+          "score": 66,
+          "tradeValueUSD": -862203,
+          "ownershipChangePercent": -2,
+          "filedAt": "2026-07-07T22:48:52.000Z",
+          "filedAtUnix": 1783464532,
+          "tradedAt": "2026-07-07T04:00:00.000Z",
+          "tradedAtUnix": 1783396800,
+          "summary": "Insider sale · -$862.2K disclosed · ownership -2% · 3 filings for WDAY in current scan · eToro WDAY",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783|bearish",
+          "filingID": "CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783",
+          "ticker": "CIRC",
+          "companyName": "Circle8 Group Inc",
+          "insiderName": "Franke Guus Paul Wilhelm",
+          "insiderTitle": "COB, CEO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 66,
+          "score": 66,
+          "tradeValueUSD": -308783,
+          "ownershipChangePercent": -2,
+          "filedAt": "2026-07-08T00:00:57.000Z",
+          "filedAtUnix": 1783468857,
+          "tradedAt": "2026-07-01T04:00:00.000Z",
+          "tradedAtUnix": 1782878400,
+          "summary": "Insider sale · -$308.8K disclosed · ownership -2% · eToro CIRC",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462|bullish",
+          "filingID": "FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462",
+          "ticker": "FTECX",
+          "companyName": "First Trust Enhanced Private Credit Fund",
+          "insiderName": "Chad Eisenberg",
+          "insiderTitle": "Treasurer",
+          "direction": "bullish",
+          "transactionType": "P - Purchase",
+          "confidence": 100,
+          "score": 100,
+          "tradeValueUSD": 399990,
+          "ownershipChangePercent": 746,
+          "filedAt": "2026-07-08T01:40:15.000Z",
+          "filedAtUnix": 1783474815,
+          "tradedAt": "2026-07-02T04:00:00.000Z",
+          "tradedAtUnix": 1782964800,
+          "summary": "Insider buy · $400.0K disclosed · ownership +746% · eToro FTECX · market-trans macro context · 15 recent source events · 2 breaking · api",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
         {
           "signalID": "PRCH|2026-07-07 17:38:41|2026-07-02|tabak shawn|s - sale|$16.13|-25,000|bearish",
           "filingID": "PRCH|2026-07-07 17:38:41|2026-07-02|tabak shawn|s - sale|$16.13|-25,000",
@@ -216120,106 +215917,6 @@
           "tradedAtUnix": 1782964800,
           "summary": "Insider sale · -$440.6K disclosed · ownership -5% · 3 filings for HOOD in current scan · eToro HOOD · market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
           "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "HOOD|2026-07-07 17:01:52|2026-07-02|loop paula|s - sale|$120.00|-8,336|bearish",
-          "filingID": "HOOD|2026-07-07 17:01:52|2026-07-02|loop paula|s - sale|$120.00|-8,336",
-          "ticker": "HOOD",
-          "companyName": "Robinhood Markets, Inc.",
-          "insiderName": "Loop Paula",
-          "insiderTitle": "Dir",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 89,
-          "score": 89,
-          "tradeValueUSD": -1000320,
-          "ownershipChangePercent": -12,
-          "filedAt": "2026-07-07T21:01:52.000Z",
-          "filedAtUnix": 1783458112,
-          "tradedAt": "2026-07-02T04:00:00.000Z",
-          "tradedAtUnix": 1782964800,
-          "summary": "Insider sale · -$1.00M disclosed · ownership -12% · 3 filings for HOOD in current scan · eToro HOOD · market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "HOOD|2026-07-07 17:03:08|2026-07-02|quirk steven m.|s - sale|$119.96|-19,377|bearish",
-          "filingID": "HOOD|2026-07-07 17:03:08|2026-07-02|quirk steven m.|s - sale|$119.96|-19,377",
-          "ticker": "HOOD",
-          "companyName": "Robinhood Markets, Inc.",
-          "insiderName": "Quirk Steven M.",
-          "insiderTitle": "Chief Brokerage Officer",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 89,
-          "score": 89,
-          "tradeValueUSD": -2324465,
-          "ownershipChangePercent": -24,
-          "filedAt": "2026-07-07T21:03:08.000Z",
-          "filedAtUnix": 1783458188,
-          "tradedAt": "2026-07-02T04:00:00.000Z",
-          "tradedAtUnix": 1782964800,
-          "summary": "Insider sale · -$2.32M disclosed · ownership -24% · 3 filings for HOOD in current scan · eToro HOOD · market-trans crypto context · 2 active markets · 27 recent source events · 2 breaking · priority-source 1 · confirmed 1 · selected 1 · api · model supports 1",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "DXCM|2026-07-07 16:09:41|2026-07-06|sayer kevin r|s - sale|$72.00|-26,756|bearish",
-          "filingID": "DXCM|2026-07-07 16:09:41|2026-07-06|sayer kevin r|s - sale|$72.00|-26,756",
-          "ticker": "DXCM",
-          "companyName": "Dexcom Inc",
-          "insiderName": "Sayer Kevin R",
-          "insiderTitle": "Exec Chair",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 55,
-          "score": 55,
-          "tradeValueUSD": -1926432,
-          "ownershipChangePercent": -7,
-          "filedAt": "2026-07-07T20:09:41.000Z",
-          "filedAtUnix": 1783454981,
-          "tradedAt": "2026-07-06T04:00:00.000Z",
-          "tradedAtUnix": 1783310400,
-          "summary": "Insider sale · -$1.93M disclosed · ownership -7% · eToro DXCM",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "VRTX|2026-07-07 16:08:03|2026-07-02|mckechnie duncan|s - sale|$519.00|-1,541|bearish",
-          "filingID": "VRTX|2026-07-07 16:08:03|2026-07-02|mckechnie duncan|s - sale|$519.00|-1,541",
-          "ticker": "VRTX",
-          "companyName": "Vertex Pharmaceuticals Inc / Ma",
-          "insiderName": "McKechnie Duncan",
-          "insiderTitle": "EVP, Chief Commercial Officer",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 58,
-          "score": 58,
-          "tradeValueUSD": -799779,
-          "ownershipChangePercent": -12,
-          "filedAt": "2026-07-07T20:08:03.000Z",
-          "filedAtUnix": 1783454883,
-          "tradedAt": "2026-07-02T04:00:00.000Z",
-          "tradedAtUnix": 1782964800,
-          "summary": "Insider sale · -$799.8K disclosed · ownership -12% · 2 filings for VRTX in current scan · eToro VRTX",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "PRVA|2026-07-07 16:06:55|2026-07-02|mountcastle david|s - sale|$27.50|-24,734|bearish",
-          "filingID": "PRVA|2026-07-07 16:06:55|2026-07-02|mountcastle david|s - sale|$27.50|-24,734",
-          "ticker": "PRVA",
-          "companyName": "Privia Health Group, Inc.",
-          "insiderName": "Mountcastle David",
-          "insiderTitle": "EVP, CFO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 71,
-          "score": 71,
-          "tradeValueUSD": -680185,
-          "ownershipChangePercent": -11,
-          "filedAt": "2026-07-07T20:06:55.000Z",
-          "filedAtUnix": 1783454815,
-          "tradedAt": "2026-07-02T04:00:00.000Z",
-          "tradedAtUnix": 1782964800,
-          "summary": "Insider sale · -$680.2K disclosed · ownership -11% · eToro PRVA",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
         }
       ]
     }
@@ -216237,13 +215934,7 @@
         "value": 2
       }
     ],
-    "walletActions": [
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "value": 3
-      }
-    ],
+    "walletActions": [],
     "systemHealth": [
       {
         "label": "Market updated",
@@ -216251,15 +215942,15 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-07T22:30:59Z"
+        "value": "2026-07-08T12:04:04Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-07-07T22:27:19Z"
+        "value": "2026-07-08T12:03:57Z"
       },
       {
         "label": "Insider upstream",
-        "value": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+        "value": "5 live · 6 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x844c5a7f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s)."
       },
       {
         "label": "Official watch",
@@ -216275,11 +215966,11 @@
       },
       {
         "label": "Bullish insider",
-        "value": "0"
+        "value": "1"
       },
       {
         "label": "Bearish insider",
-        "value": "25"
+        "value": "24"
       },
       {
         "label": "Eval rows",
@@ -216536,37 +216227,25 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 34.9646,
-      "items": [
-        {
-          "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "label": "Haak",
-          "shortLabel": "Haak",
-          "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 8.4172,
-          "openPositionCount": 2,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 0,
-          "lastActivityTimestamp": 1781771819
-        },
-        {
-          "id": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "label": "Rose",
-          "shortLabel": "Rose",
-          "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 34.9646,
-          "openPositionCount": 1,
-          "actionablePositionCount": 0,
-          "recentActivityCount": 1,
-          "lastActivityTimestamp": 1783383514
-        }
-      ]
+      "maxValueUSD": 1,
+      "items": []
     },
     "insiderConviction": {
       "maxAbsTradeValueUSD": 7185657,
       "items": [
+        {
+          "id": "FTECX|2026-07-07 21:40:15|2026-07-02|chad eisenberg|p - purchase|$9.42|+42,462|bullish",
+          "ticker": "FTECX",
+          "label": "FTECX",
+          "shortLabel": "FTECX",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/2021979/000173280226000013/xslF345X03/primary_doc.xml",
+          "direction": "bullish",
+          "confidence": 100,
+          "tradeValueUSD": 399990,
+          "absTradeValueUSD": 399990,
+          "filedAt": "2026-07-08T01:40:15Z",
+          "insiderName": "Chad Eisenberg"
+        },
         {
           "id": "HOOD|2026-07-07 17:03:08|2026-07-02|quirk steven m.|s - sale|$119.96|-19,377|bearish",
           "ticker": "HOOD",
@@ -216594,6 +216273,19 @@
           "insiderName": "Loop Paula"
         },
         {
+          "id": "ABNB|2026-07-07 21:33:45|2026-07-02|mertz elinor|s - sale|$148.01|-3,750|bearish",
+          "ticker": "ABNB",
+          "label": "ABNB",
+          "shortLabel": "ABNB",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/1559720/000119312526297867/xslF345X03/ownership.xml",
+          "direction": "bearish",
+          "confidence": 65,
+          "tradeValueUSD": -555038,
+          "absTradeValueUSD": 555038,
+          "filedAt": "2026-07-08T01:33:45Z",
+          "insiderName": "Mertz Elinor"
+        },
+        {
           "id": "CACC|2026-07-07 16:20:24|2026-07-02|watson jill foss|s - sale|$653.24|-11,000|bearish",
           "ticker": "CACC",
           "label": "CACC",
@@ -216607,43 +216299,17 @@
           "insiderName": "Watson Jill Foss"
         },
         {
-          "id": "NOVT|2026-07-07 16:05:35|2026-07-02|glastra matthijs|s - sale|$161.13|-6,500|bearish",
-          "ticker": "NOVT",
-          "label": "NOVT",
-          "shortLabel": "NOVT",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1076930/000107693026000084/xslF345X03/form4.xml",
+          "id": "CIRC|2026-07-07 20:00:57|2026-07-01|franke guus paul wilhelm|s - sale|$1.00|-308,783|bearish",
+          "ticker": "CIRC",
+          "label": "CIRC",
+          "shortLabel": "CIRC",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/1605888/000121390026076123/xslF345X03/ownership.xml",
           "direction": "bearish",
-          "confidence": 79,
-          "tradeValueUSD": -1047340,
-          "absTradeValueUSD": 1047340,
-          "filedAt": "2026-07-07T20:05:35Z",
-          "insiderName": "Glastra Matthijs"
-        },
-        {
-          "id": "HOOD|2026-07-07 17:02:27|2026-07-02|treseder oluwadara johnson|s - sale|$117.50|-3,750|bearish",
-          "ticker": "HOOD",
-          "label": "HOOD",
-          "shortLabel": "HOOD",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1783879/000181742526000009/xslF345X03/wk-form4_1783458145.xml",
-          "direction": "bearish",
-          "confidence": 75,
-          "tradeValueUSD": -440625,
-          "absTradeValueUSD": 440625,
-          "filedAt": "2026-07-07T21:02:27Z",
-          "insiderName": "Treseder Oluwadara Johnson"
-        },
-        {
-          "id": "SONY|2026-07-07 11:22:43|2026-07-03|totoki hiroki|s - sale|$21.02|-225,000|bearish",
-          "ticker": "SONY",
-          "label": "SONY",
-          "shortLabel": "SONY",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/313838/000119312526297130/xslF345X03/ownership.xml",
-          "direction": "bearish",
-          "confidence": 90,
-          "tradeValueUSD": -4729500,
-          "absTradeValueUSD": 4729500,
-          "filedAt": "2026-07-07T15:22:43Z",
-          "insiderName": "Totoki Hiroki"
+          "confidence": 66,
+          "tradeValueUSD": -308783,
+          "absTradeValueUSD": 308783,
+          "filedAt": "2026-07-08T00:00:57Z",
+          "insiderName": "Franke Guus Paul Wilhelm"
         }
       ]
     },
@@ -216656,34 +216322,34 @@
           "available": true,
           "generatedAt": "2026-07-07T22:30:52Z",
           "status": "stale",
-          "reason": "Snapshot 8s old · 13 active · 25 snapshots · 3 built from 7 source candidate(s) · 8 live · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 13h 33m old · 13 active · 25 snapshots · 3 built from 7 source candidate(s) · 8 live · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-07T22:30:59Z",
-          "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-08T12:04:04Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 0 wallet(s) · 0 open · 0 actionable · 2 stale cache · 1 failed. Watched wallets: No watched wallet snapshots were loaded from the configured wallet list."
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-07T22:27:19Z",
+          "generatedAt": "2026-07-08T12:03:57Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
+          "reason": "5 live · 6 failed. GDELT Market News: Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={_kCFStreamErrorCodeKey=50, NSUnderlyingError=0x844c5a7f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"(null)\" UserInfo={_kCFStreamErrorDomainKey=1, _kCFStreamErrorCodeKey=50, _NSURLErrorNWResolutionReportKey=Resolved 0 endpoints in 1ms using unknown from cache, _NSURLErrorNWPathKey=unsatisfied (No network route)}}, _NSURLErrorFailingURLSessionTaskErrorKey=LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>, _NSURLErrorRelatedURLSessionTaskErrorKey=(\n    \"LocalDataTask <9C069390-F765-4CA5-8F48-28257F6B3C33>.<31>\"\n), NSLocalizedDescription=The Internet connection appears to be offline., NSErrorFailingURLStringKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, NSErrorFailingURLKey=https://api.gdeltproject.org/api/v2/doc/doc?format=json&mode=artlist&sort=datedesc&maxrecords=8&timespan=360min&query=(fed%20OR%20inflation%20OR%20rates%20OR%20tariff%20OR%20oil%20OR%20shipping%20OR%20hormuz%20OR%20iran%20OR%20china%20OR%20semiconductor%20OR%20nvidia)%20(domain:reuters.com%20OR%20domain:apnews.com%20OR%20domain:cnbc.com)%20sourcelang:english, _kCFStreamErrorDomainKey=1} after 3 attempt(s)."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-07T21:56:19.735Z",
+          "generatedAt": "2026-07-08T12:04:08.429Z",
           "status": "stale",
-          "reason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)"
+          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
         }
       ]
     }
