@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-09T20:34:27.653Z",
-  "generatedAtUnix": 1783629267,
+  "generatedAt": "2026-07-10T00:24:55.063Z",
+  "generatedAtUnix": 1783643095,
   "sync": {
-    "generatedAt": "2026-07-09T20:34:24Z",
-    "generatedAtUnix": 1783629264,
+    "generatedAt": "2026-07-10T00:24:51Z",
+    "generatedAtUnix": 1783643091,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-09T20:34:27.653Z",
-      "generatedAtUnix": 1783629267,
-      "runID": "run-2026-07-09T20-30-36-148Z-3336",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "generatedAt": "2026-07-10T00:24:55.063Z",
+      "generatedAtUnix": 1783643095,
+      "runID": "run-2026-07-09T23-51-31-670Z-15254",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-09T20:30:36.148Z",
-      "finishedAt": "2026-07-09T20:34:27.653Z",
-      "lastRunAt": "2026-07-09T20:34:27.653Z",
-      "durationSeconds": 231.505,
+      "startedAt": "2026-07-09T23:51:31.670Z",
+      "finishedAt": "2026-07-10T00:24:55.063Z",
+      "lastRunAt": "2026-07-10T00:24:55.063Z",
+      "durationSeconds": 2003.393,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-09T21:04:27.653Z",
-      "lastSuccessAt": "2026-07-09T20:34:27.653Z",
-      "lastSuccessfulRunAt": "2026-07-09T20:34:27.653Z",
-      "lastFailureAt": "2026-07-09T17:21:00.725Z",
+      "nextRunAt": "2026-07-10T00:54:55.063Z",
+      "lastSuccessAt": "2026-07-09T20:50:59.579Z",
+      "lastSuccessfulRunAt": "2026-07-09T20:50:59.579Z",
+      "lastFailureAt": "2026-07-10T00:24:55.063Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-09T20:30:36.274Z",
-          "finishedAt": "2026-07-09T20:32:05.392Z",
-          "durationSeconds": 89.118,
+          "startedAt": "2026-07-09T23:51:31.738Z",
+          "finishedAt": "2026-07-10T00:07:00.860Z",
+          "durationSeconds": 929.122,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T20-30-36-148Z-3336/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T23-51-31-670Z-15254/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-07-09T20:32:05.392Z",
-          "lastFailureAt": "2026-07-09T14:47:52.495Z"
+          "lastFailureAt": "2026-07-10T00:07:00.860Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-09T20:32:05.392Z",
-          "finishedAt": "2026-07-09T20:34:22.058Z",
-          "durationSeconds": 136.666,
+          "startedAt": "2026-07-10T00:07:00.861Z",
+          "finishedAt": "2026-07-10T00:24:48.129Z",
+          "durationSeconds": 1067.268,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T20-30-36-148Z-3336/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-64k-on-july-11-2026|No [global_window_open,priority_source_bypass] | blocked will-there-be-no-change-in-fed-interest-rates-after-the-july-2026-meeting|Yes->notification_limit | will-norway-win-the-2026-fifa-world-cup-893|No->sports_policy | will-argentina-win-the-2026-fifa-world-cup-245|No->sports_policy",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T23-51-31-670Z-15254/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-07-09T20:34:22.058Z",
-          "lastFailureAt": "2026-07-09T17:20:06.628Z"
+          "lastFailureAt": "2026-07-10T00:24:48.129Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-09T20:34:22.058Z",
-          "finishedAt": "2026-07-09T20:34:24.423Z",
-          "durationSeconds": 2.365,
+          "startedAt": "2026-07-10T00:24:48.129Z",
+          "finishedAt": "2026-07-10T00:24:51.399Z",
+          "durationSeconds": 3.27,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T20-30-36-148Z-3336/wallets.log",
-          "summary": "Source diagnostics: 12 candidate(s) | built 9 | no-chase 3 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T23-51-31-670Z-15254/wallets.log",
+          "summary": "Loaded 7 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-09T20:34:24.423Z",
+          "lastSuccessAt": "2026-07-10T00:24:51.399Z",
           "lastFailureAt": "2026-07-06T21:06:41.730Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-09T20:34:24.424Z",
-          "finishedAt": "2026-07-09T20:34:27.520Z",
-          "durationSeconds": 3.096,
+          "startedAt": "2026-07-10T00:24:51.399Z",
+          "finishedAt": "2026-07-10T00:24:55.006Z",
+          "durationSeconds": 3.607,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T20-30-36-148Z-3336/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-09T23-51-31-670Z-15254/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-09T20:34:27.520Z",
+          "lastSuccessAt": "2026-07-10T00:24:55.006Z",
           "lastFailureAt": "2026-07-06T21:24:39.330Z"
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-07-09T20:34:22Z",
           "status": "degraded",
-          "statusReason": "Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "Snapshot 3h 50m old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-09T20:34:24Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 2 actionable · 2 live"
+          "generatedAt": "2026-07-10T00:24:51Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 50m old, max 15m). (3h 50m old)"
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-09T20:34:24Z",
+          "generatedAt": "2026-07-10T00:24:51Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-09T20:34:27.653Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "generatedAt": "2026-07-10T00:24:55.063Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-09T20:34:22Z",
       "status": "degraded",
-      "statusReason": "Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 3h 50m old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-09T20:34:24Z",
-      "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 2 actionable · 2 live",
+      "generatedAt": "2026-07-10T00:24:51Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 50m old, max 15m). (3h 50m old)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 20 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (3h 50m old, max 15m).",
           "fetchedAt": "2026-07-09T20:34:22Z",
           "fetchedAtUnix": 1783629262,
           "attemptCount": 1,
           "eventCount": 20,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 13829,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 7 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-09T20:34:24Z",
+          "fetchedAtUnix": 1783629264,
+          "attemptCount": 1,
+          "eventCount": 7,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 13827,
           "retryAfterUnix": null
         },
         {
@@ -729,9 +749,9 @@
           "sourceHandle": "-",
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
-          "message": "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 2 actionable call(s).",
-          "fetchedAt": "2026-07-09T20:34:24Z",
-          "fetchedAtUnix": 1783629264,
+          "message": "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
+          "fetchedAt": "2026-07-10T00:24:51Z",
+          "fetchedAtUnix": 1783643091,
           "attemptCount": 2,
           "eventCount": 3,
           "cacheUsed": false,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-07-09T20:31:50Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-09T20:34:24Z",
+      "generatedAt": "2026-07-10T00:24:51Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-09T20:34:27.653Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "generatedAt": "2026-07-10T00:24:55.063Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -992,7 +1012,7 @@
     "bestBetCount": 7,
     "trackedWalletCount": 2,
     "openPositionCount": 3,
-    "actionablePositionCount": 2,
+    "actionablePositionCount": 0,
     "insiderSignalCount": 13,
     "intelItemCount": 18,
     "sourceSignalCount": 6,
@@ -1008,8 +1028,8 @@
     },
     "wallets": {
       "kicker": "Wallet command",
-      "title": "Sell YES on Will Norway win the 2026 FIFA World Cup?",
-      "body": "Will Norway win the 2026 FIFA World Cup? · opposes current position"
+      "title": "2 wallets tracked",
+      "body": "No actionable wallet calls yet on the latest synced snapshot."
     },
     "insider": {
       "kicker": "Insider tape",
@@ -3662,55 +3682,34 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-09T20:34:24Z",
+    "generatedAt": "2026-07-10T00:24:51Z",
     "summary": {
-      "actionablePositionCount": 2,
+      "actionablePositionCount": 0,
       "activityCash": {
         "mayBeTruncated": true,
-        "netFlowUSD": -136.34407599999992,
-        "newestTimestamp": 1783556047,
+        "netFlowUSD": -136.3395759999999,
+        "newestTimestamp": 1783642483,
         "oldestTimestamp": 1778005974,
         "redeemedUSD": 519.089614,
-        "returnedUSD": 846.8307340000001,
-        "sampleCount": 317,
+        "returnedUSD": 846.8352340000001,
+        "sampleCount": 318,
         "sampleLimit": 400,
         "soldUSD": 327.59612000000004,
         "spentUSD": 983.17481,
-        "yieldUSD": 0.14500000000000002
+        "yieldUSD": 0.14950000000000005
       },
       "openPositionCount": 3,
-      "totalCurrentValue": 46.3613,
+      "totalCurrentValue": 43.1163,
       "walletCount": 2
     },
-    "urgentAction": {
-      "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-      "walletLabel": "Rose",
-      "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-      "title": "Will Norway win the 2026 FIFA World Cup?",
-      "outcome": "YES",
-      "marketURL": "https://polymarket.com/event/world-cup-winner",
-      "currentValue": 35.8244,
-      "currentPrice": 0.0625,
-      "percentPnL": 32.981,
-      "action": "sell",
-      "actionLabel": "Sell",
-      "isActionable": true,
-      "relationLabel": "Opposes current position",
-      "signalTitle": "Will Norway win the 2026 FIFA World Cup?",
-      "signalURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-      "signalConfidence": 95,
-      "supportingSignalCount": 0,
-      "opposingSignalCount": 1,
-      "netScoreGap": 175.20000000000002,
-      "daysToEnd": 11
-    },
+    "urgentAction": null,
     "commandGroups": [
       {
-        "key": "sell",
-        "label": "Sell",
-        "count": 2,
-        "actionableCount": 2,
-        "totalCurrentValue": 42.3058,
+        "key": "no_signal",
+        "label": "No signal",
+        "count": 3,
+        "actionableCount": 0,
+        "totalCurrentValue": 43.1163,
         "positions": [
           {
             "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
@@ -3719,20 +3718,20 @@
             "title": "Will Norway win the 2026 FIFA World Cup?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 35.8244,
-            "currentPrice": 0.0625,
-            "percentPnL": 32.981,
-            "action": "sell",
-            "actionLabel": "Sell",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will Norway win the 2026 FIFA World Cup?",
-            "signalURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-            "signalConfidence": 95,
+            "currentValue": 33.5317,
+            "currentPrice": 0.0585,
+            "percentPnL": 24.4704,
+            "action": "no_signal",
+            "actionLabel": "No signal",
+            "isActionable": false,
+            "relationLabel": null,
+            "signalTitle": null,
+            "signalURL": null,
+            "signalConfidence": null,
             "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 175.20000000000002,
-            "daysToEnd": 11
+            "opposingSignalCount": 0,
+            "netScoreGap": null,
+            "daysToEnd": null
           },
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3741,31 +3740,21 @@
             "title": "Will Norway win the 2026 FIFA World Cup?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
-            "currentValue": 6.4814,
-            "currentPrice": 0.0625,
-            "percentPnL": 131.487,
-            "action": "sell",
-            "actionLabel": "Sell",
-            "isActionable": true,
-            "relationLabel": "Opposes current position",
-            "signalTitle": "Will Norway win the 2026 FIFA World Cup?",
-            "signalURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-            "signalConfidence": 95,
+            "currentValue": 6.0666,
+            "currentPrice": 0.0585,
+            "percentPnL": 116.6721,
+            "action": "no_signal",
+            "actionLabel": "No signal",
+            "isActionable": false,
+            "relationLabel": null,
+            "signalTitle": null,
+            "signalURL": null,
+            "signalConfidence": null,
             "supportingSignalCount": 0,
-            "opposingSignalCount": 1,
-            "netScoreGap": 175.20000000000002,
-            "daysToEnd": 11
-          }
-        ],
-        "moreCount": 0
-      },
-      {
-        "key": "no_signal",
-        "label": "No signal",
-        "count": 1,
-        "actionableCount": 0,
-        "totalCurrentValue": 4.0555,
-        "positions": [
+            "opposingSignalCount": 0,
+            "netScoreGap": null,
+            "daysToEnd": null
+          },
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
             "walletLabel": "Haak",
@@ -3773,9 +3762,9 @@
             "title": "Anthropic acquired before 2027?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 4.0555,
-            "currentPrice": 0.0415,
-            "percentPnL": -42.0631,
+            "currentValue": 3.518,
+            "currentPrice": 0.036,
+            "percentPnL": -49.7418,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3794,15 +3783,15 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-09T17:20:11Z",
-      "previousGeneratedAtUnix": 1783617611,
+      "previousGeneratedAt": "2026-07-09T20:34:24Z",
+      "previousGeneratedAtUnix": 1783629264,
       "changedWalletCount": 2,
       "unchangedWalletCount": 0,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 2,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 2.2749999999999986,
+      "valueDeltaUSD": -3.2449999999999957,
       "highlights": [
         {
           "type": "action_changed",
@@ -3810,9 +3799,9 @@
           "title": "Will Norway win the 2026 FIFA World Cup?",
           "outcome": "YES",
           "marketURL": "https://polymarket.com/event/world-cup-winner",
-          "action": "sell",
-          "previousAction": "no_signal",
-          "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+          "action": "no_signal",
+          "previousAction": "sell",
+          "signalTitle": null
         },
         {
           "type": "action_changed",
@@ -3820,9 +3809,9 @@
           "title": "Will Norway win the 2026 FIFA World Cup?",
           "outcome": "YES",
           "marketURL": "https://polymarket.com/event/world-cup-winner",
-          "action": "sell",
-          "previousAction": "no_signal",
-          "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+          "action": "no_signal",
+          "previousAction": "sell",
+          "signalTitle": null
         }
       ],
       "wallets": [
@@ -3833,16 +3822,16 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": true,
-          "valueDeltaUSD": 0.5553999999999988,
+          "valueDeltaUSD": -0.9522999999999993,
           "openPositionDelta": 0,
-          "actionableDelta": 1,
+          "actionableDelta": -1,
           "newPositionCount": 0,
           "closedPositionCount": 0,
           "actionChangeCount": 1,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 9.9815,
+          "previousActionablePositionCount": 1,
+          "previousTotalCurrentValue": 10.5369,
           "highlights": [
             {
               "type": "action_changed",
@@ -3850,9 +3839,9 @@
               "title": "Will Norway win the 2026 FIFA World Cup?",
               "outcome": "YES",
               "marketURL": "https://polymarket.com/event/world-cup-winner",
-              "action": "sell",
-              "previousAction": "no_signal",
-              "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+              "action": "no_signal",
+              "previousAction": "sell",
+              "signalTitle": null
             }
           ]
         },
@@ -3863,16 +3852,16 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": true,
-          "valueDeltaUSD": 1.7195999999999998,
+          "valueDeltaUSD": -2.2926999999999964,
           "openPositionDelta": 0,
-          "actionableDelta": 1,
+          "actionableDelta": -1,
           "newPositionCount": 0,
           "closedPositionCount": 0,
           "actionChangeCount": 1,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 1,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 34.1048,
+          "previousActionablePositionCount": 1,
+          "previousTotalCurrentValue": 35.8244,
           "highlights": [
             {
               "type": "action_changed",
@@ -3880,9 +3869,9 @@
               "title": "Will Norway win the 2026 FIFA World Cup?",
               "outcome": "YES",
               "marketURL": "https://polymarket.com/event/world-cup-winner",
-              "action": "sell",
-              "previousAction": "no_signal",
-              "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+              "action": "no_signal",
+              "previousAction": "sell",
+              "signalTitle": null
             }
           ]
         }
@@ -3890,19 +3879,19 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-09T20:34:26.287Z",
-      "snapshotCount": 483,
+      "generatedAt": "2026-07-10T00:24:53.888Z",
+      "snapshotCount": 484,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-09T20:34:24Z",
+      "latestAt": "2026-07-10T00:24:51Z",
       "latestSummary": {
-        "timestamp": "2026-07-09T20:34:24Z",
-        "timestampUnix": 1783629264,
-        "currentValue": 46.3613,
+        "timestamp": "2026-07-10T00:24:51Z",
+        "timestampUnix": 1783643091,
+        "currentValue": 43.1163,
         "costBasisValue": 36.66941619,
-        "unrealizedPnL": 9.69188381,
+        "unrealizedPnL": 6.446883810000003,
         "realizedPnL": -0.6188,
         "openPositionCount": 3,
-        "actionablePositionCount": 2
+        "actionablePositionCount": 0
       },
       "mappedCategoryPositionCount": 3,
       "unmappedCategoryPositionCount": 0,
@@ -8736,18 +8725,28 @@
           "realizedPnL": -0.6188,
           "openPositionCount": 3,
           "actionablePositionCount": 2
+        },
+        {
+          "timestamp": "2026-07-10T00:24:51Z",
+          "timestampUnix": 1783643091,
+          "currentValue": 43.1163,
+          "costBasisValue": 36.66941619,
+          "unrealizedPnL": 6.446883810000003,
+          "realizedPnL": -0.6188,
+          "openPositionCount": 3,
+          "actionablePositionCount": 0
         }
       ],
       "walletSeries": [
         {
           "key": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
           "label": "Rose",
-          "latestCurrentValue": 35.8244,
+          "latestCurrentValue": 33.5317,
           "latestCostBasisValue": 26.88267666,
-          "latestUnrealizedPnL": 8.941723339999996,
+          "latestUnrealizedPnL": 6.649023339999999,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
-          "latestActionablePositionCount": 1,
+          "latestActionablePositionCount": 0,
           "items": [
             {
               "timestamp": "2026-05-14T06:32:45Z",
@@ -13578,18 +13577,28 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 33.5317,
+              "costBasisValue": 26.88267666,
+              "unrealizedPnL": 6.649023339999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
-          "latestCurrentValue": 10.5369,
+          "latestCurrentValue": 9.5846,
           "latestCostBasisValue": 9.786739529999998,
-          "latestUnrealizedPnL": 0.7501604700000009,
+          "latestUnrealizedPnL": -0.2021395299999984,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 2,
-          "latestActionablePositionCount": 1,
+          "latestActionablePositionCount": 0,
           "items": [
             {
               "timestamp": "2026-05-14T06:32:45Z",
@@ -18420,6 +18429,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 1
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 9.5846,
+              "costBasisValue": 9.786739529999998,
+              "unrealizedPnL": -0.2021395299999984,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -18428,12 +18447,12 @@
         {
           "key": "world-cup-winner",
           "label": "Will Spain win the 2026 FIFA World Cup?",
-          "latestCurrentValue": 42.3058,
+          "latestCurrentValue": 39.5983,
           "latestCostBasisValue": 29.67230619,
-          "latestUnrealizedPnL": 12.633493809999996,
+          "latestUnrealizedPnL": 9.92599381,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 2,
-          "latestActionablePositionCount": 2,
+          "latestActionablePositionCount": 0,
           "items": [
             {
               "timestamp": "2026-05-14T06:32:45Z",
@@ -23264,15 +23283,25 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 39.5983,
+              "costBasisValue": 29.67230619,
+              "unrealizedPnL": 9.92599381,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "anthropic-acquired-before-2027",
           "label": "Anthropic acquired before 2027?",
-          "latestCurrentValue": 4.0555,
+          "latestCurrentValue": 3.518,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.941609999999999,
+          "latestUnrealizedPnL": -3.4791099999999995,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -28103,6 +28132,16 @@
               "currentValue": 4.0555,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.941609999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 3.518,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.4791099999999995,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -32942,6 +32981,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -37790,6 +37839,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -42626,6 +42685,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -47474,6 +47543,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -52310,6 +52389,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -57158,6 +57247,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -61994,6 +62093,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -66842,6 +66951,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -71678,6 +71797,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -76526,6 +76655,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -81362,6 +81501,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -86210,6 +86359,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -91046,6 +91205,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -95894,6 +96063,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -100730,6 +100909,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -105578,6 +105767,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -110414,6 +110613,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -115262,6 +115471,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -120098,6 +120317,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -124946,6 +125175,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -129782,6 +130021,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -134630,6 +134879,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -139466,6 +139725,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -144314,6 +144583,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -149150,6 +149429,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -153998,6 +154287,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -158834,6 +159133,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -163682,6 +163991,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -168518,6 +168837,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -173366,6 +173695,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -178208,6 +178547,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -178216,12 +178565,12 @@
         {
           "key": "sports",
           "label": "Sports",
-          "latestCurrentValue": 42.3058,
+          "latestCurrentValue": 39.5983,
           "latestCostBasisValue": 29.67230619,
-          "latestUnrealizedPnL": 12.633493809999996,
+          "latestUnrealizedPnL": 9.92599381,
           "latestRealizedPnL": -0.6188,
           "latestOpenPositionCount": 2,
-          "latestActionablePositionCount": 2,
+          "latestActionablePositionCount": 0,
           "items": [
             {
               "timestamp": "2026-05-14T06:32:45Z",
@@ -183052,15 +183401,25 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 2
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 39.5983,
+              "costBasisValue": 29.67230619,
+              "unrealizedPnL": 9.92599381,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
         {
           "key": "tech",
           "label": "Tech",
-          "latestCurrentValue": 4.0555,
+          "latestCurrentValue": 3.518,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.941609999999999,
+          "latestUnrealizedPnL": -3.4791099999999995,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -187891,6 +188250,16 @@
               "currentValue": 4.0555,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.941609999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 3.518,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.4791099999999995,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -192730,6 +193099,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -197578,6 +197957,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -202414,6 +202803,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -207262,6 +207661,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -212098,6 +212507,16 @@
             {
               "timestamp": "2026-07-09T20:34:24Z",
               "timestampUnix": 1783629264,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -216946,6 +217365,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -221788,6 +222217,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-10T00:24:51Z",
+              "timestampUnix": 1783643091,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -221795,7 +222234,7 @@
     },
     "wallets": [
       {
-        "actionablePositionCount": 1,
+        "actionablePositionCount": 0,
         "activityCash": {
           "mayBeTruncated": true,
           "netFlowUSD": -43.78013599999997,
@@ -221814,47 +222253,15 @@
         "openPositionCount": 2,
         "positions": [
           {
-            "advice": {
-              "action": "sell",
-              "actionLabel": "Sell",
-              "isActionable": true,
-              "netScoreGap": 175.20000000000002,
-              "opposingScore": 175.20000000000002,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "sports",
-                "confidence": 95,
-                "currentMarketPrice": 0.9375,
-                "daysToEnd": 11,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "will-norway-win-the-2026-fifa-world-cup-893|No",
-                "marketURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-                "outcome": "No",
-                "severity": "red",
-                "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-                "supportingExposureUSD": 0,
-                "take": "conviction",
-                "title": "Will Norway win the 2026 FIFA World Cup?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 130000
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
             "averageEntryPrice": 0.0269,
-            "currentPrice": 0.0625,
-            "currentValue": 6.4814,
+            "currentPrice": 0.0585,
+            "currentValue": 6.0666,
             "endDate": "2026-07-20T00:00:00Z",
             "eventSlug": "world-cup-winner",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
             "outcome": "Yes",
-            "percentPnL": 131.487,
-            "percentRealizedPnL": -66.7737,
+            "percentPnL": 116.6721,
+            "percentRealizedPnL": -68.9001,
             "realizedPnL": -0.6188,
             "size": 103.7037,
             "slug": "will-norway-win-the-2026-fifa-world-cup-893",
@@ -221862,14 +222269,14 @@
           },
           {
             "averageEntryPrice": 0.0716,
-            "currentPrice": 0.0415,
-            "currentValue": 4.0555,
+            "currentPrice": 0.036,
+            "currentValue": 3.518,
             "endDate": "2026-12-31T00:00:00Z",
             "eventSlug": "anthropic-acquired-before-2027",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
             "outcome": "Yes",
-            "percentPnL": -42.0631,
-            "percentRealizedPnL": -42.0638,
+            "percentPnL": -49.7418,
+            "percentRealizedPnL": -49.7424,
             "realizedPnL": 0,
             "size": 97.725,
             "slug": "anthropic-acquired-before-2027",
@@ -221877,7 +222284,7 @@
           }
         ],
         "recentActivityCount": 0,
-        "totalCurrentValue": 10.5369,
+        "totalCurrentValue": 9.5846,
         "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "delta": {
@@ -221887,16 +222294,16 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": true,
-          "valueDeltaUSD": 0.5553999999999988,
+          "valueDeltaUSD": -0.9522999999999993,
           "openPositionDelta": 0,
-          "actionableDelta": 1,
+          "actionableDelta": -1,
           "newPositionCount": 0,
           "closedPositionCount": 0,
           "actionChangeCount": 1,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 2,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 9.9815,
+          "previousActionablePositionCount": 1,
+          "previousTotalCurrentValue": 10.5369,
           "highlights": [
             {
               "type": "action_changed",
@@ -221904,74 +222311,42 @@
               "title": "Will Norway win the 2026 FIFA World Cup?",
               "outcome": "YES",
               "marketURL": "https://polymarket.com/event/world-cup-winner",
-              "action": "sell",
-              "previousAction": "no_signal",
-              "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+              "action": "no_signal",
+              "previousAction": "sell",
+              "signalTitle": null
             }
           ]
         }
       },
       {
-        "actionablePositionCount": 1,
+        "actionablePositionCount": 0,
         "activityCash": {
           "mayBeTruncated": false,
-          "netFlowUSD": -92.56393999999995,
-          "newestTimestamp": 1783556047,
+          "netFlowUSD": -92.55943999999994,
+          "newestTimestamp": 1783642483,
           "oldestTimestamp": 1778509463,
           "redeemedUSD": 232.234845,
-          "returnedUSD": 241.444725,
-          "sampleCount": 117,
+          "returnedUSD": 241.449225,
+          "sampleCount": 118,
           "sampleLimit": 200,
           "soldUSD": 9.13888,
           "spentUSD": 334.00866499999995,
-          "yieldUSD": 0.07100000000000001
+          "yieldUSD": 0.07550000000000004
         },
         "label": "Rose",
-        "lastActivityTimestamp": 1783556047,
+        "lastActivityTimestamp": 1783642483,
         "openPositionCount": 1,
         "positions": [
           {
-            "advice": {
-              "action": "sell",
-              "actionLabel": "Sell",
-              "isActionable": true,
-              "netScoreGap": 175.20000000000002,
-              "opposingScore": 175.20000000000002,
-              "opposingSignalCount": 1,
-              "relation": "opposes_held_position",
-              "relationLabel": "Opposes current position",
-              "signal": {
-                "category": "sports",
-                "confidence": 95,
-                "currentMarketPrice": 0.9375,
-                "daysToEnd": 11,
-                "direction": "buy",
-                "horizon": "short_term",
-                "id": "will-norway-win-the-2026-fifa-world-cup-893|No",
-                "marketURL": "https://polymarket.com/event/will-norway-win-the-2026-fifa-world-cup-893",
-                "outcome": "No",
-                "severity": "red",
-                "slug": "will-norway-win-the-2026-fifa-world-cup-893",
-                "supportingExposureUSD": 0,
-                "take": "conviction",
-                "title": "Will Norway win the 2026 FIFA World Cup?",
-                "uniqueTraderCount": 1,
-                "uniqueTransactionCount": 1,
-                "weightedFlowUSD": 130000
-              },
-              "supportingScore": 0,
-              "supportingSignalCount": 0,
-              "xgboostStance": "skeptical"
-            },
             "averageEntryPrice": 0.0469,
-            "currentPrice": 0.0625,
-            "currentValue": 35.8244,
+            "currentPrice": 0.0585,
+            "currentValue": 33.5317,
             "endDate": "2026-07-20T00:00:00Z",
             "eventSlug": "world-cup-winner",
             "marketURL": "https://polymarket.com/event/world-cup-winner",
             "outcome": "Yes",
-            "percentPnL": 32.981,
-            "percentRealizedPnL": 32.9813,
+            "percentPnL": 24.4704,
+            "percentRealizedPnL": 24.4707,
             "realizedPnL": 0,
             "size": 573.1914,
             "slug": "will-norway-win-the-2026-fifa-world-cup-893",
@@ -221979,7 +222354,7 @@
           }
         ],
         "recentActivityCount": 1,
-        "totalCurrentValue": 35.8244,
+        "totalCurrentValue": 33.5317,
         "wallet": "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
         "delta": {
@@ -221989,16 +222364,16 @@
           "hasPrevious": true,
           "hasChanges": true,
           "hasStructuralChanges": true,
-          "valueDeltaUSD": 1.7195999999999998,
+          "valueDeltaUSD": -2.2926999999999964,
           "openPositionDelta": 0,
-          "actionableDelta": 1,
+          "actionableDelta": -1,
           "newPositionCount": 0,
           "closedPositionCount": 0,
           "actionChangeCount": 1,
           "sizeChangeCount": 0,
           "previousOpenPositionCount": 1,
-          "previousActionablePositionCount": 0,
-          "previousTotalCurrentValue": 34.1048,
+          "previousActionablePositionCount": 1,
+          "previousTotalCurrentValue": 35.8244,
           "highlights": [
             {
               "type": "action_changed",
@@ -222006,9 +222381,9 @@
               "title": "Will Norway win the 2026 FIFA World Cup?",
               "outcome": "YES",
               "marketURL": "https://polymarket.com/event/world-cup-winner",
-              "action": "sell",
-              "previousAction": "no_signal",
-              "signalTitle": "Will Norway win the 2026 FIFA World Cup?"
+              "action": "no_signal",
+              "previousAction": "sell",
+              "signalTitle": null
             }
           ]
         }
@@ -222016,14 +222391,9 @@
     ],
     "actionMix": [
       {
-        "key": "sell",
-        "label": "Sell",
-        "value": 2
-      },
-      {
         "key": "no_signal",
         "label": "No signal",
-        "value": 1
+        "value": 3
       }
     ]
   },
@@ -222227,7 +222597,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-09T20:34:24Z",
+    "generatedAt": "2026-07-10T00:24:51Z",
     "market": {
       "available": true,
       "summary": {
@@ -223277,14 +223647,9 @@
     ],
     "walletActions": [
       {
-        "key": "sell",
-        "label": "Sell",
-        "value": 2
-      },
-      {
         "key": "no_signal",
         "label": "No signal",
-        "value": 1
+        "value": 3
       }
     ],
     "systemHealth": [
@@ -223294,7 +223659,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-09T20:34:24Z"
+        "value": "2026-07-10T00:24:51Z"
       },
       {
         "label": "Insider updated",
@@ -223314,7 +223679,7 @@
       },
       {
         "label": "Wallet actions",
-        "value": "2"
+        "value": "0"
       },
       {
         "label": "Bullish insider",
@@ -223594,7 +223959,7 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 35.8244,
+      "maxValueUSD": 33.5317,
       "items": [
         {
           "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -223602,9 +223967,9 @@
           "label": "Haak",
           "shortLabel": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 10.5369,
+          "totalCurrentValue": 9.5846,
           "openPositionCount": 2,
-          "actionablePositionCount": 1,
+          "actionablePositionCount": 0,
           "recentActivityCount": 0,
           "lastActivityTimestamp": 1781771819
         },
@@ -223614,11 +223979,11 @@
           "label": "Rose",
           "shortLabel": "Rose",
           "walletURL": "https://polygonscan.com/address/0x30da9f12d8961e80e11f9575e316f5da5799ca57",
-          "totalCurrentValue": 35.8244,
+          "totalCurrentValue": 33.5317,
           "openPositionCount": 1,
-          "actionablePositionCount": 1,
+          "actionablePositionCount": 0,
           "recentActivityCount": 1,
-          "lastActivityTimestamp": 1783556047
+          "lastActivityTimestamp": 1783642483
         }
       ]
     },
@@ -223714,16 +224079,16 @@
           "available": true,
           "generatedAt": "2026-07-09T20:34:22Z",
           "status": "stale",
-          "reason": "Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 3h 50m old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-09T20:34:24Z",
-          "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 2 actionable · 2 live"
+          "generatedAt": "2026-07-10T00:24:51Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 50m old, max 15m). (3h 50m old)"
         },
         {
           "id": "insider",
@@ -223732,16 +224097,16 @@
           "available": true,
           "generatedAt": "2026-07-09T20:31:50Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-09T20:34:27.653Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 20 active · 25 snapshots · 9 built from 12 source candidate(s) · 1 suspicious wallet(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "generatedAt": "2026-07-10T00:24:55.063Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
