@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-10T23:04:33.862Z",
-  "generatedAtUnix": 1783724673,
+  "generatedAt": "2026-07-11T19:00:24.577Z",
+  "generatedAtUnix": 1783796424,
   "sync": {
-    "generatedAt": "2026-07-10T23:04:30Z",
-    "generatedAtUnix": 1783724670,
+    "generatedAt": "2026-07-11T19:00:19Z",
+    "generatedAtUnix": 1783796419,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,60 +12,60 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-10T23:04:33.862Z",
-      "generatedAtUnix": 1783724673,
-      "runID": "run-2026-07-10T23-01-35-068Z-51796",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "generatedAt": "2026-07-11T19:00:24.577Z",
+      "generatedAtUnix": 1783796424,
+      "runID": "run-2026-07-11T18-23-26-229Z-91778",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-10T23:01:35.068Z",
-      "finishedAt": "2026-07-10T23:04:33.862Z",
-      "lastRunAt": "2026-07-10T23:04:33.862Z",
-      "durationSeconds": 178.794,
+      "startedAt": "2026-07-11T18:23:26.229Z",
+      "finishedAt": "2026-07-11T19:00:24.577Z",
+      "lastRunAt": "2026-07-11T19:00:24.577Z",
+      "durationSeconds": 2218.348,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-10T23:34:33.862Z",
-      "lastSuccessAt": "2026-07-10T23:04:33.862Z",
-      "lastSuccessfulRunAt": "2026-07-10T23:04:33.862Z",
-      "lastFailureAt": "2026-07-10T04:45:50.580Z",
+      "nextRunAt": "2026-07-11T19:30:24.577Z",
+      "lastSuccessAt": "2026-07-10T23:05:22.225Z",
+      "lastSuccessfulRunAt": "2026-07-10T23:05:22.225Z",
+      "lastFailureAt": "2026-07-11T19:00:24.577Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-10T23:01:35.115Z",
-          "finishedAt": "2026-07-10T23:02:07.068Z",
-          "durationSeconds": 31.953,
+          "startedAt": "2026-07-11T18:23:26.311Z",
+          "finishedAt": "2026-07-11T18:40:57.719Z",
+          "durationSeconds": 1051.408,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-10T23-01-35-068Z-51796/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-11T18-23-26-229Z-91778/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-07-10T23:02:07.068Z",
-          "lastFailureAt": "2026-07-10T04:29:58.276Z"
+          "lastFailureAt": "2026-07-11T18:40:57.719Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-10T23:02:07.069Z",
-          "finishedAt": "2026-07-10T23:04:28.257Z",
-          "durationSeconds": 141.188,
+          "startedAt": "2026-07-11T18:40:57.721Z",
+          "finishedAt": "2026-07-11T18:57:47.518Z",
+          "durationSeconds": 1009.797,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-10T23-01-35-068Z-51796/market.log",
-          "summary": "Notification decisions: selected fifwc-nor-eng-2026-07-11-eng|Yes [global_window_open,urgent_suspicious] | blocked fifwc-nor-eng-2026-07-11-total-2pt5|Over->notification_limit | bitcoin-above-64000-on-july-10-2026-8pm-et|No->notification_limit | fifwc-nor-eng-2026-07-11-team-to-advance|Norway->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-11T18-23-26-229Z-91778/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-07-10T23:04:28.257Z",
-          "lastFailureAt": "2026-07-10T04:44:59.022Z"
+          "lastFailureAt": "2026-07-11T18:57:47.518Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-10T23:04:28.257Z",
-          "finishedAt": "2026-07-10T23:04:30.566Z",
-          "durationSeconds": 2.309,
+          "startedAt": "2026-07-11T18:57:47.519Z",
+          "finishedAt": "2026-07-11T19:00:19.308Z",
+          "durationSeconds": 151.789,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-10T23-01-35-068Z-51796/wallets.log",
-          "summary": "Source diagnostics: 12 candidate(s) | built 11 | no-chase 1 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-11T18-23-26-229Z-91778/wallets.log",
+          "summary": "Loaded 10 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-10T23:04:30.566Z",
+          "lastSuccessAt": "2026-07-11T19:00:19.308Z",
           "lastFailureAt": "2026-07-06T21:06:41.730Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-10T23:04:30.566Z",
-          "finishedAt": "2026-07-10T23:04:33.821Z",
-          "durationSeconds": 3.255,
+          "startedAt": "2026-07-11T19:00:19.308Z",
+          "finishedAt": "2026-07-11T19:00:24.508Z",
+          "durationSeconds": 5.2,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-10T23-01-35-068Z-51796/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-11T18-23-26-229Z-91778/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-10T23:04:33.821Z",
+          "lastSuccessAt": "2026-07-11T19:00:24.508Z",
           "lastFailureAt": "2026-07-06T21:24:39.330Z"
         }
       ],
@@ -108,14 +108,14 @@
           "synced": true,
           "generatedAt": "2026-07-10T23:04:28Z",
           "status": "degraded",
-          "statusReason": "Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "statusReason": "Snapshot 19h 55m old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-10T23:04:30Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-11T19:00:19Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (19h 55m old, max 15m). (19h 55m old)"
         },
         "insider": {
           "available": true,
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-10T23:04:30Z",
+          "generatedAt": "2026-07-11T19:00:19Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-10T23:04:33.862Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "generatedAt": "2026-07-11T19:00:24.577Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-10T23:04:28Z",
       "status": "degraded",
-      "statusReason": "Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "statusReason": "Snapshot 19h 55m old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-10T23:04:30Z",
-      "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live",
+      "generatedAt": "2026-07-11T19:00:19Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (19h 55m old, max 15m). (19h 55m old)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 18 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (19h 55m old, max 15m).",
           "fetchedAt": "2026-07-10T23:04:28Z",
           "fetchedAtUnix": 1783724668,
           "attemptCount": 1,
           "eventCount": 18,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 71751,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 10 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-10T23:04:30Z",
+          "fetchedAtUnix": 1783724670,
+          "attemptCount": 1,
+          "eventCount": 10,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 71749,
           "retryAfterUnix": null
         },
         {
@@ -730,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 3 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-10T23:04:30Z",
-          "fetchedAtUnix": 1783724670,
+          "fetchedAt": "2026-07-11T19:00:19Z",
+          "fetchedAtUnix": 1783796419,
           "attemptCount": 2,
           "eventCount": 3,
           "cacheUsed": false,
@@ -746,7 +766,7 @@
       "synced": true,
       "generatedAt": "2026-07-10T23:01:51Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-10T23:04:30Z",
+      "generatedAt": "2026-07-11T19:00:19Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-10T23:04:33.862Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
+      "generatedAt": "2026-07-11T19:00:24.577Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -2499,16 +2519,6 @@
       "maxSupportOrSkeptical": 108,
       "items": [
         {
-          "day": "2026-06-27",
-          "enabledRuns": 5,
-          "scoredRows": 56,
-          "supportCount": 34,
-          "skepticalCount": 9,
-          "topKDisagreementCount": 22,
-          "promotedCount": 0,
-          "displacedCount": 0
-        },
-        {
           "day": "2026-06-28",
           "enabledRuns": 7,
           "scoredRows": 77,
@@ -3581,21 +3591,21 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-10T23:04:30Z",
+    "generatedAt": "2026-07-11T19:00:19Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
         "mayBeTruncated": true,
-        "netFlowUSD": -136.3395759999999,
-        "newestTimestamp": 1783642483,
+        "netFlowUSD": -136.3350759999999,
+        "newestTimestamp": 1783728995,
         "oldestTimestamp": 1778005974,
         "redeemedUSD": 519.089614,
-        "returnedUSD": 846.8352340000001,
-        "sampleCount": 318,
+        "returnedUSD": 846.8397340000001,
+        "sampleCount": 319,
         "sampleLimit": 400,
         "soldUSD": 327.59612000000004,
         "spentUSD": 983.17481,
-        "yieldUSD": 0.14950000000000005
+        "yieldUSD": 0.15400000000000003
       },
       "openPositionCount": 3,
       "totalCurrentValue": 45.251799999999996,
@@ -3682,8 +3692,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-10T22:30:40Z",
-      "previousGeneratedAtUnix": 1783722640,
+      "previousGeneratedAt": "2026-07-10T23:04:30Z",
+      "previousGeneratedAtUnix": 1783724670,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3735,13 +3745,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-10T23:04:32.997Z",
-      "snapshotCount": 498,
+      "generatedAt": "2026-07-11T19:00:23.214Z",
+      "snapshotCount": 499,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-10T23:04:30Z",
+      "latestAt": "2026-07-11T19:00:19Z",
       "latestSummary": {
-        "timestamp": "2026-07-10T23:04:30Z",
-        "timestampUnix": 1783724670,
+        "timestamp": "2026-07-11T19:00:19Z",
+        "timestampUnix": 1783796419,
         "currentValue": 45.251799999999996,
         "costBasisValue": 36.66941619,
         "unrealizedPnL": 8.582383809999996,
@@ -8725,6 +8735,16 @@
         {
           "timestamp": "2026-07-10T23:04:30Z",
           "timestampUnix": 1783724670,
+          "currentValue": 45.251799999999996,
+          "costBasisValue": 36.66941619,
+          "unrealizedPnL": 8.582383809999996,
+          "realizedPnL": -0.6188,
+          "openPositionCount": 3,
+          "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-07-11T19:00:19Z",
+          "timestampUnix": 1783796419,
           "currentValue": 45.251799999999996,
           "costBasisValue": 36.66941619,
           "unrealizedPnL": 8.582383809999996,
@@ -13723,6 +13743,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 34.678,
+              "costBasisValue": 26.88267666,
+              "unrealizedPnL": 7.795323339999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -18709,6 +18739,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 10.5738,
+              "costBasisValue": 9.786739529999998,
+              "unrealizedPnL": 0.7870604700000019,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 10.5738,
               "costBasisValue": 9.786739529999998,
               "unrealizedPnL": 0.7870604700000019,
@@ -23709,6 +23749,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 40.952,
+              "costBasisValue": 29.67230619,
+              "unrealizedPnL": 11.279693809999996,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -28695,6 +28745,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 4.2998,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.697309999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 4.2998,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.697309999999999,
@@ -33693,6 +33753,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -38679,6 +38749,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -43677,6 +43757,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -48663,6 +48753,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -53661,6 +53761,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -58647,6 +58757,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -63645,6 +63765,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -68631,6 +68761,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -73629,6 +73769,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -78615,6 +78765,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -83613,6 +83773,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -88599,6 +88769,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -93597,6 +93777,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -98583,6 +98773,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -103581,6 +103781,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -108567,6 +108777,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -113565,6 +113785,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -118551,6 +118781,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -123549,6 +123789,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -128535,6 +128785,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -133533,6 +133793,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -138519,6 +138789,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -143517,6 +143797,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -148503,6 +148793,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -153501,6 +153801,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -158487,6 +158797,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -163485,6 +163805,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -168471,6 +168801,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -173469,6 +173809,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -178461,6 +178811,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -183447,6 +183807,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -188447,6 +188817,16 @@
               "realizedPnL": -0.6188,
               "openPositionCount": 2,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 40.952,
+              "costBasisValue": 29.67230619,
+              "unrealizedPnL": 11.279693809999996,
+              "realizedPnL": -0.6188,
+              "openPositionCount": 2,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -193433,6 +193813,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 4.2998,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.697309999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 4.2998,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.697309999999999,
@@ -198431,6 +198821,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -203417,6 +203817,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -208415,6 +208825,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -213401,6 +213821,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -218399,6 +218829,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -223385,6 +223825,16 @@
             {
               "timestamp": "2026-07-10T23:04:30Z",
               "timestampUnix": 1783724670,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -228383,6 +228833,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-11T19:00:19Z",
+              "timestampUnix": 1783796419,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -228467,19 +228927,19 @@
         "actionablePositionCount": 0,
         "activityCash": {
           "mayBeTruncated": false,
-          "netFlowUSD": -92.55943999999994,
-          "newestTimestamp": 1783642483,
+          "netFlowUSD": -92.55493999999993,
+          "newestTimestamp": 1783728995,
           "oldestTimestamp": 1778509463,
           "redeemedUSD": 232.234845,
-          "returnedUSD": 241.449225,
-          "sampleCount": 118,
+          "returnedUSD": 241.45372500000002,
+          "sampleCount": 119,
           "sampleLimit": 200,
           "soldUSD": 9.13888,
           "spentUSD": 334.00866499999995,
-          "yieldUSD": 0.07550000000000004
+          "yieldUSD": 0.08000000000000003
         },
         "label": "Rose",
-        "lastActivityTimestamp": 1783642483,
+        "lastActivityTimestamp": 1783728995,
         "openPositionCount": 1,
         "positions": [
           {
@@ -228731,7 +229191,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-10T23:04:30Z",
+    "generatedAt": "2026-07-11T19:00:19Z",
     "market": {
       "available": true,
       "summary": {
@@ -229803,7 +230263,7 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-10T23:04:30Z"
+        "value": "2026-07-11T19:00:19Z"
       },
       {
         "label": "Insider updated",
@@ -230127,7 +230587,7 @@
           "openPositionCount": 1,
           "actionablePositionCount": 0,
           "recentActivityCount": 1,
-          "lastActivityTimestamp": 1783642483
+          "lastActivityTimestamp": 1783728995
         }
       ]
     },
@@ -230223,16 +230683,16 @@
           "available": true,
           "generatedAt": "2026-07-10T23:04:28Z",
           "status": "stale",
-          "reason": "Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "reason": "Snapshot 19h 55m old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-10T23:04:30Z",
-          "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-11T19:00:19Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 2 wallet(s) · 3 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (19h 55m old, max 15m). (19h 55m old)"
         },
         {
           "id": "insider",
@@ -230241,16 +230701,16 @@
           "available": true,
           "generatedAt": "2026-07-10T23:01:51Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-10T23:04:33.862Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 2s old · 18 active · 25 snapshots · 11 built from 12 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: globally throttled until 1783726128 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
+          "generatedAt": "2026-07-11T19:00:24.577Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
