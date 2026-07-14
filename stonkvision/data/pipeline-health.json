@@ -1,42 +1,42 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-14T00:48:48.131Z",
-  "generatedAtUnix": 1783990128,
-  "runID": "run-2026-07-14T00-29-57-443Z-99425",
+  "generatedAt": "2026-07-14T05:17:48.593Z",
+  "generatedAtUnix": 1784006268,
+  "runID": "run-2026-07-14T04-45-40-367Z-10806",
   "status": "failed",
-  "statusReason": "Failed step(s): Refreshing market-trans from source.",
+  "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
   "scope": "full",
   "scopeReason": null,
-  "startedAt": "2026-07-14T00:29:57.443Z",
-  "finishedAt": "2026-07-14T00:48:48.131Z",
-  "lastRunAt": "2026-07-14T00:48:48.131Z",
-  "durationSeconds": 1130.688,
+  "startedAt": "2026-07-14T04:45:40.367Z",
+  "finishedAt": "2026-07-14T05:17:48.593Z",
+  "lastRunAt": "2026-07-14T05:17:48.593Z",
+  "durationSeconds": 1928.226,
   "publishRequested": true,
   "publishEnabled": true,
   "pushLiveRequested": true,
   "pushLiveEnabled": true,
   "intervalSeconds": 1800,
-  "nextRunAt": "2026-07-14T01:18:48.131Z",
+  "nextRunAt": "2026-07-14T05:47:48.593Z",
   "lastSuccessAt": "2026-07-13T17:07:26.321Z",
   "lastSuccessfulRunAt": "2026-07-13T17:07:26.321Z",
-  "lastFailureAt": "2026-07-14T00:48:48.131Z",
+  "lastFailureAt": "2026-07-14T05:17:48.593Z",
   "steps": [
     {
       "id": "insider",
       "title": "Refreshing etoro-bot from source",
-      "status": "live",
+      "status": "failed",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-07-14T00:29:57.521Z",
-      "finishedAt": "2026-07-14T00:31:27.523Z",
-      "durationSeconds": 90.002,
+      "startedAt": "2026-07-14T04:45:40.454Z",
+      "finishedAt": "2026-07-14T05:01:22.270Z",
+      "durationSeconds": 941.816,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/insider.log",
-      "summary": "Telegram preview · selected 1 of 5 new signal(s)",
-      "error": null,
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/insider.log",
+      "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+      "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
       "exitCode": 0,
       "lastSuccessAt": "2026-07-14T00:31:27.523Z",
-      "lastFailureAt": "2026-07-13T15:57:02.455Z"
+      "lastFailureAt": "2026-07-14T05:01:22.270Z"
     },
     {
       "id": "market",
@@ -44,16 +44,16 @@
       "status": "failed",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-07-14T00:31:27.524Z",
-      "finishedAt": "2026-07-14T00:48:43.479Z",
-      "durationSeconds": 1035.955,
+      "startedAt": "2026-07-14T05:01:22.290Z",
+      "finishedAt": "2026-07-14T05:17:42.165Z",
+      "durationSeconds": 979.875,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/market.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/market.log",
       "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
       "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
       "exitCode": 124,
       "lastSuccessAt": "2026-07-13T17:06:37.858Z",
-      "lastFailureAt": "2026-07-14T00:48:43.479Z"
+      "lastFailureAt": "2026-07-14T05:17:42.165Z"
     },
     {
       "id": "wallets",
@@ -61,15 +61,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-07-14T00:48:43.479Z",
-      "finishedAt": "2026-07-14T00:48:45.256Z",
-      "durationSeconds": 1.777,
+      "startedAt": "2026-07-14T05:17:42.165Z",
+      "finishedAt": "2026-07-14T05:17:46.008Z",
+      "durationSeconds": 3.843,
       "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/wallets.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/wallets.log",
       "summary": "Loaded 12 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-07-14T00:48:45.256Z",
+      "lastSuccessAt": "2026-07-14T05:17:46.008Z",
       "lastFailureAt": "2026-07-12T16:56:50.901Z"
     },
     {
@@ -78,15 +78,15 @@
       "status": "live",
       "required": true,
       "skipped": false,
-      "startedAt": "2026-07-14T00:48:45.256Z",
-      "finishedAt": "2026-07-14T00:48:48.080Z",
-      "durationSeconds": 2.824,
+      "startedAt": "2026-07-14T05:17:46.008Z",
+      "finishedAt": "2026-07-14T05:17:48.557Z",
+      "durationSeconds": 2.549,
       "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/sync.log",
+      "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/sync.log",
       "summary": "Built overlay-feed.json",
       "error": null,
       "exitCode": 0,
-      "lastSuccessAt": "2026-07-14T00:48:48.080Z",
+      "lastSuccessAt": "2026-07-14T05:17:48.557Z",
       "lastFailureAt": "2026-07-06T21:24:39.330Z"
     }
   ],
@@ -96,35 +96,35 @@
       "synced": true,
       "generatedAt": "2026-07-13T17:06:37Z",
       "status": "degraded",
-      "statusReason": "Snapshot 7h 42m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+      "statusReason": "Snapshot 12h 11m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:45Z",
+      "generatedAt": "2026-07-14T05:17:45Z",
       "status": "degraded",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (7h 42m old, max 15m). (7h 42m old)"
+      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (12h 11m old, max 15m). (12h 11m old)"
     },
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:31:12Z",
+      "generatedAt": "2026-07-14T04:50:08Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
     },
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:45Z",
+      "generatedAt": "2026-07-14T05:17:46Z",
       "status": "live",
       "statusReason": null
     },
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:48.131Z",
+      "generatedAt": "2026-07-14T05:17:48.593Z",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source."
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
     }
   },
   "runtime": {

@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-14T00:48:48.131Z",
-  "generatedAtUnix": 1783990128,
+  "generatedAt": "2026-07-14T05:17:48.593Z",
+  "generatedAtUnix": 1784006268,
   "sync": {
-    "generatedAt": "2026-07-14T00:48:45Z",
-    "generatedAtUnix": 1783990125,
+    "generatedAt": "2026-07-14T05:17:46Z",
+    "generatedAtUnix": 1784006266,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,43 +12,43 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-14T00:48:48.131Z",
-      "generatedAtUnix": 1783990128,
-      "runID": "run-2026-07-14T00-29-57-443Z-99425",
+      "generatedAt": "2026-07-14T05:17:48.593Z",
+      "generatedAtUnix": 1784006268,
+      "runID": "run-2026-07-14T04-45-40-367Z-10806",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source.",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-14T00:29:57.443Z",
-      "finishedAt": "2026-07-14T00:48:48.131Z",
-      "lastRunAt": "2026-07-14T00:48:48.131Z",
-      "durationSeconds": 1130.688,
+      "startedAt": "2026-07-14T04:45:40.367Z",
+      "finishedAt": "2026-07-14T05:17:48.593Z",
+      "lastRunAt": "2026-07-14T05:17:48.593Z",
+      "durationSeconds": 1928.226,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-14T01:18:48.131Z",
+      "nextRunAt": "2026-07-14T05:47:48.593Z",
       "lastSuccessAt": "2026-07-13T17:07:26.321Z",
       "lastSuccessfulRunAt": "2026-07-13T17:07:26.321Z",
-      "lastFailureAt": "2026-07-14T00:48:48.131Z",
+      "lastFailureAt": "2026-07-14T05:17:48.593Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-14T00:29:57.521Z",
-          "finishedAt": "2026-07-14T00:31:27.523Z",
-          "durationSeconds": 90.002,
+          "startedAt": "2026-07-14T04:45:40.454Z",
+          "finishedAt": "2026-07-14T05:01:22.270Z",
+          "durationSeconds": 941.816,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/insider.log",
-          "summary": "Telegram preview · selected 1 of 5 new signal(s)",
-          "error": null,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/insider.log",
+          "summary": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"insider\" timed out after 900s; terminating.",
           "exitCode": 0,
           "lastSuccessAt": "2026-07-14T00:31:27.523Z",
-          "lastFailureAt": "2026-07-13T15:57:02.455Z"
+          "lastFailureAt": "2026-07-14T05:01:22.270Z"
         },
         {
           "id": "market",
@@ -56,16 +56,16 @@
           "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-14T00:31:27.524Z",
-          "finishedAt": "2026-07-14T00:48:43.479Z",
-          "durationSeconds": 1035.955,
+          "startedAt": "2026-07-14T05:01:22.290Z",
+          "finishedAt": "2026-07-14T05:17:42.165Z",
+          "durationSeconds": 979.875,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/market.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/market.log",
           "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
           "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
           "exitCode": 124,
           "lastSuccessAt": "2026-07-13T17:06:37.858Z",
-          "lastFailureAt": "2026-07-14T00:48:43.479Z"
+          "lastFailureAt": "2026-07-14T05:17:42.165Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-14T00:48:43.479Z",
-          "finishedAt": "2026-07-14T00:48:45.256Z",
-          "durationSeconds": 1.777,
+          "startedAt": "2026-07-14T05:17:42.165Z",
+          "finishedAt": "2026-07-14T05:17:46.008Z",
+          "durationSeconds": 3.843,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/wallets.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/wallets.log",
           "summary": "Loaded 12 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-14T00:48:45.256Z",
+          "lastSuccessAt": "2026-07-14T05:17:46.008Z",
           "lastFailureAt": "2026-07-12T16:56:50.901Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-14T00:48:45.256Z",
-          "finishedAt": "2026-07-14T00:48:48.080Z",
-          "durationSeconds": 2.824,
+          "startedAt": "2026-07-14T05:17:46.008Z",
+          "finishedAt": "2026-07-14T05:17:48.557Z",
+          "durationSeconds": 2.549,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T00-29-57-443Z-99425/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-14T04-45-40-367Z-10806/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-14T00:48:48.080Z",
+          "lastSuccessAt": "2026-07-14T05:17:48.557Z",
           "lastFailureAt": "2026-07-06T21:24:39.330Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-07-13T17:06:37Z",
           "status": "degraded",
-          "statusReason": "Snapshot 7h 42m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "Snapshot 12h 11m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-14T00:48:45Z",
+          "generatedAt": "2026-07-14T05:17:45Z",
           "status": "degraded",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (7h 42m old, max 15m). (7h 42m old)"
+          "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (12h 11m old, max 15m). (12h 11m old)"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-14T00:31:12Z",
+          "generatedAt": "2026-07-14T04:50:08Z",
           "status": "degraded",
-          "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+          "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-14T00:48:45Z",
+          "generatedAt": "2026-07-14T05:17:46Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-14T00:48:48.131Z",
+          "generatedAt": "2026-07-14T05:17:48.593Z",
           "status": "failed",
-          "statusReason": "Failed step(s): Refreshing market-trans from source."
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-13T17:06:37Z",
       "status": "degraded",
-      "statusReason": "Snapshot 7h 42m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "statusReason": "Snapshot 12h 11m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:45Z",
+      "generatedAt": "2026-07-14T05:17:45Z",
       "status": "degraded",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (7h 42m old, max 15m). (7h 42m old)",
+      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (12h 11m old, max 15m). (12h 11m old)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -709,14 +709,14 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "cached",
-          "message": "Market intel snapshot is stale (7h 42m old, max 15m).",
+          "message": "Market intel snapshot is stale (12h 11m old, max 15m).",
           "fetchedAt": "2026-07-13T17:06:37Z",
           "fetchedAtUnix": 1783962397,
           "attemptCount": 1,
           "eventCount": 18,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 27728,
+          "cacheAgeSeconds": 43868,
           "retryAfterUnix": null
         },
         {
@@ -730,13 +730,13 @@
           "adapter": "signal_feed_cache",
           "status": "cached",
           "message": "Using cached wallet watcher feed with 12 signal(s) while market intel recovers.",
-          "fetchedAt": "2026-07-13T20:26:51Z",
-          "fetchedAtUnix": 1783974411,
+          "fetchedAt": "2026-07-14T00:48:45Z",
+          "fetchedAtUnix": 1783990125,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 15714,
+          "cacheAgeSeconds": 16140,
           "retryAfterUnix": null
         },
         {
@@ -750,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-14T00:48:45Z",
-          "fetchedAtUnix": 1783990125,
+          "fetchedAt": "2026-07-14T05:17:45Z",
+          "fetchedAtUnix": 1784006265,
           "attemptCount": 2,
           "eventCount": 1,
           "cacheUsed": false,
@@ -764,10 +764,30 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:31:12Z",
+      "generatedAt": "2026-07-14T04:50:08Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
+        {
+          "id": "reddit-algotrading",
+          "sourceID": "reddit-algotrading",
+          "sourceName": "r/algotrading",
+          "provider": "reddit_rss",
+          "sourceType": "reddit",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "reddit_rss",
+          "status": "failed",
+          "message": "HTTP 429:  after 3 attempt(s).",
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
+          "attemptCount": 3,
+          "eventCount": 0,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
         {
           "id": "reddit-bitcoinmarkets",
           "sourceID": "reddit-bitcoinmarkets",
@@ -779,28 +799,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
-          "attemptCount": 3,
-          "eventCount": 0,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "reddit-cryptocurrency",
-          "sourceID": "reddit-cryptocurrency",
-          "sourceName": "r/CryptoCurrency",
-          "provider": "reddit_rss",
-          "sourceType": "reddit",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "reddit_rss",
-          "status": "failed",
-          "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -819,8 +819,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -839,8 +839,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -859,33 +859,13 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "gdelt_doc",
-          "status": "cached",
-          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset:... | using stale cache (0 matching item(s), 13h 13m old).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
-          "attemptCount": 3,
-          "eventCount": 0,
-          "cacheUsed": true,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": 47637,
           "retryAfterUnix": null
         },
         {
@@ -899,8 +879,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -919,8 +899,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -929,20 +909,40 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-algotrading",
-          "sourceID": "reddit-algotrading",
-          "sourceName": "r/algotrading",
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "gdelt_doc",
+          "status": "live",
+          "message": "Fetched live (4 matching item(s)).",
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
+          "attemptCount": 3,
+          "eventCount": 4,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "reddit-cryptocurrency",
+          "sourceID": "reddit-cryptocurrency",
+          "sourceName": "r/CryptoCurrency",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (6 matching item(s)).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "message": "Fetched live (8 matching item(s)).",
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 1,
-          "eventCount": 6,
+          "eventCount": 8,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -959,8 +959,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -979,8 +979,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live, but no matching items landed.",
-          "fetchedAt": "2026-07-14T00:29:59Z",
-          "fetchedAtUnix": 1783988999,
+          "fetchedAt": "2026-07-14T04:45:42Z",
+          "fetchedAtUnix": 1784004342,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -993,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:45Z",
+      "generatedAt": "2026-07-14T05:17:46Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -1001,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-14T00:48:48.131Z",
+      "generatedAt": "2026-07-14T05:17:48.593Z",
       "status": "failed",
-      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -1033,8 +1033,8 @@
     },
     "insider": {
       "kicker": "Insider tape",
-      "title": "CCCTU leaning bullish",
-      "body": "Columbus Circle 3 Sponsor Corp LLC · 10% · 100/100 confidence"
+      "title": "YEXT leaning bullish",
+      "body": "Englander Daniel J · Dir · 100/100 confidence"
     }
   },
   "intel": {
@@ -1356,6 +1356,25 @@
     ],
     "insiderWatch": [
       {
+        "id": "insider-watch:YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190|bullish",
+        "kind": "insider_watch",
+        "title": "YEXT · Yext, Inc.",
+        "subtitle": "Englander Daniel J · Dir · 100/100",
+        "summary": "Insider buy · $397.9K disclosed · ownership +117% · eToro YEXT",
+        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
+        "ticker": "YEXT",
+        "companyName": "Yext, Inc.",
+        "direction": "bullish",
+        "confidence": 100,
+        "filedAt": "2026-07-14T00:33:39Z",
+        "transactionType": "P - Purchase",
+        "tradeValueUSD": 397910,
+        "ownershipChangePercent": 117,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1614178/000162828026048066/xslF345X03/wk-form4_1783989216.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:CCCTU|2026-07-13 19:20:55|2026-07-10|columbus circle 3 sponsor corp llc|p - purchase|$10.00|+265,000|bullish",
         "kind": "insider_watch",
         "title": "CCCTU · Columbus Circle Capital Corp III",
@@ -1486,25 +1505,6 @@
         "ownershipChangePercent": 5,
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/22444/000181444326000004/xslF345X03/wk-form4_1783957790.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:PRQR|2026-07-13 08:00:05|2026-07-09|de boer daniel anton|p - purchase|$1.74|+150,000|bullish",
-        "kind": "insider_watch",
-        "title": "PRQR · Proqr Therapeutics N.V.",
-        "subtitle": "De Boer Daniel Anton · CEO · 100/100",
-        "summary": "Insider buy · $261.0K disclosed · ownership +100% · eToro PRQR",
-        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
-        "ticker": "PRQR",
-        "companyName": "Proqr Therapeutics N.V.",
-        "direction": "bullish",
-        "confidence": 100,
-        "filedAt": "2026-07-13T12:00:05Z",
-        "transactionType": "P - Purchase",
-        "tradeValueUSD": 261000,
-        "ownershipChangePercent": 100,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1612940/000110465926082890/xslF345X03/tm2620241-1_4seq1.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       }
     ],
@@ -3562,7 +3562,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-14T00:48:45Z",
+    "generatedAt": "2026-07-14T05:17:45Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3579,7 +3579,7 @@
         "yieldUSD": 0.16120000000000007
       },
       "openPositionCount": 1,
-      "totalCurrentValue": 4.6907,
+      "totalCurrentValue": 4.4464,
       "walletCount": 2
     },
     "urgentAction": null,
@@ -3589,7 +3589,7 @@
         "label": "No signal",
         "count": 1,
         "actionableCount": 0,
-        "totalCurrentValue": 4.6907,
+        "totalCurrentValue": 4.4464,
         "positions": [
           {
             "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -3598,9 +3598,9 @@
             "title": "Anthropic acquired before 2027?",
             "outcome": "YES",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
-            "currentValue": 4.6907,
-            "currentPrice": 0.048,
-            "percentPnL": -32.9888,
+            "currentValue": 4.4464,
+            "currentPrice": 0.0455,
+            "percentPnL": -36.4788,
             "action": "no_signal",
             "actionLabel": "No signal",
             "isActionable": false,
@@ -3619,15 +3619,15 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-13T20:26:51Z",
-      "previousGeneratedAtUnix": 1783974411,
+      "previousGeneratedAt": "2026-07-14T00:48:45Z",
+      "previousGeneratedAtUnix": 1783990125,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
       "closedPositionCount": 0,
       "actionChangeCount": 0,
       "sizeChangeCount": 0,
-      "valueDeltaUSD": 0,
+      "valueDeltaUSD": -0.24429999999999996,
       "highlights": [],
       "wallets": [
         {
@@ -3637,7 +3637,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
+          "valueDeltaUSD": -0.24429999999999996,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -3672,16 +3672,16 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-14T00:48:47.533Z",
-      "snapshotCount": 512,
+      "generatedAt": "2026-07-14T05:17:47.657Z",
+      "snapshotCount": 513,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-14T00:48:45Z",
+      "latestAt": "2026-07-14T05:17:45Z",
       "latestSummary": {
-        "timestamp": "2026-07-14T00:48:45Z",
-        "timestampUnix": 1783990125,
-        "currentValue": 4.6907,
+        "timestamp": "2026-07-14T05:17:45Z",
+        "timestampUnix": 1784006265,
+        "currentValue": 4.4464,
         "costBasisValue": 6.997109999999999,
-        "unrealizedPnL": -2.3064099999999996,
+        "unrealizedPnL": -2.5507099999999996,
         "realizedPnL": 0,
         "openPositionCount": 1,
         "actionablePositionCount": 0
@@ -8808,15 +8808,25 @@
           "realizedPnL": 0,
           "openPositionCount": 1,
           "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-07-14T05:17:45Z",
+          "timestampUnix": 1784006265,
+          "currentValue": 4.4464,
+          "costBasisValue": 6.997109999999999,
+          "unrealizedPnL": -2.5507099999999996,
+          "realizedPnL": 0,
+          "openPositionCount": 1,
+          "actionablePositionCount": 0
         }
       ],
       "walletSeries": [
         {
           "key": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
           "label": "Haak",
-          "latestCurrentValue": 4.6907,
+          "latestCurrentValue": 4.4464,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.3064099999999996,
+          "latestUnrealizedPnL": -2.5507099999999996,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -13937,6 +13947,16 @@
               "currentValue": 4.6907,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.3064099999999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 4.4464,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.5507099999999996,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -19072,6 +19092,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -19080,9 +19110,9 @@
         {
           "key": "anthropic-acquired-before-2027",
           "label": "Anthropic acquired before 2027?",
-          "latestCurrentValue": 4.6907,
+          "latestCurrentValue": 4.4464,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.3064099999999996,
+          "latestUnrealizedPnL": -2.5507099999999996,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -24203,6 +24233,16 @@
               "currentValue": 4.6907,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.3064099999999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 4.4464,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.5507099999999996,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -29332,6 +29372,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -34470,6 +34520,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -39596,6 +39656,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -44734,6 +44804,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -49860,6 +49940,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -54998,6 +55088,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -60124,6 +60224,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -65262,6 +65372,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -70388,6 +70508,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -75526,6 +75656,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -80652,6 +80792,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -85790,6 +85940,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -90916,6 +91076,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -96054,6 +96224,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -101180,6 +101360,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -106318,6 +106508,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -111444,6 +111644,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -116582,6 +116792,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -121708,6 +121928,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -126846,6 +127076,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -131972,6 +132212,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -137110,6 +137360,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -142236,6 +142496,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -147374,6 +147644,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -152500,6 +152780,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -157638,6 +157928,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -162764,6 +163064,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -167902,6 +168212,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -173028,6 +173348,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -178166,6 +178496,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -183292,6 +183632,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -188430,6 +188780,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -188438,9 +188798,9 @@
         {
           "key": "tech",
           "label": "Tech",
-          "latestCurrentValue": 4.6907,
+          "latestCurrentValue": 4.4464,
           "latestCostBasisValue": 6.997109999999999,
-          "latestUnrealizedPnL": -2.3064099999999996,
+          "latestUnrealizedPnL": -2.5507099999999996,
           "latestRealizedPnL": 0,
           "latestOpenPositionCount": 1,
           "latestActionablePositionCount": 0,
@@ -193561,6 +193921,16 @@
               "currentValue": 4.6907,
               "costBasisValue": 6.997109999999999,
               "unrealizedPnL": -2.3064099999999996,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 4.4464,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -2.5507099999999996,
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
@@ -198690,6 +199060,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -203828,6 +204208,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -208954,6 +209344,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -214092,6 +214492,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -219218,6 +219628,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -224356,6 +224776,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -229482,6 +229912,16 @@
             {
               "timestamp": "2026-07-14T00:48:45Z",
               "timestampUnix": 1783990125,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -234620,6 +235060,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-14T05:17:45Z",
+              "timestampUnix": 1784006265,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -234647,14 +235097,14 @@
         "positions": [
           {
             "averageEntryPrice": 0.0716,
-            "currentPrice": 0.048,
-            "currentValue": 4.6907,
+            "currentPrice": 0.0455,
+            "currentValue": 4.4464,
             "endDate": "2026-12-31T00:00:00Z",
             "eventSlug": "anthropic-acquired-before-2027",
             "marketURL": "https://polymarket.com/event/anthropic-acquired-before-2027",
             "outcome": "Yes",
-            "percentPnL": -32.9888,
-            "percentRealizedPnL": -32.9894,
+            "percentPnL": -36.4788,
+            "percentRealizedPnL": -36.4794,
             "realizedPnL": 0,
             "size": 97.725,
             "slug": "anthropic-acquired-before-2027",
@@ -234662,7 +235112,7 @@
           }
         ],
         "recentActivityCount": 0,
-        "totalCurrentValue": 4.6907,
+        "totalCurrentValue": 4.4464,
         "wallet": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
         "delta": {
@@ -234672,7 +235122,7 @@
           "hasPrevious": true,
           "hasChanges": false,
           "hasStructuralChanges": false,
-          "valueDeltaUSD": 0,
+          "valueDeltaUSD": -0.24429999999999996,
           "openPositionDelta": 0,
           "actionableDelta": 0,
           "newPositionCount": 0,
@@ -234740,13 +235190,42 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-14T00:31:12Z",
+    "generatedAt": "2026-07-14T04:50:08Z",
     "summary": {
       "totalFilingsFetched": 52,
       "totalSignals": 21,
       "listedSignals": 6
     },
     "signals": [
+      {
+        "companyName": "Yext, Inc.",
+        "confidence": 100,
+        "direction": "bullish",
+        "etoroInstrument": {
+          "displayName": "YEXT",
+          "marketURL": "https://www.etoro.com/markets/yext",
+          "symbol": "YEXT"
+        },
+        "filedAt": "2026-07-14T00:33:39Z",
+        "filingID": "YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190",
+        "filingRationale": "Open-market purchase.",
+        "groupedTickerMentions": 1,
+        "id": "YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190|bullish",
+        "insiderName": "Englander Daniel J",
+        "insiderTitle": "Dir",
+        "ownershipChangePercent": 117,
+        "score": 100,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1614178/000162828026048066/xslF345X03/wk-form4_1783989216.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider buy · $397.9K disclosed · ownership +117% · eToro YEXT",
+        "ticker": "YEXT",
+        "tradeValueUSD": 397910,
+        "tradedAt": "2026-07-13T04:00:00Z",
+        "transactionPriceUSD": 5.22,
+        "transactionType": "P - Purchase",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1614178/000162828026048066/xslF345X03/wk-form4_1783989216.xml"
+      },
       {
         "companyName": "Columbus Circle Capital Corp III",
         "confidence": 100,
@@ -234910,53 +235389,24 @@
         "transactionType": "P - Purchase",
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1300391/000122520826006586/xslF345X03/doc4.xml"
-      },
-      {
-        "companyName": "Heartflow, Inc.",
-        "confidence": 71,
-        "direction": "bearish",
-        "etoroInstrument": {
-          "displayName": "HTFL",
-          "marketURL": "https://www.etoro.com/markets/htfl",
-          "symbol": "HTFL"
-        },
-        "filedAt": "2026-07-14T00:25:35Z",
-        "filingID": "HTFL|2026-07-13 20:25:35|2026-07-10|farquhar john c.m.|s - sale|$27.75|-22,562",
-        "filingRationale": "Open-market sale.",
-        "groupedTickerMentions": 1,
-        "id": "HTFL|2026-07-13 20:25:35|2026-07-10|farquhar john c.m.|s - sale|$27.75|-22,562|bearish",
-        "insiderName": "Farquhar John C.M.",
-        "insiderTitle": "CEO",
-        "ownershipChangePercent": -5,
-        "score": 71,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1464521/000146452126000101/xslF345X03/form4.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$626.1K disclosed · ownership -5% · eToro HTFL",
-        "ticker": "HTFL",
-        "tradeValueUSD": -626096,
-        "tradedAt": "2026-07-10T04:00:00Z",
-        "transactionPriceUSD": 27.75,
-        "transactionType": "S - Sale",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1464521/000146452126000101/xslF345X03/form4.xml"
       }
     ],
     "directionMix": [
       {
         "key": "bearish",
         "label": "Sell",
-        "value": 14
+        "value": 16
       },
       {
         "key": "bullish",
         "label": "Buy",
-        "value": 11
+        "value": 9
       }
     ]
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-14T00:48:45Z",
+    "generatedAt": "2026-07-14T05:17:46Z",
     "market": {
       "available": true,
       "summary": {
@@ -235000,8 +235450,8 @@
           "averagePriceChange": 0.00254448012271683
         },
         "insiderArchiveCount": 8,
-        "bullishInsiderCount": 5,
-        "bearishInsiderCount": 3
+        "bullishInsiderCount": 1,
+        "bearishInsiderCount": 7
       },
       "horizons": [
         {
@@ -235824,10 +236274,110 @@
       "available": true,
       "summary": {
         "archiveCount": 8,
-        "bullishCount": 5,
-        "bearishCount": 3
+        "bullishCount": 1,
+        "bearishCount": 7
       },
       "archive": [
+        {
+          "signalID": "ULCC|2026-07-13 16:30:14|2026-07-09|group holdings - frontier llc|s - sale|$7.20|-11,700,000|bearish",
+          "filingID": "ULCC|2026-07-13 16:30:14|2026-07-09|group holdings - frontier llc|s - sale|$7.20|-11,700,000",
+          "ticker": "ULCC",
+          "companyName": "Frontier Group Holdings, Inc.",
+          "insiderName": "Group Holdings - Frontier LLC",
+          "insiderTitle": "10%",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 62,
+          "score": 62,
+          "tradeValueUSD": -84240000,
+          "ownershipChangePercent": -34,
+          "filedAt": "2026-07-13T20:30:14.000Z",
+          "filedAtUnix": 1783974614,
+          "tradedAt": "2026-07-09T04:00:00.000Z",
+          "tradedAtUnix": 1783569600,
+          "summary": "Insider sale · -$84.24M disclosed · ownership -34% · eToro ULCC",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "OOMA|2026-07-13 16:05:55|2026-07-10|stang eric b|s - sale|$20.00|-23,212|bearish",
+          "filingID": "OOMA|2026-07-13 16:05:55|2026-07-10|stang eric b|s - sale|$20.00|-23,212",
+          "ticker": "OOMA",
+          "companyName": "Ooma Inc",
+          "insiderName": "Stang Eric B",
+          "insiderTitle": "CEO, Pres",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 66,
+          "score": 66,
+          "tradeValueUSD": -464240,
+          "ownershipChangePercent": -1,
+          "filedAt": "2026-07-13T20:05:55.000Z",
+          "filedAtUnix": 1783973155,
+          "tradedAt": "2026-07-10T04:00:00.000Z",
+          "tradedAtUnix": 1783656000,
+          "summary": "Insider sale · -$464.2K disclosed · ownership -1% · eToro OOMA",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "CRDO|2026-07-13 15:58:21|2026-07-08|fleming daniel w.|s - sale|$245.88|-7,580|bearish",
+          "filingID": "CRDO|2026-07-13 15:58:21|2026-07-08|fleming daniel w.|s - sale|$245.88|-7,580",
+          "ticker": "CRDO",
+          "companyName": "Credo Technology Group Holding Ltd",
+          "insiderName": "Fleming Daniel W.",
+          "insiderTitle": "CFO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 68,
+          "score": 68,
+          "tradeValueUSD": -1863772,
+          "ownershipChangePercent": -1,
+          "filedAt": "2026-07-13T19:58:21.000Z",
+          "filedAtUnix": 1783972701,
+          "tradedAt": "2026-07-08T04:00:00.000Z",
+          "tradedAtUnix": 1783483200,
+          "summary": "Insider sale · -$1.86M disclosed · ownership -1% · eToro CRDO",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "PRVA|2026-07-13 16:01:11|2026-07-09|mountcastle david|s - sale|$27.67|-21,275|bearish",
+          "filingID": "PRVA|2026-07-13 16:01:11|2026-07-09|mountcastle david|s - sale|$27.67|-21,275",
+          "ticker": "PRVA",
+          "companyName": "Privia Health Group, Inc.",
+          "insiderName": "Mountcastle David",
+          "insiderTitle": "EVP, CFO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 71,
+          "score": 71,
+          "tradeValueUSD": -588679,
+          "ownershipChangePercent": -11,
+          "filedAt": "2026-07-13T20:01:11.000Z",
+          "filedAtUnix": 1783972871,
+          "tradedAt": "2026-07-09T04:00:00.000Z",
+          "tradedAtUnix": 1783569600,
+          "summary": "Insider sale · -$588.7K disclosed · ownership -11% · eToro PRVA",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190|bullish",
+          "filingID": "YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190",
+          "ticker": "YEXT",
+          "companyName": "Yext, Inc.",
+          "insiderName": "Englander Daniel J",
+          "insiderTitle": "Dir",
+          "direction": "bullish",
+          "transactionType": "P - Purchase",
+          "confidence": 100,
+          "score": 100,
+          "tradeValueUSD": 397910,
+          "ownershipChangePercent": 117,
+          "filedAt": "2026-07-14T00:33:39.000Z",
+          "filedAtUnix": 1783989219,
+          "tradedAt": "2026-07-13T04:00:00.000Z",
+          "tradedAtUnix": 1783915200,
+          "summary": "Insider buy · $397.9K disclosed · ownership +117% · eToro YEXT",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
         {
           "signalID": "HTFL|2026-07-13 20:25:35|2026-07-10|farquhar john c.m.|s - sale|$27.75|-22,562|bearish",
           "filingID": "HTFL|2026-07-13 20:25:35|2026-07-10|farquhar john c.m.|s - sale|$27.75|-22,562",
@@ -235887,106 +236437,6 @@
           "tradedAtUnix": 1783656000,
           "summary": "Insider sale · -$5.18M disclosed · ownership -7% · 2 filings for PL in current scan · eToro PL",
           "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "GLOO|2026-07-13 16:15:26|2026-07-09|grace & mercy foundation, inc.|p - purchase|$3.25|+923,076|bullish",
-          "filingID": "GLOO|2026-07-13 16:15:26|2026-07-09|grace & mercy foundation, inc.|p - purchase|$3.25|+923,076",
-          "ticker": "GLOO",
-          "companyName": "Gloo Holdings, Inc.",
-          "insiderName": "Grace & Mercy Foundation, Inc.",
-          "insiderTitle": "10%",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 2999997,
-          "ownershipChangePercent": 37,
-          "filedAt": "2026-07-13T20:15:26.000Z",
-          "filedAtUnix": 1783973726,
-          "tradedAt": "2026-07-09T04:00:00.000Z",
-          "tradedAtUnix": 1783569600,
-          "summary": "Insider buy · $3.00M disclosed · ownership +37% · eToro GLOO",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "CCCTU|2026-07-13 19:20:55|2026-07-10|columbus circle 3 sponsor corp llc|p - purchase|$10.00|+265,000|bullish",
-          "filingID": "CCCTU|2026-07-13 19:20:55|2026-07-10|columbus circle 3 sponsor corp llc|p - purchase|$10.00|+265,000",
-          "ticker": "CCCTU",
-          "companyName": "Columbus Circle Capital Corp III",
-          "insiderName": "Columbus Circle 3 Sponsor Corp LLC",
-          "insiderTitle": "10%",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 2650000,
-          "ownershipChangePercent": 100,
-          "filedAt": "2026-07-13T23:20:55.000Z",
-          "filedAtUnix": 1783984855,
-          "tradedAt": "2026-07-10T04:00:00.000Z",
-          "tradedAtUnix": 1783656000,
-          "summary": "Insider buy · $2.65M disclosed · ownership +100% · eToro CCCTU",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "EOI|2026-07-13 13:43:40|2026-07-13|gaffney charles|p - purchase|$20.11|+25,000|bullish",
-          "filingID": "EOI|2026-07-13 13:43:40|2026-07-13|gaffney charles|p - purchase|$20.11|+25,000",
-          "ticker": "EOI",
-          "companyName": "Eaton Vance Enhanced Equity Income Fund",
-          "insiderName": "Gaffney Charles",
-          "insiderTitle": "Portfolio Manager",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 502705,
-          "ownershipChangePercent": 100,
-          "filedAt": "2026-07-13T17:43:40.000Z",
-          "filedAtUnix": 1783964620,
-          "tradedAt": "2026-07-13T04:00:00.000Z",
-          "tradedAtUnix": 1783915200,
-          "summary": "Insider buy · $502.7K disclosed · ownership +100% · eToro EOI · market-trans macro context · 2 active markets · 14 recent source events · 2 breaking · api",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "CMC|2026-07-13 11:49:53|2026-07-10|matt peter r|p - purchase|$61.30|+8,230|bullish",
-          "filingID": "CMC|2026-07-13 11:49:53|2026-07-10|matt peter r|p - purchase|$61.30|+8,230",
-          "ticker": "CMC",
-          "companyName": "Commercial Metals Co",
-          "insiderName": "Matt Peter R",
-          "insiderTitle": "Pres, CEO",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 504499,
-          "ownershipChangePercent": 5,
-          "filedAt": "2026-07-13T15:49:53.000Z",
-          "filedAtUnix": 1783957793,
-          "tradedAt": "2026-07-10T04:00:00.000Z",
-          "tradedAtUnix": 1783656000,
-          "summary": "Insider buy · $504.5K disclosed · ownership +5% · eToro CMC",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "PRQR|2026-07-13 08:00:05|2026-07-09|de boer daniel anton|p - purchase|$1.74|+150,000|bullish",
-          "filingID": "PRQR|2026-07-13 08:00:05|2026-07-09|de boer daniel anton|p - purchase|$1.74|+150,000",
-          "ticker": "PRQR",
-          "companyName": "Proqr Therapeutics N.V.",
-          "insiderName": "De Boer Daniel Anton",
-          "insiderTitle": "CEO",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 261000,
-          "ownershipChangePercent": 100,
-          "filedAt": "2026-07-13T12:00:05.000Z",
-          "filedAtUnix": 1783944005,
-          "tradedAt": "2026-07-09T04:00:00.000Z",
-          "tradedAtUnix": 1783569600,
-          "summary": "Insider buy · $261.0K disclosed · ownership +100% · eToro PRQR",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
         }
       ]
     }
@@ -236023,15 +236473,15 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-14T00:48:45Z"
+        "value": "2026-07-14T05:17:45Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-07-14T00:31:12Z"
+        "value": "2026-07-14T04:50:08Z"
       },
       {
         "label": "Insider upstream",
-        "value": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+        "value": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
       },
       {
         "label": "Official watch",
@@ -236047,11 +236497,11 @@
       },
       {
         "label": "Bullish insider",
-        "value": "11"
+        "value": "9"
       },
       {
         "label": "Bearish insider",
-        "value": "14"
+        "value": "16"
       },
       {
         "label": "Eval rows",
@@ -236323,7 +236773,7 @@
     },
     "walletCommand": {
       "synced": true,
-      "maxValueUSD": 4.6907,
+      "maxValueUSD": 4.4464,
       "items": [
         {
           "id": "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
@@ -236331,7 +236781,7 @@
           "label": "Haak",
           "shortLabel": "Haak",
           "walletURL": "https://polygonscan.com/address/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
-          "totalCurrentValue": 4.6907,
+          "totalCurrentValue": 4.4464,
           "openPositionCount": 1,
           "actionablePositionCount": 0,
           "recentActivityCount": 0,
@@ -236354,6 +236804,19 @@
     "insiderConviction": {
       "maxAbsTradeValueUSD": 45616220,
       "items": [
+        {
+          "id": "YEXT|2026-07-13 20:33:39|2026-07-13|englander daniel j|p - purchase|$5.22|+76,190|bullish",
+          "ticker": "YEXT",
+          "label": "YEXT",
+          "shortLabel": "YEXT",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/1614178/000162828026048066/xslF345X03/wk-form4_1783989216.xml",
+          "direction": "bullish",
+          "confidence": 100,
+          "tradeValueUSD": 397910,
+          "absTradeValueUSD": 397910,
+          "filedAt": "2026-07-14T00:33:39Z",
+          "insiderName": "Englander Daniel J"
+        },
         {
           "id": "CCCTU|2026-07-13 19:20:55|2026-07-10|columbus circle 3 sponsor corp llc|p - purchase|$10.00|+265,000|bullish",
           "ticker": "CCCTU",
@@ -236418,19 +236881,6 @@
           "absTradeValueUSD": 502705,
           "filedAt": "2026-07-13T17:43:40Z",
           "insiderName": "Gaffney Charles"
-        },
-        {
-          "id": "HTFL|2026-07-13 20:25:35|2026-07-10|farquhar john c.m.|s - sale|$27.75|-22,562|bearish",
-          "ticker": "HTFL",
-          "label": "HTFL",
-          "shortLabel": "HTFL",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1464521/000146452126000101/xslF345X03/form4.xml",
-          "direction": "bearish",
-          "confidence": 71,
-          "tradeValueUSD": -626096,
-          "absTradeValueUSD": 626096,
-          "filedAt": "2026-07-14T00:25:35Z",
-          "insiderName": "Farquhar John C.M."
         }
       ]
     },
@@ -236443,34 +236893,34 @@
           "available": true,
           "generatedAt": "2026-07-13T17:06:37Z",
           "status": "stale",
-          "reason": "Snapshot 7h 42m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
+          "reason": "Snapshot 12h 11m old · 18 active · 25 snapshots · 3 built from 3 source candidate(s) · 2 suspicious wallet(s) · 6 live · 16 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-14T00:48:45Z",
+          "generatedAt": "2026-07-14T05:17:45Z",
           "status": "stale",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (7h 42m old, max 15m). (7h 42m old)"
+          "reason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (12h 11m old, max 15m). (12h 11m old)"
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-14T00:31:12Z",
+          "generatedAt": "2026-07-14T04:50:08Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-14T00:48:48.131Z",
+          "generatedAt": "2026-07-14T05:17:48.593Z",
           "status": "stale",
-          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
+          "reason": "Failed step(s): Refreshing etoro-bot from source, Refreshing market-trans from source. · 2 failing step(s)"
         }
       ]
     }
