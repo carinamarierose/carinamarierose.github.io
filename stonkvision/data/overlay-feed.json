@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-16T10:32:45.386Z",
-  "generatedAtUnix": 1784197965,
+  "generatedAt": "2026-07-16T11:06:27.917Z",
+  "generatedAtUnix": 1784199987,
   "sync": {
-    "generatedAt": "2026-07-16T10:32:42Z",
-    "generatedAtUnix": 1784197962,
+    "generatedAt": "2026-07-16T11:06:24Z",
+    "generatedAtUnix": 1784199984,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,43 +12,43 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-16T10:32:45.386Z",
-      "generatedAtUnix": 1784197965,
-      "runID": "run-2026-07-16T10-29-16-752Z-19976",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-07-16T11:06:27.917Z",
+      "generatedAtUnix": 1784199987,
+      "runID": "run-2026-07-16T11-03-26-101Z-22978",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-16T10:29:16.752Z",
-      "finishedAt": "2026-07-16T10:32:45.386Z",
-      "lastRunAt": "2026-07-16T10:32:45.386Z",
-      "durationSeconds": 208.634,
+      "startedAt": "2026-07-16T11:03:26.101Z",
+      "finishedAt": "2026-07-16T11:06:27.917Z",
+      "lastRunAt": "2026-07-16T11:06:27.917Z",
+      "durationSeconds": 181.816,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-16T11:02:45.386Z",
-      "lastSuccessAt": "2026-07-16T10:32:45.386Z",
-      "lastSuccessfulRunAt": "2026-07-16T10:32:45.386Z",
-      "lastFailureAt": "2026-07-15T14:19:30.596Z",
+      "nextRunAt": "2026-07-16T11:36:27.917Z",
+      "lastSuccessAt": "2026-07-16T10:33:24.144Z",
+      "lastSuccessfulRunAt": "2026-07-16T10:33:24.144Z",
+      "lastFailureAt": "2026-07-16T11:06:27.917Z",
       "steps": [
         {
           "id": "insider",
           "title": "Refreshing etoro-bot from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-16T10:29:16.831Z",
-          "finishedAt": "2026-07-16T10:30:33.815Z",
-          "durationSeconds": 76.984,
+          "startedAt": "2026-07-16T11:03:26.207Z",
+          "finishedAt": "2026-07-16T11:04:11.007Z",
+          "durationSeconds": 44.8,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T10-29-16-752Z-19976/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T11-03-26-101Z-22978/insider.log",
+          "summary": "), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=http://openinsider.com/latest-insider-trading, NSErrorFailingURLKey=http://openinsider.com/latest-insider-trading, _kCFStreamErrorDomainKey=4}",
+          "error": "), NSLocalizedDescription=The request timed out., NSErrorFailingURLStringKey=http://openinsider.com/latest-insider-trading, NSErrorFailingURLKey=http://openinsider.com/latest-insider-trading, _kCFStreamErrorDomainKey=4}",
+          "exitCode": 1,
           "lastSuccessAt": "2026-07-16T10:30:33.815Z",
-          "lastFailureAt": "2026-07-15T14:01:54.047Z"
+          "lastFailureAt": "2026-07-16T11:04:11.007Z"
         },
         {
           "id": "market",
@@ -56,15 +56,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-16T10:30:33.816Z",
-          "finishedAt": "2026-07-16T10:32:39.650Z",
-          "durationSeconds": 125.834,
+          "startedAt": "2026-07-16T11:04:11.008Z",
+          "finishedAt": "2026-07-16T11:06:21.065Z",
+          "durationSeconds": 130.057,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T10-29-16-752Z-19976/market.log",
-          "summary": "Notification decisions: selected lol-hle1-jdg-2026-07-16|JD Gaming [global_window_open,urgent_suspicious] | blocked lol-g2-agal-2026-07-16|G2 Esports->notification_limit | bitcoin-above-64k-on-july-16-2026|No->notification_limit | lol-hle1-jdg-2026-07-16|Hanwha Life Esports->sports_policy",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T11-03-26-101Z-22978/market.log",
+          "summary": "Notification decisions: selected bitcoin-above-64k-on-july-16-2026|No [global_window_open,priority_source_bypass] | blocked will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088|No->category_policy | will-spain-win-the-2026-fifa-world-cup-963|Yes->sports_policy | will-argentina-win-the-2026-fifa-world-cup-245|Yes->sports_policy",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-16T10:32:39.650Z",
+          "lastSuccessAt": "2026-07-16T11:06:21.065Z",
           "lastFailureAt": "2026-07-15T14:18:33.655Z"
         },
         {
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-16T10:32:39.651Z",
-          "finishedAt": "2026-07-16T10:32:42.437Z",
-          "durationSeconds": 2.786,
+          "startedAt": "2026-07-16T11:06:21.065Z",
+          "finishedAt": "2026-07-16T11:06:24.165Z",
+          "durationSeconds": 3.1,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T10-29-16-752Z-19976/wallets.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T11-03-26-101Z-22978/wallets.log",
           "summary": "Source diagnostics: 6 candidate(s) | built 3 | no-chase 3 | no-market 0",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-16T10:32:42.437Z",
+          "lastSuccessAt": "2026-07-16T11:06:24.165Z",
           "lastFailureAt": "2026-07-12T16:56:50.901Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-16T10:32:42.438Z",
-          "finishedAt": "2026-07-16T10:32:45.320Z",
-          "durationSeconds": 2.882,
+          "startedAt": "2026-07-16T11:06:24.165Z",
+          "finishedAt": "2026-07-16T11:06:27.838Z",
+          "durationSeconds": 3.673,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T10-29-16-752Z-19976/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-16T11-03-26-101Z-22978/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-16T10:32:45.320Z",
+          "lastSuccessAt": "2026-07-16T11:06:27.838Z",
           "lastFailureAt": "2026-07-06T21:24:39.330Z"
         }
       ],
@@ -106,14 +106,14 @@
         "market": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-16T10:32:39Z",
+          "generatedAt": "2026-07-16T11:06:21Z",
           "status": "degraded",
-          "statusReason": "Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 3s old · 11 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: globally throttled until 1784201511 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-16T10:32:42Z",
+          "generatedAt": "2026-07-16T11:06:24Z",
           "status": "live",
           "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
         },
@@ -127,16 +127,16 @@
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-16T10:32:42Z",
+          "generatedAt": "2026-07-16T11:06:24Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-16T10:32:45.386Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-07-16T11:06:27.917Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing etoro-bot from source."
         }
       },
       "runtime": {
@@ -186,9 +186,9 @@
     "market": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-16T10:32:39Z",
+      "generatedAt": "2026-07-16T11:06:21Z",
       "status": "degraded",
-      "statusReason": "Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 3s old · 11 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: globally throttled until 1784201511 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -200,11 +200,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 17 active signal(s).",
-          "fetchedAt": "2026-07-16T10:32:39Z",
-          "fetchedAtUnix": 1784197959,
+          "message": "Scanned 25 trader(s), fetched 25 snapshot(s), and exported 11 active signal(s).",
+          "fetchedAt": "2026-07-16T11:06:21Z",
+          "fetchedAtUnix": 1784199981,
           "attemptCount": 1,
-          "eventCount": 17,
+          "eventCount": 11,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -221,8 +221,8 @@
           "adapter": "source_watch_digest",
           "status": "live",
           "message": "6 candidate(s): 3 built, 3 no-chase, 0 no-market.",
-          "fetchedAt": "2026-07-16T10:32:39Z",
-          "fetchedAtUnix": 1784197959,
+          "fetchedAt": "2026-07-16T11:06:21Z",
+          "fetchedAtUnix": 1784199981,
           "attemptCount": 1,
           "eventCount": 6,
           "cacheUsed": false,
@@ -241,8 +241,8 @@
           "adapter": "suspicious_wallets",
           "status": "live",
           "message": "No suspicious wallets were flagged in the latest market snapshot.",
-          "fetchedAt": "2026-07-16T10:32:39Z",
-          "fetchedAtUnix": 1784197959,
+          "fetchedAt": "2026-07-16T11:06:21Z",
+          "fetchedAtUnix": 1784199981,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -261,8 +261,8 @@
           "adapter": "discord_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -281,8 +281,8 @@
           "adapter": "tradingview_inbox",
           "status": "live",
           "message": "inbox path missing; no new item(s)",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -301,8 +301,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -321,8 +321,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "remote fetch succeeded (3 item(s))",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -341,8 +341,8 @@
           "adapter": "tree_news_history",
           "status": "live",
           "message": "remote fetch succeeded (24 item(s))",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 24,
           "cacheUsed": false,
@@ -361,8 +361,8 @@
           "adapter": "sec_edgar_submissions",
           "status": "live",
           "message": "remote fetch succeeded (1 item(s))",
-          "fetchedAt": "2026-07-16T10:31:26Z",
-          "fetchedAtUnix": 1784197886,
+          "fetchedAt": "2026-07-16T11:05:02Z",
+          "fetchedAtUnix": 1784199902,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -380,7 +380,7 @@
           "sourceHandle": "realDonaldTrump",
           "adapter": "truthsocial_timeline",
           "status": "failed",
-          "message": "Cloudflare challenge (HTTP 403) | stale cache empty",
+          "message": "globally throttled until 1784201511 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -667,8 +667,8 @@
           "eventCount": 0,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 12161,
-          "retryAfterUnix": 1784198271
+          "cacheAgeSeconds": 14184,
+          "retryAfterUnix": 1784200294
         },
         {
           "id": "source-upstream-gdelt-doc-gdelt-doc-search-gdelt-geopolitics-74a0c7353e5ac5cf",
@@ -680,7 +680,7 @@
           "sourceHandle": "gdelt-geopolitics",
           "adapter": "gdelt_doc_search",
           "status": "failed",
-          "message": "globally throttled until 1784198271 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (1d 23h old), skipping remote fetch",
+          "message": "globally throttled until 1784200294 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (1d 23h old), skipping remote fetch",
           "fetchedAt": null,
           "fetchedAtUnix": null,
           "attemptCount": 1,
@@ -688,14 +688,14 @@
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
-          "retryAfterUnix": 1784198271
+          "retryAfterUnix": 1784200294
         }
       ]
     },
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-16T10:32:42Z",
+      "generatedAt": "2026-07-16T11:06:24Z",
       "status": "live",
       "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live",
       "upstreamDiagnostics": [
@@ -709,11 +709,11 @@
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
           "status": "live",
-          "message": "Loaded 17 active signal(s) from market intel.",
-          "fetchedAt": "2026-07-16T10:32:39Z",
-          "fetchedAtUnix": 1784197959,
+          "message": "Loaded 11 active signal(s) from market intel.",
+          "fetchedAt": "2026-07-16T11:06:21Z",
+          "fetchedAtUnix": 1784199981,
           "attemptCount": 1,
-          "eventCount": 17,
+          "eventCount": 11,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -730,8 +730,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-16T10:32:42Z",
-          "fetchedAtUnix": 1784197962,
+          "fetchedAt": "2026-07-16T11:06:24Z",
+          "fetchedAtUnix": 1784199984,
           "attemptCount": 2,
           "eventCount": 1,
           "cacheUsed": false,
@@ -746,7 +746,7 @@
       "synced": true,
       "generatedAt": "2026-07-16T10:30:18Z",
       "status": "degraded",
-      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -973,7 +973,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-16T10:32:42Z",
+      "generatedAt": "2026-07-16T11:06:24Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,30 +981,30 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-16T10:32:45.386Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-07-16T11:06:27.917Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
   "summary": {
     "feedsOnline": 3,
-    "bestBetCount": 8,
+    "bestBetCount": 6,
     "trackedWalletCount": 2,
     "openPositionCount": 1,
     "actionablePositionCount": 0,
     "insiderSignalCount": 17,
     "intelItemCount": 18,
-    "sourceSignalCount": 5,
-    "crossSignalCount": 2,
+    "sourceSignalCount": 3,
+    "crossSignalCount": 1,
     "kalshiMatchedCount": 0,
     "evaluatedSignalCount": 4809
   },
   "leads": {
     "market": {
       "kicker": "Market leader",
-      "title": "Buy JD Gaming on LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-      "body": "Esports · conviction take · 12 signal(s) in current board"
+      "title": "Buy NO on Will the price of Bitcoin be above $64,000 on July 16?",
+      "body": "Crypto · conviction take · 6 signal(s) in current board"
     },
     "wallets": {
       "kicker": "Wallet command",
@@ -1019,13 +1019,13 @@
   },
   "intel": {
     "available": true,
-    "generatedAt": "2026-07-16T10:32:39Z",
+    "generatedAt": "2026-07-16T11:06:21Z",
     "summary": {
       "totalItemCount": 18,
       "sourceLedCount": 10,
       "insiderWatchCount": 8,
-      "rawSourceEventCount": 74,
-      "linkedMarketCount": 5,
+      "rawSourceEventCount": 69,
+      "linkedMarketCount": 3,
       "providerCount": 6,
       "watchlistMatchCount": 1
     },
@@ -1062,27 +1062,27 @@
             "direction": "buy",
             "category": "geopolitics",
             "take": "conviction",
-            "confidence": 96,
+            "confidence": 97,
             "sourceMatchedQuery": "trump tariff"
           }
         ]
       },
       {
-        "id": "market-source:binance-BTCUSDT-1784197886",
+        "id": "market-source:binance-BTCUSDT-1784199902",
         "kind": "market_source",
         "title": "BTCUSDT futures snapshot",
         "subtitle": "Binance Futures · 1 linked market",
-        "summary": "mark 64200 | index 64229 | funding +0.0065% | OI 102.19K | OI notional 6.56B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+        "summary": "mark 64147 | index 64181 | funding +0.0055% | OI 102.06K | OI notional 6.55B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
         "whyItMatters": "1 linked market on the live board · Buy NO on Will the price of Bitcoin be above $64,000 on July 16? · Standard lane",
-        "sourceEventID": "binance-BTCUSDT-1784197886",
+        "sourceEventID": "binance-BTCUSDT-1784199902",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-07-16T10:30:35.000Z",
-        "publishedAtUnix": 1784197835,
+        "publishedAt": "2026-07-16T11:04:13.000Z",
+        "publishedAtUnix": 1784199853,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1107,7 +1107,7 @@
             "category": "crypto",
             "take": "conviction",
             "confidence": 97,
-            "sourceMatchedQuery": "bitcoin above"
+            "sourceMatchedQuery": "bitcoin above 64100"
           }
         ]
       },
@@ -1115,9 +1115,9 @@
         "id": "market-source:https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
         "kind": "market_source",
         "title": "ECB selects 36 payment service providers to join digital euro pilot",
-        "subtitle": "European Central Bank Monetary Policy · 3 linked markets",
+        "subtitle": "European Central Bank Monetary Policy · 1 linked market",
         "summary": "The European Central Bank (ECB) is the central bank of the European Union countries which have adopted the euro. Our main task is to maintain price stability in the euro area and so preserve the purchasing power of the single currency.",
-        "whyItMatters": "3 linked markets on the live board · Buy NO on Will the ECB announce no change at the July 2026 meeting? · Official Macro lane",
+        "whyItMatters": "1 linked market on the live board · Buy NO on ECB rate cut in 2026? · Official Macro lane",
         "sourceEventID": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
         "sourceName": "European Central Bank Monetary Policy",
         "sourceHandle": "ecb.europa.eu",
@@ -1134,19 +1134,8 @@
           "other"
         ],
         "tags": [],
-        "signalCount": 3,
+        "signalCount": 1,
         "topSignals": [
-          {
-            "id": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|No",
-            "title": "Will the ECB announce no change at the July 2026 meeting?",
-            "marketURL": "https://polymarket.com/event/ecb-interest-rates-july-2026",
-            "outcome": "No",
-            "direction": "buy",
-            "category": "other",
-            "take": "strong",
-            "confidence": 97,
-            "sourceMatchedQuery": "no change ecb interest rates june 2026"
-          },
           {
             "id": "ecb-rate-cut-in-2026|No",
             "title": "ECB rate cut in 2026?",
@@ -1157,17 +1146,6 @@
             "take": "strong",
             "confidence": 87,
             "sourceMatchedQuery": "ecb rate cut june 2026"
-          },
-          {
-            "id": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|Yes",
-            "title": "Will the ECB announce no change at the July 2026 meeting?",
-            "marketURL": "https://polymarket.com/event/ecb-interest-rates-july-2026",
-            "outcome": "Yes",
-            "direction": "buy",
-            "category": "other",
-            "take": "watch",
-            "confidence": 84,
-            "sourceMatchedQuery": "no change ecb interest rates june 2026"
           }
         ]
       },
@@ -1322,21 +1300,21 @@
         "topSignals": []
       },
       {
-        "id": "market-source:binance-ETHUSDT-1784197886",
+        "id": "market-source:binance-ETHUSDT-1784199902",
         "kind": "market_source",
         "title": "ETHUSDT futures snapshot",
         "subtitle": "Binance Futures · Watching for market match",
-        "summary": "mark 1888 | index 1889 | funding +0.0017% | OI 2.33M | OI notional 4.39B USD",
+        "summary": "mark 1886 | index 1887 | funding +0.0013% | OI 2.33M | OI notional 4.40B USD",
         "whyItMatters": "High-priority source event with no active linked market exported yet · Standard lane",
-        "sourceEventID": "binance-ETHUSDT-1784197886",
+        "sourceEventID": "binance-ETHUSDT-1784199902",
         "sourceName": "Binance Futures",
         "sourceHandle": "binance",
         "provider": "binance_futures",
         "sourceType": "api",
         "sourceLane": "standard",
         "sourceURL": "https://fapi.binance.com/",
-        "publishedAt": "2026-07-16T10:30:35.000Z",
-        "publishedAtUnix": 1784197835,
+        "publishedAt": "2026-07-16T11:04:13.000Z",
+        "publishedAtUnix": 1784199853,
         "priority": 8,
         "category": "crypto",
         "matchedCategories": [
@@ -1569,13 +1547,13 @@
   },
   "xgboost": {
     "available": true,
-    "generatedAt": "2026-07-16T10:32:38.411Z",
+    "generatedAt": "2026-07-16T11:06:19.933Z",
     "status": {
       "label": "Live shadow",
       "className": "supports",
       "title": "XGBoost is active on this synced market snapshot",
-      "body": "12 candidates scored on the current run.",
-      "detail": "7 support · 1 skeptical · short term service semantic fix"
+      "body": "6 candidates scored on the current run.",
+      "detail": "4 support · 1 skeptical · short term service semantic fix"
     },
     "model": {
       "available": true,
@@ -1597,83 +1575,35 @@
     },
     "live": {
       "enabled": true,
-      "rowCount": 12,
-      "supportCount": 7,
+      "rowCount": 6,
+      "supportCount": 4,
       "skepticalCount": 1,
       "topK": 5,
-      "topKDisagreementCount": 6,
+      "topKDisagreementCount": 2,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "trend": {
       "enabledRuns": 14,
-      "averageScoredRowsPerRun": 12,
-      "supportCount": 112,
-      "skepticalCount": 18,
-      "topKDisagreementCount": 54,
+      "averageScoredRowsPerRun": 10.928571428571429,
+      "supportCount": 102,
+      "skepticalCount": 17,
+      "topKDisagreementCount": 48,
       "promotedCount": 0,
       "displacedCount": 0
     },
     "shadow": {
       "available": true,
-      "generatedAt": "2026-07-16T10:32:38.411Z",
-      "rowCount": 12,
+      "generatedAt": "2026-07-16T11:06:19.933Z",
+      "rowCount": 6,
       "topK": 5,
-      "overlapCount": 2,
+      "overlapCount": 4,
       "disagreementCount": 5,
-      "modelOnlyCount": 3,
-      "swiftOnlyCount": 3,
+      "modelOnlyCount": 1,
+      "swiftOnlyCount": 1,
       "modelName": "xgboost-short-term-service-semantic-fix-model-directional.json",
       "metadataName": "xgboost-short-term-service-semantic-fix-metadata-directional.json",
       "scoredRows": [
-        {
-          "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "signalID": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "JD Gaming",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.29,
-          "modelScore": 0.9646574258804321,
-          "modelRank": 1,
-          "swiftRank": 4,
-          "rankDeltaVsSwift": 3,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|G2 Esports",
-          "signalID": "lol-g2-agal-2026-07-16|G2 Esports",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "G2 Esports",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.415,
-          "modelScore": 0.9326106309890747,
-          "modelRank": 2,
-          "swiftRank": 5,
-          "rankDeltaVsSwift": 3,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
         {
           "id": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
           "signalID": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
@@ -1685,11 +1615,11 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.4165,
-          "modelScore": 0.9313362240791321,
-          "modelRank": 3,
-          "swiftRank": 7,
-          "rankDeltaVsSwift": 4,
+          "currentPrice": 0.4175,
+          "modelScore": 0.9288136959075928,
+          "modelRank": 1,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": 2,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 161.5,
           "sourceHandle": null,
@@ -1709,11 +1639,11 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.5835,
+          "currentPrice": 0.5825,
           "modelScore": 0.918434739112854,
-          "modelRank": 4,
-          "swiftRank": 8,
-          "rankDeltaVsSwift": 4,
+          "modelRank": 2,
+          "swiftRank": 4,
+          "rankDeltaVsSwift": 2,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 150.5,
           "sourceHandle": null,
@@ -1735,9 +1665,9 @@
           "confidence": 95,
           "currentPrice": 0.4205,
           "modelScore": 0.809597909450531,
-          "modelRank": 5,
-          "swiftRank": 11,
-          "rankDeltaVsSwift": 6,
+          "modelRank": 3,
+          "swiftRank": 6,
+          "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 140.5,
           "sourceHandle": null,
@@ -1759,39 +1689,15 @@
           "confidence": 95,
           "currentPrice": 0.5795,
           "modelScore": 0.8090294599533081,
-          "modelRank": 6,
-          "swiftRank": 6,
-          "rankDeltaVsSwift": 0,
+          "modelRank": 4,
+          "swiftRank": 2,
+          "rankDeltaVsSwift": -2,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 163.5,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
             "Whale"
-          ]
-        },
-        {
-          "id": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|No",
-          "signalID": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|No",
-          "title": "Will the ECB announce no change at the July 2026 meeting?",
-          "slug": "will-the-ecb-announce-no-change-at-the-july-2026-meeting",
-          "marketURL": "https://polymarket.com/event/will-the-ecb-announce-no-change-at-the-july-2026-meeting",
-          "outcome": "No",
-          "category": "other",
-          "severity": "yellow",
-          "take": "strong",
-          "confidence": 97,
-          "currentPrice": 0.0105,
-          "modelScore": 0.7903196215629578,
-          "modelRank": 7,
-          "swiftRank": 9,
-          "rankDeltaVsSwift": 2,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 149.125,
-          "sourceHandle": "ecb.europa.eu",
-          "sourceMatchedQuery": "no change ecb interest rates june 2026",
-          "flags": [
-            "Source-led"
           ]
         },
         {
@@ -1805,90 +1711,19 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.365,
-          "modelScore": 0.543947696685791,
-          "modelRank": 8,
+          "currentPrice": 0.345,
+          "modelScore": 0.5915012359619141,
+          "modelRank": 5,
           "swiftRank": 1,
-          "rankDeltaVsSwift": -7,
+          "rankDeltaVsSwift": -4,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 256.125,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above",
+          "sourceMatchedQuery": "bitcoin above 64100",
           "flags": [
             "Cross-signal",
             "Source-led"
           ]
-        },
-        {
-          "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "signalID": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "Hanwha Life Esports",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.71,
-          "modelScore": 0.5112322568893433,
-          "modelRank": 9,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": -7,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 243,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
-          ]
-        },
-        {
-          "id": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|Yes",
-          "signalID": "will-the-ecb-announce-no-change-at-the-july-2026-meeting|Yes",
-          "title": "Will the ECB announce no change at the July 2026 meeting?",
-          "slug": "will-the-ecb-announce-no-change-at-the-july-2026-meeting",
-          "marketURL": "https://polymarket.com/event/will-the-ecb-announce-no-change-at-the-july-2026-meeting",
-          "outcome": "Yes",
-          "category": "other",
-          "severity": "green",
-          "take": "watch",
-          "confidence": 84,
-          "currentPrice": 0.9895,
-          "modelScore": 0.35395294427871704,
-          "modelRank": 10,
-          "swiftRank": 12,
-          "rankDeltaVsSwift": 2,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 116.5,
-          "sourceHandle": "ecb.europa.eu",
-          "sourceMatchedQuery": "no change ecb interest rates june 2026",
-          "flags": [
-            "Source-led"
-          ]
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|AG.AL",
-          "signalID": "lol-g2-agal-2026-07-16|AG.AL",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "AG.AL",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.585,
-          "modelScore": 0.35178661346435547,
-          "modelRank": 11,
-          "swiftRank": 3,
-          "rankDeltaVsSwift": -8,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 180,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": []
         },
         {
           "id": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
@@ -1903,65 +1738,17 @@
           "confidence": 77,
           "currentPrice": 0.885,
           "modelScore": 0.1937691569328308,
-          "modelRank": 12,
-          "swiftRank": 10,
-          "rankDeltaVsSwift": -2,
+          "modelRank": 6,
+          "swiftRank": 5,
+          "rankDeltaVsSwift": -1,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 143.05653481,
+          "swiftPriorityScore": 142.74228815,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": []
         }
       ],
       "topModel": [
-        {
-          "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "signalID": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "JD Gaming",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.29,
-          "modelScore": 0.9646574258804321,
-          "modelRank": 1,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|G2 Esports",
-          "signalID": "lol-g2-agal-2026-07-16|G2 Esports",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "G2 Esports",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.415,
-          "modelScore": 0.9326106309890747,
-          "modelRank": 2,
-          "swiftRank": null,
-          "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        },
         {
           "id": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
           "signalID": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
@@ -1973,9 +1760,9 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.4165,
-          "modelScore": 0.9313362240791321,
-          "modelRank": 3,
+          "currentPrice": 0.4175,
+          "modelScore": 0.9288136959075928,
+          "modelRank": 1,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
@@ -1997,9 +1784,9 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.5835,
+          "currentPrice": 0.5825,
           "modelScore": 0.918434739112854,
-          "modelRank": 4,
+          "modelRank": 2,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
@@ -2023,7 +1810,7 @@
           "confidence": 95,
           "currentPrice": 0.4205,
           "modelScore": 0.809597909450531,
-          "modelRank": 5,
+          "modelRank": 3,
           "swiftRank": null,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
@@ -2032,6 +1819,55 @@
           "sourceMatchedQuery": null,
           "flags": [
             "Whale"
+          ]
+        },
+        {
+          "id": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "signalID": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "title": "Will Spain win the 2026 FIFA World Cup?",
+          "slug": "will-spain-win-the-2026-fifa-world-cup-963",
+          "marketURL": "https://polymarket.com/event/will-spain-win-the-2026-fifa-world-cup-963",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.5795,
+          "modelScore": 0.8090294599533081,
+          "modelRank": 4,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 163.5,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "bitcoin-above-64k-on-july-16-2026|No",
+          "signalID": "bitcoin-above-64k-on-july-16-2026|No",
+          "title": "Will the price of Bitcoin be above $64,000 on July 16?",
+          "slug": "bitcoin-above-64k-on-july-16-2026",
+          "marketURL": "https://polymarket.com/event/bitcoin-above-64k-on-july-16-2026",
+          "outcome": "No",
+          "category": "crypto",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 97,
+          "currentPrice": 0.345,
+          "modelScore": 0.5915012359619141,
+          "modelRank": 5,
+          "swiftRank": null,
+          "rankDeltaVsSwift": null,
+          "swiftNotificationCandidate": true,
+          "swiftPriorityScore": 256.125,
+          "sourceHandle": "binance",
+          "sourceMatchedQuery": "bitcoin above 64100",
+          "flags": [
+            "Cross-signal",
+            "Source-led"
           ]
         }
       ],
@@ -2047,85 +1883,86 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.365,
-          "modelScore": 0.543947696685791,
+          "currentPrice": 0.345,
+          "modelScore": 0.5915012359619141,
           "modelRank": null,
           "swiftRank": 1,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 256.125,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above",
+          "sourceMatchedQuery": "bitcoin above 64100",
           "flags": [
             "Cross-signal",
             "Source-led"
           ]
         },
         {
-          "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "signalID": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "Hanwha Life Esports",
-          "category": "esports",
+          "id": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "signalID": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "title": "Will Spain win the 2026 FIFA World Cup?",
+          "slug": "will-spain-win-the-2026-fifa-world-cup-963",
+          "marketURL": "https://polymarket.com/event/will-spain-win-the-2026-fifa-world-cup-963",
+          "outcome": "Yes",
+          "category": "sports",
           "severity": "red",
           "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.71,
-          "modelScore": 0.5112322568893433,
+          "confidence": 95,
+          "currentPrice": 0.5795,
+          "modelScore": 0.8090294599533081,
           "modelRank": null,
           "swiftRank": 2,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 243,
+          "swiftPriorityScore": 163.5,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
-            "Whale",
-            "Cross-signal"
+            "Whale"
           ]
         },
         {
-          "id": "lol-g2-agal-2026-07-16|AG.AL",
-          "signalID": "lol-g2-agal-2026-07-16|AG.AL",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "AG.AL",
-          "category": "esports",
+          "id": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
+          "signalID": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
+          "title": "Will Argentina win the 2026 FIFA World Cup?",
+          "slug": "will-argentina-win-the-2026-fifa-world-cup-245",
+          "marketURL": "https://polymarket.com/event/will-argentina-win-the-2026-fifa-world-cup-245",
+          "outcome": "Yes",
+          "category": "sports",
           "severity": "red",
           "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.585,
-          "modelScore": 0.35178661346435547,
+          "confidence": 95,
+          "currentPrice": 0.4175,
+          "modelScore": 0.9288136959075928,
           "modelRank": null,
           "swiftRank": 3,
           "rankDeltaVsSwift": null,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 180,
+          "swiftPriorityScore": 161.5,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
-          "flags": []
+          "flags": [
+            "Whale"
+          ]
         },
         {
-          "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "signalID": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "JD Gaming",
-          "category": "esports",
+          "id": "will-argentina-win-the-2026-fifa-world-cup-245|No",
+          "signalID": "will-argentina-win-the-2026-fifa-world-cup-245|No",
+          "title": "Will Argentina win the 2026 FIFA World Cup?",
+          "slug": "will-argentina-win-the-2026-fifa-world-cup-245",
+          "marketURL": "https://polymarket.com/event/will-argentina-win-the-2026-fifa-world-cup-245",
+          "outcome": "No",
+          "category": "sports",
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.29,
-          "modelScore": 0.9646574258804321,
+          "currentPrice": 0.5825,
+          "modelScore": 0.918434739112854,
           "modelRank": null,
           "swiftRank": 4,
           "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 150.5,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -2133,53 +1970,29 @@
           ]
         },
         {
-          "id": "lol-g2-agal-2026-07-16|G2 Esports",
-          "signalID": "lol-g2-agal-2026-07-16|G2 Esports",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "G2 Esports",
+          "id": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
+          "signalID": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
+          "title": "LoL: Barça eSports vs Team Heretics Academy (BO3) - LES Regular Season",
+          "slug": "lol-bar-hrts-2026-07-16",
+          "marketURL": "https://polymarket.com/event/lol-bar-hrts-2026-07-16",
+          "outcome": "Team Heretics Academy",
           "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 95,
-          "currentPrice": 0.415,
-          "modelScore": 0.9326106309890747,
+          "severity": "green",
+          "take": "lean",
+          "confidence": 77,
+          "currentPrice": 0.885,
+          "modelScore": 0.1937691569328308,
           "modelRank": null,
           "swiftRank": 5,
           "rankDeltaVsSwift": null,
-          "swiftNotificationCandidate": true,
-          "swiftPriorityScore": 178,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale"
-          ]
-        }
-      ],
-      "disagreements": [
-        {
-          "id": "lol-g2-agal-2026-07-16|AG.AL",
-          "signalID": "lol-g2-agal-2026-07-16|AG.AL",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "slug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "AG.AL",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.585,
-          "modelScore": 0.35178661346435547,
-          "modelRank": 11,
-          "swiftRank": 3,
-          "rankDeltaVsSwift": -8,
           "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 180,
+          "swiftPriorityScore": 142.74228815,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": []
-        },
+        }
+      ],
+      "disagreements": [
         {
           "id": "bitcoin-above-64k-on-july-16-2026|No",
           "signalID": "bitcoin-above-64k-on-july-16-2026|No",
@@ -2191,43 +2004,18 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 97,
-          "currentPrice": 0.365,
-          "modelScore": 0.543947696685791,
-          "modelRank": 8,
+          "currentPrice": 0.345,
+          "modelScore": 0.5915012359619141,
+          "modelRank": 5,
           "swiftRank": 1,
-          "rankDeltaVsSwift": -7,
+          "rankDeltaVsSwift": -4,
           "swiftNotificationCandidate": true,
           "swiftPriorityScore": 256.125,
           "sourceHandle": "binance",
-          "sourceMatchedQuery": "bitcoin above",
+          "sourceMatchedQuery": "bitcoin above 64100",
           "flags": [
             "Cross-signal",
             "Source-led"
-          ]
-        },
-        {
-          "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "signalID": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "Hanwha Life Esports",
-          "category": "esports",
-          "severity": "red",
-          "take": "conviction",
-          "confidence": 88,
-          "currentPrice": 0.71,
-          "modelScore": 0.5112322568893433,
-          "modelRank": 9,
-          "swiftRank": 2,
-          "rankDeltaVsSwift": -7,
-          "swiftNotificationCandidate": false,
-          "swiftPriorityScore": 243,
-          "sourceHandle": null,
-          "sourceMatchedQuery": null,
-          "flags": [
-            "Whale",
-            "Cross-signal"
           ]
         },
         {
@@ -2243,9 +2031,9 @@
           "confidence": 95,
           "currentPrice": 0.4205,
           "modelScore": 0.809597909450531,
-          "modelRank": 5,
-          "swiftRank": 11,
-          "rankDeltaVsSwift": 6,
+          "modelRank": 3,
+          "swiftRank": 6,
+          "rankDeltaVsSwift": 3,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 140.5,
           "sourceHandle": null,
@@ -2265,13 +2053,61 @@
           "severity": "red",
           "take": "conviction",
           "confidence": 95,
-          "currentPrice": 0.4165,
-          "modelScore": 0.9313362240791321,
-          "modelRank": 3,
-          "swiftRank": 7,
-          "rankDeltaVsSwift": 4,
+          "currentPrice": 0.4175,
+          "modelScore": 0.9288136959075928,
+          "modelRank": 1,
+          "swiftRank": 3,
+          "rankDeltaVsSwift": 2,
           "swiftNotificationCandidate": false,
           "swiftPriorityScore": 161.5,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "will-argentina-win-the-2026-fifa-world-cup-245|No",
+          "signalID": "will-argentina-win-the-2026-fifa-world-cup-245|No",
+          "title": "Will Argentina win the 2026 FIFA World Cup?",
+          "slug": "will-argentina-win-the-2026-fifa-world-cup-245",
+          "marketURL": "https://polymarket.com/event/will-argentina-win-the-2026-fifa-world-cup-245",
+          "outcome": "No",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.5825,
+          "modelScore": 0.918434739112854,
+          "modelRank": 2,
+          "swiftRank": 4,
+          "rankDeltaVsSwift": 2,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 150.5,
+          "sourceHandle": null,
+          "sourceMatchedQuery": null,
+          "flags": [
+            "Whale"
+          ]
+        },
+        {
+          "id": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "signalID": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
+          "title": "Will Spain win the 2026 FIFA World Cup?",
+          "slug": "will-spain-win-the-2026-fifa-world-cup-963",
+          "marketURL": "https://polymarket.com/event/will-spain-win-the-2026-fifa-world-cup-963",
+          "outcome": "Yes",
+          "category": "sports",
+          "severity": "red",
+          "take": "conviction",
+          "confidence": 95,
+          "currentPrice": 0.5795,
+          "modelScore": 0.8090294599533081,
+          "modelRank": 4,
+          "swiftRank": 2,
+          "rankDeltaVsSwift": -2,
+          "swiftNotificationCandidate": false,
+          "swiftPriorityScore": 163.5,
           "sourceHandle": null,
           "sourceMatchedQuery": null,
           "flags": [
@@ -2283,10 +2119,21 @@
     "runs": {
       "totalRuns": 18,
       "enabledRuns": 18,
-      "latestRunAt": "2026-07-16T10:30:35.000Z",
-      "latestEnabledRunAt": "2026-07-16T10:30:35.000Z",
+      "latestRunAt": "2026-07-16T11:04:13.000Z",
+      "latestEnabledRunAt": "2026-07-16T11:04:13.000Z",
       "maxScoredRows": 23,
       "items": [
+        {
+          "startedAt": "2026-07-16T11:04:13.000Z",
+          "startedAtUnix": 1784199853,
+          "enabled": true,
+          "scoredRowCount": 6,
+          "supportCount": 4,
+          "skepticalCount": 1,
+          "topKDisagreementCount": 2,
+          "promotedCount": 0,
+          "displacedCount": 0
+        },
         {
           "startedAt": "2026-07-16T10:30:35.000Z",
           "startedAtUnix": 1784197835,
@@ -2473,17 +2320,6 @@
           "topKDisagreementCount": 6,
           "promotedCount": 0,
           "displacedCount": 0
-        },
-        {
-          "startedAt": "2026-07-15T06:40:12.000Z",
-          "startedAtUnix": 1784097612,
-          "enabled": true,
-          "scoredRowCount": 16,
-          "supportCount": 9,
-          "skepticalCount": 3,
-          "topKDisagreementCount": 4,
-          "promotedCount": 0,
-          "displacedCount": 0
         }
       ]
     },
@@ -2495,11 +2331,11 @@
       "items": [
         {
           "day": "2026-07-02",
-          "enabledRuns": 4,
-          "scoredRows": 69,
-          "supportCount": 28,
-          "skepticalCount": 23,
-          "topKDisagreementCount": 20,
+          "enabledRuns": 3,
+          "scoredRows": 57,
+          "supportCount": 23,
+          "skepticalCount": 20,
+          "topKDisagreementCount": 18,
           "promotedCount": 0,
           "displacedCount": 0
         },
@@ -2625,11 +2461,11 @@
         },
         {
           "day": "2026-07-16",
-          "enabledRuns": 7,
-          "scoredRows": 52,
-          "supportCount": 40,
-          "skepticalCount": 1,
-          "topKDisagreementCount": 18,
+          "enabledRuns": 8,
+          "scoredRows": 58,
+          "supportCount": 44,
+          "skepticalCount": 2,
+          "topKDisagreementCount": 20,
           "promotedCount": 0,
           "displacedCount": 0
         }
@@ -2637,15 +2473,15 @@
     },
     "coverage": {
       "available": true,
-      "taggedHistoryRowCount": 5254,
+      "taggedHistoryRowCount": 5260,
       "resolvedEvaluationCount": 209,
       "categoryCount": 6,
-      "latestTaggedRunAt": "2026-07-16T10:30:35.000Z",
+      "latestTaggedRunAt": "2026-07-16T11:04:13.000Z",
       "latestEvaluationAt": "2026-05-14T19:21:34.000Z",
       "categories": [
         {
           "category": "sports",
-          "taggedRows": 2706,
+          "taggedRows": 2710,
           "resolvedEvaluations": 120,
           "wins": 19,
           "losses": 0,
@@ -2653,7 +2489,7 @@
           "decisiveTotal": 19,
           "decisiveWinRate": 1,
           "averageModelEdge": 0.16786718750000001,
-          "latestTaggedRunAt": "2026-07-16T10:30:35.000Z",
+          "latestTaggedRunAt": "2026-07-16T11:04:13.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
@@ -2684,20 +2520,20 @@
         },
         {
           "category": "crypto",
-          "taggedRows": 576,
+          "taggedRows": 577,
           "resolvedEvaluations": 0,
           "wins": 0,
           "losses": 0,
-          "neutrals": 135,
+          "neutrals": 136,
           "decisiveTotal": 0,
           "decisiveWinRate": null,
           "averageModelEdge": null,
-          "latestTaggedRunAt": "2026-07-16T10:30:35.000Z",
+          "latestTaggedRunAt": "2026-07-16T11:04:13.000Z",
           "latestEvaluationAt": null
         },
         {
           "category": "esports",
-          "taggedRows": 272,
+          "taggedRows": 273,
           "resolvedEvaluations": 31,
           "wins": 2,
           "losses": 3,
@@ -2705,7 +2541,7 @@
           "decisiveTotal": 5,
           "decisiveWinRate": 0.4,
           "averageModelEdge": -0.04677272727272727,
-          "latestTaggedRunAt": "2026-07-16T10:30:35.000Z",
+          "latestTaggedRunAt": "2026-07-16T11:04:13.000Z",
           "latestEvaluationAt": "2026-05-14T19:21:34.000Z"
         },
         {
@@ -2742,10 +2578,10 @@
   "market": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-16T10:32:39Z",
+    "generatedAt": "2026-07-16T11:06:21Z",
     "summary": {
       "category": "OVERALL",
-      "crossSignalCount": 2,
+      "crossSignalCount": 1,
       "eliteTraderMaxRank": 25,
       "explorerVerificationEnabled": true,
       "fetchedSnapshots": 25,
@@ -2756,15 +2592,15 @@
       "officialPostWatchCount": 4,
       "scannedLeaderboardTraders": 250,
       "shortTermMaxDays": 14,
-      "shortTermSignalCount": 8,
-      "signalCount": 12,
-      "sourceDrivenSignalCount": 5,
+      "shortTermSignalCount": 2,
+      "signalCount": 6,
+      "sourceDrivenSignalCount": 3,
       "sourceTrend": {
         "topRuleCandidateCount": 14,
         "topRuleID": "coinalyze-btc-crowded-longs",
         "topSourceHandle": "coinalyze",
-        "uniqueBuiltNoChaseSignals": 9,
-        "uniqueBuiltSignals": 29,
+        "uniqueBuiltNoChaseSignals": 8,
+        "uniqueBuiltSignals": 30,
         "uniqueCandidates": 39,
         "uniqueNoMarketMatches": 0
       },
@@ -2774,147 +2610,22 @@
       "xgboostDisplacedSignalCount": 0,
       "xgboostPromotedSignalCount": 0,
       "xgboostTrend": {
-        "averageScoredRowsPerRun": 12,
+        "averageScoredRowsPerRun": 10.928571428571429,
         "displacedCount": 0,
         "enabledRuns": 14,
         "promotedCount": 0,
-        "skepticalCount": 18,
-        "supportCount": 112,
-        "topKDisagreementCount": 54
+        "skepticalCount": 17,
+        "supportCount": 102,
+        "topKDisagreementCount": 48
       }
     },
     "status": {
-      "activeSignalCount": 17,
+      "activeSignalCount": 11,
       "officialPostWatchCount": 4,
       "suspiciousWalletCount": 0,
-      "xgboostRowCount": 12
+      "xgboostRowCount": 6
     },
     "bestBets": [
-      {
-        "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-        "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-        "slug": "lol-hle1-jdg-2026-07-16",
-        "eventSlug": "lol-hle1-jdg-2026-07-16",
-        "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-        "outcome": "JD Gaming",
-        "category": "esports",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 95,
-        "weightedFlowUSD": 529999.99,
-        "weightedGrossFlowUSD": 529999.99,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 2,
-        "uniqueTransactionCount": 2,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.35,
-        "latestTradeTimestamp": 1784196644,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-07-16T16:10:00Z",
-        "currentMarketPrice": 0.29,
-        "marketBiasSummary": "whale-sized buying detected",
-        "signalTypes": [
-          "whale"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0xd0a23e50eddfbcde7bebf57f4b6bda67a856c40cb5c71d7c8db58a41a5d225dd",
-          "https://polygonscan.com/tx/0xb999ad4cae525bfa81347a0d69a989991c2194810ac058da4cc83414f9fedf27"
-        ],
-        "xgboostStance": "supports",
-        "xgboostScore": 0.9646574258804321,
-        "xgboostModelRank": 1,
-        "xgboostSwiftRank": 4
-      },
-      {
-        "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-        "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-        "slug": "lol-hle1-jdg-2026-07-16",
-        "eventSlug": "lol-hle1-jdg-2026-07-16",
-        "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-        "outcome": "Hanwha Life Esports",
-        "category": "esports",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 88,
-        "weightedFlowUSD": 330006.80755351915,
-        "weightedGrossFlowUSD": 330006.80755351915,
-        "supportingExposureUSD": 451171.7835368592,
-        "uniqueTraderCount": 2,
-        "uniqueTransactionCount": 8,
-        "bestTraderRank": 1,
-        "worstTraderRank": 4,
-        "averageTradePrice": 0.6622222232111111,
-        "latestTradeTimestamp": 1784196644,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-07-16T16:10:00Z",
-        "currentMarketPrice": 0.71,
-        "marketBiasSummary": "top traders are net buyers with strong agreement",
-        "signalTypes": [
-          "leaderboard",
-          "whale"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0xd0a23e50eddfbcde7bebf57f4b6bda67a856c40cb5c71d7c8db58a41a5d225dd",
-          "https://polygonscan.com/tx/0xb999ad4cae525bfa81347a0d69a989991c2194810ac058da4cc83414f9fedf27",
-          "https://polygonscan.com/tx/0xd8e422a4c3a63e767988f967c390cf2bc85dfe354dd16cca016d76cf52d3379a",
-          "https://polygonscan.com/tx/0xb631d9987c046477bfd0bba3586c1749b4211e8c854f31939ae8410781b6447e"
-        ],
-        "xgboostStance": "mixed",
-        "xgboostScore": 0.5112322568893433,
-        "xgboostModelRank": 9,
-        "xgboostSwiftRank": 2
-      },
-      {
-        "id": "lol-g2-agal-2026-07-16|G2 Esports",
-        "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-        "slug": "lol-g2-agal-2026-07-16",
-        "eventSlug": "lol-g2-agal-2026-07-16",
-        "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-        "outcome": "G2 Esports",
-        "category": "esports",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 95,
-        "weightedFlowUSD": 201836.25,
-        "weightedGrossFlowUSD": 201836.25,
-        "supportingExposureUSD": 0,
-        "uniqueTraderCount": 1,
-        "uniqueTransactionCount": 1,
-        "bestTraderRank": 999,
-        "worstTraderRank": 999,
-        "averageTradePrice": 0.4273646483,
-        "latestTradeTimestamp": 1784195762,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-07-16T16:10:00Z",
-        "currentMarketPrice": 0.415,
-        "marketBiasSummary": "whale-sized buying detected",
-        "signalTypes": [
-          "whale"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0xdc223007ef670426e11fa4e4771931ae3fbaea1cec89091be6a037a0397aa6bf"
-        ],
-        "xgboostStance": "supports",
-        "xgboostScore": 0.9326106309890747,
-        "xgboostModelRank": 2,
-        "xgboostSwiftRank": 5
-      },
       {
         "id": "bitcoin-above-64k-on-july-16-2026|No",
         "title": "Will the price of Bitcoin be above $64,000 on July 16?",
@@ -2934,39 +2645,39 @@
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.365,
-        "latestTradeTimestamp": 1784197835,
+        "averageTradePrice": 0.345,
+        "latestTradeTimestamp": 1784199853,
         "horizon": "short_term",
         "daysToEnd": 1,
         "marketEndDate": "2026-07-16T16:00:00Z",
-        "currentMarketPrice": 0.365,
+        "currentMarketPrice": 0.345,
         "marketBiasSummary": "Fresh source signal from Coinalyze Derivatives · matched 'bitcoin above' · 0m ago · official source",
         "signalTypes": [
           "source",
           "source_confirmation"
         ],
         "sourceAttribution": {
-          "eventID": "binance-BTCUSDT-1784197886",
+          "eventID": "binance-BTCUSDT-1784199902",
           "provider": "binance_futures",
           "sourceName": "Binance Futures",
           "sourceType": "api",
           "sourceLane": "standard",
           "sourceHandle": "binance",
           "url": "https://fapi.binance.com/",
-          "text": "BTCUSDT futures snapshot | mark 64200 | index 64229 | funding +0.0065% | OI 102.19K | OI notional 6.56B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
+          "text": "BTCUSDT futures snapshot | mark 64147 | index 64181 | funding +0.0055% | OI 102.06K | OI notional 6.55B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning",
           "ruleID": "binance-btc-crowded-longs",
-          "matchedQuery": "bitcoin above",
+          "matchedQuery": "bitcoin above 64100",
           "priority": 8,
           "freshnessMinutesAtScan": null,
-          "publishedAt": "2026-07-16T10:30:35.000Z",
-          "publishedAtUnix": 1784197835
+          "publishedAt": "2026-07-16T11:04:13.000Z",
+          "publishedAtUnix": 1784199853
         },
         "verificationStatus": "notChecked",
         "verifiedTransactionCount": 0,
         "txLinks": [],
         "xgboostStance": "mixed",
-        "xgboostScore": 0.543947696685791,
-        "xgboostModelRank": 8,
+        "xgboostScore": 0.5915012359619141,
+        "xgboostModelRank": 5,
         "xgboostSwiftRank": 1
       },
       {
@@ -2980,21 +2691,21 @@
         "severity": "red",
         "take": "conviction",
         "direction": "buy",
-        "confidence": 96,
-        "weightedFlowUSD": 16000,
-        "weightedGrossFlowUSD": 16000,
+        "confidence": 97,
+        "weightedFlowUSD": 16125,
+        "weightedGrossFlowUSD": 16125,
         "supportingExposureUSD": 0,
         "uniqueTraderCount": 0,
         "uniqueTransactionCount": 0,
         "bestTraderRank": 999,
         "worstTraderRank": 999,
-        "averageTradePrice": 0.835,
-        "latestTradeTimestamp": 1784197835,
+        "averageTradePrice": 0.815,
+        "latestTradeTimestamp": 1784199853,
         "horizon": "long_term",
         "daysToEnd": 169,
         "marketEndDate": "2026-12-31T23:59:00Z",
-        "currentMarketPrice": 0.835,
-        "marketBiasSummary": "Fresh source signal from USTR Press Releases · matched 'trump tariff' · 1350m ago · moved +2.5pt since source · no-chase zone · official macro source",
+        "currentMarketPrice": 0.815,
+        "marketBiasSummary": "Fresh source signal from USTR Press Releases · matched 'trump tariff' · 1384m ago · moved +0.5pt since source · no-chase zone · official macro source",
         "signalTypes": [
           "source"
         ],
@@ -3010,7 +2721,7 @@
           "ruleID": "ustr-china-tariff-escalation",
           "matchedQuery": "trump tariff",
           "priority": 8,
-          "freshnessMinutesAtScan": 1350,
+          "freshnessMinutesAtScan": 1384,
           "publishedAt": "2026-07-15T12:00:00.000Z",
           "publishedAtUnix": 1784116800
         },
@@ -3021,50 +2732,6 @@
         "xgboostScore": null,
         "xgboostModelRank": null,
         "xgboostSwiftRank": null
-      },
-      {
-        "id": "lol-g2-agal-2026-07-16|AG.AL",
-        "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-        "slug": "lol-g2-agal-2026-07-16",
-        "eventSlug": "lol-g2-agal-2026-07-16",
-        "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-        "outcome": "AG.AL",
-        "category": "esports",
-        "severity": "red",
-        "take": "conviction",
-        "direction": "buy",
-        "confidence": 88,
-        "weightedFlowUSD": 40609.08516222989,
-        "weightedGrossFlowUSD": 40609.08516222989,
-        "supportingExposureUSD": 54924.7759491353,
-        "uniqueTraderCount": 2,
-        "uniqueTransactionCount": 5,
-        "bestTraderRank": 4,
-        "worstTraderRank": 25,
-        "averageTradePrice": 0.5559999999999999,
-        "latestTradeTimestamp": 1784197018,
-        "horizon": "short_term",
-        "daysToEnd": 1,
-        "marketEndDate": "2026-07-16T16:10:00Z",
-        "currentMarketPrice": 0.585,
-        "marketBiasSummary": "top traders are net buyers with strong agreement",
-        "signalTypes": [
-          "leaderboard"
-        ],
-        "sourceAttribution": null,
-        "verificationStatus": "missing",
-        "verifiedTransactionCount": 0,
-        "txLinks": [
-          "https://polygonscan.com/tx/0xdc223007ef670426e11fa4e4771931ae3fbaea1cec89091be6a037a0397aa6bf",
-          "https://polygonscan.com/tx/0x638a024398683753cc1ce2a65a508bd1b9caf61913c24eaf4262c0897c08d902",
-          "https://polygonscan.com/tx/0x9504531354c1edb370e178aa0cb8c6e0629298d36f0a9faa60c3ce3dcbdabe88",
-          "https://polygonscan.com/tx/0x6a315602d8f5c7d8a67dd92c71c7f00c5f2c92adb1b0a7092bc4440a2597a1d6",
-          "https://polygonscan.com/tx/0x52180a618d242064ad682ad0e0a29a5c7713a216cf0cd3d91465529659861cbf"
-        ],
-        "xgboostStance": "mixed",
-        "xgboostScore": 0.35178661346435547,
-        "xgboostModelRank": 11,
-        "xgboostSwiftRank": 3
       },
       {
         "id": "china-x-taiwan-military-clash-before-2027|No",
@@ -3090,7 +2757,7 @@
         "horizon": "long_term",
         "daysToEnd": 168,
         "marketEndDate": "2026-12-31T00:00:00Z",
-        "currentMarketPrice": 0.9365,
+        "currentMarketPrice": 0.936,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -3144,6 +2811,103 @@
         "xgboostScore": null,
         "xgboostModelRank": null,
         "xgboostSwiftRank": null
+      },
+      {
+        "id": "ecb-rate-cut-in-2026|No",
+        "title": "ECB rate cut in 2026?",
+        "slug": "ecb-rate-cut-in-2026",
+        "eventSlug": "ecb-rate-cut-in-2026",
+        "marketURL": "https://polymarket.com/event/ecb-rate-cut-in-2026",
+        "outcome": "No",
+        "category": "other",
+        "severity": "yellow",
+        "take": "strong",
+        "direction": "buy",
+        "confidence": 87,
+        "weightedFlowUSD": 14875,
+        "weightedGrossFlowUSD": 14875,
+        "supportingExposureUSD": 0,
+        "uniqueTraderCount": 0,
+        "uniqueTransactionCount": 0,
+        "bestTraderRank": 999,
+        "worstTraderRank": 999,
+        "averageTradePrice": 0.87,
+        "latestTradeTimestamp": 1784199853,
+        "horizon": "long_term",
+        "daysToEnd": 168,
+        "marketEndDate": "2026-12-31T00:00:00Z",
+        "currentMarketPrice": 0.87,
+        "marketBiasSummary": "Fresh source signal from European Central Bank Monetary Policy · matched 'ecb rate cut june 2026' · 3004m ago · moved +2.5pt since source · no-chase zone · official macro source",
+        "signalTypes": [
+          "source"
+        ],
+        "sourceAttribution": {
+          "eventID": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
+          "provider": "ecb_rss",
+          "sourceName": "European Central Bank Monetary Policy",
+          "sourceType": "web",
+          "sourceLane": "official_macro",
+          "sourceHandle": "ecb.europa.eu",
+          "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
+          "text": "ECB selects 36 payment service providers to join digital euro pilot — The European Central Bank (ECB) is the central bank of the European Union countries which have adopted the euro. Our main task is to maintain price stability in the euro area and so preserve the purchasing power of the single currency.",
+          "ruleID": "ecb-monetary-cut",
+          "matchedQuery": "ecb rate cut june 2026",
+          "priority": 8,
+          "freshnessMinutesAtScan": 3004,
+          "publishedAt": "2026-07-14T09:00:00.000Z",
+          "publishedAtUnix": 1784019600
+        },
+        "verificationStatus": "notChecked",
+        "verifiedTransactionCount": 0,
+        "txLinks": [],
+        "xgboostStance": null,
+        "xgboostScore": null,
+        "xgboostModelRank": null,
+        "xgboostSwiftRank": null
+      },
+      {
+        "id": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
+        "title": "LoL: Barça eSports vs Team Heretics Academy (BO3) - LES Regular Season",
+        "slug": "lol-bar-hrts-2026-07-16",
+        "eventSlug": "lol-bar-hrts-2026-07-16",
+        "marketURL": "https://polymarket.com/event/lol-bar-hrts-2026-07-16",
+        "outcome": "Team Heretics Academy",
+        "category": "esports",
+        "severity": "green",
+        "take": "lean",
+        "direction": "buy",
+        "confidence": 77,
+        "weightedFlowUSD": 12742.288150803344,
+        "weightedGrossFlowUSD": 12742.288150803344,
+        "supportingExposureUSD": 27873.318244295882,
+        "uniqueTraderCount": 1,
+        "uniqueTransactionCount": 10,
+        "bestTraderRank": 19,
+        "worstTraderRank": 19,
+        "averageTradePrice": 0.88000000543,
+        "latestTradeTimestamp": 1784196001,
+        "horizon": "short_term",
+        "daysToEnd": 1,
+        "marketEndDate": "2026-07-16T23:30:00Z",
+        "currentMarketPrice": 0.885,
+        "marketBiasSummary": "top traders are net buyers with strong agreement",
+        "signalTypes": [
+          "leaderboard"
+        ],
+        "sourceAttribution": null,
+        "verificationStatus": "missing",
+        "verifiedTransactionCount": 0,
+        "txLinks": [
+          "https://polygonscan.com/tx/0x7a12df42b0e3707b2e3b9d172e4aa495ddc4b58bed527ae5df5fdc627bd732d3",
+          "https://polygonscan.com/tx/0x6b5b01531faf39d54bb9bea154ce4a73995d7744081505cb92774180d2bb12af",
+          "https://polygonscan.com/tx/0x646d24fcd27e3bfac37707d779fbe1441fdbf53aac7ef95da9d49c10fc10bedd",
+          "https://polygonscan.com/tx/0x12438e57851275424f21c61c0f23479f04512ac3778d14271ac6ea932bdeb6bc",
+          "https://polygonscan.com/tx/0xe331c9512ee4ca3a5066ab4e992b0147ce30bbf90152fb3fe2addc6c6e36a90a"
+        ],
+        "xgboostStance": "skeptical",
+        "xgboostScore": 0.1937691569328308,
+        "xgboostModelRank": 6,
+        "xgboostSwiftRank": 5
       }
     ],
     "radar": [
@@ -3171,7 +2935,7 @@
         "horizon": "short_term",
         "daysToEnd": 4,
         "marketEndDate": "2026-07-20T00:00:00Z",
-        "currentMarketPrice": 0.4165,
+        "currentMarketPrice": 0.4175,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -3185,9 +2949,9 @@
           "https://polygonscan.com/tx/0x2641467d7c6e8a6e4419b1e079882ad46c7d2f43342c8e6c7800dbdabfba3245"
         ],
         "xgboostStance": "supports",
-        "xgboostScore": 0.9313362240791321,
-        "xgboostModelRank": 3,
-        "xgboostSwiftRank": 7
+        "xgboostScore": 0.9288136959075928,
+        "xgboostModelRank": 1,
+        "xgboostSwiftRank": 3
       },
       {
         "id": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
@@ -3228,8 +2992,8 @@
         ],
         "xgboostStance": "supports",
         "xgboostScore": 0.8090294599533081,
-        "xgboostModelRank": 6,
-        "xgboostSwiftRank": 6
+        "xgboostModelRank": 4,
+        "xgboostSwiftRank": 2
       },
       {
         "id": "will-argentina-win-the-2026-fifa-world-cup-245|No",
@@ -3255,7 +3019,7 @@
         "horizon": "short_term",
         "daysToEnd": 4,
         "marketEndDate": "2026-07-20T00:00:00Z",
-        "currentMarketPrice": 0.5835,
+        "currentMarketPrice": 0.5825,
         "marketBiasSummary": "whale-sized buying detected",
         "signalTypes": [
           "whale"
@@ -3270,8 +3034,8 @@
         ],
         "xgboostStance": "supports",
         "xgboostScore": 0.918434739112854,
-        "xgboostModelRank": 4,
-        "xgboostSwiftRank": 8
+        "xgboostModelRank": 2,
+        "xgboostSwiftRank": 4
       },
       {
         "id": "will-spain-win-the-2026-fifa-world-cup-963|No",
@@ -3310,8 +3074,8 @@
         ],
         "xgboostStance": "supports",
         "xgboostScore": 0.809597909450531,
-        "xgboostModelRank": 5,
-        "xgboostSwiftRank": 11
+        "xgboostModelRank": 3,
+        "xgboostSwiftRank": 6
       },
       {
         "id": "will-the-us-invade-iran-before-2027|Yes",
@@ -3357,29 +3121,7 @@
     "officialPostWatch": [
       {
         "category": "crypto",
-        "currentPrice": 0.365,
-        "decision": "built_signal",
-        "freshnessMinutesAtScan": 0,
-        "marketCategory": "crypto",
-        "marketEventSlug": "bitcoin-above-on-july-16-2026",
-        "marketSlug": "bitcoin-above-64k-on-july-16-2026",
-        "marketTitle": "Will the price of Bitcoin be above $64,000 on July 16?",
-        "matchScore": 34.5,
-        "matchedQuery": "bitcoin above",
-        "maxChasePrice": 0.76,
-        "priority": 8,
-        "provider": "binance_futures",
-        "publishedAtUnix": 1784197835,
-        "sourceHandle": "binance",
-        "sourceLane": "standard",
-        "sourceName": "Binance Futures",
-        "sourceType": "api",
-        "sourceURL": "https://fapi.binance.com",
-        "summaryText": "BTCUSDT futures snapshot | mark 64200 | index 64229 | funding +0.0065% | OI 102.19K | OI notional 6.56B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning"
-      },
-      {
-        "category": "crypto",
-        "currentPrice": 0.365,
+        "currentPrice": 0.345,
         "decision": "built_signal",
         "freshnessMinutesAtScan": 0,
         "marketCategory": "crypto",
@@ -3391,41 +3133,41 @@
         "maxChasePrice": 0.76,
         "priority": 8,
         "provider": "coinalyze",
-        "publishedAtUnix": 1784197835,
+        "publishedAtUnix": 1784199853,
         "sourceHandle": "coinalyze",
         "sourceLane": "standard",
         "sourceName": "Coinalyze Derivatives",
         "sourceType": "api",
         "sourceURL": "https://api.coinalyze.net/v1",
-        "summaryText": "BTCUSDT derivatives snapshot | OI 6.56B USD | funding +0.7584% | predicted +0.6453% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning"
+        "summaryText": "BTCUSDT derivatives snapshot | OI 6.55B USD | funding +0.7584% | predicted +0.5538% | crowded longs | bearish funding | predicted crowded longs | predicted bearish funding | heavy derivatives positioning"
       },
       {
-        "category": "other",
-        "currentPrice": 0.0105,
+        "category": "crypto",
+        "currentPrice": 0.345,
         "decision": "built_signal",
-        "freshnessMinutesAtScan": 2970,
-        "marketCategory": "other",
-        "marketEventSlug": "ecb-interest-rates-july-2026",
-        "marketSlug": "will-the-ecb-announce-no-change-at-the-july-2026-meeting",
-        "marketTitle": "Will the ECB announce no change at the July 2026 meeting?",
-        "matchScore": 18,
-        "matchedQuery": "no change ecb interest rates june 2026",
+        "freshnessMinutesAtScan": 0,
+        "marketCategory": "crypto",
+        "marketEventSlug": "bitcoin-above-on-july-16-2026",
+        "marketSlug": "bitcoin-above-64k-on-july-16-2026",
+        "marketTitle": "Will the price of Bitcoin be above $64,000 on July 16?",
+        "matchScore": 38.75,
+        "matchedQuery": "bitcoin above 64100",
         "maxChasePrice": 0.76,
         "priority": 8,
-        "provider": "ecb_rss",
-        "publishedAtUnix": 1784019600,
-        "sourceHandle": "ecb.europa.eu",
-        "sourceLane": "official_macro",
-        "sourceName": "European Central Bank Monetary Policy",
-        "sourceType": "web",
-        "sourceURL": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
-        "summaryText": "ECB selects 36 payment service providers to join digital euro pilot — The European Central Bank (ECB) is the central bank of the European Union countries which have adopted the euro. Our main task is to maintain price stability in the euro area and so preserve the purchasing power of the single currency."
+        "provider": "binance_futures",
+        "publishedAtUnix": 1784199853,
+        "sourceHandle": "binance",
+        "sourceLane": "standard",
+        "sourceName": "Binance Futures",
+        "sourceType": "api",
+        "sourceURL": "https://fapi.binance.com",
+        "summaryText": "BTCUSDT futures snapshot | mark 64147 | index 64181 | funding +0.0055% | OI 102.06K | OI notional 6.55B USD | long crowding | bearish funding | crowded longs | heavy derivatives positioning"
       },
       {
         "category": "geopolitics",
-        "currentPrice": 0.835,
+        "currentPrice": 0.815,
         "decision": "built_no_chase_signal",
-        "freshnessMinutesAtScan": 1350,
+        "freshnessMinutesAtScan": 1384,
         "marketCategory": "geopolitics",
         "marketEventSlug": "will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
         "marketSlug": "will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
@@ -3442,19 +3184,36 @@
         "sourceType": "web",
         "sourceURL": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ustr-section-301-action-brazils-unreasonable-acts-policies-and-practices",
         "summaryText": "USTR Section 301 Action on Brazil’s Unreasonable Acts, Policies, and Practices — WASHINGTON – Today, Ambassador Jamieson Greer is taking final action, at President Trump’s direction, under Section 301 of the Trade Act of 1974 by imposing a 25% tariff on certain goods of Brazil."
+      },
+      {
+        "category": "other",
+        "currentPrice": 0.87,
+        "decision": "built_no_chase_signal",
+        "freshnessMinutesAtScan": 3004,
+        "marketCategory": "other",
+        "marketEventSlug": "ecb-rate-cut-in-2026",
+        "marketSlug": "ecb-rate-cut-in-2026",
+        "marketTitle": "ECB rate cut in 2026?",
+        "matchScore": 19,
+        "matchedQuery": "ecb rate cut june 2026",
+        "maxChasePrice": 0.76,
+        "priority": 8,
+        "provider": "ecb_rss",
+        "publishedAtUnix": 1784019600,
+        "sourceHandle": "ecb.europa.eu",
+        "sourceLane": "official_macro",
+        "sourceName": "European Central Bank Monetary Policy",
+        "sourceType": "web",
+        "sourceURL": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260714~8cd07d9d45.en.html",
+        "summaryText": "ECB selects 36 payment service providers to join digital euro pilot — The European Central Bank (ECB) is the central bank of the European Union countries which have adopted the euro. Our main task is to maintain price stability in the euro area and so preserve the purchasing power of the single currency."
       }
     ],
     "suspiciousWallets": [],
     "categoryMix": [
       {
-        "key": "esports",
-        "label": "Esports",
-        "value": 5
-      },
-      {
         "key": "other",
         "label": "Other",
-        "value": 5
+        "value": 3
       },
       {
         "key": "crypto",
@@ -3465,13 +3224,18 @@
         "key": "geopolitics",
         "label": "Geopolitics",
         "value": 1
+      },
+      {
+        "key": "esports",
+        "label": "Esports",
+        "value": 1
       }
     ]
   },
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-16T10:32:42Z",
+    "generatedAt": "2026-07-16T11:06:24Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3528,8 +3292,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-16T09:58:28Z",
-      "previousGeneratedAtUnix": 1784195908,
+      "previousGeneratedAt": "2026-07-16T10:32:42Z",
+      "previousGeneratedAtUnix": 1784197962,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3581,13 +3345,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-16T10:32:44.278Z",
-      "snapshotCount": 545,
+      "generatedAt": "2026-07-16T11:06:26.698Z",
+      "snapshotCount": 546,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-16T10:32:42Z",
+      "latestAt": "2026-07-16T11:06:24Z",
       "latestSummary": {
-        "timestamp": "2026-07-16T10:32:42Z",
-        "timestampUnix": 1784197962,
+        "timestamp": "2026-07-16T11:06:24Z",
+        "timestampUnix": 1784199984,
         "currentValue": 3.6646,
         "costBasisValue": 6.997109999999999,
         "unrealizedPnL": -3.332509999999999,
@@ -9041,6 +8805,16 @@
         {
           "timestamp": "2026-07-16T10:32:42Z",
           "timestampUnix": 1784197962,
+          "currentValue": 3.6646,
+          "costBasisValue": 6.997109999999999,
+          "unrealizedPnL": -3.332509999999999,
+          "realizedPnL": 0,
+          "openPositionCount": 1,
+          "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-07-16T11:06:24Z",
+          "timestampUnix": 1784199984,
           "currentValue": 3.6646,
           "costBasisValue": 6.997109999999999,
           "unrealizedPnL": -3.332509999999999,
@@ -14509,6 +14283,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 3.6646,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.332509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -19965,6 +19749,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -25435,6 +25229,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 3.6646,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.332509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -30891,6 +30695,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -36359,6 +36173,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -41815,6 +41639,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -47283,6 +47117,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -52739,6 +52583,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -58207,6 +58061,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -63663,6 +63527,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -69131,6 +69005,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -74587,6 +74471,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -80055,6 +79949,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -85511,6 +85415,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -90979,6 +90893,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -96435,6 +96359,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -101903,6 +101837,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -107359,6 +107303,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -112827,6 +112781,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -118283,6 +118247,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -123751,6 +123725,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -129207,6 +129191,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -134675,6 +134669,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -140131,6 +140135,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -145599,6 +145613,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -151055,6 +151079,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -156523,6 +156557,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -161979,6 +162023,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -167447,6 +167501,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -172903,6 +172967,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -178371,6 +178445,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -183827,6 +183911,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -189295,6 +189389,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -194757,6 +194861,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -200213,6 +200327,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -205683,6 +205807,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 3.6646,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.332509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -211139,6 +211273,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -216607,6 +216751,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -222063,6 +222217,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -227531,6 +227695,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -232987,6 +233161,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -238455,6 +238639,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -243911,6 +244105,16 @@
             {
               "timestamp": "2026-07-16T10:32:42Z",
               "timestampUnix": 1784197962,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -249379,6 +249583,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-16T11:06:24Z",
+              "timestampUnix": 1784199984,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -249718,7 +249932,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-16T10:32:42Z",
+    "generatedAt": "2026-07-16T11:06:24Z",
     "market": {
       "available": true,
       "summary": {
@@ -250756,14 +250970,9 @@
   "pulse": {
     "marketMix": [
       {
-        "key": "esports",
-        "label": "Esports",
-        "value": 5
-      },
-      {
         "key": "other",
         "label": "Other",
-        "value": 5
+        "value": 3
       },
       {
         "key": "crypto",
@@ -250773,6 +250982,11 @@
       {
         "key": "geopolitics",
         "label": "Geopolitics",
+        "value": 1
+      },
+      {
+        "key": "esports",
+        "label": "Esports",
         "value": 1
       }
     ],
@@ -250786,11 +251000,11 @@
     "systemHealth": [
       {
         "label": "Market updated",
-        "value": "2026-07-16T10:32:39Z"
+        "value": "2026-07-16T11:06:21Z"
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-16T10:32:42Z"
+        "value": "2026-07-16T11:06:24Z"
       },
       {
         "label": "Insider updated",
@@ -250806,7 +251020,7 @@
       },
       {
         "label": "XGBoost rows",
-        "value": "12"
+        "value": "6"
       },
       {
         "label": "Wallet actions",
@@ -250828,53 +251042,8 @@
   },
   "charts": {
     "marketFlow": {
-      "maxAbsFlowUSD": 529999.99,
+      "maxAbsFlowUSD": 89347.34,
       "items": [
-        {
-          "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "shortLabel": "LoL: Hanwha Life Esport...",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "eventSlug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "JD Gaming",
-          "direction": "buy",
-          "flowUSD": 529999.99,
-          "absFlowUSD": 529999.99,
-          "confidence": 95,
-          "currentPrice": 0.29,
-          "daysToEnd": 1
-        },
-        {
-          "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "shortLabel": "LoL: Hanwha Life Esport...",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "eventSlug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "Hanwha Life Esports",
-          "direction": "buy",
-          "flowUSD": 330006.80755351915,
-          "absFlowUSD": 330006.80755351915,
-          "confidence": 88,
-          "currentPrice": 0.71,
-          "daysToEnd": 1
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|G2 Esports",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "shortLabel": "LoL: G2 Esports vs AG.A...",
-          "slug": "lol-g2-agal-2026-07-16",
-          "eventSlug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "G2 Esports",
-          "direction": "buy",
-          "flowUSD": 201836.25,
-          "absFlowUSD": 201836.25,
-          "confidence": 95,
-          "currentPrice": 0.415,
-          "daysToEnd": 1
-        },
         {
           "id": "bitcoin-above-64k-on-july-16-2026|No",
           "title": "Will the price of Bitcoin be above $64,000 on July 16?",
@@ -250887,7 +251056,7 @@
           "flowUSD": 16125,
           "absFlowUSD": 16125,
           "confidence": 97,
-          "currentPrice": 0.365,
+          "currentPrice": 0.345,
           "daysToEnd": 1
         },
         {
@@ -250899,31 +251068,76 @@
           "marketURL": "https://polymarket.com/event/will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
           "outcome": "NO",
           "direction": "buy",
-          "flowUSD": 16000,
-          "absFlowUSD": 16000,
-          "confidence": 96,
-          "currentPrice": 0.835,
+          "flowUSD": 16125,
+          "absFlowUSD": 16125,
+          "confidence": 97,
+          "currentPrice": 0.815,
           "daysToEnd": 169
         },
         {
-          "id": "lol-g2-agal-2026-07-16|AG.AL",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "shortLabel": "LoL: G2 Esports vs AG.A...",
-          "slug": "lol-g2-agal-2026-07-16",
-          "eventSlug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "AG.AL",
+          "id": "china-x-taiwan-military-clash-before-2027|No",
+          "title": "China x Taiwan military clash before 2027?",
+          "shortLabel": "China x Taiwan military...",
+          "slug": "china-x-taiwan-military-clash-before-2027",
+          "eventSlug": "china-x-taiwan-military-clash-before-2027",
+          "marketURL": "https://polymarket.com/event/china-x-taiwan-military-clash-before-2027",
+          "outcome": "NO",
           "direction": "buy",
-          "flowUSD": 40609.08516222989,
-          "absFlowUSD": 40609.08516222989,
-          "confidence": 88,
-          "currentPrice": 0.585,
+          "flowUSD": 89347.34,
+          "absFlowUSD": 89347.34,
+          "confidence": 95,
+          "currentPrice": 0.936,
+          "daysToEnd": 168
+        },
+        {
+          "id": "will-wti-dip-to-60-in-july-2026-528|No",
+          "title": "Will WTI Crude Oil (WTI) hit (LOW) $60 in July?",
+          "shortLabel": "Will WTI Crude Oil (WTI...",
+          "slug": "will-wti-dip-to-60-in-july-2026-528",
+          "eventSlug": "what-price-will-wti-hit-in-july-2026",
+          "marketURL": "https://polymarket.com/event/what-price-will-wti-hit-in-july-2026",
+          "outcome": "NO",
+          "direction": "buy",
+          "flowUSD": 55149.99,
+          "absFlowUSD": 55149.99,
+          "confidence": 94,
+          "currentPrice": 0.985,
+          "daysToEnd": null
+        },
+        {
+          "id": "ecb-rate-cut-in-2026|No",
+          "title": "ECB rate cut in 2026?",
+          "shortLabel": "ECB rate cut in 2026?",
+          "slug": "ecb-rate-cut-in-2026",
+          "eventSlug": "ecb-rate-cut-in-2026",
+          "marketURL": "https://polymarket.com/event/ecb-rate-cut-in-2026",
+          "outcome": "NO",
+          "direction": "buy",
+          "flowUSD": 14875,
+          "absFlowUSD": 14875,
+          "confidence": 87,
+          "currentPrice": 0.87,
+          "daysToEnd": 168
+        },
+        {
+          "id": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
+          "title": "LoL: Barça eSports vs Team Heretics Academy (BO3) - LES Regular Season",
+          "shortLabel": "LoL: Barça eSports vs T...",
+          "slug": "lol-bar-hrts-2026-07-16",
+          "eventSlug": "lol-bar-hrts-2026-07-16",
+          "marketURL": "https://polymarket.com/event/lol-bar-hrts-2026-07-16",
+          "outcome": "Team Heretics Academy",
+          "direction": "buy",
+          "flowUSD": 12742.288150803344,
+          "absFlowUSD": 12742.288150803344,
+          "confidence": 77,
+          "currentPrice": 0.885,
           "daysToEnd": 1
         }
       ]
     },
     "marketWindow": {
-      "maxDaysToEnd": 168,
+      "maxDaysToEnd": 169,
       "maxAbsFlowUSD": 1991735.6791450002,
       "items": [
         {
@@ -250940,71 +251154,23 @@
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 16125,
-          "currentPrice": 0.365
+          "currentPrice": 0.345
         },
         {
-          "id": "lol-hle1-jdg-2026-07-16|JD Gaming",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "shortLabel": "LoL: Hanwha Life Es...",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "eventSlug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "JD Gaming",
+          "id": "lol-bar-hrts-2026-07-16|Team Heretics Academy",
+          "title": "LoL: Barça eSports vs Team Heretics Academy (BO3) - LES Regular Season",
+          "shortLabel": "LoL: Barça eSports...",
+          "slug": "lol-bar-hrts-2026-07-16",
+          "eventSlug": "lol-bar-hrts-2026-07-16",
+          "marketURL": "https://polymarket.com/event/lol-bar-hrts-2026-07-16",
+          "outcome": "Team Heretics Academy",
           "direction": "buy",
-          "confidence": 95,
+          "confidence": 77,
           "daysToEnd": 1,
-          "take": "conviction",
+          "take": "lean",
           "horizon": "short_term",
-          "absFlowUSD": 529999.99,
-          "currentPrice": 0.29
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|G2 Esports",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "shortLabel": "LoL: G2 Esports vs...",
-          "slug": "lol-g2-agal-2026-07-16",
-          "eventSlug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "G2 Esports",
-          "direction": "buy",
-          "confidence": 95,
-          "daysToEnd": 1,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 201836.25,
-          "currentPrice": 0.415
-        },
-        {
-          "id": "lol-hle1-jdg-2026-07-16|Hanwha Life Esports",
-          "title": "LoL: Hanwha Life Esports vs JD Gaming (BO1) - Esports World Cup Group D",
-          "shortLabel": "LoL: Hanwha Life Es...",
-          "slug": "lol-hle1-jdg-2026-07-16",
-          "eventSlug": "lol-hle1-jdg-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-hle1-jdg-2026-07-16",
-          "outcome": "Hanwha Life Esports",
-          "direction": "buy",
-          "confidence": 88,
-          "daysToEnd": 1,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 330006.80755351915,
-          "currentPrice": 0.71
-        },
-        {
-          "id": "lol-g2-agal-2026-07-16|AG.AL",
-          "title": "LoL: G2 Esports vs AG.AL (BO1) - Esports World Cup Group A",
-          "shortLabel": "LoL: G2 Esports vs...",
-          "slug": "lol-g2-agal-2026-07-16",
-          "eventSlug": "lol-g2-agal-2026-07-16",
-          "marketURL": "https://polymarket.com/event/lol-g2-agal-2026-07-16",
-          "outcome": "AG.AL",
-          "direction": "buy",
-          "confidence": 88,
-          "daysToEnd": 1,
-          "take": "conviction",
-          "horizon": "short_term",
-          "absFlowUSD": 40609.08516222989,
-          "currentPrice": 0.585
+          "absFlowUSD": 12742.288150803344,
+          "currentPrice": 0.885
         },
         {
           "id": "will-argentina-win-the-2026-fifa-world-cup-245|Yes",
@@ -251020,7 +251186,7 @@
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 1991735.6791450002,
-          "currentPrice": 0.4165
+          "currentPrice": 0.4175
         },
         {
           "id": "will-spain-win-the-2026-fifa-world-cup-963|Yes",
@@ -251052,7 +251218,7 @@
           "take": "conviction",
           "horizon": "short_term",
           "absFlowUSD": 1851854.09,
-          "currentPrice": 0.5835
+          "currentPrice": 0.5825
         },
         {
           "id": "will-spain-win-the-2026-fifa-world-cup-963|No",
@@ -251084,7 +251250,55 @@
           "take": "strong",
           "horizon": "long_term",
           "absFlowUSD": 89347.34,
-          "currentPrice": 0.9365
+          "currentPrice": 0.936
+        },
+        {
+          "id": "will-the-us-invade-iran-before-2027|Yes",
+          "title": "Will the U.S. invade Iran before 2027?",
+          "shortLabel": "Will the U.S. invad...",
+          "slug": "will-the-us-invade-iran-before-2027",
+          "eventSlug": "will-the-us-invade-iran-before-2027",
+          "marketURL": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
+          "outcome": "YES",
+          "direction": "buy",
+          "confidence": 95,
+          "daysToEnd": 168,
+          "take": "conviction",
+          "horizon": "long_term",
+          "absFlowUSD": 279329.89,
+          "currentPrice": 0.235
+        },
+        {
+          "id": "ecb-rate-cut-in-2026|No",
+          "title": "ECB rate cut in 2026?",
+          "shortLabel": "ECB rate cut in 2026?",
+          "slug": "ecb-rate-cut-in-2026",
+          "eventSlug": "ecb-rate-cut-in-2026",
+          "marketURL": "https://polymarket.com/event/ecb-rate-cut-in-2026",
+          "outcome": "NO",
+          "direction": "buy",
+          "confidence": 87,
+          "daysToEnd": 168,
+          "take": "strong",
+          "horizon": "long_term",
+          "absFlowUSD": 14875,
+          "currentPrice": 0.87
+        },
+        {
+          "id": "will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088|No",
+          "title": "Will Trump create a tariff dividend by December 31, 2026?",
+          "shortLabel": "Will Trump create a...",
+          "slug": "will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
+          "eventSlug": "will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
+          "marketURL": "https://polymarket.com/event/will-trump-create-a-tariff-dividend-by-december-31-2026-20260628223032088",
+          "outcome": "NO",
+          "direction": "buy",
+          "confidence": 97,
+          "daysToEnd": 169,
+          "take": "conviction",
+          "horizon": "long_term",
+          "absFlowUSD": 16125,
+          "currentPrice": 0.815
         }
       ]
     },
@@ -251208,16 +251422,16 @@
           "label": "Market",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-16T10:32:39Z",
+          "generatedAt": "2026-07-16T11:06:21Z",
           "status": "stale",
-          "reason": "Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 3s old · 11 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: globally throttled until 1784201511 (Cloudflare challenge (HTTP 403)) | stale cache empty, skipping remote fetch"
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-16T10:32:42Z",
+          "generatedAt": "2026-07-16T11:06:24Z",
           "status": "live",
           "reason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
         },
@@ -251228,16 +251442,16 @@
           "available": true,
           "generatedAt": "2026-07-16T10:30:18Z",
           "status": "stale",
-          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s). · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-16T10:32:45.386Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 17 active · 25 snapshots · 3 built from 6 source candidate(s) · 6 live · 1 stale cache · 15 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-07-16T11:06:27.917Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing etoro-bot from source. · 1 failing step(s)"
         }
       ]
     }
