@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 22509,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 17,
       "fetchedAt" : "2026-07-29T12:44:50Z",
       "fetchedAtUnix" : 1785329090,
-      "message" : "Loaded 17 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (6h 15m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 22506,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 12,
+      "fetchedAt" : "2026-07-29T12:44:53Z",
+      "fetchedAtUnix" : 1785329093,
+      "message" : "Using cached wallet watcher feed with 12 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 1,
-      "fetchedAt" : "2026-07-29T12:44:53Z",
-      "fetchedAtUnix" : 1785329093,
+      "fetchedAt" : "2026-07-29T18:59:59Z",
+      "fetchedAtUnix" : 1785351599,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,8 +48,8 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-07-29T12:44:53Z",
-  "generatedAtUnix" : 1785329093,
+  "generatedAt" : "2026-07-29T18:59:59Z",
+  "generatedAtUnix" : 1785351599,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {

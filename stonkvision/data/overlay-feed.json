@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-29T12:44:57.799Z",
-  "generatedAtUnix": 1785329097,
+  "generatedAt": "2026-07-29T19:01:26.529Z",
+  "generatedAtUnix": 1785351686,
   "sync": {
-    "generatedAt": "2026-07-29T12:44:54Z",
-    "generatedAtUnix": 1785329094,
+    "generatedAt": "2026-07-29T19:00:00Z",
+    "generatedAtUnix": 1785351600,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,26 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-07-29T12:44:57.799Z",
-      "generatedAtUnix": 1785329097,
-      "runID": "run-2026-07-29T12-39-12-184Z-83664",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch",
+      "generatedAt": "2026-07-29T19:01:26.529Z",
+      "generatedAtUnix": 1785351686,
+      "runID": "run-2026-07-29T18-01-56-505Z-95504",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source, Refreshing wallet_watcher from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-07-29T12:39:12.184Z",
-      "finishedAt": "2026-07-29T12:44:57.799Z",
-      "lastRunAt": "2026-07-29T12:44:57.799Z",
-      "durationSeconds": 345.615,
+      "startedAt": "2026-07-29T18:01:56.505Z",
+      "finishedAt": "2026-07-29T19:01:26.529Z",
+      "lastRunAt": "2026-07-29T19:01:26.529Z",
+      "durationSeconds": 3570.024,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-07-29T13:14:57.799Z",
-      "lastSuccessAt": "2026-07-29T12:44:57.799Z",
-      "lastSuccessfulRunAt": "2026-07-29T12:44:57.799Z",
-      "lastFailureAt": "2026-07-29T01:50:16.633Z",
+      "nextRunAt": "2026-07-29T19:31:26.529Z",
+      "lastSuccessAt": "2026-07-29T12:09:06.666Z",
+      "lastSuccessfulRunAt": "2026-07-29T12:09:06.666Z",
+      "lastFailureAt": "2026-07-29T19:01:26.529Z",
       "steps": [
         {
           "id": "insider",
@@ -39,50 +39,50 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-29T12:39:12.298Z",
-          "finishedAt": "2026-07-29T12:40:35.766Z",
-          "durationSeconds": 83.468,
+          "startedAt": "2026-07-29T18:01:56.612Z",
+          "finishedAt": "2026-07-29T18:03:28.289Z",
+          "durationSeconds": 91.677,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T12-39-12-184Z-83664/insider.log",
-          "summary": "Telegram preview · selected 0 of 0 new signal(s)",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T18-01-56-505Z-95504/insider.log",
+          "summary": "Telegram preview · selected 0 of 1 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-29T12:40:35.766Z",
+          "lastSuccessAt": "2026-07-29T18:03:28.289Z",
           "lastFailureAt": "2026-07-29T00:44:23.642Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-29T12:40:35.767Z",
-          "finishedAt": "2026-07-29T12:44:50.581Z",
-          "durationSeconds": 254.814,
+          "startedAt": "2026-07-29T18:03:28.291Z",
+          "finishedAt": "2026-07-29T18:42:19.312Z",
+          "durationSeconds": 2331.021,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T12-39-12-184Z-83664/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-64k-on-july-29-2026|No [global_window_open,fresh_source_global_bypass] | blocked bitcoin-above-66k-on-july-31-2026|No->category_policy | will-trump-say-trump-tariff-or-trump-tax-in-august-20260728182325274|No->notification_limit | will-the-ecb-announce-no-change-at-the-september-2026-meeting-20260616222656565|Yes->notification_limit",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T18-01-56-505Z-95504/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-07-29T12:44:50.581Z",
-          "lastFailureAt": "2026-07-29T01:01:21.512Z"
+          "lastFailureAt": "2026-07-29T18:42:19.312Z"
         },
         {
           "id": "wallets",
           "title": "Refreshing wallet_watcher from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-29T12:44:50.581Z",
-          "finishedAt": "2026-07-29T12:44:53.946Z",
-          "durationSeconds": 3.365,
+          "startedAt": "2026-07-29T18:42:19.313Z",
+          "finishedAt": "2026-07-29T18:59:59.862Z",
+          "durationSeconds": 1060.549,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T12-39-12-184Z-83664/wallets.log",
-          "summary": "Source diagnostics: 11 candidate(s) | built 7 | no-chase 4 | no-market 0",
-          "error": null,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T18-01-56-505Z-95504/wallets.log",
+          "summary": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"wallets\" timed out after 900s; terminating.",
           "exitCode": 0,
           "lastSuccessAt": "2026-07-29T12:44:53.946Z",
-          "lastFailureAt": "2026-07-29T01:16:35.885Z"
+          "lastFailureAt": "2026-07-29T18:59:59.862Z"
         },
         {
           "id": "sync",
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-07-29T12:44:53.947Z",
-          "finishedAt": "2026-07-29T12:44:57.735Z",
-          "durationSeconds": 3.788,
+          "startedAt": "2026-07-29T18:59:59.862Z",
+          "finishedAt": "2026-07-29T19:01:26.362Z",
+          "durationSeconds": 86.5,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T12-39-12-184Z-83664/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-07-29T18-01-56-505Z-95504/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-07-29T12:44:57.735Z",
+          "lastSuccessAt": "2026-07-29T19:01:26.362Z",
           "lastFailureAt": "2026-07-29T01:32:48.329Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-07-29T12:44:50Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch"
+          "statusReason": "Snapshot 6h 15m old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-29T12:44:53Z",
-          "status": "live",
-          "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-29T18:59:59Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (6h 15m old, max 15m). (6h 15m old)"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-29T12:40:20Z",
+          "generatedAt": "2026-07-29T18:03:13Z",
           "status": "degraded",
           "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-29T12:44:54Z",
+          "generatedAt": "2026-07-29T19:00:00Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-07-29T12:44:57.799Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch"
+          "generatedAt": "2026-07-29T19:01:26.529Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing market-trans from source, Refreshing wallet_watcher from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-07-29T12:44:50Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch",
+      "statusReason": "Snapshot 6h 15m old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-29T12:44:53Z",
-      "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live",
+      "generatedAt": "2026-07-29T18:59:59Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (6h 15m old, max 15m). (6h 15m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 17 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (6h 15m old, max 15m).",
           "fetchedAt": "2026-07-29T12:44:50Z",
           "fetchedAtUnix": 1785329090,
           "attemptCount": 1,
           "eventCount": 17,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 22509,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 12 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-07-29T12:44:53Z",
+          "fetchedAtUnix": 1785329093,
+          "attemptCount": 1,
+          "eventCount": 12,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 22506,
           "retryAfterUnix": null
         },
         {
@@ -730,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-07-29T12:44:53Z",
-          "fetchedAtUnix": 1785329093,
+          "fetchedAt": "2026-07-29T18:59:59Z",
+          "fetchedAtUnix": 1785351599,
           "attemptCount": 2,
           "eventCount": 1,
           "cacheUsed": false,
@@ -744,7 +764,7 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-29T12:40:20Z",
+      "generatedAt": "2026-07-29T18:03:13Z",
       "status": "degraded",
       "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
       "upstreamDiagnostics": [
@@ -759,8 +779,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -779,8 +799,28 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
+          "attemptCount": 3,
+          "eventCount": 0,
+          "cacheUsed": false,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "reddit-cryptocurrency",
+          "sourceID": "reddit-cryptocurrency",
+          "sourceName": "r/CryptoCurrency",
+          "provider": "reddit_rss",
+          "sourceType": "reddit",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "reddit_rss",
+          "status": "failed",
+          "message": "HTTP 429:  after 3 attempt(s).",
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -799,8 +839,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -819,28 +859,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
-          "attemptCount": 3,
-          "eventCount": 0,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "reddit-wallstreetbets",
-          "sourceID": "reddit-wallstreetbets",
-          "sourceName": "r/wallstreetbets",
-          "provider": "reddit_rss",
-          "sourceType": "reddit",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "reddit_rss",
-          "status": "failed",
-          "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -858,14 +878,14 @@
           "sourceHandle": "-",
           "adapter": "gdelt_doc",
           "status": "cached",
-          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset:... | using stale cache (0 matching item(s), 27h 3m old).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset:... | using stale cache (0 matching item(s), 32h 26m old).",
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": 97415,
+          "cacheAgeSeconds": 116781,
           "retryAfterUnix": null
         },
         {
@@ -879,8 +899,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -899,8 +919,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -909,9 +929,9 @@
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-cryptocurrency",
-          "sourceID": "reddit-cryptocurrency",
-          "sourceName": "r/CryptoCurrency",
+          "id": "reddit-wallstreetbets",
+          "sourceID": "reddit-wallstreetbets",
+          "sourceName": "r/wallstreetbets",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
@@ -919,8 +939,8 @@
           "adapter": "reddit_rss",
           "status": "live",
           "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 1,
           "eventCount": 8,
           "cacheUsed": false,
@@ -939,8 +959,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -959,8 +979,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live, but no matching items landed.",
-          "fetchedAt": "2026-07-29T12:39:14Z",
-          "fetchedAtUnix": 1785328754,
+          "fetchedAt": "2026-07-29T18:02:00Z",
+          "fetchedAtUnix": 1785348120,
           "attemptCount": 1,
           "eventCount": 0,
           "cacheUsed": false,
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-29T12:44:54Z",
+      "generatedAt": "2026-07-29T19:00:00Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-07-29T12:44:57.799Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch",
+      "generatedAt": "2026-07-29T19:01:26.529Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source, Refreshing wallet_watcher from source. · 2 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -993,7 +1013,7 @@
     "trackedWalletCount": 2,
     "openPositionCount": 1,
     "actionablePositionCount": 0,
-    "insiderSignalCount": 23,
+    "insiderSignalCount": 24,
     "intelItemCount": 18,
     "sourceSignalCount": 11,
     "crossSignalCount": 0,
@@ -1013,8 +1033,8 @@
     },
     "insider": {
       "kicker": "Insider tape",
-      "title": "MU leaning bearish",
-      "body": "Mehrotra Sanjay · Pres, CEO · 91/100 confidence"
+      "title": "PGR leaning bearish",
+      "body": "Quigg Andrew J · VP, CFO · 80/100 confidence"
     }
   },
   "intel": {
@@ -1427,6 +1447,25 @@
     ],
     "insiderWatch": [
       {
+        "id": "insider-watch:PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499|bearish",
+        "kind": "insider_watch",
+        "title": "PGR · Progressive Corp/Oh/",
+        "subtitle": "Quigg Andrew J · VP, CFO · 80/100",
+        "summary": "Insider sale · -$769.8K disclosed · ownership -8% · 5 filings for PGR in current scan · eToro PGR",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "PGR",
+        "companyName": "Progressive Corp/Oh/",
+        "direction": "bearish",
+        "confidence": 80,
+        "filedAt": "2026-07-29T15:47:52Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -769780,
+        "ownershipChangePercent": -8,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000306/xslF345X03/form4.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:MU|2026-07-28 19:19:14|2026-07-24|mehrotra sanjay|s - sale|$926.83|-31,285|bearish",
         "kind": "insider_watch",
         "title": "MU · Micron Technology Inc",
@@ -1557,25 +1596,6 @@
         "ownershipChangePercent": -40,
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/857855/000170431526000006/xslF345X03/wk-form4_1785271161.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:SAFT|2026-07-28 20:47:18|2026-07-27|srb corp|s - sale|$103.07|-1,240,352|bearish",
-        "kind": "insider_watch",
-        "title": "SAFT · Safety Insurance Group Inc",
-        "subtitle": "Srb Corp · 10% · 62/100",
-        "summary": "Insider sale · -$127.84M disclosed · ownership -72% · eToro SAFT",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "SAFT",
-        "companyName": "Safety Insurance Group Inc",
-        "direction": "bearish",
-        "confidence": 62,
-        "filedAt": "2026-07-29T00:47:18Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -127837224,
-        "ownershipChangePercent": -72,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1172052/000090445426000425/xslF345X03/ownership.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       }
     ],
@@ -2426,11 +2446,11 @@
       "items": [
         {
           "day": "2026-07-15",
-          "enabledRuns": 4,
-          "scoredRows": 49,
-          "supportCount": 28,
-          "skepticalCount": 11,
-          "topKDisagreementCount": 14,
+          "enabledRuns": 3,
+          "scoredRows": 26,
+          "supportCount": 14,
+          "skepticalCount": 8,
+          "topKDisagreementCount": 6,
           "promotedCount": 0,
           "displacedCount": 0
         },
@@ -3442,7 +3462,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-29T12:44:53Z",
+    "generatedAt": "2026-07-29T18:59:59Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3499,8 +3519,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-07-29T12:08:12Z",
-      "previousGeneratedAtUnix": 1785326892,
+      "previousGeneratedAt": "2026-07-29T12:44:53Z",
+      "previousGeneratedAtUnix": 1785329093,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3552,13 +3572,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-07-29T12:44:56.472Z",
-      "snapshotCount": 595,
+      "generatedAt": "2026-07-29T19:01:22.803Z",
+      "snapshotCount": 596,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-07-29T12:44:53Z",
+      "latestAt": "2026-07-29T18:59:59Z",
       "latestSummary": {
-        "timestamp": "2026-07-29T12:44:53Z",
-        "timestampUnix": 1785329093,
+        "timestamp": "2026-07-29T18:59:59Z",
+        "timestampUnix": 1785351599,
         "currentValue": 2.9806,
         "costBasisValue": 6.997109999999999,
         "unrealizedPnL": -4.016509999999999,
@@ -9512,6 +9532,16 @@
         {
           "timestamp": "2026-07-29T12:44:53Z",
           "timestampUnix": 1785329093,
+          "currentValue": 2.9806,
+          "costBasisValue": 6.997109999999999,
+          "unrealizedPnL": -4.016509999999999,
+          "realizedPnL": 0,
+          "openPositionCount": 1,
+          "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-07-29T18:59:59Z",
+          "timestampUnix": 1785351599,
           "currentValue": 2.9806,
           "costBasisValue": 6.997109999999999,
           "unrealizedPnL": -4.016509999999999,
@@ -15480,6 +15510,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 2.9806,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -4.016509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -21436,6 +21476,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -27406,6 +27456,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 2.9806,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -4.016509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -33362,6 +33422,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -39330,6 +39400,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -45286,6 +45366,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -51254,6 +51344,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -57210,6 +57310,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -63178,6 +63288,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -69134,6 +69254,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -75102,6 +75232,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -81058,6 +81198,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -87026,6 +87176,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -92982,6 +93142,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -98950,6 +99120,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -104906,6 +105086,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -110874,6 +111064,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -116830,6 +117030,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -122798,6 +123008,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -128754,6 +128974,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -134722,6 +134952,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -140678,6 +140918,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -146646,6 +146896,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -152602,6 +152862,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -158570,6 +158840,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -164526,6 +164806,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -170494,6 +170784,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -176450,6 +176750,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -182418,6 +182728,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -188374,6 +188694,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -194342,6 +194672,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -200298,6 +200638,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -206266,6 +206616,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -212228,6 +212588,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -218184,6 +218554,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -224154,6 +224534,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 2.9806,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -4.016509999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -230110,6 +230500,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -236078,6 +236478,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -242034,6 +242444,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -248002,6 +248422,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -253958,6 +254388,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -259926,6 +260366,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -265882,6 +266332,16 @@
             {
               "timestamp": "2026-07-29T12:44:53Z",
               "timestampUnix": 1785329093,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -271850,6 +272310,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-07-29T18:59:59Z",
+              "timestampUnix": 1785351599,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -271970,13 +272440,42 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-07-29T12:40:20Z",
+    "generatedAt": "2026-07-29T18:03:13Z",
     "summary": {
-      "totalFilingsFetched": 65,
-      "totalSignals": 23,
+      "totalFilingsFetched": 62,
+      "totalSignals": 24,
       "listedSignals": 6
     },
     "signals": [
+      {
+        "companyName": "Progressive Corp/Oh/",
+        "confidence": 80,
+        "direction": "bearish",
+        "etoroInstrument": {
+          "displayName": "PGR",
+          "marketURL": "https://www.etoro.com/markets/pgr",
+          "symbol": "PGR"
+        },
+        "filedAt": "2026-07-29T15:47:52Z",
+        "filingID": "PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499",
+        "filingRationale": "Open-market sale · 5 same-ticker filings in this scan.",
+        "groupedTickerMentions": 5,
+        "id": "PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499|bearish",
+        "insiderName": "Quigg Andrew J",
+        "insiderTitle": "VP, CFO",
+        "ownershipChangePercent": -8,
+        "score": 80,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000306/xslF345X03/form4.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider sale · -$769.8K disclosed · ownership -8% · 5 filings for PGR in current scan · eToro PGR",
+        "ticker": "PGR",
+        "tradeValueUSD": -769780,
+        "tradedAt": "2026-07-28T04:00:00Z",
+        "transactionPriceUSD": 220,
+        "transactionType": "S - Sale",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000306/xslF345X03/form4.xml"
+      },
       {
         "companyName": "Micron Technology Inc",
         "confidence": 91,
@@ -272182,35 +272681,6 @@
         "transactionType": "S - Sale",
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/723125/000124265426000014/xslF345X03/primarydocument.xml"
-      },
-      {
-        "companyName": "Progressive Corp/Oh/",
-        "confidence": 94,
-        "direction": "bearish",
-        "etoroInstrument": {
-          "displayName": "PGR",
-          "marketURL": "https://www.etoro.com/markets/pgr",
-          "symbol": "PGR"
-        },
-        "filedAt": "2026-07-28T19:10:47Z",
-        "filingID": "PGR|2026-07-28 15:10:47|2026-07-27|griffith susan patricia|s - sale|$212.71|-37,338",
-        "filingRationale": "Open-market sale · 4 same-ticker filings in this scan.",
-        "groupedTickerMentions": 4,
-        "id": "PGR|2026-07-28 15:10:47|2026-07-27|griffith susan patricia|s - sale|$212.71|-37,338|bearish",
-        "insiderName": "Griffith Susan Patricia",
-        "insiderTitle": "Pres, CEO",
-        "ownershipChangePercent": -6,
-        "score": 94,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000302/xslF345X03/form4.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$7.94M disclosed · ownership -6% · 4 filings for PGR in current scan · eToro PGR",
-        "ticker": "PGR",
-        "tradeValueUSD": -7942166,
-        "tradedAt": "2026-07-27T04:00:00Z",
-        "transactionPriceUSD": 212.71,
-        "transactionType": "S - Sale",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000302/xslF345X03/form4.xml"
       }
     ],
     "directionMix": [
@@ -272228,7 +272698,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-07-29T12:44:54Z",
+    "generatedAt": "2026-07-29T19:00:00Z",
     "market": {
       "available": true,
       "summary": {
@@ -273101,6 +273571,26 @@
       },
       "archive": [
         {
+          "signalID": "PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499|bearish",
+          "filingID": "PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499",
+          "ticker": "PGR",
+          "companyName": "Progressive Corp/Oh/",
+          "insiderName": "Quigg Andrew J",
+          "insiderTitle": "VP, CFO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 80,
+          "score": 80,
+          "tradeValueUSD": -769780,
+          "ownershipChangePercent": -8,
+          "filedAt": "2026-07-29T15:47:52.000Z",
+          "filedAtUnix": 1785340072,
+          "tradedAt": "2026-07-28T04:00:00.000Z",
+          "tradedAtUnix": 1785211200,
+          "summary": "Insider sale · -$769.8K disclosed · ownership -8% · 5 filings for PGR in current scan · eToro PGR",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
           "signalID": "TNL|2026-07-28 14:25:53|2026-07-27|richards geoffrey|s - sale|$75.65|-33,744|bearish",
           "filingID": "TNL|2026-07-28 14:25:53|2026-07-27|richards geoffrey|s - sale|$75.65|-33,744",
           "ticker": "TNL",
@@ -273239,26 +273729,6 @@
           "tradedAtUnix": 1784865600,
           "summary": "Insider sale · -$2.40M disclosed · ownership -13% · 2 filings for UAL in current scan · eToro UAL",
           "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "RJF|2026-07-28 16:35:57|2026-07-27|raney steven m|s - sale|$172.97|-5,770|bearish",
-          "filingID": "RJF|2026-07-28 16:35:57|2026-07-27|raney steven m|s - sale|$172.97|-5,770",
-          "ticker": "RJF",
-          "companyName": "Raymond James Financial Inc",
-          "insiderName": "Raney Steven M",
-          "insiderTitle": "Exec Chair RJBank",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 67,
-          "score": 67,
-          "tradeValueUSD": -998033,
-          "ownershipChangePercent": -11,
-          "filedAt": "2026-07-28T20:35:57.000Z",
-          "filedAtUnix": 1785270957,
-          "tradedAt": "2026-07-27T04:00:00.000Z",
-          "tradedAtUnix": 1785124800,
-          "summary": "Insider sale · -$998.0K disclosed · ownership -11% · eToro RJF · market-trans macro context · 1 active market · 16 recent source events · 3 breaking · priority-source 1 · api",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
         }
       ]
     }
@@ -273295,11 +273765,11 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-07-29T12:44:53Z"
+        "value": "2026-07-29T18:59:59Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-07-29T12:40:20Z"
+        "value": "2026-07-29T18:03:13Z"
       },
       {
         "label": "Insider upstream",
@@ -273627,6 +274097,19 @@
       "maxAbsTradeValueUSD": 28995816,
       "items": [
         {
+          "id": "PGR|2026-07-29 11:47:52|2026-07-28|quigg andrew j|s - sale|$220.00|-3,499|bearish",
+          "ticker": "PGR",
+          "label": "PGR",
+          "shortLabel": "PGR",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000306/xslF345X03/form4.xml",
+          "direction": "bearish",
+          "confidence": 80,
+          "tradeValueUSD": -769780,
+          "absTradeValueUSD": 769780,
+          "filedAt": "2026-07-29T15:47:52Z",
+          "insiderName": "Quigg Andrew J"
+        },
+        {
           "id": "MU|2026-07-28 19:19:14|2026-07-24|mehrotra sanjay|s - sale|$926.83|-31,285|bearish",
           "ticker": "MU",
           "label": "MU",
@@ -273690,19 +274173,6 @@
           "absTradeValueUSD": 8294275,
           "filedAt": "2026-07-28T23:20:06Z",
           "insiderName": "Mehrotra Sanjay"
-        },
-        {
-          "id": "PGR|2026-07-28 15:10:47|2026-07-27|griffith susan patricia|s - sale|$212.71|-37,338|bearish",
-          "ticker": "PGR",
-          "label": "PGR",
-          "shortLabel": "PGR",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/80661/000008066126000302/xslF345X03/form4.xml",
-          "direction": "bearish",
-          "confidence": 94,
-          "tradeValueUSD": -7942166,
-          "absTradeValueUSD": 7942166,
-          "filedAt": "2026-07-28T19:10:47Z",
-          "insiderName": "Griffith Susan Patricia"
         }
       ]
     },
@@ -273715,23 +274185,23 @@
           "available": true,
           "generatedAt": "2026-07-29T12:44:50Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch"
+          "reason": "Snapshot 6h 15m old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-29T12:44:53Z",
-          "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-07-29T18:59:59Z",
+          "status": "stale",
+          "reason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (6h 15m old, max 15m). (6h 15m old) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-29T12:40:20Z",
+          "generatedAt": "2026-07-29T18:03:13Z",
           "status": "stale",
           "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
@@ -273740,9 +274210,9 @@
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-07-29T12:44:57.799Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 17 active · 25 snapshots · 7 built from 11 source candidate(s) · 20 live · 1 stale cache · 1 failed. GDELT Geopolitics News: globally throttled until 1785329315 (HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-...) | stale cache exceeded freshness guardrail (15d 1h old), skipping remote fetch"
+          "generatedAt": "2026-07-29T19:01:26.529Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing market-trans from source, Refreshing wallet_watcher from source. · 2 failing step(s)"
         }
       ]
     }
