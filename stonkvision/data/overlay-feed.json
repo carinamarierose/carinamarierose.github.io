@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-05T14:23:03.544Z",
-  "generatedAtUnix": 1785939783,
+  "generatedAt": "2026-08-05T18:10:15.033Z",
+  "generatedAtUnix": 1785953415,
   "sync": {
-    "generatedAt": "2026-08-05T14:23:00Z",
-    "generatedAtUnix": 1785939780,
+    "generatedAt": "2026-08-05T18:10:08Z",
+    "generatedAtUnix": 1785953408,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,26 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-08-05T14:23:03.544Z",
-      "generatedAtUnix": 1785939783,
-      "runID": "run-2026-08-05T14-20-20-908Z-9730",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-08-05T18:10:15.033Z",
+      "generatedAtUnix": 1785953415,
+      "runID": "run-2026-08-05T17-50-21-150Z-14310",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-08-05T14:20:20.908Z",
-      "finishedAt": "2026-08-05T14:23:03.544Z",
-      "lastRunAt": "2026-08-05T14:23:03.544Z",
-      "durationSeconds": 162.636,
+      "startedAt": "2026-08-05T17:50:21.150Z",
+      "finishedAt": "2026-08-05T18:10:15.033Z",
+      "lastRunAt": "2026-08-05T18:10:15.033Z",
+      "durationSeconds": 1193.883,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-08-05T14:53:03.544Z",
-      "lastSuccessAt": "2026-08-05T14:23:03.544Z",
-      "lastSuccessfulRunAt": "2026-08-05T14:23:03.544Z",
-      "lastFailureAt": "2026-08-05T11:32:38.579Z",
+      "nextRunAt": "2026-08-05T18:40:15.033Z",
+      "lastSuccessAt": "2026-08-05T14:24:03.729Z",
+      "lastSuccessfulRunAt": "2026-08-05T14:24:03.729Z",
+      "lastFailureAt": "2026-08-05T18:10:15.033Z",
       "steps": [
         {
           "id": "insider",
@@ -39,33 +39,33 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T14:20:21.003Z",
-          "finishedAt": "2026-08-05T14:20:57.991Z",
-          "durationSeconds": 36.988,
+          "startedAt": "2026-08-05T17:50:21.212Z",
+          "finishedAt": "2026-08-05T17:51:39.943Z",
+          "durationSeconds": 78.731,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T14-20-20-908Z-9730/insider.log",
-          "summary": "Telegram preview · selected 0 of 1 new signal(s)",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T17-50-21-150Z-14310/insider.log",
+          "summary": "Telegram preview · selected 1 of 4 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T14:20:57.991Z",
+          "lastSuccessAt": "2026-08-05T17:51:39.943Z",
           "lastFailureAt": "2026-08-05T11:25:26.192Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T14:20:57.993Z",
-          "finishedAt": "2026-08-05T14:22:57.079Z",
-          "durationSeconds": 119.086,
+          "startedAt": "2026-08-05T17:51:39.944Z",
+          "finishedAt": "2026-08-05T18:10:02.109Z",
+          "durationSeconds": 1102.165,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T14-20-20-908Z-9730/market.log",
-          "summary": "Notification decisions: selected dota2-liquid-1win-2026-08-05|1win [global_window_open,urgent_suspicious] | blocked bitcoin-above-64000-on-august-5-2026-11am-et|No->notification_limit | dota2-playti-yb1-2026-08-05-game2|PlayTime->sports_policy | will-the-us-invade-iran-before-2027|No->category_policy",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T17-50-21-150Z-14310/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-08-05T14:22:57.079Z",
-          "lastFailureAt": "2026-08-05T07:11:08.619Z"
+          "lastFailureAt": "2026-08-05T18:10:02.109Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T14:22:57.080Z",
-          "finishedAt": "2026-08-05T14:23:00.057Z",
-          "durationSeconds": 2.977,
+          "startedAt": "2026-08-05T18:10:02.110Z",
+          "finishedAt": "2026-08-05T18:10:08.304Z",
+          "durationSeconds": 6.194,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T14-20-20-908Z-9730/wallets.log",
-          "summary": "Source diagnostics: 3 candidate(s) | built 2 | no-chase 0 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T17-50-21-150Z-14310/wallets.log",
+          "summary": "Loaded 11 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T14:23:00.057Z",
+          "lastSuccessAt": "2026-08-05T18:10:08.304Z",
           "lastFailureAt": "2026-08-02T21:55:05.588Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T14:23:00.059Z",
-          "finishedAt": "2026-08-05T14:23:03.452Z",
-          "durationSeconds": 3.393,
+          "startedAt": "2026-08-05T18:10:08.305Z",
+          "finishedAt": "2026-08-05T18:10:14.839Z",
+          "durationSeconds": 6.534,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T14-20-20-908Z-9730/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T17-50-21-150Z-14310/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T14:23:03.452Z",
+          "lastSuccessAt": "2026-08-05T18:10:14.839Z",
           "lastFailureAt": "2026-07-29T01:32:48.329Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-08-05T14:22:57Z",
           "status": "degraded",
-          "statusReason": "Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "statusReason": "Snapshot 3h 47m old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T14:23:00Z",
-          "status": "live",
-          "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-08-05T18:10:08Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 47m old, max 15m). (3h 47m old)"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T14:20:42Z",
+          "generatedAt": "2026-08-05T17:51:24Z",
           "status": "degraded",
-          "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T14:23:00Z",
+          "generatedAt": "2026-08-05T18:10:08Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T14:23:03.544Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-08-05T18:10:15.033Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-08-05T14:22:57Z",
       "status": "degraded",
-      "statusReason": "Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "statusReason": "Snapshot 3h 47m old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T14:23:00Z",
-      "status": "live",
-      "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live",
+      "generatedAt": "2026-08-05T18:10:08Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 47m old, max 15m). (3h 47m old)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 15 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (3h 47m old, max 15m).",
           "fetchedAt": "2026-08-05T14:22:57Z",
           "fetchedAtUnix": 1785939777,
           "attemptCount": 1,
           "eventCount": 15,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 13631,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 11 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-08-05T14:23:00Z",
+          "fetchedAtUnix": 1785939780,
+          "attemptCount": 1,
+          "eventCount": 11,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 13628,
           "retryAfterUnix": null
         },
         {
@@ -730,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-08-05T14:23:00Z",
-          "fetchedAtUnix": 1785939780,
+          "fetchedAt": "2026-08-05T18:10:08Z",
+          "fetchedAtUnix": 1785953408,
           "attemptCount": 2,
           "eventCount": 1,
           "cacheUsed": false,
@@ -744,9 +764,9 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T14:20:42Z",
+      "generatedAt": "2026-08-05T17:51:24Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
       "upstreamDiagnostics": [
         {
           "id": "reddit-algotrading",
@@ -759,8 +779,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -779,8 +799,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -799,8 +819,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -819,8 +839,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -839,13 +859,33 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "gdelt-market-news",
+          "sourceID": "gdelt-market-news",
+          "sourceName": "GDELT Market News",
+          "provider": "gdelt_doc",
+          "sourceType": "api",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "gdelt_doc",
+          "status": "cached",
+          "message": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset:... | using stale cache (1 matching item(s), 3h 30m old).",
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
+          "attemptCount": 3,
+          "eventCount": 1,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 12600,
           "retryAfterUnix": null
         },
         {
@@ -859,8 +899,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -879,30 +919,10 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 1,
           "eventCount": 3,
-          "cacheUsed": false,
-          "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
-          "retryAfterUnix": null
-        },
-        {
-          "id": "gdelt-market-news",
-          "sourceID": "gdelt-market-news",
-          "sourceName": "GDELT Market News",
-          "provider": "gdelt_doc",
-          "sourceType": "api",
-          "sourceLane": null,
-          "sourceHandle": "-",
-          "adapter": "gdelt_doc",
-          "status": "live",
-          "message": "Fetched live (2 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
-          "attemptCount": 1,
-          "eventCount": 2,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -918,11 +938,11 @@
           "sourceHandle": "-",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (8 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "message": "Fetched live (4 matching item(s)).",
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 1,
-          "eventCount": 8,
+          "eventCount": 4,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -939,8 +959,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -959,8 +979,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-08-05T14:20:23Z",
-          "fetchedAtUnix": 1785939623,
+          "fetchedAt": "2026-08-05T17:50:23Z",
+          "fetchedAtUnix": 1785952223,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T14:23:00Z",
+      "generatedAt": "2026-08-05T18:10:08Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T14:23:03.544Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty",
+      "generatedAt": "2026-08-05T18:10:15.033Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -993,7 +1013,7 @@
     "trackedWalletCount": 2,
     "openPositionCount": 1,
     "actionablePositionCount": 0,
-    "insiderSignalCount": 17,
+    "insiderSignalCount": 15,
     "intelItemCount": 18,
     "sourceSignalCount": 1,
     "crossSignalCount": 2,
@@ -1013,8 +1033,8 @@
     },
     "insider": {
       "kicker": "Insider tape",
-      "title": "CSGP leaning bullish",
-      "body": "Florance Andrew C · Founder, CEO · 100/100 confidence"
+      "title": "NFRX leaning bullish",
+      "body": "Harrison Street Real Assets Fund LLC · 10% · 100/100 confidence"
     }
   },
   "intel": {
@@ -1360,6 +1380,25 @@
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
+        "id": "insider-watch:NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856|bullish",
+        "kind": "insider_watch",
+        "title": "NFRX · 2023 Etf Series Trust",
+        "subtitle": "Harrison Street Real Assets Fund LLC · 10% · 100/100",
+        "summary": "Insider buy · $10.00M disclosed · ownership +10% · eToro NFRX",
+        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
+        "ticker": "NFRX",
+        "companyName": "2023 Etf Series Trust",
+        "direction": "bullish",
+        "confidence": 100,
+        "filedAt": "2026-08-05T17:49:01Z",
+        "transactionType": "P - Purchase",
+        "tradeValueUSD": 9999998,
+        "ownershipChangePercent": 10,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1969674/000168789826000009/xslF345X03/primary_doc.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:CSGP|2026-08-05 09:27:00|2026-08-04|florance andrew c|p - purchase|$29.89|+83,300|bullish",
         "kind": "insider_watch",
         "title": "CSGP · Costar Group, Inc.",
@@ -1376,6 +1415,25 @@
         "ownershipChangePercent": 5,
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/xslF345X03/wk-form4_1785936417.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
+        "id": "insider-watch:PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756|bearish",
+        "kind": "insider_watch",
+        "title": "PBF · Pbf Energy Inc.",
+        "subtitle": "Fedena James E. · SVP · 79/100",
+        "summary": "Insider sale · -$1.78M disclosed · ownership -16% · eToro PBF · market-trans geopolitics/oil context · 5 active markets · 40 recent source events · api/web · model skeptical on 1",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "PBF",
+        "companyName": "Pbf Energy Inc.",
+        "direction": "bearish",
+        "confidence": 79,
+        "filedAt": "2026-08-05T17:08:26Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -1778181,
+        "ownershipChangePercent": -16,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1534504/000119312526334498/xslF345X03/ownership.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
@@ -1398,6 +1456,44 @@
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       },
       {
+        "id": "insider-watch:HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500|bearish",
+        "kind": "insider_watch",
+        "title": "HMN · Horace Mann Educators Corp /De/",
+        "subtitle": "Zuraitis Marita · Pres, CEO · 66/100",
+        "summary": "Insider sale · -$390.2K disclosed · ownership -2% · eToro HMN",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "HMN",
+        "companyName": "Horace Mann Educators Corp /De/",
+        "direction": "bearish",
+        "confidence": 66,
+        "filedAt": "2026-08-05T16:26:30Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -390248,
+        "ownershipChangePercent": -2,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/850141/000121465926009623/xslF345X03/marketforms-73661.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
+        "id": "insider-watch:NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000|bearish",
+        "kind": "insider_watch",
+        "title": "NUE · Nucor Corp",
+        "subtitle": "Batterbee Thomas J. · EVP · 61/100",
+        "summary": "Insider sale · -$1.04M disclosed · ownership -20% · eToro NUE",
+        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
+        "ticker": "NUE",
+        "companyName": "Nucor Corp",
+        "direction": "bearish",
+        "confidence": 61,
+        "filedAt": "2026-08-05T14:58:30Z",
+        "transactionType": "S - Sale",
+        "tradeValueUSD": -1044062,
+        "ownershipChangePercent": -20,
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/73309/000007330926000126/xslF345X03/form4.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading"
+      },
+      {
         "id": "insider-watch:EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000|bullish",
         "kind": "insider_watch",
         "title": "EWAV · East West Ave Acquisition Corp.",
@@ -1414,82 +1510,6 @@
         "ownershipChangePercent": -1202,
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/2100704/000184671826000015/xslF345X03/primary_doc.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:GSHD|2026-08-04 17:12:38|2026-07-31|durable capital partners lp|p - purchase|$61.92|+36,256|bullish",
-        "kind": "insider_watch",
-        "title": "GSHD · Goosehead Insurance, Inc.",
-        "subtitle": "Durable Capital Partners LP · 10% · 100/100",
-        "summary": "Insider buy · $2.25M disclosed · ownership +1% · eToro GSHD",
-        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
-        "ticker": "GSHD",
-        "companyName": "Goosehead Insurance, Inc.",
-        "direction": "bullish",
-        "confidence": 100,
-        "filedAt": "2026-08-04T21:12:38Z",
-        "transactionType": "P - Purchase",
-        "tradeValueUSD": 2245140,
-        "ownershipChangePercent": 1,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1726978/000119312526333105/xslF345X03/ownership.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:CVNA|2026-08-04 17:04:24|2026-07-31|maroone michael e|p - purchase|$61.80|+25,000|bullish",
-        "kind": "insider_watch",
-        "title": "CVNA · Carvana Co.",
-        "subtitle": "Maroone Michael E · Dir · 100/100",
-        "summary": "Insider buy · $1.54M disclosed · ownership +13% · 3 filings for CVNA in current scan · eToro CVNA",
-        "whyItMatters": "Fresh filing · Bullish tape bias · P - Purchase filing",
-        "ticker": "CVNA",
-        "companyName": "Carvana Co.",
-        "direction": "bullish",
-        "confidence": 100,
-        "filedAt": "2026-08-04T21:04:24Z",
-        "transactionType": "P - Purchase",
-        "tradeValueUSD": 1544981,
-        "ownershipChangePercent": 13,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1690820/000108801126000006/xslF345X03/wk-form4_1785877461.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:STX|2026-08-04 18:09:40|2026-08-03|mosley william d|s - sale|$827.30|-17,080|bearish",
-        "kind": "insider_watch",
-        "title": "STX · Seagate Technology Holdings Plc",
-        "subtitle": "Mosley William D · CEO · 79/100",
-        "summary": "Insider sale · -$14.13M disclosed · ownership -5% · eToro STX",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "STX",
-        "companyName": "Seagate Technology Holdings Plc",
-        "direction": "bearish",
-        "confidence": 79,
-        "filedAt": "2026-08-04T22:09:40Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -14130293,
-        "ownershipChangePercent": -5,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1137789/000113778926000164/xslF345X03/wk-form4_1785881377.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading"
-      },
-      {
-        "id": "insider-watch:LTH|2026-08-04 17:30:12|2026-07-31|akradi bahram|s - sale|$45.03|-438,257|bearish",
-        "kind": "insider_watch",
-        "title": "LTH · Life Time Group Holdings, Inc.",
-        "subtitle": "Akradi Bahram · FOUNDER, CEO · 79/100",
-        "summary": "Insider sale · -$19.73M disclosed · ownership -3% · 2 filings for LTH in current scan · eToro LTH",
-        "whyItMatters": "Fresh filing · Bearish tape bias · S - Sale filing",
-        "ticker": "LTH",
-        "companyName": "Life Time Group Holdings, Inc.",
-        "direction": "bearish",
-        "confidence": 79,
-        "filedAt": "2026-08-04T21:30:12Z",
-        "transactionType": "S - Sale",
-        "tradeValueUSD": -19734434,
-        "ownershipChangePercent": -3,
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1869198/000129567926000019/xslF345X03/form4-08042026_090807.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading"
       }
     ],
@@ -3098,7 +3118,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-08-05T14:23:00Z",
+    "generatedAt": "2026-08-05T18:10:08Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3155,8 +3175,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-08-05T13:49:24Z",
-      "previousGeneratedAtUnix": 1785937764,
+      "previousGeneratedAt": "2026-08-05T14:23:00Z",
+      "previousGeneratedAtUnix": 1785939780,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3208,13 +3228,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-08-05T14:23:02.228Z",
-      "snapshotCount": 651,
+      "generatedAt": "2026-08-05T18:10:12.415Z",
+      "snapshotCount": 652,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-08-05T14:23:00Z",
+      "latestAt": "2026-08-05T18:10:08Z",
       "latestSummary": {
-        "timestamp": "2026-08-05T14:23:00Z",
-        "timestampUnix": 1785939780,
+        "timestamp": "2026-08-05T18:10:08Z",
+        "timestampUnix": 1785953408,
         "currentValue": 3.176,
         "costBasisValue": 6.997109999999999,
         "unrealizedPnL": -3.821109999999999,
@@ -9728,6 +9748,16 @@
         {
           "timestamp": "2026-08-05T14:23:00Z",
           "timestampUnix": 1785939780,
+          "currentValue": 3.176,
+          "costBasisValue": 6.997109999999999,
+          "unrealizedPnL": -3.821109999999999,
+          "realizedPnL": 0,
+          "openPositionCount": 1,
+          "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-08-05T18:10:08Z",
+          "timestampUnix": 1785953408,
           "currentValue": 3.176,
           "costBasisValue": 6.997109999999999,
           "unrealizedPnL": -3.821109999999999,
@@ -16256,6 +16286,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -22772,6 +22812,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -29302,6 +29352,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -35818,6 +35878,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -42346,6 +42416,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -48862,6 +48942,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -55390,6 +55480,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -61906,6 +62006,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -68434,6 +68544,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -74950,6 +75070,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -81478,6 +81608,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -87994,6 +88134,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -94522,6 +94672,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -101038,6 +101198,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -107566,6 +107736,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -114082,6 +114262,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -120610,6 +120800,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -127126,6 +127326,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -133654,6 +133864,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -140170,6 +140390,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -146698,6 +146928,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -153214,6 +153454,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -159742,6 +159992,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -166258,6 +166518,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -172786,6 +173056,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -179302,6 +179582,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -185830,6 +186120,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -192346,6 +192646,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -198874,6 +199184,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -205390,6 +205710,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -211918,6 +212248,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -218434,6 +218774,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -224962,6 +225312,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -231484,6 +231844,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -238000,6 +238370,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -244530,6 +244910,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -251046,6 +251436,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -257574,6 +257974,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -264090,6 +264500,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -270618,6 +271038,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -277134,6 +277564,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -283662,6 +284102,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -290178,6 +290628,16 @@
             {
               "timestamp": "2026-08-05T14:23:00Z",
               "timestampUnix": 1785939780,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -296706,6 +297166,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T18:10:08Z",
+              "timestampUnix": 1785953408,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -296826,13 +297296,42 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-08-05T14:20:42Z",
+    "generatedAt": "2026-08-05T17:51:24Z",
     "summary": {
-      "totalFilingsFetched": 56,
-      "totalSignals": 17,
+      "totalFilingsFetched": 53,
+      "totalSignals": 15,
       "listedSignals": 6
     },
     "signals": [
+      {
+        "companyName": "2023 Etf Series Trust",
+        "confidence": 100,
+        "direction": "bullish",
+        "etoroInstrument": {
+          "displayName": "NFRX",
+          "marketURL": "https://www.etoro.com/markets/nfrx",
+          "symbol": "NFRX"
+        },
+        "filedAt": "2026-08-05T17:49:01Z",
+        "filingID": "NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856",
+        "filingRationale": "Open-market purchase.",
+        "groupedTickerMentions": 1,
+        "id": "NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856|bullish",
+        "insiderName": "Harrison Street Real Assets Fund LLC",
+        "insiderTitle": "10%",
+        "ownershipChangePercent": 10,
+        "score": 100,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1969674/000168789826000009/xslF345X03/primary_doc.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider buy · $10.00M disclosed · ownership +10% · eToro NFRX",
+        "ticker": "NFRX",
+        "tradeValueUSD": 9999998,
+        "tradedAt": "2026-08-04T04:00:00Z",
+        "transactionPriceUSD": 26.82,
+        "transactionType": "P - Purchase",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1969674/000168789826000009/xslF345X03/primary_doc.xml"
+      },
       {
         "companyName": "Costar Group, Inc.",
         "confidence": 100,
@@ -296861,6 +297360,57 @@
         "transactionType": "P - Purchase",
         "watchlistMatch": false,
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1057352/000162828026052968/xslF345X03/wk-form4_1785936417.xml"
+      },
+      {
+        "companyName": "Pbf Energy Inc.",
+        "companySynopsis": "Operates in energy and oil markets.",
+        "confidence": 79,
+        "direction": "bearish",
+        "etoroInstrument": {
+          "displayName": "PBF",
+          "marketURL": "https://www.etoro.com/markets/pbf",
+          "symbol": "PBF"
+        },
+        "filedAt": "2026-08-05T17:08:26Z",
+        "filingID": "PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756",
+        "filingRationale": "Open-market sale · fresh geopolitics/oil source context.",
+        "groupedTickerMentions": 1,
+        "id": "PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756|bearish",
+        "insiderName": "Fedena James E.",
+        "insiderTitle": "SVP",
+        "marketContext": {
+          "activeSignalCount": 5,
+          "freshSourceEventCount": 17,
+          "highPrioritySourceEventCount": 2,
+          "matchedThemes": [
+            "geopolitics",
+            "oil"
+          ],
+          "prioritySourceSignalCount": 0,
+          "relevantSourceEventCount": 40,
+          "scoreBoost": 18,
+          "selectedSignalCount": 0,
+          "skepticalSignalCount": 1,
+          "sourceConfirmedSignalCount": 0,
+          "sourceTypes": [
+            "api",
+            "web"
+          ],
+          "summary": "market-trans geopolitics/oil context · 5 active markets · 40 recent source events · api/web · model skeptical on 1",
+          "supportiveSignalCount": 0
+        },
+        "ownershipChangePercent": -16,
+        "score": 79,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1534504/000119312526334498/xslF345X03/ownership.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider sale · -$1.78M disclosed · ownership -16% · eToro PBF · market-trans geopolitics/oil context · 5 active markets · 40 recent source events · api/web · model skeptical on 1",
+        "ticker": "PBF",
+        "tradeValueUSD": -1778181,
+        "tradedAt": "2026-08-03T04:00:00Z",
+        "transactionPriceUSD": 71.83,
+        "transactionType": "S - Sale",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/1534504/000119312526334498/xslF345X03/ownership.xml"
       },
       {
         "companyName": "Cactus, Inc.",
@@ -296892,138 +297442,80 @@
         "externalURL": "http://www.sec.gov/Archives/edgar/data/1699136/000162828026052994/xslF345X03/wk-form4_1785939154.xml"
       },
       {
-        "companyName": "East West Ave Acquisition Corp.",
-        "confidence": 100,
-        "direction": "bullish",
-        "etoroInstrument": {
-          "displayName": "EWAV",
-          "marketURL": "https://www.etoro.com/markets/ewav",
-          "symbol": "EWAV"
-        },
-        "filedAt": "2026-08-05T00:47:25Z",
-        "filingID": "EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000",
-        "filingRationale": "Open-market purchase · 2 same-ticker filings in this scan.",
-        "groupedTickerMentions": 2,
-        "id": "EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000|bullish",
-        "insiderName": "Space Summit Capital LLC",
-        "insiderTitle": "Manager of the LP",
-        "ownershipChangePercent": -1202,
-        "score": 100,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/2100704/000184671826000015/xslF345X03/primary_doc.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider buy · $10.87M disclosed · ownership -1202% · 2 filings for EWAV in current scan · eToro EWAV",
-        "ticker": "EWAV",
-        "tradeValueUSD": 10870000,
-        "tradedAt": "2026-07-31T04:00:00Z",
-        "transactionPriceUSD": 10,
-        "transactionType": "P - Purchase",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/2100704/000184671826000015/xslF345X03/primary_doc.xml"
-      },
-      {
-        "companyName": "Goosehead Insurance, Inc.",
-        "confidence": 100,
-        "direction": "bullish",
-        "etoroInstrument": {
-          "displayName": "GSHD",
-          "marketURL": "https://www.etoro.com/markets/gshd",
-          "symbol": "GSHD"
-        },
-        "filedAt": "2026-08-04T21:12:38Z",
-        "filingID": "GSHD|2026-08-04 17:12:38|2026-07-31|durable capital partners lp|p - purchase|$61.92|+36,256",
-        "filingRationale": "Open-market purchase.",
-        "groupedTickerMentions": 1,
-        "id": "GSHD|2026-08-04 17:12:38|2026-07-31|durable capital partners lp|p - purchase|$61.92|+36,256|bullish",
-        "insiderName": "Durable Capital Partners LP",
-        "insiderTitle": "10%",
-        "ownershipChangePercent": 1,
-        "score": 100,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1726978/000119312526333105/xslF345X03/ownership.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider buy · $2.25M disclosed · ownership +1% · eToro GSHD",
-        "ticker": "GSHD",
-        "tradeValueUSD": 2245140,
-        "tradedAt": "2026-07-31T04:00:00Z",
-        "transactionPriceUSD": 61.92,
-        "transactionType": "P - Purchase",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1726978/000119312526333105/xslF345X03/ownership.xml"
-      },
-      {
-        "companyName": "Carvana Co.",
-        "confidence": 100,
-        "direction": "bullish",
-        "etoroInstrument": {
-          "displayName": "CVNA",
-          "marketURL": "https://www.etoro.com/markets/cvna",
-          "symbol": "CVNA"
-        },
-        "filedAt": "2026-08-04T21:04:24Z",
-        "filingID": "CVNA|2026-08-04 17:04:24|2026-07-31|maroone michael e|p - purchase|$61.80|+25,000",
-        "filingRationale": "Open-market purchase · 3 same-ticker filings in this scan.",
-        "groupedTickerMentions": 3,
-        "id": "CVNA|2026-08-04 17:04:24|2026-07-31|maroone michael e|p - purchase|$61.80|+25,000|bullish",
-        "insiderName": "Maroone Michael E",
-        "insiderTitle": "Dir",
-        "ownershipChangePercent": 13,
-        "score": 100,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1690820/000108801126000006/xslF345X03/wk-form4_1785877461.xml",
-        "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider buy · $1.54M disclosed · ownership +13% · 3 filings for CVNA in current scan · eToro CVNA",
-        "ticker": "CVNA",
-        "tradeValueUSD": 1544981,
-        "tradedAt": "2026-07-31T04:00:00Z",
-        "transactionPriceUSD": 61.8,
-        "transactionType": "P - Purchase",
-        "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1690820/000108801126000006/xslF345X03/wk-form4_1785877461.xml"
-      },
-      {
-        "companyName": "Seagate Technology Holdings Plc",
-        "confidence": 79,
+        "companyName": "Horace Mann Educators Corp /De/",
+        "confidence": 66,
         "direction": "bearish",
         "etoroInstrument": {
-          "displayName": "STX",
-          "marketURL": "https://www.etoro.com/markets/stx",
-          "symbol": "STX"
+          "displayName": "HMN",
+          "marketURL": "https://www.etoro.com/markets/hmn",
+          "symbol": "HMN"
         },
-        "filedAt": "2026-08-04T22:09:40Z",
-        "filingID": "STX|2026-08-04 18:09:40|2026-08-03|mosley william d|s - sale|$827.30|-17,080",
+        "filedAt": "2026-08-05T16:26:30Z",
+        "filingID": "HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500",
         "filingRationale": "Open-market sale.",
         "groupedTickerMentions": 1,
-        "id": "STX|2026-08-04 18:09:40|2026-08-03|mosley william d|s - sale|$827.30|-17,080|bearish",
-        "insiderName": "Mosley William D",
-        "insiderTitle": "CEO",
-        "ownershipChangePercent": -5,
-        "score": 79,
-        "secFormURL": "http://www.sec.gov/Archives/edgar/data/1137789/000113778926000164/xslF345X03/wk-form4_1785881377.xml",
+        "id": "HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500|bearish",
+        "insiderName": "Zuraitis Marita",
+        "insiderTitle": "Pres, CEO",
+        "ownershipChangePercent": -2,
+        "score": 66,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/850141/000121465926009623/xslF345X03/marketforms-73661.xml",
         "sourceURL": "http://openinsider.com/latest-insider-trading",
-        "summary": "Insider sale · -$14.13M disclosed · ownership -5% · eToro STX",
-        "ticker": "STX",
-        "tradeValueUSD": -14130293,
+        "summary": "Insider sale · -$390.2K disclosed · ownership -2% · eToro HMN",
+        "ticker": "HMN",
+        "tradeValueUSD": -390248,
         "tradedAt": "2026-08-03T04:00:00Z",
-        "transactionPriceUSD": 827.3,
+        "transactionPriceUSD": 52.03,
         "transactionType": "S - Sale",
         "watchlistMatch": false,
-        "externalURL": "http://www.sec.gov/Archives/edgar/data/1137789/000113778926000164/xslF345X03/wk-form4_1785881377.xml"
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/850141/000121465926009623/xslF345X03/marketforms-73661.xml"
+      },
+      {
+        "companyName": "Nucor Corp",
+        "confidence": 61,
+        "direction": "bearish",
+        "etoroInstrument": {
+          "displayName": "NUE",
+          "marketURL": "https://www.etoro.com/markets/nue",
+          "symbol": "NUE"
+        },
+        "filedAt": "2026-08-05T14:58:30Z",
+        "filingID": "NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000",
+        "filingRationale": "Open-market sale.",
+        "groupedTickerMentions": 1,
+        "id": "NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000|bearish",
+        "insiderName": "Batterbee Thomas J.",
+        "insiderTitle": "EVP",
+        "ownershipChangePercent": -20,
+        "score": 61,
+        "secFormURL": "http://www.sec.gov/Archives/edgar/data/73309/000007330926000126/xslF345X03/form4.xml",
+        "sourceURL": "http://openinsider.com/latest-insider-trading",
+        "summary": "Insider sale · -$1.04M disclosed · ownership -20% · eToro NUE",
+        "ticker": "NUE",
+        "tradeValueUSD": -1044062,
+        "tradedAt": "2026-08-03T04:00:00Z",
+        "transactionPriceUSD": 261.02,
+        "transactionType": "S - Sale",
+        "watchlistMatch": false,
+        "externalURL": "http://www.sec.gov/Archives/edgar/data/73309/000007330926000126/xslF345X03/form4.xml"
       }
     ],
     "directionMix": [
       {
         "key": "bearish",
         "label": "Sell",
-        "value": 21
+        "value": 22
       },
       {
         "key": "bullish",
         "label": "Buy",
-        "value": 4
+        "value": 3
       }
     ]
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-08-05T14:23:00Z",
+    "generatedAt": "2026-08-05T18:10:08Z",
     "market": {
       "available": true,
       "summary": {
@@ -297067,8 +297559,8 @@
           "averagePriceChange": 0.00254448012271683
         },
         "insiderArchiveCount": 8,
-        "bullishInsiderCount": 1,
-        "bearishInsiderCount": 7
+        "bullishInsiderCount": 2,
+        "bearishInsiderCount": 6
       },
       "horizons": [
         {
@@ -297891,10 +298383,90 @@
       "available": true,
       "summary": {
         "archiveCount": 8,
-        "bullishCount": 1,
-        "bearishCount": 7
+        "bullishCount": 2,
+        "bearishCount": 6
       },
       "archive": [
+        {
+          "signalID": "NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000|bearish",
+          "filingID": "NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000",
+          "ticker": "NUE",
+          "companyName": "Nucor Corp",
+          "insiderName": "Batterbee Thomas J.",
+          "insiderTitle": "EVP",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 61,
+          "score": 61,
+          "tradeValueUSD": -1044062,
+          "ownershipChangePercent": -20,
+          "filedAt": "2026-08-05T14:58:30.000Z",
+          "filedAtUnix": 1785941910,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$1.04M disclosed · ownership -20% · eToro NUE",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500|bearish",
+          "filingID": "HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500",
+          "ticker": "HMN",
+          "companyName": "Horace Mann Educators Corp /De/",
+          "insiderName": "Zuraitis Marita",
+          "insiderTitle": "Pres, CEO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 66,
+          "score": 66,
+          "tradeValueUSD": -390248,
+          "ownershipChangePercent": -2,
+          "filedAt": "2026-08-05T16:26:30.000Z",
+          "filedAtUnix": 1785947190,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$390.2K disclosed · ownership -2% · eToro HMN",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756|bearish",
+          "filingID": "PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756",
+          "ticker": "PBF",
+          "companyName": "Pbf Energy Inc.",
+          "insiderName": "Fedena James E.",
+          "insiderTitle": "SVP",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 79,
+          "score": 79,
+          "tradeValueUSD": -1778181,
+          "ownershipChangePercent": -16,
+          "filedAt": "2026-08-05T17:08:26.000Z",
+          "filedAtUnix": 1785949706,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$1.78M disclosed · ownership -16% · eToro PBF · market-trans geopolitics/oil context · 5 active markets · 40 recent source events · api/web · model skeptical on 1",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856|bullish",
+          "filingID": "NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856",
+          "ticker": "NFRX",
+          "companyName": "2023 Etf Series Trust",
+          "insiderName": "Harrison Street Real Assets Fund LLC",
+          "insiderTitle": "10%",
+          "direction": "bullish",
+          "transactionType": "P - Purchase",
+          "confidence": 100,
+          "score": 100,
+          "tradeValueUSD": 9999998,
+          "ownershipChangePercent": 10,
+          "filedAt": "2026-08-05T17:49:01.000Z",
+          "filedAtUnix": 1785952141,
+          "tradedAt": "2026-08-04T04:00:00.000Z",
+          "tradedAtUnix": 1785816000,
+          "summary": "Insider buy · $10.00M disclosed · ownership +10% · eToro NFRX",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
         {
           "signalID": "WHD|2026-08-05 10:12:36|2026-08-03|tadlock stephen|s - sale|$63.80|-38,455|bearish",
           "filingID": "WHD|2026-08-05 10:12:36|2026-08-03|tadlock stephen|s - sale|$63.80|-38,455",
@@ -297974,86 +298546,6 @@
           "tradedAtUnix": 1785470400,
           "summary": "Insider sale · -$252.2K disclosed · ownership -14% · watchlist match · eToro META",
           "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "CRDO|2026-08-04 17:34:08|2026-07-31|lam yat tung|s - sale|$213.17|-105,441|bearish",
-          "filingID": "CRDO|2026-08-04 17:34:08|2026-07-31|lam yat tung|s - sale|$213.17|-105,441",
-          "ticker": "CRDO",
-          "companyName": "Credo Technology Group Holding Ltd",
-          "insiderName": "Lam Yat Tung",
-          "insiderTitle": "COO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 64,
-          "score": 64,
-          "tradeValueUSD": -22476646,
-          "ownershipChangePercent": -3,
-          "filedAt": "2026-08-04T21:34:08.000Z",
-          "filedAtUnix": 1785879248,
-          "tradedAt": "2026-07-31T04:00:00.000Z",
-          "tradedAtUnix": 1785470400,
-          "summary": "Insider sale · -$22.48M disclosed · ownership -3% · eToro CRDO",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "KLAC|2026-08-04 17:26:39|2026-08-04|kirloskar virendra a|s - sale|$191.59|-1,565|bearish",
-          "filingID": "KLAC|2026-08-04 17:26:39|2026-08-04|kirloskar virendra a|s - sale|$191.59|-1,565",
-          "ticker": "KLAC",
-          "companyName": "Kla Corp",
-          "insiderName": "Kirloskar Virendra A",
-          "insiderTitle": "SVP, Chief Accounting Officer",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 66,
-          "score": 65.9,
-          "tradeValueUSD": -299838,
-          "ownershipChangePercent": -11,
-          "filedAt": "2026-08-04T21:26:39.000Z",
-          "filedAtUnix": 1785878799,
-          "tradedAt": "2026-08-04T04:00:00.000Z",
-          "tradedAtUnix": 1785816000,
-          "summary": "Insider sale · -$299.8K disclosed · ownership -11% · 2 filings for KLAC in current scan · eToro KLAC · market-trans semis context · 2 recent source events · api",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "GNRC|2026-08-04 17:08:04|2026-08-03|jagdfeld aaron|s - sale|$194.89|-5,000|bearish",
-          "filingID": "GNRC|2026-08-04 17:08:04|2026-08-03|jagdfeld aaron|s - sale|$194.89|-5,000",
-          "ticker": "GNRC",
-          "companyName": "Generac Holdings Inc.",
-          "insiderName": "Jagdfeld Aaron",
-          "insiderTitle": "CEO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 66,
-          "score": 66,
-          "tradeValueUSD": -974450,
-          "ownershipChangePercent": -1,
-          "filedAt": "2026-08-04T21:08:04.000Z",
-          "filedAtUnix": 1785877684,
-          "tradedAt": "2026-08-03T04:00:00.000Z",
-          "tradedAtUnix": 1785729600,
-          "summary": "Insider sale · -$974.5K disclosed · ownership -1% · eToro GNRC",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "LTH|2026-08-04 17:31:07|2026-07-31|javaheri parham|s - sale|$45.09|-63,203|bearish",
-          "filingID": "LTH|2026-08-04 17:31:07|2026-07-31|javaheri parham|s - sale|$45.09|-63,203",
-          "ticker": "LTH",
-          "companyName": "Life Time Group Holdings, Inc.",
-          "insiderName": "Javaheri Parham",
-          "insiderTitle": "EVP,Pres CLUB OPERATIONS",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 66,
-          "score": 66,
-          "tradeValueUSD": -2849697,
-          "ownershipChangePercent": -26,
-          "filedAt": "2026-08-04T21:31:07.000Z",
-          "filedAtUnix": 1785879067,
-          "tradedAt": "2026-07-31T04:00:00.000Z",
-          "tradedAtUnix": 1785470400,
-          "summary": "Insider sale · -$2.85M disclosed · ownership -26% · 2 filings for LTH in current scan · eToro LTH",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
         }
       ]
     }
@@ -298100,15 +298592,15 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-08-05T14:23:00Z"
+        "value": "2026-08-05T18:10:08Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-08-05T14:20:42Z"
+        "value": "2026-08-05T17:51:24Z"
       },
       {
         "label": "Insider upstream",
-        "value": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+        "value": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
       },
       {
         "label": "Official watch",
@@ -298124,11 +298616,11 @@
       },
       {
         "label": "Bullish insider",
-        "value": "4"
+        "value": "3"
       },
       {
         "label": "Bearish insider",
-        "value": "21"
+        "value": "22"
       },
       {
         "label": "Eval rows",
@@ -298429,8 +298921,21 @@
       ]
     },
     "insiderConviction": {
-      "maxAbsTradeValueUSD": 14130293,
+      "maxAbsTradeValueUSD": 9999998,
       "items": [
+        {
+          "id": "NFRX|2026-08-05 13:49:01|2026-08-04|harrison street real assets fund llc|p - purchase|$26.82|+372,856|bullish",
+          "ticker": "NFRX",
+          "label": "NFRX",
+          "shortLabel": "NFRX",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/1969674/000168789826000009/xslF345X03/primary_doc.xml",
+          "direction": "bullish",
+          "confidence": 100,
+          "tradeValueUSD": 9999998,
+          "absTradeValueUSD": 9999998,
+          "filedAt": "2026-08-05T17:49:01Z",
+          "insiderName": "Harrison Street Real Assets Fund LLC"
+        },
         {
           "id": "CSGP|2026-08-05 09:27:00|2026-08-04|florance andrew c|p - purchase|$29.89|+83,300|bullish",
           "ticker": "CSGP",
@@ -298443,6 +298948,19 @@
           "absTradeValueUSD": 2489837,
           "filedAt": "2026-08-05T13:27:00Z",
           "insiderName": "Florance Andrew C"
+        },
+        {
+          "id": "PBF|2026-08-05 13:08:26|2026-08-03|fedena james e.|s - sale|$71.83|-24,756|bearish",
+          "ticker": "PBF",
+          "label": "PBF",
+          "shortLabel": "PBF",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/1534504/000119312526334498/xslF345X03/ownership.xml",
+          "direction": "bearish",
+          "confidence": 79,
+          "tradeValueUSD": -1778181,
+          "absTradeValueUSD": 1778181,
+          "filedAt": "2026-08-05T17:08:26Z",
+          "insiderName": "Fedena James E."
         },
         {
           "id": "WHD|2026-08-05 10:12:36|2026-08-03|tadlock stephen|s - sale|$63.80|-38,455|bearish",
@@ -298458,56 +298976,30 @@
           "insiderName": "Tadlock Stephen"
         },
         {
-          "id": "EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000|bullish",
-          "ticker": "EWAV",
-          "label": "EWAV",
-          "shortLabel": "EWAV",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/2100704/000184671826000015/xslF345X03/primary_doc.xml",
-          "direction": "bullish",
-          "confidence": 100,
-          "tradeValueUSD": 10870000,
-          "absTradeValueUSD": 10870000,
-          "filedAt": "2026-08-05T00:47:25Z",
-          "insiderName": "Space Summit Capital LLC"
-        },
-        {
-          "id": "GSHD|2026-08-04 17:12:38|2026-07-31|durable capital partners lp|p - purchase|$61.92|+36,256|bullish",
-          "ticker": "GSHD",
-          "label": "GSHD",
-          "shortLabel": "GSHD",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1726978/000119312526333105/xslF345X03/ownership.xml",
-          "direction": "bullish",
-          "confidence": 100,
-          "tradeValueUSD": 2245140,
-          "absTradeValueUSD": 2245140,
-          "filedAt": "2026-08-04T21:12:38Z",
-          "insiderName": "Durable Capital Partners LP"
-        },
-        {
-          "id": "CVNA|2026-08-04 17:04:24|2026-07-31|maroone michael e|p - purchase|$61.80|+25,000|bullish",
-          "ticker": "CVNA",
-          "label": "CVNA",
-          "shortLabel": "CVNA",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1690820/000108801126000006/xslF345X03/wk-form4_1785877461.xml",
-          "direction": "bullish",
-          "confidence": 100,
-          "tradeValueUSD": 1544981,
-          "absTradeValueUSD": 1544981,
-          "filedAt": "2026-08-04T21:04:24Z",
-          "insiderName": "Maroone Michael E"
-        },
-        {
-          "id": "STX|2026-08-04 18:09:40|2026-08-03|mosley william d|s - sale|$827.30|-17,080|bearish",
-          "ticker": "STX",
-          "label": "STX",
-          "shortLabel": "STX",
-          "externalURL": "http://www.sec.gov/Archives/edgar/data/1137789/000113778926000164/xslF345X03/wk-form4_1785881377.xml",
+          "id": "HMN|2026-08-05 12:26:30|2026-08-03|zuraitis marita|s - sale|$52.03|-7,500|bearish",
+          "ticker": "HMN",
+          "label": "HMN",
+          "shortLabel": "HMN",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/850141/000121465926009623/xslF345X03/marketforms-73661.xml",
           "direction": "bearish",
-          "confidence": 79,
-          "tradeValueUSD": -14130293,
-          "absTradeValueUSD": 14130293,
-          "filedAt": "2026-08-04T22:09:40Z",
-          "insiderName": "Mosley William D"
+          "confidence": 66,
+          "tradeValueUSD": -390248,
+          "absTradeValueUSD": 390248,
+          "filedAt": "2026-08-05T16:26:30Z",
+          "insiderName": "Zuraitis Marita"
+        },
+        {
+          "id": "NUE|2026-08-05 10:58:30|2026-08-03|batterbee thomas j.|s - sale|$261.02|-4,000|bearish",
+          "ticker": "NUE",
+          "label": "NUE",
+          "shortLabel": "NUE",
+          "externalURL": "http://www.sec.gov/Archives/edgar/data/73309/000007330926000126/xslF345X03/form4.xml",
+          "direction": "bearish",
+          "confidence": 61,
+          "tradeValueUSD": -1044062,
+          "absTradeValueUSD": 1044062,
+          "filedAt": "2026-08-05T14:58:30Z",
+          "insiderName": "Batterbee Thomas J."
         }
       ]
     },
@@ -298520,34 +299012,34 @@
           "available": true,
           "generatedAt": "2026-08-05T14:22:57Z",
           "status": "stale",
-          "reason": "Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "reason": "Snapshot 3h 47m old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T14:23:00Z",
-          "status": "live",
-          "reason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-08-05T18:10:08Z",
+          "status": "stale",
+          "reason": "Snapshot 0s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (3h 47m old, max 15m). (3h 47m old)"
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T14:20:42Z",
+          "generatedAt": "2026-08-05T17:51:24Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "5 live · 1 stale cache · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T14:23:03.544Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 3s old · 15 active · 25 snapshots · 2 built from 3 source candidate(s) · 6 live · 2 stale cache · 14 failed. Truth Social Donald Trump: Cloudflare challenge (HTTP 403) | stale cache empty"
+          "generatedAt": "2026-08-05T18:10:15.033Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
         }
       ]
     }
