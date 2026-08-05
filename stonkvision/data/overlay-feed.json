@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-05T02:42:31.337Z",
-  "generatedAtUnix": 1785897751,
+  "generatedAt": "2026-08-05T07:11:17.500Z",
+  "generatedAtUnix": 1785913877,
   "sync": {
-    "generatedAt": "2026-08-05T02:42:28Z",
-    "generatedAtUnix": 1785897748,
+    "generatedAt": "2026-08-05T07:11:13Z",
+    "generatedAtUnix": 1785913873,
     "sources": {
       "marketIntel": true,
       "walletOverview": true,
@@ -12,26 +12,26 @@
     },
     "pipeline": {
       "schemaVersion": 1,
-      "generatedAt": "2026-08-05T02:42:31.337Z",
-      "generatedAtUnix": 1785897751,
-      "runID": "run-2026-08-05T02-39-44-383Z-66371",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "generatedAt": "2026-08-05T07:11:17.500Z",
+      "generatedAtUnix": 1785913877,
+      "runID": "run-2026-08-05T06-53-36-230Z-73147",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source.",
       "scope": "full",
       "scopeReason": null,
-      "startedAt": "2026-08-05T02:39:44.383Z",
-      "finishedAt": "2026-08-05T02:42:31.337Z",
-      "lastRunAt": "2026-08-05T02:42:31.337Z",
-      "durationSeconds": 166.954,
+      "startedAt": "2026-08-05T06:53:36.230Z",
+      "finishedAt": "2026-08-05T07:11:17.500Z",
+      "lastRunAt": "2026-08-05T07:11:17.500Z",
+      "durationSeconds": 1061.27,
       "publishRequested": true,
       "publishEnabled": true,
       "pushLiveRequested": true,
       "pushLiveEnabled": true,
       "intervalSeconds": 1800,
-      "nextRunAt": "2026-08-05T03:12:31.337Z",
-      "lastSuccessAt": "2026-08-05T02:42:31.337Z",
-      "lastSuccessfulRunAt": "2026-08-05T02:42:31.337Z",
-      "lastFailureAt": "2026-08-04T22:22:19.891Z",
+      "nextRunAt": "2026-08-05T07:41:17.500Z",
+      "lastSuccessAt": "2026-08-05T02:59:07.837Z",
+      "lastSuccessfulRunAt": "2026-08-05T02:59:07.837Z",
+      "lastFailureAt": "2026-08-05T07:11:17.500Z",
       "steps": [
         {
           "id": "insider",
@@ -39,33 +39,33 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T02:39:44.503Z",
-          "finishedAt": "2026-08-05T02:40:43.689Z",
-          "durationSeconds": 59.186,
+          "startedAt": "2026-08-05T06:53:36.347Z",
+          "finishedAt": "2026-08-05T06:54:57.211Z",
+          "durationSeconds": 80.864,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-etoro-bot-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/etoro-bot etoro-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T02-39-44-383Z-66371/insider.log",
-          "summary": "Telegram preview · selected 1 of 5 new signal(s)",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T06-53-36-230Z-73147/insider.log",
+          "summary": "Telegram preview · selected 0 of 5 new signal(s)",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T02:40:43.689Z",
+          "lastSuccessAt": "2026-08-05T06:54:57.211Z",
           "lastFailureAt": "2026-08-04T14:34:15.079Z"
         },
         {
           "id": "market",
           "title": "Refreshing market-trans from source",
-          "status": "live",
+          "status": "failed",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T02:40:43.690Z",
-          "finishedAt": "2026-08-05T02:42:24.700Z",
-          "durationSeconds": 101.01,
+          "startedAt": "2026-08-05T06:54:57.211Z",
+          "finishedAt": "2026-08-05T07:11:08.619Z",
+          "durationSeconds": 971.408,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-market-trans-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/market-trans market-trans-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T02-39-44-383Z-66371/market.log",
-          "summary": "Notification decisions: selected bitcoin-above-64400-on-august-4-2026-11pm-et|No [global_window_open,priority_source_bypass] | blocked will-the-us-invade-iran-before-2027|No->category_policy | mlb-det-sea-2026-08-04|Seattle Mariners->sports_policy | will-the-us-invade-iran-before-2027|Yes->category_policy",
-          "error": null,
-          "exitCode": 0,
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T06-53-36-230Z-73147/market.log",
+          "summary": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "error": "[stonkvision] Step \"market\" timed out after 900s; terminating.",
+          "exitCode": 124,
           "lastSuccessAt": "2026-08-05T02:42:24.700Z",
-          "lastFailureAt": "2026-08-04T22:05:35.989Z"
+          "lastFailureAt": "2026-08-05T07:11:08.619Z"
         },
         {
           "id": "wallets",
@@ -73,15 +73,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T02:42:24.700Z",
-          "finishedAt": "2026-08-05T02:42:27.824Z",
-          "durationSeconds": 3.124,
+          "startedAt": "2026-08-05T07:11:08.619Z",
+          "finishedAt": "2026-08-05T07:11:12.852Z",
+          "durationSeconds": 4.233,
           "command": "swift run --disable-sandbox --scratch-path /tmp/total_control_moneyz-wallet-watcher-local --package-path /Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/wallet_watcher wallet-watcher-bot --dry-run",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T02-39-44-383Z-66371/wallets.log",
-          "summary": "Source diagnostics: 2 candidate(s) | built 2 | no-chase 0 | no-market 0",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T06-53-36-230Z-73147/wallets.log",
+          "summary": "Loaded 9 market signal(s) from market intel (leaderboard 250, elite 25, snapshots 25), watched 2 wallet snapshot(s), sent 0 live message(s) covering 0 signal(s).",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T02:42:27.824Z",
+          "lastSuccessAt": "2026-08-05T07:11:12.852Z",
           "lastFailureAt": "2026-08-02T21:55:05.588Z"
         },
         {
@@ -90,15 +90,15 @@
           "status": "live",
           "required": true,
           "skipped": false,
-          "startedAt": "2026-08-05T02:42:27.825Z",
-          "finishedAt": "2026-08-05T02:42:31.294Z",
-          "durationSeconds": 3.469,
+          "startedAt": "2026-08-05T07:11:12.852Z",
+          "finishedAt": "2026-08-05T07:11:17.171Z",
+          "durationSeconds": 4.319,
           "command": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/webpage/scripts/sync-data.sh",
-          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T02-39-44-383Z-66371/sync.log",
+          "logPath": "/Users/carina.marie.rose@schibsted.com/Library/Application Support/StonkvisionSupervisor/artifacts/pipeline-runs/run-2026-08-05T06-53-36-230Z-73147/sync.log",
           "summary": "Built overlay-feed.json",
           "error": null,
           "exitCode": 0,
-          "lastSuccessAt": "2026-08-05T02:42:31.294Z",
+          "lastSuccessAt": "2026-08-05T07:11:17.171Z",
           "lastFailureAt": "2026-07-29T01:32:48.329Z"
         }
       ],
@@ -108,35 +108,35 @@
           "synced": true,
           "generatedAt": "2026-08-05T02:42:24Z",
           "status": "degraded",
-          "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown."
+          "statusReason": "Snapshot 4h 28m old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old)"
         },
         "wallets": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T02:42:27Z",
-          "status": "live",
-          "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-08-05T07:11:12Z",
+          "status": "degraded",
+          "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (4h 28m old, max 15m). (4h 28m old)"
         },
         "insider": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T02:40:28Z",
+          "generatedAt": "2026-08-05T06:54:42Z",
           "status": "degraded",
-          "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "statusReason": "6 live · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
         },
         "history": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T02:42:28Z",
+          "generatedAt": "2026-08-05T07:11:13Z",
           "status": "live",
           "statusReason": null
         },
         "pipeline": {
           "available": true,
           "synced": true,
-          "generatedAt": "2026-08-05T02:42:31.337Z",
-          "status": "live",
-          "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown."
+          "generatedAt": "2026-08-05T07:11:17.500Z",
+          "status": "failed",
+          "statusReason": "Failed step(s): Refreshing market-trans from source."
         }
       },
       "runtime": {
@@ -188,7 +188,7 @@
       "synced": true,
       "generatedAt": "2026-08-05T02:42:24Z",
       "status": "degraded",
-      "statusReason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old)",
+      "statusReason": "Snapshot 4h 28m old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-snapshot",
@@ -695,9 +695,9 @@
     "wallets": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T02:42:27Z",
-      "status": "live",
-      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live",
+      "generatedAt": "2026-08-05T07:11:12Z",
+      "status": "degraded",
+      "statusReason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (4h 28m old, max 15m). (4h 28m old)",
       "upstreamDiagnostics": [
         {
           "id": "market-intel-input",
@@ -708,15 +708,35 @@
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "market_intel_snapshot",
-          "status": "live",
-          "message": "Loaded 15 active signal(s) from market intel.",
+          "status": "cached",
+          "message": "Market intel snapshot is stale (4h 28m old, max 15m).",
           "fetchedAt": "2026-08-05T02:42:24Z",
           "fetchedAtUnix": 1785897744,
           "attemptCount": 1,
           "eventCount": 15,
-          "cacheUsed": false,
+          "cacheUsed": true,
           "cacheWasFresh": false,
-          "cacheAgeSeconds": null,
+          "cacheAgeSeconds": 16128,
+          "retryAfterUnix": null
+        },
+        {
+          "id": "wallet-feed-cache",
+          "sourceID": "wallet-feed-cache",
+          "sourceName": "Wallet feed cache",
+          "provider": "wallet_watcher",
+          "sourceType": "pipeline",
+          "sourceLane": null,
+          "sourceHandle": "-",
+          "adapter": "signal_feed_cache",
+          "status": "cached",
+          "message": "Using cached wallet watcher feed with 9 signal(s) while market intel recovers.",
+          "fetchedAt": "2026-08-05T02:42:27Z",
+          "fetchedAtUnix": 1785897747,
+          "attemptCount": 1,
+          "eventCount": 9,
+          "cacheUsed": true,
+          "cacheWasFresh": false,
+          "cacheAgeSeconds": 16125,
           "retryAfterUnix": null
         },
         {
@@ -730,8 +750,8 @@
           "adapter": "polymarket_wallet_snapshot",
           "status": "live",
           "message": "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
-          "fetchedAt": "2026-08-05T02:42:27Z",
-          "fetchedAtUnix": 1785897747,
+          "fetchedAt": "2026-08-05T07:11:12Z",
+          "fetchedAtUnix": 1785913872,
           "attemptCount": 2,
           "eventCount": 1,
           "cacheUsed": false,
@@ -744,14 +764,14 @@
     "insider": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T02:40:28Z",
+      "generatedAt": "2026-08-05T06:54:42Z",
       "status": "degraded",
-      "statusReason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s).",
+      "statusReason": "6 live · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s).",
       "upstreamDiagnostics": [
         {
-          "id": "reddit-algotrading",
-          "sourceID": "reddit-algotrading",
-          "sourceName": "r/algotrading",
+          "id": "reddit-bitcoinmarkets",
+          "sourceID": "reddit-bitcoinmarkets",
+          "sourceName": "r/BitcoinMarkets",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
@@ -759,8 +779,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -779,8 +799,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -799,8 +819,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -819,8 +839,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -839,8 +859,8 @@
           "adapter": "reddit_rss",
           "status": "failed",
           "message": "HTTP 429:  after 3 attempt(s).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 3,
           "eventCount": 0,
           "cacheUsed": false,
@@ -859,8 +879,8 @@
           "adapter": "binance_futures_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -879,8 +899,8 @@
           "adapter": "coinalyze_snapshot",
           "status": "live",
           "message": "Fetched live (3 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 1,
           "eventCount": 3,
           "cacheUsed": false,
@@ -898,31 +918,31 @@
           "sourceHandle": "-",
           "adapter": "gdelt_doc",
           "status": "live",
-          "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
-          "attemptCount": 2,
-          "eventCount": 1,
+          "message": "Fetched live (3 matching item(s)).",
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
+          "attemptCount": 3,
+          "eventCount": 3,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
           "retryAfterUnix": null
         },
         {
-          "id": "reddit-bitcoinmarkets",
-          "sourceID": "reddit-bitcoinmarkets",
-          "sourceName": "r/BitcoinMarkets",
+          "id": "reddit-algotrading",
+          "sourceID": "reddit-algotrading",
+          "sourceName": "r/algotrading",
           "provider": "reddit_rss",
           "sourceType": "reddit",
           "sourceLane": null,
           "sourceHandle": "-",
           "adapter": "reddit_rss",
           "status": "live",
-          "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "message": "Fetched live (5 matching item(s)).",
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 1,
-          "eventCount": 1,
+          "eventCount": 5,
           "cacheUsed": false,
           "cacheWasFresh": false,
           "cacheAgeSeconds": null,
@@ -939,8 +959,8 @@
           "adapter": "tree_news",
           "status": "live",
           "message": "Fetched live (12 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 1,
           "eventCount": 12,
           "cacheUsed": false,
@@ -959,8 +979,8 @@
           "adapter": "rss",
           "status": "live",
           "message": "Fetched live (1 matching item(s)).",
-          "fetchedAt": "2026-08-05T02:39:47Z",
-          "fetchedAtUnix": 1785897587,
+          "fetchedAt": "2026-08-05T06:53:39Z",
+          "fetchedAtUnix": 1785912819,
           "attemptCount": 1,
           "eventCount": 1,
           "cacheUsed": false,
@@ -973,7 +993,7 @@
     "history": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T02:42:28Z",
+      "generatedAt": "2026-08-05T07:11:13Z",
       "status": "live",
       "statusReason": null,
       "upstreamDiagnostics": []
@@ -981,9 +1001,9 @@
     "pipeline": {
       "available": true,
       "synced": true,
-      "generatedAt": "2026-08-05T02:42:31.337Z",
-      "status": "live",
-      "statusReason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown.",
+      "generatedAt": "2026-08-05T07:11:17.500Z",
+      "status": "failed",
+      "statusReason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)",
       "upstreamDiagnostics": []
     }
   },
@@ -3268,7 +3288,7 @@
   "wallets": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-08-05T02:42:27Z",
+    "generatedAt": "2026-08-05T07:11:12Z",
     "summary": {
       "actionablePositionCount": 0,
       "activityCash": {
@@ -3325,8 +3345,8 @@
     ],
     "diff": {
       "hasPrevious": true,
-      "previousGeneratedAt": "2026-08-04T22:05:40Z",
-      "previousGeneratedAtUnix": 1785881140,
+      "previousGeneratedAt": "2026-08-05T02:42:27Z",
+      "previousGeneratedAtUnix": 1785897747,
       "changedWalletCount": 0,
       "unchangedWalletCount": 2,
       "newPositionCount": 0,
@@ -3378,13 +3398,13 @@
     },
     "history": {
       "available": true,
-      "generatedAt": "2026-08-05T02:42:30.285Z",
-      "snapshotCount": 639,
+      "generatedAt": "2026-08-05T07:11:16.029Z",
+      "snapshotCount": 640,
       "earliestAt": "2026-05-14T06:32:45Z",
-      "latestAt": "2026-08-05T02:42:27Z",
+      "latestAt": "2026-08-05T07:11:12Z",
       "latestSummary": {
-        "timestamp": "2026-08-05T02:42:27Z",
-        "timestampUnix": 1785897747,
+        "timestamp": "2026-08-05T07:11:12Z",
+        "timestampUnix": 1785913872,
         "currentValue": 3.176,
         "costBasisValue": 6.997109999999999,
         "unrealizedPnL": -3.821109999999999,
@@ -9778,6 +9798,16 @@
         {
           "timestamp": "2026-08-05T02:42:27Z",
           "timestampUnix": 1785897747,
+          "currentValue": 3.176,
+          "costBasisValue": 6.997109999999999,
+          "unrealizedPnL": -3.821109999999999,
+          "realizedPnL": 0,
+          "openPositionCount": 1,
+          "actionablePositionCount": 0
+        },
+        {
+          "timestamp": "2026-08-05T07:11:12Z",
+          "timestampUnix": 1785913872,
           "currentValue": 3.176,
           "costBasisValue": 6.997109999999999,
           "unrealizedPnL": -3.821109999999999,
@@ -16186,6 +16216,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -22582,6 +22622,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -28992,6 +29042,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -35388,6 +35448,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -41796,6 +41866,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -48192,6 +48272,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -54600,6 +54690,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -60996,6 +61096,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -67404,6 +67514,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -73800,6 +73920,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -80208,6 +80338,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -86604,6 +86744,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -93012,6 +93162,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -99408,6 +99568,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -105816,6 +105986,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -112212,6 +112392,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -118620,6 +118810,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -125016,6 +125216,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -131424,6 +131634,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -137820,6 +138040,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -144228,6 +144458,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -150624,6 +150864,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -157032,6 +157282,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -163428,6 +163688,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -169836,6 +170106,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -176232,6 +176512,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -182640,6 +182930,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -189036,6 +189336,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -195444,6 +195754,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -201840,6 +202160,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -208248,6 +208578,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -214644,6 +214984,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -221052,6 +221402,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -227454,6 +227814,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -233850,6 +234220,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -240260,6 +240640,16 @@
               "realizedPnL": 0,
               "openPositionCount": 1,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 3.176,
+              "costBasisValue": 6.997109999999999,
+              "unrealizedPnL": -3.821109999999999,
+              "realizedPnL": 0,
+              "openPositionCount": 1,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -246656,6 +247046,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -253064,6 +253464,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -259460,6 +259870,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -265868,6 +266288,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -272264,6 +272694,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -278672,6 +279112,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         },
@@ -285068,6 +285518,16 @@
             {
               "timestamp": "2026-08-05T02:42:27Z",
               "timestampUnix": 1785897747,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
               "currentValue": 0,
               "costBasisValue": 0,
               "unrealizedPnL": 0,
@@ -291476,6 +291936,16 @@
               "realizedPnL": 0,
               "openPositionCount": 0,
               "actionablePositionCount": 0
+            },
+            {
+              "timestamp": "2026-08-05T07:11:12Z",
+              "timestampUnix": 1785913872,
+              "currentValue": 0,
+              "costBasisValue": 0,
+              "unrealizedPnL": 0,
+              "realizedPnL": 0,
+              "openPositionCount": 0,
+              "actionablePositionCount": 0
             }
           ]
         }
@@ -291596,7 +292066,7 @@
   "insider": {
     "available": true,
     "synced": true,
-    "generatedAt": "2026-08-05T02:40:28Z",
+    "generatedAt": "2026-08-05T06:54:42Z",
     "summary": {
       "totalFilingsFetched": 58,
       "totalSignals": 19,
@@ -291793,7 +292263,7 @@
   },
   "history": {
     "available": true,
-    "generatedAt": "2026-08-05T02:42:28Z",
+    "generatedAt": "2026-08-05T07:11:13Z",
     "market": {
       "available": true,
       "summary": {
@@ -291837,8 +292307,8 @@
           "averagePriceChange": 0.00254448012271683
         },
         "insiderArchiveCount": 8,
-        "bullishInsiderCount": 1,
-        "bearishInsiderCount": 7
+        "bullishInsiderCount": 0,
+        "bearishInsiderCount": 8
       },
       "horizons": [
         {
@@ -292661,10 +293131,110 @@
       "available": true,
       "summary": {
         "archiveCount": 8,
-        "bullishCount": 1,
-        "bearishCount": 7
+        "bullishCount": 0,
+        "bearishCount": 8
       },
       "archive": [
+        {
+          "signalID": "BE|2026-08-04 17:20:28|2026-08-03|chambers john t|s - sale|$205.58|-15,000|bearish",
+          "filingID": "BE|2026-08-04 17:20:28|2026-08-03|chambers john t|s - sale|$205.58|-15,000",
+          "ticker": "BE",
+          "companyName": "Bloom Energy Corp",
+          "insiderName": "Chambers John T",
+          "insiderTitle": "Dir",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 68,
+          "score": 68,
+          "tradeValueUSD": -3083700,
+          "ownershipChangePercent": -4,
+          "filedAt": "2026-08-04T21:20:28.000Z",
+          "filedAtUnix": 1785878428,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$3.08M disclosed · ownership -4% · eToro BE · market-trans geopolitics/oil context · 5 active markets · 41 recent source events · api · model skeptical on 1",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "KLAC|2026-08-04 17:27:02|2026-08-04|wilkinson mary beth|s - sale|$191.59|-4,295|bearish",
+          "filingID": "KLAC|2026-08-04 17:27:02|2026-08-04|wilkinson mary beth|s - sale|$191.59|-4,295",
+          "ticker": "KLAC",
+          "companyName": "Kla Corp",
+          "insiderName": "Wilkinson Mary Beth",
+          "insiderTitle": "EVP, CLO, Secretary",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 72,
+          "score": 72,
+          "tradeValueUSD": -822879,
+          "ownershipChangePercent": -11,
+          "filedAt": "2026-08-04T21:27:02.000Z",
+          "filedAtUnix": 1785878822,
+          "tradedAt": "2026-08-04T04:00:00.000Z",
+          "tradedAtUnix": 1785816000,
+          "summary": "Insider sale · -$822.9K disclosed · ownership -11% · 2 filings for KLAC in current scan · eToro KLAC · market-trans semis context · 3 recent source events · api",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "CIEN|2026-08-04 17:05:10|2026-08-03|smith gary b|s - sale|$379.81|-2,952|bearish",
+          "filingID": "CIEN|2026-08-04 17:05:10|2026-08-03|smith gary b|s - sale|$379.81|-2,952",
+          "ticker": "CIEN",
+          "companyName": "Ciena Corp",
+          "insiderName": "Smith Gary B",
+          "insiderTitle": "Pres, CEO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 74,
+          "score": 74,
+          "tradeValueUSD": -1121212,
+          "ownershipChangePercent": -1,
+          "filedAt": "2026-08-04T21:05:10.000Z",
+          "filedAtUnix": 1785877510,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$1.12M disclosed · ownership -1% · eToro CIEN",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "GILD|2026-08-04 17:40:36|2026-08-03|o'day daniel patrick|s - sale|$130.31|-15,000|bearish",
+          "filingID": "GILD|2026-08-04 17:40:36|2026-08-03|o'day daniel patrick|s - sale|$130.31|-15,000",
+          "ticker": "GILD",
+          "companyName": "Gilead Sciences, Inc.",
+          "insiderName": "O'Day Daniel Patrick",
+          "insiderTitle": "COB, CEO",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 74,
+          "score": 74,
+          "tradeValueUSD": -1954694,
+          "ownershipChangePercent": -2,
+          "filedAt": "2026-08-04T21:40:36.000Z",
+          "filedAtUnix": 1785879636,
+          "tradedAt": "2026-08-03T04:00:00.000Z",
+          "tradedAtUnix": 1785729600,
+          "summary": "Insider sale · -$1.95M disclosed · ownership -2% · eToro GILD",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
+        {
+          "signalID": "UMBF|2026-08-04 17:31:41|2026-08-04|newton nikki farentino|s - sale|$148.60|-2,000|bearish",
+          "filingID": "UMBF|2026-08-04 17:31:41|2026-08-04|newton nikki farentino|s - sale|$148.60|-2,000",
+          "ticker": "UMBF",
+          "companyName": "Umb Financial Corp",
+          "insiderName": "Newton Nikki Farentino",
+          "insiderTitle": "Pres, Private Wealth Mgmt",
+          "direction": "bearish",
+          "transactionType": "S - Sale",
+          "confidence": 76,
+          "score": 76,
+          "tradeValueUSD": -297200,
+          "ownershipChangePercent": -14,
+          "filedAt": "2026-08-04T21:31:41.000Z",
+          "filedAtUnix": 1785879101,
+          "tradedAt": "2026-08-04T04:00:00.000Z",
+          "tradedAtUnix": 1785816000,
+          "summary": "Insider sale · -$297.2K disclosed · ownership -14% · 2 filings for UMBF in current scan · eToro UMBF · market-trans macro context · 3 active markets · 19 recent source events · 2 breaking · api · model skeptical on 1",
+          "externalURL": "http://openinsider.com/latest-insider-trading"
+        },
         {
           "signalID": "UMBF|2026-08-04 17:35:15|2026-08-04|wilson uma|s - sale|$148.00|-4,145|bearish",
           "filingID": "UMBF|2026-08-04 17:35:15|2026-08-04|wilson uma|s - sale|$148.00|-4,145",
@@ -292724,106 +293294,6 @@
           "tradedAtUnix": 1785816000,
           "summary": "Insider sale · -$1.20M disclosed · ownership -25% · eToro CNA · market-trans macro context · 4 active markets · 16 recent source events · 3 breaking · api/web · model skeptical on 2",
           "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "GEF|2026-08-04 17:51:43|2026-08-03|rosgaard ole g|s - sale|$86.68|-40,087|bearish",
-          "filingID": "GEF|2026-08-04 17:51:43|2026-08-03|rosgaard ole g|s - sale|$86.68|-40,087",
-          "ticker": "GEF",
-          "companyName": "Greif, Inc",
-          "insiderName": "Rosgaard Ole G",
-          "insiderTitle": "Pres, CEO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 85,
-          "score": 85,
-          "tradeValueUSD": -3474733,
-          "ownershipChangePercent": -29,
-          "filedAt": "2026-08-04T21:51:43.000Z",
-          "filedAtUnix": 1785880303,
-          "tradedAt": "2026-08-03T04:00:00.000Z",
-          "tradedAtUnix": 1785729600,
-          "summary": "Insider sale · -$3.47M disclosed · ownership -29% · eToro GEF",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000|bullish",
-          "filingID": "EWAV|2026-08-04 20:47:25|2026-07-31|space summit capital llc|p - purchase|$10.00|+1,087,000",
-          "ticker": "EWAV",
-          "companyName": "East West Ave Acquisition Corp.",
-          "insiderName": "Space Summit Capital LLC",
-          "insiderTitle": "Manager of the LP",
-          "direction": "bullish",
-          "transactionType": "P - Purchase",
-          "confidence": 100,
-          "score": 100,
-          "tradeValueUSD": 10870000,
-          "ownershipChangePercent": -1202,
-          "filedAt": "2026-08-05T00:47:25.000Z",
-          "filedAtUnix": 1785890845,
-          "tradedAt": "2026-07-31T04:00:00.000Z",
-          "tradedAtUnix": 1785470400,
-          "summary": "Insider buy · $10.87M disclosed · ownership -1202% · 2 filings for EWAV in current scan · eToro EWAV",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "CVNA|2026-08-04 17:04:01|2026-08-03|huston benjamin e.|s - sale|$64.50|-50,000|bearish",
-          "filingID": "CVNA|2026-08-04 17:04:01|2026-08-03|huston benjamin e.|s - sale|$64.50|-50,000",
-          "ticker": "CVNA",
-          "companyName": "Carvana Co.",
-          "insiderName": "Huston Benjamin E.",
-          "insiderTitle": "COO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 79,
-          "score": 79,
-          "tradeValueUSD": -3224958,
-          "ownershipChangePercent": -9,
-          "filedAt": "2026-08-04T21:04:01.000Z",
-          "filedAtUnix": 1785877441,
-          "tradedAt": "2026-08-03T04:00:00.000Z",
-          "tradedAtUnix": 1785729600,
-          "summary": "Insider sale · -$3.22M disclosed · ownership -9% · 3 filings for CVNA in current scan · eToro CVNA",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "VRTS|2026-08-04 17:11:47|2026-08-03|angerthal michael a|s - sale|$167.34|-14,975|bearish",
-          "filingID": "VRTS|2026-08-04 17:11:47|2026-08-03|angerthal michael a|s - sale|$167.34|-14,975",
-          "ticker": "VRTS",
-          "companyName": "Virtus Investment Partners, Inc.",
-          "insiderName": "Angerthal Michael A",
-          "insiderTitle": "EVP, CFO, Treasurer",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 79,
-          "score": 79,
-          "tradeValueUSD": -2505955,
-          "ownershipChangePercent": -19,
-          "filedAt": "2026-08-04T21:11:47.000Z",
-          "filedAtUnix": 1785877907,
-          "tradedAt": "2026-08-03T04:00:00.000Z",
-          "tradedAtUnix": 1785729600,
-          "summary": "Insider sale · -$2.51M disclosed · ownership -19% · eToro VRTS",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
-        },
-        {
-          "signalID": "LTH|2026-08-04 17:30:12|2026-07-31|akradi bahram|s - sale|$45.03|-438,257|bearish",
-          "filingID": "LTH|2026-08-04 17:30:12|2026-07-31|akradi bahram|s - sale|$45.03|-438,257",
-          "ticker": "LTH",
-          "companyName": "Life Time Group Holdings, Inc.",
-          "insiderName": "Akradi Bahram",
-          "insiderTitle": "FOUNDER, CEO",
-          "direction": "bearish",
-          "transactionType": "S - Sale",
-          "confidence": 79,
-          "score": 79,
-          "tradeValueUSD": -19734434,
-          "ownershipChangePercent": -3,
-          "filedAt": "2026-08-04T21:30:12.000Z",
-          "filedAtUnix": 1785879012,
-          "tradedAt": "2026-07-31T04:00:00.000Z",
-          "tradedAtUnix": 1785470400,
-          "summary": "Insider sale · -$19.73M disclosed · ownership -3% · 2 filings for LTH in current scan · eToro LTH",
-          "externalURL": "http://openinsider.com/latest-insider-trading"
         }
       ]
     }
@@ -292865,15 +293335,15 @@
       },
       {
         "label": "Wallet updated",
-        "value": "2026-08-05T02:42:27Z"
+        "value": "2026-08-05T07:11:12Z"
       },
       {
         "label": "Insider updated",
-        "value": "2026-08-05T02:40:28Z"
+        "value": "2026-08-05T06:54:42Z"
       },
       {
         "label": "Insider upstream",
-        "value": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+        "value": "6 live · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
       },
       {
         "label": "Official watch",
@@ -293285,34 +293755,34 @@
           "available": true,
           "generatedAt": "2026-08-05T02:42:24Z",
           "status": "stale",
-          "reason": "Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old)"
+          "reason": "Snapshot 4h 28m old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown."
         },
         {
           "id": "wallets",
           "label": "Wallets",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T02:42:27Z",
-          "status": "live",
-          "reason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 2 live"
+          "generatedAt": "2026-08-05T07:11:12Z",
+          "status": "stale",
+          "reason": "Snapshot 1s old · 2 wallet(s) · 1 open · 0 actionable · 1 live · 2 stale cache. Market intel input: Market intel snapshot is stale (4h 28m old, max 15m). (4h 28m old)"
         },
         {
           "id": "insider",
           "label": "Insider",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T02:40:28Z",
+          "generatedAt": "2026-08-05T06:54:42Z",
           "status": "stale",
-          "reason": "6 live · 5 failed. r/algotrading: HTTP 429:  after 3 attempt(s)."
+          "reason": "6 live · 5 failed. r/BitcoinMarkets: HTTP 429:  after 3 attempt(s)."
         },
         {
           "id": "pipeline",
           "label": "Pipeline",
           "synced": true,
           "available": true,
-          "generatedAt": "2026-08-05T02:42:31.337Z",
-          "status": "live",
-          "reason": "4 step(s) completed. Source issue(s): market:degraded, insider:degraded. Snapshot 4s old · 15 active · 25 snapshots · 2 built from 2 source candidate(s) · 5 live · 17 failed. SEC EDGAR Strategy Filings: MSTR: HTTP 429: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<title>SEC.gov | Request Rate Threshold Exceeded</title>\n<style>\nhtml {height: 100%}\nbody {height: 100%; margin:0; padding:0;}\n#header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;}\n#footer {background-color:#003968; color:#fff; padding:15px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px;}\n#content {max-width:650px;margin:60px auto; padding:0 20px 100px 20px; background-image:url(seal_bw.png);background-repeat:no-repeat;backgroun | stale cache exceeded freshness guardrail (7h 3m old) | stale cache exceeded freshness guardrail (7h 3m old) · Latest pipeline run failed this step and the last successful data is still being shown."
+          "generatedAt": "2026-08-05T07:11:17.500Z",
+          "status": "stale",
+          "reason": "Failed step(s): Refreshing market-trans from source. · 1 failing step(s)"
         }
       ]
     }
