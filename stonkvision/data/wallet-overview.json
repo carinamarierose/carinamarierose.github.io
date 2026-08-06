@@ -3,17 +3,34 @@
     {
       "adapter" : "market_intel_snapshot",
       "attemptCount" : 1,
-      "cacheUsed" : false,
+      "cacheAgeSeconds" : 17426,
+      "cacheUsed" : true,
       "cacheWasFresh" : false,
       "eventCount" : 17,
       "fetchedAt" : "2026-08-05T21:23:22Z",
       "fetchedAtUnix" : 1785965002,
-      "message" : "Loaded 17 active signal(s) from market intel.",
+      "message" : "Market intel snapshot is stale (4h 50m old, max 15m).",
       "provider" : "market-trans",
       "sourceID" : "market-intel-input",
       "sourceName" : "Market intel input",
       "sourceType" : "pipeline",
-      "status" : "live"
+      "status" : "cached"
+    },
+    {
+      "adapter" : "signal_feed_cache",
+      "attemptCount" : 1,
+      "cacheAgeSeconds" : 17422,
+      "cacheUsed" : true,
+      "cacheWasFresh" : false,
+      "eventCount" : 10,
+      "fetchedAt" : "2026-08-05T21:23:26Z",
+      "fetchedAtUnix" : 1785965006,
+      "message" : "Using cached wallet watcher feed with 10 signal(s) while market intel recovers.",
+      "provider" : "wallet_watcher",
+      "sourceID" : "wallet-feed-cache",
+      "sourceName" : "Wallet feed cache",
+      "sourceType" : "pipeline",
+      "status" : "cached"
     },
     {
       "adapter" : "polymarket_wallet_snapshot",
@@ -21,8 +38,8 @@
       "cacheUsed" : false,
       "cacheWasFresh" : false,
       "eventCount" : 1,
-      "fetchedAt" : "2026-08-05T21:23:26Z",
-      "fetchedAtUnix" : 1785965006,
+      "fetchedAt" : "2026-08-06T02:13:48Z",
+      "fetchedAtUnix" : 1785982428,
       "message" : "Loaded 2 watched wallet snapshot(s) covering 1 open position(s) and 0 actionable call(s).",
       "provider" : "wallet_watcher",
       "sourceID" : "watched-wallets",
@@ -31,25 +48,25 @@
       "status" : "live"
     }
   ],
-  "generatedAt" : "2026-08-05T21:23:26Z",
-  "generatedAtUnix" : 1785965006,
+  "generatedAt" : "2026-08-06T02:13:48Z",
+  "generatedAtUnix" : 1785982428,
   "summary" : {
     "actionablePositionCount" : 0,
     "activityCash" : {
       "mayBeTruncated" : true,
-      "netFlowUSD" : -136.29887599999992,
-      "newestTimestamp" : 1785897048,
+      "netFlowUSD" : -136.2975759999999,
+      "newestTimestamp" : 1785975345,
       "oldestTimestamp" : 1778005974,
       "redeemedUSD" : 519.089614,
-      "returnedUSD" : 846.875934,
-      "sampleCount" : 344,
+      "returnedUSD" : 846.877234,
+      "sampleCount" : 345,
       "sampleLimit" : 400,
       "soldUSD" : 327.59612000000004,
       "spentUSD" : 983.17481,
-      "yieldUSD" : 0.1902
+      "yieldUSD" : 0.1915
     },
     "openPositionCount" : 1,
-    "totalCurrentValue" : 3.176,
+    "totalCurrentValue" : 3.1271,
     "walletCount" : 2
   },
   "wallets" : [
@@ -74,14 +91,14 @@
       "positions" : [
         {
           "averageEntryPrice" : 0.0716,
-          "currentPrice" : 0.0325,
-          "currentValue" : 3.176,
+          "currentPrice" : 0.032,
+          "currentValue" : 3.1271,
           "endDate" : "2026-12-31T00:00:00Z",
           "eventSlug" : "anthropic-acquired-before-2027",
           "marketURL" : "https:\/\/polymarket.com\/event\/anthropic-acquired-before-2027",
           "outcome" : "Yes",
-          "percentPnL" : -54.6275,
-          "percentRealizedPnL" : -54.6282,
+          "percentPnL" : -55.3261,
+          "percentRealizedPnL" : -55.3267,
           "realizedPnL" : 0,
           "size" : 97.725,
           "slug" : "anthropic-acquired-before-2027",
@@ -89,7 +106,7 @@
         }
       ],
       "recentActivityCount" : 0,
-      "totalCurrentValue" : 3.176,
+      "totalCurrentValue" : 3.1271,
       "wallet" : "0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x3B7B1B3bb6e5C8f05487f9D887D7A37451654870"
     },
@@ -97,24 +114,24 @@
       "actionablePositionCount" : 0,
       "activityCash" : {
         "mayBeTruncated" : false,
-        "netFlowUSD" : -92.51873999999995,
-        "newestTimestamp" : 1785897048,
+        "netFlowUSD" : -92.51743999999994,
+        "newestTimestamp" : 1785975345,
         "oldestTimestamp" : 1778509463,
         "redeemedUSD" : 232.234845,
-        "returnedUSD" : 241.489925,
-        "sampleCount" : 144,
+        "returnedUSD" : 241.49122500000001,
+        "sampleCount" : 145,
         "sampleLimit" : 200,
         "soldUSD" : 9.13888,
         "spentUSD" : 334.00866499999995,
-        "yieldUSD" : 0.1162
+        "yieldUSD" : 0.1175
       },
       "label" : "Rose",
-      "lastActivityTimestamp" : 1785897048,
+      "lastActivityTimestamp" : 1785975345,
       "openPositionCount" : 0,
       "positions" : [
 
       ],
-      "recentActivityCount" : 1,
+      "recentActivityCount" : 2,
       "totalCurrentValue" : 0,
       "wallet" : "0x30da9f12d8961e80e11f9575e316f5da5799ca57",
       "walletURL" : "https:\/\/polygonscan.com\/address\/0x30da9f12d8961e80e11f9575e316f5da5799ca57"
